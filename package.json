@@ -1,0 +1,8 @@
+{
+  "name": "video-result-viewer",
+  "private": true,
+  "version": "1.0.0",
+  "scripts": {
+    "compare": "node serve.mjs"
+  }
+}

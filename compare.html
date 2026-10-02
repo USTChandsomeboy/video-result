@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>视频复刻结果对照</title>
+<style>
+body{font:16px system-ui;margin:32px;background:#111722;color:#e9edf3}
+h1{font-size:26px}
+button,select{background:#263348;color:white;border:1px solid #536278;border-radius:7px;padding:10px;cursor:pointer}
+button:disabled,select:disabled{opacity:.45;cursor:not-allowed}
+main{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+video{width:100%;background:#000}
+.media-placeholder{min-height:180px;display:grid;place-items:center;text-align:center;padding:24px;background:#202c3c;border:1px dashed #536278;color:#afbbcb;line-height:1.7}
+.media-placeholder[hidden]{display:none}
+aside{margin:20px 0;padding:16px;background:#202c3c;line-height:1.7}
+input{width:60%}
+a{color:#9bc7ff}
+.muted{color:#afbbcb}
+img{max-width:900px;width:100%}
+</style>
+</head>
+<body>
+<h1>视频复刻结果对照</h1>
+<p class="muted">选择一个展示视频，左侧查看参考视频，右侧查看 Remotion 复刻视频。</p>
+<label for="example">选择展示视频：</label> <select id="example"></select>
+<aside id="summary"></aside>
+<main>
+  <section><h3>参考视频</h3><video id="ref" muted playsinline preload="auto"></video><div id="refPlaceholder" class="media-placeholder" hidden>参考视频暂时无法加载</div></section>
+  <section><h3>Remotion 复刻</h3><video id="rec" muted playsinline preload="auto"></video><div id="recPlaceholder" class="media-placeholder" hidden>复刻视频暂时无法加载</div></section>
+</main>
+<p><button id="play">播放 / 暂停</button> <button id="prev">前一帧</button> <button id="next">后一帧</button> <input id="seek" type="range" min="0" step="1" value="0"> <output id="time"></output></p>
+<p id="jump"></p>
+<aside id="evidence"></aside>
+<p><a id="report">结果说明</a></p>
+<details><summary>同帧对照图（左参考，右复刻）</summary><img id="comparison" alt="参考视频与复刻视频的同帧对照图"></details>
+<script>
+const $=s=>document.querySelector(s);
+const ref=$('#ref'),rec=$('#rec'),exampleSelect=$('#example');
+const embeddedExamples=[{"id":"knowledge-network","title":"展示视频","category":"示例","dir":"examples/knowledge-network","frames":450,"fps":30,"times":[1.5,4.5,8,11.5,14.2],"difficulties":[["difference-01",1.5,"对象存在与强调","参考服务器卡片先整体存在，再用手指强调；复刻把它们全部做成淡入。","没有区分已有对象和当前被强调对象。","state_timing"],["difference-02",4.5,"标签绑定","参考 IP、域名和服务器图标一起出现；复刻标签独立于图标按网格出现。","文字没有绑定到对象的进入状态和位置。","object_binding"],["difference-03",8,"对话因果","参考气泡按服务器之间的问答关系依次出现；复刻把气泡当作同步字幕。","对象之间的指示关系被压平成文字层。","causal_timing"],["difference-04",11.5,"清场后重建","参考先清空卡片，再建立主干和节点；复刻直接把拓扑叠在旧场景上。","场景状态切换的清空边界不明确。","scene_state"],["difference-05",14.2,"拓扑生长","参考主干、竖线、节点、标签逐层完成；复刻一次性画出全部连线。","连线终点没有绑定节点，拓扑顺序丢失。","topology_order"]],"remotion_suitability":"适合"}];
+let examples=[],active,index=0,switching=0;
+function setControls(enabled){['play','prev','next','seek'].forEach(id=>$(id).disabled=!enabled)}
+function label(){if(!active||!Number.isFinite(ref.currentTime))return;$('#time').textContent=`${ref.currentTime.toFixed(3)} 秒 / 帧 ${Math.round(ref.currentTime*(active.fps||24))}`;$('#seek').value=Math.round(ref.currentTime*(active.fps||24))}
+function go(frame){if(!active)return;ref.pause();rec.pause();const t=Math.max(0,Math.min(active.frames-1,frame))/(active.fps||24);ref.currentTime=rec.currentTime=t;label()}
+function showMissing(){ref.hidden=true;rec.hidden=true;$('#refPlaceholder').hidden=false;$('#recPlaceholder').hidden=false;setControls(false)}
+async function hasFiles(dir){if(location.protocol==='file:')return true;const urls=[`${dir}/reference.mp4`,`${dir}/recreation.mp4`];return (await Promise.all(urls.map(url=>fetch(url,{method:'HEAD'}).then(r=>r.ok).catch(()=>false)))).every(Boolean)}
+async function selectExample(i){
+  const id=++switching; index=i; active=examples[i];
+  ref.pause();rec.pause();
+  const dir=active.dir;
+  $('#summary').textContent=`${active.category}｜${active.title}｜Remotion 适配：${active.remotion_suitability}`;
+  $('#seek').max=active.frames-1;
+  $('#comparison').src=`${dir}/comparison.jpg`;
+  $('#report').href=`${dir}/report.md`;
+  $('#evidence').replaceChildren(...active.difficulties.map(d=>{const p=document.createElement('p');p.textContent=`${d[1]} 秒｜${d[2]}：${d[3]} 原因：${d[4]}`;return p}));
+  $('#jump').replaceChildren(...active.times.map(t=>{const button=document.createElement('button');button.textContent=`跳到 ${t} 秒`;button.onclick=()=>go(t*(active.fps||24));return button}));
+  if(!await hasFiles(dir) || id!==switching){showMissing();return}
+  ref.src=`${dir}/reference.mp4`;rec.src=`${dir}/recreation.mp4`;
+  try{await Promise.all([ref,rec].map(video=>new Promise((resolve,reject)=>{video.addEventListener('loadedmetadata',resolve,{once:true});video.addEventListener('error',reject,{once:true})})))}catch{showMissing();return}
+  if(id!==switching)return;
+  $('#refPlaceholder').hidden=true;$('#recPlaceholder').hidden=true;ref.hidden=false;rec.hidden=false;setControls(true);go(active.fps||24)
+}
+function populate(){exampleSelect.replaceChildren(...examples.map((item,i)=>{const option=document.createElement('option');option.value=i;option.textContent=`${item.category}｜${item.title}`;return option}));exampleSelect.onchange=()=>selectExample(+exampleSelect.value);selectExample(0)}
+$('#play').onclick=async()=>{if(ref.paused){rec.currentTime=ref.currentTime;await Promise.all([ref.play(),rec.play()])}else{ref.pause();rec.pause()}};
+$('#seek').oninput=e=>go(+e.target.value);
+$('#prev').onclick=()=>go(Math.round(ref.currentTime*(active.fps||24))-1);
+$('#next').onclick=()=>go(Math.round(ref.currentTime*(active.fps||24))+1);
+ref.ontimeupdate=()=>{label();if(!ref.paused&&Math.abs(ref.currentTime-rec.currentTime)>.08)rec.currentTime=ref.currentTime};
+ref.onended=()=>rec.pause();
+(location.protocol==='file:'?Promise.resolve(embeddedExamples):fetch('examples.json').then(r=>r.json())).then(data=>{examples=data;populate()}).catch(()=>{examples=embeddedExamples;populate()});
+</script>
+</body>
+</html>

@@ -1,0 +1,9 @@
+node_modules/
+node_modules
+.DS_Store
+examples/**/reference-source/
+examples/**/frames/
+examples/**/source-frames/
+examples/**/recreation-frames/
+examples/**/differences.json
+examples/**/source.json
