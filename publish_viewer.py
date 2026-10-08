@@ -9,6 +9,7 @@ from __future__ import annotations
 import json
 import re
 import shutil
+import sys
 from pathlib import Path
 
 
@@ -35,6 +36,49 @@ def copy_experiment(rel_dir: str, names: tuple[str, ...]) -> None:
         return
     for name in names:
         copy_file(src_dir / name, SITE / rel_dir / name)
+
+
+def finalize() -> None:
+    """Resolve localhost links and include the documents linked by the pages."""
+    for name in ('round07-replication-results.md', 'complex-material-round08.md',
+                 'complex-material-round08-results.md', 'round09-method-and-results.md'):
+        copy_if_present('docs/' + name)
+    for directory in (ROOT / 'experiments').glob('r08-*'):
+        copy_experiment(str(directory.relative_to(ROOT)), ('missing-recreation.mp4',))
+    for item in json.loads((ROOT / 'data/round09-viewer.json').read_text()):
+        for condition in ('provided', 'missing'):
+            for name in item[condition]['assets']:
+                copy_if_present(item[condition]['dir'] + '/assets/' + name)
+    review_path = SITE / 'data/round10-deep-code-review.json'
+    review = json.loads(review_path.read_text())
+    links = {}
+    for case in review['cases']:
+        for finding in case['findings']:
+            for evidence in finding['evidence']:
+                path = evidence['file']
+                url = evidence.get('url', '')
+                if path.startswith('source-catalog/') and url.startswith('https://github.com/'):
+                    links[path] = url
+                elif path.startswith('experiments/'):
+                    links[path] = 'https://github.com/USTChandsomeboy/video-result/blob/main/site/' + path
+                evidence['file'] = links.get(path, path)
+    review_path.write_text(json.dumps(review, ensure_ascii=False, indent=2))
+    for path in SITE.glob('*.html'):
+        text = path.read_text().replace('http://127.0.0.1:8770/', '')
+        for old, new in links.items():
+            text = text.replace('href="' + old + '"', 'href="' + new + '"')
+        text = text.replace(str(ROOT) + '/', '')
+        text = text.replace('视频与完整源码链接需本地 8770 服务。', '视频与代码链接可在线查看。')
+        text = text.replace('请从本项目启动服务后打开', '请刷新页面重试：')
+        text = text.replace('本地预览', '重新加载')
+        if path.name in ('index.html', 'compare.html'):
+            text = text.replace('<meta charset="utf-8">', '<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">')
+            text = text.replace('</style>', '@media(max-width:700px){body{margin:16px}main{grid-template-columns:1fr}select{max-width:100%}}</style>')
+        path.write_text(text)
+    for path in SITE.glob('experiments/r10-*/completion.json'):
+        data = json.loads(path.read_text())
+        path.write_text(json.dumps({'status': data.get('status'), 'blocked': data.get('blocked', False)}))
+    (SITE / '.nojekyll').touch()
 
 
 def main() -> None:
@@ -91,10 +135,14 @@ def main() -> None:
         encoding="utf-8",
     )
 
+    finalize()
     files = [p for p in SITE.rglob("*") if p.is_file()]
     total = sum(p.stat().st_size for p in files)
     print(f"built {len(files)} files, {total / 1024 / 1024:.1f} MiB -> {SITE}")
 
 
 if __name__ == "__main__":
-    main()
+    if '--finalize-only' in sys.argv:
+        finalize()
+    else:
+        main()

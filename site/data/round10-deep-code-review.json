@@ -17,7 +17,7 @@
           "impact": "能画出“散点”和“树”，但丢失中间整理过程及对象对应关系。",
           "evidence": [
             {
-              "file": "source-catalog/round10/ElarizT--Sulcus-Brand-Film/src/world/field.ts",
+              "file": "https://github.com/ElarizT/Sulcus-Brand-Film/blob/f8c3c40be65e3ad3276fe8eb922f533d7eef96fe/src/world/field.ts#L481",
               "line": 481,
               "anchor": "v3.lerp(n.chaos, n.tree, m)",
               "fragment": "id * 0.9) * 9 * sway,\n    ];\n    const p = v3.add(v3.lerp(n.chaos, n.tree, m), drift);\n    const wake = clamp01(held / 0.5);\n    let energy = 1 - 0.86 * frozen * (1 - wake);\n    if (t >= T.limitHit && FEATURE.limitTre",
@@ -25,7 +25,7 @@
               "url": "https://github.com/ElarizT/Sulcus-Brand-Film/blob/f8c3c40be65e3ad3276fe8eb922f533d7eef96fe/src/world/field.ts#L481"
             },
             {
-              "file": "experiments/r10-01/src/Replica.tsx",
+              "file": "https://github.com/USTChandsomeboy/video-result/blob/main/site/experiments/r10-01/src/Replica.tsx",
               "line": 6,
               "anchor": "length:95",
               "fragment": "none\" stroke=\"#976734\" opacity=\".3\"/>{Array.from({length:95},(_,i)=>{let x=180+rand(i)*600,y=30+rand(i+22)*270;return <g key={i} opacity={t<2.7?.035:.45}><path d={`M${x} ${y} v${30+rand(i+5)*60} h${r",
@@ -44,7 +44,7 @@
           "impact": "局部放大、透视和场景之间的连续移动不一致。",
           "evidence": [
             {
-              "file": "source-catalog/round10/ElarizT--Sulcus-Brand-Film/src/film/camera.ts",
+              "file": "https://github.com/ElarizT/Sulcus-Brand-Film/blob/f8c3c40be65e3ad3276fe8eb922f533d7eef96fe/src/film/camera.ts#L100",
               "line": 100,
               "anchor": "const spline",
               "fragment": "speed through each key instead of stopping on it.\nconst spline = (get: (k: Key) => number, i: number, s: number) => {\n  const k0 = KEYS[Math.max(0, i - 1)];\n  const k1 = KEYS[i];\n  const k2 = KEYS[i + 1",
@@ -52,7 +52,7 @@
               "url": "https://github.com/ElarizT/Sulcus-Brand-Film/blob/f8c3c40be65e3ad3276fe8eb922f533d7eef96fe/src/film/camera.ts#L100"
             },
             {
-              "file": "experiments/r10-01/src/Replica.tsx",
+              "file": "https://github.com/USTChandsomeboy/video-result/blob/main/site/experiments/r10-01/src/Replica.tsx",
               "line": 6,
               "anchor": "phase",
               "fragment": "onst show1=t>=8&&t<11.3,show2=t>=13&&t<16.4;const phase=t<12?0:t<17?1:2;return <AbsoluteFill style={{background:'#030403',overflow:'hidden'}}><svg viewBox=\"0 0 960 540\" width=\"100%\" height=\"100%\"",
@@ -71,7 +71,7 @@
           "impact": "重试最终解决问题这一段信息没有复刻完整。",
           "evidence": [
             {
-              "file": "source-catalog/round10/ElarizT--Sulcus-Brand-Film/src/world/drawGovernance.ts",
+              "file": "https://github.com/ElarizT/Sulcus-Brand-Film/blob/f8c3c40be65e3ad3276fe8eb922f533d7eef96fe/src/world/drawGovernance.ts#L299",
               "line": 299,
               "anchor": "503",
               "fragment": "T.retryAgain\n        ? { label: \"STATUS\", value: \"503 · retry 1/3\", color: \"error\", shown: 1 }\n        : t < T.retryOk\n          ? { label: \"STATUS\", value: \"503 · retry 2/3\", color: \"error\", s",
@@ -79,7 +79,7 @@
               "url": "https://github.com/ElarizT/Sulcus-Brand-Film/blob/f8c3c40be65e3ad3276fe8eb922f533d7eef96fe/src/world/drawGovernance.ts#L299"
             },
             {
-              "file": "experiments/r10-01/src/Replica.tsx",
+              "file": "https://github.com/USTChandsomeboy/video-result/blob/main/site/experiments/r10-01/src/Replica.tsx",
               "line": 6,
               "anchor": "503",
               "fragment": "ver','orchestrator','http.get  /v2/orders',t>9.4?'503 · retry 2/3':'','●  ━━━  ━━']:['deploy --prod','tester',t>15?'approved':'awaiting approval']).map((s,i)=><g key={i}><path d={`M12 ${28+i*27",
@@ -98,7 +98,7 @@
           "impact": "“到达上限所以被阻止”的过程被简化，不能从标题相同判定一致。",
           "evidence": [
             {
-              "file": "source-catalog/round10/ElarizT--Sulcus-Brand-Film/src/world/drawGovernance.ts",
+              "file": "https://github.com/ElarizT/Sulcus-Brand-Film/blob/f8c3c40be65e3ad3276fe8eb922f533d7eef96fe/src/world/drawGovernance.ts#L526",
               "line": 526,
               "anchor": "held ? \"200k / 200k\"",
               "fragment": "USED\" : `TOKENS ${Math.round(level * 100)}%`,\n    held ? \"200k / 200k\" : `${Math.round(level * 200)}k / 200k`,\n    held ? \"signal\" : \"ink\",\n    \"left\",\n    r.fog(pr.z) * ramp(t, T.bounds, T.bounds + 0.3) * near",
@@ -106,7 +106,7 @@
               "url": "https://github.com/ElarizT/Sulcus-Brand-Film/blob/f8c3c40be65e3ad3276fe8eb922f533d7eef96fe/src/world/drawGovernance.ts#L526"
             },
             {
-              "file": "experiments/r10-01/src/Replica.tsx",
+              "file": "https://github.com/USTChandsomeboy/video-result/blob/main/site/experiments/r10-01/src/Replica.tsx",
               "line": 6,
               "anchor": "BOUNDARIES",
               "fragment": "DOING.':show2?'STEP IN WHEN IT MATTERS.':'SET THE BOUNDARIES.'}</text>}</svg></AbsoluteFill>};\n",
@@ -148,7 +148,7 @@
           "impact": "部分场景提前或延后接近 1 秒，同一时刻展示的功能不同。",
           "evidence": [
             {
-              "file": "source-catalog/round10/wawaup--Ringflow-promo/src/config/timeline.ts",
+              "file": "https://github.com/wawaup/Ringflow-promo/blob/f85e52149ac88679ee82d4a97a7ee81e1875a3c6/src/config/timeline.ts#L73",
               "line": 73,
               "anchor": "durationSeconds: 4.8",
               "fragment": ",\n    id: \"intro-focus\",\n    name: \"开场：保持连贯\",\n    durationSeconds: 4.8,\n    layout: \"left-stage\",\n    choreography: {\n      pageStartFrame: 0,\n      pageReadyFrame: 12,\n      textStartFrame: 18,\n      visualSta",
@@ -156,7 +156,7 @@
               "url": "https://github.com/wawaup/Ringflow-promo/blob/f85e52149ac88679ee82d4a97a7ee81e1875a3c6/src/config/timeline.ts#L73"
             },
             {
-              "file": "experiments/r10-02/src/Replica.tsx",
+              "file": "https://github.com/USTChandsomeboy/video-result/blob/main/site/experiments/r10-02/src/Replica.tsx",
               "line": 6,
               "anchor": "t<4",
               "fragment": "urrentFrame(),t=f/60;const dark=t>=27;const title=t<4?'正在做的事，\\n应该保持连贯。':t<8?'找来找去。\\n来回切换。\\n一遍又一遍。':t<13?'常用的，\\n应该更近一点。':t<18?'按住中键，\\n向右一划。':t<22?'常用文字，一划输入。':t<24?'常用应用、文件、文件夹，一划打开。':t<27?'灵感，不",
@@ -175,7 +175,7 @@
           "impact": "看到的是窗口拼图，难以看出连续工作流。",
           "evidence": [
             {
-              "file": "source-catalog/round10/wawaup--Ringflow-promo/src/config/timeline.ts",
+              "file": "https://github.com/wawaup/Ringflow-promo/blob/f85e52149ac88679ee82d4a97a7ee81e1875a3c6/src/config/timeline.ts#L85",
               "line": 85,
               "anchor": "noteCopyFrame: 124",
               "fragment": "tartFrame: 124,\n      stickyOpenFrame: 101,\n      noteCopyFrame: 124,\n      notePasteFrame: 150,\n      noteGroupExitFrame: 176,    // note window + its copy/paste keys fade out together\n      promptOpenFrame:",
@@ -183,7 +183,7 @@
               "url": "https://github.com/wawaup/Ringflow-promo/blob/f85e52149ac88679ee82d4a97a7ee81e1875a3c6/src/config/timeline.ts#L85"
             },
             {
-              "file": "experiments/r10-02/src/Replica.tsx",
+              "file": "https://github.com/USTChandsomeboy/video-result/blob/main/site/experiments/r10-02/src/Replica.tsx",
               "line": 6,
               "anchor": "export function main",
               "fragment": " style={{fontFamily:'monospace',color:'#65728d'}}>export function main() &#123;<br/>　const result = workflow.run();<br/>　return result;<br/>&#125;</div></Win><Win x={530} y={280} w={255} h={135} title=\"智能助手\"><p",
@@ -202,7 +202,7 @@
           "impact": "遗漏“选择内容→填入当前位置”的结果反馈。",
           "evidence": [
             {
-              "file": "source-catalog/round10/wawaup--Ringflow-promo/src/scenes/06_QuickInputScene.tsx",
+              "file": "https://github.com/wawaup/Ringflow-promo/blob/f85e52149ac88679ee82d4a97a7ee81e1875a3c6/src/scenes/06_QuickInputScene.tsx#L1",
               "line": 1,
               "anchor": "QuickInputWorkspace",
               "fragment": "import { QuickInputWorkspace } from \"../components/ProductUI/ProductSurfaces\";\nimport { sceneCopy } from \"../config/copy\";\nimport { scenes } from \"../config/timeline\";\n",
@@ -210,7 +210,7 @@
               "url": "https://github.com/wawaup/Ringflow-promo/blob/f85e52149ac88679ee82d4a97a7ee81e1875a3c6/src/scenes/06_QuickInputScene.tsx#L1"
             },
             {
-              "file": "experiments/r10-02/src/Replica.tsx",
+              "file": "https://github.com/USTChandsomeboy/video-result/blob/main/site/experiments/r10-02/src/Replica.tsx",
               "line": 6,
               "anchor": "工作邮箱：hello",
               "fragment": "操作。</p><div style={{fontSize:9,lineHeight:2.7}}>▸ 工作邮箱：hello@ringflow.app<br/>▸ 地址信息<br/>▸ 常用回复：收到，谢谢！</div><div style={{position:'absolute',right:12,top:37,width:75,lineHeight:2.5}}>常用文字<br/>工作邮箱<br/",
@@ -229,7 +229,7 @@
           "impact": "没有待执行、正在执行到完成的过程。",
           "evidence": [
             {
-              "file": "source-catalog/round10/wawaup--Ringflow-promo/src/components/ProductUI/ProductSurfaces.tsx",
+              "file": "https://github.com/wawaup/Ringflow-promo/blob/f85e52149ac88679ee82d4a97a7ee81e1875a3c6/src/components/ProductUI/ProductSurfaces.tsx#L903",
               "line": 903,
               "anchor": "MacroExecution",
               "fragment": "       />\n      </div>\n    </div>\n  );\n};\n\n// ─── MacroExecution — timed multi-step semantic flow ─────────────────────────\nexport const MacroExecution = ({\n  choreography,\n}: {\n  choreography?: { visualS",
@@ -237,7 +237,7 @@
               "url": "https://github.com/wawaup/Ringflow-promo/blob/f85e52149ac88679ee82d4a97a7ee81e1875a3c6/src/components/ProductUI/ProductSurfaces.tsx#L903"
             },
             {
-              "file": "experiments/r10-02/src/Replica.tsx",
+              "file": "https://github.com/USTChandsomeboy/video-result/blob/main/site/experiments/r10-02/src/Replica.tsx",
               "line": 5,
               "anchor": "完成",
               "fragment": "工作计划与灵感记录。保持专注，让常用的<br/>工具就在手边。<br/>下次使用时无需寻找，一划即可完成。</>}</div></div>;\nexport const Replica:React.FC=()=>{const f=useCurrentFrame(),t=f/60;const dark=t>=27;const title=t<4?'正在做的事，\\n应该保持连贯。':t<",
@@ -279,7 +279,7 @@
           "impact": "中间帧没有两个场景同时移动，衔接显得突然。",
           "evidence": [
             {
-              "file": "source-catalog/round10/remotion-dev--github-unwrapped-2022/remotion/SlideIn.tsx",
+              "file": "https://github.com/remotion-dev/github-unwrapped-2022/blob/1297352b814d631fbc9d6338f30cbb55c7d967fd/remotion/SlideIn.tsx#L10",
               "line": 10,
               "anchor": "transitionDuration = 15",
               "fragment": "\tuseVideoConfig,\n} from 'remotion';\n\nexport const transitionDuration = 15;\n\nexport const SlideIn: React.FC<{children: React.ReactNode}> = ({children}) => {\n\tconst {fps, width} = useVideoConfig();\n\tconst frame = us",
@@ -287,7 +287,7 @@
               "url": "https://github.com/remotion-dev/github-unwrapped-2022/blob/1297352b814d631fbc9d6338f30cbb55c7d967fd/remotion/SlideIn.tsx#L10"
             },
             {
-              "file": "experiments/r10-03/src/Replica.tsx",
+              "file": "https://github.com/USTChandsomeboy/video-result/blob/main/site/experiments/r10-03/src/Replica.tsx",
               "line": 10,
               "anchor": "t < 5",
               "fragment": "translate(0 ${t>1.5?(t-1.5)*400:0})`}><Gift/></g>:t<5?<g><Tree/><path d=\"M71 186l7-29 15 28m283 1 14-29 15 30\" fill=\"none\" stroke=\"black\" strokeWidth=\"3\"/><g transform=\"rotate(-4 81 225)\"><rect x",
@@ -306,7 +306,7 @@
           "impact": "主体内容大致存在，但列表到袜子的空间关系丢失。",
           "evidence": [
             {
-              "file": "source-catalog/round10/remotion-dev--github-unwrapped-2022/remotion/LanguageToSocks.tsx",
+              "file": "https://github.com/remotion-dev/github-unwrapped-2022/blob/1297352b814d631fbc9d6338f30cbb55c7d967fd/remotion/LanguageToSocks.tsx#L23",
               "line": 23,
               "anchor": "frame: frame - 60",
               "fragment": "useVideoConfig();\n\n\tconst spr = spring({\n\t\tfps,\n\t\tframe: frame - 60,\n\t\tconfig: {\n\t\t\tdamping: 200,\n\t\t},\n\t});\n\n\tconst translateX = interpolate(spr, [0, 1], [0, -width]);\n\tconst translateX2 = interpolate(spr, [",
@@ -314,7 +314,7 @@
               "url": "https://github.com/remotion-dev/github-unwrapped-2022/blob/1297352b814d631fbc9d6338f30cbb55c7d967fd/remotion/LanguageToSocks.tsx#L23"
             },
             {
-              "file": "experiments/r10-03/src/Replica.tsx",
+              "file": "https://github.com/USTChandsomeboy/video-result/blob/main/site/experiments/r10-03/src/Replica.tsx",
               "line": 10,
               "anchor": "lang={t < 8.2",
               "fragment": "My top languages of 2022',277)}</>:t<12.5?<><Sock lang={t<8.2?'JS':t<10?'C⁺':'TS'}/>{t>10.5&&text('① TypeScript',422,34,'#9e8c7c')}{t>8.2&&<text x=\"116\" y=\"471\" fontSize=\"24\" fontWeight=\"bold\" fontFamily",
@@ -333,7 +333,7 @@
           "impact": "画面已变色时数字还在另一状态；留下的绿色点也不是原片那一组。",
           "evidence": [
             {
-              "file": "source-catalog/round10/remotion-dev--github-unwrapped-2022/remotion/IssuesOpened.tsx",
+              "file": "https://github.com/remotion-dev/github-unwrapped-2022/blob/1297352b814d631fbc9d6338f30cbb55c7d967fd/remotion/IssuesOpened.tsx#L86",
               "line": 86,
               "anchor": "closedDotsProgress",
               "fragment": "t dotsShown = openProgress * totalIssues;\n\n\tconst closedDotsProgress = spring({\n\t\tfps,\n\t\tframe: frame - 100,\n\t\tconfig: {\n\t\t\tdamping: 200,\n\t\t},\n\t\tdurationInFrames: 50,\n\t});\n\n\tconst {height, width} = useVideoCo",
@@ -341,7 +341,7 @@
               "url": "https://github.com/remotion-dev/github-unwrapped-2022/blob/1297352b814d631fbc9d6338f30cbb55c7d967fd/remotion/IssuesOpened.tsx#L86"
             },
             {
-              "file": "experiments/r10-03/src/Replica.tsx",
+              "file": "https://github.com/USTChandsomeboy/video-result/blob/main/site/experiments/r10-03/src/Replica.tsx",
               "line": 10,
               "anchor": "open && i > 10",
               "fragment": "={i} cx={38+x*46} cy={78+y*46} r={i<n?18:0} fill={open&&i>10?'#9a6fe3':'#28a452'}/>})}{text(String(t<19?Math.min(69,Math.floor((t-17.5)*58)):t<20.4?69:Math.max(11,Math.floor(69-(t-20.4)*58))),484,65,red)}",
@@ -360,7 +360,7 @@
           "impact": "缺少跨场景共享的环境动效。",
           "evidence": [
             {
-              "file": "source-catalog/round10/remotion-dev--github-unwrapped-2022/remotion/Main.tsx",
+              "file": "https://github.com/remotion-dev/github-unwrapped-2022/blob/1297352b814d631fbc9d6338f30cbb55c7d967fd/remotion/Main.tsx#L18",
               "line": 18,
               "anchor": "windPushes",
               "fragment": "ation.slice(0, i).reduce((a, b) => a + b);\n\tconst windPushes = duration\n\t\t.map((_, i) => {\n\t\t\tif (i === 0) {\n\t\t\t\treturn null;\n\t\t\t}\n\t\t\treturn duration.slice(0, i).reduce((a, b) => a + b);\n\t\t})\n\t\t.filte",
@@ -368,7 +368,7 @@
               "url": "https://github.com/remotion-dev/github-unwrapped-2022/blob/1297352b814d631fbc9d6338f30cbb55c7d967fd/remotion/Main.tsx#L18"
             },
             {
-              "file": "experiments/r10-03/src/Replica.tsx",
+              "file": "https://github.com/USTChandsomeboy/video-result/blob/main/site/experiments/r10-03/src/Replica.tsx",
               "line": 8,
               "anchor": "i * 137.31",
               "fragment": "/30;const snow=Array.from({length:72},(_,i)=>({x:(i*137.31)%540,y:(i*67.87+f*(.24+(i%5)*.05))%570-15,r:2+(i%4)})); const text=(s:string,y:number,size=24,color='#080808')=><text x=\"270\" y={y} textAncho",
@@ -410,7 +410,7 @@
           "impact": "起止画面可能相似，旋入方向、背面和交接过程都不同。",
           "evidence": [
             {
-              "file": "source-catalog/round10/remotion-dev--transitions-video/src/MainSequence.tsx",
+              "file": "https://github.com/remotion-dev/transitions-video/blob/8d4b188b42976f7dbdf536c681ce2b3e5e5e1669/src/MainSequence.tsx#L56",
               "line": 56,
               "anchor": "wheelspin({anchor: 'left'})",
               "fragment": "g: 200}, durationInFrames: 6})}\n\t\t\t\tpresentation={wheelspin({anchor: 'left'})}\n\t\t\t/>\n\t\t\t<TransitionSeries.Sequence durationInFrames={25}>\n\t\t\t\t<Tile>\n\t\t\t\t\t<NaNa1 />\n\t\t\t\t</Tile>\n\t\t\t</TransitionSeries.Sequence>\n\t\t\t<Trans",
@@ -418,7 +418,7 @@
               "url": "https://github.com/remotion-dev/transitions-video/blob/8d4b188b42976f7dbdf536c681ce2b3e5e5e1669/src/MainSequence.tsx#L56"
             },
             {
-              "file": "experiments/r10-04/src/Replica.tsx",
+              "file": "https://github.com/USTChandsomeboy/video-result/blob/main/site/experiments/r10-04/src/Replica.tsx",
               "line": 5,
               "anchor": "Math.sin((t - 1.35)",
               "fragment": "l=box(s,colors[k%4],`perspective(900px) rotateY(${Math.sin((t-1.35)*Math.PI*2)*8}deg)`)}else if(t<7.35)el=grid(2,t-5);else if(t<8.35)el=box('NA',colors[Math.floor((t-7.35)*2)%2]);else if(t<10.9){el=<div style=",
@@ -437,7 +437,7 @@
           "impact": "格子内部新旧内容交替移动的过程缺失。",
           "evidence": [
             {
-              "file": "source-catalog/round10/remotion-dev--transitions-video/src/MainSequence.tsx",
+              "file": "https://github.com/remotion-dev/transitions-video/blob/8d4b188b42976f7dbdf536c681ce2b3e5e5e1669/src/MainSequence.tsx#L127",
               "line": 127,
               "anchor": "<NanaGrid",
               "fragment": ".Sequence durationInFrames={110}>\n\t\t\t\t<Tile>\n\t\t\t\t\t<NanaGrid />\n\t\t\t\t</Tile>\n\t\t\t</TransitionSeries.Sequence>\n\t\t\t<TransitionSeries.Transition\n\t\t\t\ttiming={springTiming({config: {damping: 200}, durationIn",
@@ -445,7 +445,7 @@
               "url": "https://github.com/remotion-dev/transitions-video/blob/8d4b188b42976f7dbdf536c681ce2b3e5e5e1669/src/MainSequence.tsx#L127"
             },
             {
-              "file": "experiments/r10-04/src/Replica.tsx",
+              "file": "https://github.com/USTChandsomeboy/video-result/blob/main/site/experiments/r10-04/src/Replica.tsx",
               "line": 3,
               "anchor": "Math.floor(phase",
               "fragment": "{Array.from({length:n*n},(_,i)=>{let active=n===3?Math.floor(phase*3)%(n*n)===i:true;let c=n===3?(active?colors[1]:colors[2]):colors[(Math.floor(phase*2-i*.5)+30)%3];return <div key={i} style={{background:c",
@@ -464,7 +464,7 @@
           "impact": "遮罩内外的运动关系没有恢复。",
           "evidence": [
             {
-              "file": "source-catalog/round10/remotion-dev--transitions-video/src/MainSequence.tsx",
+              "file": "https://github.com/remotion-dev/transitions-video/blob/8d4b188b42976f7dbdf536c681ce2b3e5e5e1669/src/MainSequence.tsx#L136",
               "line": 136,
               "anchor": "<TextMask",
               "fragment": "s.Sequence durationInFrames={90}>\n\t\t\t\t<Tile>\n\t\t\t\t\t<TextMask />\n\t\t\t\t</Tile>\n\t\t\t</TransitionSeries.Sequence>\n\t\t\t<TransitionSeries.Transition\n\t\t\t\ttiming={springTiming({config: {damping: 200}, durationIn",
@@ -472,7 +472,7 @@
               "url": "https://github.com/remotion-dev/transitions-video/blob/8d4b188b42976f7dbdf536c681ce2b3e5e5e1669/src/MainSequence.tsx#L136"
             },
             {
-              "file": "experiments/r10-04/src/Replica.tsx",
+              "file": "https://github.com/USTChandsomeboy/video-result/blob/main/site/experiments/r10-04/src/Replica.tsx",
               "line": 5,
               "anchor": "backgroundClip",
               "fragment": "(Math.floor(t*2)+1)%4]} 50%)`,color:'transparent',backgroundClip:'text'}}>NA</div>}\nelse if(t<12.8){let s=t<11.3?'I':t<11.9?\"DON’T\":'WORK';el=box(s,colors[Math.floor(t*2)%4],`perspective(800px) rotateY(${",
@@ -491,7 +491,7 @@
           "impact": "圆内内容翻动及两面交替不一致。",
           "evidence": [
             {
-              "file": "source-catalog/round10/remotion-dev--transitions-video/src/MainSequence.tsx",
+              "file": "https://github.com/remotion-dev/transitions-video/blob/8d4b188b42976f7dbdf536c681ce2b3e5e5e1669/src/MainSequence.tsx#L151",
               "line": 151,
               "anchor": "<Lottery flipped",
               "fragment": "nsitionSeries.Sequence durationInFrames={50}>\n\t\t\t\t<Lottery flipped={false} />\n\t\t\t</TransitionSeries.Sequence>\n\t\t\t<TransitionSeries.Transition\n\t\t\t\ttiming={springTiming({config: {damping: 200}, durationInFram",
@@ -499,7 +499,7 @@
               "url": "https://github.com/remotion-dev/transitions-video/blob/8d4b188b42976f7dbdf536c681ce2b3e5e5e1669/src/MainSequence.tsx#L151"
             },
             {
-              "file": "experiments/r10-04/src/Replica.tsx",
+              "file": "https://github.com/USTChandsomeboy/video-result/blob/main/site/experiments/r10-04/src/Replica.tsx",
               "line": 6,
               "anchor": "length: 4",
               "fragment": "ateX(${t>14.6?(t-14.6)*260:0}deg)`}}>{Array.from({length:4},(_,i)=><div key={i} style={{width:119,height:119,borderRadius:'50%',background:colors[(Math.floor(t*4)+i)%2],display:'flex',alignItems:'cen",
@@ -518,7 +518,7 @@
           "impact": "除了转场方式不同，还存在实际渲染失效。具体浏览器兼容原因未通过重新渲染隔离验证，不能只凭样式名定论。",
           "evidence": [
             {
-              "file": "source-catalog/round10/remotion-dev--transitions-video/src/TextMask.tsx",
+              "file": "https://github.com/remotion-dev/transitions-video/blob/8d4b188b42976f7dbdf536c681ce2b3e5e5e1669/src/TextMask.tsx#L37",
               "line": 37,
               "anchor": "WebkitMaskImage",
               "fragment": "0.1]);\n\n\treturn (\n\t\t<AbsoluteFill\n\t\t\tstyle={{\n\t\t\t\tWebkitMaskImage: `url(${staticFile('NaBlack.png')})`,\n\t\t\t\tWebkitMaskRepeat: 'no-repeat',\n\t\t\t\tWebkitMaskPosition: 'center',\n\t\t\t\tscale: String(scale),\n\t\t\t}}\n",
@@ -526,7 +526,7 @@
               "url": "https://github.com/remotion-dev/transitions-video/blob/8d4b188b42976f7dbdf536c681ce2b3e5e5e1669/src/TextMask.tsx#L37"
             },
             {
-              "file": "experiments/r10-04/src/Replica.tsx",
+              "file": "https://github.com/USTChandsomeboy/video-result/blob/main/site/experiments/r10-04/src/Replica.tsx",
               "line": 5,
               "anchor": "backgroundClip",
               "fragment": "(Math.floor(t*2)+1)%4]} 50%)`,color:'transparent',backgroundClip:'text'}}>NA</div>}\nelse if(t<12.8){let s=t<11.3?'I':t<11.9?\"DON’T\":'WORK';el=box(s,colors[Math.floor(t*2)%4],`perspective(800px) rotateY(${",
@@ -568,7 +568,7 @@
           "impact": "加速度不同，整个摆动轨迹偏离。",
           "evidence": [
             {
-              "file": "source-catalog/round10/znyupup--knowledge-explainer-skill/custom/DoublePendulum.jsx",
+              "file": "https://github.com/znyupup/knowledge-explainer-skill/blob/6ecae15fc8bbb589196c32ff3b726fc3e1764eac/custom/DoublePendulum.jsx#L16",
               "line": 16,
               "anchor": "2 * M1 + M2",
               "fragment": ");\n  const s12 = Math.sin(t1 - t2);\n  const den = 2 * M1 + M2 - M2 * Math.cos(2 * t1 - 2 * t2);\n\n  const a1Num =\n    -G * (2 * M1 + M2) * Math.sin(t1)\n    - M2 * G * Math.sin(t1 - 2 * t2)\n    - 2 * s12",
@@ -576,7 +576,7 @@
               "url": "https://github.com/znyupup/knowledge-explainer-skill/blob/6ecae15fc8bbb589196c32ff3b726fc3e1764eac/custom/DoublePendulum.jsx#L16"
             },
             {
-              "file": "experiments/r10-05/src/Replica.tsx",
+              "file": "https://github.com/USTChandsomeboy/video-result/blob/main/site/experiments/r10-05/src/Replica.tsx",
               "line": 5,
               "anchor": "den = 2",
               "fragment": "onst dt=1/240;for(let k=0;k<14*240;k++){let d=a-b,den=2-Math.cos(2*d);let aa=(-9.81*3*Math.sin(a)-9.81*Math.sin(a-2*b)-2*Math.sin(d)*(bv*bv+av*av*Math.cos(d)))/den;let ba=2*Math.sin(d)*(av*av*2+9.8",
@@ -595,7 +595,7 @@
           "impact": "初始姿态已经不同；即使外形一致，也不是原来的运动过程。",
           "evidence": [
             {
-              "file": "source-catalog/round10/znyupup--knowledge-explainer-skill/custom/DoublePendulum.jsx",
+              "file": "https://github.com/znyupup/knowledge-explainer-skill/blob/6ecae15fc8bbb589196c32ff3b726fc3e1764eac/custom/DoublePendulum.jsx#L62",
               "line": 62,
               "anchor": "const t1_0 = 2.0",
               "fragment": "d(duration * fps);\n\n  // 初始条件: ~115° 离垂直线, 高能起手\n  const t1_0 = 2.0;\n  const t2_0 = 1.5;\n  const eps = 0.001 * Math.PI / 180; // 0.001° in rad\n\n  const simA = useMemo(() => simulate(t1_0, t2_0, totalFrames, ",
@@ -603,7 +603,7 @@
               "url": "https://github.com/znyupup/knowledge-explainer-skill/blob/6ecae15fc8bbb589196c32ff3b726fc3e1764eac/custom/DoublePendulum.jsx#L62"
             },
             {
-              "file": "experiments/r10-05/src/Replica.tsx",
+              "file": "https://github.com/USTChandsomeboy/video-result/blob/main/site/experiments/r10-05/src/Replica.tsx",
               "line": 4,
               "anchor": "const initial",
               "fragment": "';\nconst C=(x:number)=>Math.max(0,Math.min(1,x));\nconst initial=115*Math.PI/180;\nfunction simulate(off:number){let a=initial+off,b=initial+off,av=0,bv=0;let out:any[]=[];const dt=1/240;for(let k=0;k<14*2",
@@ -622,7 +622,7 @@
           "impact": "不仅数字不同，读数代表的含义也变了。",
           "evidence": [
             {
-              "file": "source-catalog/round10/znyupup--knowledge-explainer-skill/custom/DoublePendulum.jsx",
+              "file": "https://github.com/znyupup/knowledge-explainer-skill/blob/6ecae15fc8bbb589196c32ff3b726fc3e1764eac/custom/DoublePendulum.jsx#L90",
               "line": 90,
               "anchor": "const dθ =",
               "fragment": "splay: angular distance between the two systems\n  const dθ = Math.abs(simA[cf][0] - simB[cf][0]) + Math.abs(simA[cf][2] - simB[cf][2]);\n  const dθDeg = (dθ * 180 / Math.PI).toFixed(2);\n\n  // Animation",
@@ -630,7 +630,7 @@
               "url": "https://github.com/znyupup/knowledge-explainer-skill/blob/6ecae15fc8bbb589196c32ff3b726fc3e1764eac/custom/DoublePendulum.jsx#L90"
             },
             {
-              "file": "experiments/r10-05/src/Replica.tsx",
+              "file": "https://github.com/USTChandsomeboy/video-result/blob/main/site/experiments/r10-05/src/Replica.tsx",
               "line": 7,
               "anchor": "Math.sqrt",
               "fragment": "e=\"17\" fontFamily=\"monospace\" fontWeight=\"bold\">{(Math.sqrt((p.xx-r.xx)**2+(p.yy-r.yy)**2)/3).toFixed(2)}°</text><text x=\"616\" y=\"345\" textAnchor=\"end\" fontSize=\"6\" fill=\"#6d697b\" fontFamily=\"monospa",
@@ -649,7 +649,7 @@
           "impact": "画面残留更长、轨迹更密，遮盖当前运动。",
           "evidence": [
             {
-              "file": "source-catalog/round10/znyupup--knowledge-explainer-skill/custom/DoublePendulum.jsx",
+              "file": "https://github.com/znyupup/knowledge-explainer-skill/blob/6ecae15fc8bbb589196c32ff3b726fc3e1764eac/custom/DoublePendulum.jsx#L78",
               "line": 78,
               "anchor": "const trailLen = 90",
               "fragment": "\n\n  // Trail (last 90 frames of bob 2 position)\n  const trailLen = 90;\n  const start = Math.max(0, cf - trailLen);\n  const trailA = [];\n  const trailB = [];\n  for (let f = start; f <= cf; f++) {\n    trailA.pus",
@@ -657,7 +657,7 @@
               "url": "https://github.com/znyupup/knowledge-explainer-skill/blob/6ecae15fc8bbb589196c32ff3b726fc3e1764eac/custom/DoublePendulum.jsx#L78"
             },
             {
-              "file": "experiments/r10-05/src/Replica.tsx",
+              "file": "https://github.com/USTChandsomeboy/video-result/blob/main/site/experiments/r10-05/src/Replica.tsx",
               "line": 7,
               "anchor": "q-145",
               "fragment": "[q];const trail=(arr:any[])=>arr.slice(Math.max(0,q-145),q+1).map((v,i)=>`${i?'L':'M'}${v.xx.toFixed(2)},${v.yy.toFixed(2)}`).join(' ');return <AbsoluteFill style={{background:'radial-gradient(el",
@@ -699,7 +699,7 @@
           "impact": "矩阵像一张结果图，缺少求解和选中对象的演示。",
           "evidence": [
             {
-              "file": "source-catalog/round10/ucsandman--marketing-studio/studio/src/films/postflop/shots/Shot04Workbench.tsx",
+              "file": "https://github.com/ucsandman/marketing-studio/blob/66cd1c30919f1144c60aed3692a915bb0b2c6238/studio/src/films/postflop/shots/Shot04Workbench.tsx#L74",
               "line": 74,
               "anchor": "CURSOR_PATH",
               "fragment": " It walks in from the bottom-right instead.\nconst CURSOR_PATH: CursorWaypoint[] = [\n  {x: 2010, y: 1140, at: 0},\n  {x: 1560, y: 880, at: 92},\n  {x: 1330, y: 700, at: 102},\n  {x: CELL_X, y: CELL_Y, at: ",
@@ -707,7 +707,7 @@
               "url": "https://github.com/ucsandman/marketing-studio/blob/66cd1c30919f1144c60aed3692a915bb0b2c6238/studio/src/films/postflop/shots/Shot04Workbench.tsx#L74"
             },
             {
-              "file": "experiments/r10-06/src/Replica.tsx",
+              "file": "https://github.com/USTChandsomeboy/video-result/blob/main/site/experiments/r10-06/src/Replica.tsx",
               "line": 3,
               "anchor": "const Matrix",
               "fragment": "'K','Q','J','T','9','8','7','6','5','4','3','2'];\nconst Matrix=({small=false}:{small?:boolean})=><div style={{display:'grid',gridTemplateColumns:'repeat(13,1fr)',gap:2,padding:8,background:'#222',width:",
@@ -726,7 +726,7 @@
           "impact": "大数、表格和曲线不处于同一进度，前两档读数也不同。",
           "evidence": [
             {
-              "file": "source-catalog/round10/ucsandman--marketing-studio/studio/src/films/postflop/shots/Shot05Convergence.tsx",
+              "file": "https://github.com/ucsandman/marketing-studio/blob/66cd1c30919f1144c60aed3692a915bb0b2c6238/studio/src/films/postflop/shots/Shot05Convergence.tsx#L33",
               "line": 33,
               "anchor": "const HI = 0.3124",
               "fragment": "50', bb: '0.002589', pot: '0.0471'},\n] as const;\n\nconst HI = 0.3124;\nconst LO = 0.0471;\n\n// Log-linear between measured points: exploitability decays multiplicatively, so a\n// straight interpolation in log s",
@@ -734,7 +734,7 @@
               "url": "https://github.com/ucsandman/marketing-studio/blob/66cd1c30919f1144c60aed3692a915bb0b2c6238/studio/src/films/postflop/shots/Shot05Convergence.tsx#L33"
             },
             {
-              "file": "experiments/r10-06/src/Replica.tsx",
+              "file": "https://github.com/USTChandsomeboy/video-result/blob/main/site/experiments/r10-06/src/Replica.tsx",
               "line": 4,
               "anchor": "'0.2871%'",
               "fragment": "=13?'black':'white',fontSize:25,padding:5}}>{t<12?'0.2871%':t<13?'0.1802%':'0.0471%'}</b></div><div><div style={{height:23,background:yellow,fontSize:10,padding:5}}>OOP STRATEGY 363 combos · node 0 ·",
@@ -753,7 +753,7 @@
           "impact": "动作和结果之间缺少可见因果。",
           "evidence": [
             {
-              "file": "source-catalog/round10/ucsandman--marketing-studio/studio/src/films/postflop/shots/Shot03Composer.tsx",
+              "file": "https://github.com/ucsandman/marketing-studio/blob/66cd1c30919f1144c60aed3692a915bb0b2c6238/studio/src/films/postflop/shots/Shot03Composer.tsx#L175",
               "line": 175,
               "anchor": "const cursor =",
               "fragment": "10,\n    easing: Easing.out(Easing.cubic),\n  });\n  const cursor = bowedPosition(frame, CURSOR_PATH);\n\n  return (\n    <AbsoluteFill style={{backgroundColor: brand.colors.bg}}>\n      <AbsoluteFill\n        st",
@@ -761,7 +761,7 @@
               "url": "https://github.com/ucsandman/marketing-studio/blob/66cd1c30919f1144c60aed3692a915bb0b2c6238/studio/src/films/postflop/shots/Shot03Composer.tsx#L175"
             },
             {
-              "file": "experiments/r10-06/src/Replica.tsx",
+              "file": "https://github.com/USTChandsomeboy/video-result/blob/main/site/experiments/r10-06/src/Replica.tsx",
               "line": 5,
               "anchor": "t>8.7",
               "fragment": "<b style={{display:'block',marginTop:3,background:t>8.7?yellow:'#111',color:t>8.7?'black':'white',padding:'12px 40px',fontSize:19,letterSpacing:2}}>{t>8.7?'SOLVING':'SOLVE'}</b></div></>}</div>;\n",
@@ -780,7 +780,7 @@
           "impact": "产品核心卖点的最后一次强调消失。",
           "evidence": [
             {
-              "file": "source-catalog/round10/ucsandman--marketing-studio/studio/src/films/postflop/shots/Shot08End.tsx",
+              "file": "https://github.com/ucsandman/marketing-studio/blob/66cd1c30919f1144c60aed3692a915bb0b2c6238/studio/src/films/postflop/shots/Shot08End.tsx#L9",
               "line": 9,
               "anchor": "MEASURED",
               "fragment": "i';\n\n// Shot 8 \"end\" (102 frames). Kinetic type — MEASURED. / NEVER / ASSERTED., one\n// word per 6 frames, each replacing the last — then the end lockup assembles:\n// spade + wordmark, a rule, the y",
@@ -788,7 +788,7 @@
               "url": "https://github.com/ucsandman/marketing-studio/blob/66cd1c30919f1144c60aed3692a915bb0b2c6238/studio/src/films/postflop/shots/Shot08End.tsx#L9"
             },
             {
-              "file": "experiments/r10-06/src/Replica.tsx",
+              "file": "https://github.com/USTChandsomeboy/video-result/blob/main/site/experiments/r10-06/src/Replica.tsx",
               "line": 6,
               "anchor": "Solve your first",
               "fragment": "b style={{background:yellow,padding:'15px 12px'}}>Solve your first spot in the browser.</b><p style={{fontSize:18,marginTop:30}}>postflop.vercel.app</p><hr/></div></div>}</AbsoluteFill>};\n",
@@ -807,7 +807,7 @@
           "impact": "内容变化时间与进入退出方式均不同。",
           "evidence": [
             {
-              "file": "source-catalog/round10/ucsandman--marketing-studio/studio/src/films/postflop/timeline.ts",
+              "file": "https://github.com/ucsandman/marketing-studio/blob/66cd1c30919f1144c60aed3692a915bb0b2c6238/studio/src/films/postflop/timeline.ts#L11",
               "line": 11,
               "anchor": "OVERLAP = 8",
               "fragment": " incoming shot owns the handover. */\nexport const OVERLAP = 8;\n\n/** Composition length in frames (28.0s @ 30fps). */\nexport const TOTAL = 840;\n\nexport const SHOTS: Shot[] = [\n  {id: 'claim', from: 0, l",
@@ -815,7 +815,7 @@
               "url": "https://github.com/ucsandman/marketing-studio/blob/66cd1c30919f1144c60aed3692a915bb0b2c6238/studio/src/films/postflop/timeline.ts#L11"
             },
             {
-              "file": "experiments/r10-06/src/Replica.tsx",
+              "file": "https://github.com/USTChandsomeboy/video-result/blob/main/site/experiments/r10-06/src/Replica.tsx",
               "line": 6,
               "anchor": "t<3",
               "fragment": "0',alignItems:'center',justifyContent:'center'}}>{t<3?<div style={{width:625,fontSize:66,lineHeight:1.03,fontWeight:750,letterSpacing:-3}}>Your solver is grading<br/>{t>.5?'its own homework.':'",
@@ -834,7 +834,7 @@
           "impact": "第 414 帧可见大片格子颜色分布不同，说明不仅少了动画，最终状态也画错了。",
           "evidence": [
             {
-              "file": "source-catalog/round10/ucsandman--marketing-studio/studio/src/films/postflop/ui/RangeGrid.tsx",
+              "file": "https://github.com/ucsandman/marketing-studio/blob/66cd1c30919f1144c60aed3692a915bb0b2c6238/studio/src/films/postflop/ui/RangeGrid.tsx#L43",
               "line": 43,
               "anchor": "STATE_OF[MAP[row][col]]",
               "fragment": "tate = (row: number, col: number): CellState =>\n  STATE_OF[MAP[row][col]] ?? 'empty';\n\n/** Empty-cell ground; the panel behind the grid is darker still. */\nexport const GRID_EMPTY = '#1a1a1a';\nconst GRID_EMPTY_INK",
@@ -842,7 +842,7 @@
               "url": "https://github.com/ucsandman/marketing-studio/blob/66cd1c30919f1144c60aed3692a915bb0b2c6238/studio/src/films/postflop/ui/RangeGrid.tsx#L43"
             },
             {
-              "file": "experiments/r10-06/src/Replica.tsx",
+              "file": "https://github.com/USTChandsomeboy/video-result/blob/main/site/experiments/r10-06/src/Replica.tsx",
               "line": 3,
               "anchor": "r < 5",
               "fragment": ",i)=>{const r=Math.floor(i/13),c=i%13;const green=r<5&&c<13-r/2||r<7&&c<2||c>r&&c<r+3;return <div key={i} style={{background:i===17||i===27||i===53||i===168?'#bd2932':r===c&&r>4?'#edeee6':green?'",
@@ -884,7 +884,7 @@
           "impact": "缺失品牌、读数和排名会一起受到影响；下方附 CSV 核对结果。",
           "evidence": [
             {
-              "file": "source-catalog/round10/hylarucoder--remotion-bar-race-chart/remotion/charts/BarRace.tsx",
+              "file": "https://github.com/hylarucoder/remotion-bar-race-chart/blob/d9483a9fd57f763c312cd2f6cdbf7a7a71e7152f/remotion/charts/BarRace.tsx#L253",
               "line": 253,
               "anchor": "category-brands.csv",
               "fragment": "\n            const res = await fetch(staticFile(`/category-brands.csv`))\n            const text = await res.text()\n            const data = d3.csvParse(text, d3.autoType)\n            const colorByName = comput",
@@ -892,7 +892,7 @@
               "url": "https://github.com/hylarucoder/remotion-bar-race-chart/blob/d9483a9fd57f763c312cd2f6cdbf7a7a71e7152f/remotion/charts/BarRace.tsx#L253"
             },
             {
-              "file": "experiments/r10-07/src/Replica.tsx",
+              "file": "https://github.com/USTChandsomeboy/video-result/blob/main/site/experiments/r10-07/src/Replica.tsx",
               "line": 4,
               "anchor": "const rows",
               "fragment": "ec9e9f','#f6e295','#ec9e9f','#fdc6ce','#f8bf82'];\nconst rows=[\n[72537,70196,53183,39048,38528,38127,36368,33553,27859,25548,22110,21104,18000,13000,100,5000,4000,1000,0],\n[68945,65068,52752,34665,3503",
@@ -911,7 +911,7 @@
           "impact": "换位的开始、速度和结束不一致。原片的时间实现也有不连贯风险，不能视为理想标准。",
           "evidence": [
             {
-              "file": "source-catalog/round10/hylarucoder--remotion-bar-race-chart/remotion/charts/BarRace.tsx",
+              "file": "https://github.com/hylarucoder/remotion-bar-race-chart/blob/d9483a9fd57f763c312cd2f6cdbf7a7a71e7152f/remotion/charts/BarRace.tsx#L30",
               "line": 30,
               "anchor": "frame / fps * 10",
               "fragment": "ig()\n    const curKeyframe = keyframes[Math.floor(frame / fps * 10)] || keyframes[keyframes.length - 1]\n    const nextKeyframe = keyframes[Math.floor(frame / fps * 10) + 1] || keyframes[keyframes.length - 1",
@@ -919,7 +919,7 @@
               "url": "https://github.com/hylarucoder/remotion-bar-race-chart/blob/d9483a9fd57f763c312cd2f6cdbf7a7a71e7152f/remotion/charts/BarRace.tsx#L30"
             },
             {
-              "file": "experiments/r10-07/src/Replica.tsx",
+              "file": "https://github.com/USTChandsomeboy/video-result/blob/main/site/experiments/r10-07/src/Replica.tsx",
               "line": 26,
               "anchor": "k = k * k",
               "fragment": "et a=Math.floor(time),b=Math.min(19,a+1),k=time-a;k=k*k*(3-2*k);let vals=rows[a].map((v,i)=>v+(rows[b][i]-v)*k),max=Math.max(...vals);let tick=max>150000?50000:max>100000?50000:20000;return <Absolute",
@@ -938,7 +938,7 @@
           "impact": "缩放到某些年份时刻度数量、位置和数值不一样。",
           "evidence": [
             {
-              "file": "source-catalog/round10/hylarucoder--remotion-bar-race-chart/remotion/charts/BarRace.tsx",
+              "file": "https://github.com/hylarucoder/remotion-bar-race-chart/blob/d9483a9fd57f763c312cd2f6cdbf7a7a71e7152f/remotion/charts/BarRace.tsx#L72",
               "line": 72,
               "anchor": "scale.ticks(tickCount)",
               "fragment": " tickCount = maxWidth / 300\n        const ticks = scale.ticks(tickCount)\n        return ticks.map(t => ({\n            value: t,\n            position: scale(t),\n        }))\n    }\n\n    const xScale = d3.scaleLinear",
@@ -946,7 +946,7 @@
               "url": "https://github.com/hylarucoder/remotion-bar-race-chart/blob/d9483a9fd57f763c312cd2f6cdbf7a7a71e7152f/remotion/charts/BarRace.tsx#L72"
             },
             {
-              "file": "experiments/r10-07/src/Replica.tsx",
+              "file": "https://github.com/USTChandsomeboy/video-result/blob/main/site/experiments/r10-07/src/Replica.tsx",
               "line": 26,
               "anchor": "let tick",
               "fragment": "((v,i)=>v+(rows[b][i]-v)*k),max=Math.max(...vals);let tick=max>150000?50000:max>100000?50000:20000;return <AbsoluteFill style={{background:'white'}}><svg viewBox=\"0 0 960 540\" style={{fontFamily:'Ar",
@@ -965,7 +965,7 @@
           "impact": "这里确有复刻差异，但不能归结为 agent 数学能力不足；原片应先修订或标注。",
           "evidence": [
             {
-              "file": "source-catalog/round10/hylarucoder--remotion-bar-race-chart/remotion/charts/BarRace.tsx",
+              "file": "https://github.com/hylarucoder/remotion-bar-race-chart/blob/d9483a9fd57f763c312cd2f6cdbf7a7a71e7152f/remotion/charts/BarRace.tsx#L96",
               "line": 96,
               "anchor": "prevItem.value - nextItem.value",
               "fragment": "       const value = Math.floor(prevItem.value + (prevItem.value - nextItem.value) * progress)\n        const prevY = 21 + 48 * prevItem.rank\n        const nextY = 21 + 48 * nextItem.rank\n        const curY = prevY + (next",
@@ -973,7 +973,7 @@
               "url": "https://github.com/hylarucoder/remotion-bar-race-chart/blob/d9483a9fd57f763c312cd2f6cdbf7a7a71e7152f/remotion/charts/BarRace.tsx#L96"
             },
             {
-              "file": "experiments/r10-07/src/Replica.tsx",
+              "file": "https://github.com/USTChandsomeboy/video-result/blob/main/site/experiments/r10-07/src/Replica.tsx",
               "line": 26,
               "anchor": "rows[b][i] - v",
               "fragment": "me-a;k=k*k*(3-2*k);let vals=rows[a].map((v,i)=>v+(rows[b][i]-v)*k),max=Math.max(...vals);let tick=max>150000?50000:max>100000?50000:20000;return <AbsoluteFill style={{background:'white'}}><svg viewBox=\"0 ",
@@ -1015,7 +1015,7 @@
           "impact": "总数可以相同，但具体哪张卡变色不同，丢失对象对应关系。",
           "evidence": [
             {
-              "file": "source-catalog/round10/znyupup--knowledge-explainer-skill/custom/AlgorithmBubble.jsx",
+              "file": "https://github.com/znyupup/knowledge-explainer-skill/blob/6ecae15fc8bbb589196c32ff3b726fc3e1764eac/custom/AlgorithmBubble.jsx#L72",
               "line": 72,
               "anchor": "pickOrder",
               "fragment": "     }\n      // 用确定性\"洗牌\"挑前 addCount 张\n      const pickOrder = [11, 5, 17, 23, 2, 14, 8, 20, 0, 6, 12, 18, 4, 10, 16, 22, 1, 7, 13, 19, 3, 9, 15, 21];\n      const toReplace = indices\n        .slice()\n",
@@ -1023,7 +1023,7 @@
               "url": "https://github.com/znyupup/knowledge-explainer-skill/blob/6ecae15fc8bbb589196c32ff3b726fc3e1764eac/custom/AlgorithmBubble.jsx#L72"
             },
             {
-              "file": "experiments/r10-08/src/Replica.tsx",
+              "file": "https://github.com/USTChandsomeboy/video-result/blob/main/site/experiments/r10-08/src/Replica.tsx",
               "line": 3,
               "anchor": "others.slice",
               "fragment": ")=>v!==1?i:-1).filter(x=>x>=0);const swap=new Set(others.slice(0,num-4));const intro=t<3.2,end=t>=21.5;return <AbsoluteFill style={{background:'radial-gradient(ellipse at center,#161626 0%,#090912 78%)'",
@@ -1042,7 +1042,7 @@
           "impact": "后几波累计提前约 1 秒，并非一次整体平移能修正。",
           "evidence": [
             {
-              "file": "source-catalog/round10/znyupup--knowledge-explainer-skill/custom/AlgorithmBubble.jsx",
+              "file": "https://github.com/znyupup/knowledge-explainer-skill/blob/6ecae15fc8bbb589196c32ff3b726fc3e1764eac/custom/AlgorithmBubble.jsx#L55",
               "line": 55,
               "anchor": "atFrame: 160",
               "fragment": "= [\n    {atFrame: 90, addCount: 4},   // → 8\n    {atFrame: 160, addCount: 4},  // → 12\n    {atFrame: 230, addCount: 6},  // → 18\n    {atFrame: 300, addCount: 4},  // → 22\n    {atFrame: 360, addCount: 2}",
@@ -1050,7 +1050,7 @@
               "url": "https://github.com/znyupup/knowledge-explainer-skill/blob/6ecae15fc8bbb589196c32ff3b726fc3e1764eac/custom/AlgorithmBubble.jsx#L55"
             },
             {
-              "file": "experiments/r10-08/src/Replica.tsx",
+              "file": "https://github.com/USTChandsomeboy/video-result/blob/main/site/experiments/r10-08/src/Replica.tsx",
               "line": 3,
               "anchor": "t<9",
               "fragment": "urrentFrame()/30;const locked=t>=16;let num=t<7?4:t<9?8:t<11?12:t<13?18:t<15?22:24;const others=data.map((v,i)=>v!==1?i:-1).filter(x=>x>=0);const swap=new Set(others.slice(0,num-4));const intro",
@@ -1069,7 +1069,7 @@
           "impact": "开场少 0.8 秒；复刻提前离开主画面。",
           "evidence": [
             {
-              "file": "source-catalog/round10/znyupup--knowledge-explainer-skill/src/algorithm_bubble.jsx",
+              "file": "https://github.com/znyupup/knowledge-explainer-skill/blob/6ecae15fc8bbb589196c32ff3b726fc3e1764eac/src/algorithm_bubble.jsx#L10",
               "line": 10,
               "anchor": "durationInFrames={120}",
               "fragment": "background: '#0a0a0f'}}>\n      <Sequence from={0} durationInFrames={120}>\n        <Title\n          {...{\n            \"title\": \"信息茧房怎么炼成的\",\n            \"subtitle\": \"你点的每一下,都在喂算法\"\n          }}\n        />\n      </Se",
@@ -1077,7 +1077,7 @@
               "url": "https://github.com/znyupup/knowledge-explainer-skill/blob/6ecae15fc8bbb589196c32ff3b726fc3e1764eac/src/algorithm_bubble.jsx#L10"
             },
             {
-              "file": "experiments/r10-08/src/Replica.tsx",
+              "file": "https://github.com/USTChandsomeboy/video-result/blob/main/site/experiments/r10-08/src/Replica.tsx",
               "line": 3,
               "anchor": "t<3.2",
               "fragment": "t swap=new Set(others.slice(0,num-4));const intro=t<3.2,end=t>=21.5;return <AbsoluteFill style={{background:'radial-gradient(ellipse at center,#161626 0%,#090912 78%)',fontFamily:'Arial,\"PingFang",
@@ -1096,7 +1096,7 @@
           "impact": "点在哪、何时点、点后如何反馈都不同。原片点赞对象与“只点赞科技”文案也有矛盾，另列参考问题。",
           "evidence": [
             {
-              "file": "source-catalog/round10/znyupup--knowledge-explainer-skill/custom/AlgorithmBubble.jsx",
+              "file": "https://github.com/znyupup/knowledge-explainer-skill/blob/6ecae15fc8bbb589196c32ff3b726fc3e1764eac/custom/AlgorithmBubble.jsx#L131",
               "line": 131,
               "anchor": "const likeEvents",
               "fragment": "lamp());\n\n  // 点赞动画 (frames 30-90, 4 次点赞,每次15帧)\n  const likeEvents = [\n    {frame: 30, idx: 3},\n    {frame: 45, idx: 14},\n    {frame: 60, idx: 21},\n    {frame: 75, idx: 9},\n  ];\n\n  // 茧房标语\n  const bubbleOp ",
@@ -1104,7 +1104,7 @@
               "url": "https://github.com/znyupup/knowledge-explainer-skill/blob/6ecae15fc8bbb589196c32ff3b726fc3e1764eac/custom/AlgorithmBubble.jsx#L131"
             },
             {
-              "file": "experiments/r10-08/src/Replica.tsx",
+              "file": "https://github.com/USTChandsomeboy/video-result/blob/main/site/experiments/r10-08/src/Replica.tsx",
               "line": 3,
               "anchor": "Math.floor((t-4.5)",
               "fragment": "1:orig;const c=colors[id];const heart=t>4.5&&t<7&&Math.floor((t-4.5)*3)%24===i;return <div key={i} style={{position:'relative',border:`1px solid ${c}`,borderRadius:7,background:`linear-gradient(130deg,${c}23,",
@@ -1146,7 +1146,7 @@
           "impact": "总数 12 保留了，三类占比的信息没保留。",
           "evidence": [
             {
-              "file": "source-catalog/round10/AleBrito124356--morph-promo/src/scenes-app.tsx",
+              "file": "https://github.com/AleBrito124356/morph-promo/blob/3e284ded02002892d3eb0198998cee33861365bc/src/scenes-app.tsx#L43",
               "line": 43,
               "anchor": "value: 8",
               "fragment": "terTop=\"12\" centerSub={d.donutTotal} segments={[{ value: 8, color: COLORS.success, label: d.legend[0] }, { value: 3, color: COLORS.cyan, label: d.legend[1] }, { value: 1, color: COLORS.warning, labe",
@@ -1154,7 +1154,7 @@
               "url": "https://github.com/AleBrito124356/morph-promo/blob/3e284ded02002892d3eb0198998cee33861365bc/src/scenes-app.tsx#L43"
             },
             {
-              "file": "experiments/r10-09/src/Replica.tsx",
+              "file": "https://github.com/USTChandsomeboy/video-result/blob/main/site/experiments/r10-09/src/Replica.tsx",
               "line": 5,
               "anchor": "num === 12",
               "fragment": "troke={color} strokeWidth=\"9\" strokeDasharray={`${num===12?254:num*2.82} 283`} transform=\"rotate(-90 55 55)\" strokeLinecap=\"round\"/></svg><div style={{position:'absolute',top:30,left:0,width:'100%',te",
@@ -1173,7 +1173,7 @@
           "impact": "选中步骤与内容出现的对应关系不一致。",
           "evidence": [
             {
-              "file": "source-catalog/round10/AleBrito124356--morph-promo/src/scenes-app.tsx",
+              "file": "https://github.com/AleBrito124356/morph-promo/blob/3e284ded02002892d3eb0198998cee33861365bc/src/scenes-app.tsx#L76",
               "line": 76,
               "anchor": "Math.floor(frame / 40)",
               "fragment": "w = COPY[lang].wizard;\n  const step = Math.min(3, Math.floor(frame / 40));\n\n  const Field = ({ label, value, delay, mono = false }: { label: string; value: string; delay: number; mono?: boolean }) => (\n    <div s",
@@ -1181,7 +1181,7 @@
               "url": "https://github.com/AleBrito124356/morph-promo/blob/3e284ded02002892d3eb0198998cee33861365bc/src/scenes-app.tsx#L76"
             },
             {
-              "file": "experiments/r10-09/src/Replica.tsx",
+              "file": "https://github.com/USTChandsomeboy/video-result/blob/main/site/experiments/r10-09/src/Replica.tsx",
               "line": 7,
               "anchor": "14.4 + i * .65",
               "fragment": "ight:28,padding:7,fontSize:11,fontWeight:700}}>{t>14.4+i*.65?['MySQL 5.7','PostgreSQL 16','210 GB · 40 tables','Minimal'][i]:''}</div></div>)}</div>{t>17.5&&<Route/>}</div></>:t<24?<><Heading label=\"AI AN",
@@ -1200,7 +1200,7 @@
           "impact": "遗漏数据增长的过程。",
           "evidence": [
             {
-              "file": "source-catalog/round10/AleBrito124356--morph-promo/src/scenes-app.tsx",
+              "file": "https://github.com/AleBrito124356/morph-promo/blob/3e284ded02002892d3eb0198998cee33861365bc/src/scenes-app.tsx#L30",
               "line": 30,
               "anchor": "[0, 28940]",
               "fragment": "t spent = Math.round(interpolate(frame, [10, 48], [0, 28940], { extrapolateLeft: \"clamp\", extrapolateRight: \"clamp\" }));\n  return (\n    <AbsoluteFill style={{ justifyContent: \"center\", alignItems: \"ce",
@@ -1208,7 +1208,7 @@
               "url": "https://github.com/AleBrito124356/morph-promo/blob/3e284ded02002892d3eb0198998cee33861365bc/src/scenes-app.tsx#L30"
             },
             {
-              "file": "experiments/r10-09/src/Replica.tsx",
+              "file": "https://github.com/USTChandsomeboy/video-result/blob/main/site/experiments/r10-09/src/Replica.tsx",
               "line": 7,
               "anchor": "'$28,940'",
               "fragment": ">{s}</div><b style={{fontSize:23}}>{['12','3','8','$28,940'][i]}</b><div style={{fontSize:9,fontWeight:700,color:i===1?'#21b8c7':i===2?'#16a572':blue,marginTop:3}}>{['+3 this month','analyzing + gene",
@@ -1227,7 +1227,7 @@
           "impact": "复杂度经过 12 的那一帧会闪成错误的弧长和标签。",
           "evidence": [
             {
-              "file": "source-catalog/round10/AleBrito124356--morph-promo/src/scenes-app.tsx",
+              "file": "https://github.com/AleBrito124356/morph-promo/blob/3e284ded02002892d3eb0198998cee33861365bc/src/scenes-app.tsx#L121",
               "line": 121,
               "anchor": "[0, 62]",
               "fragment": "t score = Math.round(interpolate(frame, [14, 52], [0, 62], { extrapolateLeft: \"clamp\", extrapolateRight: \"clamp\" }));\n  return (\n    <AbsoluteFill style={{ justifyContent: \"center\", alignItems: \"ce",
@@ -1235,7 +1235,7 @@
               "url": "https://github.com/AleBrito124356/morph-promo/blob/3e284ded02002892d3eb0198998cee33861365bc/src/scenes-app.tsx#L121"
             },
             {
-              "file": "experiments/r10-09/src/Replica.tsx",
+              "file": "https://github.com/USTChandsomeboy/video-result/blob/main/site/experiments/r10-09/src/Replica.tsx",
               "line": 5,
               "anchor": "num === 12 ? 254",
               "fragment": "troke={color} strokeWidth=\"9\" strokeDasharray={`${num===12?254:num*2.82} 283`} transform=\"rotate(-90 55 55)\" strokeLinecap=\"round\"/></svg><div style={{position:'absolute',top:30,left:0,width:'100%',textAlig",
@@ -1254,7 +1254,7 @@
           "impact": "切换中间帧缺失，标题和面板也少了进入退出的配合。",
           "evidence": [
             {
-              "file": "source-catalog/round10/AleBrito124356--morph-promo/src/MorphPromo.tsx",
+              "file": "https://github.com/AleBrito124356/morph-promo/blob/3e284ded02002892d3eb0198998cee33861365bc/src/MorphPromo.tsx#L14",
               "line": 14,
               "anchor": "const T = 16",
               "fragment": " const WIDTH = 1920;\nexport const HEIGHT = 1080;\n\nconst T = 16; // transition length (frames)\nconst D = { intro: 84, hook: 90, flow: 144, dashboard: 162, wizard: 174, analysis: 162, demo: 138, artifacts",
@@ -1262,7 +1262,7 @@
               "url": "https://github.com/AleBrito124356/morph-promo/blob/3e284ded02002892d3eb0198998cee33861365bc/src/MorphPromo.tsx#L14"
             },
             {
-              "file": "experiments/r10-09/src/Replica.tsx",
+              "file": "https://github.com/USTChandsomeboy/video-result/blob/main/site/experiments/r10-09/src/Replica.tsx",
               "line": 7,
               "anchor": "t < 9.7",
               "fragment": "/span> — and an AI does<br/>the work.</div></div>:t<9.7?<><Heading label=\"HOW IT WORKS\" title=\"From a description to execution-ready.\"/><div style={{display:'flex',gap:13,width:828}}>{['Describe yo",
@@ -1304,7 +1304,7 @@
           "impact": "人物身份、产品包装和广告创意外观不同。仅视频输入未提供原素材，需把素材恢复难度单列。",
           "evidence": [
             {
-              "file": "source-catalog/round10/naveen-annam--creativly.ai-higgsfield-video-remotion/src/scenes/Scene02_Seg001.tsx",
+              "file": "https://github.com/naveen-annam/creativly.ai-higgsfield-video-remotion/blob/409a4893c5b597ae456eb54f31994e5e9fe32d98/src/scenes/Scene02_Seg001.tsx#L368",
               "line": 368,
               "anchor": "<Img",
               "fragment": "ms: \"center\", justifyContent: \"center\"}}>\n        <Img src={src} style={{width: 170, height: 170, objectFit: \"contain\"}} />\n      </div>\n    );\n  } catch {\n    return <PouchSvg />;\n  }\n};\n\n// --",
@@ -1312,7 +1312,7 @@
               "url": "https://github.com/naveen-annam/creativly.ai-higgsfield-video-remotion/blob/409a4893c5b597ae456eb54f31994e5e9fe32d98/src/scenes/Scene02_Seg001.tsx#L368"
             },
             {
-              "file": "experiments/r10-10/src/Replica.tsx",
+              "file": "https://github.com/USTChandsomeboy/video-result/blob/main/site/experiments/r10-10/src/Replica.tsx",
               "line": 3,
               "anchor": "function Art",
               "fragment": "verticalAlign:'middle',marginRight:12}}>✺</span>;\nfunction Art({i=0}:{i:number}){let c=['#dad9d1','#889b64','#edece3','#5f7150','#aba89a','#d2b7a2','#eed5cc','#94bfd0'][i%8];return <svg viewBox=\"0 0 160",
@@ -1331,7 +1331,7 @@
           "impact": "操作触发分析的过程不完整。",
           "evidence": [
             {
-              "file": "source-catalog/round10/naveen-annam--creativly.ai-higgsfield-video-remotion/src/scenes/Scene02_Seg001.tsx",
+              "file": "https://github.com/naveen-annam/creativly.ai-higgsfield-video-remotion/blob/409a4893c5b597ae456eb54f31994e5e9fe32d98/src/scenes/Scene02_Seg001.tsx#L8",
               "line": 8,
               "anchor": "cursor",
               "fragment": "+ orange send button.\n//                     Hand cursor lands on the send button, clicks (sparkle),\n//                     composer zooms in toward the send button and fades to white.\n//\n//  Phas",
@@ -1339,7 +1339,7 @@
               "url": "https://github.com/naveen-annam/creativly.ai-higgsfield-video-remotion/blob/409a4893c5b597ae456eb54f31994e5e9fe32d98/src/scenes/Scene02_Seg001.tsx#L8"
             },
             {
-              "file": "experiments/r10-10/src/Replica.tsx",
+              "file": "https://github.com/USTChandsomeboy/video-result/blob/main/site/experiments/r10-10/src/Replica.tsx",
               "line": 8,
               "anchor": "zoom={1 +",
               "fragment": "lice(0,Math.floor(C((t-3.5)/2.1)*prompt.length))} zoom={1+C((t-6)/1.5)*1.8}/>:t<13?<div style={{position:'absolute',left:120,top:100-Math.max(0,t-9.7)*145,width:760}}><div style={{fontSize:53,whiteSp",
@@ -1358,7 +1358,7 @@
           "impact": "丢失链接内容和逐词高亮。",
           "evidence": [
             {
-              "file": "source-catalog/round10/naveen-annam--creativly.ai-higgsfield-video-remotion/src/scenes/Scene02_Seg001.tsx",
+              "file": "https://github.com/naveen-annam/creativly.ai-higgsfield-video-remotion/blob/409a4893c5b597ae456eb54f31994e5e9fe32d98/src/scenes/Scene02_Seg001.tsx#L74",
               "line": 74,
               "anchor": "facebook.com/ads/library",
               "fragment": "rary through Cowork\",                       url: \"facebook.com/ads/library\",                                start: FIRST_BULLET + BULLET_STEP * 0},\n  {icon: \"search\",      highlight: \"Identifying\",  rest: \" top com",
@@ -1366,7 +1366,7 @@
               "url": "https://github.com/naveen-annam/creativly.ai-higgsfield-video-remotion/blob/409a4893c5b597ae456eb54f31994e5e9fe32d98/src/scenes/Scene02_Seg001.tsx#L74"
             },
             {
-              "file": "experiments/r10-10/src/Replica.tsx",
+              "file": "https://github.com/USTChandsomeboy/video-result/blob/main/site/experiments/r10-10/src/Replica.tsx",
               "line": 8,
               "anchor": "width: 150 +",
               "fragment": "'◫','»','☼'][i%5]}</span>{s}<div style={{height:3,width:150+i%3*80,background:'#d4a998',marginLeft:28,opacity:.45,marginTop:8}}/></div>)}</div>:t<17?<><div style={{position:'absolute',top:100,left:0,wid",
@@ -1385,7 +1385,7 @@
           "impact": "每逢 3 秒边界位置重置，不是原片的连续铺展。",
           "evidence": [
             {
-              "file": "source-catalog/round10/naveen-annam--creativly.ai-higgsfield-video-remotion/src/scenes/Scene05_Seg004.tsx",
+              "file": "https://github.com/naveen-annam/creativly.ai-higgsfield-video-remotion/blob/409a4893c5b597ae456eb54f31994e5e9fe32d98/src/scenes/Scene05_Seg004.tsx#L566",
               "line": 566,
               "anchor": "tileAppear",
               "fragment": "has its own delay + sheen + reveal curve.\n  const tileAppear = (delay: number) =>\n    interpolate(frame, [delay, delay + 12], [0, 1], {\n      ...clamped,\n      easing: bezier([0.22, 1, 0.36, 1]),\n    ",
@@ -1393,7 +1393,7 @@
               "url": "https://github.com/naveen-annam/creativly.ai-higgsfield-video-remotion/blob/409a4893c5b597ae456eb54f31994e5e9fe32d98/src/scenes/Scene05_Seg004.tsx#L566"
             },
             {
-              "file": "experiments/r10-10/src/Replica.tsx",
+              "file": "https://github.com/USTChandsomeboy/video-result/blob/main/site/experiments/r10-10/src/Replica.tsx",
               "line": 4,
               "anchor": "(t % 3)",
               "fragment": "div style={{position:'absolute',left:grid?-8:-100-(t%3)*65,top:grid?-80-(t%3)*60:280,display:'grid',gridTemplateColumns:grid?'repeat(5, 190px)':'repeat(9, 166px)',gap:10,transform:grid?'none':`rota",
@@ -1412,7 +1412,7 @@
           "impact": "遗漏生成中和生成后的区别。",
           "evidence": [
             {
-              "file": "source-catalog/round10/naveen-annam--creativly.ai-higgsfield-video-remotion/src/scenes/Scene05_Seg004.tsx",
+              "file": "https://github.com/naveen-annam/creativly.ai-higgsfield-video-remotion/blob/409a4893c5b597ae456eb54f31994e5e9fe32d98/src/scenes/Scene05_Seg004.tsx#L571",
               "line": 571,
               "anchor": "tilePhoto",
               "fragment": "sing: bezier([0.22, 1, 0.36, 1]),\n    });\n  const tilePhoto = (delay: number) =>\n    interpolate(frame, [delay + 6, delay + 22], [0, 1], {\n      ...clamped,\n      easing: bezier([0.22, 1, 0.36, 1]),\n",
@@ -1420,7 +1420,7 @@
               "url": "https://github.com/naveen-annam/creativly.ai-higgsfield-video-remotion/blob/409a4893c5b597ae456eb54f31994e5e9fe32d98/src/scenes/Scene05_Seg004.tsx#L571"
             },
             {
-              "file": "experiments/r10-10/src/Replica.tsx",
+              "file": "https://github.com/USTChandsomeboy/video-result/blob/main/site/experiments/r10-10/src/Replica.tsx",
               "line": 8,
               "anchor": "<Cards t={t} grid",
               "fragment": "7,marginTop:10}}>via Higgsfield MCP</div></div>:<><Cards t={t} grid/><div style={{position:'absolute',inset:0,background:'linear-gradient(#f3f0e7 0%,transparent 12%,transparent 88%,#f3f0e7 100%)'}}/></>}</Ab",
@@ -1462,7 +1462,7 @@
           "impact": "数字从 35 变 30 再变 25 时，中间粒子移动过程不存在。",
           "evidence": [
             {
-              "file": "source-catalog/round10/remotion-dev--trailer-lambda/src/StarryNumber.tsx",
+              "file": "https://github.com/remotion-dev/trailer-lambda/blob/296642c671363d3187708c646a21bafde4fd51b5/src/StarryNumber.tsx#L5",
               "line": 5,
               "anchor": "interpolateStarryNumber",
               "fragment": " {extendViewbox} from './extend-viewbox';\nimport {interpolateStarryNumber} from './get-starry-number';\nimport {getViewBoxFromBoundingBox} from './get-viewbox-from-bounding-box';\nimport {useFont} from './load-font'",
@@ -1470,7 +1470,7 @@
               "url": "https://github.com/remotion-dev/trailer-lambda/blob/296642c671363d3187708c646a21bafde4fd51b5/src/StarryNumber.tsx#L5"
             },
             {
-              "file": "experiments/r10-11/src/Replica.tsx",
+              "file": "https://github.com/USTChandsomeboy/video-result/blob/main/site/experiments/r10-11/src/Replica.tsx",
               "line": 4,
               "anchor": "strokeDasharray=\"1 10\"",
               "fragment": "290\" fill=\"none\" stroke=\"white\" strokeWidth=\"2.8\" strokeDasharray=\"1 10\" strokeLinecap=\"round\">{n}</text>{Array.from({length:200},(_,i)=><circle key={i} cx={(i*173.17)%960} cy={(i*97.3)%540} r={i%4/5} fill=\"white",
@@ -1489,7 +1489,7 @@
           "impact": "数字突然消失后换了一批点，没有从原数字聚散成标志。",
           "evidence": [
             {
-              "file": "source-catalog/round10/remotion-dev--trailer-lambda/src/StarryNumbers.tsx",
+              "file": "https://github.com/remotion-dev/trailer-lambda/blob/296642c671363d3187708c646a21bafde4fd51b5/src/StarryNumbers.tsx#L105",
               "line": 105,
               "anchor": "<ToReactStarry",
               "fragment": "shoot\n\t\t\t\t\t\t\t\t\t}px)`,\n\t\t\t\t\t\t\t\t}}\n\t\t\t\t\t\t\t>\n\t\t\t\t\t\t\t\t<ToReactStarry />\n\t\t\t\t\t\t\t</AbsoluteFill>\n\t\t\t\t\t\t</Series.Sequence>\n\t\t\t\t\t</Series>\n\t\t\t\t</AbsoluteFill>\n\t\t\t\t<Sequence from={300}>\n\t\t\t\t\t<AbsoluteFill>\n\t\t\t\t\t\t<",
@@ -1497,7 +1497,7 @@
               "url": "https://github.com/remotion-dev/trailer-lambda/blob/296642c671363d3187708c646a21bafde4fd51b5/src/StarryNumbers.tsx#L105"
             },
             {
-              "file": "experiments/r10-11/src/Replica.tsx",
+              "file": "https://github.com/USTChandsomeboy/video-result/blob/main/site/experiments/r10-11/src/Replica.tsx",
               "line": 4,
               "anchor": "length: 1100",
               "fragment": ";scene=<svg width=\"960\" height=\"540\">{Array.from({length:1100},(_,i)=>{let a=i*.43+t*2,orb=i%3;let x=210*Math.cos(a),y=65*Math.sin(a);let rot=orb*Math.PI/3+t*.15;return <circle key={i} cx={480+x*Math.co",
@@ -1516,7 +1516,7 @@
           "impact": "数字变化节奏和后续图形出现时间不同。",
           "evidence": [
             {
-              "file": "source-catalog/round10/remotion-dev--trailer-lambda/src/StarryNumbers.tsx",
+              "file": "https://github.com/remotion-dev/trailer-lambda/blob/296642c671363d3187708c646a21bafde4fd51b5/src/StarryNumbers.tsx#L30",
               "line": 30,
               "anchor": "seq1Length = 30",
               "fragment": "* interpolate(frame, [0, 500], [1, 1.5]);\n\n\tconst seq1Length = 30;\n\tconst seq2Length = 30;\n\tconst seq3Length = 30;\n\tconst seq4Length = 800;\n\n\tconst startRenderedIn = seq1Length + seq2Length + seq3Length + ",
@@ -1524,7 +1524,7 @@
               "url": "https://github.com/remotion-dev/trailer-lambda/blob/296642c671363d3187708c646a21bafde4fd51b5/src/StarryNumbers.tsx#L30"
             },
             {
-              "file": "experiments/r10-11/src/Replica.tsx",
+              "file": "https://github.com/USTChandsomeboy/video-result/blob/main/site/experiments/r10-11/src/Replica.tsx",
               "line": 4,
               "anchor": "(t - 21.7) / .7",
               "fragment": "<24.8){bg='black';let n=Math.max(25,35-Math.floor((t-21.7)/.7)*5);scene=<svg width=\"960\" height=\"540\"><text x=\"480\" y=\"342\" textAnchor=\"middle\" fontFamily=\"Arial\" fontWeight=\"700\" fontSize=\"290\" fill=\"none",
@@ -1543,7 +1543,7 @@
           "impact": "升起、晃动及尾烟消散的配合没有恢复。",
           "evidence": [
             {
-              "file": "source-catalog/round10/remotion-dev--trailer-lambda/src/RocketShip.tsx",
+              "file": "https://github.com/remotion-dev/trailer-lambda/blob/296642c671363d3187708c646a21bafde4fd51b5/src/RocketShip.tsx#L91",
               "line": 91,
               "anchor": "const xOffset",
               "fragment": " useMemo(() => new SimplexNoise('rotate'), []);\n\n\tconst xOffset = shake.noise2D(0, frame / 30) * 30;\n\tconst YOffset = shakeX.noise2D(0, frame / 30) * 30;\n\tconst rotation = (rotate.noise2D(0, frame / 80) ",
@@ -1551,7 +1551,7 @@
               "url": "https://github.com/remotion-dev/trailer-lambda/blob/296642c671363d3187708c646a21bafde4fd51b5/src/RocketShip.tsx#L91"
             },
             {
-              "file": "experiments/r10-11/src/Replica.tsx",
+              "file": "https://github.com/USTChandsomeboy/video-result/blob/main/site/experiments/r10-11/src/Replica.tsx",
               "line": 4,
               "anchor": "Math.sin(t * 3)",
               "fragment": "00 460\" style={{marginTop:100,transform:`rotate(${Math.sin(t*3)*3}deg)`}}>{Array.from({length:13},(_,i)=><ellipse key={i} cx={150+Math.sin(i*15+t*5)*7} cy={310+i*12} rx={35+Math.sin(i+t*9)*5} ry=\"27\" fill=",
@@ -1593,7 +1593,7 @@
           "impact": "不应说厚度公式丢了；真正差异是中间帧折数和速度不完全相同。",
           "evidence": [
             {
-              "file": "source-catalog/round10/znyupup--knowledge-explainer-skill/custom/PaperFold.jsx",
+              "file": "https://github.com/znyupup/knowledge-explainer-skill/blob/6ecae15fc8bbb589196c32ff3b726fc3e1764eac/custom/PaperFold.jsx#L47",
               "line": 47,
               "anchor": "Math.pow(1 - t, 2.4)",
               "fragment": "ath.max(0, frame / animEnd));\n  const eased = 1 - Math.pow(1 - t, 2.4);\n  const foldF = eased * TOTAL_FOLDS;\n  const fold = Math.floor(foldF + 0.0001);\n\n  // 厚度\n  const thicknessM = PAPER_MM * 1e-3 * Math.pow(2",
@@ -1601,7 +1601,7 @@
               "url": "https://github.com/znyupup/knowledge-explainer-skill/blob/6ecae15fc8bbb589196c32ff3b726fc3e1764eac/custom/PaperFold.jsx#L47"
             },
             {
-              "file": "experiments/r10-12/src/Replica.tsx",
+              "file": "https://github.com/USTChandsomeboy/video-result/blob/main/site/experiments/r10-12/src/Replica.tsx",
               "line": 2,
               "anchor": "const stops",
               "fragment": "eFill,useCurrentFrame,interpolate}from'remotion';\nconst stops=[0.1,.74,40.3,1530,40470,758700,10170000,98720000,702250000,3711820000,14789000000,45122000000,107246000000,202429000000,310180000000,39610",
@@ -1620,7 +1620,7 @@
           "impact": "柱高、读数和巧克力刻度在前半段对不上。",
           "evidence": [
             {
-              "file": "source-catalog/round10/znyupup--knowledge-explainer-skill/custom/PaperFold.jsx",
+              "file": "https://github.com/znyupup/knowledge-explainer-skill/blob/6ecae15fc8bbb589196c32ff3b726fc3e1764eac/custom/PaperFold.jsx#L64",
               "line": 64,
               "anchor": "const fillH",
               "fragment": "nst barHpx = height - 160;\n  const barTop = 80;\n  const fillH = (foldF / TOTAL_FOLDS) * barHpx;\n  const barX = 100;\n  const barW = 36;\n\n  // 颜色:从紫渐变到红\n  const gradId = 'pfGrad';\n\n  return (\n    <Absolu",
@@ -1628,7 +1628,7 @@
               "url": "https://github.com/znyupup/knowledge-explainer-skill/blob/6ecae15fc8bbb589196c32ff3b726fc3e1764eac/custom/PaperFold.jsx#L64"
             },
             {
-              "file": "experiments/r10-12/src/Replica.tsx",
+              "file": "https://github.com/USTChandsomeboy/video-result/blob/main/site/experiments/r10-12/src/Replica.tsx",
               "line": 3,
               "anchor": "[0, 10, 14",
               "fragment": "oString():v.toFixed(2);const height=interpolate(n,[0,10,14,17,20,23,27,30,35,40,42],[0,47,93,113,133,153,180,201,234,266,280],{extrapolateRight:'clamp'});const reached=thresholds.filter(x=>mm>=x.mm).a",
@@ -1647,7 +1647,7 @@
           "impact": "42 折结束时，提示仍停在“1/3 月球距离”。巧克力阈值也由约 12.8 mm 变成 100 mm。",
           "evidence": [
             {
-              "file": "source-catalog/round10/znyupup--knowledge-explainer-skill/custom/PaperFold.jsx",
+              "file": "https://github.com/znyupup/knowledge-explainer-skill/blob/6ecae15fc8bbb589196c32ff3b726fc3e1764eac/custom/PaperFold.jsx#L59",
               "line": 59,
               "anchor": "reachedMilestone",
               "fragment": " 22], [0, 1], clamp());\n\n  // 当前已通过的最大里程碑\n  const reachedMilestone = MILESTONES.slice().reverse().find(m => fold >= m.n);\n\n  // 柱高 = log scale = 直接 fold/42 比例\n  const barHpx = height - 160;\n  const barTop =",
@@ -1655,7 +1655,7 @@
               "url": "https://github.com/znyupup/knowledge-explainer-skill/blob/6ecae15fc8bbb589196c32ff3b726fc3e1764eac/custom/PaperFold.jsx#L59"
             },
             {
-              "file": "experiments/r10-12/src/Replica.tsx",
+              "file": "https://github.com/USTChandsomeboy/video-result/blob/main/site/experiments/r10-12/src/Replica.tsx",
               "line": 2,
               "anchor": "447000000000",
               "fragment": "'},{y:54,mm:128000000000,s:'🌘 1/3 月球距离'},{y:40,mm:447000000000,s:'🌙 超过月球 447km'}];\nexport const Replica:React.FC=()=>{const t=useCurrentFrame()/30;const n=interpolate(t,times,stops.map(x=>Math.log2(x/.1",
@@ -1674,7 +1674,7 @@
           "impact": "这是可以直接核对的文案错误。",
           "evidence": [
             {
-              "file": "source-catalog/round10/znyupup--knowledge-explainer-skill/custom/PaperFold.jsx",
+              "file": "https://github.com/znyupup/knowledge-explainer-skill/blob/6ecae15fc8bbb589196c32ff3b726fc3e1764eac/custom/PaperFold.jsx#L23",
               "line": 23,
               "anchor": "超过月球 44万km",
               "fragment": "label: '1/3 月球距离', emoji: '🌑'},\n  {n: 42, label: '超过月球 44万km', emoji: '🌙'},\n];\n\nfunction formatThickness(m) {\n  if (m < 0.01) return {val: (m * 1000).toFixed(2), unit: 'mm'};\n  if (m < 1) return {val:",
@@ -1682,7 +1682,7 @@
               "url": "https://github.com/znyupup/knowledge-explainer-skill/blob/6ecae15fc8bbb589196c32ff3b726fc3e1764eac/custom/PaperFold.jsx#L23"
             },
             {
-              "file": "experiments/r10-12/src/Replica.tsx",
+              "file": "https://github.com/USTChandsomeboy/video-result/blob/main/site/experiments/r10-12/src/Replica.tsx",
               "line": 2,
               "anchor": "超过月球 447km",
               "fragment": "000000,s:'🌘 1/3 月球距离'},{y:40,mm:447000000000,s:'🌙 超过月球 447km'}];\nexport const Replica:React.FC=()=>{const t=useCurrentFrame()/30;const n=interpolate(t,times,stops.map(x=>Math.log2(x/.1)),{extrapolateL",
@@ -1724,7 +1724,7 @@
           "impact": "缺少先看局部操作、再看完整流程的视觉引导。",
           "evidence": [
             {
-              "file": "source-catalog/round10/naveen-annam--creativly.ai-brand-video-remotion/src/scenes/FlowDemoScene.tsx",
+              "file": "https://github.com/naveen-annam/creativly.ai-brand-video-remotion/blob/3b16948cc68df78870c52b2ed9620adeecd28a32/src/scenes/FlowDemoScene.tsx#L79",
               "line": 79,
               "anchor": "const camScale",
               "fragment": "de, gradually pull back to reveal full pipeline\n  const camScale = interpolate(\n    frame,\n    [0, 20, 55, 90, 125, 165],\n    [1.45, 1.25, 1.0, 0.88, 0.78, 0.75],\n    { extrapolateLeft: \"clamp\", extrapola",
@@ -1732,7 +1732,7 @@
               "url": "https://github.com/naveen-annam/creativly.ai-brand-video-remotion/blob/3b16948cc68df78870c52b2ed9620adeecd28a32/src/scenes/FlowDemoScene.tsx#L79"
             },
             {
-              "file": "experiments/r10-13/src/Replica.tsx",
+              "file": "https://github.com/USTChandsomeboy/video-result/blob/main/site/experiments/r10-13/src/Replica.tsx",
               "line": 6,
               "anchor": "(1 - C(t - 4)) * 50",
               "fragment": "style={{opacity:C((t-3)*2),transform:`translate(${(1-C(t-4))*50}px,0)`}}><Panel x={200} y={170} kind={0}/>{t>4.3&&<><Panel x={405} y={70} kind={3}/><Panel x={405} y={270} kind={1}/></>}{t>5.5&&<Panel x={610} y",
@@ -1751,7 +1751,7 @@
           "impact": "流程中的先后、输入输出关系和当前正在处理的节点不清楚。",
           "evidence": [
             {
-              "file": "source-catalog/round10/naveen-annam--creativly.ai-brand-video-remotion/src/scenes/FlowDemoScene.tsx",
+              "file": "https://github.com/naveen-annam/creativly.ai-brand-video-remotion/blob/3b16948cc68df78870c52b2ed9620adeecd28a32/src/scenes/FlowDemoScene.tsx#L123",
               "line": 123,
               "anchor": "const showScan1",
               "fragment": "lamp\", easing: Easing.inOut(Easing.quad),\n  });\n  const showScan1 = frame >= 40 && frame <= 53;\n\n  // ─── Edge drawing ───\n  const edge1P = interpolate(frame, [52, 66], [0, 1], {\n    extrapolateLeft: \"clam",
@@ -1759,7 +1759,7 @@
               "url": "https://github.com/naveen-annam/creativly.ai-brand-video-remotion/blob/3b16948cc68df78870c52b2ed9620adeecd28a32/src/scenes/FlowDemoScene.tsx#L123"
             },
             {
-              "file": "experiments/r10-13/src/Replica.tsx",
+              "file": "https://github.com/USTChandsomeboy/video-result/blob/main/site/experiments/r10-13/src/Replica.tsx",
               "line": 4,
               "anchor": "function Panel",
               "fragment": "5 285\" stroke=\"#d8bd8b\" strokeWidth=\"24\"/></svg>}\nfunction Panel({x,y,w=145,h=175,kind=0}:{x:number,y:number,w?:number,h?:number,kind?:number}){return <div style={{position:'absolute',left:x,top:y,width:w",
@@ -1778,7 +1778,7 @@
           "impact": "选择不同风格时，图片没有同步变成对应效果。",
           "evidence": [
             {
-              "file": "source-catalog/round10/naveen-annam--creativly.ai-brand-video-remotion/src/scenes/StylePresetsScene.tsx",
+              "file": "https://github.com/naveen-annam/creativly.ai-brand-video-remotion/blob/3b16948cc68df78870c52b2ed9620adeecd28a32/src/scenes/StylePresetsScene.tsx#L48",
               "line": 48,
               "anchor": "const activeStyle",
               "fragment": "ntFrame();\n  const { fps } = useVideoConfig();\n\n  const activeStyleIndex = Math.floor(frame / 20) % STYLES.length;\n  const activeStyle = STYLES[activeStyleIndex];\n\n  const glowPulse = 0.15 + 0.08 * noise2D(\"",
@@ -1786,7 +1786,7 @@
               "url": "https://github.com/naveen-annam/creativly.ai-brand-video-remotion/blob/3b16948cc68df78870c52b2ed9620adeecd28a32/src/scenes/StylePresetsScene.tsx#L48"
             },
             {
-              "file": "experiments/r10-13/src/Replica.tsx",
+              "file": "https://github.com/USTChandsomeboy/video-result/blob/main/site/experiments/r10-13/src/Replica.tsx",
               "line": 6,
               "anchor": "t > 24",
               "fragment": ":'absolute',inset:'-35px 80px',opacity:.45,filter:t>24?'grayscale(1)':'none'}}><Astronaut/></div><div style={{position:'absolute',width:'100%',textAlign:'center',top:171}}><div style={{fontSize:10",
@@ -1805,7 +1805,7 @@
           "impact": "主体纹理与不同模板的视觉特征丢失。此项受未提供素材包影响。",
           "evidence": [
             {
-              "file": "source-catalog/round10/naveen-annam--creativly.ai-brand-video-remotion/src/scenes/FocusedDemoScene.tsx",
+              "file": "https://github.com/naveen-annam/creativly.ai-brand-video-remotion/blob/3b16948cc68df78870c52b2ed9620adeecd28a32/src/scenes/FocusedDemoScene.tsx#L254",
               "line": 254,
               "anchor": "<Img",
               "fragment": "ba(255,255,255,0.08)\",\n        }}\n      >\n        <Img\n          src={staticFile(\"focused-editor.jpg\")}\n          style={{ width: \"100%\", height: \"100%\", objectFit: \"cover\" }}\n        />\n\n      ",
@@ -1813,7 +1813,7 @@
               "url": "https://github.com/naveen-annam/creativly.ai-brand-video-remotion/blob/3b16948cc68df78870c52b2ed9620adeecd28a32/src/scenes/FocusedDemoScene.tsx#L254"
             },
             {
-              "file": "experiments/r10-13/src/Replica.tsx",
+              "file": "https://github.com/USTChandsomeboy/video-result/blob/main/site/experiments/r10-13/src/Replica.tsx",
               "line": 3,
               "anchor": "function Dog",
               "fragment": "52\" width=\"60\" height=\"7\" fill=\"#54716d\"/></svg>}\nfunction Dog(){return <svg viewBox=\"0 0 340 285\" width=\"100%\" height=\"100%\"><defs><linearGradient id=\"grass\"><stop stopColor=\"#7a8748\"/><stop offset=\"1\"",
@@ -1832,7 +1832,7 @@
           "impact": "运动仍存在，但轮廓、上下关系和明暗层次不同；不评价其是否对应真实音频。",
           "evidence": [
             {
-              "file": "source-catalog/round10/naveen-annam--creativly.ai-brand-video-remotion/src/scenes/AudioGenerationScene.tsx",
+              "file": "https://github.com/naveen-annam/creativly.ai-brand-video-remotion/blob/3b16948cc68df78870c52b2ed9620adeecd28a32/src/scenes/AudioGenerationScene.tsx#L370",
               "line": 370,
               "anchor": "scaleY(-1)",
               "fragment": "            height: 60,\n              transform: \"scaleY(-1)\",\n              maskImage:\n                \"linear-gradient(to bottom, rgba(0,0,0,0.15), transparent)\",\n              WebkitMaskImage:\n    ",
@@ -1840,7 +1840,7 @@
               "url": "https://github.com/naveen-annam/creativly.ai-brand-video-remotion/blob/3b16948cc68df78870c52b2ed9620adeecd28a32/src/scenes/AudioGenerationScene.tsx#L370"
             },
             {
-              "file": "experiments/r10-13/src/Replica.tsx",
+              "file": "https://github.com/USTChandsomeboy/video-result/blob/main/site/experiments/r10-13/src/Replica.tsx",
               "line": 6,
               "anchor": "length: 59",
               "fragment": ":630,height:160,filter:'blur(2px)'}}>{Array.from({length:59},(_,i)=><span key={i} style={{width:3,height:20+Math.abs(Math.sin(i*.31+t*4))*90,background:'linear-gradient(transparent,#94bdeb88,transpare",
@@ -1882,7 +1882,7 @@
           "impact": "构图能粗略辨认，人物姿态、材质和每张素材的区别无法保留。",
           "evidence": [
             {
-              "file": "source-catalog/round10/naveen-annam--creativly.ai-magnific-video-remotion/src/scenes/Scene04_RewriteDream.tsx",
+              "file": "https://github.com/naveen-annam/creativly.ai-magnific-video-remotion/blob/f0ce11dddacf14a306c0c1f122dd06509e1873f8/src/scenes/Scene04_RewriteDream.tsx#L142",
               "line": 142,
               "anchor": "<Img",
               "fragment": "          }}\n          />\n        ) : (\n          <Img\n            src={staticFile(\"aigen/scene04/clouds_pink.png\")}\n            style={{\n              position: \"absolute\",\n              inset:",
@@ -1890,7 +1890,7 @@
               "url": "https://github.com/naveen-annam/creativly.ai-magnific-video-remotion/blob/f0ce11dddacf14a306c0c1f122dd06509e1873f8/src/scenes/Scene04_RewriteDream.tsx#L142"
             },
             {
-              "file": "experiments/r10-14/src/Replica.tsx",
+              "file": "https://github.com/USTChandsomeboy/video-result/blob/main/site/experiments/r10-14/src/Replica.tsx",
               "line": 3,
               "anchor": "const Art",
               "fragment": "onst clamp=(x:number)=>Math.min(1,Math.max(0,x));\nconst Art=({kind=0,t=0}:{kind?:number,t?:number})=><svg viewBox=\"0 0 960 540\" width=\"100%\" height=\"100%\" preserveAspectRatio=\"xMidYMid slice\"><defs><",
@@ -1909,7 +1909,7 @@
           "impact": "部分卡片到循环边界会回跳，展开次序与卡片身份不一致。",
           "evidence": [
             {
-              "file": "source-catalog/round10/naveen-annam--creativly.ai-magnific-video-remotion/src/scenes/Scene01_Cascade.tsx",
+              "file": "https://github.com/naveen-annam/creativly.ai-magnific-video-remotion/blob/f0ce11dddacf14a306c0c1f122dd06509e1873f8/src/scenes/Scene01_Cascade.tsx#L2",
               "line": 2,
               "anchor": "useCurrentFrame",
               "fragment": "port {AbsoluteFill, Img, interpolate, staticFile, useCurrentFrame, Easing} from \"remotion\";\nimport {FONT_FAMILY, bezier, clamped, fadeWindow} from \"../helpers\";\nimport {FONT, MOTION, PALETTE, VIDEO_HEIGHT,",
@@ -1917,7 +1917,7 @@
               "url": "https://github.com/naveen-annam/creativly.ai-magnific-video-remotion/blob/f0ce11dddacf14a306c0c1f122dd06509e1873f8/src/scenes/Scene01_Cascade.tsx#L2"
             },
             {
-              "file": "experiments/r10-14/src/Replica.tsx",
+              "file": "https://github.com/USTChandsomeboy/video-result/blob/main/site/experiments/r10-14/src/Replica.tsx",
               "line": 5,
               "anchor": "% 1000",
               "fragment": " x=t<2.7?300:75+(i*167)%780,y=t<2.7?(i*140+ t*120)%1000-280:(i*131)%780-120;return <div key={i} style={{position:'absolute',left:x,top:y,width:t<2.7?360:180,height:t<2.7?145:120,borderRadius:8,ove",
@@ -1936,7 +1936,7 @@
           "impact": "约提前 1.13 秒开始出现，而且进入方式不同。",
           "evidence": [
             {
-              "file": "source-catalog/round10/naveen-annam--creativly.ai-magnific-video-remotion/src/tokens.ts",
+              "file": "https://github.com/naveen-annam/creativly.ai-magnific-video-remotion/blob/f0ce11dddacf14a306c0c1f122dd06509e1873f8/src/tokens.ts#L101",
               "line": 101,
               "anchor": "07-magnific-lockup",
               "fragment": " left, Magnific wordmark reveals, holds\n  {name: \"07-magnific-lockup\", duration: 150, sourceFrameRange: \"frame_0029 → frame_0031\"},\n];\n\n// Cumulative starts — computed once.\nexport const BEAT_STARTS = BEATS.r",
@@ -1944,7 +1944,7 @@
               "url": "https://github.com/naveen-annam/creativly.ai-magnific-video-remotion/blob/f0ce11dddacf14a306c0c1f122dd06509e1873f8/src/tokens.ts#L101"
             },
             {
-              "file": "experiments/r10-14/src/Replica.tsx",
+              "file": "https://github.com/USTChandsomeboy/video-result/blob/main/site/experiments/r10-14/src/Replica.tsx",
               "line": 5,
               "anchor": "t > 29",
               "fragment": "96H62L50 88L40 96H0Z\" fill=\"currentColor\"/></svg>{t>29&&<span style={{fontSize:35,fontWeight:600,letterSpacing:-1,opacity:clamp((t-29)*2)}}>Magnific</span>}</div>};return <AbsoluteFill style={{bac",
@@ -1963,7 +1963,7 @@
           "impact": "文字逐字露出和图标向左让位的过程丢失。",
           "evidence": [
             {
-              "file": "source-catalog/round10/naveen-annam--creativly.ai-magnific-video-remotion/src/scenes/Scene07_MagnificLockup.tsx",
+              "file": "https://github.com/naveen-annam/creativly.ai-magnific-video-remotion/blob/f0ce11dddacf14a306c0c1f122dd06509e1873f8/src/scenes/Scene07_MagnificLockup.tsx#L53",
               "line": 53,
               "anchor": "const wordWidth",
               "fragment": "mped,\n    easing: bezier(MOTION.expoOut),\n  });\n  const wordWidth = interpolate(wordReveal, [0, 1], [0, WORD_FINAL_WIDTH]);\n\n  return (\n    <AbsoluteFill style={{background: PALETTE.paper, opacity: sceneOp",
@@ -1971,7 +1971,7 @@
               "url": "https://github.com/naveen-annam/creativly.ai-magnific-video-remotion/blob/f0ce11dddacf14a306c0c1f122dd06509e1873f8/src/scenes/Scene07_MagnificLockup.tsx#L53"
             },
             {
-              "file": "experiments/r10-14/src/Replica.tsx",
+              "file": "https://github.com/USTChandsomeboy/video-result/blob/main/site/experiments/r10-14/src/Replica.tsx",
               "line": 5,
               "anchor": "opacity: clamp((t - 29)",
               "fragment": "yle={{fontSize:35,fontWeight:600,letterSpacing:-1,opacity:clamp((t-29)*2)}}>Magnific</span>}</div>};return <AbsoluteFill style={{background:bg,color:'white',fontFamily:'Arial,Helvetica,sans-serif',display:'flex',a",
@@ -1990,7 +1990,7 @@
           "impact": "标志会突然变大，无法用调透明度解释。",
           "evidence": [
             {
-              "file": "source-catalog/round10/naveen-annam--creativly.ai-magnific-video-remotion/src/scenes/Scene06_Transforms.tsx",
+              "file": "https://github.com/naveen-annam/creativly.ai-magnific-video-remotion/blob/f0ce11dddacf14a306c0c1f122dd06509e1873f8/src/scenes/Scene06_Transforms.tsx#L272",
               "line": 272,
               "anchor": "const finalScale",
               "fragment": "(frame, [14, 20, 26], [0, -0.025, 0], clamped);\n  const finalScale = scale + settle;\n\n  return (\n    <AbsoluteFill\n      style={{display: \"flex\", alignItems: \"center\", justifyContent: \"center\"}}\n    >\n     ",
@@ -1998,7 +1998,7 @@
               "url": "https://github.com/naveen-annam/creativly.ai-magnific-video-remotion/blob/f0ce11dddacf14a306c0c1f122dd06509e1873f8/src/scenes/Scene06_Transforms.tsx#L272"
             },
             {
-              "file": "experiments/r10-14/src/Replica.tsx",
+              "file": "https://github.com/USTChandsomeboy/video-result/blob/main/site/experiments/r10-14/src/Replica.tsx",
               "line": 5,
               "anchor": "440 * p",
               "fragment": "nter',gap:12,color:'#210c18'}}><svg width={t<27.5?440*p:40} height={t<27.5?440*p:40} viewBox=\"0 0 100 100\"><path d=\"M10 8H31L50 53L66 8H88L100 96H62L50 88L40 96H0Z\" fill=\"currentColor\"/></svg>{t>29",
@@ -2041,7 +2041,7 @@
           "impact": "月份名字和总数能对上，但每一天及每个月的图形并不可靠。",
           "evidence": [
             {
-              "file": "source-catalog/round10/remotion-dev--github-unwrapped-2021/remotion/Green.tsx",
+              "file": "https://github.com/remotion-dev/github-unwrapped-2021/blob/94c470c049aef2f6b24dd8dbf2168ae2ee7dd80a/remotion/Green.tsx#L71",
               "line": 71,
               "anchor": "backgroundColor: color",
               "fragment": "e}\n                  style={{\n                    backgroundColor: color,\n                    width: 80,\n                    height: 80,\n                    borderRadius: 12,\n                    margin: 12,\n     ",
@@ -2049,7 +2049,7 @@
               "url": "https://github.com/remotion-dev/github-unwrapped-2021/blob/94c470c049aef2f6b24dd8dbf2168ae2ee7dd80a/remotion/Green.tsx#L71"
             },
             {
-              "file": "experiments/r10-15/src/Replica.tsx",
+              "file": "https://github.com/USTChandsomeboy/video-result/blob/main/site/experiments/r10-15/src/Replica.tsx",
               "line": 4,
               "anchor": "i * 13 + month * 17",
               "fragment": "9c36c','#2ca151','#eaf0f2','#9ce7ac','#39c36c'][((i*13+month*17)%23)%6],transform:`translateY(${t<12?Math.max(0,12-t)*220:0}px)`}}/>)}</div></div>:t<18?<div>{text(String(Math.min(7235,Math.round((t-16)*10000))",
@@ -2068,7 +2068,7 @@
           "impact": "忽略首尾停顿，各月在相同时间点难以对应。",
           "evidence": [
             {
-              "file": "source-catalog/round10/remotion-dev--github-unwrapped-2021/remotion/Contrib.tsx",
+              "file": "https://github.com/remotion-dev/github-unwrapped-2021/blob/94c470c049aef2f6b24dd8dbf2168ae2ee7dd80a/remotion/Contrib.tsx#L40",
               "line": 40,
               "anchor": "i === 0 ? 35",
               "fragment": "   key={m[0]}\n                  durationInFrames={i === 0 ? 35 : i === 11 ? 33 : 8}\n                  layout=\"none\"\n                >\n                  <Green key={m[0]} chunked={chunked} i={i}></Green>",
@@ -2076,7 +2076,7 @@
               "url": "https://github.com/remotion-dev/github-unwrapped-2021/blob/94c470c049aef2f6b24dd8dbf2168ae2ee7dd80a/remotion/Contrib.tsx#L40"
             },
             {
-              "file": "experiments/r10-15/src/Replica.tsx",
+              "file": "https://github.com/USTChandsomeboy/video-result/blob/main/site/experiments/r10-15/src/Replica.tsx",
               "line": 4,
               "anchor": "(t - 12) * 3",
               "fragment": "r'];const month=Math.min(11,Math.max(0,Math.floor((t-12)*3)));const colors=['#e32005','#242a2e','#0281c7','#075b96','#00a5cf','#3b0b49','#b40030','#20abc7','#00adce','#f2df4c','#db3322','#6283b6','#ffdf",
@@ -2095,7 +2095,7 @@
           "impact": "最终比例可能近似，但中途数字和扇形面积不同步。",
           "evidence": [
             {
-              "file": "source-catalog/round10/remotion-dev--github-unwrapped-2021/remotion/Issues.tsx",
+              "file": "https://github.com/remotion-dev/github-unwrapped-2021/blob/94c470c049aef2f6b24dd8dbf2168ae2ee7dd80a/remotion/Issues.tsx#L51",
               "line": 51,
               "anchor": "const openRatio",
               "fragment": "xtrapolateRight: \"clamp\",\n      }),\n    ]\n  );\n\n  const openRatio = interpolate(spr, [0, 1], [1, open / total]);\n  const closeRatio = interpolate(spr, [0, 1], [0, closed / total]);\n\n  return (\n    <Absolut",
@@ -2103,7 +2103,7 @@
               "url": "https://github.com/remotion-dev/github-unwrapped-2021/blob/94c470c049aef2f6b24dd8dbf2168ae2ee7dd80a/remotion/Issues.tsx#L51"
             },
             {
-              "file": "experiments/r10-15/src/Replica.tsx",
+              "file": "https://github.com/USTChandsomeboy/video-result/blob/main/site/experiments/r10-15/src/Replica.tsx",
               "line": 4,
               "anchor": "t >= 21.3",
               "fragment": "ath.max(30,Math.round(195-(t-20.5)*150));let open=t>=21.3;const text=(s:string,size=40,style:React.CSSProperties={})=><div style={{fontSize:size,fontWeight:800,textAlign:'center',lineHeight:1.17,...s",
@@ -2122,7 +2122,7 @@
           "impact": "没有原片过渡中的覆盖、推进和节奏。",
           "evidence": [
             {
-              "file": "source-catalog/round10/remotion-dev--github-unwrapped-2021/remotion/Main.tsx",
+              "file": "https://github.com/remotion-dev/github-unwrapped-2021/blob/94c470c049aef2f6b24dd8dbf2168ae2ee7dd80a/remotion/Main.tsx#L32",
               "line": 32,
               "anchor": "offset={-25}",
               "fragment": ">\n        <Series.Sequence durationInFrames={120} offset={-25}>\n          <Transition>\n            <ManyLanguages></ManyLanguages>\n          </Transition>\n        </Series.Sequence>\n        <Series.Sequ",
@@ -2130,7 +2130,7 @@
               "url": "https://github.com/remotion-dev/github-unwrapped-2021/blob/94c470c049aef2f6b24dd8dbf2168ae2ee7dd80a/remotion/Main.tsx#L32"
             },
             {
-              "file": "experiments/r10-15/src/Replica.tsx",
+              "file": "https://github.com/USTChandsomeboy/video-result/blob/main/site/experiments/r10-15/src/Replica.tsx",
               "line": 4,
               "anchor": "t < 4",
               "fragment": "','#ffdf45','#f45238','#dd9400','#5e5088'];let bg=t<4?green:t<7?'#ffdadb':t<10?'#2b768a':t<18?white:t<24?green:t<28?'#fae8ff':t<30?green:white;let count=t<20.5?Math.min(195,Math.round(Math.max(0,",
@@ -2149,7 +2149,7 @@
           "impact": "人物相似度、字形宽度和排版气质不同；头像属于素材恢复问题。",
           "evidence": [
             {
-              "file": "source-catalog/round10/remotion-dev--github-unwrapped-2021/remotion/Green.tsx",
+              "file": "https://github.com/remotion-dev/github-unwrapped-2021/blob/94c470c049aef2f6b24dd8dbf2168ae2ee7dd80a/remotion/Green.tsx#L9",
               "line": 9,
               "anchor": "fontFamily: \"Jelle\"",
               "fragment": "ties = {\n  textAlign: \"center\",\n  fontSize: 70,\n  fontFamily: \"Jelle\",\n  color: BASE_COLOR,\n};\n\nexport const Green: React.FC<{\n  chunked: SpaceSavingContribution[][];\n  i: number;\n}> = ({ chunked, i }) => {\n  ",
@@ -2157,7 +2157,7 @@
               "url": "https://github.com/remotion-dev/github-unwrapped-2021/blob/94c470c049aef2f6b24dd8dbf2168ae2ee7dd80a/remotion/Green.tsx#L9"
             },
             {
-              "file": "experiments/r10-15/src/Replica.tsx",
+              "file": "https://github.com/USTChandsomeboy/video-result/blob/main/site/experiments/r10-15/src/Replica.tsx",
               "line": 1,
               "anchor": "Arial Rounded MT Bold",
               "fragment": "e06',white='#f8fff9',purple='#d879f1';const font='Arial Rounded MT Bold, Arial, sans-serif';\nconst Portrait=()=> <svg width=\"235\" height=\"235\" viewBox=\"0 0 235 235\"><circle cx=\"117\" cy=\"117\" r=\"112\" fill=\"white\"",
@@ -2199,7 +2199,7 @@
           "impact": "块变窄时内容随之压缩，不是同一段波形被裁掉一部分。",
           "evidence": [
             {
-              "file": "source-catalog/round10/remotion-dev--trailer-2-0/src/AudioTag.tsx",
+              "file": "https://github.com/remotion-dev/trailer-2-0/blob/5afaa6119bf07d92eac07cfa5d131969a2d569b7/src/AudioTag.tsx#L62",
               "line": 62,
               "anchor": "marginLeft: -trimLeft",
               "fragment": "center',\n\t\t\t\t\tdisplay: 'flex',\n\t\t\t\t\tflex: 1,\n\t\t\t\t\tmarginLeft: -trimLeft,\n\t\t\t\t}}\n\t\t\t>\n\t\t\t\t{randomBars.map((b, i) => {\n\t\t\t\t\treturn (\n\t\t\t\t\t\t<div\n\t\t\t\t\t\t\tstyle={{\n\t\t\t\t\t\t\t\twidth: 8,\n\t\t\t\t\t\t\t\tborderRadius: 4,\n\t\t\t\t\t\t\t\the",
@@ -2207,7 +2207,7 @@
               "url": "https://github.com/remotion-dev/trailer-2-0/blob/5afaa6119bf07d92eac07cfa5d131969a2d569b7/src/AudioTag.tsx#L62"
             },
             {
-              "file": "experiments/r10-16/src/Replica.tsx",
+              "file": "https://github.com/USTChandsomeboy/video-result/blob/main/site/experiments/r10-16/src/Replica.tsx",
               "line": 2,
               "anchor": "i * w / 130",
               "fragment": "index*8)*.5+.5)*h*.78;return <path key={i} d={`M${i*w/130} ${(h-a)/2}v${a}`} stroke=\"#b4dba6\" opacity=\".38\" strokeWidth=\"1\"/>})}<path d={`M0 5H${w}M0 ${h-5}H${w}`} stroke=\"#a4d498\" opacity=\".3\"/>{curve",
@@ -2226,7 +2226,7 @@
           "impact": "裁剪后的起点、终点和轨道错位关系不一致。",
           "evidence": [
             {
-              "file": "source-catalog/round10/remotion-dev--trailer-2-0/src/AudioDemo.tsx",
+              "file": "https://github.com/remotion-dev/trailer-2-0/blob/5afaa6119bf07d92eac07cfa5d131969a2d569b7/src/AudioDemo.tsx#L118",
               "line": 118,
               "anchor": "offset={align * -300}",
               "fragment": "seed={0}\n\t\t\t\ttrimLeft={cut}\n\t\t\t\ttrimRight={0}\n\t\t\t\toffset={align * -300}\n\t\t\t\tscale={otherScale}\n\t\t\t\tvolume={volume1}\n\t\t\t/>\n\t\t\t<br />\n\t\t\t<div\n\t\t\t\tstyle={{\n\t\t\t\t\ttransform: `translateY(${framePosition}px)`,\n\t\t\t\t}}\n\t",
@@ -2234,7 +2234,7 @@
               "url": "https://github.com/remotion-dev/trailer-2-0/blob/5afaa6119bf07d92eac07cfa5d131969a2d569b7/src/AudioDemo.tsx#L118"
             },
             {
-              "file": "experiments/r10-16/src/Replica.tsx",
+              "file": "https://github.com/USTChandsomeboy/video-result/blob/main/site/experiments/r10-16/src/Replica.tsx",
               "line": 4,
               "anchor": "[-90, 15, 90]",
               "fragment": "-7.5)/.55);let stagger=ease((t-10)/1.5);let shift=[-90,15,90][i]*stagger;let w=i===0||i===1?400-90*ease((t-9.5)/1):400;let x=280+shift+(i===0?90*ease((t-9.5)/1):0);let y=255-90*ease((t-4)/.7)+(i-1)*64*tr",
@@ -2253,7 +2253,7 @@
           "impact": "“整体调音量→局部设置音量”的演示步骤丢失。",
           "evidence": [
             {
-              "file": "source-catalog/round10/remotion-dev--trailer-2-0/src/AudioDemo.tsx",
+              "file": "https://github.com/remotion-dev/trailer-2-0/blob/5afaa6119bf07d92eac07cfa5d131969a2d569b7/src/AudioDemo.tsx#L83",
               "line": 83,
               "anchor": "const volume2",
               "fragment": "Custom, [0, 1], [volumeSpring * 0.8, wave]);\n\t};\n\tconst volume2 = (i: number) => {\n\t\tconst wave = interpolate(\n\t\t\ti,\n\t\t\t[0, 50, 60, 80, 90, 100],\n\t\t\t[0.9, 0.9, 0.1, 0.1, 0.9, 0.9]\n\t\t);\n\t\treturn interpola",
@@ -2261,7 +2261,7 @@
               "url": "https://github.com/remotion-dev/trailer-2-0/blob/5afaa6119bf07d92eac07cfa5d131969a2d569b7/src/AudioDemo.tsx#L83"
             },
             {
-              "file": "experiments/r10-16/src/Replica.tsx",
+              "file": "https://github.com/USTChandsomeboy/video-result/blob/main/site/experiments/r10-16/src/Replica.tsx",
               "line": 2,
               "anchor": "index === 1",
               "fragment": "x===0?6+Math.max(0,20-i)*1.9+Math.max(0,i-85)*2.7:index===1?10+30*(.5+.5*Math.sin(i*.07-2)):h/2+Math.sin(i*.1)*17}`).join(' ')} fill=\"none\" stroke=\"#d0ecc7\" strokeWidth=\"2\"/>}</g>}\nconst Tile:React.FC<",
@@ -2280,7 +2280,7 @@
           "impact": "轮廓密度与出现过程不同；原片本身也不是从音频采样出的真实波形。",
           "evidence": [
             {
-              "file": "source-catalog/round10/remotion-dev--trailer-2-0/src/AudioTag.tsx",
+              "file": "https://github.com/remotion-dev/trailer-2-0/blob/5afaa6119bf07d92eac07cfa5d131969a2d569b7/src/AudioTag.tsx#L33",
               "line": 33,
               "anchor": "new Array(90)",
               "fragment": "st frame = useCurrentFrame();\n\tconst randomBars = new Array(90)\n\t\t.fill(true)\n\t\t.map((b, i) => random(`${i}-${seed}`));\n\tconst {width, fps} = useVideoConfig();\n\tconst barWidth = 800 - trimLeft - trimRigh",
@@ -2288,7 +2288,7 @@
               "url": "https://github.com/remotion-dev/trailer-2-0/blob/5afaa6119bf07d92eac07cfa5d131969a2d569b7/src/AudioTag.tsx#L33"
             },
             {
-              "file": "experiments/r10-16/src/Replica.tsx",
+              "file": "https://github.com/USTChandsomeboy/video-result/blob/main/site/experiments/r10-16/src/Replica.tsx",
               "line": 2,
               "anchor": "length: 130",
               "fragment": "width={w} height={h} fill=\"#24ab45\"/>{Array.from({length:130},(_,i)=>{let a=(Math.sin(i*31+index*8)*.5+.5)*h*.78;return <path key={i} d={`M${i*w/130} ${(h-a)/2}v${a}`} stroke=\"#b4dba6\" opacity=\".38\" st",
@@ -2330,7 +2330,7 @@
           "impact": "窗口外框近似，窗口中的具体任务内容不一致。",
           "evidence": [
             {
-              "file": "source-catalog/round10/remotion-dev--trailer/src/GoToGithub.tsx",
+              "file": "https://github.com/remotion-dev/trailer/blob/63c2a66f2c7780f64c85c26e5f872daa31d9545c/src/GoToGithub.tsx#L17",
               "line": 17,
               "anchor": "GoToGithub",
               "fragment": "e = styled(Img)`\n\twidth: 1300px;\n`;\n\nexport const GoToGithub: React.FC = () => {\n\tconst {fps} = useVideoConfig();\n\tconst frame = useCurrentFrame();\n\tconst scale = spring({\n\t\tfps,\n\t\tframe,\n\t\tconfig: {\n",
@@ -2338,7 +2338,7 @@
               "url": "https://github.com/remotion-dev/trailer/blob/63c2a66f2c7780f64c85c26e5f872daa31d9545c/src/GoToGithub.tsx#L17"
             },
             {
-              "file": "experiments/r10-17/src/Replica.tsx",
+              "file": "https://github.com/USTChandsomeboy/video-result/blob/main/site/experiments/r10-17/src/Replica.tsx",
               "line": 4,
               "anchor": "Update {s}",
               "fragment": "{s}<span style={{marginLeft:100,color:'#89919a'}}>Update {s}　　　　　　　　　2 days ago</span></div>)}<h3>React video creation</h3></>}</div></div>;\nconst Editor=()=> <div style={{width:630,height:410,backgro",
@@ -2357,7 +2357,7 @@
           "impact": "行与讲解阶段错位，部分提前、部分延后。",
           "evidence": [
             {
-              "file": "source-catalog/round10/remotion-dev--trailer/src/Main.tsx",
+              "file": "https://github.com/remotion-dev/trailer/blob/63c2a66f2c7780f64c85c26e5f872daa31d9545c/src/Main.tsx#L95",
               "line": 95,
               "anchor": "line: 5",
               "fragment": "\n\n\t\t\t\t\t`.trim()}\n\t\t\t\t\t\ttiming={[\n\t\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\tline: 5,\n\t\t\t\t\t\t\t\tfrom: 50,\n\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\tline: 6,\n\t\t\t\t\t\t\t\tfrom: 75,\n\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\tline: 7,\n\t\t\t\t\t\t\t\tfrom: 110,\n\t\t\t\t\t\t\t},\n\t",
@@ -2365,7 +2365,7 @@
               "url": "https://github.com/remotion-dev/trailer/blob/63c2a66f2c7780f64c85c26e5f872daa31d9545c/src/Main.tsx#L95"
             },
             {
-              "file": "experiments/r10-17/src/Replica.tsx",
+              "file": "https://github.com/USTChandsomeboy/video-result/blob/main/site/experiments/r10-17/src/Replica.tsx",
               "line": 6,
               "anchor": "t > 23.4",
               "fragment": "=\"MyVideo\"','            component={MyVideo}',...(t>23.4?['            durationInFrames={90}']:[]),...(t>24.3?['            fps={30}']:[]),...(t>25.3?['            width={1920}']:[]),...(t>25.9?['  ",
@@ -2384,7 +2384,7 @@
           "impact": "属于屏幕内可见文本差异；不涉及代码能否运行。",
           "evidence": [
             {
-              "file": "source-catalog/round10/remotion-dev--trailer/src/Main.tsx",
+              "file": "https://github.com/remotion-dev/trailer/blob/63c2a66f2c7780f64c85c26e5f872daa31d9545c/src/Main.tsx#L79",
               "line": 79,
               "anchor": "export const RemotionVideo",
               "fragment": "idth={1200}\n\t\t\t\t\t\ttitle=\"Video.tsx\"\n\t\t\t\t\t\tcode={`\nexport const RemotionVideo = () => {\n\treturn (\n\t\t<Composition\n\t\t\tid=\"MyVideo\"\n\t\t\tcomponent={MyVideo}\n\t\t\tdurationInFrames={90}\n\t\t\tfps={30}\n\t\t\twidth={1920}\n\t\t\theight={1",
@@ -2392,7 +2392,7 @@
               "url": "https://github.com/remotion-dev/trailer/blob/63c2a66f2c7780f64c85c26e5f872daa31d9545c/src/Main.tsx#L79"
             },
             {
-              "file": "experiments/r10-17/src/Replica.tsx",
+              "file": "https://github.com/USTChandsomeboy/video-result/blob/main/site/experiments/r10-17/src/Replica.tsx",
               "line": 6,
               "anchor": "export const RootVideo",
               "fragment": "['export const MyVideo = () => {','','','','}']:['export const RootVideo = () => {','    return (','        <Composition','            id=\"MyVideo\"','            component={MyVideo}',...(t>23.4?['            dura",
@@ -2411,7 +2411,7 @@
           "impact": "弧线进入间隔、粗细变化和两行文字的位移都没有按原片恢复。",
           "evidence": [
             {
-              "file": "source-catalog/round10/remotion-dev--trailer/src/Intro/Arc.tsx",
+              "file": "https://github.com/remotion-dev/trailer/blob/63c2a66f2c7780f64c85c26e5f872daa31d9545c/src/Intro/Arc.tsx#L27",
               "line": 27,
               "anchor": "const strokeWidth",
               "fragment": "ight: 'clamp',\n\t\textrapolateLeft: 'clamp',\n\t});\n\n\tconst strokeWidth = interpolate(progress, [0, 1], [200, 60]);\n\n\treturn (\n\t\t<g\n\t\t\tstyle={{\n\t\t\t\ttransform: `rotate(${rotation}deg)`,\n\t\t\t\topacity,\n\t\t\t\ttransform",
@@ -2419,7 +2419,7 @@
               "url": "https://github.com/remotion-dev/trailer/blob/63c2a66f2c7780f64c85c26e5f872daa31d9545c/src/Intro/Arc.tsx#L27"
             },
             {
-              "file": "experiments/r10-17/src/Replica.tsx",
+              "file": "https://github.com/USTChandsomeboy/video-result/blob/main/site/experiments/r10-17/src/Replica.tsx",
               "line": 6,
               "anchor": "q * 14",
               "fragment": "\" style={{position:'absolute',transform:`rotate(${q*14}deg)`}} viewBox=\"0 0 400 400\"><defs><linearGradient id=\"react\"><stop stopColor=\"#7cabe8\"/><stop offset=\"1\" stopColor=\"#6aeeee\"/></linearGradi",
@@ -2438,7 +2438,7 @@
           "impact": "第 840 帧原片还显示完整 Composition 参数，复刻已换成空函数。",
           "evidence": [
             {
-              "file": "source-catalog/round10/remotion-dev--trailer/src/Main.tsx",
+              "file": "https://github.com/remotion-dev/trailer/blob/63c2a66f2c7780f64c85c26e5f872daa31d9545c/src/Main.tsx#L113",
               "line": 113,
               "anchor": "from={850}",
               "fragment": "},\n\t\t\t\t\t\t]}\n\t\t\t\t\t/>\n\t\t\t\t</Sequence>\n\t\t\t\t<Sequence from={850} durationInFrames={240}>\n\t\t\t\t\t<CodeFrame\n\t\t\t\t\t\twidth={1200}\n\t\t\t\t\t\ttitle=\"MyVideo.tsx\"\n\t\t\t\t\t\tcode={`\nexport const MyVideo = () => {\n\tconst fr",
@@ -2446,7 +2446,7 @@
               "url": "https://github.com/remotion-dev/trailer/blob/63c2a66f2c7780f64c85c26e5f872daa31d9545c/src/Main.tsx#L113"
             },
             {
-              "file": "experiments/r10-17/src/Replica.tsx",
+              "file": "https://github.com/USTChandsomeboy/video-result/blob/main/site/experiments/r10-17/src/Replica.tsx",
               "line": 6,
               "anchor": "t>=27.4",
               "fragment": "t-18.8)*3)}}>Remotion</span></div>;else {const my=t>=27.4;const lines=my?['export const MyVideo = () => {','','','','}']:['export const RootVideo = () => {','    return (','        <Composition',' ",
@@ -2488,7 +2488,7 @@
           "impact": "界面展示的是另一条命令，内容已经不准确。",
           "evidence": [
             {
-              "file": "source-catalog/round10/ChanMeng666--echook-promo-video/src/sections/features/QuickSetup.tsx",
+              "file": "https://github.com/ChanMeng666/echook-promo-video/blob/a2b8004ce7ca4e30a94cdb867b732537f374f481/src/sections/features/QuickSetup.tsx#L76",
               "line": 76,
               "anchor": "ChanMeng666/echook",
               "fragment": "              text=\"claude plugin marketplace add ChanMeng666/echook\"\n              startFrame={5}\n              speed={1.6}\n              fontSize={16}\n              showCursor={false}\n            />\n       ",
@@ -2496,7 +2496,7 @@
               "url": "https://github.com/ChanMeng666/echook-promo-video/blob/a2b8004ce7ca4e30a94cdb867b732537f374f481/src/sections/features/QuickSetup.tsx#L76"
             },
             {
-              "file": "experiments/r10-18/src/Replica.tsx",
+              "file": "https://github.com/USTChandsomeboy/video-result/blob/main/site/experiments/r10-18/src/Replica.tsx",
               "line": 2,
               "anchor": "Channing666/echook",
               "fragment": "b><br/>{t>21.3&&<>$ claude plugin marketplace add Channing666/echook<br/></>}{t>22&&<>$ claude plugin install audio-hooks@channing-as<br/></>}{t>22.6&&<><span style={{fontSize:6,color:'#666'}}># then, in the ",
@@ -2515,7 +2515,7 @@
           "impact": "列表数量仍是 33，但一个元素内容错误。",
           "evidence": [
             {
-              "file": "source-catalog/round10/ChanMeng666--echook-promo-video/src/sections/features/HookTypes.tsx",
+              "file": "https://github.com/ChanMeng666/echook-promo-video/blob/a2b8004ce7ca4e30a94cdb867b732537f374f481/src/sections/features/HookTypes.tsx#L35",
               "line": 35,
               "anchor": "TabFileEdit",
               "fragment": "ntResponse\", \"AgentThinking\",\n  \"WorkspaceOpen\", \"TabFileEdit\",\n];\n\nexport const HookTypes: React.FC = () => {\n  const frame = useCurrentFrame();\n  const { fps } = useVideoConfig();\n\n  // Essential lab",
@@ -2523,7 +2523,7 @@
               "url": "https://github.com/ChanMeng666/echook-promo-video/blob/a2b8004ce7ca4e30a94cdb867b732537f374f481/src/sections/features/HookTypes.tsx#L35"
             },
             {
-              "file": "experiments/r10-18/src/Replica.tsx",
+              "file": "https://github.com/USTChandsomeboy/video-result/blob/main/site/experiments/r10-18/src/Replica.tsx",
               "line": 3,
               "anchor": "ToolFileEdit",
               "fragment": ",'AgentResponse','AgentThinking','WorkspaceOpen','ToolFileEdit'];\nexport const Replica:React.FC=()=>{const t=useCurrentFrame()/30;return <AbsoluteFill style={{background:t>9&&t<12?'radial-gradient(ellip",
@@ -2542,7 +2542,7 @@
           "impact": "输入过程以及进度条、徽章之间的时序不同。",
           "evidence": [
             {
-              "file": "source-catalog/round10/ChanMeng666--echook-promo-video/src/sections/features/QuickSetup.tsx",
+              "file": "https://github.com/ChanMeng666/echook-promo-video/blob/a2b8004ce7ca4e30a94cdb867b732537f374f481/src/sections/features/QuickSetup.tsx#L77",
               "line": 77,
               "anchor": "startFrame={5}",
               "fragment": "marketplace add ChanMeng666/echook\"\n              startFrame={5}\n              speed={1.6}\n              fontSize={16}\n              showCursor={false}\n            />\n          </div>\n          {frame > 2",
@@ -2550,7 +2550,7 @@
               "url": "https://github.com/ChanMeng666/echook-promo-video/blob/a2b8004ce7ca4e30a94cdb867b732537f374f481/src/sections/features/QuickSetup.tsx#L77"
             },
             {
-              "file": "experiments/r10-18/src/Replica.tsx",
+              "file": "https://github.com/USTChandsomeboy/video-result/blob/main/site/experiments/r10-18/src/Replica.tsx",
               "line": 2,
               "anchor": "t > 21.3",
               "fragment": "up?<><b># Install via plugin marketplace</b><br/>{t>21.3&&<>$ claude plugin marketplace add Channing666/echook<br/></>}{t>22&&<>$ claude plugin install audio-hooks@channing-as<br/></>}{t>22.6&&<><sp",
@@ -2569,7 +2569,7 @@
           "impact": "问题场景延后 0.667 秒，解决方案延后 1.333 秒。",
           "evidence": [
             {
-              "file": "source-catalog/round10/ChanMeng666--echook-promo-video/src/PromoVideo.tsx",
+              "file": "https://github.com/ChanMeng666/echook-promo-video/blob/a2b8004ce7ca4e30a94cdb867b732537f374f481/src/PromoVideo.tsx#L203",
               "line": 203,
               "anchor": "durationInFrames: DURATIONS.transition1",
               "fragment": " \"from-left\" })}\n          timing={linearTiming({ durationInFrames: DURATIONS.transition1 })}\n        />\n\n        {/* Section 2: Problem Statement */}\n        <TransitionSeries.Sequence durationInFrames={DURATIONS.problem}>\n     ",
@@ -2577,7 +2577,7 @@
               "url": "https://github.com/ChanMeng666/echook-promo-video/blob/a2b8004ce7ca4e30a94cdb867b732537f374f481/src/PromoVideo.tsx#L203"
             },
             {
-              "file": "experiments/r10-18/src/Replica.tsx",
+              "file": "https://github.com/USTChandsomeboy/video-result/blob/main/site/experiments/r10-18/src/Replica.tsx",
               "line": 4,
               "anchor": "t < 12",
               "fragment": ")/30;return <AbsoluteFill style={{background:t>9&&t<12?'radial-gradient(ellipse at center,#000 50%,#170605 100%)':'black',fontFamily:'Arial',color:'white',justifyContent:'center',alignItems:'cente",
@@ -2596,7 +2596,7 @@
           "impact": "复刻从 0.4 秒后就出现 Logo，少了缩放、扫描背景及原来的粒子爆发。",
           "evidence": [
             {
-              "file": "source-catalog/round10/ChanMeng666--echook-promo-video/src/sections/IntroLogoReveal.tsx",
+              "file": "https://github.com/ChanMeng666/echook-promo-video/blob/a2b8004ce7ca4e30a94cdb867b732537f374f481/src/sections/IntroLogoReveal.tsx#L31",
               "line": 31,
               "anchor": "const logoScale",
               "fragment": "\n        });\n\n  // Logo animation (frame 30-75)\n  const logoScale = spring({\n    frame: frame - 30,\n    fps,\n    config: { damping: 200 },\n    from: 0.8,\n    to: 1,\n  });\n\n  const logoOpacity = interpolate",
@@ -2604,7 +2604,7 @@
               "url": "https://github.com/ChanMeng666/echook-promo-video/blob/a2b8004ce7ca4e30a94cdb867b732537f374f481/src/sections/IntroLogoReveal.tsx#L31"
             },
             {
-              "file": "experiments/r10-18/src/Replica.tsx",
+              "file": "https://github.com/USTChandsomeboy/video-result/blob/main/site/experiments/r10-18/src/Replica.tsx",
               "line": 4,
               "anchor": "t - .4",
               "fragment": ":'absolute',top:170,opacity:Math.min(1,Math.max(0,t-.4)*3)}}><Logo/></div>{t>1.7&&t<3&&<svg width=\"270\" height=\"270\" style={{position:'absolute',top:90}}><circle cx=\"135\" cy=\"135\" r={70+(t-1.7)*30",
@@ -2623,7 +2623,7 @@
           "impact": "这一项是具体文字错误，与素材是否提供无关。",
           "evidence": [
             {
-              "file": "source-catalog/round10/ChanMeng666--echook-promo-video/src/sections/IntroLogoReveal.tsx",
+              "file": "https://github.com/ChanMeng666/echook-promo-video/blob/a2b8004ce7ca4e30a94cdb867b732537f374f481/src/sections/IntroLogoReveal.tsx#L180",
               "line": 180,
               "anchor": "v6.3.3",
               "fragment": ": `${COLORS.green}11`,\n        }}\n      >\n        v6.3.3\n      </div>\n    </div>\n  );\n};\n",
@@ -2631,7 +2631,7 @@
               "url": "https://github.com/ChanMeng666/echook-promo-video/blob/a2b8004ce7ca4e30a94cdb867b732537f374f481/src/sections/IntroLogoReveal.tsx#L180"
             },
             {
-              "file": "experiments/r10-18/src/Replica.tsx",
+              "file": "https://github.com/USTChandsomeboy/video-result/blob/main/site/experiments/r10-18/src/Replica.tsx",
               "line": 4,
               "anchor": "v0.3.3",
               "fragment": ",padding:'4px 10px',borderRadius:16,fontSize:10}}>v0.3.3</div>}</>:t<12?<><div style={{position:'absolute',top:185,left:230}}><Terminal t={t}/></div><div style={{position:'absolute',top:166,left:6",
@@ -2673,7 +2673,7 @@
           "impact": "起笔更晚但画完更早，线条速度明显不同。",
           "evidence": [
             {
-              "file": "source-catalog/round10/znyupup--knowledge-explainer-skill/templates/Triangle.jsx",
+              "file": "https://github.com/znyupup/knowledge-explainer-skill/blob/6ecae15fc8bbb589196c32ff3b726fc3e1764eac/templates/Triangle.jsx#L30",
               "line": 30,
               "anchor": "[22, 90]",
               "fragment": "harray)\n  const drawProgress = interpolate(frame, [22, 90], [0, 1], clamp());\n  // 标签依次出现\n  const baseLabelOp = interpolate(frame, [60, 80], [0, 1], clamp());\n  // 高(虚线)\n  const heightLineOp = inter",
@@ -2681,7 +2681,7 @@
               "url": "https://github.com/znyupup/knowledge-explainer-skill/blob/6ecae15fc8bbb589196c32ff3b726fc3e1764eac/templates/Triangle.jsx#L30"
             },
             {
-              "file": "experiments/r10-19/src/Replica.tsx",
+              "file": "https://github.com/USTChandsomeboy/video-result/blob/main/site/experiments/r10-19/src/Replica.tsx",
               "line": 3,
               "anchor": "(t - 10) * .8",
               "fragment": " strokeDasharray=\"340\" strokeDashoffset={340*(1-E((t-10)*.8))} filter=\"url(#gl)\"/><path d=\"M150 280H282L216 200Z\" fill=\"none\" stroke=\"#6860d3\" strokeWidth=\"1.5\" strokeDasharray=\"340\" strokeDashoffset={34",
@@ -2700,7 +2700,7 @@
           "impact": "图解逐步说明的顺序丢失。",
           "evidence": [
             {
-              "file": "source-catalog/round10/znyupup--knowledge-explainer-skill/templates/Triangle.jsx",
+              "file": "https://github.com/znyupup/knowledge-explainer-skill/blob/6ecae15fc8bbb589196c32ff3b726fc3e1764eac/templates/Triangle.jsx#L35",
               "line": 35,
               "anchor": "[95, 115]",
               "fragment": "mp());\n  const heightLabelOp = interpolate(frame, [95, 115], [0, 1], clamp());\n  // 公式\n  const formulaOp = interpolate(frame, [125, 150], [0, 1], clamp());\n  const formulaY = spring({frame: Math.max(",
@@ -2708,7 +2708,7 @@
               "url": "https://github.com/znyupup/knowledge-explainer-skill/blob/6ecae15fc8bbb589196c32ff3b726fc3e1764eac/templates/Triangle.jsx#L35"
             },
             {
-              "file": "experiments/r10-19/src/Replica.tsx",
+              "file": "https://github.com/USTChandsomeboy/video-result/blob/main/site/experiments/r10-19/src/Replica.tsx",
               "line": 3,
               "anchor": "(t - 11.7)",
               "fragment": "acity={E((t-10.8)*2)}>底 10 cm</text><g opacity={E((t-11.7)*2)}><path d=\"M216 200V280\" stroke=\"#ceb276\" strokeWidth=\"1\" strokeDasharray=\"3 3\"/><path d=\"M209 280V273H216\" stroke=\"#bda068\" fill=\"none\"/><",
@@ -2727,7 +2727,7 @@
           "impact": "计算结束后的强调力度和运动不同。",
           "evidence": [
             {
-              "file": "source-catalog/round10/znyupup--knowledge-explainer-skill/templates/Triangle.jsx",
+              "file": "https://github.com/znyupup/knowledge-explainer-skill/blob/6ecae15fc8bbb589196c32ff3b726fc3e1764eac/templates/Triangle.jsx#L44",
               "line": 44,
               "anchor": "const resultScale",
               "fragment": "nterpolate(frame, [200, 230], [0, 1], clamp());\n  const resultScale = spring({frame: Math.max(0, frame - 200), fps,\n    from: 0.85, to: 1, durationInFrames: 22});\n\n  // ===== 三角形几何参数(在 SVG viewBox 内) =====\n ",
@@ -2735,7 +2735,7 @@
               "url": "https://github.com/znyupup/knowledge-explainer-skill/blob/6ecae15fc8bbb589196c32ff3b726fc3e1764eac/templates/Triangle.jsx#L44"
             },
             {
-              "file": "experiments/r10-19/src/Replica.tsx",
+              "file": "https://github.com/USTChandsomeboy/video-result/blob/main/site/experiments/r10-19/src/Replica.tsx",
               "line": 3,
               "anchor": "(t - 15.7)",
               "fragment": "4341b44',boxShadow:'0 0 10px #e5b34b33',opacity:E((t-15.7)*1.5)}}><div style={{fontSize:9,color:'#baa575',marginBottom:4,fontWeight:400}}>✧ 答案</div><span style={{fontFamily:'monospace',fontSize:23}}>3",
@@ -2754,7 +2754,7 @@
           "impact": "文字出现时间、完成时间和光标状态均不同。",
           "evidence": [
             {
-              "file": "source-catalog/round10/znyupup--knowledge-explainer-skill/custom/CustomFunFact.jsx",
+              "file": "https://github.com/znyupup/knowledge-explainer-skill/blob/6ecae15fc8bbb589196c32ff3b726fc3e1764eac/custom/CustomFunFact.jsx#L21",
               "line": 21,
               "anchor": "[22, 80]",
               "fragment": "in(fact.length,\n    Math.floor(interpolate(frame, [22, 80], [0, fact.length], clamp())));\n  const factVisible = fact.slice(0, factCharsShown);\n\n  // hint 卡片飞入\n  const hintOp = interpolate(frame, [70",
@@ -2762,7 +2762,7 @@
               "url": "https://github.com/znyupup/knowledge-explainer-skill/blob/6ecae15fc8bbb589196c32ff3b726fc3e1764eac/custom/CustomFunFact.jsx#L21"
             },
             {
-              "file": "experiments/r10-19/src/Replica.tsx",
+              "file": "https://github.com/USTChandsomeboy/video-result/blob/main/site/experiments/r10-19/src/Replica.tsx",
               "line": 3,
               "anchor": "t - 18.2",
               "fragment": "}}>{'等腰直角三角形,两条腰相等'.slice(0,Math.floor(Math.max(0,t-18.2)*5.7))}<span style={{color:'#e2b765',fontWeight:400}}>|</span></div><Box style={{display:'inline-block',marginTop:17,color:'#bebbbb',fontSize",
@@ -2781,7 +2781,7 @@
           "impact": "方向和相邻项目的节奏都变了。",
           "evidence": [
             {
-              "file": "source-catalog/round10/znyupup--knowledge-explainer-skill/templates/ContentCard.jsx",
+              "file": "https://github.com/znyupup/knowledge-explainer-skill/blob/6ecae15fc8bbb589196c32ff3b726fc3e1764eac/templates/ContentCard.jsx#L41",
               "line": 41,
               "anchor": "from: -30",
               "fragment": "ath.max(0, frame - 22 - i * 12), fps,\n            from: -30, to: 0, durationInFrames: 22});\n          return (\n            <div key={i} style={{\n              opacity: op, transform: `translateX(${x}",
@@ -2789,7 +2789,7 @@
               "url": "https://github.com/znyupup/knowledge-explainer-skill/blob/6ecae15fc8bbb589196c32ff3b726fc3e1764eac/templates/ContentCard.jsx#L41"
             },
             {
-              "file": "experiments/r10-19/src/Replica.tsx",
+              "file": "https://github.com/USTChandsomeboy/video-result/blob/main/site/experiments/r10-19/src/Replica.tsx",
               "line": 3,
               "anchor": "translateY(${12",
               "fragment": "'11px 12px',opacity:E((t-4.4-i*.55)*3),transform:`translateY(${12*(1-E((t-4.4-i*.55)*3))}px)`}}>{s}</Box>)}</div></>:t<18?<><div style={{position:'absolute',top:23,width:'100%',textAlign:'center',fontSize:",
@@ -2831,7 +2831,7 @@
           "impact": "从“主题推断”变成“不会写”，说明内容发生变化。",
           "evidence": [
             {
-              "file": "source-catalog/round10/znyupup--knowledge-explainer-skill/src/ai_video_3steps.jsx",
+              "file": "https://github.com/znyupup/knowledge-explainer-skill/blob/6ecae15fc8bbb589196c32ff3b726fc3e1764eac/src/ai_video_3steps.jsx#L63",
               "line": 63,
               "anchor": "不告诉它主题",
               "fragment": " 14 处语音截断\"\n            ],\n            \"callout\": \"不告诉它主题,它自己推断\"\n          }}\n        />\n      </Sequence>\n      <Sequence from={750} durationInFrames={210}>\n        <ContentCard\n          {...{\n  ",
@@ -2839,7 +2839,7 @@
               "url": "https://github.com/znyupup/knowledge-explainer-skill/blob/6ecae15fc8bbb589196c32ff3b726fc3e1764eac/src/ai_video_3steps.jsx#L63"
             },
             {
-              "file": "experiments/r10-20/src/Replica.tsx",
+              "file": "https://github.com/USTChandsomeboy/video-result/blob/main/site/experiments/r10-20/src/Replica.tsx",
               "line": 4,
               "anchor": "不会写也能让它自己判断",
               "fragment": "1px solid #7256de55',opacity:clamp((q-3.3)*2)}}>💡 不会写也能让它自己判断</div>}</>:<><div style={{position:'absolute',top:34,width:640,textAlign:'center',fontSize:24,fontWeight:800,opacity:clamp(q*2)}}><span styl",
@@ -2858,7 +2858,7 @@
           "impact": "需要逐条核对屏幕文字，不能只确认卡片数量和位置。",
           "evidence": [
             {
-              "file": "source-catalog/round10/znyupup--knowledge-explainer-skill/src/ai_video_3steps.jsx",
+              "file": "https://github.com/znyupup/knowledge-explainer-skill/blob/6ecae15fc8bbb589196c32ff3b726fc3e1764eac/src/ai_video_3steps.jsx#L75",
               "line": 75,
               "anchor": "做饭那段短一些",
               "fragment": "           \"💬 \\\"音乐大一点\\\" → 秒改\",\n              \"💬 \\\"做饭那段短一些\\\" → 秒改\",\n              \"🚀 不用拖时间轴,不用重导\"\n            ]\n          }}\n        />\n      </Sequence>\n      <Sequence from={960} durationInFrames=",
@@ -2866,7 +2866,7 @@
               "url": "https://github.com/znyupup/knowledge-explainer-skill/blob/6ecae15fc8bbb589196c32ff3b726fc3e1764eac/src/ai_video_3steps.jsx#L75"
             },
             {
-              "file": "experiments/r10-20/src/Replica.tsx",
+              "file": "https://github.com/USTChandsomeboy/video-result/blob/main/site/experiments/r10-20/src/Replica.tsx",
               "line": 4,
               "anchor": "微饭那段短一些",
               "fragment": "⚙️ ffmpeg 自动裁剪 / 拼接 / 混 BGM','💬 “音乐大一点” → 秒改','💬 “微饭那段短一些” → 秒改','🚀 不用拖时间轴,不用重导']}/></>}</AbsoluteFill>};\n",
@@ -2885,7 +2885,7 @@
           "impact": "右列过早进入，输入与输出的展示节奏改变。",
           "evidence": [
             {
-              "file": "source-catalog/round10/znyupup--knowledge-explainer-skill/templates/TwoColumn.jsx",
+              "file": "https://github.com/znyupup/knowledge-explainer-skill/blob/6ecae15fc8bbb589196c32ff3b726fc3e1764eac/templates/TwoColumn.jsx#L67",
               "line": 67,
               "anchor": "delay={50}",
               "fragment": "ight} color={color2} label={rightLabel}\n          delay={50} fps={fps} frame={frame} />\n      </div>\n\n      {callout && (\n        <Callout text={callout} color={color1} frame={frame} fps={fps} delay={",
@@ -2893,7 +2893,7 @@
               "url": "https://github.com/znyupup/knowledge-explainer-skill/blob/6ecae15fc8bbb589196c32ff3b726fc3e1764eac/templates/TwoColumn.jsx#L67"
             },
             {
-              "file": "experiments/r10-20/src/Replica.tsx",
+              "file": "https://github.com/USTChandsomeboy/video-result/blob/main/site/experiments/r10-20/src/Replica.tsx",
               "line": 4,
               "anchor": "j * .55",
               "fragment": "marginBottom:5,borderRadius:3,opacity:clamp((q-.7-j*.55-i*.4)*2)}}>{v}</div>)}</div>)}<div style={{position:'absolute',left:300,top:111,fontSize:44,color:'#785bed',opacity:clamp((q-1.2)*2)}}>→</div",
@@ -2912,7 +2912,7 @@
           "impact": "输入传到输出的方向提示弱化，形状和运动都不同。",
           "evidence": [
             {
-              "file": "source-catalog/round10/znyupup--knowledge-explainer-skill/templates/TwoColumn.jsx",
+              "file": "https://github.com/znyupup/knowledge-explainer-skill/blob/6ecae15fc8bbb589196c32ff3b726fc3e1764eac/templates/TwoColumn.jsx#L25",
               "line": 25,
               "anchor": "const dashOffset",
               "fragment": " interpolate(frame, [40, 70], [0, 1], clamp());\n  const dashOffset = (frame * 1.2) % 80;\n\n  return (\n    <AbsoluteFill style={{\n      background: `radial-gradient(ellipse at top, #1a1a2e 0%, ${bg} 70%)`,\n  ",
@@ -2920,7 +2920,7 @@
               "url": "https://github.com/znyupup/knowledge-explainer-skill/blob/6ecae15fc8bbb589196c32ff3b726fc3e1764eac/templates/TwoColumn.jsx#L25"
             },
             {
-              "file": "experiments/r10-20/src/Replica.tsx",
+              "file": "https://github.com/USTChandsomeboy/video-result/blob/main/site/experiments/r10-20/src/Replica.tsx",
               "line": 4,
               "anchor": "fontSize: 44",
               "fragment": "<div style={{position:'absolute',left:300,top:111,fontSize:44,color:'#785bed',opacity:clamp((q-1.2)*2)}}>→</div>{q>3.3&&<div style={{position:'absolute',left:235,top:211,padding:'8px 13px',fontSize:10,f",
@@ -2939,7 +2939,7 @@
           "impact": "提示早 0.7 秒，文字进入方式也不一致。",
           "evidence": [
             {
-              "file": "source-catalog/round10/znyupup--knowledge-explainer-skill/templates/TwoColumn.jsx",
+              "file": "https://github.com/znyupup/knowledge-explainer-skill/blob/6ecae15fc8bbb589196c32ff3b726fc3e1764eac/templates/TwoColumn.jsx#L71",
               "line": 71,
               "anchor": "delay={120}",
               "fragment": "={callout} color={color1} frame={frame} fps={fps} delay={120} />\n      )}\n    </AbsoluteFill>\n  );\n};\n\nconst Column = ({items, color, label, delay, fps, frame}) => (\n  <div style={{flex: 1,\n    backgro",
@@ -2947,7 +2947,7 @@
               "url": "https://github.com/znyupup/knowledge-explainer-skill/blob/6ecae15fc8bbb589196c32ff3b726fc3e1764eac/templates/TwoColumn.jsx#L71"
             },
             {
-              "file": "experiments/r10-20/src/Replica.tsx",
+              "file": "https://github.com/USTChandsomeboy/video-result/blob/main/site/experiments/r10-20/src/Replica.tsx",
               "line": 4,
               "anchor": "q > 3.3",
               "fragment": "olor:'#785bed',opacity:clamp((q-1.2)*2)}}>→</div>{q>3.3&&<div style={{position:'absolute',left:235,top:211,padding:'8px 13px',fontSize:10,fontWeight:600,background:'#7256de14',border:'1px solid #72",
