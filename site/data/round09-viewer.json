@@ -1,0 +1,249 @@
+[
+  {
+    "id": "r09-nike-poster",
+    "title": "Nike 球鞋：纹理海报与鞋底拖影",
+    "category": "产品营销",
+    "duration": 9,
+    "fps": 30,
+    "frames": 270,
+    "source": "https://www.youtube.com/watch?v=vnjUIE7YsEk",
+    "asset_source": "https://www.patreon.com/posts/download-project-104038682",
+    "coverage": "作者公开的同一球鞋透明 PNG 与同一纸张纹理已匹配。字体文件未提供。",
+    "provided": {
+      "dir": "experiments/r09-nike-poster",
+      "ready": true,
+      "state": "首次输出已核验；差异已标注",
+      "comparison": true,
+      "assets": [
+        "paper.jpg",
+        "shoe.png"
+      ],
+      "findings": [
+        "整体构图、同一球鞋、鞋底拉伸和收尾变暗已还原。这条暂作为较容易的对照，不列入已证实高难样本。",
+        "0–6.75 秒：背景中央比原片亮、纹理较淡；侧边文字宽度和间距不同。字体未提供，不能全部归为运动能力问题。",
+        "4.50 秒：原片鞋的位置已发生小幅变化，复刻运动幅度很小；需要连续轨迹测量后才判断时序误差大小。"
+      ]
+    },
+    "missing": {
+      "dir": "experiments/r09-nike-poster-missing",
+      "ready": true,
+      "state": "首次输出已核验；差异已标注",
+      "comparison": true,
+      "assets": [
+        "paper.jpg"
+      ],
+      "findings": [
+        "本次只提供纸纹，未提供球鞋。独立 agent 用 SVG 绘制鞋，不是从已有复刻中替换图片。",
+        "0 秒：鞋的大轮廓和蓝白配色仍可辨认，但鞋面材质、缝线、鞋带与真实照片不同。这属于缺照片条件的外观损失。",
+        "海报布局、竖向拖影和侧边字仍保留；不能因为鞋不像照片，就判定其动效全部失败。"
+      ]
+    },
+    "withheld": [
+      "shoe.png"
+    ]
+  },
+  {
+    "id": "r09-banana-collage",
+    "title": "香蕉拼贴：人物关节、抛物运动与出拳",
+    "category": "创意拼贴 / 艺术内容",
+    "duration": 6.24,
+    "fps": 25,
+    "frames": 156,
+    "source": "https://www.youtube.com/watch?v=QoYdlYNjT3k",
+    "asset_source": "https://drive.google.com/file/d/1z1stnUHAv5hqfkLnQeaH0VC4pNdaV7SI/view",
+    "coverage": "作者 PSD 已导出 38 张独立静态层。人头、木偶身体、鞋、香蕉各状态、拳头、衣袖、胶带与背景已逐项匹配。撕纸轮廓及文字需重建，字体未提供。",
+    "provided": {
+      "dir": "experiments/r09-banana-collage",
+      "ready": true,
+      "state": "首次输出已核验；差异已标注",
+      "comparison": true,
+      "assets": [
+        "00-textured-canvas-surface-copy.png",
+        "01-sample-sky.png",
+        "02-cloud.png",
+        "03-cloud.png",
+        "04-banana-peel.png",
+        "05-calf-r.png",
+        "06-thigh-r.png",
+        "07-shoe-r.png",
+        "08-calf-l.png",
+        "09-thigh-l.png",
+        "10-shoe-l.png",
+        "11-shoelace-l.png",
+        "12-arm-l.png",
+        "13-wrist-l.png",
+        "14-elbow-l.png",
+        "15-upper-body.png",
+        "16-lower-body.png",
+        "17-arm-r-1.png",
+        "18-wrist-r.png",
+        "19-elbow-r.png",
+        "20-neck.png",
+        "21-head.png",
+        "22-mouth-1.png",
+        "23-main-banana.png",
+        "24-moth-2.png",
+        "25-sclera-r.png",
+        "26-pupil-r.png",
+        "27-sclera-l.png",
+        "28-pupil-l.png",
+        "30-banana-1.png",
+        "31-banana-2.png",
+        "32-black-banana.png",
+        "33-tape.png",
+        "34-hand.png",
+        "35-cloth.png",
+        "36-gang.png",
+        "37-lip.png",
+        "38-shine.png"
+      ],
+      "findings": [
+        "1.56 秒：原片香蕉在人物左侧较高位置，复刻在左下方；身体和腿的姿态也不同。素材已给到，差异发生在动作安排。",
+        "3.12 秒：复刻拳头明显小于原片；香蕉、云朵与拳头的相对位置不一致。整体转场存在，但镜头放大与物体位移的配合不准。",
+        "4.68 秒：原片香蕉为黄色，复刻已切到黑斑状态。不同状态的原素材都有提供，状态切换时间不准。",
+        "6.20 秒：三组金额字的大小、字形、位置，以及撕纸外形仍不同；原字体和撕纸素材未配齐，此处单列，不用来证明运动弱点。"
+      ]
+    },
+    "missing": {
+      "dir": "experiments/r09-banana-collage-missing",
+      "ready": true,
+      "state": "首次输出已核验；差异已标注",
+      "comparison": true,
+      "assets": [
+        "00-textured-canvas-surface-copy.png",
+        "01-sample-sky.png",
+        "02-cloud.png",
+        "03-cloud.png",
+        "04-banana-peel.png",
+        "05-calf-r.png",
+        "06-thigh-r.png",
+        "07-shoe-r.png",
+        "08-calf-l.png",
+        "09-thigh-l.png",
+        "10-shoe-l.png",
+        "11-shoelace-l.png",
+        "12-arm-l.png",
+        "13-wrist-l.png",
+        "14-elbow-l.png",
+        "15-upper-body.png",
+        "16-lower-body.png",
+        "17-arm-r-1.png",
+        "18-wrist-r.png",
+        "19-elbow-r.png",
+        "20-neck.png",
+        "22-mouth-1.png",
+        "23-main-banana.png",
+        "24-moth-2.png",
+        "25-sclera-r.png",
+        "26-pupil-r.png",
+        "27-sclera-l.png",
+        "28-pupil-l.png",
+        "30-banana-1.png",
+        "31-banana-2.png",
+        "32-black-banana.png",
+        "33-tape.png",
+        "34-hand.png",
+        "35-cloth.png",
+        "36-gang.png",
+        "37-lip.png",
+        "38-shine.png"
+      ],
+      "findings": [
+        "本次只拿掉人物头部照片，其他 37 份素材保留。独立 agent 用矢量图形绘制人头。",
+        "0 秒：人脸已变为简化插画，未保留原照片人物的细节；这是身份外观不一致，不能单独当作运动失败。",
+        "1.56 秒：原片后腿向右抬起，复刻后腿仍向下；3.12 秒拳头也明显偏小。提供人物头部的版本同样出现动作与尺寸问题，但两次独立运行不能精确归因于拿掉头部。"
+      ]
+    },
+    "withheld": [
+      "21-head.png"
+    ]
+  },
+  {
+    "id": "r09-typewriter-collage",
+    "title": "打字机：真实手部姿态与机械动作",
+    "category": "品牌视觉 / 编辑拼贴",
+    "duration": 6.4,
+    "fps": 30,
+    "frames": 192,
+    "source": "https://www.youtube.com/watch?v=YcXdZBrA1mA",
+    "asset_source": "https://drive.google.com/file/d/1Gtw6T6g-W_imti5sGCcPPweMePOK8UQQ/view",
+    "coverage": "作者的 23 个部件/手姿态 PNG 与纸张纹理已导出并匹配。静态原部件提供，布局与动作不提供；小字字体文件未提供。",
+    "provided": {
+      "dir": "experiments/r09-typewriter-collage",
+      "ready": true,
+      "state": "首次输出已核验；差异已标注",
+      "comparison": true,
+      "assets": [
+        "a.png",
+        "c.png",
+        "g.png",
+        "handle.png",
+        "last.png",
+        "left-hand-1.png",
+        "left-hand-2.png",
+        "left-hand-3.png",
+        "left-hand-4.png",
+        "left-hand-5.png",
+        "left-hand-6.png",
+        "m.png",
+        "o.png",
+        "paper.jpg",
+        "right-hand-1.png",
+        "right-hand-2.png",
+        "right-hand-3.png",
+        "right-hand-4.png",
+        "right-hand-5.png",
+        "right-hand-6.png",
+        "roll.png",
+        "space.png",
+        "t.png",
+        "typewriter.png"
+      ],
+      "findings": [
+        "初始构图和机器部件较接近；使用了原作者真实手部素材。",
+        "3.20 秒：原片左右手都在键盘上，复刻左手已经移到手柄附近。素材正确，但姿态选择与动作时间不一致。",
+        "1.60、4.80 秒：手掌位置、手指姿态与原片有偏差；不能仅凭外观相似就判定按键动作还原正确。",
+        "小字使用了替代文本，蓝色装饰的形状/出现时间也有差异。它们与手部动作分开记录。"
+      ]
+    },
+    "missing": {
+      "dir": "experiments/r09-typewriter-collage-missing",
+      "ready": true,
+      "state": "首次输出已核验；差异已标注",
+      "comparison": true,
+      "assets": [
+        "a.png",
+        "c.png",
+        "g.png",
+        "handle.png",
+        "m.png",
+        "o.png",
+        "paper.jpg",
+        "roll.png",
+        "space.png",
+        "t.png",
+        "typewriter.png"
+      ],
+      "findings": [
+        "本次拿掉全部 13 张手部图像，机器和纸纹仍提供。独立 agent 以 SVG 手形代替真实手部。",
+        "0–4.80 秒：手呈扁平灰色，缺少原片真实手部的质感与姿态变化；需要把外观损失和动作偏差分别看。",
+        "6.37 秒：原片是手指触碰手柄，复刻为张开的手掌靠近手柄，接触姿态不同。该条件未允许联网找图或图像生成，不能推广为开放工具条件下的能力结论。"
+      ]
+    },
+    "withheld": [
+      "last.png",
+      "left-hand-1.png",
+      "left-hand-2.png",
+      "left-hand-3.png",
+      "left-hand-4.png",
+      "left-hand-5.png",
+      "left-hand-6.png",
+      "right-hand-1.png",
+      "right-hand-2.png",
+      "right-hand-3.png",
+      "right-hand-4.png",
+      "right-hand-5.png",
+      "right-hand-6.png"
+    ]
+  }
+]

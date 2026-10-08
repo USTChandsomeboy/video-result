@@ -1,0 +1,3029 @@
+{
+  "round": 10,
+  "date": "2026-10-04",
+  "coverage": "20 条复刻逐条比对实际渲染片段的入口、主场景、关键动画、文本和数据；每条列出可定位的差异，不按代码长度或文本相似度评分。",
+  "cases": [
+    {
+      "id": "r10-01",
+      "title": "Sulcus 品牌片：从混乱到秩序",
+      "category": "品牌形象",
+      "reference_id": "sulcus",
+      "findings": [
+        {
+          "aspect": "节点没有从散乱状态持续整理成树",
+          "kind": "行为差异",
+          "original": "原片为节点保留身份、父子关系，并根据各节点 acquire 时间逐步重排。",
+          "replica": "开头散点与后续七组 Graph 分开生成；不是同一批节点逐个归位。",
+          "impact": "能画出“散点”和“树”，但丢失中间整理过程及对象对应关系。",
+          "evidence": [
+            {
+              "file": "source-catalog/round10/ElarizT--Sulcus-Brand-Film/src/world/field.ts",
+              "line": 481,
+              "anchor": "v3.lerp(n.chaos, n.tree, m)",
+              "fragment": "id * 0.9) * 9 * sway,\n    ];\n    const p = v3.add(v3.lerp(n.chaos, n.tree, m), drift);\n    const wake = clamp01(held / 0.5);\n    let energy = 1 - 0.86 * frozen * (1 - wake);\n    if (t >= T.limitHit && FEATURE.limitTre",
+              "sha256": "b9d9cabb7f7ef9e626e6f731e9e24cb436a9de6c5262d6a3c2ef58fb1430b5f9",
+              "url": "https://github.com/ElarizT/Sulcus-Brand-Film/blob/f8c3c40be65e3ad3276fe8eb922f533d7eef96fe/src/world/field.ts#L481"
+            },
+            {
+              "file": "experiments/r10-01/src/Replica.tsx",
+              "line": 6,
+              "anchor": "length:95",
+              "fragment": "none\" stroke=\"#976734\" opacity=\".3\"/>{Array.from({length:95},(_,i)=>{let x=180+rand(i)*600,y=30+rand(i+22)*270;return <g key={i} opacity={t<2.7?.035:.45}><path d={`M${x} ${y} v${30+rand(i+5)*60} h${r",
+              "sha256": "2dad099543f67ee21939ddd7568783eb2b367a6f7d0233a27120c0f1e64cd78f",
+              "url": "/experiments/r10-01/src/Replica.tsx"
+            }
+          ],
+          "verification": "代码确认；可见影响按明确公式或渲染分支推导，另附画面核查的项目会单独标记",
+          "finding_id": "r10-01-1"
+        },
+        {
+          "aspect": "镜头连续运动被阶段跳变替代",
+          "kind": "行为差异",
+          "original": "原片使用连续相机路径投影场景。",
+          "replica": "主要使用二维平移、固定倾斜和阶段切换；不是同一路径。",
+          "impact": "局部放大、透视和场景之间的连续移动不一致。",
+          "evidence": [
+            {
+              "file": "source-catalog/round10/ElarizT--Sulcus-Brand-Film/src/film/camera.ts",
+              "line": 100,
+              "anchor": "const spline",
+              "fragment": "speed through each key instead of stopping on it.\nconst spline = (get: (k: Key) => number, i: number, s: number) => {\n  const k0 = KEYS[Math.max(0, i - 1)];\n  const k1 = KEYS[i];\n  const k2 = KEYS[i + 1",
+              "sha256": "3b7afd27e424239081e3ac75282250187cb102eaf7dc4d67c0984af317deb3f4",
+              "url": "https://github.com/ElarizT/Sulcus-Brand-Film/blob/f8c3c40be65e3ad3276fe8eb922f533d7eef96fe/src/film/camera.ts#L100"
+            },
+            {
+              "file": "experiments/r10-01/src/Replica.tsx",
+              "line": 6,
+              "anchor": "phase",
+              "fragment": "onst show1=t>=8&&t<11.3,show2=t>=13&&t<16.4;const phase=t<12?0:t<17?1:2;return <AbsoluteFill style={{background:'#030403',overflow:'hidden'}}><svg viewBox=\"0 0 960 540\" width=\"100%\" height=\"100%\"",
+              "sha256": "2dad099543f67ee21939ddd7568783eb2b367a6f7d0233a27120c0f1e64cd78f",
+              "url": "/experiments/r10-01/src/Replica.tsx"
+            }
+          ],
+          "verification": "代码确认；可见影响按明确公式或渲染分支推导，另附画面核查的项目会单独标记",
+          "finding_id": "r10-01-2"
+        },
+        {
+          "aspect": "重试过程丢了多个状态",
+          "kind": "行为差异",
+          "original": "原片依次展示运行、第一次失败、第二次重试、最终成功。",
+          "replica": "提示只在一个时间条件后变成 503 retry 2/3，没有完整成功状态。",
+          "impact": "重试最终解决问题这一段信息没有复刻完整。",
+          "evidence": [
+            {
+              "file": "source-catalog/round10/ElarizT--Sulcus-Brand-Film/src/world/drawGovernance.ts",
+              "line": 299,
+              "anchor": "503",
+              "fragment": "T.retryAgain\n        ? { label: \"STATUS\", value: \"503 · retry 1/3\", color: \"error\", shown: 1 }\n        : t < T.retryOk\n          ? { label: \"STATUS\", value: \"503 · retry 2/3\", color: \"error\", s",
+              "sha256": "2e61bd5ece3e7d2080b99dd328b111b54b8596508bcd4d3dbc7d9d0d55bd9be6",
+              "url": "https://github.com/ElarizT/Sulcus-Brand-Film/blob/f8c3c40be65e3ad3276fe8eb922f533d7eef96fe/src/world/drawGovernance.ts#L299"
+            },
+            {
+              "file": "experiments/r10-01/src/Replica.tsx",
+              "line": 6,
+              "anchor": "503",
+              "fragment": "ver','orchestrator','http.get  /v2/orders',t>9.4?'503 · retry 2/3':'','●  ━━━  ━━']:['deploy --prod','tester',t>15?'approved':'awaiting approval']).map((s,i)=><g key={i}><path d={`M12 ${28+i*27",
+              "sha256": "2dad099543f67ee21939ddd7568783eb2b367a6f7d0233a27120c0f1e64cd78f",
+              "url": "/experiments/r10-01/src/Replica.tsx"
+            }
+          ],
+          "verification": "代码确认；可见影响按明确公式或渲染分支推导，另附画面核查的项目会单独标记",
+          "finding_id": "r10-01-3"
+        },
+        {
+          "aspect": "预算边界只剩文字提示",
+          "kind": "行为差异",
+          "original": "原片包含预算读数、达到限制及阻断反馈。",
+          "replica": "后段主要用标题和通用节点高亮表达。",
+          "impact": "“到达上限所以被阻止”的过程被简化，不能从标题相同判定一致。",
+          "evidence": [
+            {
+              "file": "source-catalog/round10/ElarizT--Sulcus-Brand-Film/src/world/drawGovernance.ts",
+              "line": 526,
+              "anchor": "held ? \"200k / 200k\"",
+              "fragment": "USED\" : `TOKENS ${Math.round(level * 100)}%`,\n    held ? \"200k / 200k\" : `${Math.round(level * 200)}k / 200k`,\n    held ? \"signal\" : \"ink\",\n    \"left\",\n    r.fog(pr.z) * ramp(t, T.bounds, T.bounds + 0.3) * near",
+              "sha256": "2e61bd5ece3e7d2080b99dd328b111b54b8596508bcd4d3dbc7d9d0d55bd9be6",
+              "url": "https://github.com/ElarizT/Sulcus-Brand-Film/blob/f8c3c40be65e3ad3276fe8eb922f533d7eef96fe/src/world/drawGovernance.ts#L526"
+            },
+            {
+              "file": "experiments/r10-01/src/Replica.tsx",
+              "line": 6,
+              "anchor": "BOUNDARIES",
+              "fragment": "DOING.':show2?'STEP IN WHEN IT MATTERS.':'SET THE BOUNDARIES.'}</text>}</svg></AbsoluteFill>};\n",
+              "sha256": "2dad099543f67ee21939ddd7568783eb2b367a6f7d0233a27120c0f1e64cd78f",
+              "url": "/experiments/r10-01/src/Replica.tsx"
+            }
+          ],
+          "verification": "代码确认；可见影响按明确公式或渲染分支推导，另附画面核查的项目会单独标记",
+          "finding_id": "r10-01-4"
+        }
+      ],
+      "replica_sha256": "2dad099543f67ee21939ddd7568783eb2b367a6f7d0233a27120c0f1e64cd78f",
+      "video_sha256": "691cd71b4478b83e735a80b8df3ad6fdf631b5eb902ee22172366781902363b6",
+      "compare_url": "http://127.0.0.1:8770/compare-round10.html#r10-01",
+      "repo_url": "https://github.com/ElarizT/Sulcus-Brand-Film",
+      "reference_sha256": "4b462fb74f7693aa0d40f18bfab66f869c991542db2499c2d7785719b01ab033",
+      "visual_check": "第 262 帧：原片已经 200 OK，复刻仍停在 503 重试。第 470 帧：原片有预算用满并暂停的标记，复刻没有。",
+      "samples": {
+        "id": "r10-01",
+        "frames": [
+          262,
+          470
+        ],
+        "fps": 24,
+        "image": "r10-01.jpg"
+      }
+    },
+    {
+      "id": "r10-02",
+      "title": "Ringflow 环形菜单操作演示",
+      "category": "软件演示",
+      "reference_id": "ringflow",
+      "findings": [
+        {
+          "aspect": "场景切换有多处时间偏移",
+          "kind": "行为差异",
+          "original": "原片场景起点为 0、4.8、7.6、13.6、17.8、21、24.2、27.4 秒。",
+          "replica": "复刻起点为 0、4、8、13、18、22、24、27 秒。",
+          "impact": "部分场景提前或延后接近 1 秒，同一时刻展示的功能不同。",
+          "evidence": [
+            {
+              "file": "source-catalog/round10/wawaup--Ringflow-promo/src/config/timeline.ts",
+              "line": 73,
+              "anchor": "durationSeconds: 4.8",
+              "fragment": ",\n    id: \"intro-focus\",\n    name: \"开场：保持连贯\",\n    durationSeconds: 4.8,\n    layout: \"left-stage\",\n    choreography: {\n      pageStartFrame: 0,\n      pageReadyFrame: 12,\n      textStartFrame: 18,\n      visualSta",
+              "sha256": "b70394e21798a132bbd74ae860eaf65f17cf19d201d8ed8a7b2756ee3a71cab6",
+              "url": "https://github.com/wawaup/Ringflow-promo/blob/f85e52149ac88679ee82d4a97a7ee81e1875a3c6/src/config/timeline.ts#L73"
+            },
+            {
+              "file": "experiments/r10-02/src/Replica.tsx",
+              "line": 6,
+              "anchor": "t<4",
+              "fragment": "urrentFrame(),t=f/60;const dark=t>=27;const title=t<4?'正在做的事，\\n应该保持连贯。':t<8?'找来找去。\\n来回切换。\\n一遍又一遍。':t<13?'常用的，\\n应该更近一点。':t<18?'按住中键，\\n向右一划。':t<22?'常用文字，一划输入。':t<24?'常用应用、文件、文件夹，一划打开。':t<27?'灵感，不",
+              "sha256": "e875adc8fcf1ada36384289ca967e1d70a13aede71c4b023018dbb7c42923144",
+              "url": "/experiments/r10-02/src/Replica.tsx"
+            }
+          ],
+          "verification": "代码确认；可见影响按明确公式或渲染分支推导，另附画面核查的项目会单独标记",
+          "finding_id": "r10-02-1"
+        },
+        {
+          "aspect": "开场复制粘贴流程没有做出来",
+          "kind": "行为差异",
+          "original": "原片安排代码窗口退出、便签进入、复制、粘贴，再切到提示词窗口。",
+          "replica": "窗口标题改变，但主体一直是同一段示例代码；没有对应复制和粘贴状态。",
+          "impact": "看到的是窗口拼图，难以看出连续工作流。",
+          "evidence": [
+            {
+              "file": "source-catalog/round10/wawaup--Ringflow-promo/src/config/timeline.ts",
+              "line": 85,
+              "anchor": "noteCopyFrame: 124",
+              "fragment": "tartFrame: 124,\n      stickyOpenFrame: 101,\n      noteCopyFrame: 124,\n      notePasteFrame: 150,\n      noteGroupExitFrame: 176,    // note window + its copy/paste keys fade out together\n      promptOpenFrame:",
+              "sha256": "b70394e21798a132bbd74ae860eaf65f17cf19d201d8ed8a7b2756ee3a71cab6",
+              "url": "https://github.com/wawaup/Ringflow-promo/blob/f85e52149ac88679ee82d4a97a7ee81e1875a3c6/src/config/timeline.ts#L85"
+            },
+            {
+              "file": "experiments/r10-02/src/Replica.tsx",
+              "line": 6,
+              "anchor": "export function main",
+              "fragment": " style={{fontFamily:'monospace',color:'#65728d'}}>export function main() &#123;<br/>　const result = workflow.run();<br/>　return result;<br/>&#125;</div></Win><Win x={530} y={280} w={255} h={135} title=\"智能助手\"><p",
+              "sha256": "e875adc8fcf1ada36384289ca967e1d70a13aede71c4b023018dbb7c42923144",
+              "url": "/experiments/r10-02/src/Replica.tsx"
+            }
+          ],
+          "verification": "代码确认；可见影响按明确公式或渲染分支推导，另附画面核查的项目会单独标记",
+          "finding_id": "r10-02-2"
+        },
+        {
+          "aspect": "快捷输入没有输入结果",
+          "kind": "行为差异",
+          "original": "原片的轮盘操作驱动当前窗口中的文字插入。",
+          "replica": "复刻显示静态常用文字列表和轮盘。",
+          "impact": "遗漏“选择内容→填入当前位置”的结果反馈。",
+          "evidence": [
+            {
+              "file": "source-catalog/round10/wawaup--Ringflow-promo/src/scenes/06_QuickInputScene.tsx",
+              "line": 1,
+              "anchor": "QuickInputWorkspace",
+              "fragment": "import { QuickInputWorkspace } from \"../components/ProductUI/ProductSurfaces\";\nimport { sceneCopy } from \"../config/copy\";\nimport { scenes } from \"../config/timeline\";\n",
+              "sha256": "89cc12dc211e10ff83af3438bec52cef63be9c1283d1c30e24a4aa21f2488f24",
+              "url": "https://github.com/wawaup/Ringflow-promo/blob/f85e52149ac88679ee82d4a97a7ee81e1875a3c6/src/scenes/06_QuickInputScene.tsx#L1"
+            },
+            {
+              "file": "experiments/r10-02/src/Replica.tsx",
+              "line": 6,
+              "anchor": "工作邮箱：hello",
+              "fragment": "操作。</p><div style={{fontSize:9,lineHeight:2.7}}>▸ 工作邮箱：hello@ringflow.app<br/>▸ 地址信息<br/>▸ 常用回复：收到，谢谢！</div><div style={{position:'absolute',right:12,top:37,width:75,lineHeight:2.5}}>常用文字<br/>工作邮箱<br/",
+              "sha256": "e875adc8fcf1ada36384289ca967e1d70a13aede71c4b023018dbb7c42923144",
+              "url": "/experiments/r10-02/src/Replica.tsx"
+            }
+          ],
+          "verification": "代码确认；可见影响按明确公式或渲染分支推导，另附画面核查的项目会单独标记",
+          "finding_id": "r10-02-3"
+        },
+        {
+          "aspect": "宏步骤一出现就已经完成",
+          "kind": "行为差异",
+          "original": "原片按时间推进各步骤的执行状态。",
+          "replica": "四行以透明度先后出现，但每行固定写着“完成”。",
+          "impact": "没有待执行、正在执行到完成的过程。",
+          "evidence": [
+            {
+              "file": "source-catalog/round10/wawaup--Ringflow-promo/src/components/ProductUI/ProductSurfaces.tsx",
+              "line": 903,
+              "anchor": "MacroExecution",
+              "fragment": "       />\n      </div>\n    </div>\n  );\n};\n\n// ─── MacroExecution — timed multi-step semantic flow ─────────────────────────\nexport const MacroExecution = ({\n  choreography,\n}: {\n  choreography?: { visualS",
+              "sha256": "3e5c7e3072e4fd4d59277295effeeec65756eba0526ffca272b073c5b7a84f64",
+              "url": "https://github.com/wawaup/Ringflow-promo/blob/f85e52149ac88679ee82d4a97a7ee81e1875a3c6/src/components/ProductUI/ProductSurfaces.tsx#L903"
+            },
+            {
+              "file": "experiments/r10-02/src/Replica.tsx",
+              "line": 5,
+              "anchor": "完成",
+              "fragment": "工作计划与灵感记录。保持专注，让常用的<br/>工具就在手边。<br/>下次使用时无需寻找，一划即可完成。</>}</div></div>;\nexport const Replica:React.FC=()=>{const f=useCurrentFrame(),t=f/60;const dark=t>=27;const title=t<4?'正在做的事，\\n应该保持连贯。':t<",
+              "sha256": "e875adc8fcf1ada36384289ca967e1d70a13aede71c4b023018dbb7c42923144",
+              "url": "/experiments/r10-02/src/Replica.tsx"
+            }
+          ],
+          "verification": "代码确认；可见影响按明确公式或渲染分支推导，另附画面核查的项目会单独标记",
+          "finding_id": "r10-02-4"
+        }
+      ],
+      "replica_sha256": "e875adc8fcf1ada36384289ca967e1d70a13aede71c4b023018dbb7c42923144",
+      "video_sha256": "dcc9c90e0bf77fe666cace851b1ee4e9699b82f3257ca0e2809939a5aecd3c8c",
+      "compare_url": "http://127.0.0.1:8770/compare-round10.html#r10-02",
+      "repo_url": "https://github.com/wawaup/Ringflow-promo",
+      "reference_sha256": "6f3704b079dd0408e72c96d0c51e3ee4aa5a08c068fdc3d0b94021cc759fecaa",
+      "visual_check": "第 168 帧：原片便签旁有复制/粘贴按键，复刻仍是代码文本。第 1746 帧：原片第二、三步仍等待，复刻四步全部完成。",
+      "samples": {
+        "id": "r10-02",
+        "frames": [
+          168,
+          1746
+        ],
+        "fps": 60,
+        "image": "r10-02.jpg"
+      }
+    },
+    {
+      "id": "r10-03",
+      "title": "GitHub Unwrapped 2022",
+      "category": "数据叙事",
+      "reference_id": "github2022",
+      "findings": [
+        {
+          "aspect": "场景交接被直接切换替代",
+          "kind": "行为差异",
+          "original": "原片在场景交接的 15 帧里，旧场景滑出、新场景滑入。",
+          "replica": "复刻用互斥时间分支切换。",
+          "impact": "中间帧没有两个场景同时移动，衔接显得突然。",
+          "evidence": [
+            {
+              "file": "source-catalog/round10/remotion-dev--github-unwrapped-2022/remotion/SlideIn.tsx",
+              "line": 10,
+              "anchor": "transitionDuration = 15",
+              "fragment": "\tuseVideoConfig,\n} from 'remotion';\n\nexport const transitionDuration = 15;\n\nexport const SlideIn: React.FC<{children: React.ReactNode}> = ({children}) => {\n\tconst {fps, width} = useVideoConfig();\n\tconst frame = us",
+              "sha256": "96a1bf86198748e488ae601363f2e552c76dba64fd561b300c8b883110bdae62",
+              "url": "https://github.com/remotion-dev/github-unwrapped-2022/blob/1297352b814d631fbc9d6338f30cbb55c7d967fd/remotion/SlideIn.tsx#L10"
+            },
+            {
+              "file": "experiments/r10-03/src/Replica.tsx",
+              "line": 10,
+              "anchor": "t < 5",
+              "fragment": "translate(0 ${t>1.5?(t-1.5)*400:0})`}><Gift/></g>:t<5?<g><Tree/><path d=\"M71 186l7-29 15 28m283 1 14-29 15 30\" fill=\"none\" stroke=\"black\" strokeWidth=\"3\"/><g transform=\"rotate(-4 81 225)\"><rect x",
+              "sha256": "241ba44d889258a8652f7eb5b5dc75893c65d08efc8db147f8f452792212e17f",
+              "url": "/experiments/r10-03/src/Replica.tsx"
+            }
+          ],
+          "verification": "代码确认；可见影响按明确公式或渲染分支推导，另附画面核查的项目会单独标记",
+          "finding_id": "r10-03-1"
+        },
+        {
+          "aspect": "语言图标没有滑入袜子的过程",
+          "kind": "行为差异",
+          "original": "原片让语言列表滑出、袜子画面滑入，再进行后续展示。",
+          "replica": "复刻直接切换一只固定袜子的 JS、C++、TS 标签。",
+          "impact": "主体内容大致存在，但列表到袜子的空间关系丢失。",
+          "evidence": [
+            {
+              "file": "source-catalog/round10/remotion-dev--github-unwrapped-2022/remotion/LanguageToSocks.tsx",
+              "line": 23,
+              "anchor": "frame: frame - 60",
+              "fragment": "useVideoConfig();\n\n\tconst spr = spring({\n\t\tfps,\n\t\tframe: frame - 60,\n\t\tconfig: {\n\t\t\tdamping: 200,\n\t\t},\n\t});\n\n\tconst translateX = interpolate(spr, [0, 1], [0, -width]);\n\tconst translateX2 = interpolate(spr, [",
+              "sha256": "c0e1c00a3303a33ec704f93935eb49baf6429107c02627f15dbb4739dc57c0e9",
+              "url": "https://github.com/remotion-dev/github-unwrapped-2022/blob/1297352b814d631fbc9d6338f30cbb55c7d967fd/remotion/LanguageToSocks.tsx#L23"
+            },
+            {
+              "file": "experiments/r10-03/src/Replica.tsx",
+              "line": 10,
+              "anchor": "lang={t < 8.2",
+              "fragment": "My top languages of 2022',277)}</>:t<12.5?<><Sock lang={t<8.2?'JS':t<10?'C⁺':'TS'}/>{t>10.5&&text('① TypeScript',422,34,'#9e8c7c')}{t>8.2&&<text x=\"116\" y=\"471\" fontSize=\"24\" fontWeight=\"bold\" fontFamily",
+              "sha256": "241ba44d889258a8652f7eb5b5dc75893c65d08efc8db147f8f452792212e17f",
+              "url": "/experiments/r10-03/src/Replica.tsx"
+            }
+          ],
+          "verification": "代码确认；可见影响按明确公式或渲染分支推导，另附画面核查的项目会单独标记",
+          "finding_id": "r10-03-2"
+        },
+        {
+          "aspect": "Issue 圆点的关闭过程和数量不同步",
+          "kind": "行为差异",
+          "original": "原片通过同一个进度控制指定圆点变紫、缩至 0.75，以及未关闭数量减少。",
+          "replica": "复刻在 20.3 秒后一次性将索引大于 10 的点变紫，数字另从 20.4 秒开始下降，圆点不缩小。",
+          "impact": "画面已变色时数字还在另一状态；留下的绿色点也不是原片那一组。",
+          "evidence": [
+            {
+              "file": "source-catalog/round10/remotion-dev--github-unwrapped-2022/remotion/IssuesOpened.tsx",
+              "line": 86,
+              "anchor": "closedDotsProgress",
+              "fragment": "t dotsShown = openProgress * totalIssues;\n\n\tconst closedDotsProgress = spring({\n\t\tfps,\n\t\tframe: frame - 100,\n\t\tconfig: {\n\t\t\tdamping: 200,\n\t\t},\n\t\tdurationInFrames: 50,\n\t});\n\n\tconst {height, width} = useVideoCo",
+              "sha256": "4d0b2ce78d66e8755d5048167d70cf5f6b67bef6d9de7c959775e7a80785f9b5",
+              "url": "https://github.com/remotion-dev/github-unwrapped-2022/blob/1297352b814d631fbc9d6338f30cbb55c7d967fd/remotion/IssuesOpened.tsx#L86"
+            },
+            {
+              "file": "experiments/r10-03/src/Replica.tsx",
+              "line": 10,
+              "anchor": "open && i > 10",
+              "fragment": "={i} cx={38+x*46} cy={78+y*46} r={i<n?18:0} fill={open&&i>10?'#9a6fe3':'#28a452'}/>})}{text(String(t<19?Math.min(69,Math.floor((t-17.5)*58)):t<20.4?69:Math.max(11,Math.floor(69-(t-20.4)*58))),484,65,red)}",
+              "sha256": "241ba44d889258a8652f7eb5b5dc75893c65d08efc8db147f8f452792212e17f",
+              "url": "/experiments/r10-03/src/Replica.tsx"
+            }
+          ],
+          "verification": "代码确认；可见影响按明确公式或渲染分支推导，另附画面核查的项目会单独标记",
+          "finding_id": "r10-03-3"
+        },
+        {
+          "aspect": "雪花没有配合场景切换的横向吹动",
+          "kind": "行为差异",
+          "original": "原片把每次换场时间传给 Snow，驱动吹动。",
+          "replica": "复刻雪花 x 固定，只让 y 随帧数循环下降。",
+          "impact": "缺少跨场景共享的环境动效。",
+          "evidence": [
+            {
+              "file": "source-catalog/round10/remotion-dev--github-unwrapped-2022/remotion/Main.tsx",
+              "line": 18,
+              "anchor": "windPushes",
+              "fragment": "ation.slice(0, i).reduce((a, b) => a + b);\n\tconst windPushes = duration\n\t\t.map((_, i) => {\n\t\t\tif (i === 0) {\n\t\t\t\treturn null;\n\t\t\t}\n\t\t\treturn duration.slice(0, i).reduce((a, b) => a + b);\n\t\t})\n\t\t.filte",
+              "sha256": "336c561677856614559cea451c13935bd0a6ad8095ed363cfc74734aa868ccd2",
+              "url": "https://github.com/remotion-dev/github-unwrapped-2022/blob/1297352b814d631fbc9d6338f30cbb55c7d967fd/remotion/Main.tsx#L18"
+            },
+            {
+              "file": "experiments/r10-03/src/Replica.tsx",
+              "line": 8,
+              "anchor": "i * 137.31",
+              "fragment": "/30;const snow=Array.from({length:72},(_,i)=>({x:(i*137.31)%540,y:(i*67.87+f*(.24+(i%5)*.05))%570-15,r:2+(i%4)})); const text=(s:string,y:number,size=24,color='#080808')=><text x=\"270\" y={y} textAncho",
+              "sha256": "241ba44d889258a8652f7eb5b5dc75893c65d08efc8db147f8f452792212e17f",
+              "url": "/experiments/r10-03/src/Replica.tsx"
+            }
+          ],
+          "verification": "代码确认；可见影响按明确公式或渲染分支推导，另附画面核查的项目会单独标记",
+          "finding_id": "r10-03-4"
+        }
+      ],
+      "replica_sha256": "241ba44d889258a8652f7eb5b5dc75893c65d08efc8db147f8f452792212e17f",
+      "video_sha256": "cbc3855beb2a43e3e99d1724e260efe74f7697192f9adf2b5d512165319c5b2d",
+      "compare_url": "http://127.0.0.1:8770/compare-round10.html#r10-03",
+      "repo_url": "https://github.com/remotion-dev/github-unwrapped-2022",
+      "reference_sha256": "4bb65db73d7d2b01ffe7028b3e7ce97d451ee99c1477b0a26d10a107cae8403b",
+      "visual_check": "第 621 帧：原片数量 68、复刻 51；第 639 帧：原片绿色点保留在特定位置，复刻只保留第一行。",
+      "samples": {
+        "id": "r10-03",
+        "frames": [
+          621,
+          639
+        ],
+        "fps": 30,
+        "image": "r10-03.jpg"
+      }
+    },
+    {
+      "id": "r10-04",
+      "title": "Remotion Transitions 发布片",
+      "category": "产品营销",
+      "reference_id": "transitions",
+      "findings": [
+        {
+          "aspect": "多种转场被同一种晃动替代",
+          "kind": "行为差异",
+          "original": "原片明确区分从左、右、上、下旋入，以及 slide、flip、cube。",
+          "replica": "复刻大多直接换内容，再给当前卡片一个正弦 rotateY。",
+          "impact": "起止画面可能相似，旋入方向、背面和交接过程都不同。",
+          "evidence": [
+            {
+              "file": "source-catalog/round10/remotion-dev--transitions-video/src/MainSequence.tsx",
+              "line": 56,
+              "anchor": "wheelspin({anchor: 'left'})",
+              "fragment": "g: 200}, durationInFrames: 6})}\n\t\t\t\tpresentation={wheelspin({anchor: 'left'})}\n\t\t\t/>\n\t\t\t<TransitionSeries.Sequence durationInFrames={25}>\n\t\t\t\t<Tile>\n\t\t\t\t\t<NaNa1 />\n\t\t\t\t</Tile>\n\t\t\t</TransitionSeries.Sequence>\n\t\t\t<Trans",
+              "sha256": "ad84005e8cf98ad0bb0d6f6c4e8982bdcf226ed04a189efdcd9168e0d975a7f3",
+              "url": "https://github.com/remotion-dev/transitions-video/blob/8d4b188b42976f7dbdf536c681ce2b3e5e5e1669/src/MainSequence.tsx#L56"
+            },
+            {
+              "file": "experiments/r10-04/src/Replica.tsx",
+              "line": 5,
+              "anchor": "Math.sin((t - 1.35)",
+              "fragment": "l=box(s,colors[k%4],`perspective(900px) rotateY(${Math.sin((t-1.35)*Math.PI*2)*8}deg)`)}else if(t<7.35)el=grid(2,t-5);else if(t<8.35)el=box('NA',colors[Math.floor((t-7.35)*2)%2]);else if(t<10.9){el=<div style=",
+              "sha256": "2534ea1daf052cc5e4b3afb10e6934c6074705d5b40ebbb1f0dbf2322a5c9a5b",
+              "url": "/experiments/r10-04/src/Replica.tsx"
+            }
+          ],
+          "verification": "代码确认；可见影响按明确公式或渲染分支推导，另附画面核查的项目会单独标记",
+          "finding_id": "r10-04-1"
+        },
+        {
+          "aspect": "九宫格与四宫格只做了颜色切换",
+          "kind": "行为差异",
+          "original": "原片调用独立 Grid/ThreeByThree 组件，格子内部还有转场。",
+          "replica": "复刻按 floor(phase) 选颜色或只点亮一格。",
+          "impact": "格子内部新旧内容交替移动的过程缺失。",
+          "evidence": [
+            {
+              "file": "source-catalog/round10/remotion-dev--transitions-video/src/MainSequence.tsx",
+              "line": 127,
+              "anchor": "<NanaGrid",
+              "fragment": ".Sequence durationInFrames={110}>\n\t\t\t\t<Tile>\n\t\t\t\t\t<NanaGrid />\n\t\t\t\t</Tile>\n\t\t\t</TransitionSeries.Sequence>\n\t\t\t<TransitionSeries.Transition\n\t\t\t\ttiming={springTiming({config: {damping: 200}, durationIn",
+              "sha256": "ad84005e8cf98ad0bb0d6f6c4e8982bdcf226ed04a189efdcd9168e0d975a7f3",
+              "url": "https://github.com/remotion-dev/transitions-video/blob/8d4b188b42976f7dbdf536c681ce2b3e5e5e1669/src/MainSequence.tsx#L127"
+            },
+            {
+              "file": "experiments/r10-04/src/Replica.tsx",
+              "line": 3,
+              "anchor": "Math.floor(phase",
+              "fragment": "{Array.from({length:n*n},(_,i)=>{let active=n===3?Math.floor(phase*3)%(n*n)===i:true;let c=n===3?(active?colors[1]:colors[2]):colors[(Math.floor(phase*2-i*.5)+30)%3];return <div key={i} style={{background:c",
+              "sha256": "2534ea1daf052cc5e4b3afb10e6934c6074705d5b40ebbb1f0dbf2322a5c9a5b",
+              "url": "/experiments/r10-04/src/Replica.tsx"
+            }
+          ],
+          "verification": "代码确认；可见影响按明确公式或渲染分支推导，另附画面核查的项目会单独标记",
+          "finding_id": "r10-04-2"
+        },
+        {
+          "aspect": "文字遮罩被渐变字替代",
+          "kind": "行为差异",
+          "original": "原片 TextMask 展示内容被字形遮罩裁切后的转场。",
+          "replica": "复刻用两色线性渐变填充 NA，并离散改变颜色。",
+          "impact": "遮罩内外的运动关系没有恢复。",
+          "evidence": [
+            {
+              "file": "source-catalog/round10/remotion-dev--transitions-video/src/MainSequence.tsx",
+              "line": 136,
+              "anchor": "<TextMask",
+              "fragment": "s.Sequence durationInFrames={90}>\n\t\t\t\t<Tile>\n\t\t\t\t\t<TextMask />\n\t\t\t\t</Tile>\n\t\t\t</TransitionSeries.Sequence>\n\t\t\t<TransitionSeries.Transition\n\t\t\t\ttiming={springTiming({config: {damping: 200}, durationIn",
+              "sha256": "ad84005e8cf98ad0bb0d6f6c4e8982bdcf226ed04a189efdcd9168e0d975a7f3",
+              "url": "https://github.com/remotion-dev/transitions-video/blob/8d4b188b42976f7dbdf536c681ce2b3e5e5e1669/src/MainSequence.tsx#L136"
+            },
+            {
+              "file": "experiments/r10-04/src/Replica.tsx",
+              "line": 5,
+              "anchor": "backgroundClip",
+              "fragment": "(Math.floor(t*2)+1)%4]} 50%)`,color:'transparent',backgroundClip:'text'}}>NA</div>}\nelse if(t<12.8){let s=t<11.3?'I':t<11.9?\"DON’T\":'WORK';el=box(s,colors[Math.floor(t*2)%4],`perspective(800px) rotateY(${",
+              "sha256": "2534ea1daf052cc5e4b3afb10e6934c6074705d5b40ebbb1f0dbf2322a5c9a5b",
+              "url": "/experiments/r10-04/src/Replica.tsx"
+            }
+          ],
+          "verification": "代码确认；可见影响按明确公式或渲染分支推导，另附画面核查的项目会单独标记",
+          "finding_id": "r10-04-3"
+        },
+        {
+          "aspect": "圆形彩票翻动被静态换色替代",
+          "kind": "行为差异",
+          "original": "原片有 Lottery 正反面、flip 及后续 cube 衔接。",
+          "replica": "复刻四个圆换色，最后整体 rotateX。",
+          "impact": "圆内内容翻动及两面交替不一致。",
+          "evidence": [
+            {
+              "file": "source-catalog/round10/remotion-dev--transitions-video/src/MainSequence.tsx",
+              "line": 151,
+              "anchor": "<Lottery flipped",
+              "fragment": "nsitionSeries.Sequence durationInFrames={50}>\n\t\t\t\t<Lottery flipped={false} />\n\t\t\t</TransitionSeries.Sequence>\n\t\t\t<TransitionSeries.Transition\n\t\t\t\ttiming={springTiming({config: {damping: 200}, durationInFram",
+              "sha256": "ad84005e8cf98ad0bb0d6f6c4e8982bdcf226ed04a189efdcd9168e0d975a7f3",
+              "url": "https://github.com/remotion-dev/transitions-video/blob/8d4b188b42976f7dbdf536c681ce2b3e5e5e1669/src/MainSequence.tsx#L151"
+            },
+            {
+              "file": "experiments/r10-04/src/Replica.tsx",
+              "line": 6,
+              "anchor": "length: 4",
+              "fragment": "ateX(${t>14.6?(t-14.6)*260:0}deg)`}}>{Array.from({length:4},(_,i)=><div key={i} style={{width:119,height:119,borderRadius:'50%',background:colors[(Math.floor(t*4)+i)%2],display:'flex',alignItems:'cen",
+              "sha256": "2534ea1daf052cc5e4b3afb10e6934c6074705d5b40ebbb1f0dbf2322a5c9a5b",
+              "url": "/experiments/r10-04/src/Replica.tsx"
+            }
+          ],
+          "verification": "代码确认；可见影响按明确公式或渲染分支推导，另附画面核查的项目会单独标记",
+          "finding_id": "r10-04-4"
+        },
+        {
+          "aspect": "文字裁切在实际渲染中失效",
+          "kind": "行为差异",
+          "original": "原片在第 279 帧仍显示 NA 字形。",
+          "replica": "复刻代码意图用 backgroundClip:text 裁切，但交付视频第 279 帧显示整块矩形渐变。",
+          "impact": "除了转场方式不同，还存在实际渲染失效。具体浏览器兼容原因未通过重新渲染隔离验证，不能只凭样式名定论。",
+          "evidence": [
+            {
+              "file": "source-catalog/round10/remotion-dev--transitions-video/src/TextMask.tsx",
+              "line": 37,
+              "anchor": "WebkitMaskImage",
+              "fragment": "0.1]);\n\n\treturn (\n\t\t<AbsoluteFill\n\t\t\tstyle={{\n\t\t\t\tWebkitMaskImage: `url(${staticFile('NaBlack.png')})`,\n\t\t\t\tWebkitMaskRepeat: 'no-repeat',\n\t\t\t\tWebkitMaskPosition: 'center',\n\t\t\t\tscale: String(scale),\n\t\t\t}}\n",
+              "sha256": "ca8963e8282e60a498bce4dd8e05962da4cbe1f306c6c864c3beedd066403fdd",
+              "url": "https://github.com/remotion-dev/transitions-video/blob/8d4b188b42976f7dbdf536c681ce2b3e5e5e1669/src/TextMask.tsx#L37"
+            },
+            {
+              "file": "experiments/r10-04/src/Replica.tsx",
+              "line": 5,
+              "anchor": "backgroundClip",
+              "fragment": "(Math.floor(t*2)+1)%4]} 50%)`,color:'transparent',backgroundClip:'text'}}>NA</div>}\nelse if(t<12.8){let s=t<11.3?'I':t<11.9?\"DON’T\":'WORK';el=box(s,colors[Math.floor(t*2)%4],`perspective(800px) rotateY(${",
+              "sha256": "2534ea1daf052cc5e4b3afb10e6934c6074705d5b40ebbb1f0dbf2322a5c9a5b",
+              "url": "/experiments/r10-04/src/Replica.tsx"
+            }
+          ],
+          "verification": "代码确认；可见影响按明确公式或渲染分支推导，另附画面核查的项目会单独标记",
+          "finding_id": "r10-04-5"
+        }
+      ],
+      "replica_sha256": "2534ea1daf052cc5e4b3afb10e6934c6074705d5b40ebbb1f0dbf2322a5c9a5b",
+      "video_sha256": "ae410ea900543bccbdefff2f772e65d60628cc9899ac0bd828374af85a11bcb9",
+      "compare_url": "http://127.0.0.1:8770/compare-round10.html#r10-04",
+      "repo_url": "https://github.com/remotion-dev/transitions-video",
+      "reference_sha256": "059cef1ef7e5a2d86239348b987c01c69db1c3408d2227323039259a8d9efca8",
+      "visual_check": "第 279 帧：参考是 NA，复刻为矩形色块。第 648 帧：原片右上格正在转场，复刻高亮的是左中格。",
+      "samples": {
+        "id": "r10-04",
+        "frames": [
+          279,
+          648
+        ],
+        "fps": 30,
+        "image": "r10-04.jpg"
+      }
+    },
+    {
+      "id": "r10-05",
+      "title": "双摆与蝴蝶效应",
+      "category": "知识讲解",
+      "reference_id": "double_pendulum",
+      "findings": [
+        {
+          "aspect": "双摆方程的分母写错",
+          "kind": "行为差异",
+          "original": "原片 M1=M2=1，分母为 3−cos(2Δθ)。",
+          "replica": "复刻使用 2−cos(2Δθ)。",
+          "impact": "加速度不同，整个摆动轨迹偏离。",
+          "evidence": [
+            {
+              "file": "source-catalog/round10/znyupup--knowledge-explainer-skill/custom/DoublePendulum.jsx",
+              "line": 16,
+              "anchor": "2 * M1 + M2",
+              "fragment": ");\n  const s12 = Math.sin(t1 - t2);\n  const den = 2 * M1 + M2 - M2 * Math.cos(2 * t1 - 2 * t2);\n\n  const a1Num =\n    -G * (2 * M1 + M2) * Math.sin(t1)\n    - M2 * G * Math.sin(t1 - 2 * t2)\n    - 2 * s12",
+              "sha256": "f68e7af75a9f7789494913b52824ad0fe69b91e09764e3c6100b24a4bda276f4",
+              "url": "https://github.com/znyupup/knowledge-explainer-skill/blob/6ecae15fc8bbb589196c32ff3b726fc3e1764eac/custom/DoublePendulum.jsx#L16"
+            },
+            {
+              "file": "experiments/r10-05/src/Replica.tsx",
+              "line": 5,
+              "anchor": "den = 2",
+              "fragment": "onst dt=1/240;for(let k=0;k<14*240;k++){let d=a-b,den=2-Math.cos(2*d);let aa=(-9.81*3*Math.sin(a)-9.81*Math.sin(a-2*b)-2*Math.sin(d)*(bv*bv+av*av*Math.cos(d)))/den;let ba=2*Math.sin(d)*(av*av*2+9.8",
+              "sha256": "689099edaab102d03e2d3a92484280b8c5b5bb07c4476fb5535f6accda861471",
+              "url": "/experiments/r10-05/src/Replica.tsx"
+            }
+          ],
+          "verification": "代码确认；可见影响按明确公式或渲染分支推导，另附画面核查的项目会单独标记",
+          "finding_id": "r10-05-1"
+        },
+        {
+          "aspect": "初始姿态和积分方法同时改变",
+          "kind": "行为差异",
+          "original": "原片初始角为 2.0、1.5 弧度，20 子步/帧，先用旧角速度更新角度。",
+          "replica": "复刻两个角都设为 115°，8 子步/帧，并先更新角速度。",
+          "impact": "初始姿态已经不同；即使外形一致，也不是原来的运动过程。",
+          "evidence": [
+            {
+              "file": "source-catalog/round10/znyupup--knowledge-explainer-skill/custom/DoublePendulum.jsx",
+              "line": 62,
+              "anchor": "const t1_0 = 2.0",
+              "fragment": "d(duration * fps);\n\n  // 初始条件: ~115° 离垂直线, 高能起手\n  const t1_0 = 2.0;\n  const t2_0 = 1.5;\n  const eps = 0.001 * Math.PI / 180; // 0.001° in rad\n\n  const simA = useMemo(() => simulate(t1_0, t2_0, totalFrames, ",
+              "sha256": "f68e7af75a9f7789494913b52824ad0fe69b91e09764e3c6100b24a4bda276f4",
+              "url": "https://github.com/znyupup/knowledge-explainer-skill/blob/6ecae15fc8bbb589196c32ff3b726fc3e1764eac/custom/DoublePendulum.jsx#L62"
+            },
+            {
+              "file": "experiments/r10-05/src/Replica.tsx",
+              "line": 4,
+              "anchor": "const initial",
+              "fragment": "';\nconst C=(x:number)=>Math.max(0,Math.min(1,x));\nconst initial=115*Math.PI/180;\nfunction simulate(off:number){let a=initial+off,b=initial+off,av=0,bv=0;let out:any[]=[];const dt=1/240;for(let k=0;k<14*2",
+              "sha256": "689099edaab102d03e2d3a92484280b8c5b5bb07c4476fb5535f6accda861471",
+              "url": "/experiments/r10-05/src/Replica.tsx"
+            }
+          ],
+          "verification": "代码确认；可见影响按明确公式或渲染分支推导，另附画面核查的项目会单独标记",
+          "finding_id": "r10-05-2"
+        },
+        {
+          "aspect": "角度差读数实际算的是像素距离",
+          "kind": "行为差异",
+          "original": "原片读数为两套双摆的角度差之和，转换为度。",
+          "replica": "复刻取两摆锤的屏幕距离除以 3，却仍显示 °。",
+          "impact": "不仅数字不同，读数代表的含义也变了。",
+          "evidence": [
+            {
+              "file": "source-catalog/round10/znyupup--knowledge-explainer-skill/custom/DoublePendulum.jsx",
+              "line": 90,
+              "anchor": "const dθ =",
+              "fragment": "splay: angular distance between the two systems\n  const dθ = Math.abs(simA[cf][0] - simB[cf][0]) + Math.abs(simA[cf][2] - simB[cf][2]);\n  const dθDeg = (dθ * 180 / Math.PI).toFixed(2);\n\n  // Animation",
+              "sha256": "f68e7af75a9f7789494913b52824ad0fe69b91e09764e3c6100b24a4bda276f4",
+              "url": "https://github.com/znyupup/knowledge-explainer-skill/blob/6ecae15fc8bbb589196c32ff3b726fc3e1764eac/custom/DoublePendulum.jsx#L90"
+            },
+            {
+              "file": "experiments/r10-05/src/Replica.tsx",
+              "line": 7,
+              "anchor": "Math.sqrt",
+              "fragment": "e=\"17\" fontFamily=\"monospace\" fontWeight=\"bold\">{(Math.sqrt((p.xx-r.xx)**2+(p.yy-r.yy)**2)/3).toFixed(2)}°</text><text x=\"616\" y=\"345\" textAnchor=\"end\" fontSize=\"6\" fill=\"#6d697b\" fontFamily=\"monospa",
+              "sha256": "689099edaab102d03e2d3a92484280b8c5b5bb07c4476fb5535f6accda861471",
+              "url": "/experiments/r10-05/src/Replica.tsx"
+            }
+          ],
+          "verification": "代码确认；可见影响按明确公式或渲染分支推导，另附画面核查的项目会单独标记",
+          "finding_id": "r10-05-3"
+        },
+        {
+          "aspect": "轨迹保留时间过长",
+          "kind": "行为差异",
+          "original": "原片保留约 3 秒的轨迹。",
+          "replica": "复刻保留约 4.83 秒。",
+          "impact": "画面残留更长、轨迹更密，遮盖当前运动。",
+          "evidence": [
+            {
+              "file": "source-catalog/round10/znyupup--knowledge-explainer-skill/custom/DoublePendulum.jsx",
+              "line": 78,
+              "anchor": "const trailLen = 90",
+              "fragment": "\n\n  // Trail (last 90 frames of bob 2 position)\n  const trailLen = 90;\n  const start = Math.max(0, cf - trailLen);\n  const trailA = [];\n  const trailB = [];\n  for (let f = start; f <= cf; f++) {\n    trailA.pus",
+              "sha256": "f68e7af75a9f7789494913b52824ad0fe69b91e09764e3c6100b24a4bda276f4",
+              "url": "https://github.com/znyupup/knowledge-explainer-skill/blob/6ecae15fc8bbb589196c32ff3b726fc3e1764eac/custom/DoublePendulum.jsx#L78"
+            },
+            {
+              "file": "experiments/r10-05/src/Replica.tsx",
+              "line": 7,
+              "anchor": "q-145",
+              "fragment": "[q];const trail=(arr:any[])=>arr.slice(Math.max(0,q-145),q+1).map((v,i)=>`${i?'L':'M'}${v.xx.toFixed(2)},${v.yy.toFixed(2)}`).join(' ');return <AbsoluteFill style={{background:'radial-gradient(el",
+              "sha256": "689099edaab102d03e2d3a92484280b8c5b5bb07c4476fb5535f6accda861471",
+              "url": "/experiments/r10-05/src/Replica.tsx"
+            }
+          ],
+          "verification": "代码确认；可见影响按明确公式或渲染分支推导，另附画面核查的项目会单独标记",
+          "finding_id": "r10-05-4"
+        }
+      ],
+      "replica_sha256": "689099edaab102d03e2d3a92484280b8c5b5bb07c4476fb5535f6accda861471",
+      "video_sha256": "b5809fcd79cc6271446d2f1407077cdf118675a7b71730c4a61411ee6dc3e69e",
+      "compare_url": "http://127.0.0.1:8770/compare-round10.html#r10-05",
+      "repo_url": "https://github.com/znyupup/knowledge-explainer-skill",
+      "reference_sha256": "e483a6e1987e919daa54fcbf7786f9763adab992123a1c249ac748b9dc8c03d0",
+      "visual_check": "第 122 帧：起始两根摆杆的夹角已经不同。第 450 帧：轨迹明显不同，原片显示 0.01°，复刻显示 42.66°；两者读数定义也不同。",
+      "samples": {
+        "id": "r10-05",
+        "frames": [
+          122,
+          450
+        ],
+        "fps": 30,
+        "image": "r10-05.jpg"
+      }
+    },
+    {
+      "id": "r10-06",
+      "title": "Postflop 扑克分析工作台",
+      "category": "软件演示",
+      "reference_id": "postflop",
+      "findings": [
+        {
+          "aspect": "求解矩阵没有逐格变化与点击反馈",
+          "kind": "行为差异",
+          "original": "原片格子按对角线逐步出现，游标移动并点击 88 格，弹出详情。",
+          "replica": "复刻用静态布尔规则给 169 格着色；没有游标和本场景弹出过程。",
+          "impact": "矩阵像一张结果图，缺少求解和选中对象的演示。",
+          "evidence": [
+            {
+              "file": "source-catalog/round10/ucsandman--marketing-studio/studio/src/films/postflop/shots/Shot04Workbench.tsx",
+              "line": 74,
+              "anchor": "CURSOR_PATH",
+              "fragment": " It walks in from the bottom-right instead.\nconst CURSOR_PATH: CursorWaypoint[] = [\n  {x: 2010, y: 1140, at: 0},\n  {x: 1560, y: 880, at: 92},\n  {x: 1330, y: 700, at: 102},\n  {x: CELL_X, y: CELL_Y, at: ",
+              "sha256": "dcee0ca5f7f9bb99c3b2eb1b90da88936df4d62cfb56b5f289b3e42dc7eb89fb",
+              "url": "https://github.com/ucsandman/marketing-studio/blob/66cd1c30919f1144c60aed3692a915bb0b2c6238/studio/src/films/postflop/shots/Shot04Workbench.tsx#L74"
+            },
+            {
+              "file": "experiments/r10-06/src/Replica.tsx",
+              "line": 3,
+              "anchor": "const Matrix",
+              "fragment": "'K','Q','J','T','9','8','7','6','5','4','3','2'];\nconst Matrix=({small=false}:{small?:boolean})=><div style={{display:'grid',gridTemplateColumns:'repeat(13,1fr)',gap:2,padding:8,background:'#222',width:",
+              "sha256": "141e2cb89f2edc227b3ecb304cecba804fb48bdfd949f491ab906fe5add8f60c",
+              "url": "/experiments/r10-06/src/Replica.tsx"
+            }
+          ],
+          "verification": "代码确认；可见影响按明确公式或渲染分支推导，另附画面核查的项目会单独标记",
+          "finding_id": "r10-06-1"
+        },
+        {
+          "aspect": "收敛数字与曲线没有共用变化过程",
+          "kind": "行为差异",
+          "original": "原片从 0.3124% 变化到 0.0471%，用测量点构造衰减过程。",
+          "replica": "复刻大数按 0.2871%、0.0976%、0.0471% 三档跳；曲线直接显示完整静态路径。",
+          "impact": "大数、表格和曲线不处于同一进度，前两档读数也不同。",
+          "evidence": [
+            {
+              "file": "source-catalog/round10/ucsandman--marketing-studio/studio/src/films/postflop/shots/Shot05Convergence.tsx",
+              "line": 33,
+              "anchor": "const HI = 0.3124",
+              "fragment": "50', bb: '0.002589', pot: '0.0471'},\n] as const;\n\nconst HI = 0.3124;\nconst LO = 0.0471;\n\n// Log-linear between measured points: exploitability decays multiplicatively, so a\n// straight interpolation in log s",
+              "sha256": "c4c4f491265f152aa5c74f3448b611cdc093ffbf749b0995bb66eff6a60a96da",
+              "url": "https://github.com/ucsandman/marketing-studio/blob/66cd1c30919f1144c60aed3692a915bb0b2c6238/studio/src/films/postflop/shots/Shot05Convergence.tsx#L33"
+            },
+            {
+              "file": "experiments/r10-06/src/Replica.tsx",
+              "line": 4,
+              "anchor": "'0.2871%'",
+              "fragment": "=13?'black':'white',fontSize:25,padding:5}}>{t<12?'0.2871%':t<13?'0.1802%':'0.0471%'}</b></div><div><div style={{height:23,background:yellow,fontSize:10,padding:5}}>OOP STRATEGY 363 combos · node 0 ·",
+              "sha256": "141e2cb89f2edc227b3ecb304cecba804fb48bdfd949f491ab906fe5add8f60c",
+              "url": "/experiments/r10-06/src/Replica.tsx"
+            }
+          ],
+          "verification": "代码确认；可见影响按明确公式或渲染分支推导，另附画面核查的项目会单独标记",
+          "finding_id": "r10-06-2"
+        },
+        {
+          "aspect": "填完表单后自动变为求解，没有点击",
+          "kind": "行为差异",
+          "original": "原片游标沿路径到达 SOLVE，再发生按下反馈。",
+          "replica": "复刻只在 t>8.7 后改成 SOLVING。",
+          "impact": "动作和结果之间缺少可见因果。",
+          "evidence": [
+            {
+              "file": "source-catalog/round10/ucsandman--marketing-studio/studio/src/films/postflop/shots/Shot03Composer.tsx",
+              "line": 175,
+              "anchor": "const cursor =",
+              "fragment": "10,\n    easing: Easing.out(Easing.cubic),\n  });\n  const cursor = bowedPosition(frame, CURSOR_PATH);\n\n  return (\n    <AbsoluteFill style={{backgroundColor: brand.colors.bg}}>\n      <AbsoluteFill\n        st",
+              "sha256": "833badd4db73c791f48852693170d642e85db5747f3c722e5b767b4a24ad090a",
+              "url": "https://github.com/ucsandman/marketing-studio/blob/66cd1c30919f1144c60aed3692a915bb0b2c6238/studio/src/films/postflop/shots/Shot03Composer.tsx#L175"
+            },
+            {
+              "file": "experiments/r10-06/src/Replica.tsx",
+              "line": 5,
+              "anchor": "t>8.7",
+              "fragment": "<b style={{display:'block',marginTop:3,background:t>8.7?yellow:'#111',color:t>8.7?'black':'white',padding:'12px 40px',fontSize:19,letterSpacing:2}}>{t>8.7?'SOLVING':'SOLVE'}</b></div></>}</div>;\n",
+              "sha256": "141e2cb89f2edc227b3ecb304cecba804fb48bdfd949f491ab906fe5add8f60c",
+              "url": "/experiments/r10-06/src/Replica.tsx"
+            }
+          ],
+          "verification": "代码确认；可见影响按明确公式或渲染分支推导，另附画面核查的项目会单独标记",
+          "finding_id": "r10-06-3"
+        },
+        {
+          "aspect": "结尾漏了三次关键词强调",
+          "kind": "行为差异",
+          "original": "原片结尾先逐词强调 MEASURED. / NEVER / ASSERTED.，再组装标志和按钮。",
+          "replica": "复刻直接展示 postflop 和 CTA。",
+          "impact": "产品核心卖点的最后一次强调消失。",
+          "evidence": [
+            {
+              "file": "source-catalog/round10/ucsandman--marketing-studio/studio/src/films/postflop/shots/Shot08End.tsx",
+              "line": 9,
+              "anchor": "MEASURED",
+              "fragment": "i';\n\n// Shot 8 \"end\" (102 frames). Kinetic type — MEASURED. / NEVER / ASSERTED., one\n// word per 6 frames, each replacing the last — then the end lockup assembles:\n// spade + wordmark, a rule, the y",
+              "sha256": "46a8ed5275123aca63148793364902b0579f625f97b4fa969d25051dede40b47",
+              "url": "https://github.com/ucsandman/marketing-studio/blob/66cd1c30919f1144c60aed3692a915bb0b2c6238/studio/src/films/postflop/shots/Shot08End.tsx#L9"
+            },
+            {
+              "file": "experiments/r10-06/src/Replica.tsx",
+              "line": 6,
+              "anchor": "Solve your first",
+              "fragment": "b style={{background:yellow,padding:'15px 12px'}}>Solve your first spot in the browser.</b><p style={{fontSize:18,marginTop:30}}>postflop.vercel.app</p><hr/></div></div>}</AbsoluteFill>};\n",
+              "sha256": "141e2cb89f2edc227b3ecb304cecba804fb48bdfd949f491ab906fe5add8f60c",
+              "url": "/experiments/r10-06/src/Replica.tsx"
+            }
+          ],
+          "verification": "代码确认；可见影响按明确公式或渲染分支推导，另附画面核查的项目会单独标记",
+          "finding_id": "r10-06-4"
+        },
+        {
+          "aspect": "所有镜头交接改为硬切",
+          "kind": "行为差异",
+          "original": "原片相邻镜头重叠 8 帧。",
+          "replica": "复刻在 3、5、10、15、19、22、25 秒互斥切场。",
+          "impact": "内容变化时间与进入退出方式均不同。",
+          "evidence": [
+            {
+              "file": "source-catalog/round10/ucsandman--marketing-studio/studio/src/films/postflop/timeline.ts",
+              "line": 11,
+              "anchor": "OVERLAP = 8",
+              "fragment": " incoming shot owns the handover. */\nexport const OVERLAP = 8;\n\n/** Composition length in frames (28.0s @ 30fps). */\nexport const TOTAL = 840;\n\nexport const SHOTS: Shot[] = [\n  {id: 'claim', from: 0, l",
+              "sha256": "98d0fb2015312cb867fe9ba7b34ebcee4b0e659dc32ab55ae32de66b0f0a63e7",
+              "url": "https://github.com/ucsandman/marketing-studio/blob/66cd1c30919f1144c60aed3692a915bb0b2c6238/studio/src/films/postflop/timeline.ts#L11"
+            },
+            {
+              "file": "experiments/r10-06/src/Replica.tsx",
+              "line": 6,
+              "anchor": "t<3",
+              "fragment": "0',alignItems:'center',justifyContent:'center'}}>{t<3?<div style={{width:625,fontSize:66,lineHeight:1.03,fontWeight:750,letterSpacing:-3}}>Your solver is grading<br/>{t>.5?'its own homework.':'",
+              "sha256": "141e2cb89f2edc227b3ecb304cecba804fb48bdfd949f491ab906fe5add8f60c",
+              "url": "/experiments/r10-06/src/Replica.tsx"
+            }
+          ],
+          "verification": "代码确认；可见影响按明确公式或渲染分支推导，另附画面核查的项目会单独标记",
+          "finding_id": "r10-06-5"
+        },
+        {
+          "aspect": "矩阵最终格子颜色也不一致",
+          "kind": "行为差异",
+          "original": "原片以明确的 13×13 MAP 指定每一格的颜色。",
+          "replica": "复刻用行列大小关系近似着色。",
+          "impact": "第 414 帧可见大片格子颜色分布不同，说明不仅少了动画，最终状态也画错了。",
+          "evidence": [
+            {
+              "file": "source-catalog/round10/ucsandman--marketing-studio/studio/src/films/postflop/ui/RangeGrid.tsx",
+              "line": 43,
+              "anchor": "STATE_OF[MAP[row][col]]",
+              "fragment": "tate = (row: number, col: number): CellState =>\n  STATE_OF[MAP[row][col]] ?? 'empty';\n\n/** Empty-cell ground; the panel behind the grid is darker still. */\nexport const GRID_EMPTY = '#1a1a1a';\nconst GRID_EMPTY_INK",
+              "sha256": "1fb7eb80e46ab9b95203adaea5b721170bfe146f87b5f8f1c32cf0621fe52047",
+              "url": "https://github.com/ucsandman/marketing-studio/blob/66cd1c30919f1144c60aed3692a915bb0b2c6238/studio/src/films/postflop/ui/RangeGrid.tsx#L43"
+            },
+            {
+              "file": "experiments/r10-06/src/Replica.tsx",
+              "line": 3,
+              "anchor": "r < 5",
+              "fragment": ",i)=>{const r=Math.floor(i/13),c=i%13;const green=r<5&&c<13-r/2||r<7&&c<2||c>r&&c<r+3;return <div key={i} style={{background:i===17||i===27||i===53||i===168?'#bd2932':r===c&&r>4?'#edeee6':green?'",
+              "sha256": "141e2cb89f2edc227b3ecb304cecba804fb48bdfd949f491ab906fe5add8f60c",
+              "url": "/experiments/r10-06/src/Replica.tsx"
+            }
+          ],
+          "verification": "代码确认；可见影响按明确公式或渲染分支推导，另附画面核查的项目会单独标记",
+          "finding_id": "r10-06-6"
+        }
+      ],
+      "replica_sha256": "141e2cb89f2edc227b3ecb304cecba804fb48bdfd949f491ab906fe5add8f60c",
+      "video_sha256": "3c2752b052c0f7a93ac9890e1f2f2a0589040477378191b3a38ae556fe6a4e0b",
+      "compare_url": "http://127.0.0.1:8770/compare-round10.html#r10-06",
+      "repo_url": "https://github.com/ucsandman/marketing-studio",
+      "reference_sha256": "5ffb96d63e3f1f277777c8b4abdb0016729c8d7302ef36bb77a952258410b13f",
+      "visual_check": "第 414 帧：原片有游标、88 格高亮和详情浮窗，复刻缺少这些；格子分布也不同。第 480 帧：原片曲线还在绘制，复刻已显示完整曲线和全部表格。",
+      "samples": {
+        "id": "r10-06",
+        "frames": [
+          414,
+          480
+        ],
+        "fps": 30,
+        "image": "r10-06.jpg"
+      }
+    },
+    {
+      "id": "r10-07",
+      "title": "全球品牌价值动态排名",
+      "category": "数据叙事",
+      "reference_id": "bar-race",
+      "findings": [
+        {
+          "aspect": "数据被人工补写，不能保证每条品牌曲线正确",
+          "kind": "行为差异",
+          "original": "原片读取完整 CSV 后对每个品牌的值和排名计算。",
+          "replica": "复刻只列出 19 个品牌与 20 行手写数据，若干值是近似或补写。",
+          "impact": "缺失品牌、读数和排名会一起受到影响；下方附 CSV 核对结果。",
+          "evidence": [
+            {
+              "file": "source-catalog/round10/hylarucoder--remotion-bar-race-chart/remotion/charts/BarRace.tsx",
+              "line": 253,
+              "anchor": "category-brands.csv",
+              "fragment": "\n            const res = await fetch(staticFile(`/category-brands.csv`))\n            const text = await res.text()\n            const data = d3.csvParse(text, d3.autoType)\n            const colorByName = comput",
+              "sha256": "131c9888aeadb450b323f3e7dd8d70ef2f9e33c54a42106a2bbd61aaa130aae0",
+              "url": "https://github.com/hylarucoder/remotion-bar-race-chart/blob/d9483a9fd57f763c312cd2f6cdbf7a7a71e7152f/remotion/charts/BarRace.tsx#L253"
+            },
+            {
+              "file": "experiments/r10-07/src/Replica.tsx",
+              "line": 4,
+              "anchor": "const rows",
+              "fragment": "ec9e9f','#f6e295','#ec9e9f','#fdc6ce','#f8bf82'];\nconst rows=[\n[72537,70196,53183,39048,38528,38127,36368,33553,27859,25548,22110,21104,18000,13000,100,5000,4000,1000,0],\n[68945,65068,52752,34665,3503",
+              "sha256": "cdfe33750f68bf00902491322913ecb7b8661b3b77f1ad1b8c8ed427436a879a",
+              "url": "/experiments/r10-07/src/Replica.tsx"
+            }
+          ],
+          "verification": "代码确认；可见影响按明确公式或渲染分支推导，另附画面核查的项目会单独标记",
+          "finding_id": "r10-07-1"
+        },
+        {
+          "aspect": "年度位置与数值采用了不同的插值节奏",
+          "kind": "行为差异",
+          "original": "原片每秒读取 10 个中间关键帧，宽度线性变化，位置用 cubic。",
+          "replica": "复刻直接在两年之间用 smoothstep 同时插值数值和名次。",
+          "impact": "换位的开始、速度和结束不一致。原片的时间实现也有不连贯风险，不能视为理想标准。",
+          "evidence": [
+            {
+              "file": "source-catalog/round10/hylarucoder--remotion-bar-race-chart/remotion/charts/BarRace.tsx",
+              "line": 30,
+              "anchor": "frame / fps * 10",
+              "fragment": "ig()\n    const curKeyframe = keyframes[Math.floor(frame / fps * 10)] || keyframes[keyframes.length - 1]\n    const nextKeyframe = keyframes[Math.floor(frame / fps * 10) + 1] || keyframes[keyframes.length - 1",
+              "sha256": "131c9888aeadb450b323f3e7dd8d70ef2f9e33c54a42106a2bbd61aaa130aae0",
+              "url": "https://github.com/hylarucoder/remotion-bar-race-chart/blob/d9483a9fd57f763c312cd2f6cdbf7a7a71e7152f/remotion/charts/BarRace.tsx#L30"
+            },
+            {
+              "file": "experiments/r10-07/src/Replica.tsx",
+              "line": 26,
+              "anchor": "k = k * k",
+              "fragment": "et a=Math.floor(time),b=Math.min(19,a+1),k=time-a;k=k*k*(3-2*k);let vals=rows[a].map((v,i)=>v+(rows[b][i]-v)*k),max=Math.max(...vals);let tick=max>150000?50000:max>100000?50000:20000;return <Absolute",
+              "sha256": "cdfe33750f68bf00902491322913ecb7b8661b3b77f1ad1b8c8ed427436a879a",
+              "url": "/experiments/r10-07/src/Replica.tsx"
+            }
+          ],
+          "verification": "代码确认；可见影响按明确公式或渲染分支推导，另附画面核查的项目会单独标记",
+          "finding_id": "r10-07-2"
+        },
+        {
+          "aspect": "坐标刻度规则不同",
+          "kind": "行为差异",
+          "original": "原片用 d3 的 ticks 根据范围自动生成刻度。",
+          "replica": "复刻只在 20000 和 50000 两种间隔中选取。",
+          "impact": "缩放到某些年份时刻度数量、位置和数值不一样。",
+          "evidence": [
+            {
+              "file": "source-catalog/round10/hylarucoder--remotion-bar-race-chart/remotion/charts/BarRace.tsx",
+              "line": 72,
+              "anchor": "scale.ticks(tickCount)",
+              "fragment": " tickCount = maxWidth / 300\n        const ticks = scale.ticks(tickCount)\n        return ticks.map(t => ({\n            value: t,\n            position: scale(t),\n        }))\n    }\n\n    const xScale = d3.scaleLinear",
+              "sha256": "131c9888aeadb450b323f3e7dd8d70ef2f9e33c54a42106a2bbd61aaa130aae0",
+              "url": "https://github.com/hylarucoder/remotion-bar-race-chart/blob/d9483a9fd57f763c312cd2f6cdbf7a7a71e7152f/remotion/charts/BarRace.tsx#L72"
+            },
+            {
+              "file": "experiments/r10-07/src/Replica.tsx",
+              "line": 26,
+              "anchor": "let tick",
+              "fragment": "((v,i)=>v+(rows[b][i]-v)*k),max=Math.max(...vals);let tick=max>150000?50000:max>100000?50000:20000;return <AbsoluteFill style={{background:'white'}}><svg viewBox=\"0 0 960 540\" style={{fontFamily:'Ar",
+              "sha256": "cdfe33750f68bf00902491322913ecb7b8661b3b77f1ad1b8c8ed427436a879a",
+              "url": "/experiments/r10-07/src/Replica.tsx"
+            }
+          ],
+          "verification": "代码确认；可见影响按明确公式或渲染分支推导，另附画面核查的项目会单独标记",
+          "finding_id": "r10-07-3"
+        },
+        {
+          "aspect": "原片数值公式本身有问题",
+          "kind": "参考自身问题",
+          "original": "原片条形宽度朝 next 值变化，文字数值却使用 prev+(prev−next)×progress。",
+          "replica": "复刻使用通常的 prev+(next−prev)×progress。",
+          "impact": "这里确有复刻差异，但不能归结为 agent 数学能力不足；原片应先修订或标注。",
+          "evidence": [
+            {
+              "file": "source-catalog/round10/hylarucoder--remotion-bar-race-chart/remotion/charts/BarRace.tsx",
+              "line": 96,
+              "anchor": "prevItem.value - nextItem.value",
+              "fragment": "       const value = Math.floor(prevItem.value + (prevItem.value - nextItem.value) * progress)\n        const prevY = 21 + 48 * prevItem.rank\n        const nextY = 21 + 48 * nextItem.rank\n        const curY = prevY + (next",
+              "sha256": "131c9888aeadb450b323f3e7dd8d70ef2f9e33c54a42106a2bbd61aaa130aae0",
+              "url": "https://github.com/hylarucoder/remotion-bar-race-chart/blob/d9483a9fd57f763c312cd2f6cdbf7a7a71e7152f/remotion/charts/BarRace.tsx#L96"
+            },
+            {
+              "file": "experiments/r10-07/src/Replica.tsx",
+              "line": 26,
+              "anchor": "rows[b][i] - v",
+              "fragment": "me-a;k=k*k*(3-2*k);let vals=rows[a].map((v,i)=>v+(rows[b][i]-v)*k),max=Math.max(...vals);let tick=max>150000?50000:max>100000?50000:20000;return <AbsoluteFill style={{background:'white'}}><svg viewBox=\"0 ",
+              "sha256": "cdfe33750f68bf00902491322913ecb7b8661b3b77f1ad1b8c8ed427436a879a",
+              "url": "/experiments/r10-07/src/Replica.tsx"
+            }
+          ],
+          "verification": "代码确认；可见影响按明确公式或渲染分支推导，另附画面核查的项目会单独标记",
+          "finding_id": "r10-07-4"
+        }
+      ],
+      "replica_sha256": "cdfe33750f68bf00902491322913ecb7b8661b3b77f1ad1b8c8ed427436a879a",
+      "video_sha256": "87e14946acc6adb7cfd6d0f8f17ab40835a90ff8178ab1e8456552b6065c5d26",
+      "compare_url": "http://127.0.0.1:8770/compare-round10.html#r10-07",
+      "repo_url": "https://github.com/hylarucoder/remotion-bar-race-chart",
+      "reference_sha256": "b826fc6ff1fd40c0e2355e2f7d956a131e4c9f74bca320e6d80312b856854fdc",
+      "visual_check": "第 510 帧：参考可见 HP，复刻名单没有 HP。第 870 帧：复刻多条柱在换位中重叠、留出大片空行。另核对 CSV，能匹配的品牌/年份中有 77 个数值不同；不等于 77 个都在视频中可见。",
+      "samples": {
+        "id": "r10-07",
+        "frames": [
+          510,
+          870
+        ],
+        "fps": 60,
+        "image": "r10-07.jpg"
+      }
+    },
+    {
+      "id": "r10-08",
+      "title": "推荐算法与信息茧房",
+      "category": "知识讲解",
+      "reference_id": "algorithm_bubble",
+      "findings": [
+        {
+          "aspect": "同样数量的科技卡片，却不是同一批卡片",
+          "kind": "行为差异",
+          "original": "原片按固定 pickOrder 选择要替换的卡片。",
+          "replica": "复刻每波拿当前非科技卡片的前几个。",
+          "impact": "总数可以相同，但具体哪张卡变色不同，丢失对象对应关系。",
+          "evidence": [
+            {
+              "file": "source-catalog/round10/znyupup--knowledge-explainer-skill/custom/AlgorithmBubble.jsx",
+              "line": 72,
+              "anchor": "pickOrder",
+              "fragment": "     }\n      // 用确定性\"洗牌\"挑前 addCount 张\n      const pickOrder = [11, 5, 17, 23, 2, 14, 8, 20, 0, 6, 12, 18, 4, 10, 16, 22, 1, 7, 13, 19, 3, 9, 15, 21];\n      const toReplace = indices\n        .slice()\n",
+              "sha256": "7c896f479b03b3144b2b03f981f8a6be3d4a1e4342f727bbbdf3a8f84986e1b4",
+              "url": "https://github.com/znyupup/knowledge-explainer-skill/blob/6ecae15fc8bbb589196c32ff3b726fc3e1764eac/custom/AlgorithmBubble.jsx#L72"
+            },
+            {
+              "file": "experiments/r10-08/src/Replica.tsx",
+              "line": 3,
+              "anchor": "others.slice",
+              "fragment": ")=>v!==1?i:-1).filter(x=>x>=0);const swap=new Set(others.slice(0,num-4));const intro=t<3.2,end=t>=21.5;return <AbsoluteFill style={{background:'radial-gradient(ellipse at center,#161626 0%,#090912 78%)'",
+              "sha256": "22b6b64ee3b4a09f705fe075b330f6f784d469b8e6ccfcd1d53ca80554dab142",
+              "url": "/experiments/r10-08/src/Replica.tsx"
+            }
+          ],
+          "verification": "代码确认；可见影响按明确公式或渲染分支推导，另附画面核查的项目会单独标记",
+          "finding_id": "r10-08-1"
+        },
+        {
+          "aspect": "刷新越来越提前",
+          "kind": "行为差异",
+          "original": "原片五波刷新在 7、9.333、11.667、14、16 秒。",
+          "replica": "复刻安排在 7、9、11、13、15 秒。",
+          "impact": "后几波累计提前约 1 秒，并非一次整体平移能修正。",
+          "evidence": [
+            {
+              "file": "source-catalog/round10/znyupup--knowledge-explainer-skill/custom/AlgorithmBubble.jsx",
+              "line": 55,
+              "anchor": "atFrame: 160",
+              "fragment": "= [\n    {atFrame: 90, addCount: 4},   // → 8\n    {atFrame: 160, addCount: 4},  // → 12\n    {atFrame: 230, addCount: 6},  // → 18\n    {atFrame: 300, addCount: 4},  // → 22\n    {atFrame: 360, addCount: 2}",
+              "sha256": "7c896f479b03b3144b2b03f981f8a6be3d4a1e4342f727bbbdf3a8f84986e1b4",
+              "url": "https://github.com/znyupup/knowledge-explainer-skill/blob/6ecae15fc8bbb589196c32ff3b726fc3e1764eac/custom/AlgorithmBubble.jsx#L55"
+            },
+            {
+              "file": "experiments/r10-08/src/Replica.tsx",
+              "line": 3,
+              "anchor": "t<9",
+              "fragment": "urrentFrame()/30;const locked=t>=16;let num=t<7?4:t<9?8:t<11?12:t<13?18:t<15?22:24;const others=data.map((v,i)=>v!==1?i:-1).filter(x=>x>=0);const swap=new Set(others.slice(0,num-4));const intro",
+              "sha256": "22b6b64ee3b4a09f705fe075b330f6f784d469b8e6ccfcd1d53ca80554dab142",
+              "url": "/experiments/r10-08/src/Replica.tsx"
+            }
+          ],
+          "verification": "代码确认；可见影响按明确公式或渲染分支推导，另附画面核查的项目会单独标记",
+          "finding_id": "r10-08-2"
+        },
+        {
+          "aspect": "开场和收尾边界不一致",
+          "kind": "行为差异",
+          "original": "原片开场 4 秒，主过程到 22 秒。",
+          "replica": "复刻 3.2 秒进入主过程，21.5 秒收尾。",
+          "impact": "开场少 0.8 秒；复刻提前离开主画面。",
+          "evidence": [
+            {
+              "file": "source-catalog/round10/znyupup--knowledge-explainer-skill/src/algorithm_bubble.jsx",
+              "line": 10,
+              "anchor": "durationInFrames={120}",
+              "fragment": "background: '#0a0a0f'}}>\n      <Sequence from={0} durationInFrames={120}>\n        <Title\n          {...{\n            \"title\": \"信息茧房怎么炼成的\",\n            \"subtitle\": \"你点的每一下,都在喂算法\"\n          }}\n        />\n      </Se",
+              "sha256": "24774af568ae4e5d56d873095640bd1c431de24c2878978ca1a317ac73275c1f",
+              "url": "https://github.com/znyupup/knowledge-explainer-skill/blob/6ecae15fc8bbb589196c32ff3b726fc3e1764eac/src/algorithm_bubble.jsx#L10"
+            },
+            {
+              "file": "experiments/r10-08/src/Replica.tsx",
+              "line": 3,
+              "anchor": "t<3.2",
+              "fragment": "t swap=new Set(others.slice(0,num-4));const intro=t<3.2,end=t>=21.5;return <AbsoluteFill style={{background:'radial-gradient(ellipse at center,#161626 0%,#090912 78%)',fontFamily:'Arial,\"PingFang",
+              "sha256": "22b6b64ee3b4a09f705fe075b330f6f784d469b8e6ccfcd1d53ca80554dab142",
+              "url": "/experiments/r10-08/src/Replica.tsx"
+            }
+          ],
+          "verification": "代码确认；可见影响按明确公式或渲染分支推导，另附画面核查的项目会单独标记",
+          "finding_id": "r10-08-3"
+        },
+        {
+          "aspect": "点赞目标和动作不同",
+          "kind": "行为差异",
+          "original": "原片在指定 4 张卡上依次显示点赞，并配合卡片放大和亮边。",
+          "replica": "复刻用时间取整循环选择卡片，只画心形提示。",
+          "impact": "点在哪、何时点、点后如何反馈都不同。原片点赞对象与“只点赞科技”文案也有矛盾，另列参考问题。",
+          "evidence": [
+            {
+              "file": "source-catalog/round10/znyupup--knowledge-explainer-skill/custom/AlgorithmBubble.jsx",
+              "line": 131,
+              "anchor": "const likeEvents",
+              "fragment": "lamp());\n\n  // 点赞动画 (frames 30-90, 4 次点赞,每次15帧)\n  const likeEvents = [\n    {frame: 30, idx: 3},\n    {frame: 45, idx: 14},\n    {frame: 60, idx: 21},\n    {frame: 75, idx: 9},\n  ];\n\n  // 茧房标语\n  const bubbleOp ",
+              "sha256": "7c896f479b03b3144b2b03f981f8a6be3d4a1e4342f727bbbdf3a8f84986e1b4",
+              "url": "https://github.com/znyupup/knowledge-explainer-skill/blob/6ecae15fc8bbb589196c32ff3b726fc3e1764eac/custom/AlgorithmBubble.jsx#L131"
+            },
+            {
+              "file": "experiments/r10-08/src/Replica.tsx",
+              "line": 3,
+              "anchor": "Math.floor((t-4.5)",
+              "fragment": "1:orig;const c=colors[id];const heart=t>4.5&&t<7&&Math.floor((t-4.5)*3)%24===i;return <div key={i} style={{position:'relative',border:`1px solid ${c}`,borderRadius:7,background:`linear-gradient(130deg,${c}23,",
+              "sha256": "22b6b64ee3b4a09f705fe075b330f6f784d469b8e6ccfcd1d53ca80554dab142",
+              "url": "/experiments/r10-08/src/Replica.tsx"
+            }
+          ],
+          "verification": "代码确认；可见影响按明确公式或渲染分支推导，另附画面核查的项目会单独标记",
+          "finding_id": "r10-08-4"
+        }
+      ],
+      "replica_sha256": "22b6b64ee3b4a09f705fe075b330f6f784d469b8e6ccfcd1d53ca80554dab142",
+      "video_sha256": "5322fdb7b29940cbeec48842f5a9d8e25e1cca73f1d74b53e5514b4d275bc9d1",
+      "compare_url": "http://127.0.0.1:8770/compare-round10.html#r10-08",
+      "repo_url": "https://github.com/znyupup/knowledge-explainer-skill",
+      "reference_sha256": "86c9f0ef970d98217eabeff3b7b9052e971ef65a10e21d1a3dc38a879bd2aef8",
+      "visual_check": "第 304 帧都显示 12/24，第 437 帧都显示 22/24，但变为科技的具体卡片位置不同。画面中的内部计时也相差约 0.8 秒。",
+      "samples": {
+        "id": "r10-08",
+        "frames": [
+          304,
+          437
+        ],
+        "fps": 30,
+        "image": "r10-08.jpg"
+      }
+    },
+    {
+      "id": "r10-09",
+      "title": "Morph 数据库迁移产品片",
+      "category": "产品营销",
+      "reference_id": "morph",
+      "findings": [
+        {
+          "aspect": "仪表盘环形图丢失分类比例",
+          "kind": "行为差异",
+          "original": "原片环形图用 8、3、1 三段表示三种迁移状态。",
+          "replica": "复刻 num=12 时固定画一条 254/283 的绿色弧。",
+          "impact": "总数 12 保留了，三类占比的信息没保留。",
+          "evidence": [
+            {
+              "file": "source-catalog/round10/AleBrito124356--morph-promo/src/scenes-app.tsx",
+              "line": 43,
+              "anchor": "value: 8",
+              "fragment": "terTop=\"12\" centerSub={d.donutTotal} segments={[{ value: 8, color: COLORS.success, label: d.legend[0] }, { value: 3, color: COLORS.cyan, label: d.legend[1] }, { value: 1, color: COLORS.warning, labe",
+              "sha256": "8b88a6eb9d7aee248b6974d64f0494d0fdd429c2d3dcc2062e4fd24e5f78cb13",
+              "url": "https://github.com/AleBrito124356/morph-promo/blob/3e284ded02002892d3eb0198998cee33861365bc/src/scenes-app.tsx#L43"
+            },
+            {
+              "file": "experiments/r10-09/src/Replica.tsx",
+              "line": 5,
+              "anchor": "num === 12",
+              "fragment": "troke={color} strokeWidth=\"9\" strokeDasharray={`${num===12?254:num*2.82} 283`} transform=\"rotate(-90 55 55)\" strokeLinecap=\"round\"/></svg><div style={{position:'absolute',top:30,left:0,width:'100%',te",
+              "sha256": "6cfa3d70c8be4b9d2a1dde53d31f39769a3a7c63218a5bc9d6eb12d9d75ef637",
+              "url": "/experiments/r10-09/src/Replica.tsx"
+            }
+          ],
+          "verification": "代码确认；可见影响按明确公式或渲染分支推导，另附画面核查的项目会单独标记",
+          "finding_id": "r10-09-1"
+        },
+        {
+          "aspect": "字段和步骤不再按原来的节奏对应",
+          "kind": "行为差异",
+          "original": "原片每 40 帧推进一步，字段分别延迟 6、44、84、92 帧进入。",
+          "replica": "复刻步骤约每 0.8 秒改变、字段约每 0.65 秒填入。",
+          "impact": "选中步骤与内容出现的对应关系不一致。",
+          "evidence": [
+            {
+              "file": "source-catalog/round10/AleBrito124356--morph-promo/src/scenes-app.tsx",
+              "line": 76,
+              "anchor": "Math.floor(frame / 40)",
+              "fragment": "w = COPY[lang].wizard;\n  const step = Math.min(3, Math.floor(frame / 40));\n\n  const Field = ({ label, value, delay, mono = false }: { label: string; value: string; delay: number; mono?: boolean }) => (\n    <div s",
+              "sha256": "8b88a6eb9d7aee248b6974d64f0494d0fdd429c2d3dcc2062e4fd24e5f78cb13",
+              "url": "https://github.com/AleBrito124356/morph-promo/blob/3e284ded02002892d3eb0198998cee33861365bc/src/scenes-app.tsx#L76"
+            },
+            {
+              "file": "experiments/r10-09/src/Replica.tsx",
+              "line": 7,
+              "anchor": "14.4 + i * .65",
+              "fragment": "ight:28,padding:7,fontSize:11,fontWeight:700}}>{t>14.4+i*.65?['MySQL 5.7','PostgreSQL 16','210 GB · 40 tables','Minimal'][i]:''}</div></div>)}</div>{t>17.5&&<Route/>}</div></>:t<24?<><Heading label=\"AI AN",
+              "sha256": "6cfa3d70c8be4b9d2a1dde53d31f39769a3a7c63218a5bc9d6eb12d9d75ef637",
+              "url": "/experiments/r10-09/src/Replica.tsx"
+            }
+          ],
+          "verification": "代码确认；可见影响按明确公式或渲染分支推导，另附画面核查的项目会单独标记",
+          "finding_id": "r10-09-2"
+        },
+        {
+          "aspect": "总花费直接显示最终值",
+          "kind": "行为差异",
+          "original": "原片总花费在本场景第 10–48 帧由 0 计数到 28940。",
+          "replica": "复刻直接显示 $28,940。",
+          "impact": "遗漏数据增长的过程。",
+          "evidence": [
+            {
+              "file": "source-catalog/round10/AleBrito124356--morph-promo/src/scenes-app.tsx",
+              "line": 30,
+              "anchor": "[0, 28940]",
+              "fragment": "t spent = Math.round(interpolate(frame, [10, 48], [0, 28940], { extrapolateLeft: \"clamp\", extrapolateRight: \"clamp\" }));\n  return (\n    <AbsoluteFill style={{ justifyContent: \"center\", alignItems: \"ce",
+              "sha256": "8b88a6eb9d7aee248b6974d64f0494d0fdd429c2d3dcc2062e4fd24e5f78cb13",
+              "url": "https://github.com/AleBrito124356/morph-promo/blob/3e284ded02002892d3eb0198998cee33861365bc/src/scenes-app.tsx#L30"
+            },
+            {
+              "file": "experiments/r10-09/src/Replica.tsx",
+              "line": 7,
+              "anchor": "'$28,940'",
+              "fragment": ">{s}</div><b style={{fontSize:23}}>{['12','3','8','$28,940'][i]}</b><div style={{fontSize:9,fontWeight:700,color:i===1?'#21b8c7':i===2?'#16a572':blue,marginTop:3}}>{['+3 this month','analyzing + gene",
+              "sha256": "6cfa3d70c8be4b9d2a1dde53d31f39769a3a7c63218a5bc9d6eb12d9d75ef637",
+              "url": "/experiments/r10-09/src/Replica.tsx"
+            }
+          ],
+          "verification": "代码确认；可见影响按明确公式或渲染分支推导，另附画面核查的项目会单独标记",
+          "finding_id": "r10-09-3"
+        },
+        {
+          "aspect": "复杂度仪表有一个特殊值错误",
+          "kind": "行为差异",
+          "original": "原片复杂度数字和圆弧按同一 0→62 的比例变化。",
+          "replica": "复刻 Gauge 将任何 num=12 都当成仪表盘总数，改画约 90% 圆弧并写 TOTAL。",
+          "impact": "复杂度经过 12 的那一帧会闪成错误的弧长和标签。",
+          "evidence": [
+            {
+              "file": "source-catalog/round10/AleBrito124356--morph-promo/src/scenes-app.tsx",
+              "line": 121,
+              "anchor": "[0, 62]",
+              "fragment": "t score = Math.round(interpolate(frame, [14, 52], [0, 62], { extrapolateLeft: \"clamp\", extrapolateRight: \"clamp\" }));\n  return (\n    <AbsoluteFill style={{ justifyContent: \"center\", alignItems: \"ce",
+              "sha256": "8b88a6eb9d7aee248b6974d64f0494d0fdd429c2d3dcc2062e4fd24e5f78cb13",
+              "url": "https://github.com/AleBrito124356/morph-promo/blob/3e284ded02002892d3eb0198998cee33861365bc/src/scenes-app.tsx#L121"
+            },
+            {
+              "file": "experiments/r10-09/src/Replica.tsx",
+              "line": 5,
+              "anchor": "num === 12 ? 254",
+              "fragment": "troke={color} strokeWidth=\"9\" strokeDasharray={`${num===12?254:num*2.82} 283`} transform=\"rotate(-90 55 55)\" strokeLinecap=\"round\"/></svg><div style={{position:'absolute',top:30,left:0,width:'100%',textAlig",
+              "sha256": "6cfa3d70c8be4b9d2a1dde53d31f39769a3a7c63218a5bc9d6eb12d9d75ef637",
+              "url": "/experiments/r10-09/src/Replica.tsx"
+            }
+          ],
+          "verification": "代码确认；可见影响按明确公式或渲染分支推导，另附画面核查的项目会单独标记",
+          "finding_id": "r10-09-4"
+        },
+        {
+          "aspect": "淡入和横向推入转场全部省略",
+          "kind": "行为差异",
+          "original": "原片场景间重叠 16 帧，交替淡入和从右推入。",
+          "replica": "复刻用互斥时间分支换场。",
+          "impact": "切换中间帧缺失，标题和面板也少了进入退出的配合。",
+          "evidence": [
+            {
+              "file": "source-catalog/round10/AleBrito124356--morph-promo/src/MorphPromo.tsx",
+              "line": 14,
+              "anchor": "const T = 16",
+              "fragment": " const WIDTH = 1920;\nexport const HEIGHT = 1080;\n\nconst T = 16; // transition length (frames)\nconst D = { intro: 84, hook: 90, flow: 144, dashboard: 162, wizard: 174, analysis: 162, demo: 138, artifacts",
+              "sha256": "749c2731a47511108fdd6035679f1421496fb8b8a0155253768bfa01a837378f",
+              "url": "https://github.com/AleBrito124356/morph-promo/blob/3e284ded02002892d3eb0198998cee33861365bc/src/MorphPromo.tsx#L14"
+            },
+            {
+              "file": "experiments/r10-09/src/Replica.tsx",
+              "line": 7,
+              "anchor": "t < 9.7",
+              "fragment": "/span> — and an AI does<br/>the work.</div></div>:t<9.7?<><Heading label=\"HOW IT WORKS\" title=\"From a description to execution-ready.\"/><div style={{display:'flex',gap:13,width:828}}>{['Describe yo",
+              "sha256": "6cfa3d70c8be4b9d2a1dde53d31f39769a3a7c63218a5bc9d6eb12d9d75ef637",
+              "url": "/experiments/r10-09/src/Replica.tsx"
+            }
+          ],
+          "verification": "代码确认；可见影响按明确公式或渲染分支推导，另附画面核查的项目会单独标记",
+          "finding_id": "r10-09-5"
+        }
+      ],
+      "replica_sha256": "6cfa3d70c8be4b9d2a1dde53d31f39769a3a7c63218a5bc9d6eb12d9d75ef637",
+      "video_sha256": "51d64fc7a19f4a2519d494a99aa4e0c1f4d02e32b6a7eae6634f6350b4f7ece1",
+      "compare_url": "http://127.0.0.1:8770/compare-round10.html#r10-09",
+      "repo_url": "https://github.com/AleBrito124356/morph-promo",
+      "reference_sha256": "d0172fcede424927cb96cfd11dd016b6c46d7498546f9a84e1965c3c3bf8f387",
+      "visual_check": "第 330 帧：三色占比环被单色环替代。第 590 帧：复杂度为 12 的复刻仪表闪现 TOTAL 和约 90% 圆弧，原片仪表仍在按复杂度进度进入。",
+      "samples": {
+        "id": "r10-09",
+        "frames": [
+          330,
+          590
+        ],
+        "fps": 30,
+        "image": "r10-09.jpg"
+      }
+    },
+    {
+      "id": "r10-10",
+      "title": "Higgsfield 工作流（作者重建版）",
+      "category": "软件演示",
+      "reference_id": "higgsfield",
+      "findings": [
+        {
+          "aspect": "人物与商品图片被统一简笔图替代",
+          "kind": "素材差异",
+          "original": "原片使用人物、产品照片素材。",
+          "replica": "复刻用同一套 SVG 人形和包装图按取模改色。",
+          "impact": "人物身份、产品包装和广告创意外观不同。仅视频输入未提供原素材，需把素材恢复难度单列。",
+          "evidence": [
+            {
+              "file": "source-catalog/round10/naveen-annam--creativly.ai-higgsfield-video-remotion/src/scenes/Scene02_Seg001.tsx",
+              "line": 368,
+              "anchor": "<Img",
+              "fragment": "ms: \"center\", justifyContent: \"center\"}}>\n        <Img src={src} style={{width: 170, height: 170, objectFit: \"contain\"}} />\n      </div>\n    );\n  } catch {\n    return <PouchSvg />;\n  }\n};\n\n// --",
+              "sha256": "1f6337e76afa741f3da229c39e9dc66a1620b8753ce226d922a5be00a2cea1ba",
+              "url": "https://github.com/naveen-annam/creativly.ai-higgsfield-video-remotion/blob/409a4893c5b597ae456eb54f31994e5e9fe32d98/src/scenes/Scene02_Seg001.tsx#L368"
+            },
+            {
+              "file": "experiments/r10-10/src/Replica.tsx",
+              "line": 3,
+              "anchor": "function Art",
+              "fragment": "verticalAlign:'middle',marginRight:12}}>✺</span>;\nfunction Art({i=0}:{i:number}){let c=['#dad9d1','#889b64','#edece3','#5f7150','#aba89a','#d2b7a2','#eed5cc','#94bfd0'][i%8];return <svg viewBox=\"0 0 160",
+              "sha256": "ca1437e8709f2368c651ed89d170ca23b4ba464a932e4141aa6fd2c086fc74d4",
+              "url": "/experiments/r10-10/src/Replica.tsx"
+            }
+          ],
+          "verification": "代码确认；可见影响按明确公式或渲染分支推导，另附画面核查的项目会单独标记",
+          "finding_id": "r10-10-1"
+        },
+        {
+          "aspect": "点击发送动作丢失",
+          "kind": "行为差异",
+          "original": "原片发送按钮附近有游标到达、点击和向按钮处放大的配合。",
+          "replica": "复刻只放大输入框，没有游标到达和按下。",
+          "impact": "操作触发分析的过程不完整。",
+          "evidence": [
+            {
+              "file": "source-catalog/round10/naveen-annam--creativly.ai-higgsfield-video-remotion/src/scenes/Scene02_Seg001.tsx",
+              "line": 8,
+              "anchor": "cursor",
+              "fragment": "+ orange send button.\n//                     Hand cursor lands on the send button, clicks (sparkle),\n//                     composer zooms in toward the send button and fades to white.\n//\n//  Phas",
+              "sha256": "1f6337e76afa741f3da229c39e9dc66a1620b8753ce226d922a5be00a2cea1ba",
+              "url": "https://github.com/naveen-annam/creativly.ai-higgsfield-video-remotion/blob/409a4893c5b597ae456eb54f31994e5e9fe32d98/src/scenes/Scene02_Seg001.tsx#L8"
+            },
+            {
+              "file": "experiments/r10-10/src/Replica.tsx",
+              "line": 8,
+              "anchor": "zoom={1 +",
+              "fragment": "lice(0,Math.floor(C((t-3.5)/2.1)*prompt.length))} zoom={1+C((t-6)/1.5)*1.8}/>:t<13?<div style={{position:'absolute',left:120,top:100-Math.max(0,t-9.7)*145,width:760}}><div style={{fontSize:53,whiteSp",
+              "sha256": "ca1437e8709f2368c651ed89d170ca23b4ba464a932e4141aa6fd2c086fc74d4",
+              "url": "/experiments/r10-10/src/Replica.tsx"
+            }
+          ],
+          "verification": "代码确认；可见影响按明确公式或渲染分支推导，另附画面核查的项目会单独标记",
+          "finding_id": "r10-10-2"
+        },
+        {
+          "aspect": "搜索过程的链接被画成短横线",
+          "kind": "行为差异",
+          "original": "原片每条搜索结果有具体 URL 标签和关键词变色。",
+          "replica": "复刻条目下面只有固定色块短线，正文整体淡入。",
+          "impact": "丢失链接内容和逐词高亮。",
+          "evidence": [
+            {
+              "file": "source-catalog/round10/naveen-annam--creativly.ai-higgsfield-video-remotion/src/scenes/Scene02_Seg001.tsx",
+              "line": 74,
+              "anchor": "facebook.com/ads/library",
+              "fragment": "rary through Cowork\",                       url: \"facebook.com/ads/library\",                                start: FIRST_BULLET + BULLET_STEP * 0},\n  {icon: \"search\",      highlight: \"Identifying\",  rest: \" top com",
+              "sha256": "1f6337e76afa741f3da229c39e9dc66a1620b8753ce226d922a5be00a2cea1ba",
+              "url": "https://github.com/naveen-annam/creativly.ai-higgsfield-video-remotion/blob/409a4893c5b597ae456eb54f31994e5e9fe32d98/src/scenes/Scene02_Seg001.tsx#L74"
+            },
+            {
+              "file": "experiments/r10-10/src/Replica.tsx",
+              "line": 8,
+              "anchor": "width: 150 +",
+              "fragment": "'◫','»','☼'][i%5]}</span>{s}<div style={{height:3,width:150+i%3*80,background:'#d4a998',marginLeft:28,opacity:.45,marginTop:8}}/></div>)}</div>:t<17?<><div style={{position:'absolute',top:100,left:0,wid",
+              "sha256": "ca1437e8709f2368c651ed89d170ca23b4ba464a932e4141aa6fd2c086fc74d4",
+              "url": "/experiments/r10-10/src/Replica.tsx"
+            }
+          ],
+          "verification": "代码确认；可见影响按明确公式或渲染分支推导，另附画面核查的项目会单独标记",
+          "finding_id": "r10-10-3"
+        },
+        {
+          "aspect": "卡片移动按取模重置，会突然跳回",
+          "kind": "行为差异",
+          "original": "原片按各卡片独立延迟进入并控制照片和光泽层。",
+          "replica": "复刻 Cards 使用 t%3 推动整体横移或竖移。",
+          "impact": "每逢 3 秒边界位置重置，不是原片的连续铺展。",
+          "evidence": [
+            {
+              "file": "source-catalog/round10/naveen-annam--creativly.ai-higgsfield-video-remotion/src/scenes/Scene05_Seg004.tsx",
+              "line": 566,
+              "anchor": "tileAppear",
+              "fragment": "has its own delay + sheen + reveal curve.\n  const tileAppear = (delay: number) =>\n    interpolate(frame, [delay, delay + 12], [0, 1], {\n      ...clamped,\n      easing: bezier([0.22, 1, 0.36, 1]),\n    ",
+              "sha256": "89e5e8f6186ecbcbe62ca49c69667dc4f47dfab99257b543de59837692db08c3",
+              "url": "https://github.com/naveen-annam/creativly.ai-higgsfield-video-remotion/blob/409a4893c5b597ae456eb54f31994e5e9fe32d98/src/scenes/Scene05_Seg004.tsx#L566"
+            },
+            {
+              "file": "experiments/r10-10/src/Replica.tsx",
+              "line": 4,
+              "anchor": "(t % 3)",
+              "fragment": "div style={{position:'absolute',left:grid?-8:-100-(t%3)*65,top:grid?-80-(t%3)*60:280,display:'grid',gridTemplateColumns:grid?'repeat(5, 190px)':'repeat(9, 166px)',gap:10,transform:grid?'none':`rota",
+              "sha256": "ca1437e8709f2368c651ed89d170ca23b4ba464a932e4141aa6fd2c086fc74d4",
+              "url": "/experiments/r10-10/src/Replica.tsx"
+            }
+          ],
+          "verification": "代码确认；可见影响按明确公式或渲染分支推导，另附画面核查的项目会单独标记",
+          "finding_id": "r10-10-4"
+        },
+        {
+          "aspect": "生成网格没有从占位光泽到照片的过程",
+          "kind": "行为差异",
+          "original": "原片先出现带金属光泽的卡片，再逐步透出照片，部分卡片仍保持占位。",
+          "replica": "复刻一进入网格阶段就全是完成的 SVG 内容。",
+          "impact": "遗漏生成中和生成后的区别。",
+          "evidence": [
+            {
+              "file": "source-catalog/round10/naveen-annam--creativly.ai-higgsfield-video-remotion/src/scenes/Scene05_Seg004.tsx",
+              "line": 571,
+              "anchor": "tilePhoto",
+              "fragment": "sing: bezier([0.22, 1, 0.36, 1]),\n    });\n  const tilePhoto = (delay: number) =>\n    interpolate(frame, [delay + 6, delay + 22], [0, 1], {\n      ...clamped,\n      easing: bezier([0.22, 1, 0.36, 1]),\n",
+              "sha256": "89e5e8f6186ecbcbe62ca49c69667dc4f47dfab99257b543de59837692db08c3",
+              "url": "https://github.com/naveen-annam/creativly.ai-higgsfield-video-remotion/blob/409a4893c5b597ae456eb54f31994e5e9fe32d98/src/scenes/Scene05_Seg004.tsx#L571"
+            },
+            {
+              "file": "experiments/r10-10/src/Replica.tsx",
+              "line": 8,
+              "anchor": "<Cards t={t} grid",
+              "fragment": "7,marginTop:10}}>via Higgsfield MCP</div></div>:<><Cards t={t} grid/><div style={{position:'absolute',inset:0,background:'linear-gradient(#f3f0e7 0%,transparent 12%,transparent 88%,#f3f0e7 100%)'}}/></>}</Ab",
+              "sha256": "ca1437e8709f2368c651ed89d170ca23b4ba464a932e4141aa6fd2c086fc74d4",
+              "url": "/experiments/r10-10/src/Replica.tsx"
+            }
+          ],
+          "verification": "代码确认；可见影响按明确公式或渲染分支推导，另附画面核查的项目会单独标记",
+          "finding_id": "r10-10-5"
+        }
+      ],
+      "replica_sha256": "ca1437e8709f2368c651ed89d170ca23b4ba464a932e4141aa6fd2c086fc74d4",
+      "video_sha256": "d94c9cc4bf1ea6c78293f02c26e68fd399e3b1b999670567cb6efa793afec8f9",
+      "compare_url": "http://127.0.0.1:8770/compare-round10.html#r10-10",
+      "repo_url": "https://github.com/naveen-annam/creativly.ai-higgsfield-video-remotion",
+      "reference_sha256": "2a85fde23e0ae8a99d2c7462dce3ff11c2c6094c0c69b0d80b216987fe6bcec7",
+      "visual_check": "第 810 帧：原片卡片仍有占位光泽，复刻已经全部显示完成的简笔图；第 867 帧：原片是不同人物与商品照片，复刻反复使用相似人形。",
+      "samples": {
+        "id": "r10-10",
+        "frames": [
+          810,
+          867
+        ],
+        "fps": 30,
+        "image": "r10-10.jpg"
+      }
+    },
+    {
+      "id": "r10-11",
+      "title": "Remotion Lambda 云渲染介绍",
+      "category": "产品营销",
+      "reference_id": "lambda",
+      "findings": [
+        {
+          "aspect": "粒子数字只是虚线文字",
+          "kind": "行为差异",
+          "original": "原片为数字轮廓采样点，并在两个数字之间逐点移动。",
+          "replica": "复刻直接改 text 内容，使用虚线描边模拟粒子。",
+          "impact": "数字从 35 变 30 再变 25 时，中间粒子移动过程不存在。",
+          "evidence": [
+            {
+              "file": "source-catalog/round10/remotion-dev--trailer-lambda/src/StarryNumber.tsx",
+              "line": 5,
+              "anchor": "interpolateStarryNumber",
+              "fragment": " {extendViewbox} from './extend-viewbox';\nimport {interpolateStarryNumber} from './get-starry-number';\nimport {getViewBoxFromBoundingBox} from './get-viewbox-from-bounding-box';\nimport {useFont} from './load-font'",
+              "sha256": "ecd79ae999d71627bf01a3e72f71e71f0c940fdacd4956994f31e58e07b93597",
+              "url": "https://github.com/remotion-dev/trailer-lambda/blob/296642c671363d3187708c646a21bafde4fd51b5/src/StarryNumber.tsx#L5"
+            },
+            {
+              "file": "experiments/r10-11/src/Replica.tsx",
+              "line": 4,
+              "anchor": "strokeDasharray=\"1 10\"",
+              "fragment": "290\" fill=\"none\" stroke=\"white\" strokeWidth=\"2.8\" strokeDasharray=\"1 10\" strokeLinecap=\"round\">{n}</text>{Array.from({length:200},(_,i)=><circle key={i} cx={(i*173.17)%960} cy={(i*97.3)%540} r={i%4/5} fill=\"white",
+              "sha256": "7121c2b242b55a62cbebabf3207651a7cbe70daa9532dc0478633898096bef01",
+              "url": "/experiments/r10-11/src/Replica.tsx"
+            }
+          ],
+          "verification": "代码确认；可见影响按明确公式或渲染分支推导，另附画面核查的项目会单独标记",
+          "finding_id": "r10-11-1"
+        },
+        {
+          "aspect": "数字变 React 图形时对象没有延续",
+          "kind": "行为差异",
+          "original": "原片将数字粒子交给 ToReactStarry 完成后续变化。",
+          "replica": "复刻另生成 1100 个围绕三条椭圆运动的点。",
+          "impact": "数字突然消失后换了一批点，没有从原数字聚散成标志。",
+          "evidence": [
+            {
+              "file": "source-catalog/round10/remotion-dev--trailer-lambda/src/StarryNumbers.tsx",
+              "line": 105,
+              "anchor": "<ToReactStarry",
+              "fragment": "shoot\n\t\t\t\t\t\t\t\t\t}px)`,\n\t\t\t\t\t\t\t\t}}\n\t\t\t\t\t\t\t>\n\t\t\t\t\t\t\t\t<ToReactStarry />\n\t\t\t\t\t\t\t</AbsoluteFill>\n\t\t\t\t\t\t</Series.Sequence>\n\t\t\t\t\t</Series>\n\t\t\t\t</AbsoluteFill>\n\t\t\t\t<Sequence from={300}>\n\t\t\t\t\t<AbsoluteFill>\n\t\t\t\t\t\t<",
+              "sha256": "039e2920f47fd174d6883cd9e5c671b48767cad5c639b95d69d3c0cb0e9cb8a0",
+              "url": "https://github.com/remotion-dev/trailer-lambda/blob/296642c671363d3187708c646a21bafde4fd51b5/src/StarryNumbers.tsx#L105"
+            },
+            {
+              "file": "experiments/r10-11/src/Replica.tsx",
+              "line": 4,
+              "anchor": "length: 1100",
+              "fragment": ";scene=<svg width=\"960\" height=\"540\">{Array.from({length:1100},(_,i)=>{let a=i*.43+t*2,orb=i%3;let x=210*Math.cos(a),y=65*Math.sin(a);let rot=orb*Math.PI/3+t*.15;return <circle key={i} cx={480+x*Math.co",
+              "sha256": "7121c2b242b55a62cbebabf3207651a7cbe70daa9532dc0478633898096bef01",
+              "url": "/experiments/r10-11/src/Replica.tsx"
+            }
+          ],
+          "verification": "代码确认；可见影响按明确公式或渲染分支推导，另附画面核查的项目会单独标记",
+          "finding_id": "r10-11-2"
+        },
+        {
+          "aspect": "数字切换过快",
+          "kind": "行为差异",
+          "original": "原片粒子数字各阶段长度为 30 帧，即 1 秒。",
+          "replica": "复刻每 0.7 秒切一次 35、30、25。",
+          "impact": "数字变化节奏和后续图形出现时间不同。",
+          "evidence": [
+            {
+              "file": "source-catalog/round10/remotion-dev--trailer-lambda/src/StarryNumbers.tsx",
+              "line": 30,
+              "anchor": "seq1Length = 30",
+              "fragment": "* interpolate(frame, [0, 500], [1, 1.5]);\n\n\tconst seq1Length = 30;\n\tconst seq2Length = 30;\n\tconst seq3Length = 30;\n\tconst seq4Length = 800;\n\n\tconst startRenderedIn = seq1Length + seq2Length + seq3Length + ",
+              "sha256": "039e2920f47fd174d6883cd9e5c671b48767cad5c639b95d69d3c0cb0e9cb8a0",
+              "url": "https://github.com/remotion-dev/trailer-lambda/blob/296642c671363d3187708c646a21bafde4fd51b5/src/StarryNumbers.tsx#L30"
+            },
+            {
+              "file": "experiments/r10-11/src/Replica.tsx",
+              "line": 4,
+              "anchor": "(t - 21.7) / .7",
+              "fragment": "<24.8){bg='black';let n=Math.max(25,35-Math.floor((t-21.7)/.7)*5);scene=<svg width=\"960\" height=\"540\"><text x=\"480\" y=\"342\" textAnchor=\"middle\" fontFamily=\"Arial\" fontWeight=\"700\" fontSize=\"290\" fill=\"none",
+              "sha256": "7121c2b242b55a62cbebabf3207651a7cbe70daa9532dc0478633898096bef01",
+              "url": "/experiments/r10-11/src/Replica.tsx"
+            }
+          ],
+          "verification": "代码确认；可见影响按明确公式或渲染分支推导，另附画面核查的项目会单独标记",
+          "finding_id": "r10-11-3"
+        },
+        {
+          "aspect": "火箭的运动和烟雾过于简化",
+          "kind": "行为差异",
+          "original": "原片火箭有进入位移、二维晃动、旋转和独立尾烟变化。",
+          "replica": "复刻火箭基本固定在中央，只用正弦旋转和若干椭圆模拟烟。",
+          "impact": "升起、晃动及尾烟消散的配合没有恢复。",
+          "evidence": [
+            {
+              "file": "source-catalog/round10/remotion-dev--trailer-lambda/src/RocketShip.tsx",
+              "line": 91,
+              "anchor": "const xOffset",
+              "fragment": " useMemo(() => new SimplexNoise('rotate'), []);\n\n\tconst xOffset = shake.noise2D(0, frame / 30) * 30;\n\tconst YOffset = shakeX.noise2D(0, frame / 30) * 30;\n\tconst rotation = (rotate.noise2D(0, frame / 80) ",
+              "sha256": "e90b7cfe62c755277941f1eb519f2c467d8f8336ed47743a061ba9a6b10678af",
+              "url": "https://github.com/remotion-dev/trailer-lambda/blob/296642c671363d3187708c646a21bafde4fd51b5/src/RocketShip.tsx#L91"
+            },
+            {
+              "file": "experiments/r10-11/src/Replica.tsx",
+              "line": 4,
+              "anchor": "Math.sin(t * 3)",
+              "fragment": "00 460\" style={{marginTop:100,transform:`rotate(${Math.sin(t*3)*3}deg)`}}>{Array.from({length:13},(_,i)=><ellipse key={i} cx={150+Math.sin(i*15+t*5)*7} cy={310+i*12} rx={35+Math.sin(i+t*9)*5} ry=\"27\" fill=",
+              "sha256": "7121c2b242b55a62cbebabf3207651a7cbe70daa9532dc0478633898096bef01",
+              "url": "/experiments/r10-11/src/Replica.tsx"
+            }
+          ],
+          "verification": "代码确认；可见影响按明确公式或渲染分支推导，另附画面核查的项目会单独标记",
+          "finding_id": "r10-11-4"
+        }
+      ],
+      "replica_sha256": "7121c2b242b55a62cbebabf3207651a7cbe70daa9532dc0478633898096bef01",
+      "video_sha256": "b3b5c7b312fa1d3542dfb9bac972abf24cf8ec23e6d18154e84ff74fc1102d59",
+      "compare_url": "http://127.0.0.1:8770/compare-round10.html#r10-11",
+      "repo_url": "https://github.com/remotion-dev/trailer-lambda",
+      "reference_sha256": "c8a37b56eefa385a2d39b2782891d673a79db40a242282077654936ffb1ebc85",
+      "visual_check": "第 666 帧数字轮廓已不同。第 681 帧：参考粒子正在散开变形，复刻直接显示完整的 30。",
+      "samples": {
+        "id": "r10-11",
+        "frames": [
+          666,
+          681
+        ],
+        "fps": 30,
+        "image": "r10-11.jpg"
+      }
+    },
+    {
+      "id": "r10-12",
+      "title": "折纸 42 次有多厚",
+      "category": "数据叙事",
+      "reference_id": "paper_fold",
+      "findings": [
+        {
+          "aspect": "增长曲线被少量采样点近似",
+          "kind": "行为差异",
+          "original": "原片连续计算 foldF=42×[1−(1−t)^2.4]，再算厚度。",
+          "replica": "复刻在 18 个采样点之间线性插值折数。厚度仍正确使用 0.1×2^n。",
+          "impact": "不应说厚度公式丢了；真正差异是中间帧折数和速度不完全相同。",
+          "evidence": [
+            {
+              "file": "source-catalog/round10/znyupup--knowledge-explainer-skill/custom/PaperFold.jsx",
+              "line": 47,
+              "anchor": "Math.pow(1 - t, 2.4)",
+              "fragment": "ath.max(0, frame / animEnd));\n  const eased = 1 - Math.pow(1 - t, 2.4);\n  const foldF = eased * TOTAL_FOLDS;\n  const fold = Math.floor(foldF + 0.0001);\n\n  // 厚度\n  const thicknessM = PAPER_MM * 1e-3 * Math.pow(2",
+              "sha256": "c345439e252236eb111366eaa975bbae00fe936ee14531dbd32406afb91c3911",
+              "url": "https://github.com/znyupup/knowledge-explainer-skill/blob/6ecae15fc8bbb589196c32ff3b726fc3e1764eac/custom/PaperFold.jsx#L47"
+            },
+            {
+              "file": "experiments/r10-12/src/Replica.tsx",
+              "line": 2,
+              "anchor": "const stops",
+              "fragment": "eFill,useCurrentFrame,interpolate}from'remotion';\nconst stops=[0.1,.74,40.3,1530,40470,758700,10170000,98720000,702250000,3711820000,14789000000,45122000000,107246000000,202429000000,310180000000,39610",
+              "sha256": "f1926a4af074fad59cc4acf783fcb08ac74d9922518dbf3abb837008c6986275",
+              "url": "/experiments/r10-12/src/Replica.tsx"
+            }
+          ],
+          "verification": "代码确认；可见影响按明确公式或渲染分支推导，另附画面核查的项目会单独标记",
+          "finding_id": "r10-12-1"
+        },
+        {
+          "aspect": "早期柱高与折数不对应",
+          "kind": "行为差异",
+          "original": "原片柱高始终与折数 n 成正比；7 折对应输出高度约 46.7 像素。",
+          "replica": "复刻把 10 折放在 47 像素处，7 折仅约 32.9 像素。",
+          "impact": "柱高、读数和巧克力刻度在前半段对不上。",
+          "evidence": [
+            {
+              "file": "source-catalog/round10/znyupup--knowledge-explainer-skill/custom/PaperFold.jsx",
+              "line": 64,
+              "anchor": "const fillH",
+              "fragment": "nst barHpx = height - 160;\n  const barTop = 80;\n  const fillH = (foldF / TOTAL_FOLDS) * barHpx;\n  const barX = 100;\n  const barW = 36;\n\n  // 颜色:从紫渐变到红\n  const gradId = 'pfGrad';\n\n  return (\n    <Absolu",
+              "sha256": "c345439e252236eb111366eaa975bbae00fe936ee14531dbd32406afb91c3911",
+              "url": "https://github.com/znyupup/knowledge-explainer-skill/blob/6ecae15fc8bbb589196c32ff3b726fc3e1764eac/custom/PaperFold.jsx#L64"
+            },
+            {
+              "file": "experiments/r10-12/src/Replica.tsx",
+              "line": 3,
+              "anchor": "[0, 10, 14",
+              "fragment": "oString():v.toFixed(2);const height=interpolate(n,[0,10,14,17,20,23,27,30,35,40,42],[0,47,93,113,133,153,180,201,234,266,280],{extrapolateRight:'clamp'});const reached=thresholds.filter(x=>mm>=x.mm).a",
+              "sha256": "f1926a4af074fad59cc4acf783fcb08ac74d9922518dbf3abb837008c6986275",
+              "url": "/experiments/r10-12/src/Replica.tsx"
+            }
+          ],
+          "verification": "代码确认；可见影响按明确公式或渲染分支推导，另附画面核查的项目会单独标记",
+          "finding_id": "r10-12-2"
+        },
+        {
+          "aspect": "里程碑阈值不一致，最后一项永远到不了",
+          "kind": "行为差异",
+          "original": "原片按折数 7、14…42 判断已经达到的里程碑。",
+          "replica": "复刻按另一套毫米阈值判断；月球阈值 4470 亿毫米，高于最终 4398 亿毫米。",
+          "impact": "42 折结束时，提示仍停在“1/3 月球距离”。巧克力阈值也由约 12.8 mm 变成 100 mm。",
+          "evidence": [
+            {
+              "file": "source-catalog/round10/znyupup--knowledge-explainer-skill/custom/PaperFold.jsx",
+              "line": 59,
+              "anchor": "reachedMilestone",
+              "fragment": " 22], [0, 1], clamp());\n\n  // 当前已通过的最大里程碑\n  const reachedMilestone = MILESTONES.slice().reverse().find(m => fold >= m.n);\n\n  // 柱高 = log scale = 直接 fold/42 比例\n  const barHpx = height - 160;\n  const barTop =",
+              "sha256": "c345439e252236eb111366eaa975bbae00fe936ee14531dbd32406afb91c3911",
+              "url": "https://github.com/znyupup/knowledge-explainer-skill/blob/6ecae15fc8bbb589196c32ff3b726fc3e1764eac/custom/PaperFold.jsx#L59"
+            },
+            {
+              "file": "experiments/r10-12/src/Replica.tsx",
+              "line": 2,
+              "anchor": "447000000000",
+              "fragment": "'},{y:54,mm:128000000000,s:'🌘 1/3 月球距离'},{y:40,mm:447000000000,s:'🌙 超过月球 447km'}];\nexport const Replica:React.FC=()=>{const t=useCurrentFrame()/30;const n=interpolate(t,times,stops.map(x=>Math.log2(x/.1",
+              "sha256": "f1926a4af074fad59cc4acf783fcb08ac74d9922518dbf3abb837008c6986275",
+              "url": "/experiments/r10-12/src/Replica.tsx"
+            }
+          ],
+          "verification": "代码确认；可见影响按明确公式或渲染分支推导，另附画面核查的项目会单独标记",
+          "finding_id": "r10-12-3"
+        },
+        {
+          "aspect": "地标名称和距离抄错",
+          "kind": "行为差异",
+          "original": "原片写“迪拜塔”和“超过月球 44万km”。",
+          "replica": "复刻写“沃昇塔”和“超过月球 447km”。",
+          "impact": "这是可以直接核对的文案错误。",
+          "evidence": [
+            {
+              "file": "source-catalog/round10/znyupup--knowledge-explainer-skill/custom/PaperFold.jsx",
+              "line": 23,
+              "anchor": "超过月球 44万km",
+              "fragment": "label: '1/3 月球距离', emoji: '🌑'},\n  {n: 42, label: '超过月球 44万km', emoji: '🌙'},\n];\n\nfunction formatThickness(m) {\n  if (m < 0.01) return {val: (m * 1000).toFixed(2), unit: 'mm'};\n  if (m < 1) return {val:",
+              "sha256": "c345439e252236eb111366eaa975bbae00fe936ee14531dbd32406afb91c3911",
+              "url": "https://github.com/znyupup/knowledge-explainer-skill/blob/6ecae15fc8bbb589196c32ff3b726fc3e1764eac/custom/PaperFold.jsx#L23"
+            },
+            {
+              "file": "experiments/r10-12/src/Replica.tsx",
+              "line": 2,
+              "anchor": "超过月球 447km",
+              "fragment": "000000,s:'🌘 1/3 月球距离'},{y:40,mm:447000000000,s:'🌙 超过月球 447km'}];\nexport const Replica:React.FC=()=>{const t=useCurrentFrame()/30;const n=interpolate(t,times,stops.map(x=>Math.log2(x/.1)),{extrapolateL",
+              "sha256": "f1926a4af074fad59cc4acf783fcb08ac74d9922518dbf3abb837008c6986275",
+              "url": "/experiments/r10-12/src/Replica.tsx"
+            }
+          ],
+          "verification": "代码确认；可见影响按明确公式或渲染分支推导，另附画面核查的项目会单独标记",
+          "finding_id": "r10-12-4"
+        }
+      ],
+      "replica_sha256": "f1926a4af074fad59cc4acf783fcb08ac74d9922518dbf3abb837008c6986275",
+      "video_sha256": "4535215066ffcd11184de099410a742abc2424920db3e2cba1fc44084fca8cec",
+      "compare_url": "http://127.0.0.1:8770/compare-round10.html#r10-12",
+      "repo_url": "https://github.com/znyupup/knowledge-explainer-skill",
+      "reference_sha256": "53d0e57f450f9a0ea342a77329f155477ee896686f45c01856d9e7bb48aaa96a",
+      "visual_check": "第 153 帧都显示第 6 折，但厚度分别是 9.70 mm 和 8.14 mm。第 615 帧厚度均约 439805 km，原片月球提示已亮，复刻仍停在 1/3 月球距离。",
+      "samples": {
+        "id": "r10-12",
+        "frames": [
+          153,
+          615
+        ],
+        "fps": 30,
+        "image": "r10-12.jpg"
+      }
+    },
+    {
+      "id": "r10-13",
+      "title": "Creativly 创作工具发布片",
+      "category": "产品营销",
+      "reference_id": "creativly",
+      "findings": [
+        {
+          "aspect": "流程图没有从局部到全局的镜头移动",
+          "kind": "行为差异",
+          "original": "原片镜头缩放由 1.45 逐步降至 0.75，并同时沿 x、y 移动。",
+          "replica": "复刻只给固定布局一个短距离横移。",
+          "impact": "缺少先看局部操作、再看完整流程的视觉引导。",
+          "evidence": [
+            {
+              "file": "source-catalog/round10/naveen-annam--creativly.ai-brand-video-remotion/src/scenes/FlowDemoScene.tsx",
+              "line": 79,
+              "anchor": "const camScale",
+              "fragment": "de, gradually pull back to reveal full pipeline\n  const camScale = interpolate(\n    frame,\n    [0, 20, 55, 90, 125, 165],\n    [1.45, 1.25, 1.0, 0.88, 0.78, 0.75],\n    { extrapolateLeft: \"clamp\", extrapola",
+              "sha256": "72ef4f9e2de3ff5a0568ddf6cc2d2ad001f77b641e919f3bbe9c9252312b0416",
+              "url": "https://github.com/naveen-annam/creativly.ai-brand-video-remotion/blob/3b16948cc68df78870c52b2ed9620adeecd28a32/src/scenes/FlowDemoScene.tsx#L79"
+            },
+            {
+              "file": "experiments/r10-13/src/Replica.tsx",
+              "line": 6,
+              "anchor": "(1 - C(t - 4)) * 50",
+              "fragment": "style={{opacity:C((t-3)*2),transform:`translate(${(1-C(t-4))*50}px,0)`}}><Panel x={200} y={170} kind={0}/>{t>4.3&&<><Panel x={405} y={70} kind={3}/><Panel x={405} y={270} kind={1}/></>}{t>5.5&&<Panel x={610} y",
+              "sha256": "5ebd87d38e36de8542c029099a9386e39bc54ca3ab14a8c80639569f24015ab7",
+              "url": "/experiments/r10-13/src/Replica.tsx"
+            }
+          ],
+          "verification": "代码确认；可见影响按明确公式或渲染分支推导，另附画面核查的项目会单独标记",
+          "finding_id": "r10-13-1"
+        },
+        {
+          "aspect": "节点出现了，但处理过程被省略",
+          "kind": "行为差异",
+          "original": "原片节点有输入文字、扫描处理、结果揭示、连线绘制和选中状态。",
+          "replica": "复刻面板使用固定占位内容，连线一开始就完整显示。",
+          "impact": "流程中的先后、输入输出关系和当前正在处理的节点不清楚。",
+          "evidence": [
+            {
+              "file": "source-catalog/round10/naveen-annam--creativly.ai-brand-video-remotion/src/scenes/FlowDemoScene.tsx",
+              "line": 123,
+              "anchor": "const showScan1",
+              "fragment": "lamp\", easing: Easing.inOut(Easing.quad),\n  });\n  const showScan1 = frame >= 40 && frame <= 53;\n\n  // ─── Edge drawing ───\n  const edge1P = interpolate(frame, [52, 66], [0, 1], {\n    extrapolateLeft: \"clam",
+              "sha256": "72ef4f9e2de3ff5a0568ddf6cc2d2ad001f77b641e919f3bbe9c9252312b0416",
+              "url": "https://github.com/naveen-annam/creativly.ai-brand-video-remotion/blob/3b16948cc68df78870c52b2ed9620adeecd28a32/src/scenes/FlowDemoScene.tsx#L123"
+            },
+            {
+              "file": "experiments/r10-13/src/Replica.tsx",
+              "line": 4,
+              "anchor": "function Panel",
+              "fragment": "5 285\" stroke=\"#d8bd8b\" strokeWidth=\"24\"/></svg>}\nfunction Panel({x,y,w=145,h=175,kind=0}:{x:number,y:number,w?:number,h?:number,kind?:number}){return <div style={{position:'absolute',left:x,top:y,width:w",
+              "sha256": "5ebd87d38e36de8542c029099a9386e39bc54ca3ab14a8c80639569f24015ab7",
+              "url": "/experiments/r10-13/src/Replica.tsx"
+            }
+          ],
+          "verification": "代码确认；可见影响按明确公式或渲染分支推导，另附画面核查的项目会单独标记",
+          "finding_id": "r10-13-2"
+        },
+        {
+          "aspect": "风格按钮切换与图片效果脱节",
+          "kind": "行为差异",
+          "original": "原片 activeStyle 同时决定按钮、高亮颜色和背景滤镜。",
+          "replica": "复刻按钮按时间切换，图片只在 24 秒后统一灰度化。",
+          "impact": "选择不同风格时，图片没有同步变成对应效果。",
+          "evidence": [
+            {
+              "file": "source-catalog/round10/naveen-annam--creativly.ai-brand-video-remotion/src/scenes/StylePresetsScene.tsx",
+              "line": 48,
+              "anchor": "const activeStyle",
+              "fragment": "ntFrame();\n  const { fps } = useVideoConfig();\n\n  const activeStyleIndex = Math.floor(frame / 20) % STYLES.length;\n  const activeStyle = STYLES[activeStyleIndex];\n\n  const glowPulse = 0.15 + 0.08 * noise2D(\"",
+              "sha256": "8c4849cd844aeeb1e6aa1d38d217894462a455c3f6920cac593aa6fee59081e4",
+              "url": "https://github.com/naveen-annam/creativly.ai-brand-video-remotion/blob/3b16948cc68df78870c52b2ed9620adeecd28a32/src/scenes/StylePresetsScene.tsx#L48"
+            },
+            {
+              "file": "experiments/r10-13/src/Replica.tsx",
+              "line": 6,
+              "anchor": "t > 24",
+              "fragment": ":'absolute',inset:'-35px 80px',opacity:.45,filter:t>24?'grayscale(1)':'none'}}><Astronaut/></div><div style={{position:'absolute',width:'100%',textAlign:'center',top:171}}><div style={{fontSize:10",
+              "sha256": "5ebd87d38e36de8542c029099a9386e39bc54ca3ab14a8c80639569f24015ab7",
+              "url": "/experiments/r10-13/src/Replica.tsx"
+            }
+          ],
+          "verification": "代码确认；可见影响按明确公式或渲染分支推导，另附画面核查的项目会单独标记",
+          "finding_id": "r10-13-3"
+        },
+        {
+          "aspect": "照片和模板预览被替换成插画或色块",
+          "kind": "素材差异",
+          "original": "原片使用真实图片和预览内容。",
+          "replica": "复刻狗、宇航员用 SVG 重画，多张模板用渐变或简化形状代替。",
+          "impact": "主体纹理与不同模板的视觉特征丢失。此项受未提供素材包影响。",
+          "evidence": [
+            {
+              "file": "source-catalog/round10/naveen-annam--creativly.ai-brand-video-remotion/src/scenes/FocusedDemoScene.tsx",
+              "line": 254,
+              "anchor": "<Img",
+              "fragment": "ba(255,255,255,0.08)\",\n        }}\n      >\n        <Img\n          src={staticFile(\"focused-editor.jpg\")}\n          style={{ width: \"100%\", height: \"100%\", objectFit: \"cover\" }}\n        />\n\n      ",
+              "sha256": "f40a44b8d4efdcc4bb30c942daa4d3128edde0115ac0d34b05508e18e0f564a2",
+              "url": "https://github.com/naveen-annam/creativly.ai-brand-video-remotion/blob/3b16948cc68df78870c52b2ed9620adeecd28a32/src/scenes/FocusedDemoScene.tsx#L254"
+            },
+            {
+              "file": "experiments/r10-13/src/Replica.tsx",
+              "line": 3,
+              "anchor": "function Dog",
+              "fragment": "52\" width=\"60\" height=\"7\" fill=\"#54716d\"/></svg>}\nfunction Dog(){return <svg viewBox=\"0 0 340 285\" width=\"100%\" height=\"100%\"><defs><linearGradient id=\"grass\"><stop stopColor=\"#7a8748\"/><stop offset=\"1\"",
+              "sha256": "5ebd87d38e36de8542c029099a9386e39bc54ca3ab14a8c80639569f24015ab7",
+              "url": "/experiments/r10-13/src/Replica.tsx"
+            }
+          ],
+          "verification": "代码确认；可见影响按明确公式或渲染分支推导，另附画面核查的项目会单独标记",
+          "finding_id": "r10-13-4"
+        },
+        {
+          "aspect": "音频可视化缺少倒影和层次",
+          "kind": "行为差异",
+          "original": "原片频谱包含主柱、上下翻转的倒影、遮罩及光晕层。",
+          "replica": "复刻只有 59 根模糊竖条按正弦改变高度。",
+          "impact": "运动仍存在，但轮廓、上下关系和明暗层次不同；不评价其是否对应真实音频。",
+          "evidence": [
+            {
+              "file": "source-catalog/round10/naveen-annam--creativly.ai-brand-video-remotion/src/scenes/AudioGenerationScene.tsx",
+              "line": 370,
+              "anchor": "scaleY(-1)",
+              "fragment": "            height: 60,\n              transform: \"scaleY(-1)\",\n              maskImage:\n                \"linear-gradient(to bottom, rgba(0,0,0,0.15), transparent)\",\n              WebkitMaskImage:\n    ",
+              "sha256": "17f8ee66f7154fe53a3521313654c2fb21cc175adb29a3c017aea5173b696b3e",
+              "url": "https://github.com/naveen-annam/creativly.ai-brand-video-remotion/blob/3b16948cc68df78870c52b2ed9620adeecd28a32/src/scenes/AudioGenerationScene.tsx#L370"
+            },
+            {
+              "file": "experiments/r10-13/src/Replica.tsx",
+              "line": 6,
+              "anchor": "length: 59",
+              "fragment": ":630,height:160,filter:'blur(2px)'}}>{Array.from({length:59},(_,i)=><span key={i} style={{width:3,height:20+Math.abs(Math.sin(i*.31+t*4))*90,background:'linear-gradient(transparent,#94bdeb88,transpare",
+              "sha256": "5ebd87d38e36de8542c029099a9386e39bc54ca3ab14a8c80639569f24015ab7",
+              "url": "/experiments/r10-13/src/Replica.tsx"
+            }
+          ],
+          "verification": "代码确认；可见影响按明确公式或渲染分支推导，另附画面核查的项目会单独标记",
+          "finding_id": "r10-13-5"
+        }
+      ],
+      "replica_sha256": "5ebd87d38e36de8542c029099a9386e39bc54ca3ab14a8c80639569f24015ab7",
+      "video_sha256": "b565ed28b84e813245abbab14ba09806cb7a9442146a66e30a22bfca4a04ab95",
+      "compare_url": "http://127.0.0.1:8770/compare-round10.html#r10-13",
+      "repo_url": "https://github.com/naveen-annam/creativly.ai-brand-video-remotion",
+      "reference_sha256": "3f089651d1b2c7bc872d73bbcdaa851f9a35ddac651f79dc26ff57fdc007658c",
+      "visual_check": "第 150 帧：参考只完成当前流程的一部分，复刻多面板及连接已出现。第 711 帧：参考选中 Claymation，复刻仍选中 3D Render，背景素材也不同。",
+      "samples": {
+        "id": "r10-13",
+        "frames": [
+          150,
+          711
+        ],
+        "fps": 30,
+        "image": "r10-13.jpg"
+      }
+    },
+    {
+      "id": "r10-14",
+      "title": "Magnific 品牌发布片（作者重建版）",
+      "category": "品牌形象",
+      "reference_id": "magnific",
+      "findings": [
+        {
+          "aspect": "图片内容被重复的简笔图替代",
+          "kind": "素材差异",
+          "original": "原片使用具体人物和场景图片。",
+          "replica": "复刻将画面重画为云、山和几何人形；缩略图反复使用三类图案。",
+          "impact": "构图能粗略辨认，人物姿态、材质和每张素材的区别无法保留。",
+          "evidence": [
+            {
+              "file": "source-catalog/round10/naveen-annam--creativly.ai-magnific-video-remotion/src/scenes/Scene04_RewriteDream.tsx",
+              "line": 142,
+              "anchor": "<Img",
+              "fragment": "          }}\n          />\n        ) : (\n          <Img\n            src={staticFile(\"aigen/scene04/clouds_pink.png\")}\n            style={{\n              position: \"absolute\",\n              inset:",
+              "sha256": "2256096eb7c1d73962bff4c480577513b2d16f057d4e24aa76c6dbbd7dcacafd",
+              "url": "https://github.com/naveen-annam/creativly.ai-magnific-video-remotion/blob/f0ce11dddacf14a306c0c1f122dd06509e1873f8/src/scenes/Scene04_RewriteDream.tsx#L142"
+            },
+            {
+              "file": "experiments/r10-14/src/Replica.tsx",
+              "line": 3,
+              "anchor": "const Art",
+              "fragment": "onst clamp=(x:number)=>Math.min(1,Math.max(0,x));\nconst Art=({kind=0,t=0}:{kind?:number,t?:number})=><svg viewBox=\"0 0 960 540\" width=\"100%\" height=\"100%\" preserveAspectRatio=\"xMidYMid slice\"><defs><",
+              "sha256": "758b7656e8b09f3caedf11559d370d62d02970dce954d6a44a94e00d9be26fb4",
+              "url": "/experiments/r10-14/src/Replica.tsx"
+            }
+          ],
+          "verification": "代码确认；可见影响按明确公式或渲染分支推导，另附画面核查的项目会单独标记",
+          "finding_id": "r10-14-1"
+        },
+        {
+          "aspect": "开头卡片位置按取模跳回",
+          "kind": "行为差异",
+          "original": "原片为开场卡片设计连续的展开和移动。",
+          "replica": "复刻卡片 y 用 (i×140+t×120)%1000−280 计算，后半又更换布局。",
+          "impact": "部分卡片到循环边界会回跳，展开次序与卡片身份不一致。",
+          "evidence": [
+            {
+              "file": "source-catalog/round10/naveen-annam--creativly.ai-magnific-video-remotion/src/scenes/Scene01_Cascade.tsx",
+              "line": 2,
+              "anchor": "useCurrentFrame",
+              "fragment": "port {AbsoluteFill, Img, interpolate, staticFile, useCurrentFrame, Easing} from \"remotion\";\nimport {FONT_FAMILY, bezier, clamped, fadeWindow} from \"../helpers\";\nimport {FONT, MOTION, PALETTE, VIDEO_HEIGHT,",
+              "sha256": "eff4284420cfd489e0d80585de56d2dc2dbed67d8a787e3a86cf8adfae8a7a27",
+              "url": "https://github.com/naveen-annam/creativly.ai-magnific-video-remotion/blob/f0ce11dddacf14a306c0c1f122dd06509e1873f8/src/scenes/Scene01_Cascade.tsx#L2"
+            },
+            {
+              "file": "experiments/r10-14/src/Replica.tsx",
+              "line": 5,
+              "anchor": "% 1000",
+              "fragment": " x=t<2.7?300:75+(i*167)%780,y=t<2.7?(i*140+ t*120)%1000-280:(i*131)%780-120;return <div key={i} style={{position:'absolute',left:x,top:y,width:t<2.7?360:180,height:t<2.7?145:120,borderRadius:8,ove",
+              "sha256": "758b7656e8b09f3caedf11559d370d62d02970dce954d6a44a94e00d9be26fb4",
+              "url": "/experiments/r10-14/src/Replica.tsx"
+            }
+          ],
+          "verification": "代码确认；可见影响按明确公式或渲染分支推导，另附画面核查的项目会单独标记",
+          "finding_id": "r10-14-2"
+        },
+        {
+          "aspect": "结尾字标出现时间提前",
+          "kind": "行为差异",
+          "original": "原片锁定字标场景从 30 秒开始，文字在本场景第 4–24 帧揭示。",
+          "replica": "复刻从 29 秒开始淡入 Magnific。",
+          "impact": "约提前 1.13 秒开始出现，而且进入方式不同。",
+          "evidence": [
+            {
+              "file": "source-catalog/round10/naveen-annam--creativly.ai-magnific-video-remotion/src/tokens.ts",
+              "line": 101,
+              "anchor": "07-magnific-lockup",
+              "fragment": " left, Magnific wordmark reveals, holds\n  {name: \"07-magnific-lockup\", duration: 150, sourceFrameRange: \"frame_0029 → frame_0031\"},\n];\n\n// Cumulative starts — computed once.\nexport const BEAT_STARTS = BEATS.r",
+              "sha256": "571b4f10f46e37c500a337a4e35ade9a4783626725f5bdc05d241b658b003c1e",
+              "url": "https://github.com/naveen-annam/creativly.ai-magnific-video-remotion/blob/f0ce11dddacf14a306c0c1f122dd06509e1873f8/src/tokens.ts#L101"
+            },
+            {
+              "file": "experiments/r10-14/src/Replica.tsx",
+              "line": 5,
+              "anchor": "t > 29",
+              "fragment": "96H62L50 88L40 96H0Z\" fill=\"currentColor\"/></svg>{t>29&&<span style={{fontSize:35,fontWeight:600,letterSpacing:-1,opacity:clamp((t-29)*2)}}>Magnific</span>}</div>};return <AbsoluteFill style={{bac",
+              "sha256": "758b7656e8b09f3caedf11559d370d62d02970dce954d6a44a94e00d9be26fb4",
+              "url": "/experiments/r10-14/src/Replica.tsx"
+            }
+          ],
+          "verification": "代码确认；可见影响按明确公式或渲染分支推导，另附画面核查的项目会单独标记",
+          "finding_id": "r10-14-3"
+        },
+        {
+          "aspect": "字标横向揭示被整体淡入替代",
+          "kind": "行为差异",
+          "original": "原片扩大文字容器宽度，并让图标和文字随宽度变化重新居中。",
+          "replica": "复刻整段文字同时淡入，宽度不随揭示进度变化。",
+          "impact": "文字逐字露出和图标向左让位的过程丢失。",
+          "evidence": [
+            {
+              "file": "source-catalog/round10/naveen-annam--creativly.ai-magnific-video-remotion/src/scenes/Scene07_MagnificLockup.tsx",
+              "line": 53,
+              "anchor": "const wordWidth",
+              "fragment": "mped,\n    easing: bezier(MOTION.expoOut),\n  });\n  const wordWidth = interpolate(wordReveal, [0, 1], [0, WORD_FINAL_WIDTH]);\n\n  return (\n    <AbsoluteFill style={{background: PALETTE.paper, opacity: sceneOp",
+              "sha256": "36ed3971e623844fbad025f18aef9453b5c104840d64e90ce328caf38e44b7db",
+              "url": "https://github.com/naveen-annam/creativly.ai-magnific-video-remotion/blob/f0ce11dddacf14a306c0c1f122dd06509e1873f8/src/scenes/Scene07_MagnificLockup.tsx#L53"
+            },
+            {
+              "file": "experiments/r10-14/src/Replica.tsx",
+              "line": 5,
+              "anchor": "opacity: clamp((t - 29)",
+              "fragment": "yle={{fontSize:35,fontWeight:600,letterSpacing:-1,opacity:clamp((t-29)*2)}}>Magnific</span>}</div>};return <AbsoluteFill style={{background:bg,color:'white',fontFamily:'Arial,Helvetica,sans-serif',display:'flex',a",
+              "sha256": "758b7656e8b09f3caedf11559d370d62d02970dce954d6a44a94e00d9be26fb4",
+              "url": "/experiments/r10-14/src/Replica.tsx"
+            }
+          ],
+          "verification": "代码确认；可见影响按明确公式或渲染分支推导，另附画面核查的项目会单独标记",
+          "finding_id": "r10-14-4"
+        },
+        {
+          "aspect": "标志缩小时有一次明显尺寸跳变",
+          "kind": "行为差异",
+          "original": "原片标志从大到小连续缩放，再略微回弹。",
+          "replica": "复刻先缩至 440×0.04=17.6 像素，27.5 秒时直接改为 40 像素。",
+          "impact": "标志会突然变大，无法用调透明度解释。",
+          "evidence": [
+            {
+              "file": "source-catalog/round10/naveen-annam--creativly.ai-magnific-video-remotion/src/scenes/Scene06_Transforms.tsx",
+              "line": 272,
+              "anchor": "const finalScale",
+              "fragment": "(frame, [14, 20, 26], [0, -0.025, 0], clamped);\n  const finalScale = scale + settle;\n\n  return (\n    <AbsoluteFill\n      style={{display: \"flex\", alignItems: \"center\", justifyContent: \"center\"}}\n    >\n     ",
+              "sha256": "946420f0bdbce729f3acdcd180da9018f4551ed86da2a2d3c02a90fdcab1b112",
+              "url": "https://github.com/naveen-annam/creativly.ai-magnific-video-remotion/blob/f0ce11dddacf14a306c0c1f122dd06509e1873f8/src/scenes/Scene06_Transforms.tsx#L272"
+            },
+            {
+              "file": "experiments/r10-14/src/Replica.tsx",
+              "line": 5,
+              "anchor": "440 * p",
+              "fragment": "nter',gap:12,color:'#210c18'}}><svg width={t<27.5?440*p:40} height={t<27.5?440*p:40} viewBox=\"0 0 100 100\"><path d=\"M10 8H31L50 53L66 8H88L100 96H62L50 88L40 96H0Z\" fill=\"currentColor\"/></svg>{t>29",
+              "sha256": "758b7656e8b09f3caedf11559d370d62d02970dce954d6a44a94e00d9be26fb4",
+              "url": "/experiments/r10-14/src/Replica.tsx"
+            }
+          ],
+          "verification": "代码确认；可见影响按明确公式或渲染分支推导，另附画面核查的项目会单独标记",
+          "finding_id": "r10-14-5"
+        }
+      ],
+      "replica_sha256": "758b7656e8b09f3caedf11559d370d62d02970dce954d6a44a94e00d9be26fb4",
+      "video_sha256": "9dfa22172c6502ee34c87ba9ebcbe13eaae23d11818814ba8b46757f36daaaa9",
+      "compare_url": "http://127.0.0.1:8770/compare-round10.html#r10-14",
+      "repo_url": "https://github.com/naveen-annam/creativly.ai-magnific-video-remotion",
+      "reference_sha256": "0b0e126ab5d387c7ee7c76cbdbaaa6413681ed81aba225c87f8a613a4ee07525",
+      "visual_check": "第 824→825 帧：原片标志大小稳定，复刻从很小突然放大。第 912 帧：两者字标基本出现，但字号、位置和之前的进入过程不同。",
+      "samples": {
+        "id": "r10-14",
+        "frames": [
+          824,
+          825,
+          912
+        ],
+        "fps": 30,
+        "image": "r10-14.jpg"
+      }
+    },
+    {
+      "id": "r10-15",
+      "title": "GitHub Unwrapped 2021",
+      "category": "数据叙事",
+      "reference_id": "github2021",
+      "findings": [
+        {
+          "aspect": "贡献日历不是原来的数据",
+          "kind": "行为差异",
+          "original": "原片每天的格子颜色来自 stats.contributions。",
+          "replica": "复刻按索引取模选六种颜色，并统一生成 31 格，十二月只生成 12 格。",
+          "impact": "月份名字和总数能对上，但每一天及每个月的图形并不可靠。",
+          "evidence": [
+            {
+              "file": "source-catalog/round10/remotion-dev--github-unwrapped-2021/remotion/Green.tsx",
+              "line": 71,
+              "anchor": "backgroundColor: color",
+              "fragment": "e}\n                  style={{\n                    backgroundColor: color,\n                    width: 80,\n                    height: 80,\n                    borderRadius: 12,\n                    margin: 12,\n     ",
+              "sha256": "34b42da50db81eb3cd8eb9d4a712c2069bd8c152db1c418d2aff0c4a02a50cb0",
+              "url": "https://github.com/remotion-dev/github-unwrapped-2021/blob/94c470c049aef2f6b24dd8dbf2168ae2ee7dd80a/remotion/Green.tsx#L71"
+            },
+            {
+              "file": "experiments/r10-15/src/Replica.tsx",
+              "line": 4,
+              "anchor": "i * 13 + month * 17",
+              "fragment": "9c36c','#2ca151','#eaf0f2','#9ce7ac','#39c36c'][((i*13+month*17)%23)%6],transform:`translateY(${t<12?Math.max(0,12-t)*220:0}px)`}}/>)}</div></div>:t<18?<div>{text(String(Math.min(7235,Math.round((t-16)*10000))",
+              "sha256": "87e5085c24180a450abad13c572bed377d59270ac94fa15d12e85477f601022e",
+              "url": "/experiments/r10-15/src/Replica.tsx"
+            }
+          ],
+          "verification": "代码确认；可见影响按明确公式或渲染分支推导，另附画面核查的项目会单独标记",
+          "finding_id": "r10-15-1"
+        },
+        {
+          "aspect": "月份播放时长不同",
+          "kind": "行为差异",
+          "original": "原片首月 35 帧、中间每月 8 帧、末月 33 帧。",
+          "replica": "复刻按每秒 3 个月匀速换月。",
+          "impact": "忽略首尾停顿，各月在相同时间点难以对应。",
+          "evidence": [
+            {
+              "file": "source-catalog/round10/remotion-dev--github-unwrapped-2021/remotion/Contrib.tsx",
+              "line": 40,
+              "anchor": "i === 0 ? 35",
+              "fragment": "   key={m[0]}\n                  durationInFrames={i === 0 ? 35 : i === 11 ? 33 : 8}\n                  layout=\"none\"\n                >\n                  <Green key={m[0]} chunked={chunked} i={i}></Green>",
+              "sha256": "f6eb98a507119c6f687b3217d0b4c5ff2e8215d0aa745dfab3a96c829f6e4ca1",
+              "url": "https://github.com/remotion-dev/github-unwrapped-2021/blob/94c470c049aef2f6b24dd8dbf2168ae2ee7dd80a/remotion/Contrib.tsx#L40"
+            },
+            {
+              "file": "experiments/r10-15/src/Replica.tsx",
+              "line": 4,
+              "anchor": "(t - 12) * 3",
+              "fragment": "r'];const month=Math.min(11,Math.max(0,Math.floor((t-12)*3)));const colors=['#e32005','#242a2e','#0281c7','#075b96','#00a5cf','#3b0b49','#b40030','#20abc7','#00adce','#f2df4c','#db3322','#6283b6','#ffdf",
+              "sha256": "87e5085c24180a450abad13c572bed377d59270ac94fa15d12e85477f601022e",
+              "url": "/experiments/r10-15/src/Replica.tsx"
+            }
+          ],
+          "verification": "代码确认；可见影响按明确公式或渲染分支推导，另附画面核查的项目会单独标记",
+          "finding_id": "r10-15-2"
+        },
+        {
+          "aspect": "饼图颜色占比与数字下降分开控制",
+          "kind": "行为差异",
+          "original": "原片同一 spr 同时驱动数字减少、两色扇形比例和文案切换。",
+          "replica": "复刻数字以每秒 150 下降，扇形另用角速度变化，21.3 秒后固定为 55°。",
+          "impact": "最终比例可能近似，但中途数字和扇形面积不同步。",
+          "evidence": [
+            {
+              "file": "source-catalog/round10/remotion-dev--github-unwrapped-2021/remotion/Issues.tsx",
+              "line": 51,
+              "anchor": "const openRatio",
+              "fragment": "xtrapolateRight: \"clamp\",\n      }),\n    ]\n  );\n\n  const openRatio = interpolate(spr, [0, 1], [1, open / total]);\n  const closeRatio = interpolate(spr, [0, 1], [0, closed / total]);\n\n  return (\n    <Absolut",
+              "sha256": "55fbd05abea84270248196828fc3722dd1b89a332e1339f1523e9750214bc76e",
+              "url": "https://github.com/remotion-dev/github-unwrapped-2021/blob/94c470c049aef2f6b24dd8dbf2168ae2ee7dd80a/remotion/Issues.tsx#L51"
+            },
+            {
+              "file": "experiments/r10-15/src/Replica.tsx",
+              "line": 4,
+              "anchor": "t >= 21.3",
+              "fragment": "ath.max(30,Math.round(195-(t-20.5)*150));let open=t>=21.3;const text=(s:string,size=40,style:React.CSSProperties={})=><div style={{fontSize:size,fontWeight:800,textAlign:'center',lineHeight:1.17,...s",
+              "sha256": "87e5085c24180a450abad13c572bed377d59270ac94fa15d12e85477f601022e",
+              "url": "/experiments/r10-15/src/Replica.tsx"
+            }
+          ],
+          "verification": "代码确认；可见影响按明确公式或渲染分支推导，另附画面核查的项目会单独标记",
+          "finding_id": "r10-15-3"
+        },
+        {
+          "aspect": "跨场景重叠被取消",
+          "kind": "行为差异",
+          "original": "原片主要场景之间重叠 25 帧，经 Transition 交接。",
+          "replica": "复刻采用互斥时间分支。",
+          "impact": "没有原片过渡中的覆盖、推进和节奏。",
+          "evidence": [
+            {
+              "file": "source-catalog/round10/remotion-dev--github-unwrapped-2021/remotion/Main.tsx",
+              "line": 32,
+              "anchor": "offset={-25}",
+              "fragment": ">\n        <Series.Sequence durationInFrames={120} offset={-25}>\n          <Transition>\n            <ManyLanguages></ManyLanguages>\n          </Transition>\n        </Series.Sequence>\n        <Series.Sequ",
+              "sha256": "c8d9cc1bfc6f2db115afc6abadec5f4b479118012a522655935c9f1d6245cd9c",
+              "url": "https://github.com/remotion-dev/github-unwrapped-2021/blob/94c470c049aef2f6b24dd8dbf2168ae2ee7dd80a/remotion/Main.tsx#L32"
+            },
+            {
+              "file": "experiments/r10-15/src/Replica.tsx",
+              "line": 4,
+              "anchor": "t < 4",
+              "fragment": "','#ffdf45','#f45238','#dd9400','#5e5088'];let bg=t<4?green:t<7?'#ffdadb':t<10?'#2b768a':t<18?white:t<24?green:t<28?'#fae8ff':t<30?green:white;let count=t<20.5?Math.min(195,Math.round(Math.max(0,",
+              "sha256": "87e5085c24180a450abad13c572bed377d59270ac94fa15d12e85477f601022e",
+              "url": "/experiments/r10-15/src/Replica.tsx"
+            }
+          ],
+          "verification": "代码确认；可见影响按明确公式或渲染分支推导，另附画面核查的项目会单独标记",
+          "finding_id": "r10-15-4"
+        },
+        {
+          "aspect": "头像与字体被替换",
+          "kind": "素材差异",
+          "original": "原片使用人物头像及 Jelle 字体。",
+          "replica": "复刻用 SVG 头像和 Arial Rounded/Arial 字体。",
+          "impact": "人物相似度、字形宽度和排版气质不同；头像属于素材恢复问题。",
+          "evidence": [
+            {
+              "file": "source-catalog/round10/remotion-dev--github-unwrapped-2021/remotion/Green.tsx",
+              "line": 9,
+              "anchor": "fontFamily: \"Jelle\"",
+              "fragment": "ties = {\n  textAlign: \"center\",\n  fontSize: 70,\n  fontFamily: \"Jelle\",\n  color: BASE_COLOR,\n};\n\nexport const Green: React.FC<{\n  chunked: SpaceSavingContribution[][];\n  i: number;\n}> = ({ chunked, i }) => {\n  ",
+              "sha256": "34b42da50db81eb3cd8eb9d4a712c2069bd8c152db1c418d2aff0c4a02a50cb0",
+              "url": "https://github.com/remotion-dev/github-unwrapped-2021/blob/94c470c049aef2f6b24dd8dbf2168ae2ee7dd80a/remotion/Green.tsx#L9"
+            },
+            {
+              "file": "experiments/r10-15/src/Replica.tsx",
+              "line": 1,
+              "anchor": "Arial Rounded MT Bold",
+              "fragment": "e06',white='#f8fff9',purple='#d879f1';const font='Arial Rounded MT Bold, Arial, sans-serif';\nconst Portrait=()=> <svg width=\"235\" height=\"235\" viewBox=\"0 0 235 235\"><circle cx=\"117\" cy=\"117\" r=\"112\" fill=\"white\"",
+              "sha256": "87e5085c24180a450abad13c572bed377d59270ac94fa15d12e85477f601022e",
+              "url": "/experiments/r10-15/src/Replica.tsx"
+            }
+          ],
+          "verification": "代码确认；可见影响按明确公式或渲染分支推导，另附画面核查的项目会单独标记",
+          "finding_id": "r10-15-5"
+        }
+      ],
+      "replica_sha256": "87e5085c24180a450abad13c572bed377d59270ac94fa15d12e85477f601022e",
+      "video_sha256": "b5d563a5251242eaac0ed2891f3e10c6618ba3f9e0fa0e4696e7b5164faea5c7",
+      "compare_url": "http://127.0.0.1:8770/compare-round10.html#r10-15",
+      "repo_url": "https://github.com/remotion-dev/github-unwrapped-2021",
+      "reference_sha256": "167c1835353aaec92042deb24befe5d8af7159ebf4d481a44c645a96782f2256",
+      "visual_check": "第 375 帧：同为 February，原片 28 格、复刻 31 格，颜色也不同。第 630 帧：原片仍为 195 的全绿圆，复刻已经变为 120 和部分紫色。",
+      "samples": {
+        "id": "r10-15",
+        "frames": [
+          375,
+          630
+        ],
+        "fps": 30,
+        "image": "r10-15.jpg"
+      }
+    },
+    {
+      "id": "r10-16",
+      "title": "Remotion 2.0 音频时间线演示",
+      "category": "软件演示",
+      "reference_id": "trailer2-audio",
+      "findings": [
+        {
+          "aspect": "裁剪波形时把波形压缩了",
+          "kind": "行为差异",
+          "original": "原片独立控制音频块裁剪宽度、内部波形偏移。",
+          "replica": "复刻每次都按新宽度 w 重排 130 根波形线。",
+          "impact": "块变窄时内容随之压缩，不是同一段波形被裁掉一部分。",
+          "evidence": [
+            {
+              "file": "source-catalog/round10/remotion-dev--trailer-2-0/src/AudioTag.tsx",
+              "line": 62,
+              "anchor": "marginLeft: -trimLeft",
+              "fragment": "center',\n\t\t\t\t\tdisplay: 'flex',\n\t\t\t\t\tflex: 1,\n\t\t\t\t\tmarginLeft: -trimLeft,\n\t\t\t\t}}\n\t\t\t>\n\t\t\t\t{randomBars.map((b, i) => {\n\t\t\t\t\treturn (\n\t\t\t\t\t\t<div\n\t\t\t\t\t\t\tstyle={{\n\t\t\t\t\t\t\t\twidth: 8,\n\t\t\t\t\t\t\t\tborderRadius: 4,\n\t\t\t\t\t\t\t\the",
+              "sha256": "86711b13fce2d05672a2307b180ed6044d7cee7084037add32986827d537c205",
+              "url": "https://github.com/remotion-dev/trailer-2-0/blob/5afaa6119bf07d92eac07cfa5d131969a2d569b7/src/AudioTag.tsx#L62"
+            },
+            {
+              "file": "experiments/r10-16/src/Replica.tsx",
+              "line": 2,
+              "anchor": "i * w / 130",
+              "fragment": "index*8)*.5+.5)*h*.78;return <path key={i} d={`M${i*w/130} ${(h-a)/2}v${a}`} stroke=\"#b4dba6\" opacity=\".38\" strokeWidth=\"1\"/>})}<path d={`M0 5H${w}M0 ${h-5}H${w}`} stroke=\"#a4d498\" opacity=\".3\"/>{curve",
+              "sha256": "50c8f4af2f7e40dfe2acbdbd052f60890ee045eed83e884ff5d3e6cd5f7f9a1b",
+              "url": "/experiments/r10-16/src/Replica.tsx"
+            }
+          ],
+          "verification": "代码确认；可见影响按明确公式或渲染分支推导，另附画面核查的项目会单独标记",
+          "finding_id": "r10-16-1"
+        },
+        {
+          "aspect": "三条音轨对齐位置不同",
+          "kind": "行为差异",
+          "original": "原片三条轨道最终平移量在半尺寸输出下为 −150、45、120 像素，第一条另有左裁剪补偿。",
+          "replica": "复刻平移量为 −90、15、90 像素。",
+          "impact": "裁剪后的起点、终点和轨道错位关系不一致。",
+          "evidence": [
+            {
+              "file": "source-catalog/round10/remotion-dev--trailer-2-0/src/AudioDemo.tsx",
+              "line": 118,
+              "anchor": "offset={align * -300}",
+              "fragment": "seed={0}\n\t\t\t\ttrimLeft={cut}\n\t\t\t\ttrimRight={0}\n\t\t\t\toffset={align * -300}\n\t\t\t\tscale={otherScale}\n\t\t\t\tvolume={volume1}\n\t\t\t/>\n\t\t\t<br />\n\t\t\t<div\n\t\t\t\tstyle={{\n\t\t\t\t\ttransform: `translateY(${framePosition}px)`,\n\t\t\t\t}}\n\t",
+              "sha256": "2e3a7a95119d0a665f3e078bf578a377f80bf0aa0508fde332cdc1547e7ab918",
+              "url": "https://github.com/remotion-dev/trailer-2-0/blob/5afaa6119bf07d92eac07cfa5d131969a2d569b7/src/AudioDemo.tsx#L118"
+            },
+            {
+              "file": "experiments/r10-16/src/Replica.tsx",
+              "line": 4,
+              "anchor": "[-90, 15, 90]",
+              "fragment": "-7.5)/.55);let stagger=ease((t-10)/1.5);let shift=[-90,15,90][i]*stagger;let w=i===0||i===1?400-90*ease((t-9.5)/1):400;let x=280+shift+(i===0?90*ease((t-9.5)/1):0);let y=255-90*ease((t-4)/.7)+(i-1)*64*tr",
+              "sha256": "50c8f4af2f7e40dfe2acbdbd052f60890ee045eed83e884ff5d3e6cd5f7f9a1b",
+              "url": "/experiments/r10-16/src/Replica.tsx"
+            }
+          ],
+          "verification": "代码确认；可见影响按明确公式或渲染分支推导，另附画面核查的项目会单独标记",
+          "finding_id": "r10-16-2"
+        },
+        {
+          "aspect": "音量曲线的形状和生成过程不同",
+          "kind": "行为差异",
+          "original": "原片第二条音量线有平台、下降、低平台、回升；先调整整条音量，再过渡到各自曲线。",
+          "replica": "复刻第二条使用平滑正弦波，13.4 秒后一次性显示所有曲线。",
+          "impact": "“整体调音量→局部设置音量”的演示步骤丢失。",
+          "evidence": [
+            {
+              "file": "source-catalog/round10/remotion-dev--trailer-2-0/src/AudioDemo.tsx",
+              "line": 83,
+              "anchor": "const volume2",
+              "fragment": "Custom, [0, 1], [volumeSpring * 0.8, wave]);\n\t};\n\tconst volume2 = (i: number) => {\n\t\tconst wave = interpolate(\n\t\t\ti,\n\t\t\t[0, 50, 60, 80, 90, 100],\n\t\t\t[0.9, 0.9, 0.1, 0.1, 0.9, 0.9]\n\t\t);\n\t\treturn interpola",
+              "sha256": "2e3a7a95119d0a665f3e078bf578a377f80bf0aa0508fde332cdc1547e7ab918",
+              "url": "https://github.com/remotion-dev/trailer-2-0/blob/5afaa6119bf07d92eac07cfa5d131969a2d569b7/src/AudioDemo.tsx#L83"
+            },
+            {
+              "file": "experiments/r10-16/src/Replica.tsx",
+              "line": 2,
+              "anchor": "index === 1",
+              "fragment": "x===0?6+Math.max(0,20-i)*1.9+Math.max(0,i-85)*2.7:index===1?10+30*(.5+.5*Math.sin(i*.07-2)):h/2+Math.sin(i*.1)*17}`).join(' ')} fill=\"none\" stroke=\"#d0ecc7\" strokeWidth=\"2\"/>}</g>}\nconst Tile:React.FC<",
+              "sha256": "50c8f4af2f7e40dfe2acbdbd052f60890ee045eed83e884ff5d3e6cd5f7f9a1b",
+              "url": "/experiments/r10-16/src/Replica.tsx"
+            }
+          ],
+          "verification": "代码确认；可见影响按明确公式或渲染分支推导，另附画面核查的项目会单独标记",
+          "finding_id": "r10-16-3"
+        },
+        {
+          "aspect": "波形线数量与揭示方式不同",
+          "kind": "行为差异",
+          "original": "原片每条 90 根固定随机波形，并按各条的 spring 逐步长出。",
+          "replica": "复刻 130 根正弦伪随机线一开始就在。",
+          "impact": "轮廓密度与出现过程不同；原片本身也不是从音频采样出的真实波形。",
+          "evidence": [
+            {
+              "file": "source-catalog/round10/remotion-dev--trailer-2-0/src/AudioTag.tsx",
+              "line": 33,
+              "anchor": "new Array(90)",
+              "fragment": "st frame = useCurrentFrame();\n\tconst randomBars = new Array(90)\n\t\t.fill(true)\n\t\t.map((b, i) => random(`${i}-${seed}`));\n\tconst {width, fps} = useVideoConfig();\n\tconst barWidth = 800 - trimLeft - trimRigh",
+              "sha256": "86711b13fce2d05672a2307b180ed6044d7cee7084037add32986827d537c205",
+              "url": "https://github.com/remotion-dev/trailer-2-0/blob/5afaa6119bf07d92eac07cfa5d131969a2d569b7/src/AudioTag.tsx#L33"
+            },
+            {
+              "file": "experiments/r10-16/src/Replica.tsx",
+              "line": 2,
+              "anchor": "length: 130",
+              "fragment": "width={w} height={h} fill=\"#24ab45\"/>{Array.from({length:130},(_,i)=>{let a=(Math.sin(i*31+index*8)*.5+.5)*h*.78;return <path key={i} d={`M${i*w/130} ${(h-a)/2}v${a}`} stroke=\"#b4dba6\" opacity=\".38\" st",
+              "sha256": "50c8f4af2f7e40dfe2acbdbd052f60890ee045eed83e884ff5d3e6cd5f7f9a1b",
+              "url": "/experiments/r10-16/src/Replica.tsx"
+            }
+          ],
+          "verification": "代码确认；可见影响按明确公式或渲染分支推导，另附画面核查的项目会单独标记",
+          "finding_id": "r10-16-4"
+        }
+      ],
+      "replica_sha256": "50c8f4af2f7e40dfe2acbdbd052f60890ee045eed83e884ff5d3e6cd5f7f9a1b",
+      "video_sha256": "2872f19319eecdac8d506eccc9b51f223d40bd5ebdcf37a017ffd1481bd502d3",
+      "compare_url": "http://127.0.0.1:8770/compare-round10.html#r10-16",
+      "repo_url": "https://github.com/remotion-dev/trailer-2-0",
+      "reference_sha256": "0a4f271aea75fae9e2f793ffd3b03a91fc85bcd541393fc60c73a634ae625111",
+      "visual_check": "第 375 帧：三条轨道的位置和波形密度不同。第 480 帧：原片第二条有折线平台，复刻第二条是光滑曲线。",
+      "samples": {
+        "id": "r10-16",
+        "frames": [
+          375,
+          480
+        ],
+        "fps": 30,
+        "image": "r10-16.jpg"
+      }
+    },
+    {
+      "id": "r10-17",
+      "title": "Remotion 首发宣传片",
+      "category": "产品营销",
+      "reference_id": "trailer1",
+      "findings": [
+        {
+          "aspect": "GitHub 和编辑器内容被随意改写",
+          "kind": "行为差异",
+          "original": "原片调用真实界面内容/素材呈现仓库与后续操作。",
+          "replica": "复刻浏览器列表写成重复的 Update 文件名，编辑器重复几段代码。",
+          "impact": "窗口外框近似，窗口中的具体任务内容不一致。",
+          "evidence": [
+            {
+              "file": "source-catalog/round10/remotion-dev--trailer/src/GoToGithub.tsx",
+              "line": 17,
+              "anchor": "GoToGithub",
+              "fragment": "e = styled(Img)`\n\twidth: 1300px;\n`;\n\nexport const GoToGithub: React.FC = () => {\n\tconst {fps} = useVideoConfig();\n\tconst frame = useCurrentFrame();\n\tconst scale = spring({\n\t\tfps,\n\t\tframe,\n\t\tconfig: {\n",
+              "sha256": "69d232fd62fd2ead5b0a9cd2d91ecb21d0ffae637439882697c5ebc2dd897e42",
+              "url": "https://github.com/remotion-dev/trailer/blob/63c2a66f2c7780f64c85c26e5f872daa31d9545c/src/GoToGithub.tsx#L17"
+            },
+            {
+              "file": "experiments/r10-17/src/Replica.tsx",
+              "line": 4,
+              "anchor": "Update {s}",
+              "fragment": "{s}<span style={{marginLeft:100,color:'#89919a'}}>Update {s}　　　　　　　　　2 days ago</span></div>)}<h3>React video creation</h3></>}</div></div>;\nconst Editor=()=> <div style={{width:630,height:410,backgro",
+              "sha256": "dee4111fefffe1967fb810af49d17e7b245de6acb3de2bc121fa93918ee13836",
+              "url": "/experiments/r10-17/src/Replica.tsx"
+            }
+          ],
+          "verification": "代码确认；可见影响按明确公式或渲染分支推导，另附画面核查的项目会单独标记",
+          "finding_id": "r10-17-1"
+        },
+        {
+          "aspect": "代码演示的逐行时间不一致",
+          "kind": "行为差异",
+          "original": "原片 CodeFrame 从 22 秒开始，duration/fps/width/height 分别在 23.667、24.5、25.667、25.833 秒进入。",
+          "replica": "复刻从 21.4 秒开始，四项分别在 23.4、24.3、25.3、25.9 秒出现。",
+          "impact": "行与讲解阶段错位，部分提前、部分延后。",
+          "evidence": [
+            {
+              "file": "source-catalog/round10/remotion-dev--trailer/src/Main.tsx",
+              "line": 95,
+              "anchor": "line: 5",
+              "fragment": "\n\n\t\t\t\t\t`.trim()}\n\t\t\t\t\t\ttiming={[\n\t\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\tline: 5,\n\t\t\t\t\t\t\t\tfrom: 50,\n\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\tline: 6,\n\t\t\t\t\t\t\t\tfrom: 75,\n\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\tline: 7,\n\t\t\t\t\t\t\t\tfrom: 110,\n\t\t\t\t\t\t\t},\n\t",
+              "sha256": "4a18ffc0514c2454e18a6a1c4af6b4112746fc0ac177d7d2d72403044e07c859",
+              "url": "https://github.com/remotion-dev/trailer/blob/63c2a66f2c7780f64c85c26e5f872daa31d9545c/src/Main.tsx#L95"
+            },
+            {
+              "file": "experiments/r10-17/src/Replica.tsx",
+              "line": 6,
+              "anchor": "t > 23.4",
+              "fragment": "=\"MyVideo\"','            component={MyVideo}',...(t>23.4?['            durationInFrames={90}']:[]),...(t>24.3?['            fps={30}']:[]),...(t>25.3?['            width={1920}']:[]),...(t>25.9?['  ",
+              "sha256": "dee4111fefffe1967fb810af49d17e7b245de6acb3de2bc121fa93918ee13836",
+              "url": "/experiments/r10-17/src/Replica.tsx"
+            }
+          ],
+          "verification": "代码确认；可见影响按明确公式或渲染分支推导，另附画面核查的项目会单独标记",
+          "finding_id": "r10-17-2"
+        },
+        {
+          "aspect": "示例函数名抄错",
+          "kind": "行为差异",
+          "original": "原片展示 export const RemotionVideo。",
+          "replica": "复刻展示 export const RootVideo。",
+          "impact": "属于屏幕内可见文本差异；不涉及代码能否运行。",
+          "evidence": [
+            {
+              "file": "source-catalog/round10/remotion-dev--trailer/src/Main.tsx",
+              "line": 79,
+              "anchor": "export const RemotionVideo",
+              "fragment": "idth={1200}\n\t\t\t\t\t\ttitle=\"Video.tsx\"\n\t\t\t\t\t\tcode={`\nexport const RemotionVideo = () => {\n\treturn (\n\t\t<Composition\n\t\t\tid=\"MyVideo\"\n\t\t\tcomponent={MyVideo}\n\t\t\tdurationInFrames={90}\n\t\t\tfps={30}\n\t\t\twidth={1920}\n\t\t\theight={1",
+              "sha256": "4a18ffc0514c2454e18a6a1c4af6b4112746fc0ac177d7d2d72403044e07c859",
+              "url": "https://github.com/remotion-dev/trailer/blob/63c2a66f2c7780f64c85c26e5f872daa31d9545c/src/Main.tsx#L79"
+            },
+            {
+              "file": "experiments/r10-17/src/Replica.tsx",
+              "line": 6,
+              "anchor": "export const RootVideo",
+              "fragment": "['export const MyVideo = () => {','','','','}']:['export const RootVideo = () => {','    return (','        <Composition','            id=\"MyVideo\"','            component={MyVideo}',...(t>23.4?['            dura",
+              "sha256": "dee4111fefffe1967fb810af49d17e7b245de6acb3de2bc121fa93918ee13836",
+              "url": "/experiments/r10-17/src/Replica.tsx"
+            }
+          ],
+          "verification": "代码确认；可见影响按明确公式或渲染分支推导，另附画面核查的项目会单独标记",
+          "finding_id": "r10-17-3"
+        },
+        {
+          "aspect": "React 图形的描边和文字进入动作简化",
+          "kind": "行为差异",
+          "original": "原片三条弧各延迟 0、30、60 帧，描边变细；文字分两行向上进入，整体缩放。",
+          "replica": "复刻三条椭圆统一按 q×14 旋转，另用虚线长度显示轮廓。",
+          "impact": "弧线进入间隔、粗细变化和两行文字的位移都没有按原片恢复。",
+          "evidence": [
+            {
+              "file": "source-catalog/round10/remotion-dev--trailer/src/Intro/Arc.tsx",
+              "line": 27,
+              "anchor": "const strokeWidth",
+              "fragment": "ight: 'clamp',\n\t\textrapolateLeft: 'clamp',\n\t});\n\n\tconst strokeWidth = interpolate(progress, [0, 1], [200, 60]);\n\n\treturn (\n\t\t<g\n\t\t\tstyle={{\n\t\t\t\ttransform: `rotate(${rotation}deg)`,\n\t\t\t\topacity,\n\t\t\t\ttransform",
+              "sha256": "f8a01bf9b5aa0329f7bdf0be83b31978219a22c3c3fc0eb935b0be7d505c278d",
+              "url": "https://github.com/remotion-dev/trailer/blob/63c2a66f2c7780f64c85c26e5f872daa31d9545c/src/Intro/Arc.tsx#L27"
+            },
+            {
+              "file": "experiments/r10-17/src/Replica.tsx",
+              "line": 6,
+              "anchor": "q * 14",
+              "fragment": "\" style={{position:'absolute',transform:`rotate(${q*14}deg)`}} viewBox=\"0 0 400 400\"><defs><linearGradient id=\"react\"><stop stopColor=\"#7cabe8\"/><stop offset=\"1\" stopColor=\"#6aeeee\"/></linearGradi",
+              "sha256": "dee4111fefffe1967fb810af49d17e7b245de6acb3de2bc121fa93918ee13836",
+              "url": "/experiments/r10-17/src/Replica.tsx"
+            }
+          ],
+          "verification": "代码确认；可见影响按明确公式或渲染分支推导，另附画面核查的项目会单独标记",
+          "finding_id": "r10-17-4"
+        },
+        {
+          "aspect": "第二段代码页面提前切换",
+          "kind": "行为差异",
+          "original": "原片在第 850 帧，即 28.333 秒进入 MyVideo.tsx。",
+          "replica": "复刻 27.4 秒已进入新页面。",
+          "impact": "第 840 帧原片还显示完整 Composition 参数，复刻已换成空函数。",
+          "evidence": [
+            {
+              "file": "source-catalog/round10/remotion-dev--trailer/src/Main.tsx",
+              "line": 113,
+              "anchor": "from={850}",
+              "fragment": "},\n\t\t\t\t\t\t]}\n\t\t\t\t\t/>\n\t\t\t\t</Sequence>\n\t\t\t\t<Sequence from={850} durationInFrames={240}>\n\t\t\t\t\t<CodeFrame\n\t\t\t\t\t\twidth={1200}\n\t\t\t\t\t\ttitle=\"MyVideo.tsx\"\n\t\t\t\t\t\tcode={`\nexport const MyVideo = () => {\n\tconst fr",
+              "sha256": "4a18ffc0514c2454e18a6a1c4af6b4112746fc0ac177d7d2d72403044e07c859",
+              "url": "https://github.com/remotion-dev/trailer/blob/63c2a66f2c7780f64c85c26e5f872daa31d9545c/src/Main.tsx#L113"
+            },
+            {
+              "file": "experiments/r10-17/src/Replica.tsx",
+              "line": 6,
+              "anchor": "t>=27.4",
+              "fragment": "t-18.8)*3)}}>Remotion</span></div>;else {const my=t>=27.4;const lines=my?['export const MyVideo = () => {','','','','}']:['export const RootVideo = () => {','    return (','        <Composition',' ",
+              "sha256": "dee4111fefffe1967fb810af49d17e7b245de6acb3de2bc121fa93918ee13836",
+              "url": "/experiments/r10-17/src/Replica.tsx"
+            }
+          ],
+          "verification": "代码确认；可见影响按明确公式或渲染分支推导，另附画面核查的项目会单独标记",
+          "finding_id": "r10-17-5"
+        }
+      ],
+      "replica_sha256": "dee4111fefffe1967fb810af49d17e7b245de6acb3de2bc121fa93918ee13836",
+      "video_sha256": "a9e270d8152f82ef2a49bd895ae390bcd8c5b16fb6cea398c7250f64023fcb40",
+      "compare_url": "http://127.0.0.1:8770/compare-round10.html#r10-17",
+      "repo_url": "https://github.com/remotion-dev/trailer",
+      "reference_sha256": "fbc3fa29da1b3fdc55273a1388b8a764e64a7e259f2d2f552c7764bce29a512e",
+      "visual_check": "第 714 帧：可直接读到函数名 RemotionVideo / RootVideo 不同。第 840 帧：原片仍显示 Video.tsx，复刻已经切到 MyVideo.tsx。",
+      "samples": {
+        "id": "r10-17",
+        "frames": [
+          714,
+          840
+        ],
+        "fps": 30,
+        "image": "r10-17.jpg"
+      }
+    },
+    {
+      "id": "r10-18",
+      "title": "Echook 声音通知产品片",
+      "category": "产品营销",
+      "reference_id": "echook",
+      "findings": [
+        {
+          "aspect": "安装命令抄错",
+          "kind": "行为差异",
+          "original": "原片仓库为 ChanMeng666/echook，插件名 audio-hooks@chanmeng-audio-hooks。",
+          "replica": "复刻改成 Channing666/echook 和 audio-hooks@channing-as。",
+          "impact": "界面展示的是另一条命令，内容已经不准确。",
+          "evidence": [
+            {
+              "file": "source-catalog/round10/ChanMeng666--echook-promo-video/src/sections/features/QuickSetup.tsx",
+              "line": 76,
+              "anchor": "ChanMeng666/echook",
+              "fragment": "              text=\"claude plugin marketplace add ChanMeng666/echook\"\n              startFrame={5}\n              speed={1.6}\n              fontSize={16}\n              showCursor={false}\n            />\n       ",
+              "sha256": "84fed2ce33712a6fbb178b0cc650d53b400460d3d9672e78e823563839a5e795",
+              "url": "https://github.com/ChanMeng666/echook-promo-video/blob/a2b8004ce7ca4e30a94cdb867b732537f374f481/src/sections/features/QuickSetup.tsx#L76"
+            },
+            {
+              "file": "experiments/r10-18/src/Replica.tsx",
+              "line": 2,
+              "anchor": "Channing666/echook",
+              "fragment": "b><br/>{t>21.3&&<>$ claude plugin marketplace add Channing666/echook<br/></>}{t>22&&<>$ claude plugin install audio-hooks@channing-as<br/></>}{t>22.6&&<><span style={{fontSize:6,color:'#666'}}># then, in the ",
+              "sha256": "507f981320e676e6cf75fd4d84f27a5aaa102f428a782d137eb9f55c9319ea9d",
+              "url": "/experiments/r10-18/src/Replica.tsx"
+            }
+          ],
+          "verification": "代码确认；可见影响按明确公式或渲染分支推导，另附画面核查的项目会单独标记",
+          "finding_id": "r10-18-1"
+        },
+        {
+          "aspect": "Hook 名称有一项不同",
+          "kind": "行为差异",
+          "original": "原片最后一个可选 Hook 名为 TabFileEdit。",
+          "replica": "复刻写成 ToolFileEdit。",
+          "impact": "列表数量仍是 33，但一个元素内容错误。",
+          "evidence": [
+            {
+              "file": "source-catalog/round10/ChanMeng666--echook-promo-video/src/sections/features/HookTypes.tsx",
+              "line": 35,
+              "anchor": "TabFileEdit",
+              "fragment": "ntResponse\", \"AgentThinking\",\n  \"WorkspaceOpen\", \"TabFileEdit\",\n];\n\nexport const HookTypes: React.FC = () => {\n  const frame = useCurrentFrame();\n  const { fps } = useVideoConfig();\n\n  // Essential lab",
+              "sha256": "704e17fce7c43ae27ab2f13dcf2963cbd0b1a83eeb0215e2337ea30372959c37",
+              "url": "https://github.com/ChanMeng666/echook-promo-video/blob/a2b8004ce7ca4e30a94cdb867b732537f374f481/src/sections/features/HookTypes.tsx#L35"
+            },
+            {
+              "file": "experiments/r10-18/src/Replica.tsx",
+              "line": 3,
+              "anchor": "ToolFileEdit",
+              "fragment": ",'AgentResponse','AgentThinking','WorkspaceOpen','ToolFileEdit'];\nexport const Replica:React.FC=()=>{const t=useCurrentFrame()/30;return <AbsoluteFill style={{background:t>9&&t<12?'radial-gradient(ellip",
+              "sha256": "507f981320e676e6cf75fd4d84f27a5aaa102f428a782d137eb9f55c9319ea9d",
+              "url": "/experiments/r10-18/src/Replica.tsx"
+            }
+          ],
+          "verification": "代码确认；可见影响按明确公式或渲染分支推导，另附画面核查的项目会单独标记",
+          "finding_id": "r10-18-2"
+        },
+        {
+          "aspect": "命令没有逐字输入",
+          "kind": "行为差异",
+          "original": "原片每条命令有独立开始时间及打字速度。",
+          "replica": "复刻按几个时间阈值直接显示整行。",
+          "impact": "输入过程以及进度条、徽章之间的时序不同。",
+          "evidence": [
+            {
+              "file": "source-catalog/round10/ChanMeng666--echook-promo-video/src/sections/features/QuickSetup.tsx",
+              "line": 77,
+              "anchor": "startFrame={5}",
+              "fragment": "marketplace add ChanMeng666/echook\"\n              startFrame={5}\n              speed={1.6}\n              fontSize={16}\n              showCursor={false}\n            />\n          </div>\n          {frame > 2",
+              "sha256": "84fed2ce33712a6fbb178b0cc650d53b400460d3d9672e78e823563839a5e795",
+              "url": "https://github.com/ChanMeng666/echook-promo-video/blob/a2b8004ce7ca4e30a94cdb867b732537f374f481/src/sections/features/QuickSetup.tsx#L77"
+            },
+            {
+              "file": "experiments/r10-18/src/Replica.tsx",
+              "line": 2,
+              "anchor": "t > 21.3",
+              "fragment": "up?<><b># Install via plugin marketplace</b><br/>{t>21.3&&<>$ claude plugin marketplace add Channing666/echook<br/></>}{t>22&&<>$ claude plugin install audio-hooks@channing-as<br/></>}{t>22.6&&<><sp",
+              "sha256": "507f981320e676e6cf75fd4d84f27a5aaa102f428a782d137eb9f55c9319ea9d",
+              "url": "/experiments/r10-18/src/Replica.tsx"
+            }
+          ],
+          "verification": "代码确认；可见影响按明确公式或渲染分支推导，另附画面核查的项目会单独标记",
+          "finding_id": "r10-18-3"
+        },
+        {
+          "aspect": "进入问题与解决方案的时间推迟",
+          "kind": "行为差异",
+          "original": "原片问题场景从 130/30=4.333 秒开始，解决方案从 320/30=10.667 秒开始，包含 wipe/fade。",
+          "replica": "复刻分别在 5 秒和 12 秒直接切换。",
+          "impact": "问题场景延后 0.667 秒，解决方案延后 1.333 秒。",
+          "evidence": [
+            {
+              "file": "source-catalog/round10/ChanMeng666--echook-promo-video/src/PromoVideo.tsx",
+              "line": 203,
+              "anchor": "durationInFrames: DURATIONS.transition1",
+              "fragment": " \"from-left\" })}\n          timing={linearTiming({ durationInFrames: DURATIONS.transition1 })}\n        />\n\n        {/* Section 2: Problem Statement */}\n        <TransitionSeries.Sequence durationInFrames={DURATIONS.problem}>\n     ",
+              "sha256": "050b13e72c45a6f91bbf63ce3c0c2dc6af0ff1fbcad69c3404ad71804b6cf061",
+              "url": "https://github.com/ChanMeng666/echook-promo-video/blob/a2b8004ce7ca4e30a94cdb867b732537f374f481/src/PromoVideo.tsx#L203"
+            },
+            {
+              "file": "experiments/r10-18/src/Replica.tsx",
+              "line": 4,
+              "anchor": "t < 12",
+              "fragment": ")/30;return <AbsoluteFill style={{background:t>9&&t<12?'radial-gradient(ellipse at center,#000 50%,#170605 100%)':'black',fontFamily:'Arial',color:'white',justifyContent:'center',alignItems:'cente",
+              "sha256": "507f981320e676e6cf75fd4d84f27a5aaa102f428a782d137eb9f55c9319ea9d",
+              "url": "/experiments/r10-18/src/Replica.tsx"
+            }
+          ],
+          "verification": "代码确认；可见影响按明确公式或渲染分支推导，另附画面核查的项目会单独标记",
+          "finding_id": "r10-18-4"
+        },
+        {
+          "aspect": "Logo 出现过早，省略缩放与扫描背景",
+          "kind": "行为差异",
+          "original": "原片 1 秒开始 Logo 的 0.8→1 缩放和淡入，背景另有扫描线和网格。",
+          "replica": "复刻重画 SVG Logo 后整体淡入，另加虚线圆环。",
+          "impact": "复刻从 0.4 秒后就出现 Logo，少了缩放、扫描背景及原来的粒子爆发。",
+          "evidence": [
+            {
+              "file": "source-catalog/round10/ChanMeng666--echook-promo-video/src/sections/IntroLogoReveal.tsx",
+              "line": 31,
+              "anchor": "const logoScale",
+              "fragment": "\n        });\n\n  // Logo animation (frame 30-75)\n  const logoScale = spring({\n    frame: frame - 30,\n    fps,\n    config: { damping: 200 },\n    from: 0.8,\n    to: 1,\n  });\n\n  const logoOpacity = interpolate",
+              "sha256": "8c557a8d03eb1453b15a8cf8a70bc037879d0d4978f5fbeb9d1e5dd3fa210477",
+              "url": "https://github.com/ChanMeng666/echook-promo-video/blob/a2b8004ce7ca4e30a94cdb867b732537f374f481/src/sections/IntroLogoReveal.tsx#L31"
+            },
+            {
+              "file": "experiments/r10-18/src/Replica.tsx",
+              "line": 4,
+              "anchor": "t - .4",
+              "fragment": ":'absolute',top:170,opacity:Math.min(1,Math.max(0,t-.4)*3)}}><Logo/></div>{t>1.7&&t<3&&<svg width=\"270\" height=\"270\" style={{position:'absolute',top:90}}><circle cx=\"135\" cy=\"135\" r={70+(t-1.7)*30",
+              "sha256": "507f981320e676e6cf75fd4d84f27a5aaa102f428a782d137eb9f55c9319ea9d",
+              "url": "/experiments/r10-18/src/Replica.tsx"
+            }
+          ],
+          "verification": "代码确认；可见影响按明确公式或渲染分支推导，另附画面核查的项目会单独标记",
+          "finding_id": "r10-18-5"
+        },
+        {
+          "aspect": "版本号也抄错了",
+          "kind": "行为差异",
+          "original": "原片版本号为 v6.3.3。",
+          "replica": "复刻写成 v0.3.3。",
+          "impact": "这一项是具体文字错误，与素材是否提供无关。",
+          "evidence": [
+            {
+              "file": "source-catalog/round10/ChanMeng666--echook-promo-video/src/sections/IntroLogoReveal.tsx",
+              "line": 180,
+              "anchor": "v6.3.3",
+              "fragment": ": `${COLORS.green}11`,\n        }}\n      >\n        v6.3.3\n      </div>\n    </div>\n  );\n};\n",
+              "sha256": "8c557a8d03eb1453b15a8cf8a70bc037879d0d4978f5fbeb9d1e5dd3fa210477",
+              "url": "https://github.com/ChanMeng666/echook-promo-video/blob/a2b8004ce7ca4e30a94cdb867b732537f374f481/src/sections/IntroLogoReveal.tsx#L180"
+            },
+            {
+              "file": "experiments/r10-18/src/Replica.tsx",
+              "line": 4,
+              "anchor": "v0.3.3",
+              "fragment": ",padding:'4px 10px',borderRadius:16,fontSize:10}}>v0.3.3</div>}</>:t<12?<><div style={{position:'absolute',top:185,left:230}}><Terminal t={t}/></div><div style={{position:'absolute',top:166,left:6",
+              "sha256": "507f981320e676e6cf75fd4d84f27a5aaa102f428a782d137eb9f55c9319ea9d",
+              "url": "/experiments/r10-18/src/Replica.tsx"
+            }
+          ],
+          "verification": "代码确认；可见影响按明确公式或渲染分支推导，另附画面核查的项目会单独标记",
+          "finding_id": "r10-18-6"
+        }
+      ],
+      "replica_sha256": "507f981320e676e6cf75fd4d84f27a5aaa102f428a782d137eb9f55c9319ea9d",
+      "video_sha256": "4fcc31b57a5cafaaf9552fa6e6eb362a5bf7c7369dba19e934ed9a9ddc51d271",
+      "compare_url": "http://127.0.0.1:8770/compare-round10.html#r10-18",
+      "repo_url": "https://github.com/ChanMeng666/echook-promo-video",
+      "reference_sha256": "4a832882495e0501ae7c7e97c1059b73e43a15745249846e03e69da17ad160c5",
+      "visual_check": "第 114 帧可读到版本号 v6.3.3 / v0.3.3 不同。第 729 帧安装命令、作者名和插件名不同。",
+      "samples": {
+        "id": "r10-18",
+        "frames": [
+          114,
+          729
+        ],
+        "fps": 30,
+        "image": "r10-18.jpg"
+      }
+    },
+    {
+      "id": "r10-19",
+      "title": "三角形面积讲解",
+      "category": "知识讲解",
+      "reference_id": "script",
+      "findings": [
+        {
+          "aspect": "三角形描边起止时间和速度不同",
+          "kind": "行为差异",
+          "original": "原片 9.733–12 秒线性描边。",
+          "replica": "复刻 10–11.25 秒使用 cubic ease-out 描边。",
+          "impact": "起笔更晚但画完更早，线条速度明显不同。",
+          "evidence": [
+            {
+              "file": "source-catalog/round10/znyupup--knowledge-explainer-skill/templates/Triangle.jsx",
+              "line": 30,
+              "anchor": "[22, 90]",
+              "fragment": "harray)\n  const drawProgress = interpolate(frame, [22, 90], [0, 1], clamp());\n  // 标签依次出现\n  const baseLabelOp = interpolate(frame, [60, 80], [0, 1], clamp());\n  // 高(虚线)\n  const heightLineOp = inter",
+              "sha256": "6776ddf87ea74cc61e2b9851e851c87cc4fc277bc495333c1acac21f1e62d3b5",
+              "url": "https://github.com/znyupup/knowledge-explainer-skill/blob/6ecae15fc8bbb589196c32ff3b726fc3e1764eac/templates/Triangle.jsx#L30"
+            },
+            {
+              "file": "experiments/r10-19/src/Replica.tsx",
+              "line": 3,
+              "anchor": "(t - 10) * .8",
+              "fragment": " strokeDasharray=\"340\" strokeDashoffset={340*(1-E((t-10)*.8))} filter=\"url(#gl)\"/><path d=\"M150 280H282L216 200Z\" fill=\"none\" stroke=\"#6860d3\" strokeWidth=\"1.5\" strokeDasharray=\"340\" strokeDashoffset={34",
+              "sha256": "459378bf9963add9bc5ecd3f288f8a3a59615efe98fd6b9bade72ff365c91554",
+              "url": "/experiments/r10-19/src/Replica.tsx"
+            }
+          ],
+          "verification": "代码确认；可见影响按明确公式或渲染分支推导，另附画面核查的项目会单独标记",
+          "finding_id": "r10-19-1"
+        },
+        {
+          "aspect": "高度虚线和标签被合成一个动作",
+          "kind": "行为差异",
+          "original": "原片先出现高的虚线，再延后 15 帧出现“高 6 cm”。",
+          "replica": "复刻把虚线与标签放在同一个透明度组里。",
+          "impact": "图解逐步说明的顺序丢失。",
+          "evidence": [
+            {
+              "file": "source-catalog/round10/znyupup--knowledge-explainer-skill/templates/Triangle.jsx",
+              "line": 35,
+              "anchor": "[95, 115]",
+              "fragment": "mp());\n  const heightLabelOp = interpolate(frame, [95, 115], [0, 1], clamp());\n  // 公式\n  const formulaOp = interpolate(frame, [125, 150], [0, 1], clamp());\n  const formulaY = spring({frame: Math.max(",
+              "sha256": "6776ddf87ea74cc61e2b9851e851c87cc4fc277bc495333c1acac21f1e62d3b5",
+              "url": "https://github.com/znyupup/knowledge-explainer-skill/blob/6ecae15fc8bbb589196c32ff3b726fc3e1764eac/templates/Triangle.jsx#L35"
+            },
+            {
+              "file": "experiments/r10-19/src/Replica.tsx",
+              "line": 3,
+              "anchor": "(t - 11.7)",
+              "fragment": "acity={E((t-10.8)*2)}>底 10 cm</text><g opacity={E((t-11.7)*2)}><path d=\"M216 200V280\" stroke=\"#ceb276\" strokeWidth=\"1\" strokeDasharray=\"3 3\"/><path d=\"M209 280V273H216\" stroke=\"#bda068\" fill=\"none\"/><",
+              "sha256": "459378bf9963add9bc5ecd3f288f8a3a59615efe98fd6b9bade72ff365c91554",
+              "url": "/experiments/r10-19/src/Replica.tsx"
+            }
+          ],
+          "verification": "代码确认；可见影响按明确公式或渲染分支推导，另附画面核查的项目会单独标记",
+          "finding_id": "r10-19-2"
+        },
+        {
+          "aspect": "答案少了放大强调",
+          "kind": "行为差异",
+          "original": "原片答案透明度增加同时从 0.85 弹到 1。",
+          "replica": "复刻只改答案卡片透明度。",
+          "impact": "计算结束后的强调力度和运动不同。",
+          "evidence": [
+            {
+              "file": "source-catalog/round10/znyupup--knowledge-explainer-skill/templates/Triangle.jsx",
+              "line": 44,
+              "anchor": "const resultScale",
+              "fragment": "nterpolate(frame, [200, 230], [0, 1], clamp());\n  const resultScale = spring({frame: Math.max(0, frame - 200), fps,\n    from: 0.85, to: 1, durationInFrames: 22});\n\n  // ===== 三角形几何参数(在 SVG viewBox 内) =====\n ",
+              "sha256": "6776ddf87ea74cc61e2b9851e851c87cc4fc277bc495333c1acac21f1e62d3b5",
+              "url": "https://github.com/znyupup/knowledge-explainer-skill/blob/6ecae15fc8bbb589196c32ff3b726fc3e1764eac/templates/Triangle.jsx#L44"
+            },
+            {
+              "file": "experiments/r10-19/src/Replica.tsx",
+              "line": 3,
+              "anchor": "(t - 15.7)",
+              "fragment": "4341b44',boxShadow:'0 0 10px #e5b34b33',opacity:E((t-15.7)*1.5)}}><div style={{fontSize:9,color:'#baa575',marginBottom:4,fontWeight:400}}>✧ 答案</div><span style={{fontFamily:'monospace',fontSize:23}}>3",
+              "sha256": "459378bf9963add9bc5ecd3f288f8a3a59615efe98fd6b9bade72ff365c91554",
+              "url": "/experiments/r10-19/src/Replica.tsx"
+            }
+          ],
+          "verification": "代码确认；可见影响按明确公式或渲染分支推导，另附画面核查的项目会单独标记",
+          "finding_id": "r10-19-3"
+        },
+        {
+          "aspect": "冷知识打字和光标不一致",
+          "kind": "行为差异",
+          "original": "原片 18.733 秒开始逐字显示，光标按半秒明暗交替。",
+          "replica": "复刻从 18.2 秒以每秒 5.7 字打字，光标常亮。",
+          "impact": "文字出现时间、完成时间和光标状态均不同。",
+          "evidence": [
+            {
+              "file": "source-catalog/round10/znyupup--knowledge-explainer-skill/custom/CustomFunFact.jsx",
+              "line": 21,
+              "anchor": "[22, 80]",
+              "fragment": "in(fact.length,\n    Math.floor(interpolate(frame, [22, 80], [0, fact.length], clamp())));\n  const factVisible = fact.slice(0, factCharsShown);\n\n  // hint 卡片飞入\n  const hintOp = interpolate(frame, [70",
+              "sha256": "1c38f5e899de891d10850e75b21f114d7cf28117648185eae8e633f29d453249",
+              "url": "https://github.com/znyupup/knowledge-explainer-skill/blob/6ecae15fc8bbb589196c32ff3b726fc3e1764eac/custom/CustomFunFact.jsx#L21"
+            },
+            {
+              "file": "experiments/r10-19/src/Replica.tsx",
+              "line": 3,
+              "anchor": "t - 18.2",
+              "fragment": "}}>{'等腰直角三角形,两条腰相等'.slice(0,Math.floor(Math.max(0,t-18.2)*5.7))}<span style={{color:'#e2b765',fontWeight:400}}>|</span></div><Box style={{display:'inline-block',marginTop:17,color:'#bebbbb',fontSize",
+              "sha256": "459378bf9963add9bc5ecd3f288f8a3a59615efe98fd6b9bade72ff365c91554",
+              "url": "/experiments/r10-19/src/Replica.tsx"
+            }
+          ],
+          "verification": "代码确认；可见影响按明确公式或渲染分支推导，另附画面核查的项目会单独标记",
+          "finding_id": "r10-19-4"
+        },
+        {
+          "aspect": "已知条件卡片从不同方向进入",
+          "kind": "行为差异",
+          "original": "原片卡片从左向右进入，逐项间隔 12 帧。",
+          "replica": "复刻卡片向上进入，逐项间隔 0.55 秒。",
+          "impact": "方向和相邻项目的节奏都变了。",
+          "evidence": [
+            {
+              "file": "source-catalog/round10/znyupup--knowledge-explainer-skill/templates/ContentCard.jsx",
+              "line": 41,
+              "anchor": "from: -30",
+              "fragment": "ath.max(0, frame - 22 - i * 12), fps,\n            from: -30, to: 0, durationInFrames: 22});\n          return (\n            <div key={i} style={{\n              opacity: op, transform: `translateX(${x}",
+              "sha256": "dba41a78ce62e6c29ae507330954102c3411dab68e96b1df8d8d5c93cae6d10c",
+              "url": "https://github.com/znyupup/knowledge-explainer-skill/blob/6ecae15fc8bbb589196c32ff3b726fc3e1764eac/templates/ContentCard.jsx#L41"
+            },
+            {
+              "file": "experiments/r10-19/src/Replica.tsx",
+              "line": 3,
+              "anchor": "translateY(${12",
+              "fragment": "'11px 12px',opacity:E((t-4.4-i*.55)*3),transform:`translateY(${12*(1-E((t-4.4-i*.55)*3))}px)`}}>{s}</Box>)}</div></>:t<18?<><div style={{position:'absolute',top:23,width:'100%',textAlign:'center',fontSize:",
+              "sha256": "459378bf9963add9bc5ecd3f288f8a3a59615efe98fd6b9bade72ff365c91554",
+              "url": "/experiments/r10-19/src/Replica.tsx"
+            }
+          ],
+          "verification": "代码确认；可见影响按明确公式或渲染分支推导，另附画面核查的项目会单独标记",
+          "finding_id": "r10-19-5"
+        }
+      ],
+      "replica_sha256": "459378bf9963add9bc5ecd3f288f8a3a59615efe98fd6b9bade72ff365c91554",
+      "video_sha256": "1a6337bb8ea204b85ce1869e2dee95175278441d498a24bf4d881264206f36aa",
+      "compare_url": "http://127.0.0.1:8770/compare-round10.html#r10-19",
+      "repo_url": "https://github.com/znyupup/knowledge-explainer-skill",
+      "reference_sha256": "ec06e6441beefefa28f8619a12e4c09f49226e37c5ca94651ddbee17888d7eb3",
+      "visual_check": "第 345 帧：参考描边尚未走完，复刻已完成。第 360 帧：参考只有高度虚线，复刻连高度标签也已出现。",
+      "samples": {
+        "id": "r10-19",
+        "frames": [
+          345,
+          360
+        ],
+        "fps": 30,
+        "image": "r10-19.jpg"
+      }
+    },
+    {
+      "id": "r10-20",
+      "title": "AI 剪辑的三个步骤",
+      "category": "知识讲解",
+      "reference_id": "ai_video_3steps",
+      "findings": [
+        {
+          "aspect": "总结提示被改写",
+          "kind": "行为差异",
+          "original": "原片提示是“不告诉它主题,它自己推断”。",
+          "replica": "复刻写成“不会写也能让它自己判断”。",
+          "impact": "从“主题推断”变成“不会写”，说明内容发生变化。",
+          "evidence": [
+            {
+              "file": "source-catalog/round10/znyupup--knowledge-explainer-skill/src/ai_video_3steps.jsx",
+              "line": 63,
+              "anchor": "不告诉它主题",
+              "fragment": " 14 处语音截断\"\n            ],\n            \"callout\": \"不告诉它主题,它自己推断\"\n          }}\n        />\n      </Sequence>\n      <Sequence from={750} durationInFrames={210}>\n        <ContentCard\n          {...{\n  ",
+              "sha256": "c18974fa0f8969207611812b0c71489c796df2985da5f5aff70cf59de858de72",
+              "url": "https://github.com/znyupup/knowledge-explainer-skill/blob/6ecae15fc8bbb589196c32ff3b726fc3e1764eac/src/ai_video_3steps.jsx#L63"
+            },
+            {
+              "file": "experiments/r10-20/src/Replica.tsx",
+              "line": 4,
+              "anchor": "不会写也能让它自己判断",
+              "fragment": "1px solid #7256de55',opacity:clamp((q-3.3)*2)}}>💡 不会写也能让它自己判断</div>}</>:<><div style={{position:'absolute',top:34,width:640,textAlign:'center',fontSize:24,fontWeight:800,opacity:clamp(q*2)}}><span styl",
+              "sha256": "62e92387006899eaa1bc2244a48d5783869004338a0611fef1895783bca09646",
+              "url": "/experiments/r10-20/src/Replica.tsx"
+            }
+          ],
+          "verification": "代码确认；可见影响按明确公式或渲染分支推导，另附画面核查的项目会单独标记",
+          "finding_id": "r10-20-1"
+        },
+        {
+          "aspect": "修改指令有错字",
+          "kind": "行为差异",
+          "original": "原片第三步示例为“做饭那段短一些”。",
+          "replica": "复刻写成“微饭那段短一些”。",
+          "impact": "需要逐条核对屏幕文字，不能只确认卡片数量和位置。",
+          "evidence": [
+            {
+              "file": "source-catalog/round10/znyupup--knowledge-explainer-skill/src/ai_video_3steps.jsx",
+              "line": 75,
+              "anchor": "做饭那段短一些",
+              "fragment": "           \"💬 \\\"音乐大一点\\\" → 秒改\",\n              \"💬 \\\"做饭那段短一些\\\" → 秒改\",\n              \"🚀 不用拖时间轴,不用重导\"\n            ]\n          }}\n        />\n      </Sequence>\n      <Sequence from={960} durationInFrames=",
+              "sha256": "c18974fa0f8969207611812b0c71489c796df2985da5f5aff70cf59de858de72",
+              "url": "https://github.com/znyupup/knowledge-explainer-skill/blob/6ecae15fc8bbb589196c32ff3b726fc3e1764eac/src/ai_video_3steps.jsx#L75"
+            },
+            {
+              "file": "experiments/r10-20/src/Replica.tsx",
+              "line": 4,
+              "anchor": "微饭那段短一些",
+              "fragment": "⚙️ ffmpeg 自动裁剪 / 拼接 / 混 BGM','💬 “音乐大一点” → 秒改','💬 “微饭那段短一些” → 秒改','🚀 不用拖时间轴,不用重导']}/></>}</AbsoluteFill>};\n",
+              "sha256": "62e92387006899eaa1bc2244a48d5783869004338a0611fef1895783bca09646",
+              "url": "/experiments/r10-20/src/Replica.tsx"
+            }
+          ],
+          "verification": "代码确认；可见影响按明确公式或渲染分支推导，另附画面核查的项目会单独标记",
+          "finding_id": "r10-20-2"
+        },
+        {
+          "aspect": "左右两列出现次序被压缩",
+          "kind": "行为差异",
+          "original": "原片左列从 0.667 秒、右列从 1.667 秒开始，逐项间隔约 0.267 秒。",
+          "replica": "复刻左列 0.7 秒、右列 1.25 秒开始，逐项间隔 0.4 秒。",
+          "impact": "右列过早进入，输入与输出的展示节奏改变。",
+          "evidence": [
+            {
+              "file": "source-catalog/round10/znyupup--knowledge-explainer-skill/templates/TwoColumn.jsx",
+              "line": 67,
+              "anchor": "delay={50}",
+              "fragment": "ight} color={color2} label={rightLabel}\n          delay={50} fps={fps} frame={frame} />\n      </div>\n\n      {callout && (\n        <Callout text={callout} color={color1} frame={frame} fps={fps} delay={",
+              "sha256": "f7c8467548028d61621f1a8e2c5b0ed712f0e81fa987a6fffab0615381c58797",
+              "url": "https://github.com/znyupup/knowledge-explainer-skill/blob/6ecae15fc8bbb589196c32ff3b726fc3e1764eac/templates/TwoColumn.jsx#L67"
+            },
+            {
+              "file": "experiments/r10-20/src/Replica.tsx",
+              "line": 4,
+              "anchor": "j * .55",
+              "fragment": "marginBottom:5,borderRadius:3,opacity:clamp((q-.7-j*.55-i*.4)*2)}}>{v}</div>)}</div>)}<div style={{position:'absolute',left:300,top:111,fontSize:44,color:'#785bed',opacity:clamp((q-1.2)*2)}}>→</div",
+              "sha256": "62e92387006899eaa1bc2244a48d5783869004338a0611fef1895783bca09646",
+              "url": "/experiments/r10-20/src/Replica.tsx"
+            }
+          ],
+          "verification": "代码确认；可见影响按明确公式或渲染分支推导，另附画面核查的项目会单独标记",
+          "finding_id": "r10-20-3"
+        },
+        {
+          "aspect": "箭头没有流动光点",
+          "kind": "行为差异",
+          "original": "原片箭头为双色渐变 SVG，白色亮段沿箭头持续移动。",
+          "replica": "复刻用固定紫色文字箭头。",
+          "impact": "输入传到输出的方向提示弱化，形状和运动都不同。",
+          "evidence": [
+            {
+              "file": "source-catalog/round10/znyupup--knowledge-explainer-skill/templates/TwoColumn.jsx",
+              "line": 25,
+              "anchor": "const dashOffset",
+              "fragment": " interpolate(frame, [40, 70], [0, 1], clamp());\n  const dashOffset = (frame * 1.2) % 80;\n\n  return (\n    <AbsoluteFill style={{\n      background: `radial-gradient(ellipse at top, #1a1a2e 0%, ${bg} 70%)`,\n  ",
+              "sha256": "f7c8467548028d61621f1a8e2c5b0ed712f0e81fa987a6fffab0615381c58797",
+              "url": "https://github.com/znyupup/knowledge-explainer-skill/blob/6ecae15fc8bbb589196c32ff3b726fc3e1764eac/templates/TwoColumn.jsx#L25"
+            },
+            {
+              "file": "experiments/r10-20/src/Replica.tsx",
+              "line": 4,
+              "anchor": "fontSize: 44",
+              "fragment": "<div style={{position:'absolute',left:300,top:111,fontSize:44,color:'#785bed',opacity:clamp((q-1.2)*2)}}>→</div>{q>3.3&&<div style={{position:'absolute',left:235,top:211,padding:'8px 13px',fontSize:10,f",
+              "sha256": "62e92387006899eaa1bc2244a48d5783869004338a0611fef1895783bca09646",
+              "url": "/experiments/r10-20/src/Replica.tsx"
+            }
+          ],
+          "verification": "代码确认；可见影响按明确公式或渲染分支推导，另附画面核查的项目会单独标记",
+          "finding_id": "r10-20-4"
+        },
+        {
+          "aspect": "提示提前，标题缺少位移",
+          "kind": "行为差异",
+          "original": "原片提示在双列场景 4 秒后进入；标题同时淡入并向下落定。",
+          "replica": "复刻提示从 3.3 秒后出现，标题只淡入。",
+          "impact": "提示早 0.7 秒，文字进入方式也不一致。",
+          "evidence": [
+            {
+              "file": "source-catalog/round10/znyupup--knowledge-explainer-skill/templates/TwoColumn.jsx",
+              "line": 71,
+              "anchor": "delay={120}",
+              "fragment": "={callout} color={color1} frame={frame} fps={fps} delay={120} />\n      )}\n    </AbsoluteFill>\n  );\n};\n\nconst Column = ({items, color, label, delay, fps, frame}) => (\n  <div style={{flex: 1,\n    backgro",
+              "sha256": "f7c8467548028d61621f1a8e2c5b0ed712f0e81fa987a6fffab0615381c58797",
+              "url": "https://github.com/znyupup/knowledge-explainer-skill/blob/6ecae15fc8bbb589196c32ff3b726fc3e1764eac/templates/TwoColumn.jsx#L71"
+            },
+            {
+              "file": "experiments/r10-20/src/Replica.tsx",
+              "line": 4,
+              "anchor": "q > 3.3",
+              "fragment": "olor:'#785bed',opacity:clamp((q-1.2)*2)}}>→</div>{q>3.3&&<div style={{position:'absolute',left:235,top:211,padding:'8px 13px',fontSize:10,fontWeight:600,background:'#7256de14',border:'1px solid #72",
+              "sha256": "62e92387006899eaa1bc2244a48d5783869004338a0611fef1895783bca09646",
+              "url": "/experiments/r10-20/src/Replica.tsx"
+            }
+          ],
+          "verification": "代码确认；可见影响按明确公式或渲染分支推导，另附画面核查的项目会单独标记",
+          "finding_id": "r10-20-5"
+        }
+      ],
+      "replica_sha256": "62e92387006899eaa1bc2244a48d5783869004338a0611fef1895783bca09646",
+      "video_sha256": "2b1a623480cd21ef68080a4561034fd8804bdaf9623b1415b6e6b865e4688846",
+      "compare_url": "http://127.0.0.1:8770/compare-round10.html#r10-20",
+      "repo_url": "https://github.com/znyupup/knowledge-explainer-skill",
+      "reference_sha256": "9c42a27e988cb1f8c10cafbfc2bbcc531d658b9550e37c8919f79bb37130ce6a",
+      "visual_check": "第 660 帧提示文案改变；第 870 帧出现“微饭”错字。标题字号、间距和卡片光晕也有差异，但正文优先列内容与运动问题。",
+      "samples": {
+        "id": "r10-20",
+        "frames": [
+          660,
+          870
+        ],
+        "fps": 30,
+        "image": "r10-20.jpg"
+      }
+    }
+  ],
+  "summary": "这批 agent 通常能搭出主要场景和大致外观，但经常把连续变化写成几个时间点的切换，把有关联的数据、图形和提示分开处理。逐条追到源码后，还发现了文案错误、漏掉的交互、错误的公式及实际渲染失效。",
+  "limits": [
+    "这是对 20 条首次交付的代码审查。93 条是具体差异记录，包含素材差异及 1 条原片自身问题，不能当成 93 个互相独立的失败，也不是质量分数。",
+    "逐条读取了复刻组件，并追踪参考片段的场景、动画与数据代码；没有宣称逐行审计整个第三方仓库。视频在上一轮抽查基础上新增 41 对指定帧，均按帧号提取并查看，未逐帧穷尽全部视频。",
+    "所有时间以本次参考片段起点为零。尺寸按实际输出折算，不能将原源码的 1920×1080 与复刻的 960×540 直接当成尺寸错误。01 截取原片 25 秒以后；16 截取原片第 389 帧以后。",
+    "代码写法不同本身不构成错误。能从视频确认的文字、几何、状态和变化过程才是比较目标；模型没有义务猜出原作者唯一的类名、组件划分或隐藏参数。",
+    "输入仅视频，没有提供原照片和字体包；素材差异单独标出。参考片使用本次保存的源码渲染，其中部分仓库本身是作者对其他作品的重建。原始复刻与视频已核对哈希，未修正。",
+    "本批参考渲染使用 --muted，不评价音频。共享主机未做系统级源码访问隔离；一次复刻也不能证明模型稳定存在某项缺陷。"
+  ],
+  "reference_issues": [
+    "07 条形排名：文字数值公式使用 prev−next，条形宽度使用 next−prev，方向相反。需要区分“与参考不一致”和“数学上写错”；不能把复制这个错误当作能力目标。",
+    "08 信息茧房：原片 likeEvents 指向的初始卡片有搞笑、萌宠、美食，与“只点赞科技”的文字并不一致。复刻的对象时序仍可比较，但这个参考不宜直接当作正确推荐逻辑。",
+    "05 双摆：原片固定标签约 115°，但实际第二摆初始值是 1.5 弧度。复刻照着标签把两角都设成 115°，可解释一部分误判；另外分母写错、角度差单位错误仍是明确问题。",
+    "19 三角形：冷知识说“等腰直角三角形”，但示例底 10、高 6 的图形并不满足这一条件。这句原片已有，不归为复刻新增错误。",
+    "18 Echook：原片粒子尺寸调用 Math.random()，重渲染不一定得到相同细节。正式基准应先固定随机性。"
+  ],
+  "seeds": [
+    {
+      "name": "内容准确",
+      "search": "同一布局内含多条命令、标签、单位或细小文案",
+      "cases": "17、18、20"
+    },
+    {
+      "name": "对象持续对应",
+      "search": "同一批卡片、节点或圆点多次换状态，数量相同但位置不能乱",
+      "cases": "01、03、08、15"
+    },
+    {
+      "name": "数据与画面同步",
+      "search": "数字、图形高度/占比、颜色与提示一起变化",
+      "cases": "05、06、09、12、15"
+    },
+    {
+      "name": "操作引发结果",
+      "search": "游标选择或点击以后才出现反馈，而不是定时换一张图",
+      "cases": "02、06、10、13"
+    },
+    {
+      "name": "转场的中间过程",
+      "search": "遮罩、粒子变形、翻面，以及短时间重叠多个场景",
+      "cases": "03、04、11、14、17"
+    },
+    {
+      "name": "同一素材持续运动",
+      "search": "裁剪、缩放和运镜中，素材内容与对象身份保持不变",
+      "cases": "01、10、13、16"
+    }
+  ],
+  "difference_count": 93,
+  "integrity": "20/20 参考视频、复刻视频及原登记源码哈希一致。"
+}

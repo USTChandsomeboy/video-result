@@ -1,0 +1,635 @@
+<!doctype html><html lang="zh-CN"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>第十轮 · 逐条代码复查</title><style>
+*{box-sizing:border-box}body{margin:0;background:#f4f6fa;color:#192336;font:16px/1.7 system-ui,-apple-system,"PingFang SC",sans-serif}main{max-width:1160px;margin:auto;padding:36px 30px}h1{font-size:30px;line-height:1.3}h2{font-size:24px;border-bottom:2px solid #dbe3f0;padding-bottom:12px}h3{font-size:18px;margin:0 0 10px}a{color:#245cad}p{margin:9px 0}section{scroll-margin-top:20px;margin:38px 0;padding:28px;background:white;border:1px solid #dce3ee;border-radius:12px}article{padding:23px 0;border-bottom:1px solid #e6ebf2}.cols{display:grid;grid-template-columns:1fr 1fr;gap:22px}.cols p{padding:14px;background:#f5f7fb;border-radius:8px}.tag{font-size:12px;color:#48627e;background:#eef3f9;padding:4px 8px;border-radius:20px}.impact{padding:10px 0}.muted{color:#63738b}details{padding:10px 0}summary{cursor:pointer;color:#245cad}pre{white-space:pre-wrap;overflow-wrap:anywhere;background:#122036;color:#e2eaf7;padding:15px;border-radius:7px;font:13px/1.6 monospace}details a{overflow-wrap:anywhere}img{width:100%;height:auto;margin-top:12px}nav{display:grid;grid-template-columns:repeat(3,1fr);gap:7px}nav a{font-size:13px;text-decoration:none;padding:8px;background:white;border:1px solid #e2e7ef;border-radius:5px}table{border-collapse:collapse;width:100%;margin:20px 0}td,th{border:1px solid #dce3ed;padding:10px;text-align:left}.lead{font-size:19px}li{margin:10px 0}@media(max-width:750px){main{padding:20px 14px}section{padding:16px}.cols{grid-template-columns:1fr}nav{grid-template-columns:1fr 1fr}}</style><main><h1>20 条视频的代码复查</h1><p class="lead">这批 agent 通常能搭出主要场景和大致外观，但经常把连续变化写成几个时间点的切换，把有关联的数据、图形和提示分开处理。逐条追到源码后，还发现了文案错误、漏掉的交互、错误的公式及实际渲染失效。</p><p><b>20 条 / 93 项差异 / 新增 41 对指定帧</b> · 2026-10-04</p><p>每条都列出原片做法、复刻做法、画面影响及代码位置。差异条数不代表质量分数。</p><details><summary>检查范围与判断边界</summary><ul><li>这是对 20 条首次交付的代码审查。93 条是具体差异记录，包含素材差异及 1 条原片自身问题，不能当成 93 个互相独立的失败，也不是质量分数。</li><li>逐条读取了复刻组件，并追踪参考片段的场景、动画与数据代码；没有宣称逐行审计整个第三方仓库。视频在上一轮抽查基础上新增 41 对指定帧，均按帧号提取并查看，未逐帧穷尽全部视频。</li><li>所有时间以本次参考片段起点为零。尺寸按实际输出折算，不能将原源码的 1920×1080 与复刻的 960×540 直接当成尺寸错误。01 截取原片 25 秒以后；16 截取原片第 389 帧以后。</li><li>代码写法不同本身不构成错误。能从视频确认的文字、几何、状态和变化过程才是比较目标；模型没有义务猜出原作者唯一的类名、组件划分或隐藏参数。</li><li>输入仅视频，没有提供原照片和字体包；素材差异单独标出。参考片使用本次保存的源码渲染，其中部分仓库本身是作者对其他作品的重建。原始复刻与视频已核对哈希，未修正。</li><li>本批参考渲染使用 --muted，不评价音频。共享主机未做系统级源码访问隔离；一次复刻也不能证明模型稳定存在某项缺陷。</li></ul></details><nav><a href="#r10-01">r10-01 Sulcus 品牌片：从混乱到秩序</a><a href="#r10-02">r10-02 Ringflow 环形菜单操作演示</a><a href="#r10-03">r10-03 GitHub Unwrapped 2022</a><a href="#r10-04">r10-04 Remotion Transitions 发布片</a><a href="#r10-05">r10-05 双摆与蝴蝶效应</a><a href="#r10-06">r10-06 Postflop 扑克分析工作台</a><a href="#r10-07">r10-07 全球品牌价值动态排名</a><a href="#r10-08">r10-08 推荐算法与信息茧房</a><a href="#r10-09">r10-09 Morph 数据库迁移产品片</a><a href="#r10-10">r10-10 Higgsfield 工作流（作者重建版）</a><a href="#r10-11">r10-11 Remotion Lambda 云渲染介绍</a><a href="#r10-12">r10-12 折纸 42 次有多厚</a><a href="#r10-13">r10-13 Creativly 创作工具发布片</a><a href="#r10-14">r10-14 Magnific 品牌发布片（作者重建版）</a><a href="#r10-15">r10-15 GitHub Unwrapped 2021</a><a href="#r10-16">r10-16 Remotion 2.0 音频时间线演示</a><a href="#r10-17">r10-17 Remotion 首发宣传片</a><a href="#r10-18">r10-18 Echook 声音通知产品片</a><a href="#r10-19">r10-19 三角形面积讲解</a><a href="#r10-20">r10-20 AI 剪辑的三个步骤</a></nav><section id="r10-01" data-category="品牌形象"><h2>r10-01 · Sulcus 品牌片：从混乱到秩序</h2><p class="muted">品牌形象 · 4 项具体差异 · <a href="http://127.0.0.1:8770/compare-round10.html#r10-01" target="_blank">打开视频对照</a></p><p>第 262 帧：原片已经 200 OK，复刻仍停在 503 重试。第 470 帧：原片有预算用满并暂停的标记，复刻没有。</p><details><summary>查看指定帧对照（左参考，右复刻）</summary><a href="data/round10-deep-review/r10-01.jpg" target="_blank"><img src="data/round10-deep-review/r10-01.jpg" loading="lazy" alt="r10-01 指定帧对照"></a></details><article><h3>1. 节点没有从散乱状态持续整理成树</h3><span class="tag">行为差异</span><div class="cols"><p><b>原片怎么做</b><br>原片为节点保留身份、父子关系，并根据各节点 acquire 时间逐步重排。</p><p><b>复刻怎么做</b><br>开头散点与后续七组 Graph 分开生成；不是同一批节点逐个归位。</p></div><p class="impact"><b>画面影响：</b>能画出“散点”和“树”，但丢失中间整理过程及对象对应关系。</p><details><summary>查看两份代码的位置与片段</summary><p><b>原源码</b> · <a href="http://127.0.0.1:8770/source-catalog/round10/ElarizT--Sulcus-Brand-Film/src/world/field.ts" target="_blank">source-catalog/round10/ElarizT--Sulcus-Brand-Film/src/world/field.ts:481</a></p><pre>id * 0.9) * 9 * sway,
+    ];
+    const p = v3.add(v3.lerp(n.chaos, n.tree, m), drift);
+    const wake = clamp01(held / 0.5);
+    let energy = 1 - 0.86 * frozen * (1 - wake);
+    if (t &gt;= T.limitHit &amp;&amp; FEATURE.limitTre</pre><p><b>复刻源码</b> · <a href="http://127.0.0.1:8770/experiments/r10-01/src/Replica.tsx" target="_blank">experiments/r10-01/src/Replica.tsx:6</a></p><pre>none&quot; stroke=&quot;#976734&quot; opacity=&quot;.3&quot;/&gt;{Array.from({length:95},(_,i)=&gt;{let x=180+rand(i)*600,y=30+rand(i+22)*270;return &lt;g key={i} opacity={t&lt;2.7?.035:.45}&gt;&lt;path d={`M${x} ${y} v${30+rand(i+5)*60} h${r</pre></details></article><article><h3>2. 镜头连续运动被阶段跳变替代</h3><span class="tag">行为差异</span><div class="cols"><p><b>原片怎么做</b><br>原片使用连续相机路径投影场景。</p><p><b>复刻怎么做</b><br>主要使用二维平移、固定倾斜和阶段切换；不是同一路径。</p></div><p class="impact"><b>画面影响：</b>局部放大、透视和场景之间的连续移动不一致。</p><details><summary>查看两份代码的位置与片段</summary><p><b>原源码</b> · <a href="http://127.0.0.1:8770/source-catalog/round10/ElarizT--Sulcus-Brand-Film/src/film/camera.ts" target="_blank">source-catalog/round10/ElarizT--Sulcus-Brand-Film/src/film/camera.ts:100</a></p><pre>speed through each key instead of stopping on it.
+const spline = (get: (k: Key) =&gt; number, i: number, s: number) =&gt; {
+  const k0 = KEYS[Math.max(0, i - 1)];
+  const k1 = KEYS[i];
+  const k2 = KEYS[i + 1</pre><p><b>复刻源码</b> · <a href="http://127.0.0.1:8770/experiments/r10-01/src/Replica.tsx" target="_blank">experiments/r10-01/src/Replica.tsx:6</a></p><pre>onst show1=t&gt;=8&amp;&amp;t&lt;11.3,show2=t&gt;=13&amp;&amp;t&lt;16.4;const phase=t&lt;12?0:t&lt;17?1:2;return &lt;AbsoluteFill style={{background:&#x27;#030403&#x27;,overflow:&#x27;hidden&#x27;}}&gt;&lt;svg viewBox=&quot;0 0 960 540&quot; width=&quot;100%&quot; height=&quot;100%&quot;</pre></details></article><article><h3>3. 重试过程丢了多个状态</h3><span class="tag">行为差异</span><div class="cols"><p><b>原片怎么做</b><br>原片依次展示运行、第一次失败、第二次重试、最终成功。</p><p><b>复刻怎么做</b><br>提示只在一个时间条件后变成 503 retry 2/3，没有完整成功状态。</p></div><p class="impact"><b>画面影响：</b>重试最终解决问题这一段信息没有复刻完整。</p><details><summary>查看两份代码的位置与片段</summary><p><b>原源码</b> · <a href="http://127.0.0.1:8770/source-catalog/round10/ElarizT--Sulcus-Brand-Film/src/world/drawGovernance.ts" target="_blank">source-catalog/round10/ElarizT--Sulcus-Brand-Film/src/world/drawGovernance.ts:299</a></p><pre>T.retryAgain
+        ? { label: &quot;STATUS&quot;, value: &quot;503 · retry 1/3&quot;, color: &quot;error&quot;, shown: 1 }
+        : t &lt; T.retryOk
+          ? { label: &quot;STATUS&quot;, value: &quot;503 · retry 2/3&quot;, color: &quot;error&quot;, s</pre><p><b>复刻源码</b> · <a href="http://127.0.0.1:8770/experiments/r10-01/src/Replica.tsx" target="_blank">experiments/r10-01/src/Replica.tsx:6</a></p><pre>ver&#x27;,&#x27;orchestrator&#x27;,&#x27;http.get  /v2/orders&#x27;,t&gt;9.4?&#x27;503 · retry 2/3&#x27;:&#x27;&#x27;,&#x27;●  ━━━  ━━&#x27;]:[&#x27;deploy --prod&#x27;,&#x27;tester&#x27;,t&gt;15?&#x27;approved&#x27;:&#x27;awaiting approval&#x27;]).map((s,i)=&gt;&lt;g key={i}&gt;&lt;path d={`M12 ${28+i*27</pre></details></article><article><h3>4. 预算边界只剩文字提示</h3><span class="tag">行为差异</span><div class="cols"><p><b>原片怎么做</b><br>原片包含预算读数、达到限制及阻断反馈。</p><p><b>复刻怎么做</b><br>后段主要用标题和通用节点高亮表达。</p></div><p class="impact"><b>画面影响：</b>“到达上限所以被阻止”的过程被简化，不能从标题相同判定一致。</p><details><summary>查看两份代码的位置与片段</summary><p><b>原源码</b> · <a href="http://127.0.0.1:8770/source-catalog/round10/ElarizT--Sulcus-Brand-Film/src/world/drawGovernance.ts" target="_blank">source-catalog/round10/ElarizT--Sulcus-Brand-Film/src/world/drawGovernance.ts:526</a></p><pre>USED&quot; : `TOKENS ${Math.round(level * 100)}%`,
+    held ? &quot;200k / 200k&quot; : `${Math.round(level * 200)}k / 200k`,
+    held ? &quot;signal&quot; : &quot;ink&quot;,
+    &quot;left&quot;,
+    r.fog(pr.z) * ramp(t, T.bounds, T.bounds + 0.3) * near</pre><p><b>复刻源码</b> · <a href="http://127.0.0.1:8770/experiments/r10-01/src/Replica.tsx" target="_blank">experiments/r10-01/src/Replica.tsx:6</a></p><pre>DOING.&#x27;:show2?&#x27;STEP IN WHEN IT MATTERS.&#x27;:&#x27;SET THE BOUNDARIES.&#x27;}&lt;/text&gt;}&lt;/svg&gt;&lt;/AbsoluteFill&gt;};
+</pre></details></article></section><section id="r10-02" data-category="软件演示"><h2>r10-02 · Ringflow 环形菜单操作演示</h2><p class="muted">软件演示 · 4 项具体差异 · <a href="http://127.0.0.1:8770/compare-round10.html#r10-02" target="_blank">打开视频对照</a></p><p>第 168 帧：原片便签旁有复制/粘贴按键，复刻仍是代码文本。第 1746 帧：原片第二、三步仍等待，复刻四步全部完成。</p><details><summary>查看指定帧对照（左参考，右复刻）</summary><a href="data/round10-deep-review/r10-02.jpg" target="_blank"><img src="data/round10-deep-review/r10-02.jpg" loading="lazy" alt="r10-02 指定帧对照"></a></details><article><h3>1. 场景切换有多处时间偏移</h3><span class="tag">行为差异</span><div class="cols"><p><b>原片怎么做</b><br>原片场景起点为 0、4.8、7.6、13.6、17.8、21、24.2、27.4 秒。</p><p><b>复刻怎么做</b><br>复刻起点为 0、4、8、13、18、22、24、27 秒。</p></div><p class="impact"><b>画面影响：</b>部分场景提前或延后接近 1 秒，同一时刻展示的功能不同。</p><details><summary>查看两份代码的位置与片段</summary><p><b>原源码</b> · <a href="http://127.0.0.1:8770/source-catalog/round10/wawaup--Ringflow-promo/src/config/timeline.ts" target="_blank">source-catalog/round10/wawaup--Ringflow-promo/src/config/timeline.ts:73</a></p><pre>,
+    id: &quot;intro-focus&quot;,
+    name: &quot;开场：保持连贯&quot;,
+    durationSeconds: 4.8,
+    layout: &quot;left-stage&quot;,
+    choreography: {
+      pageStartFrame: 0,
+      pageReadyFrame: 12,
+      textStartFrame: 18,
+      visualSta</pre><p><b>复刻源码</b> · <a href="http://127.0.0.1:8770/experiments/r10-02/src/Replica.tsx" target="_blank">experiments/r10-02/src/Replica.tsx:6</a></p><pre>urrentFrame(),t=f/60;const dark=t&gt;=27;const title=t&lt;4?&#x27;正在做的事，\n应该保持连贯。&#x27;:t&lt;8?&#x27;找来找去。\n来回切换。\n一遍又一遍。&#x27;:t&lt;13?&#x27;常用的，\n应该更近一点。&#x27;:t&lt;18?&#x27;按住中键，\n向右一划。&#x27;:t&lt;22?&#x27;常用文字，一划输入。&#x27;:t&lt;24?&#x27;常用应用、文件、文件夹，一划打开。&#x27;:t&lt;27?&#x27;灵感，不</pre></details></article><article><h3>2. 开场复制粘贴流程没有做出来</h3><span class="tag">行为差异</span><div class="cols"><p><b>原片怎么做</b><br>原片安排代码窗口退出、便签进入、复制、粘贴，再切到提示词窗口。</p><p><b>复刻怎么做</b><br>窗口标题改变，但主体一直是同一段示例代码；没有对应复制和粘贴状态。</p></div><p class="impact"><b>画面影响：</b>看到的是窗口拼图，难以看出连续工作流。</p><details><summary>查看两份代码的位置与片段</summary><p><b>原源码</b> · <a href="http://127.0.0.1:8770/source-catalog/round10/wawaup--Ringflow-promo/src/config/timeline.ts" target="_blank">source-catalog/round10/wawaup--Ringflow-promo/src/config/timeline.ts:85</a></p><pre>tartFrame: 124,
+      stickyOpenFrame: 101,
+      noteCopyFrame: 124,
+      notePasteFrame: 150,
+      noteGroupExitFrame: 176,    // note window + its copy/paste keys fade out together
+      promptOpenFrame:</pre><p><b>复刻源码</b> · <a href="http://127.0.0.1:8770/experiments/r10-02/src/Replica.tsx" target="_blank">experiments/r10-02/src/Replica.tsx:6</a></p><pre> style={{fontFamily:&#x27;monospace&#x27;,color:&#x27;#65728d&#x27;}}&gt;export function main() &amp;#123;&lt;br/&gt;　const result = workflow.run();&lt;br/&gt;　return result;&lt;br/&gt;&amp;#125;&lt;/div&gt;&lt;/Win&gt;&lt;Win x={530} y={280} w={255} h={135} title=&quot;智能助手&quot;&gt;&lt;p</pre></details></article><article><h3>3. 快捷输入没有输入结果</h3><span class="tag">行为差异</span><div class="cols"><p><b>原片怎么做</b><br>原片的轮盘操作驱动当前窗口中的文字插入。</p><p><b>复刻怎么做</b><br>复刻显示静态常用文字列表和轮盘。</p></div><p class="impact"><b>画面影响：</b>遗漏“选择内容→填入当前位置”的结果反馈。</p><details><summary>查看两份代码的位置与片段</summary><p><b>原源码</b> · <a href="http://127.0.0.1:8770/source-catalog/round10/wawaup--Ringflow-promo/src/scenes/06_QuickInputScene.tsx" target="_blank">source-catalog/round10/wawaup--Ringflow-promo/src/scenes/06_QuickInputScene.tsx:1</a></p><pre>import { QuickInputWorkspace } from &quot;../components/ProductUI/ProductSurfaces&quot;;
+import { sceneCopy } from &quot;../config/copy&quot;;
+import { scenes } from &quot;../config/timeline&quot;;
+</pre><p><b>复刻源码</b> · <a href="http://127.0.0.1:8770/experiments/r10-02/src/Replica.tsx" target="_blank">experiments/r10-02/src/Replica.tsx:6</a></p><pre>操作。&lt;/p&gt;&lt;div style={{fontSize:9,lineHeight:2.7}}&gt;▸ 工作邮箱：hello@ringflow.app&lt;br/&gt;▸ 地址信息&lt;br/&gt;▸ 常用回复：收到，谢谢！&lt;/div&gt;&lt;div style={{position:&#x27;absolute&#x27;,right:12,top:37,width:75,lineHeight:2.5}}&gt;常用文字&lt;br/&gt;工作邮箱&lt;br/</pre></details></article><article><h3>4. 宏步骤一出现就已经完成</h3><span class="tag">行为差异</span><div class="cols"><p><b>原片怎么做</b><br>原片按时间推进各步骤的执行状态。</p><p><b>复刻怎么做</b><br>四行以透明度先后出现，但每行固定写着“完成”。</p></div><p class="impact"><b>画面影响：</b>没有待执行、正在执行到完成的过程。</p><details><summary>查看两份代码的位置与片段</summary><p><b>原源码</b> · <a href="http://127.0.0.1:8770/source-catalog/round10/wawaup--Ringflow-promo/src/components/ProductUI/ProductSurfaces.tsx" target="_blank">source-catalog/round10/wawaup--Ringflow-promo/src/components/ProductUI/ProductSurfaces.tsx:903</a></p><pre>       /&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  );
+};
+
+// ─── MacroExecution — timed multi-step semantic flow ─────────────────────────
+export const MacroExecution = ({
+  choreography,
+}: {
+  choreography?: { visualS</pre><p><b>复刻源码</b> · <a href="http://127.0.0.1:8770/experiments/r10-02/src/Replica.tsx" target="_blank">experiments/r10-02/src/Replica.tsx:5</a></p><pre>工作计划与灵感记录。保持专注，让常用的&lt;br/&gt;工具就在手边。&lt;br/&gt;下次使用时无需寻找，一划即可完成。&lt;/&gt;}&lt;/div&gt;&lt;/div&gt;;
+export const Replica:React.FC=()=&gt;{const f=useCurrentFrame(),t=f/60;const dark=t&gt;=27;const title=t&lt;4?&#x27;正在做的事，\n应该保持连贯。&#x27;:t&lt;</pre></details></article></section><section id="r10-03" data-category="数据叙事"><h2>r10-03 · GitHub Unwrapped 2022</h2><p class="muted">数据叙事 · 4 项具体差异 · <a href="http://127.0.0.1:8770/compare-round10.html#r10-03" target="_blank">打开视频对照</a></p><p>第 621 帧：原片数量 68、复刻 51；第 639 帧：原片绿色点保留在特定位置，复刻只保留第一行。</p><details><summary>查看指定帧对照（左参考，右复刻）</summary><a href="data/round10-deep-review/r10-03.jpg" target="_blank"><img src="data/round10-deep-review/r10-03.jpg" loading="lazy" alt="r10-03 指定帧对照"></a></details><article><h3>1. 场景交接被直接切换替代</h3><span class="tag">行为差异</span><div class="cols"><p><b>原片怎么做</b><br>原片在场景交接的 15 帧里，旧场景滑出、新场景滑入。</p><p><b>复刻怎么做</b><br>复刻用互斥时间分支切换。</p></div><p class="impact"><b>画面影响：</b>中间帧没有两个场景同时移动，衔接显得突然。</p><details><summary>查看两份代码的位置与片段</summary><p><b>原源码</b> · <a href="http://127.0.0.1:8770/source-catalog/round10/remotion-dev--github-unwrapped-2022/remotion/SlideIn.tsx" target="_blank">source-catalog/round10/remotion-dev--github-unwrapped-2022/remotion/SlideIn.tsx:10</a></p><pre>	useVideoConfig,
+} from &#x27;remotion&#x27;;
+
+export const transitionDuration = 15;
+
+export const SlideIn: React.FC&lt;{children: React.ReactNode}&gt; = ({children}) =&gt; {
+	const {fps, width} = useVideoConfig();
+	const frame = us</pre><p><b>复刻源码</b> · <a href="http://127.0.0.1:8770/experiments/r10-03/src/Replica.tsx" target="_blank">experiments/r10-03/src/Replica.tsx:10</a></p><pre>translate(0 ${t&gt;1.5?(t-1.5)*400:0})`}&gt;&lt;Gift/&gt;&lt;/g&gt;:t&lt;5?&lt;g&gt;&lt;Tree/&gt;&lt;path d=&quot;M71 186l7-29 15 28m283 1 14-29 15 30&quot; fill=&quot;none&quot; stroke=&quot;black&quot; strokeWidth=&quot;3&quot;/&gt;&lt;g transform=&quot;rotate(-4 81 225)&quot;&gt;&lt;rect x</pre></details></article><article><h3>2. 语言图标没有滑入袜子的过程</h3><span class="tag">行为差异</span><div class="cols"><p><b>原片怎么做</b><br>原片让语言列表滑出、袜子画面滑入，再进行后续展示。</p><p><b>复刻怎么做</b><br>复刻直接切换一只固定袜子的 JS、C++、TS 标签。</p></div><p class="impact"><b>画面影响：</b>主体内容大致存在，但列表到袜子的空间关系丢失。</p><details><summary>查看两份代码的位置与片段</summary><p><b>原源码</b> · <a href="http://127.0.0.1:8770/source-catalog/round10/remotion-dev--github-unwrapped-2022/remotion/LanguageToSocks.tsx" target="_blank">source-catalog/round10/remotion-dev--github-unwrapped-2022/remotion/LanguageToSocks.tsx:23</a></p><pre>useVideoConfig();
+
+	const spr = spring({
+		fps,
+		frame: frame - 60,
+		config: {
+			damping: 200,
+		},
+	});
+
+	const translateX = interpolate(spr, [0, 1], [0, -width]);
+	const translateX2 = interpolate(spr, [</pre><p><b>复刻源码</b> · <a href="http://127.0.0.1:8770/experiments/r10-03/src/Replica.tsx" target="_blank">experiments/r10-03/src/Replica.tsx:10</a></p><pre>My top languages of 2022&#x27;,277)}&lt;/&gt;:t&lt;12.5?&lt;&gt;&lt;Sock lang={t&lt;8.2?&#x27;JS&#x27;:t&lt;10?&#x27;C⁺&#x27;:&#x27;TS&#x27;}/&gt;{t&gt;10.5&amp;&amp;text(&#x27;① TypeScript&#x27;,422,34,&#x27;#9e8c7c&#x27;)}{t&gt;8.2&amp;&amp;&lt;text x=&quot;116&quot; y=&quot;471&quot; fontSize=&quot;24&quot; fontWeight=&quot;bold&quot; fontFamily</pre></details></article><article><h3>3. Issue 圆点的关闭过程和数量不同步</h3><span class="tag">行为差异</span><div class="cols"><p><b>原片怎么做</b><br>原片通过同一个进度控制指定圆点变紫、缩至 0.75，以及未关闭数量减少。</p><p><b>复刻怎么做</b><br>复刻在 20.3 秒后一次性将索引大于 10 的点变紫，数字另从 20.4 秒开始下降，圆点不缩小。</p></div><p class="impact"><b>画面影响：</b>画面已变色时数字还在另一状态；留下的绿色点也不是原片那一组。</p><details><summary>查看两份代码的位置与片段</summary><p><b>原源码</b> · <a href="http://127.0.0.1:8770/source-catalog/round10/remotion-dev--github-unwrapped-2022/remotion/IssuesOpened.tsx" target="_blank">source-catalog/round10/remotion-dev--github-unwrapped-2022/remotion/IssuesOpened.tsx:86</a></p><pre>t dotsShown = openProgress * totalIssues;
+
+	const closedDotsProgress = spring({
+		fps,
+		frame: frame - 100,
+		config: {
+			damping: 200,
+		},
+		durationInFrames: 50,
+	});
+
+	const {height, width} = useVideoCo</pre><p><b>复刻源码</b> · <a href="http://127.0.0.1:8770/experiments/r10-03/src/Replica.tsx" target="_blank">experiments/r10-03/src/Replica.tsx:10</a></p><pre>={i} cx={38+x*46} cy={78+y*46} r={i&lt;n?18:0} fill={open&amp;&amp;i&gt;10?&#x27;#9a6fe3&#x27;:&#x27;#28a452&#x27;}/&gt;})}{text(String(t&lt;19?Math.min(69,Math.floor((t-17.5)*58)):t&lt;20.4?69:Math.max(11,Math.floor(69-(t-20.4)*58))),484,65,red)}</pre></details></article><article><h3>4. 雪花没有配合场景切换的横向吹动</h3><span class="tag">行为差异</span><div class="cols"><p><b>原片怎么做</b><br>原片把每次换场时间传给 Snow，驱动吹动。</p><p><b>复刻怎么做</b><br>复刻雪花 x 固定，只让 y 随帧数循环下降。</p></div><p class="impact"><b>画面影响：</b>缺少跨场景共享的环境动效。</p><details><summary>查看两份代码的位置与片段</summary><p><b>原源码</b> · <a href="http://127.0.0.1:8770/source-catalog/round10/remotion-dev--github-unwrapped-2022/remotion/Main.tsx" target="_blank">source-catalog/round10/remotion-dev--github-unwrapped-2022/remotion/Main.tsx:18</a></p><pre>ation.slice(0, i).reduce((a, b) =&gt; a + b);
+	const windPushes = duration
+		.map((_, i) =&gt; {
+			if (i === 0) {
+				return null;
+			}
+			return duration.slice(0, i).reduce((a, b) =&gt; a + b);
+		})
+		.filte</pre><p><b>复刻源码</b> · <a href="http://127.0.0.1:8770/experiments/r10-03/src/Replica.tsx" target="_blank">experiments/r10-03/src/Replica.tsx:8</a></p><pre>/30;const snow=Array.from({length:72},(_,i)=&gt;({x:(i*137.31)%540,y:(i*67.87+f*(.24+(i%5)*.05))%570-15,r:2+(i%4)})); const text=(s:string,y:number,size=24,color=&#x27;#080808&#x27;)=&gt;&lt;text x=&quot;270&quot; y={y} textAncho</pre></details></article></section><section id="r10-04" data-category="产品营销"><h2>r10-04 · Remotion Transitions 发布片</h2><p class="muted">产品营销 · 5 项具体差异 · <a href="http://127.0.0.1:8770/compare-round10.html#r10-04" target="_blank">打开视频对照</a></p><p>第 279 帧：参考是 NA，复刻为矩形色块。第 648 帧：原片右上格正在转场，复刻高亮的是左中格。</p><details><summary>查看指定帧对照（左参考，右复刻）</summary><a href="data/round10-deep-review/r10-04.jpg" target="_blank"><img src="data/round10-deep-review/r10-04.jpg" loading="lazy" alt="r10-04 指定帧对照"></a></details><article><h3>1. 多种转场被同一种晃动替代</h3><span class="tag">行为差异</span><div class="cols"><p><b>原片怎么做</b><br>原片明确区分从左、右、上、下旋入，以及 slide、flip、cube。</p><p><b>复刻怎么做</b><br>复刻大多直接换内容，再给当前卡片一个正弦 rotateY。</p></div><p class="impact"><b>画面影响：</b>起止画面可能相似，旋入方向、背面和交接过程都不同。</p><details><summary>查看两份代码的位置与片段</summary><p><b>原源码</b> · <a href="http://127.0.0.1:8770/source-catalog/round10/remotion-dev--transitions-video/src/MainSequence.tsx" target="_blank">source-catalog/round10/remotion-dev--transitions-video/src/MainSequence.tsx:56</a></p><pre>g: 200}, durationInFrames: 6})}
+				presentation={wheelspin({anchor: &#x27;left&#x27;})}
+			/&gt;
+			&lt;TransitionSeries.Sequence durationInFrames={25}&gt;
+				&lt;Tile&gt;
+					&lt;NaNa1 /&gt;
+				&lt;/Tile&gt;
+			&lt;/TransitionSeries.Sequence&gt;
+			&lt;Trans</pre><p><b>复刻源码</b> · <a href="http://127.0.0.1:8770/experiments/r10-04/src/Replica.tsx" target="_blank">experiments/r10-04/src/Replica.tsx:5</a></p><pre>l=box(s,colors[k%4],`perspective(900px) rotateY(${Math.sin((t-1.35)*Math.PI*2)*8}deg)`)}else if(t&lt;7.35)el=grid(2,t-5);else if(t&lt;8.35)el=box(&#x27;NA&#x27;,colors[Math.floor((t-7.35)*2)%2]);else if(t&lt;10.9){el=&lt;div style=</pre></details></article><article><h3>2. 九宫格与四宫格只做了颜色切换</h3><span class="tag">行为差异</span><div class="cols"><p><b>原片怎么做</b><br>原片调用独立 Grid/ThreeByThree 组件，格子内部还有转场。</p><p><b>复刻怎么做</b><br>复刻按 floor(phase) 选颜色或只点亮一格。</p></div><p class="impact"><b>画面影响：</b>格子内部新旧内容交替移动的过程缺失。</p><details><summary>查看两份代码的位置与片段</summary><p><b>原源码</b> · <a href="http://127.0.0.1:8770/source-catalog/round10/remotion-dev--transitions-video/src/MainSequence.tsx" target="_blank">source-catalog/round10/remotion-dev--transitions-video/src/MainSequence.tsx:127</a></p><pre>.Sequence durationInFrames={110}&gt;
+				&lt;Tile&gt;
+					&lt;NanaGrid /&gt;
+				&lt;/Tile&gt;
+			&lt;/TransitionSeries.Sequence&gt;
+			&lt;TransitionSeries.Transition
+				timing={springTiming({config: {damping: 200}, durationIn</pre><p><b>复刻源码</b> · <a href="http://127.0.0.1:8770/experiments/r10-04/src/Replica.tsx" target="_blank">experiments/r10-04/src/Replica.tsx:3</a></p><pre>{Array.from({length:n*n},(_,i)=&gt;{let active=n===3?Math.floor(phase*3)%(n*n)===i:true;let c=n===3?(active?colors[1]:colors[2]):colors[(Math.floor(phase*2-i*.5)+30)%3];return &lt;div key={i} style={{background:c</pre></details></article><article><h3>3. 文字遮罩被渐变字替代</h3><span class="tag">行为差异</span><div class="cols"><p><b>原片怎么做</b><br>原片 TextMask 展示内容被字形遮罩裁切后的转场。</p><p><b>复刻怎么做</b><br>复刻用两色线性渐变填充 NA，并离散改变颜色。</p></div><p class="impact"><b>画面影响：</b>遮罩内外的运动关系没有恢复。</p><details><summary>查看两份代码的位置与片段</summary><p><b>原源码</b> · <a href="http://127.0.0.1:8770/source-catalog/round10/remotion-dev--transitions-video/src/MainSequence.tsx" target="_blank">source-catalog/round10/remotion-dev--transitions-video/src/MainSequence.tsx:136</a></p><pre>s.Sequence durationInFrames={90}&gt;
+				&lt;Tile&gt;
+					&lt;TextMask /&gt;
+				&lt;/Tile&gt;
+			&lt;/TransitionSeries.Sequence&gt;
+			&lt;TransitionSeries.Transition
+				timing={springTiming({config: {damping: 200}, durationIn</pre><p><b>复刻源码</b> · <a href="http://127.0.0.1:8770/experiments/r10-04/src/Replica.tsx" target="_blank">experiments/r10-04/src/Replica.tsx:5</a></p><pre>(Math.floor(t*2)+1)%4]} 50%)`,color:&#x27;transparent&#x27;,backgroundClip:&#x27;text&#x27;}}&gt;NA&lt;/div&gt;}
+else if(t&lt;12.8){let s=t&lt;11.3?&#x27;I&#x27;:t&lt;11.9?&quot;DON’T&quot;:&#x27;WORK&#x27;;el=box(s,colors[Math.floor(t*2)%4],`perspective(800px) rotateY(${</pre></details></article><article><h3>4. 圆形彩票翻动被静态换色替代</h3><span class="tag">行为差异</span><div class="cols"><p><b>原片怎么做</b><br>原片有 Lottery 正反面、flip 及后续 cube 衔接。</p><p><b>复刻怎么做</b><br>复刻四个圆换色，最后整体 rotateX。</p></div><p class="impact"><b>画面影响：</b>圆内内容翻动及两面交替不一致。</p><details><summary>查看两份代码的位置与片段</summary><p><b>原源码</b> · <a href="http://127.0.0.1:8770/source-catalog/round10/remotion-dev--transitions-video/src/MainSequence.tsx" target="_blank">source-catalog/round10/remotion-dev--transitions-video/src/MainSequence.tsx:151</a></p><pre>nsitionSeries.Sequence durationInFrames={50}&gt;
+				&lt;Lottery flipped={false} /&gt;
+			&lt;/TransitionSeries.Sequence&gt;
+			&lt;TransitionSeries.Transition
+				timing={springTiming({config: {damping: 200}, durationInFram</pre><p><b>复刻源码</b> · <a href="http://127.0.0.1:8770/experiments/r10-04/src/Replica.tsx" target="_blank">experiments/r10-04/src/Replica.tsx:6</a></p><pre>ateX(${t&gt;14.6?(t-14.6)*260:0}deg)`}}&gt;{Array.from({length:4},(_,i)=&gt;&lt;div key={i} style={{width:119,height:119,borderRadius:&#x27;50%&#x27;,background:colors[(Math.floor(t*4)+i)%2],display:&#x27;flex&#x27;,alignItems:&#x27;cen</pre></details></article><article><h3>5. 文字裁切在实际渲染中失效</h3><span class="tag">行为差异</span><div class="cols"><p><b>原片怎么做</b><br>原片在第 279 帧仍显示 NA 字形。</p><p><b>复刻怎么做</b><br>复刻代码意图用 backgroundClip:text 裁切，但交付视频第 279 帧显示整块矩形渐变。</p></div><p class="impact"><b>画面影响：</b>除了转场方式不同，还存在实际渲染失效。具体浏览器兼容原因未通过重新渲染隔离验证，不能只凭样式名定论。</p><details><summary>查看两份代码的位置与片段</summary><p><b>原源码</b> · <a href="http://127.0.0.1:8770/source-catalog/round10/remotion-dev--transitions-video/src/TextMask.tsx" target="_blank">source-catalog/round10/remotion-dev--transitions-video/src/TextMask.tsx:37</a></p><pre>0.1]);
+
+	return (
+		&lt;AbsoluteFill
+			style={{
+				WebkitMaskImage: `url(${staticFile(&#x27;NaBlack.png&#x27;)})`,
+				WebkitMaskRepeat: &#x27;no-repeat&#x27;,
+				WebkitMaskPosition: &#x27;center&#x27;,
+				scale: String(scale),
+			}}
+</pre><p><b>复刻源码</b> · <a href="http://127.0.0.1:8770/experiments/r10-04/src/Replica.tsx" target="_blank">experiments/r10-04/src/Replica.tsx:5</a></p><pre>(Math.floor(t*2)+1)%4]} 50%)`,color:&#x27;transparent&#x27;,backgroundClip:&#x27;text&#x27;}}&gt;NA&lt;/div&gt;}
+else if(t&lt;12.8){let s=t&lt;11.3?&#x27;I&#x27;:t&lt;11.9?&quot;DON’T&quot;:&#x27;WORK&#x27;;el=box(s,colors[Math.floor(t*2)%4],`perspective(800px) rotateY(${</pre></details></article></section><section id="r10-05" data-category="知识讲解"><h2>r10-05 · 双摆与蝴蝶效应</h2><p class="muted">知识讲解 · 4 项具体差异 · <a href="http://127.0.0.1:8770/compare-round10.html#r10-05" target="_blank">打开视频对照</a></p><p>第 122 帧：起始两根摆杆的夹角已经不同。第 450 帧：轨迹明显不同，原片显示 0.01°，复刻显示 42.66°；两者读数定义也不同。</p><details><summary>查看指定帧对照（左参考，右复刻）</summary><a href="data/round10-deep-review/r10-05.jpg" target="_blank"><img src="data/round10-deep-review/r10-05.jpg" loading="lazy" alt="r10-05 指定帧对照"></a></details><article><h3>1. 双摆方程的分母写错</h3><span class="tag">行为差异</span><div class="cols"><p><b>原片怎么做</b><br>原片 M1=M2=1，分母为 3−cos(2Δθ)。</p><p><b>复刻怎么做</b><br>复刻使用 2−cos(2Δθ)。</p></div><p class="impact"><b>画面影响：</b>加速度不同，整个摆动轨迹偏离。</p><details><summary>查看两份代码的位置与片段</summary><p><b>原源码</b> · <a href="http://127.0.0.1:8770/source-catalog/round10/znyupup--knowledge-explainer-skill/custom/DoublePendulum.jsx" target="_blank">source-catalog/round10/znyupup--knowledge-explainer-skill/custom/DoublePendulum.jsx:16</a></p><pre>);
+  const s12 = Math.sin(t1 - t2);
+  const den = 2 * M1 + M2 - M2 * Math.cos(2 * t1 - 2 * t2);
+
+  const a1Num =
+    -G * (2 * M1 + M2) * Math.sin(t1)
+    - M2 * G * Math.sin(t1 - 2 * t2)
+    - 2 * s12</pre><p><b>复刻源码</b> · <a href="http://127.0.0.1:8770/experiments/r10-05/src/Replica.tsx" target="_blank">experiments/r10-05/src/Replica.tsx:5</a></p><pre>onst dt=1/240;for(let k=0;k&lt;14*240;k++){let d=a-b,den=2-Math.cos(2*d);let aa=(-9.81*3*Math.sin(a)-9.81*Math.sin(a-2*b)-2*Math.sin(d)*(bv*bv+av*av*Math.cos(d)))/den;let ba=2*Math.sin(d)*(av*av*2+9.8</pre></details></article><article><h3>2. 初始姿态和积分方法同时改变</h3><span class="tag">行为差异</span><div class="cols"><p><b>原片怎么做</b><br>原片初始角为 2.0、1.5 弧度，20 子步/帧，先用旧角速度更新角度。</p><p><b>复刻怎么做</b><br>复刻两个角都设为 115°，8 子步/帧，并先更新角速度。</p></div><p class="impact"><b>画面影响：</b>初始姿态已经不同；即使外形一致，也不是原来的运动过程。</p><details><summary>查看两份代码的位置与片段</summary><p><b>原源码</b> · <a href="http://127.0.0.1:8770/source-catalog/round10/znyupup--knowledge-explainer-skill/custom/DoublePendulum.jsx" target="_blank">source-catalog/round10/znyupup--knowledge-explainer-skill/custom/DoublePendulum.jsx:62</a></p><pre>d(duration * fps);
+
+  // 初始条件: ~115° 离垂直线, 高能起手
+  const t1_0 = 2.0;
+  const t2_0 = 1.5;
+  const eps = 0.001 * Math.PI / 180; // 0.001° in rad
+
+  const simA = useMemo(() =&gt; simulate(t1_0, t2_0, totalFrames, </pre><p><b>复刻源码</b> · <a href="http://127.0.0.1:8770/experiments/r10-05/src/Replica.tsx" target="_blank">experiments/r10-05/src/Replica.tsx:4</a></p><pre>&#x27;;
+const C=(x:number)=&gt;Math.max(0,Math.min(1,x));
+const initial=115*Math.PI/180;
+function simulate(off:number){let a=initial+off,b=initial+off,av=0,bv=0;let out:any[]=[];const dt=1/240;for(let k=0;k&lt;14*2</pre></details></article><article><h3>3. 角度差读数实际算的是像素距离</h3><span class="tag">行为差异</span><div class="cols"><p><b>原片怎么做</b><br>原片读数为两套双摆的角度差之和，转换为度。</p><p><b>复刻怎么做</b><br>复刻取两摆锤的屏幕距离除以 3，却仍显示 °。</p></div><p class="impact"><b>画面影响：</b>不仅数字不同，读数代表的含义也变了。</p><details><summary>查看两份代码的位置与片段</summary><p><b>原源码</b> · <a href="http://127.0.0.1:8770/source-catalog/round10/znyupup--knowledge-explainer-skill/custom/DoublePendulum.jsx" target="_blank">source-catalog/round10/znyupup--knowledge-explainer-skill/custom/DoublePendulum.jsx:90</a></p><pre>splay: angular distance between the two systems
+  const dθ = Math.abs(simA[cf][0] - simB[cf][0]) + Math.abs(simA[cf][2] - simB[cf][2]);
+  const dθDeg = (dθ * 180 / Math.PI).toFixed(2);
+
+  // Animation</pre><p><b>复刻源码</b> · <a href="http://127.0.0.1:8770/experiments/r10-05/src/Replica.tsx" target="_blank">experiments/r10-05/src/Replica.tsx:7</a></p><pre>e=&quot;17&quot; fontFamily=&quot;monospace&quot; fontWeight=&quot;bold&quot;&gt;{(Math.sqrt((p.xx-r.xx)**2+(p.yy-r.yy)**2)/3).toFixed(2)}°&lt;/text&gt;&lt;text x=&quot;616&quot; y=&quot;345&quot; textAnchor=&quot;end&quot; fontSize=&quot;6&quot; fill=&quot;#6d697b&quot; fontFamily=&quot;monospa</pre></details></article><article><h3>4. 轨迹保留时间过长</h3><span class="tag">行为差异</span><div class="cols"><p><b>原片怎么做</b><br>原片保留约 3 秒的轨迹。</p><p><b>复刻怎么做</b><br>复刻保留约 4.83 秒。</p></div><p class="impact"><b>画面影响：</b>画面残留更长、轨迹更密，遮盖当前运动。</p><details><summary>查看两份代码的位置与片段</summary><p><b>原源码</b> · <a href="http://127.0.0.1:8770/source-catalog/round10/znyupup--knowledge-explainer-skill/custom/DoublePendulum.jsx" target="_blank">source-catalog/round10/znyupup--knowledge-explainer-skill/custom/DoublePendulum.jsx:78</a></p><pre>
+
+  // Trail (last 90 frames of bob 2 position)
+  const trailLen = 90;
+  const start = Math.max(0, cf - trailLen);
+  const trailA = [];
+  const trailB = [];
+  for (let f = start; f &lt;= cf; f++) {
+    trailA.pus</pre><p><b>复刻源码</b> · <a href="http://127.0.0.1:8770/experiments/r10-05/src/Replica.tsx" target="_blank">experiments/r10-05/src/Replica.tsx:7</a></p><pre>[q];const trail=(arr:any[])=&gt;arr.slice(Math.max(0,q-145),q+1).map((v,i)=&gt;`${i?&#x27;L&#x27;:&#x27;M&#x27;}${v.xx.toFixed(2)},${v.yy.toFixed(2)}`).join(&#x27; &#x27;);return &lt;AbsoluteFill style={{background:&#x27;radial-gradient(el</pre></details></article></section><section id="r10-06" data-category="软件演示"><h2>r10-06 · Postflop 扑克分析工作台</h2><p class="muted">软件演示 · 6 项具体差异 · <a href="http://127.0.0.1:8770/compare-round10.html#r10-06" target="_blank">打开视频对照</a></p><p>第 414 帧：原片有游标、88 格高亮和详情浮窗，复刻缺少这些；格子分布也不同。第 480 帧：原片曲线还在绘制，复刻已显示完整曲线和全部表格。</p><details><summary>查看指定帧对照（左参考，右复刻）</summary><a href="data/round10-deep-review/r10-06.jpg" target="_blank"><img src="data/round10-deep-review/r10-06.jpg" loading="lazy" alt="r10-06 指定帧对照"></a></details><article><h3>1. 求解矩阵没有逐格变化与点击反馈</h3><span class="tag">行为差异</span><div class="cols"><p><b>原片怎么做</b><br>原片格子按对角线逐步出现，游标移动并点击 88 格，弹出详情。</p><p><b>复刻怎么做</b><br>复刻用静态布尔规则给 169 格着色；没有游标和本场景弹出过程。</p></div><p class="impact"><b>画面影响：</b>矩阵像一张结果图，缺少求解和选中对象的演示。</p><details><summary>查看两份代码的位置与片段</summary><p><b>原源码</b> · <a href="http://127.0.0.1:8770/source-catalog/round10/ucsandman--marketing-studio/studio/src/films/postflop/shots/Shot04Workbench.tsx" target="_blank">source-catalog/round10/ucsandman--marketing-studio/studio/src/films/postflop/shots/Shot04Workbench.tsx:74</a></p><pre> It walks in from the bottom-right instead.
+const CURSOR_PATH: CursorWaypoint[] = [
+  {x: 2010, y: 1140, at: 0},
+  {x: 1560, y: 880, at: 92},
+  {x: 1330, y: 700, at: 102},
+  {x: CELL_X, y: CELL_Y, at: </pre><p><b>复刻源码</b> · <a href="http://127.0.0.1:8770/experiments/r10-06/src/Replica.tsx" target="_blank">experiments/r10-06/src/Replica.tsx:3</a></p><pre>&#x27;K&#x27;,&#x27;Q&#x27;,&#x27;J&#x27;,&#x27;T&#x27;,&#x27;9&#x27;,&#x27;8&#x27;,&#x27;7&#x27;,&#x27;6&#x27;,&#x27;5&#x27;,&#x27;4&#x27;,&#x27;3&#x27;,&#x27;2&#x27;];
+const Matrix=({small=false}:{small?:boolean})=&gt;&lt;div style={{display:&#x27;grid&#x27;,gridTemplateColumns:&#x27;repeat(13,1fr)&#x27;,gap:2,padding:8,background:&#x27;#222&#x27;,width:</pre></details></article><article><h3>2. 收敛数字与曲线没有共用变化过程</h3><span class="tag">行为差异</span><div class="cols"><p><b>原片怎么做</b><br>原片从 0.3124% 变化到 0.0471%，用测量点构造衰减过程。</p><p><b>复刻怎么做</b><br>复刻大数按 0.2871%、0.0976%、0.0471% 三档跳；曲线直接显示完整静态路径。</p></div><p class="impact"><b>画面影响：</b>大数、表格和曲线不处于同一进度，前两档读数也不同。</p><details><summary>查看两份代码的位置与片段</summary><p><b>原源码</b> · <a href="http://127.0.0.1:8770/source-catalog/round10/ucsandman--marketing-studio/studio/src/films/postflop/shots/Shot05Convergence.tsx" target="_blank">source-catalog/round10/ucsandman--marketing-studio/studio/src/films/postflop/shots/Shot05Convergence.tsx:33</a></p><pre>50&#x27;, bb: &#x27;0.002589&#x27;, pot: &#x27;0.0471&#x27;},
+] as const;
+
+const HI = 0.3124;
+const LO = 0.0471;
+
+// Log-linear between measured points: exploitability decays multiplicatively, so a
+// straight interpolation in log s</pre><p><b>复刻源码</b> · <a href="http://127.0.0.1:8770/experiments/r10-06/src/Replica.tsx" target="_blank">experiments/r10-06/src/Replica.tsx:4</a></p><pre>=13?&#x27;black&#x27;:&#x27;white&#x27;,fontSize:25,padding:5}}&gt;{t&lt;12?&#x27;0.2871%&#x27;:t&lt;13?&#x27;0.1802%&#x27;:&#x27;0.0471%&#x27;}&lt;/b&gt;&lt;/div&gt;&lt;div&gt;&lt;div style={{height:23,background:yellow,fontSize:10,padding:5}}&gt;OOP STRATEGY 363 combos · node 0 ·</pre></details></article><article><h3>3. 填完表单后自动变为求解，没有点击</h3><span class="tag">行为差异</span><div class="cols"><p><b>原片怎么做</b><br>原片游标沿路径到达 SOLVE，再发生按下反馈。</p><p><b>复刻怎么做</b><br>复刻只在 t&gt;8.7 后改成 SOLVING。</p></div><p class="impact"><b>画面影响：</b>动作和结果之间缺少可见因果。</p><details><summary>查看两份代码的位置与片段</summary><p><b>原源码</b> · <a href="http://127.0.0.1:8770/source-catalog/round10/ucsandman--marketing-studio/studio/src/films/postflop/shots/Shot03Composer.tsx" target="_blank">source-catalog/round10/ucsandman--marketing-studio/studio/src/films/postflop/shots/Shot03Composer.tsx:175</a></p><pre>10,
+    easing: Easing.out(Easing.cubic),
+  });
+  const cursor = bowedPosition(frame, CURSOR_PATH);
+
+  return (
+    &lt;AbsoluteFill style={{backgroundColor: brand.colors.bg}}&gt;
+      &lt;AbsoluteFill
+        st</pre><p><b>复刻源码</b> · <a href="http://127.0.0.1:8770/experiments/r10-06/src/Replica.tsx" target="_blank">experiments/r10-06/src/Replica.tsx:5</a></p><pre>&lt;b style={{display:&#x27;block&#x27;,marginTop:3,background:t&gt;8.7?yellow:&#x27;#111&#x27;,color:t&gt;8.7?&#x27;black&#x27;:&#x27;white&#x27;,padding:&#x27;12px 40px&#x27;,fontSize:19,letterSpacing:2}}&gt;{t&gt;8.7?&#x27;SOLVING&#x27;:&#x27;SOLVE&#x27;}&lt;/b&gt;&lt;/div&gt;&lt;/&gt;}&lt;/div&gt;;
+</pre></details></article><article><h3>4. 结尾漏了三次关键词强调</h3><span class="tag">行为差异</span><div class="cols"><p><b>原片怎么做</b><br>原片结尾先逐词强调 MEASURED. / NEVER / ASSERTED.，再组装标志和按钮。</p><p><b>复刻怎么做</b><br>复刻直接展示 postflop 和 CTA。</p></div><p class="impact"><b>画面影响：</b>产品核心卖点的最后一次强调消失。</p><details><summary>查看两份代码的位置与片段</summary><p><b>原源码</b> · <a href="http://127.0.0.1:8770/source-catalog/round10/ucsandman--marketing-studio/studio/src/films/postflop/shots/Shot08End.tsx" target="_blank">source-catalog/round10/ucsandman--marketing-studio/studio/src/films/postflop/shots/Shot08End.tsx:9</a></p><pre>i&#x27;;
+
+// Shot 8 &quot;end&quot; (102 frames). Kinetic type — MEASURED. / NEVER / ASSERTED., one
+// word per 6 frames, each replacing the last — then the end lockup assembles:
+// spade + wordmark, a rule, the y</pre><p><b>复刻源码</b> · <a href="http://127.0.0.1:8770/experiments/r10-06/src/Replica.tsx" target="_blank">experiments/r10-06/src/Replica.tsx:6</a></p><pre>b style={{background:yellow,padding:&#x27;15px 12px&#x27;}}&gt;Solve your first spot in the browser.&lt;/b&gt;&lt;p style={{fontSize:18,marginTop:30}}&gt;postflop.vercel.app&lt;/p&gt;&lt;hr/&gt;&lt;/div&gt;&lt;/div&gt;}&lt;/AbsoluteFill&gt;};
+</pre></details></article><article><h3>5. 所有镜头交接改为硬切</h3><span class="tag">行为差异</span><div class="cols"><p><b>原片怎么做</b><br>原片相邻镜头重叠 8 帧。</p><p><b>复刻怎么做</b><br>复刻在 3、5、10、15、19、22、25 秒互斥切场。</p></div><p class="impact"><b>画面影响：</b>内容变化时间与进入退出方式均不同。</p><details><summary>查看两份代码的位置与片段</summary><p><b>原源码</b> · <a href="http://127.0.0.1:8770/source-catalog/round10/ucsandman--marketing-studio/studio/src/films/postflop/timeline.ts" target="_blank">source-catalog/round10/ucsandman--marketing-studio/studio/src/films/postflop/timeline.ts:11</a></p><pre> incoming shot owns the handover. */
+export const OVERLAP = 8;
+
+/** Composition length in frames (28.0s @ 30fps). */
+export const TOTAL = 840;
+
+export const SHOTS: Shot[] = [
+  {id: &#x27;claim&#x27;, from: 0, l</pre><p><b>复刻源码</b> · <a href="http://127.0.0.1:8770/experiments/r10-06/src/Replica.tsx" target="_blank">experiments/r10-06/src/Replica.tsx:6</a></p><pre>0&#x27;,alignItems:&#x27;center&#x27;,justifyContent:&#x27;center&#x27;}}&gt;{t&lt;3?&lt;div style={{width:625,fontSize:66,lineHeight:1.03,fontWeight:750,letterSpacing:-3}}&gt;Your solver is grading&lt;br/&gt;{t&gt;.5?&#x27;its own homework.&#x27;:&#x27;</pre></details></article><article><h3>6. 矩阵最终格子颜色也不一致</h3><span class="tag">行为差异</span><div class="cols"><p><b>原片怎么做</b><br>原片以明确的 13×13 MAP 指定每一格的颜色。</p><p><b>复刻怎么做</b><br>复刻用行列大小关系近似着色。</p></div><p class="impact"><b>画面影响：</b>第 414 帧可见大片格子颜色分布不同，说明不仅少了动画，最终状态也画错了。</p><details><summary>查看两份代码的位置与片段</summary><p><b>原源码</b> · <a href="http://127.0.0.1:8770/source-catalog/round10/ucsandman--marketing-studio/studio/src/films/postflop/ui/RangeGrid.tsx" target="_blank">source-catalog/round10/ucsandman--marketing-studio/studio/src/films/postflop/ui/RangeGrid.tsx:43</a></p><pre>tate = (row: number, col: number): CellState =&gt;
+  STATE_OF[MAP[row][col]] ?? &#x27;empty&#x27;;
+
+/** Empty-cell ground; the panel behind the grid is darker still. */
+export const GRID_EMPTY = &#x27;#1a1a1a&#x27;;
+const GRID_EMPTY_INK</pre><p><b>复刻源码</b> · <a href="http://127.0.0.1:8770/experiments/r10-06/src/Replica.tsx" target="_blank">experiments/r10-06/src/Replica.tsx:3</a></p><pre>,i)=&gt;{const r=Math.floor(i/13),c=i%13;const green=r&lt;5&amp;&amp;c&lt;13-r/2||r&lt;7&amp;&amp;c&lt;2||c&gt;r&amp;&amp;c&lt;r+3;return &lt;div key={i} style={{background:i===17||i===27||i===53||i===168?&#x27;#bd2932&#x27;:r===c&amp;&amp;r&gt;4?&#x27;#edeee6&#x27;:green?&#x27;</pre></details></article></section><section id="r10-07" data-category="数据叙事"><h2>r10-07 · 全球品牌价值动态排名</h2><p class="muted">数据叙事 · 4 项具体差异 · <a href="http://127.0.0.1:8770/compare-round10.html#r10-07" target="_blank">打开视频对照</a></p><p>第 510 帧：参考可见 HP，复刻名单没有 HP。第 870 帧：复刻多条柱在换位中重叠、留出大片空行。另核对 CSV，能匹配的品牌/年份中有 77 个数值不同；不等于 77 个都在视频中可见。</p><details><summary>查看指定帧对照（左参考，右复刻）</summary><a href="data/round10-deep-review/r10-07.jpg" target="_blank"><img src="data/round10-deep-review/r10-07.jpg" loading="lazy" alt="r10-07 指定帧对照"></a></details><article><h3>1. 数据被人工补写，不能保证每条品牌曲线正确</h3><span class="tag">行为差异</span><div class="cols"><p><b>原片怎么做</b><br>原片读取完整 CSV 后对每个品牌的值和排名计算。</p><p><b>复刻怎么做</b><br>复刻只列出 19 个品牌与 20 行手写数据，若干值是近似或补写。</p></div><p class="impact"><b>画面影响：</b>缺失品牌、读数和排名会一起受到影响；下方附 CSV 核对结果。</p><details><summary>查看两份代码的位置与片段</summary><p><b>原源码</b> · <a href="http://127.0.0.1:8770/source-catalog/round10/hylarucoder--remotion-bar-race-chart/remotion/charts/BarRace.tsx" target="_blank">source-catalog/round10/hylarucoder--remotion-bar-race-chart/remotion/charts/BarRace.tsx:253</a></p><pre>
+            const res = await fetch(staticFile(`/category-brands.csv`))
+            const text = await res.text()
+            const data = d3.csvParse(text, d3.autoType)
+            const colorByName = comput</pre><p><b>复刻源码</b> · <a href="http://127.0.0.1:8770/experiments/r10-07/src/Replica.tsx" target="_blank">experiments/r10-07/src/Replica.tsx:4</a></p><pre>ec9e9f&#x27;,&#x27;#f6e295&#x27;,&#x27;#ec9e9f&#x27;,&#x27;#fdc6ce&#x27;,&#x27;#f8bf82&#x27;];
+const rows=[
+[72537,70196,53183,39048,38528,38127,36368,33553,27859,25548,22110,21104,18000,13000,100,5000,4000,1000,0],
+[68945,65068,52752,34665,3503</pre></details></article><article><h3>2. 年度位置与数值采用了不同的插值节奏</h3><span class="tag">行为差异</span><div class="cols"><p><b>原片怎么做</b><br>原片每秒读取 10 个中间关键帧，宽度线性变化，位置用 cubic。</p><p><b>复刻怎么做</b><br>复刻直接在两年之间用 smoothstep 同时插值数值和名次。</p></div><p class="impact"><b>画面影响：</b>换位的开始、速度和结束不一致。原片的时间实现也有不连贯风险，不能视为理想标准。</p><details><summary>查看两份代码的位置与片段</summary><p><b>原源码</b> · <a href="http://127.0.0.1:8770/source-catalog/round10/hylarucoder--remotion-bar-race-chart/remotion/charts/BarRace.tsx" target="_blank">source-catalog/round10/hylarucoder--remotion-bar-race-chart/remotion/charts/BarRace.tsx:30</a></p><pre>ig()
+    const curKeyframe = keyframes[Math.floor(frame / fps * 10)] || keyframes[keyframes.length - 1]
+    const nextKeyframe = keyframes[Math.floor(frame / fps * 10) + 1] || keyframes[keyframes.length - 1</pre><p><b>复刻源码</b> · <a href="http://127.0.0.1:8770/experiments/r10-07/src/Replica.tsx" target="_blank">experiments/r10-07/src/Replica.tsx:26</a></p><pre>et a=Math.floor(time),b=Math.min(19,a+1),k=time-a;k=k*k*(3-2*k);let vals=rows[a].map((v,i)=&gt;v+(rows[b][i]-v)*k),max=Math.max(...vals);let tick=max&gt;150000?50000:max&gt;100000?50000:20000;return &lt;Absolute</pre></details></article><article><h3>3. 坐标刻度规则不同</h3><span class="tag">行为差异</span><div class="cols"><p><b>原片怎么做</b><br>原片用 d3 的 ticks 根据范围自动生成刻度。</p><p><b>复刻怎么做</b><br>复刻只在 20000 和 50000 两种间隔中选取。</p></div><p class="impact"><b>画面影响：</b>缩放到某些年份时刻度数量、位置和数值不一样。</p><details><summary>查看两份代码的位置与片段</summary><p><b>原源码</b> · <a href="http://127.0.0.1:8770/source-catalog/round10/hylarucoder--remotion-bar-race-chart/remotion/charts/BarRace.tsx" target="_blank">source-catalog/round10/hylarucoder--remotion-bar-race-chart/remotion/charts/BarRace.tsx:72</a></p><pre> tickCount = maxWidth / 300
+        const ticks = scale.ticks(tickCount)
+        return ticks.map(t =&gt; ({
+            value: t,
+            position: scale(t),
+        }))
+    }
+
+    const xScale = d3.scaleLinear</pre><p><b>复刻源码</b> · <a href="http://127.0.0.1:8770/experiments/r10-07/src/Replica.tsx" target="_blank">experiments/r10-07/src/Replica.tsx:26</a></p><pre>((v,i)=&gt;v+(rows[b][i]-v)*k),max=Math.max(...vals);let tick=max&gt;150000?50000:max&gt;100000?50000:20000;return &lt;AbsoluteFill style={{background:&#x27;white&#x27;}}&gt;&lt;svg viewBox=&quot;0 0 960 540&quot; style={{fontFamily:&#x27;Ar</pre></details></article><article><h3>4. 原片数值公式本身有问题</h3><span class="tag">参考自身问题</span><div class="cols"><p><b>原片怎么做</b><br>原片条形宽度朝 next 值变化，文字数值却使用 prev+(prev−next)×progress。</p><p><b>复刻怎么做</b><br>复刻使用通常的 prev+(next−prev)×progress。</p></div><p class="impact"><b>画面影响：</b>这里确有复刻差异，但不能归结为 agent 数学能力不足；原片应先修订或标注。</p><details><summary>查看两份代码的位置与片段</summary><p><b>原源码</b> · <a href="http://127.0.0.1:8770/source-catalog/round10/hylarucoder--remotion-bar-race-chart/remotion/charts/BarRace.tsx" target="_blank">source-catalog/round10/hylarucoder--remotion-bar-race-chart/remotion/charts/BarRace.tsx:96</a></p><pre>       const value = Math.floor(prevItem.value + (prevItem.value - nextItem.value) * progress)
+        const prevY = 21 + 48 * prevItem.rank
+        const nextY = 21 + 48 * nextItem.rank
+        const curY = prevY + (next</pre><p><b>复刻源码</b> · <a href="http://127.0.0.1:8770/experiments/r10-07/src/Replica.tsx" target="_blank">experiments/r10-07/src/Replica.tsx:26</a></p><pre>me-a;k=k*k*(3-2*k);let vals=rows[a].map((v,i)=&gt;v+(rows[b][i]-v)*k),max=Math.max(...vals);let tick=max&gt;150000?50000:max&gt;100000?50000:20000;return &lt;AbsoluteFill style={{background:&#x27;white&#x27;}}&gt;&lt;svg viewBox=&quot;0 </pre></details></article></section><section id="r10-08" data-category="知识讲解"><h2>r10-08 · 推荐算法与信息茧房</h2><p class="muted">知识讲解 · 4 项具体差异 · <a href="http://127.0.0.1:8770/compare-round10.html#r10-08" target="_blank">打开视频对照</a></p><p>第 304 帧都显示 12/24，第 437 帧都显示 22/24，但变为科技的具体卡片位置不同。画面中的内部计时也相差约 0.8 秒。</p><details><summary>查看指定帧对照（左参考，右复刻）</summary><a href="data/round10-deep-review/r10-08.jpg" target="_blank"><img src="data/round10-deep-review/r10-08.jpg" loading="lazy" alt="r10-08 指定帧对照"></a></details><article><h3>1. 同样数量的科技卡片，却不是同一批卡片</h3><span class="tag">行为差异</span><div class="cols"><p><b>原片怎么做</b><br>原片按固定 pickOrder 选择要替换的卡片。</p><p><b>复刻怎么做</b><br>复刻每波拿当前非科技卡片的前几个。</p></div><p class="impact"><b>画面影响：</b>总数可以相同，但具体哪张卡变色不同，丢失对象对应关系。</p><details><summary>查看两份代码的位置与片段</summary><p><b>原源码</b> · <a href="http://127.0.0.1:8770/source-catalog/round10/znyupup--knowledge-explainer-skill/custom/AlgorithmBubble.jsx" target="_blank">source-catalog/round10/znyupup--knowledge-explainer-skill/custom/AlgorithmBubble.jsx:72</a></p><pre>     }
+      // 用确定性&quot;洗牌&quot;挑前 addCount 张
+      const pickOrder = [11, 5, 17, 23, 2, 14, 8, 20, 0, 6, 12, 18, 4, 10, 16, 22, 1, 7, 13, 19, 3, 9, 15, 21];
+      const toReplace = indices
+        .slice()
+</pre><p><b>复刻源码</b> · <a href="http://127.0.0.1:8770/experiments/r10-08/src/Replica.tsx" target="_blank">experiments/r10-08/src/Replica.tsx:3</a></p><pre>)=&gt;v!==1?i:-1).filter(x=&gt;x&gt;=0);const swap=new Set(others.slice(0,num-4));const intro=t&lt;3.2,end=t&gt;=21.5;return &lt;AbsoluteFill style={{background:&#x27;radial-gradient(ellipse at center,#161626 0%,#090912 78%)&#x27;</pre></details></article><article><h3>2. 刷新越来越提前</h3><span class="tag">行为差异</span><div class="cols"><p><b>原片怎么做</b><br>原片五波刷新在 7、9.333、11.667、14、16 秒。</p><p><b>复刻怎么做</b><br>复刻安排在 7、9、11、13、15 秒。</p></div><p class="impact"><b>画面影响：</b>后几波累计提前约 1 秒，并非一次整体平移能修正。</p><details><summary>查看两份代码的位置与片段</summary><p><b>原源码</b> · <a href="http://127.0.0.1:8770/source-catalog/round10/znyupup--knowledge-explainer-skill/custom/AlgorithmBubble.jsx" target="_blank">source-catalog/round10/znyupup--knowledge-explainer-skill/custom/AlgorithmBubble.jsx:55</a></p><pre>= [
+    {atFrame: 90, addCount: 4},   // → 8
+    {atFrame: 160, addCount: 4},  // → 12
+    {atFrame: 230, addCount: 6},  // → 18
+    {atFrame: 300, addCount: 4},  // → 22
+    {atFrame: 360, addCount: 2}</pre><p><b>复刻源码</b> · <a href="http://127.0.0.1:8770/experiments/r10-08/src/Replica.tsx" target="_blank">experiments/r10-08/src/Replica.tsx:3</a></p><pre>urrentFrame()/30;const locked=t&gt;=16;let num=t&lt;7?4:t&lt;9?8:t&lt;11?12:t&lt;13?18:t&lt;15?22:24;const others=data.map((v,i)=&gt;v!==1?i:-1).filter(x=&gt;x&gt;=0);const swap=new Set(others.slice(0,num-4));const intro</pre></details></article><article><h3>3. 开场和收尾边界不一致</h3><span class="tag">行为差异</span><div class="cols"><p><b>原片怎么做</b><br>原片开场 4 秒，主过程到 22 秒。</p><p><b>复刻怎么做</b><br>复刻 3.2 秒进入主过程，21.5 秒收尾。</p></div><p class="impact"><b>画面影响：</b>开场少 0.8 秒；复刻提前离开主画面。</p><details><summary>查看两份代码的位置与片段</summary><p><b>原源码</b> · <a href="http://127.0.0.1:8770/source-catalog/round10/znyupup--knowledge-explainer-skill/src/algorithm_bubble.jsx" target="_blank">source-catalog/round10/znyupup--knowledge-explainer-skill/src/algorithm_bubble.jsx:10</a></p><pre>background: &#x27;#0a0a0f&#x27;}}&gt;
+      &lt;Sequence from={0} durationInFrames={120}&gt;
+        &lt;Title
+          {...{
+            &quot;title&quot;: &quot;信息茧房怎么炼成的&quot;,
+            &quot;subtitle&quot;: &quot;你点的每一下,都在喂算法&quot;
+          }}
+        /&gt;
+      &lt;/Se</pre><p><b>复刻源码</b> · <a href="http://127.0.0.1:8770/experiments/r10-08/src/Replica.tsx" target="_blank">experiments/r10-08/src/Replica.tsx:3</a></p><pre>t swap=new Set(others.slice(0,num-4));const intro=t&lt;3.2,end=t&gt;=21.5;return &lt;AbsoluteFill style={{background:&#x27;radial-gradient(ellipse at center,#161626 0%,#090912 78%)&#x27;,fontFamily:&#x27;Arial,&quot;PingFang</pre></details></article><article><h3>4. 点赞目标和动作不同</h3><span class="tag">行为差异</span><div class="cols"><p><b>原片怎么做</b><br>原片在指定 4 张卡上依次显示点赞，并配合卡片放大和亮边。</p><p><b>复刻怎么做</b><br>复刻用时间取整循环选择卡片，只画心形提示。</p></div><p class="impact"><b>画面影响：</b>点在哪、何时点、点后如何反馈都不同。原片点赞对象与“只点赞科技”文案也有矛盾，另列参考问题。</p><details><summary>查看两份代码的位置与片段</summary><p><b>原源码</b> · <a href="http://127.0.0.1:8770/source-catalog/round10/znyupup--knowledge-explainer-skill/custom/AlgorithmBubble.jsx" target="_blank">source-catalog/round10/znyupup--knowledge-explainer-skill/custom/AlgorithmBubble.jsx:131</a></p><pre>lamp());
+
+  // 点赞动画 (frames 30-90, 4 次点赞,每次15帧)
+  const likeEvents = [
+    {frame: 30, idx: 3},
+    {frame: 45, idx: 14},
+    {frame: 60, idx: 21},
+    {frame: 75, idx: 9},
+  ];
+
+  // 茧房标语
+  const bubbleOp </pre><p><b>复刻源码</b> · <a href="http://127.0.0.1:8770/experiments/r10-08/src/Replica.tsx" target="_blank">experiments/r10-08/src/Replica.tsx:3</a></p><pre>1:orig;const c=colors[id];const heart=t&gt;4.5&amp;&amp;t&lt;7&amp;&amp;Math.floor((t-4.5)*3)%24===i;return &lt;div key={i} style={{position:&#x27;relative&#x27;,border:`1px solid ${c}`,borderRadius:7,background:`linear-gradient(130deg,${c}23,</pre></details></article></section><section id="r10-09" data-category="产品营销"><h2>r10-09 · Morph 数据库迁移产品片</h2><p class="muted">产品营销 · 5 项具体差异 · <a href="http://127.0.0.1:8770/compare-round10.html#r10-09" target="_blank">打开视频对照</a></p><p>第 330 帧：三色占比环被单色环替代。第 590 帧：复杂度为 12 的复刻仪表闪现 TOTAL 和约 90% 圆弧，原片仪表仍在按复杂度进度进入。</p><details><summary>查看指定帧对照（左参考，右复刻）</summary><a href="data/round10-deep-review/r10-09.jpg" target="_blank"><img src="data/round10-deep-review/r10-09.jpg" loading="lazy" alt="r10-09 指定帧对照"></a></details><article><h3>1. 仪表盘环形图丢失分类比例</h3><span class="tag">行为差异</span><div class="cols"><p><b>原片怎么做</b><br>原片环形图用 8、3、1 三段表示三种迁移状态。</p><p><b>复刻怎么做</b><br>复刻 num=12 时固定画一条 254/283 的绿色弧。</p></div><p class="impact"><b>画面影响：</b>总数 12 保留了，三类占比的信息没保留。</p><details><summary>查看两份代码的位置与片段</summary><p><b>原源码</b> · <a href="http://127.0.0.1:8770/source-catalog/round10/AleBrito124356--morph-promo/src/scenes-app.tsx" target="_blank">source-catalog/round10/AleBrito124356--morph-promo/src/scenes-app.tsx:43</a></p><pre>terTop=&quot;12&quot; centerSub={d.donutTotal} segments={[{ value: 8, color: COLORS.success, label: d.legend[0] }, { value: 3, color: COLORS.cyan, label: d.legend[1] }, { value: 1, color: COLORS.warning, labe</pre><p><b>复刻源码</b> · <a href="http://127.0.0.1:8770/experiments/r10-09/src/Replica.tsx" target="_blank">experiments/r10-09/src/Replica.tsx:5</a></p><pre>troke={color} strokeWidth=&quot;9&quot; strokeDasharray={`${num===12?254:num*2.82} 283`} transform=&quot;rotate(-90 55 55)&quot; strokeLinecap=&quot;round&quot;/&gt;&lt;/svg&gt;&lt;div style={{position:&#x27;absolute&#x27;,top:30,left:0,width:&#x27;100%&#x27;,te</pre></details></article><article><h3>2. 字段和步骤不再按原来的节奏对应</h3><span class="tag">行为差异</span><div class="cols"><p><b>原片怎么做</b><br>原片每 40 帧推进一步，字段分别延迟 6、44、84、92 帧进入。</p><p><b>复刻怎么做</b><br>复刻步骤约每 0.8 秒改变、字段约每 0.65 秒填入。</p></div><p class="impact"><b>画面影响：</b>选中步骤与内容出现的对应关系不一致。</p><details><summary>查看两份代码的位置与片段</summary><p><b>原源码</b> · <a href="http://127.0.0.1:8770/source-catalog/round10/AleBrito124356--morph-promo/src/scenes-app.tsx" target="_blank">source-catalog/round10/AleBrito124356--morph-promo/src/scenes-app.tsx:76</a></p><pre>w = COPY[lang].wizard;
+  const step = Math.min(3, Math.floor(frame / 40));
+
+  const Field = ({ label, value, delay, mono = false }: { label: string; value: string; delay: number; mono?: boolean }) =&gt; (
+    &lt;div s</pre><p><b>复刻源码</b> · <a href="http://127.0.0.1:8770/experiments/r10-09/src/Replica.tsx" target="_blank">experiments/r10-09/src/Replica.tsx:7</a></p><pre>ight:28,padding:7,fontSize:11,fontWeight:700}}&gt;{t&gt;14.4+i*.65?[&#x27;MySQL 5.7&#x27;,&#x27;PostgreSQL 16&#x27;,&#x27;210 GB · 40 tables&#x27;,&#x27;Minimal&#x27;][i]:&#x27;&#x27;}&lt;/div&gt;&lt;/div&gt;)}&lt;/div&gt;{t&gt;17.5&amp;&amp;&lt;Route/&gt;}&lt;/div&gt;&lt;/&gt;:t&lt;24?&lt;&gt;&lt;Heading label=&quot;AI AN</pre></details></article><article><h3>3. 总花费直接显示最终值</h3><span class="tag">行为差异</span><div class="cols"><p><b>原片怎么做</b><br>原片总花费在本场景第 10–48 帧由 0 计数到 28940。</p><p><b>复刻怎么做</b><br>复刻直接显示 $28,940。</p></div><p class="impact"><b>画面影响：</b>遗漏数据增长的过程。</p><details><summary>查看两份代码的位置与片段</summary><p><b>原源码</b> · <a href="http://127.0.0.1:8770/source-catalog/round10/AleBrito124356--morph-promo/src/scenes-app.tsx" target="_blank">source-catalog/round10/AleBrito124356--morph-promo/src/scenes-app.tsx:30</a></p><pre>t spent = Math.round(interpolate(frame, [10, 48], [0, 28940], { extrapolateLeft: &quot;clamp&quot;, extrapolateRight: &quot;clamp&quot; }));
+  return (
+    &lt;AbsoluteFill style={{ justifyContent: &quot;center&quot;, alignItems: &quot;ce</pre><p><b>复刻源码</b> · <a href="http://127.0.0.1:8770/experiments/r10-09/src/Replica.tsx" target="_blank">experiments/r10-09/src/Replica.tsx:7</a></p><pre>&gt;{s}&lt;/div&gt;&lt;b style={{fontSize:23}}&gt;{[&#x27;12&#x27;,&#x27;3&#x27;,&#x27;8&#x27;,&#x27;$28,940&#x27;][i]}&lt;/b&gt;&lt;div style={{fontSize:9,fontWeight:700,color:i===1?&#x27;#21b8c7&#x27;:i===2?&#x27;#16a572&#x27;:blue,marginTop:3}}&gt;{[&#x27;+3 this month&#x27;,&#x27;analyzing + gene</pre></details></article><article><h3>4. 复杂度仪表有一个特殊值错误</h3><span class="tag">行为差异</span><div class="cols"><p><b>原片怎么做</b><br>原片复杂度数字和圆弧按同一 0→62 的比例变化。</p><p><b>复刻怎么做</b><br>复刻 Gauge 将任何 num=12 都当成仪表盘总数，改画约 90% 圆弧并写 TOTAL。</p></div><p class="impact"><b>画面影响：</b>复杂度经过 12 的那一帧会闪成错误的弧长和标签。</p><details><summary>查看两份代码的位置与片段</summary><p><b>原源码</b> · <a href="http://127.0.0.1:8770/source-catalog/round10/AleBrito124356--morph-promo/src/scenes-app.tsx" target="_blank">source-catalog/round10/AleBrito124356--morph-promo/src/scenes-app.tsx:121</a></p><pre>t score = Math.round(interpolate(frame, [14, 52], [0, 62], { extrapolateLeft: &quot;clamp&quot;, extrapolateRight: &quot;clamp&quot; }));
+  return (
+    &lt;AbsoluteFill style={{ justifyContent: &quot;center&quot;, alignItems: &quot;ce</pre><p><b>复刻源码</b> · <a href="http://127.0.0.1:8770/experiments/r10-09/src/Replica.tsx" target="_blank">experiments/r10-09/src/Replica.tsx:5</a></p><pre>troke={color} strokeWidth=&quot;9&quot; strokeDasharray={`${num===12?254:num*2.82} 283`} transform=&quot;rotate(-90 55 55)&quot; strokeLinecap=&quot;round&quot;/&gt;&lt;/svg&gt;&lt;div style={{position:&#x27;absolute&#x27;,top:30,left:0,width:&#x27;100%&#x27;,textAlig</pre></details></article><article><h3>5. 淡入和横向推入转场全部省略</h3><span class="tag">行为差异</span><div class="cols"><p><b>原片怎么做</b><br>原片场景间重叠 16 帧，交替淡入和从右推入。</p><p><b>复刻怎么做</b><br>复刻用互斥时间分支换场。</p></div><p class="impact"><b>画面影响：</b>切换中间帧缺失，标题和面板也少了进入退出的配合。</p><details><summary>查看两份代码的位置与片段</summary><p><b>原源码</b> · <a href="http://127.0.0.1:8770/source-catalog/round10/AleBrito124356--morph-promo/src/MorphPromo.tsx" target="_blank">source-catalog/round10/AleBrito124356--morph-promo/src/MorphPromo.tsx:14</a></p><pre> const WIDTH = 1920;
+export const HEIGHT = 1080;
+
+const T = 16; // transition length (frames)
+const D = { intro: 84, hook: 90, flow: 144, dashboard: 162, wizard: 174, analysis: 162, demo: 138, artifacts</pre><p><b>复刻源码</b> · <a href="http://127.0.0.1:8770/experiments/r10-09/src/Replica.tsx" target="_blank">experiments/r10-09/src/Replica.tsx:7</a></p><pre>/span&gt; — and an AI does&lt;br/&gt;the work.&lt;/div&gt;&lt;/div&gt;:t&lt;9.7?&lt;&gt;&lt;Heading label=&quot;HOW IT WORKS&quot; title=&quot;From a description to execution-ready.&quot;/&gt;&lt;div style={{display:&#x27;flex&#x27;,gap:13,width:828}}&gt;{[&#x27;Describe yo</pre></details></article></section><section id="r10-10" data-category="软件演示"><h2>r10-10 · Higgsfield 工作流（作者重建版）</h2><p class="muted">软件演示 · 5 项具体差异 · <a href="http://127.0.0.1:8770/compare-round10.html#r10-10" target="_blank">打开视频对照</a></p><p>第 810 帧：原片卡片仍有占位光泽，复刻已经全部显示完成的简笔图；第 867 帧：原片是不同人物与商品照片，复刻反复使用相似人形。</p><details><summary>查看指定帧对照（左参考，右复刻）</summary><a href="data/round10-deep-review/r10-10.jpg" target="_blank"><img src="data/round10-deep-review/r10-10.jpg" loading="lazy" alt="r10-10 指定帧对照"></a></details><article><h3>1. 人物与商品图片被统一简笔图替代</h3><span class="tag">素材差异</span><div class="cols"><p><b>原片怎么做</b><br>原片使用人物、产品照片素材。</p><p><b>复刻怎么做</b><br>复刻用同一套 SVG 人形和包装图按取模改色。</p></div><p class="impact"><b>画面影响：</b>人物身份、产品包装和广告创意外观不同。仅视频输入未提供原素材，需把素材恢复难度单列。</p><details><summary>查看两份代码的位置与片段</summary><p><b>原源码</b> · <a href="http://127.0.0.1:8770/source-catalog/round10/naveen-annam--creativly.ai-higgsfield-video-remotion/src/scenes/Scene02_Seg001.tsx" target="_blank">source-catalog/round10/naveen-annam--creativly.ai-higgsfield-video-remotion/src/scenes/Scene02_Seg001.tsx:368</a></p><pre>ms: &quot;center&quot;, justifyContent: &quot;center&quot;}}&gt;
+        &lt;Img src={src} style={{width: 170, height: 170, objectFit: &quot;contain&quot;}} /&gt;
+      &lt;/div&gt;
+    );
+  } catch {
+    return &lt;PouchSvg /&gt;;
+  }
+};
+
+// --</pre><p><b>复刻源码</b> · <a href="http://127.0.0.1:8770/experiments/r10-10/src/Replica.tsx" target="_blank">experiments/r10-10/src/Replica.tsx:3</a></p><pre>verticalAlign:&#x27;middle&#x27;,marginRight:12}}&gt;✺&lt;/span&gt;;
+function Art({i=0}:{i:number}){let c=[&#x27;#dad9d1&#x27;,&#x27;#889b64&#x27;,&#x27;#edece3&#x27;,&#x27;#5f7150&#x27;,&#x27;#aba89a&#x27;,&#x27;#d2b7a2&#x27;,&#x27;#eed5cc&#x27;,&#x27;#94bfd0&#x27;][i%8];return &lt;svg viewBox=&quot;0 0 160</pre></details></article><article><h3>2. 点击发送动作丢失</h3><span class="tag">行为差异</span><div class="cols"><p><b>原片怎么做</b><br>原片发送按钮附近有游标到达、点击和向按钮处放大的配合。</p><p><b>复刻怎么做</b><br>复刻只放大输入框，没有游标到达和按下。</p></div><p class="impact"><b>画面影响：</b>操作触发分析的过程不完整。</p><details><summary>查看两份代码的位置与片段</summary><p><b>原源码</b> · <a href="http://127.0.0.1:8770/source-catalog/round10/naveen-annam--creativly.ai-higgsfield-video-remotion/src/scenes/Scene02_Seg001.tsx" target="_blank">source-catalog/round10/naveen-annam--creativly.ai-higgsfield-video-remotion/src/scenes/Scene02_Seg001.tsx:8</a></p><pre>+ orange send button.
+//                     Hand cursor lands on the send button, clicks (sparkle),
+//                     composer zooms in toward the send button and fades to white.
+//
+//  Phas</pre><p><b>复刻源码</b> · <a href="http://127.0.0.1:8770/experiments/r10-10/src/Replica.tsx" target="_blank">experiments/r10-10/src/Replica.tsx:8</a></p><pre>lice(0,Math.floor(C((t-3.5)/2.1)*prompt.length))} zoom={1+C((t-6)/1.5)*1.8}/&gt;:t&lt;13?&lt;div style={{position:&#x27;absolute&#x27;,left:120,top:100-Math.max(0,t-9.7)*145,width:760}}&gt;&lt;div style={{fontSize:53,whiteSp</pre></details></article><article><h3>3. 搜索过程的链接被画成短横线</h3><span class="tag">行为差异</span><div class="cols"><p><b>原片怎么做</b><br>原片每条搜索结果有具体 URL 标签和关键词变色。</p><p><b>复刻怎么做</b><br>复刻条目下面只有固定色块短线，正文整体淡入。</p></div><p class="impact"><b>画面影响：</b>丢失链接内容和逐词高亮。</p><details><summary>查看两份代码的位置与片段</summary><p><b>原源码</b> · <a href="http://127.0.0.1:8770/source-catalog/round10/naveen-annam--creativly.ai-higgsfield-video-remotion/src/scenes/Scene02_Seg001.tsx" target="_blank">source-catalog/round10/naveen-annam--creativly.ai-higgsfield-video-remotion/src/scenes/Scene02_Seg001.tsx:74</a></p><pre>rary through Cowork&quot;,                       url: &quot;facebook.com/ads/library&quot;,                                start: FIRST_BULLET + BULLET_STEP * 0},
+  {icon: &quot;search&quot;,      highlight: &quot;Identifying&quot;,  rest: &quot; top com</pre><p><b>复刻源码</b> · <a href="http://127.0.0.1:8770/experiments/r10-10/src/Replica.tsx" target="_blank">experiments/r10-10/src/Replica.tsx:8</a></p><pre>&#x27;◫&#x27;,&#x27;»&#x27;,&#x27;☼&#x27;][i%5]}&lt;/span&gt;{s}&lt;div style={{height:3,width:150+i%3*80,background:&#x27;#d4a998&#x27;,marginLeft:28,opacity:.45,marginTop:8}}/&gt;&lt;/div&gt;)}&lt;/div&gt;:t&lt;17?&lt;&gt;&lt;div style={{position:&#x27;absolute&#x27;,top:100,left:0,wid</pre></details></article><article><h3>4. 卡片移动按取模重置，会突然跳回</h3><span class="tag">行为差异</span><div class="cols"><p><b>原片怎么做</b><br>原片按各卡片独立延迟进入并控制照片和光泽层。</p><p><b>复刻怎么做</b><br>复刻 Cards 使用 t%3 推动整体横移或竖移。</p></div><p class="impact"><b>画面影响：</b>每逢 3 秒边界位置重置，不是原片的连续铺展。</p><details><summary>查看两份代码的位置与片段</summary><p><b>原源码</b> · <a href="http://127.0.0.1:8770/source-catalog/round10/naveen-annam--creativly.ai-higgsfield-video-remotion/src/scenes/Scene05_Seg004.tsx" target="_blank">source-catalog/round10/naveen-annam--creativly.ai-higgsfield-video-remotion/src/scenes/Scene05_Seg004.tsx:566</a></p><pre>has its own delay + sheen + reveal curve.
+  const tileAppear = (delay: number) =&gt;
+    interpolate(frame, [delay, delay + 12], [0, 1], {
+      ...clamped,
+      easing: bezier([0.22, 1, 0.36, 1]),
+    </pre><p><b>复刻源码</b> · <a href="http://127.0.0.1:8770/experiments/r10-10/src/Replica.tsx" target="_blank">experiments/r10-10/src/Replica.tsx:4</a></p><pre>div style={{position:&#x27;absolute&#x27;,left:grid?-8:-100-(t%3)*65,top:grid?-80-(t%3)*60:280,display:&#x27;grid&#x27;,gridTemplateColumns:grid?&#x27;repeat(5, 190px)&#x27;:&#x27;repeat(9, 166px)&#x27;,gap:10,transform:grid?&#x27;none&#x27;:`rota</pre></details></article><article><h3>5. 生成网格没有从占位光泽到照片的过程</h3><span class="tag">行为差异</span><div class="cols"><p><b>原片怎么做</b><br>原片先出现带金属光泽的卡片，再逐步透出照片，部分卡片仍保持占位。</p><p><b>复刻怎么做</b><br>复刻一进入网格阶段就全是完成的 SVG 内容。</p></div><p class="impact"><b>画面影响：</b>遗漏生成中和生成后的区别。</p><details><summary>查看两份代码的位置与片段</summary><p><b>原源码</b> · <a href="http://127.0.0.1:8770/source-catalog/round10/naveen-annam--creativly.ai-higgsfield-video-remotion/src/scenes/Scene05_Seg004.tsx" target="_blank">source-catalog/round10/naveen-annam--creativly.ai-higgsfield-video-remotion/src/scenes/Scene05_Seg004.tsx:571</a></p><pre>sing: bezier([0.22, 1, 0.36, 1]),
+    });
+  const tilePhoto = (delay: number) =&gt;
+    interpolate(frame, [delay + 6, delay + 22], [0, 1], {
+      ...clamped,
+      easing: bezier([0.22, 1, 0.36, 1]),
+</pre><p><b>复刻源码</b> · <a href="http://127.0.0.1:8770/experiments/r10-10/src/Replica.tsx" target="_blank">experiments/r10-10/src/Replica.tsx:8</a></p><pre>7,marginTop:10}}&gt;via Higgsfield MCP&lt;/div&gt;&lt;/div&gt;:&lt;&gt;&lt;Cards t={t} grid/&gt;&lt;div style={{position:&#x27;absolute&#x27;,inset:0,background:&#x27;linear-gradient(#f3f0e7 0%,transparent 12%,transparent 88%,#f3f0e7 100%)&#x27;}}/&gt;&lt;/&gt;}&lt;/Ab</pre></details></article></section><section id="r10-11" data-category="产品营销"><h2>r10-11 · Remotion Lambda 云渲染介绍</h2><p class="muted">产品营销 · 4 项具体差异 · <a href="http://127.0.0.1:8770/compare-round10.html#r10-11" target="_blank">打开视频对照</a></p><p>第 666 帧数字轮廓已不同。第 681 帧：参考粒子正在散开变形，复刻直接显示完整的 30。</p><details><summary>查看指定帧对照（左参考，右复刻）</summary><a href="data/round10-deep-review/r10-11.jpg" target="_blank"><img src="data/round10-deep-review/r10-11.jpg" loading="lazy" alt="r10-11 指定帧对照"></a></details><article><h3>1. 粒子数字只是虚线文字</h3><span class="tag">行为差异</span><div class="cols"><p><b>原片怎么做</b><br>原片为数字轮廓采样点，并在两个数字之间逐点移动。</p><p><b>复刻怎么做</b><br>复刻直接改 text 内容，使用虚线描边模拟粒子。</p></div><p class="impact"><b>画面影响：</b>数字从 35 变 30 再变 25 时，中间粒子移动过程不存在。</p><details><summary>查看两份代码的位置与片段</summary><p><b>原源码</b> · <a href="http://127.0.0.1:8770/source-catalog/round10/remotion-dev--trailer-lambda/src/StarryNumber.tsx" target="_blank">source-catalog/round10/remotion-dev--trailer-lambda/src/StarryNumber.tsx:5</a></p><pre> {extendViewbox} from &#x27;./extend-viewbox&#x27;;
+import {interpolateStarryNumber} from &#x27;./get-starry-number&#x27;;
+import {getViewBoxFromBoundingBox} from &#x27;./get-viewbox-from-bounding-box&#x27;;
+import {useFont} from &#x27;./load-font&#x27;</pre><p><b>复刻源码</b> · <a href="http://127.0.0.1:8770/experiments/r10-11/src/Replica.tsx" target="_blank">experiments/r10-11/src/Replica.tsx:4</a></p><pre>290&quot; fill=&quot;none&quot; stroke=&quot;white&quot; strokeWidth=&quot;2.8&quot; strokeDasharray=&quot;1 10&quot; strokeLinecap=&quot;round&quot;&gt;{n}&lt;/text&gt;{Array.from({length:200},(_,i)=&gt;&lt;circle key={i} cx={(i*173.17)%960} cy={(i*97.3)%540} r={i%4/5} fill=&quot;white</pre></details></article><article><h3>2. 数字变 React 图形时对象没有延续</h3><span class="tag">行为差异</span><div class="cols"><p><b>原片怎么做</b><br>原片将数字粒子交给 ToReactStarry 完成后续变化。</p><p><b>复刻怎么做</b><br>复刻另生成 1100 个围绕三条椭圆运动的点。</p></div><p class="impact"><b>画面影响：</b>数字突然消失后换了一批点，没有从原数字聚散成标志。</p><details><summary>查看两份代码的位置与片段</summary><p><b>原源码</b> · <a href="http://127.0.0.1:8770/source-catalog/round10/remotion-dev--trailer-lambda/src/StarryNumbers.tsx" target="_blank">source-catalog/round10/remotion-dev--trailer-lambda/src/StarryNumbers.tsx:105</a></p><pre>shoot
+									}px)`,
+								}}
+							&gt;
+								&lt;ToReactStarry /&gt;
+							&lt;/AbsoluteFill&gt;
+						&lt;/Series.Sequence&gt;
+					&lt;/Series&gt;
+				&lt;/AbsoluteFill&gt;
+				&lt;Sequence from={300}&gt;
+					&lt;AbsoluteFill&gt;
+						&lt;</pre><p><b>复刻源码</b> · <a href="http://127.0.0.1:8770/experiments/r10-11/src/Replica.tsx" target="_blank">experiments/r10-11/src/Replica.tsx:4</a></p><pre>;scene=&lt;svg width=&quot;960&quot; height=&quot;540&quot;&gt;{Array.from({length:1100},(_,i)=&gt;{let a=i*.43+t*2,orb=i%3;let x=210*Math.cos(a),y=65*Math.sin(a);let rot=orb*Math.PI/3+t*.15;return &lt;circle key={i} cx={480+x*Math.co</pre></details></article><article><h3>3. 数字切换过快</h3><span class="tag">行为差异</span><div class="cols"><p><b>原片怎么做</b><br>原片粒子数字各阶段长度为 30 帧，即 1 秒。</p><p><b>复刻怎么做</b><br>复刻每 0.7 秒切一次 35、30、25。</p></div><p class="impact"><b>画面影响：</b>数字变化节奏和后续图形出现时间不同。</p><details><summary>查看两份代码的位置与片段</summary><p><b>原源码</b> · <a href="http://127.0.0.1:8770/source-catalog/round10/remotion-dev--trailer-lambda/src/StarryNumbers.tsx" target="_blank">source-catalog/round10/remotion-dev--trailer-lambda/src/StarryNumbers.tsx:30</a></p><pre>* interpolate(frame, [0, 500], [1, 1.5]);
+
+	const seq1Length = 30;
+	const seq2Length = 30;
+	const seq3Length = 30;
+	const seq4Length = 800;
+
+	const startRenderedIn = seq1Length + seq2Length + seq3Length + </pre><p><b>复刻源码</b> · <a href="http://127.0.0.1:8770/experiments/r10-11/src/Replica.tsx" target="_blank">experiments/r10-11/src/Replica.tsx:4</a></p><pre>&lt;24.8){bg=&#x27;black&#x27;;let n=Math.max(25,35-Math.floor((t-21.7)/.7)*5);scene=&lt;svg width=&quot;960&quot; height=&quot;540&quot;&gt;&lt;text x=&quot;480&quot; y=&quot;342&quot; textAnchor=&quot;middle&quot; fontFamily=&quot;Arial&quot; fontWeight=&quot;700&quot; fontSize=&quot;290&quot; fill=&quot;none</pre></details></article><article><h3>4. 火箭的运动和烟雾过于简化</h3><span class="tag">行为差异</span><div class="cols"><p><b>原片怎么做</b><br>原片火箭有进入位移、二维晃动、旋转和独立尾烟变化。</p><p><b>复刻怎么做</b><br>复刻火箭基本固定在中央，只用正弦旋转和若干椭圆模拟烟。</p></div><p class="impact"><b>画面影响：</b>升起、晃动及尾烟消散的配合没有恢复。</p><details><summary>查看两份代码的位置与片段</summary><p><b>原源码</b> · <a href="http://127.0.0.1:8770/source-catalog/round10/remotion-dev--trailer-lambda/src/RocketShip.tsx" target="_blank">source-catalog/round10/remotion-dev--trailer-lambda/src/RocketShip.tsx:91</a></p><pre> useMemo(() =&gt; new SimplexNoise(&#x27;rotate&#x27;), []);
+
+	const xOffset = shake.noise2D(0, frame / 30) * 30;
+	const YOffset = shakeX.noise2D(0, frame / 30) * 30;
+	const rotation = (rotate.noise2D(0, frame / 80) </pre><p><b>复刻源码</b> · <a href="http://127.0.0.1:8770/experiments/r10-11/src/Replica.tsx" target="_blank">experiments/r10-11/src/Replica.tsx:4</a></p><pre>00 460&quot; style={{marginTop:100,transform:`rotate(${Math.sin(t*3)*3}deg)`}}&gt;{Array.from({length:13},(_,i)=&gt;&lt;ellipse key={i} cx={150+Math.sin(i*15+t*5)*7} cy={310+i*12} rx={35+Math.sin(i+t*9)*5} ry=&quot;27&quot; fill=</pre></details></article></section><section id="r10-12" data-category="数据叙事"><h2>r10-12 · 折纸 42 次有多厚</h2><p class="muted">数据叙事 · 4 项具体差异 · <a href="http://127.0.0.1:8770/compare-round10.html#r10-12" target="_blank">打开视频对照</a></p><p>第 153 帧都显示第 6 折，但厚度分别是 9.70 mm 和 8.14 mm。第 615 帧厚度均约 439805 km，原片月球提示已亮，复刻仍停在 1/3 月球距离。</p><details><summary>查看指定帧对照（左参考，右复刻）</summary><a href="data/round10-deep-review/r10-12.jpg" target="_blank"><img src="data/round10-deep-review/r10-12.jpg" loading="lazy" alt="r10-12 指定帧对照"></a></details><article><h3>1. 增长曲线被少量采样点近似</h3><span class="tag">行为差异</span><div class="cols"><p><b>原片怎么做</b><br>原片连续计算 foldF=42×[1−(1−t)^2.4]，再算厚度。</p><p><b>复刻怎么做</b><br>复刻在 18 个采样点之间线性插值折数。厚度仍正确使用 0.1×2^n。</p></div><p class="impact"><b>画面影响：</b>不应说厚度公式丢了；真正差异是中间帧折数和速度不完全相同。</p><details><summary>查看两份代码的位置与片段</summary><p><b>原源码</b> · <a href="http://127.0.0.1:8770/source-catalog/round10/znyupup--knowledge-explainer-skill/custom/PaperFold.jsx" target="_blank">source-catalog/round10/znyupup--knowledge-explainer-skill/custom/PaperFold.jsx:47</a></p><pre>ath.max(0, frame / animEnd));
+  const eased = 1 - Math.pow(1 - t, 2.4);
+  const foldF = eased * TOTAL_FOLDS;
+  const fold = Math.floor(foldF + 0.0001);
+
+  // 厚度
+  const thicknessM = PAPER_MM * 1e-3 * Math.pow(2</pre><p><b>复刻源码</b> · <a href="http://127.0.0.1:8770/experiments/r10-12/src/Replica.tsx" target="_blank">experiments/r10-12/src/Replica.tsx:2</a></p><pre>eFill,useCurrentFrame,interpolate}from&#x27;remotion&#x27;;
+const stops=[0.1,.74,40.3,1530,40470,758700,10170000,98720000,702250000,3711820000,14789000000,45122000000,107246000000,202429000000,310180000000,39610</pre></details></article><article><h3>2. 早期柱高与折数不对应</h3><span class="tag">行为差异</span><div class="cols"><p><b>原片怎么做</b><br>原片柱高始终与折数 n 成正比；7 折对应输出高度约 46.7 像素。</p><p><b>复刻怎么做</b><br>复刻把 10 折放在 47 像素处，7 折仅约 32.9 像素。</p></div><p class="impact"><b>画面影响：</b>柱高、读数和巧克力刻度在前半段对不上。</p><details><summary>查看两份代码的位置与片段</summary><p><b>原源码</b> · <a href="http://127.0.0.1:8770/source-catalog/round10/znyupup--knowledge-explainer-skill/custom/PaperFold.jsx" target="_blank">source-catalog/round10/znyupup--knowledge-explainer-skill/custom/PaperFold.jsx:64</a></p><pre>nst barHpx = height - 160;
+  const barTop = 80;
+  const fillH = (foldF / TOTAL_FOLDS) * barHpx;
+  const barX = 100;
+  const barW = 36;
+
+  // 颜色:从紫渐变到红
+  const gradId = &#x27;pfGrad&#x27;;
+
+  return (
+    &lt;Absolu</pre><p><b>复刻源码</b> · <a href="http://127.0.0.1:8770/experiments/r10-12/src/Replica.tsx" target="_blank">experiments/r10-12/src/Replica.tsx:3</a></p><pre>oString():v.toFixed(2);const height=interpolate(n,[0,10,14,17,20,23,27,30,35,40,42],[0,47,93,113,133,153,180,201,234,266,280],{extrapolateRight:&#x27;clamp&#x27;});const reached=thresholds.filter(x=&gt;mm&gt;=x.mm).a</pre></details></article><article><h3>3. 里程碑阈值不一致，最后一项永远到不了</h3><span class="tag">行为差异</span><div class="cols"><p><b>原片怎么做</b><br>原片按折数 7、14…42 判断已经达到的里程碑。</p><p><b>复刻怎么做</b><br>复刻按另一套毫米阈值判断；月球阈值 4470 亿毫米，高于最终 4398 亿毫米。</p></div><p class="impact"><b>画面影响：</b>42 折结束时，提示仍停在“1/3 月球距离”。巧克力阈值也由约 12.8 mm 变成 100 mm。</p><details><summary>查看两份代码的位置与片段</summary><p><b>原源码</b> · <a href="http://127.0.0.1:8770/source-catalog/round10/znyupup--knowledge-explainer-skill/custom/PaperFold.jsx" target="_blank">source-catalog/round10/znyupup--knowledge-explainer-skill/custom/PaperFold.jsx:59</a></p><pre> 22], [0, 1], clamp());
+
+  // 当前已通过的最大里程碑
+  const reachedMilestone = MILESTONES.slice().reverse().find(m =&gt; fold &gt;= m.n);
+
+  // 柱高 = log scale = 直接 fold/42 比例
+  const barHpx = height - 160;
+  const barTop =</pre><p><b>复刻源码</b> · <a href="http://127.0.0.1:8770/experiments/r10-12/src/Replica.tsx" target="_blank">experiments/r10-12/src/Replica.tsx:2</a></p><pre>&#x27;},{y:54,mm:128000000000,s:&#x27;🌘 1/3 月球距离&#x27;},{y:40,mm:447000000000,s:&#x27;🌙 超过月球 447km&#x27;}];
+export const Replica:React.FC=()=&gt;{const t=useCurrentFrame()/30;const n=interpolate(t,times,stops.map(x=&gt;Math.log2(x/.1</pre></details></article><article><h3>4. 地标名称和距离抄错</h3><span class="tag">行为差异</span><div class="cols"><p><b>原片怎么做</b><br>原片写“迪拜塔”和“超过月球 44万km”。</p><p><b>复刻怎么做</b><br>复刻写“沃昇塔”和“超过月球 447km”。</p></div><p class="impact"><b>画面影响：</b>这是可以直接核对的文案错误。</p><details><summary>查看两份代码的位置与片段</summary><p><b>原源码</b> · <a href="http://127.0.0.1:8770/source-catalog/round10/znyupup--knowledge-explainer-skill/custom/PaperFold.jsx" target="_blank">source-catalog/round10/znyupup--knowledge-explainer-skill/custom/PaperFold.jsx:23</a></p><pre>label: &#x27;1/3 月球距离&#x27;, emoji: &#x27;🌑&#x27;},
+  {n: 42, label: &#x27;超过月球 44万km&#x27;, emoji: &#x27;🌙&#x27;},
+];
+
+function formatThickness(m) {
+  if (m &lt; 0.01) return {val: (m * 1000).toFixed(2), unit: &#x27;mm&#x27;};
+  if (m &lt; 1) return {val:</pre><p><b>复刻源码</b> · <a href="http://127.0.0.1:8770/experiments/r10-12/src/Replica.tsx" target="_blank">experiments/r10-12/src/Replica.tsx:2</a></p><pre>000000,s:&#x27;🌘 1/3 月球距离&#x27;},{y:40,mm:447000000000,s:&#x27;🌙 超过月球 447km&#x27;}];
+export const Replica:React.FC=()=&gt;{const t=useCurrentFrame()/30;const n=interpolate(t,times,stops.map(x=&gt;Math.log2(x/.1)),{extrapolateL</pre></details></article></section><section id="r10-13" data-category="产品营销"><h2>r10-13 · Creativly 创作工具发布片</h2><p class="muted">产品营销 · 5 项具体差异 · <a href="http://127.0.0.1:8770/compare-round10.html#r10-13" target="_blank">打开视频对照</a></p><p>第 150 帧：参考只完成当前流程的一部分，复刻多面板及连接已出现。第 711 帧：参考选中 Claymation，复刻仍选中 3D Render，背景素材也不同。</p><details><summary>查看指定帧对照（左参考，右复刻）</summary><a href="data/round10-deep-review/r10-13.jpg" target="_blank"><img src="data/round10-deep-review/r10-13.jpg" loading="lazy" alt="r10-13 指定帧对照"></a></details><article><h3>1. 流程图没有从局部到全局的镜头移动</h3><span class="tag">行为差异</span><div class="cols"><p><b>原片怎么做</b><br>原片镜头缩放由 1.45 逐步降至 0.75，并同时沿 x、y 移动。</p><p><b>复刻怎么做</b><br>复刻只给固定布局一个短距离横移。</p></div><p class="impact"><b>画面影响：</b>缺少先看局部操作、再看完整流程的视觉引导。</p><details><summary>查看两份代码的位置与片段</summary><p><b>原源码</b> · <a href="http://127.0.0.1:8770/source-catalog/round10/naveen-annam--creativly.ai-brand-video-remotion/src/scenes/FlowDemoScene.tsx" target="_blank">source-catalog/round10/naveen-annam--creativly.ai-brand-video-remotion/src/scenes/FlowDemoScene.tsx:79</a></p><pre>de, gradually pull back to reveal full pipeline
+  const camScale = interpolate(
+    frame,
+    [0, 20, 55, 90, 125, 165],
+    [1.45, 1.25, 1.0, 0.88, 0.78, 0.75],
+    { extrapolateLeft: &quot;clamp&quot;, extrapola</pre><p><b>复刻源码</b> · <a href="http://127.0.0.1:8770/experiments/r10-13/src/Replica.tsx" target="_blank">experiments/r10-13/src/Replica.tsx:6</a></p><pre>style={{opacity:C((t-3)*2),transform:`translate(${(1-C(t-4))*50}px,0)`}}&gt;&lt;Panel x={200} y={170} kind={0}/&gt;{t&gt;4.3&amp;&amp;&lt;&gt;&lt;Panel x={405} y={70} kind={3}/&gt;&lt;Panel x={405} y={270} kind={1}/&gt;&lt;/&gt;}{t&gt;5.5&amp;&amp;&lt;Panel x={610} y</pre></details></article><article><h3>2. 节点出现了，但处理过程被省略</h3><span class="tag">行为差异</span><div class="cols"><p><b>原片怎么做</b><br>原片节点有输入文字、扫描处理、结果揭示、连线绘制和选中状态。</p><p><b>复刻怎么做</b><br>复刻面板使用固定占位内容，连线一开始就完整显示。</p></div><p class="impact"><b>画面影响：</b>流程中的先后、输入输出关系和当前正在处理的节点不清楚。</p><details><summary>查看两份代码的位置与片段</summary><p><b>原源码</b> · <a href="http://127.0.0.1:8770/source-catalog/round10/naveen-annam--creativly.ai-brand-video-remotion/src/scenes/FlowDemoScene.tsx" target="_blank">source-catalog/round10/naveen-annam--creativly.ai-brand-video-remotion/src/scenes/FlowDemoScene.tsx:123</a></p><pre>lamp&quot;, easing: Easing.inOut(Easing.quad),
+  });
+  const showScan1 = frame &gt;= 40 &amp;&amp; frame &lt;= 53;
+
+  // ─── Edge drawing ───
+  const edge1P = interpolate(frame, [52, 66], [0, 1], {
+    extrapolateLeft: &quot;clam</pre><p><b>复刻源码</b> · <a href="http://127.0.0.1:8770/experiments/r10-13/src/Replica.tsx" target="_blank">experiments/r10-13/src/Replica.tsx:4</a></p><pre>5 285&quot; stroke=&quot;#d8bd8b&quot; strokeWidth=&quot;24&quot;/&gt;&lt;/svg&gt;}
+function Panel({x,y,w=145,h=175,kind=0}:{x:number,y:number,w?:number,h?:number,kind?:number}){return &lt;div style={{position:&#x27;absolute&#x27;,left:x,top:y,width:w</pre></details></article><article><h3>3. 风格按钮切换与图片效果脱节</h3><span class="tag">行为差异</span><div class="cols"><p><b>原片怎么做</b><br>原片 activeStyle 同时决定按钮、高亮颜色和背景滤镜。</p><p><b>复刻怎么做</b><br>复刻按钮按时间切换，图片只在 24 秒后统一灰度化。</p></div><p class="impact"><b>画面影响：</b>选择不同风格时，图片没有同步变成对应效果。</p><details><summary>查看两份代码的位置与片段</summary><p><b>原源码</b> · <a href="http://127.0.0.1:8770/source-catalog/round10/naveen-annam--creativly.ai-brand-video-remotion/src/scenes/StylePresetsScene.tsx" target="_blank">source-catalog/round10/naveen-annam--creativly.ai-brand-video-remotion/src/scenes/StylePresetsScene.tsx:48</a></p><pre>ntFrame();
+  const { fps } = useVideoConfig();
+
+  const activeStyleIndex = Math.floor(frame / 20) % STYLES.length;
+  const activeStyle = STYLES[activeStyleIndex];
+
+  const glowPulse = 0.15 + 0.08 * noise2D(&quot;</pre><p><b>复刻源码</b> · <a href="http://127.0.0.1:8770/experiments/r10-13/src/Replica.tsx" target="_blank">experiments/r10-13/src/Replica.tsx:6</a></p><pre>:&#x27;absolute&#x27;,inset:&#x27;-35px 80px&#x27;,opacity:.45,filter:t&gt;24?&#x27;grayscale(1)&#x27;:&#x27;none&#x27;}}&gt;&lt;Astronaut/&gt;&lt;/div&gt;&lt;div style={{position:&#x27;absolute&#x27;,width:&#x27;100%&#x27;,textAlign:&#x27;center&#x27;,top:171}}&gt;&lt;div style={{fontSize:10</pre></details></article><article><h3>4. 照片和模板预览被替换成插画或色块</h3><span class="tag">素材差异</span><div class="cols"><p><b>原片怎么做</b><br>原片使用真实图片和预览内容。</p><p><b>复刻怎么做</b><br>复刻狗、宇航员用 SVG 重画，多张模板用渐变或简化形状代替。</p></div><p class="impact"><b>画面影响：</b>主体纹理与不同模板的视觉特征丢失。此项受未提供素材包影响。</p><details><summary>查看两份代码的位置与片段</summary><p><b>原源码</b> · <a href="http://127.0.0.1:8770/source-catalog/round10/naveen-annam--creativly.ai-brand-video-remotion/src/scenes/FocusedDemoScene.tsx" target="_blank">source-catalog/round10/naveen-annam--creativly.ai-brand-video-remotion/src/scenes/FocusedDemoScene.tsx:254</a></p><pre>ba(255,255,255,0.08)&quot;,
+        }}
+      &gt;
+        &lt;Img
+          src={staticFile(&quot;focused-editor.jpg&quot;)}
+          style={{ width: &quot;100%&quot;, height: &quot;100%&quot;, objectFit: &quot;cover&quot; }}
+        /&gt;
+
+      </pre><p><b>复刻源码</b> · <a href="http://127.0.0.1:8770/experiments/r10-13/src/Replica.tsx" target="_blank">experiments/r10-13/src/Replica.tsx:3</a></p><pre>52&quot; width=&quot;60&quot; height=&quot;7&quot; fill=&quot;#54716d&quot;/&gt;&lt;/svg&gt;}
+function Dog(){return &lt;svg viewBox=&quot;0 0 340 285&quot; width=&quot;100%&quot; height=&quot;100%&quot;&gt;&lt;defs&gt;&lt;linearGradient id=&quot;grass&quot;&gt;&lt;stop stopColor=&quot;#7a8748&quot;/&gt;&lt;stop offset=&quot;1&quot;</pre></details></article><article><h3>5. 音频可视化缺少倒影和层次</h3><span class="tag">行为差异</span><div class="cols"><p><b>原片怎么做</b><br>原片频谱包含主柱、上下翻转的倒影、遮罩及光晕层。</p><p><b>复刻怎么做</b><br>复刻只有 59 根模糊竖条按正弦改变高度。</p></div><p class="impact"><b>画面影响：</b>运动仍存在，但轮廓、上下关系和明暗层次不同；不评价其是否对应真实音频。</p><details><summary>查看两份代码的位置与片段</summary><p><b>原源码</b> · <a href="http://127.0.0.1:8770/source-catalog/round10/naveen-annam--creativly.ai-brand-video-remotion/src/scenes/AudioGenerationScene.tsx" target="_blank">source-catalog/round10/naveen-annam--creativly.ai-brand-video-remotion/src/scenes/AudioGenerationScene.tsx:370</a></p><pre>            height: 60,
+              transform: &quot;scaleY(-1)&quot;,
+              maskImage:
+                &quot;linear-gradient(to bottom, rgba(0,0,0,0.15), transparent)&quot;,
+              WebkitMaskImage:
+    </pre><p><b>复刻源码</b> · <a href="http://127.0.0.1:8770/experiments/r10-13/src/Replica.tsx" target="_blank">experiments/r10-13/src/Replica.tsx:6</a></p><pre>:630,height:160,filter:&#x27;blur(2px)&#x27;}}&gt;{Array.from({length:59},(_,i)=&gt;&lt;span key={i} style={{width:3,height:20+Math.abs(Math.sin(i*.31+t*4))*90,background:&#x27;linear-gradient(transparent,#94bdeb88,transpare</pre></details></article></section><section id="r10-14" data-category="品牌形象"><h2>r10-14 · Magnific 品牌发布片（作者重建版）</h2><p class="muted">品牌形象 · 5 项具体差异 · <a href="http://127.0.0.1:8770/compare-round10.html#r10-14" target="_blank">打开视频对照</a></p><p>第 824→825 帧：原片标志大小稳定，复刻从很小突然放大。第 912 帧：两者字标基本出现，但字号、位置和之前的进入过程不同。</p><details><summary>查看指定帧对照（左参考，右复刻）</summary><a href="data/round10-deep-review/r10-14.jpg" target="_blank"><img src="data/round10-deep-review/r10-14.jpg" loading="lazy" alt="r10-14 指定帧对照"></a></details><article><h3>1. 图片内容被重复的简笔图替代</h3><span class="tag">素材差异</span><div class="cols"><p><b>原片怎么做</b><br>原片使用具体人物和场景图片。</p><p><b>复刻怎么做</b><br>复刻将画面重画为云、山和几何人形；缩略图反复使用三类图案。</p></div><p class="impact"><b>画面影响：</b>构图能粗略辨认，人物姿态、材质和每张素材的区别无法保留。</p><details><summary>查看两份代码的位置与片段</summary><p><b>原源码</b> · <a href="http://127.0.0.1:8770/source-catalog/round10/naveen-annam--creativly.ai-magnific-video-remotion/src/scenes/Scene04_RewriteDream.tsx" target="_blank">source-catalog/round10/naveen-annam--creativly.ai-magnific-video-remotion/src/scenes/Scene04_RewriteDream.tsx:142</a></p><pre>          }}
+          /&gt;
+        ) : (
+          &lt;Img
+            src={staticFile(&quot;aigen/scene04/clouds_pink.png&quot;)}
+            style={{
+              position: &quot;absolute&quot;,
+              inset:</pre><p><b>复刻源码</b> · <a href="http://127.0.0.1:8770/experiments/r10-14/src/Replica.tsx" target="_blank">experiments/r10-14/src/Replica.tsx:3</a></p><pre>onst clamp=(x:number)=&gt;Math.min(1,Math.max(0,x));
+const Art=({kind=0,t=0}:{kind?:number,t?:number})=&gt;&lt;svg viewBox=&quot;0 0 960 540&quot; width=&quot;100%&quot; height=&quot;100%&quot; preserveAspectRatio=&quot;xMidYMid slice&quot;&gt;&lt;defs&gt;&lt;</pre></details></article><article><h3>2. 开头卡片位置按取模跳回</h3><span class="tag">行为差异</span><div class="cols"><p><b>原片怎么做</b><br>原片为开场卡片设计连续的展开和移动。</p><p><b>复刻怎么做</b><br>复刻卡片 y 用 (i×140+t×120)%1000−280 计算，后半又更换布局。</p></div><p class="impact"><b>画面影响：</b>部分卡片到循环边界会回跳，展开次序与卡片身份不一致。</p><details><summary>查看两份代码的位置与片段</summary><p><b>原源码</b> · <a href="http://127.0.0.1:8770/source-catalog/round10/naveen-annam--creativly.ai-magnific-video-remotion/src/scenes/Scene01_Cascade.tsx" target="_blank">source-catalog/round10/naveen-annam--creativly.ai-magnific-video-remotion/src/scenes/Scene01_Cascade.tsx:2</a></p><pre>port {AbsoluteFill, Img, interpolate, staticFile, useCurrentFrame, Easing} from &quot;remotion&quot;;
+import {FONT_FAMILY, bezier, clamped, fadeWindow} from &quot;../helpers&quot;;
+import {FONT, MOTION, PALETTE, VIDEO_HEIGHT,</pre><p><b>复刻源码</b> · <a href="http://127.0.0.1:8770/experiments/r10-14/src/Replica.tsx" target="_blank">experiments/r10-14/src/Replica.tsx:5</a></p><pre> x=t&lt;2.7?300:75+(i*167)%780,y=t&lt;2.7?(i*140+ t*120)%1000-280:(i*131)%780-120;return &lt;div key={i} style={{position:&#x27;absolute&#x27;,left:x,top:y,width:t&lt;2.7?360:180,height:t&lt;2.7?145:120,borderRadius:8,ove</pre></details></article><article><h3>3. 结尾字标出现时间提前</h3><span class="tag">行为差异</span><div class="cols"><p><b>原片怎么做</b><br>原片锁定字标场景从 30 秒开始，文字在本场景第 4–24 帧揭示。</p><p><b>复刻怎么做</b><br>复刻从 29 秒开始淡入 Magnific。</p></div><p class="impact"><b>画面影响：</b>约提前 1.13 秒开始出现，而且进入方式不同。</p><details><summary>查看两份代码的位置与片段</summary><p><b>原源码</b> · <a href="http://127.0.0.1:8770/source-catalog/round10/naveen-annam--creativly.ai-magnific-video-remotion/src/tokens.ts" target="_blank">source-catalog/round10/naveen-annam--creativly.ai-magnific-video-remotion/src/tokens.ts:101</a></p><pre> left, Magnific wordmark reveals, holds
+  {name: &quot;07-magnific-lockup&quot;, duration: 150, sourceFrameRange: &quot;frame_0029 → frame_0031&quot;},
+];
+
+// Cumulative starts — computed once.
+export const BEAT_STARTS = BEATS.r</pre><p><b>复刻源码</b> · <a href="http://127.0.0.1:8770/experiments/r10-14/src/Replica.tsx" target="_blank">experiments/r10-14/src/Replica.tsx:5</a></p><pre>96H62L50 88L40 96H0Z&quot; fill=&quot;currentColor&quot;/&gt;&lt;/svg&gt;{t&gt;29&amp;&amp;&lt;span style={{fontSize:35,fontWeight:600,letterSpacing:-1,opacity:clamp((t-29)*2)}}&gt;Magnific&lt;/span&gt;}&lt;/div&gt;};return &lt;AbsoluteFill style={{bac</pre></details></article><article><h3>4. 字标横向揭示被整体淡入替代</h3><span class="tag">行为差异</span><div class="cols"><p><b>原片怎么做</b><br>原片扩大文字容器宽度，并让图标和文字随宽度变化重新居中。</p><p><b>复刻怎么做</b><br>复刻整段文字同时淡入，宽度不随揭示进度变化。</p></div><p class="impact"><b>画面影响：</b>文字逐字露出和图标向左让位的过程丢失。</p><details><summary>查看两份代码的位置与片段</summary><p><b>原源码</b> · <a href="http://127.0.0.1:8770/source-catalog/round10/naveen-annam--creativly.ai-magnific-video-remotion/src/scenes/Scene07_MagnificLockup.tsx" target="_blank">source-catalog/round10/naveen-annam--creativly.ai-magnific-video-remotion/src/scenes/Scene07_MagnificLockup.tsx:53</a></p><pre>mped,
+    easing: bezier(MOTION.expoOut),
+  });
+  const wordWidth = interpolate(wordReveal, [0, 1], [0, WORD_FINAL_WIDTH]);
+
+  return (
+    &lt;AbsoluteFill style={{background: PALETTE.paper, opacity: sceneOp</pre><p><b>复刻源码</b> · <a href="http://127.0.0.1:8770/experiments/r10-14/src/Replica.tsx" target="_blank">experiments/r10-14/src/Replica.tsx:5</a></p><pre>yle={{fontSize:35,fontWeight:600,letterSpacing:-1,opacity:clamp((t-29)*2)}}&gt;Magnific&lt;/span&gt;}&lt;/div&gt;};return &lt;AbsoluteFill style={{background:bg,color:&#x27;white&#x27;,fontFamily:&#x27;Arial,Helvetica,sans-serif&#x27;,display:&#x27;flex&#x27;,a</pre></details></article><article><h3>5. 标志缩小时有一次明显尺寸跳变</h3><span class="tag">行为差异</span><div class="cols"><p><b>原片怎么做</b><br>原片标志从大到小连续缩放，再略微回弹。</p><p><b>复刻怎么做</b><br>复刻先缩至 440×0.04=17.6 像素，27.5 秒时直接改为 40 像素。</p></div><p class="impact"><b>画面影响：</b>标志会突然变大，无法用调透明度解释。</p><details><summary>查看两份代码的位置与片段</summary><p><b>原源码</b> · <a href="http://127.0.0.1:8770/source-catalog/round10/naveen-annam--creativly.ai-magnific-video-remotion/src/scenes/Scene06_Transforms.tsx" target="_blank">source-catalog/round10/naveen-annam--creativly.ai-magnific-video-remotion/src/scenes/Scene06_Transforms.tsx:272</a></p><pre>(frame, [14, 20, 26], [0, -0.025, 0], clamped);
+  const finalScale = scale + settle;
+
+  return (
+    &lt;AbsoluteFill
+      style={{display: &quot;flex&quot;, alignItems: &quot;center&quot;, justifyContent: &quot;center&quot;}}
+    &gt;
+     </pre><p><b>复刻源码</b> · <a href="http://127.0.0.1:8770/experiments/r10-14/src/Replica.tsx" target="_blank">experiments/r10-14/src/Replica.tsx:5</a></p><pre>nter&#x27;,gap:12,color:&#x27;#210c18&#x27;}}&gt;&lt;svg width={t&lt;27.5?440*p:40} height={t&lt;27.5?440*p:40} viewBox=&quot;0 0 100 100&quot;&gt;&lt;path d=&quot;M10 8H31L50 53L66 8H88L100 96H62L50 88L40 96H0Z&quot; fill=&quot;currentColor&quot;/&gt;&lt;/svg&gt;{t&gt;29</pre></details></article></section><section id="r10-15" data-category="数据叙事"><h2>r10-15 · GitHub Unwrapped 2021</h2><p class="muted">数据叙事 · 5 项具体差异 · <a href="http://127.0.0.1:8770/compare-round10.html#r10-15" target="_blank">打开视频对照</a></p><p>第 375 帧：同为 February，原片 28 格、复刻 31 格，颜色也不同。第 630 帧：原片仍为 195 的全绿圆，复刻已经变为 120 和部分紫色。</p><details><summary>查看指定帧对照（左参考，右复刻）</summary><a href="data/round10-deep-review/r10-15.jpg" target="_blank"><img src="data/round10-deep-review/r10-15.jpg" loading="lazy" alt="r10-15 指定帧对照"></a></details><article><h3>1. 贡献日历不是原来的数据</h3><span class="tag">行为差异</span><div class="cols"><p><b>原片怎么做</b><br>原片每天的格子颜色来自 stats.contributions。</p><p><b>复刻怎么做</b><br>复刻按索引取模选六种颜色，并统一生成 31 格，十二月只生成 12 格。</p></div><p class="impact"><b>画面影响：</b>月份名字和总数能对上，但每一天及每个月的图形并不可靠。</p><details><summary>查看两份代码的位置与片段</summary><p><b>原源码</b> · <a href="http://127.0.0.1:8770/source-catalog/round10/remotion-dev--github-unwrapped-2021/remotion/Green.tsx" target="_blank">source-catalog/round10/remotion-dev--github-unwrapped-2021/remotion/Green.tsx:71</a></p><pre>e}
+                  style={{
+                    backgroundColor: color,
+                    width: 80,
+                    height: 80,
+                    borderRadius: 12,
+                    margin: 12,
+     </pre><p><b>复刻源码</b> · <a href="http://127.0.0.1:8770/experiments/r10-15/src/Replica.tsx" target="_blank">experiments/r10-15/src/Replica.tsx:4</a></p><pre>9c36c&#x27;,&#x27;#2ca151&#x27;,&#x27;#eaf0f2&#x27;,&#x27;#9ce7ac&#x27;,&#x27;#39c36c&#x27;][((i*13+month*17)%23)%6],transform:`translateY(${t&lt;12?Math.max(0,12-t)*220:0}px)`}}/&gt;)}&lt;/div&gt;&lt;/div&gt;:t&lt;18?&lt;div&gt;{text(String(Math.min(7235,Math.round((t-16)*10000))</pre></details></article><article><h3>2. 月份播放时长不同</h3><span class="tag">行为差异</span><div class="cols"><p><b>原片怎么做</b><br>原片首月 35 帧、中间每月 8 帧、末月 33 帧。</p><p><b>复刻怎么做</b><br>复刻按每秒 3 个月匀速换月。</p></div><p class="impact"><b>画面影响：</b>忽略首尾停顿，各月在相同时间点难以对应。</p><details><summary>查看两份代码的位置与片段</summary><p><b>原源码</b> · <a href="http://127.0.0.1:8770/source-catalog/round10/remotion-dev--github-unwrapped-2021/remotion/Contrib.tsx" target="_blank">source-catalog/round10/remotion-dev--github-unwrapped-2021/remotion/Contrib.tsx:40</a></p><pre>   key={m[0]}
+                  durationInFrames={i === 0 ? 35 : i === 11 ? 33 : 8}
+                  layout=&quot;none&quot;
+                &gt;
+                  &lt;Green key={m[0]} chunked={chunked} i={i}&gt;&lt;/Green&gt;</pre><p><b>复刻源码</b> · <a href="http://127.0.0.1:8770/experiments/r10-15/src/Replica.tsx" target="_blank">experiments/r10-15/src/Replica.tsx:4</a></p><pre>r&#x27;];const month=Math.min(11,Math.max(0,Math.floor((t-12)*3)));const colors=[&#x27;#e32005&#x27;,&#x27;#242a2e&#x27;,&#x27;#0281c7&#x27;,&#x27;#075b96&#x27;,&#x27;#00a5cf&#x27;,&#x27;#3b0b49&#x27;,&#x27;#b40030&#x27;,&#x27;#20abc7&#x27;,&#x27;#00adce&#x27;,&#x27;#f2df4c&#x27;,&#x27;#db3322&#x27;,&#x27;#6283b6&#x27;,&#x27;#ffdf</pre></details></article><article><h3>3. 饼图颜色占比与数字下降分开控制</h3><span class="tag">行为差异</span><div class="cols"><p><b>原片怎么做</b><br>原片同一 spr 同时驱动数字减少、两色扇形比例和文案切换。</p><p><b>复刻怎么做</b><br>复刻数字以每秒 150 下降，扇形另用角速度变化，21.3 秒后固定为 55°。</p></div><p class="impact"><b>画面影响：</b>最终比例可能近似，但中途数字和扇形面积不同步。</p><details><summary>查看两份代码的位置与片段</summary><p><b>原源码</b> · <a href="http://127.0.0.1:8770/source-catalog/round10/remotion-dev--github-unwrapped-2021/remotion/Issues.tsx" target="_blank">source-catalog/round10/remotion-dev--github-unwrapped-2021/remotion/Issues.tsx:51</a></p><pre>xtrapolateRight: &quot;clamp&quot;,
+      }),
+    ]
+  );
+
+  const openRatio = interpolate(spr, [0, 1], [1, open / total]);
+  const closeRatio = interpolate(spr, [0, 1], [0, closed / total]);
+
+  return (
+    &lt;Absolut</pre><p><b>复刻源码</b> · <a href="http://127.0.0.1:8770/experiments/r10-15/src/Replica.tsx" target="_blank">experiments/r10-15/src/Replica.tsx:4</a></p><pre>ath.max(30,Math.round(195-(t-20.5)*150));let open=t&gt;=21.3;const text=(s:string,size=40,style:React.CSSProperties={})=&gt;&lt;div style={{fontSize:size,fontWeight:800,textAlign:&#x27;center&#x27;,lineHeight:1.17,...s</pre></details></article><article><h3>4. 跨场景重叠被取消</h3><span class="tag">行为差异</span><div class="cols"><p><b>原片怎么做</b><br>原片主要场景之间重叠 25 帧，经 Transition 交接。</p><p><b>复刻怎么做</b><br>复刻采用互斥时间分支。</p></div><p class="impact"><b>画面影响：</b>没有原片过渡中的覆盖、推进和节奏。</p><details><summary>查看两份代码的位置与片段</summary><p><b>原源码</b> · <a href="http://127.0.0.1:8770/source-catalog/round10/remotion-dev--github-unwrapped-2021/remotion/Main.tsx" target="_blank">source-catalog/round10/remotion-dev--github-unwrapped-2021/remotion/Main.tsx:32</a></p><pre>&gt;
+        &lt;Series.Sequence durationInFrames={120} offset={-25}&gt;
+          &lt;Transition&gt;
+            &lt;ManyLanguages&gt;&lt;/ManyLanguages&gt;
+          &lt;/Transition&gt;
+        &lt;/Series.Sequence&gt;
+        &lt;Series.Sequ</pre><p><b>复刻源码</b> · <a href="http://127.0.0.1:8770/experiments/r10-15/src/Replica.tsx" target="_blank">experiments/r10-15/src/Replica.tsx:4</a></p><pre>&#x27;,&#x27;#ffdf45&#x27;,&#x27;#f45238&#x27;,&#x27;#dd9400&#x27;,&#x27;#5e5088&#x27;];let bg=t&lt;4?green:t&lt;7?&#x27;#ffdadb&#x27;:t&lt;10?&#x27;#2b768a&#x27;:t&lt;18?white:t&lt;24?green:t&lt;28?&#x27;#fae8ff&#x27;:t&lt;30?green:white;let count=t&lt;20.5?Math.min(195,Math.round(Math.max(0,</pre></details></article><article><h3>5. 头像与字体被替换</h3><span class="tag">素材差异</span><div class="cols"><p><b>原片怎么做</b><br>原片使用人物头像及 Jelle 字体。</p><p><b>复刻怎么做</b><br>复刻用 SVG 头像和 Arial Rounded/Arial 字体。</p></div><p class="impact"><b>画面影响：</b>人物相似度、字形宽度和排版气质不同；头像属于素材恢复问题。</p><details><summary>查看两份代码的位置与片段</summary><p><b>原源码</b> · <a href="http://127.0.0.1:8770/source-catalog/round10/remotion-dev--github-unwrapped-2021/remotion/Green.tsx" target="_blank">source-catalog/round10/remotion-dev--github-unwrapped-2021/remotion/Green.tsx:9</a></p><pre>ties = {
+  textAlign: &quot;center&quot;,
+  fontSize: 70,
+  fontFamily: &quot;Jelle&quot;,
+  color: BASE_COLOR,
+};
+
+export const Green: React.FC&lt;{
+  chunked: SpaceSavingContribution[][];
+  i: number;
+}&gt; = ({ chunked, i }) =&gt; {
+  </pre><p><b>复刻源码</b> · <a href="http://127.0.0.1:8770/experiments/r10-15/src/Replica.tsx" target="_blank">experiments/r10-15/src/Replica.tsx:1</a></p><pre>e06&#x27;,white=&#x27;#f8fff9&#x27;,purple=&#x27;#d879f1&#x27;;const font=&#x27;Arial Rounded MT Bold, Arial, sans-serif&#x27;;
+const Portrait=()=&gt; &lt;svg width=&quot;235&quot; height=&quot;235&quot; viewBox=&quot;0 0 235 235&quot;&gt;&lt;circle cx=&quot;117&quot; cy=&quot;117&quot; r=&quot;112&quot; fill=&quot;white&quot;</pre></details></article></section><section id="r10-16" data-category="软件演示"><h2>r10-16 · Remotion 2.0 音频时间线演示</h2><p class="muted">软件演示 · 4 项具体差异 · <a href="http://127.0.0.1:8770/compare-round10.html#r10-16" target="_blank">打开视频对照</a></p><p>第 375 帧：三条轨道的位置和波形密度不同。第 480 帧：原片第二条有折线平台，复刻第二条是光滑曲线。</p><details><summary>查看指定帧对照（左参考，右复刻）</summary><a href="data/round10-deep-review/r10-16.jpg" target="_blank"><img src="data/round10-deep-review/r10-16.jpg" loading="lazy" alt="r10-16 指定帧对照"></a></details><article><h3>1. 裁剪波形时把波形压缩了</h3><span class="tag">行为差异</span><div class="cols"><p><b>原片怎么做</b><br>原片独立控制音频块裁剪宽度、内部波形偏移。</p><p><b>复刻怎么做</b><br>复刻每次都按新宽度 w 重排 130 根波形线。</p></div><p class="impact"><b>画面影响：</b>块变窄时内容随之压缩，不是同一段波形被裁掉一部分。</p><details><summary>查看两份代码的位置与片段</summary><p><b>原源码</b> · <a href="http://127.0.0.1:8770/source-catalog/round10/remotion-dev--trailer-2-0/src/AudioTag.tsx" target="_blank">source-catalog/round10/remotion-dev--trailer-2-0/src/AudioTag.tsx:62</a></p><pre>center&#x27;,
+					display: &#x27;flex&#x27;,
+					flex: 1,
+					marginLeft: -trimLeft,
+				}}
+			&gt;
+				{randomBars.map((b, i) =&gt; {
+					return (
+						&lt;div
+							style={{
+								width: 8,
+								borderRadius: 4,
+								he</pre><p><b>复刻源码</b> · <a href="http://127.0.0.1:8770/experiments/r10-16/src/Replica.tsx" target="_blank">experiments/r10-16/src/Replica.tsx:2</a></p><pre>index*8)*.5+.5)*h*.78;return &lt;path key={i} d={`M${i*w/130} ${(h-a)/2}v${a}`} stroke=&quot;#b4dba6&quot; opacity=&quot;.38&quot; strokeWidth=&quot;1&quot;/&gt;})}&lt;path d={`M0 5H${w}M0 ${h-5}H${w}`} stroke=&quot;#a4d498&quot; opacity=&quot;.3&quot;/&gt;{curve</pre></details></article><article><h3>2. 三条音轨对齐位置不同</h3><span class="tag">行为差异</span><div class="cols"><p><b>原片怎么做</b><br>原片三条轨道最终平移量在半尺寸输出下为 −150、45、120 像素，第一条另有左裁剪补偿。</p><p><b>复刻怎么做</b><br>复刻平移量为 −90、15、90 像素。</p></div><p class="impact"><b>画面影响：</b>裁剪后的起点、终点和轨道错位关系不一致。</p><details><summary>查看两份代码的位置与片段</summary><p><b>原源码</b> · <a href="http://127.0.0.1:8770/source-catalog/round10/remotion-dev--trailer-2-0/src/AudioDemo.tsx" target="_blank">source-catalog/round10/remotion-dev--trailer-2-0/src/AudioDemo.tsx:118</a></p><pre>seed={0}
+				trimLeft={cut}
+				trimRight={0}
+				offset={align * -300}
+				scale={otherScale}
+				volume={volume1}
+			/&gt;
+			&lt;br /&gt;
+			&lt;div
+				style={{
+					transform: `translateY(${framePosition}px)`,
+				}}
+	</pre><p><b>复刻源码</b> · <a href="http://127.0.0.1:8770/experiments/r10-16/src/Replica.tsx" target="_blank">experiments/r10-16/src/Replica.tsx:4</a></p><pre>-7.5)/.55);let stagger=ease((t-10)/1.5);let shift=[-90,15,90][i]*stagger;let w=i===0||i===1?400-90*ease((t-9.5)/1):400;let x=280+shift+(i===0?90*ease((t-9.5)/1):0);let y=255-90*ease((t-4)/.7)+(i-1)*64*tr</pre></details></article><article><h3>3. 音量曲线的形状和生成过程不同</h3><span class="tag">行为差异</span><div class="cols"><p><b>原片怎么做</b><br>原片第二条音量线有平台、下降、低平台、回升；先调整整条音量，再过渡到各自曲线。</p><p><b>复刻怎么做</b><br>复刻第二条使用平滑正弦波，13.4 秒后一次性显示所有曲线。</p></div><p class="impact"><b>画面影响：</b>“整体调音量→局部设置音量”的演示步骤丢失。</p><details><summary>查看两份代码的位置与片段</summary><p><b>原源码</b> · <a href="http://127.0.0.1:8770/source-catalog/round10/remotion-dev--trailer-2-0/src/AudioDemo.tsx" target="_blank">source-catalog/round10/remotion-dev--trailer-2-0/src/AudioDemo.tsx:83</a></p><pre>Custom, [0, 1], [volumeSpring * 0.8, wave]);
+	};
+	const volume2 = (i: number) =&gt; {
+		const wave = interpolate(
+			i,
+			[0, 50, 60, 80, 90, 100],
+			[0.9, 0.9, 0.1, 0.1, 0.9, 0.9]
+		);
+		return interpola</pre><p><b>复刻源码</b> · <a href="http://127.0.0.1:8770/experiments/r10-16/src/Replica.tsx" target="_blank">experiments/r10-16/src/Replica.tsx:2</a></p><pre>x===0?6+Math.max(0,20-i)*1.9+Math.max(0,i-85)*2.7:index===1?10+30*(.5+.5*Math.sin(i*.07-2)):h/2+Math.sin(i*.1)*17}`).join(&#x27; &#x27;)} fill=&quot;none&quot; stroke=&quot;#d0ecc7&quot; strokeWidth=&quot;2&quot;/&gt;}&lt;/g&gt;}
+const Tile:React.FC&lt;</pre></details></article><article><h3>4. 波形线数量与揭示方式不同</h3><span class="tag">行为差异</span><div class="cols"><p><b>原片怎么做</b><br>原片每条 90 根固定随机波形，并按各条的 spring 逐步长出。</p><p><b>复刻怎么做</b><br>复刻 130 根正弦伪随机线一开始就在。</p></div><p class="impact"><b>画面影响：</b>轮廓密度与出现过程不同；原片本身也不是从音频采样出的真实波形。</p><details><summary>查看两份代码的位置与片段</summary><p><b>原源码</b> · <a href="http://127.0.0.1:8770/source-catalog/round10/remotion-dev--trailer-2-0/src/AudioTag.tsx" target="_blank">source-catalog/round10/remotion-dev--trailer-2-0/src/AudioTag.tsx:33</a></p><pre>st frame = useCurrentFrame();
+	const randomBars = new Array(90)
+		.fill(true)
+		.map((b, i) =&gt; random(`${i}-${seed}`));
+	const {width, fps} = useVideoConfig();
+	const barWidth = 800 - trimLeft - trimRigh</pre><p><b>复刻源码</b> · <a href="http://127.0.0.1:8770/experiments/r10-16/src/Replica.tsx" target="_blank">experiments/r10-16/src/Replica.tsx:2</a></p><pre>width={w} height={h} fill=&quot;#24ab45&quot;/&gt;{Array.from({length:130},(_,i)=&gt;{let a=(Math.sin(i*31+index*8)*.5+.5)*h*.78;return &lt;path key={i} d={`M${i*w/130} ${(h-a)/2}v${a}`} stroke=&quot;#b4dba6&quot; opacity=&quot;.38&quot; st</pre></details></article></section><section id="r10-17" data-category="产品营销"><h2>r10-17 · Remotion 首发宣传片</h2><p class="muted">产品营销 · 5 项具体差异 · <a href="http://127.0.0.1:8770/compare-round10.html#r10-17" target="_blank">打开视频对照</a></p><p>第 714 帧：可直接读到函数名 RemotionVideo / RootVideo 不同。第 840 帧：原片仍显示 Video.tsx，复刻已经切到 MyVideo.tsx。</p><details><summary>查看指定帧对照（左参考，右复刻）</summary><a href="data/round10-deep-review/r10-17.jpg" target="_blank"><img src="data/round10-deep-review/r10-17.jpg" loading="lazy" alt="r10-17 指定帧对照"></a></details><article><h3>1. GitHub 和编辑器内容被随意改写</h3><span class="tag">行为差异</span><div class="cols"><p><b>原片怎么做</b><br>原片调用真实界面内容/素材呈现仓库与后续操作。</p><p><b>复刻怎么做</b><br>复刻浏览器列表写成重复的 Update 文件名，编辑器重复几段代码。</p></div><p class="impact"><b>画面影响：</b>窗口外框近似，窗口中的具体任务内容不一致。</p><details><summary>查看两份代码的位置与片段</summary><p><b>原源码</b> · <a href="http://127.0.0.1:8770/source-catalog/round10/remotion-dev--trailer/src/GoToGithub.tsx" target="_blank">source-catalog/round10/remotion-dev--trailer/src/GoToGithub.tsx:17</a></p><pre>e = styled(Img)`
+	width: 1300px;
+`;
+
+export const GoToGithub: React.FC = () =&gt; {
+	const {fps} = useVideoConfig();
+	const frame = useCurrentFrame();
+	const scale = spring({
+		fps,
+		frame,
+		config: {
+</pre><p><b>复刻源码</b> · <a href="http://127.0.0.1:8770/experiments/r10-17/src/Replica.tsx" target="_blank">experiments/r10-17/src/Replica.tsx:4</a></p><pre>{s}&lt;span style={{marginLeft:100,color:&#x27;#89919a&#x27;}}&gt;Update {s}　　　　　　　　　2 days ago&lt;/span&gt;&lt;/div&gt;)}&lt;h3&gt;React video creation&lt;/h3&gt;&lt;/&gt;}&lt;/div&gt;&lt;/div&gt;;
+const Editor=()=&gt; &lt;div style={{width:630,height:410,backgro</pre></details></article><article><h3>2. 代码演示的逐行时间不一致</h3><span class="tag">行为差异</span><div class="cols"><p><b>原片怎么做</b><br>原片 CodeFrame 从 22 秒开始，duration/fps/width/height 分别在 23.667、24.5、25.667、25.833 秒进入。</p><p><b>复刻怎么做</b><br>复刻从 21.4 秒开始，四项分别在 23.4、24.3、25.3、25.9 秒出现。</p></div><p class="impact"><b>画面影响：</b>行与讲解阶段错位，部分提前、部分延后。</p><details><summary>查看两份代码的位置与片段</summary><p><b>原源码</b> · <a href="http://127.0.0.1:8770/source-catalog/round10/remotion-dev--trailer/src/Main.tsx" target="_blank">source-catalog/round10/remotion-dev--trailer/src/Main.tsx:95</a></p><pre>
+
+					`.trim()}
+						timing={[
+							{
+								line: 5,
+								from: 50,
+							},
+							{
+								line: 6,
+								from: 75,
+							},
+							{
+								line: 7,
+								from: 110,
+							},
+	</pre><p><b>复刻源码</b> · <a href="http://127.0.0.1:8770/experiments/r10-17/src/Replica.tsx" target="_blank">experiments/r10-17/src/Replica.tsx:6</a></p><pre>=&quot;MyVideo&quot;&#x27;,&#x27;            component={MyVideo}&#x27;,...(t&gt;23.4?[&#x27;            durationInFrames={90}&#x27;]:[]),...(t&gt;24.3?[&#x27;            fps={30}&#x27;]:[]),...(t&gt;25.3?[&#x27;            width={1920}&#x27;]:[]),...(t&gt;25.9?[&#x27;  </pre></details></article><article><h3>3. 示例函数名抄错</h3><span class="tag">行为差异</span><div class="cols"><p><b>原片怎么做</b><br>原片展示 export const RemotionVideo。</p><p><b>复刻怎么做</b><br>复刻展示 export const RootVideo。</p></div><p class="impact"><b>画面影响：</b>属于屏幕内可见文本差异；不涉及代码能否运行。</p><details><summary>查看两份代码的位置与片段</summary><p><b>原源码</b> · <a href="http://127.0.0.1:8770/source-catalog/round10/remotion-dev--trailer/src/Main.tsx" target="_blank">source-catalog/round10/remotion-dev--trailer/src/Main.tsx:79</a></p><pre>idth={1200}
+						title=&quot;Video.tsx&quot;
+						code={`
+export const RemotionVideo = () =&gt; {
+	return (
+		&lt;Composition
+			id=&quot;MyVideo&quot;
+			component={MyVideo}
+			durationInFrames={90}
+			fps={30}
+			width={1920}
+			height={1</pre><p><b>复刻源码</b> · <a href="http://127.0.0.1:8770/experiments/r10-17/src/Replica.tsx" target="_blank">experiments/r10-17/src/Replica.tsx:6</a></p><pre>[&#x27;export const MyVideo = () =&gt; {&#x27;,&#x27;&#x27;,&#x27;&#x27;,&#x27;&#x27;,&#x27;}&#x27;]:[&#x27;export const RootVideo = () =&gt; {&#x27;,&#x27;    return (&#x27;,&#x27;        &lt;Composition&#x27;,&#x27;            id=&quot;MyVideo&quot;&#x27;,&#x27;            component={MyVideo}&#x27;,...(t&gt;23.4?[&#x27;            dura</pre></details></article><article><h3>4. React 图形的描边和文字进入动作简化</h3><span class="tag">行为差异</span><div class="cols"><p><b>原片怎么做</b><br>原片三条弧各延迟 0、30、60 帧，描边变细；文字分两行向上进入，整体缩放。</p><p><b>复刻怎么做</b><br>复刻三条椭圆统一按 q×14 旋转，另用虚线长度显示轮廓。</p></div><p class="impact"><b>画面影响：</b>弧线进入间隔、粗细变化和两行文字的位移都没有按原片恢复。</p><details><summary>查看两份代码的位置与片段</summary><p><b>原源码</b> · <a href="http://127.0.0.1:8770/source-catalog/round10/remotion-dev--trailer/src/Intro/Arc.tsx" target="_blank">source-catalog/round10/remotion-dev--trailer/src/Intro/Arc.tsx:27</a></p><pre>ight: &#x27;clamp&#x27;,
+		extrapolateLeft: &#x27;clamp&#x27;,
+	});
+
+	const strokeWidth = interpolate(progress, [0, 1], [200, 60]);
+
+	return (
+		&lt;g
+			style={{
+				transform: `rotate(${rotation}deg)`,
+				opacity,
+				transform</pre><p><b>复刻源码</b> · <a href="http://127.0.0.1:8770/experiments/r10-17/src/Replica.tsx" target="_blank">experiments/r10-17/src/Replica.tsx:6</a></p><pre>&quot; style={{position:&#x27;absolute&#x27;,transform:`rotate(${q*14}deg)`}} viewBox=&quot;0 0 400 400&quot;&gt;&lt;defs&gt;&lt;linearGradient id=&quot;react&quot;&gt;&lt;stop stopColor=&quot;#7cabe8&quot;/&gt;&lt;stop offset=&quot;1&quot; stopColor=&quot;#6aeeee&quot;/&gt;&lt;/linearGradi</pre></details></article><article><h3>5. 第二段代码页面提前切换</h3><span class="tag">行为差异</span><div class="cols"><p><b>原片怎么做</b><br>原片在第 850 帧，即 28.333 秒进入 MyVideo.tsx。</p><p><b>复刻怎么做</b><br>复刻 27.4 秒已进入新页面。</p></div><p class="impact"><b>画面影响：</b>第 840 帧原片还显示完整 Composition 参数，复刻已换成空函数。</p><details><summary>查看两份代码的位置与片段</summary><p><b>原源码</b> · <a href="http://127.0.0.1:8770/source-catalog/round10/remotion-dev--trailer/src/Main.tsx" target="_blank">source-catalog/round10/remotion-dev--trailer/src/Main.tsx:113</a></p><pre>},
+						]}
+					/&gt;
+				&lt;/Sequence&gt;
+				&lt;Sequence from={850} durationInFrames={240}&gt;
+					&lt;CodeFrame
+						width={1200}
+						title=&quot;MyVideo.tsx&quot;
+						code={`
+export const MyVideo = () =&gt; {
+	const fr</pre><p><b>复刻源码</b> · <a href="http://127.0.0.1:8770/experiments/r10-17/src/Replica.tsx" target="_blank">experiments/r10-17/src/Replica.tsx:6</a></p><pre>t-18.8)*3)}}&gt;Remotion&lt;/span&gt;&lt;/div&gt;;else {const my=t&gt;=27.4;const lines=my?[&#x27;export const MyVideo = () =&gt; {&#x27;,&#x27;&#x27;,&#x27;&#x27;,&#x27;&#x27;,&#x27;}&#x27;]:[&#x27;export const RootVideo = () =&gt; {&#x27;,&#x27;    return (&#x27;,&#x27;        &lt;Composition&#x27;,&#x27; </pre></details></article></section><section id="r10-18" data-category="产品营销"><h2>r10-18 · Echook 声音通知产品片</h2><p class="muted">产品营销 · 6 项具体差异 · <a href="http://127.0.0.1:8770/compare-round10.html#r10-18" target="_blank">打开视频对照</a></p><p>第 114 帧可读到版本号 v6.3.3 / v0.3.3 不同。第 729 帧安装命令、作者名和插件名不同。</p><details><summary>查看指定帧对照（左参考，右复刻）</summary><a href="data/round10-deep-review/r10-18.jpg" target="_blank"><img src="data/round10-deep-review/r10-18.jpg" loading="lazy" alt="r10-18 指定帧对照"></a></details><article><h3>1. 安装命令抄错</h3><span class="tag">行为差异</span><div class="cols"><p><b>原片怎么做</b><br>原片仓库为 ChanMeng666/echook，插件名 audio-hooks@chanmeng-audio-hooks。</p><p><b>复刻怎么做</b><br>复刻改成 Channing666/echook 和 audio-hooks@channing-as。</p></div><p class="impact"><b>画面影响：</b>界面展示的是另一条命令，内容已经不准确。</p><details><summary>查看两份代码的位置与片段</summary><p><b>原源码</b> · <a href="http://127.0.0.1:8770/source-catalog/round10/ChanMeng666--echook-promo-video/src/sections/features/QuickSetup.tsx" target="_blank">source-catalog/round10/ChanMeng666--echook-promo-video/src/sections/features/QuickSetup.tsx:76</a></p><pre>              text=&quot;claude plugin marketplace add ChanMeng666/echook&quot;
+              startFrame={5}
+              speed={1.6}
+              fontSize={16}
+              showCursor={false}
+            /&gt;
+       </pre><p><b>复刻源码</b> · <a href="http://127.0.0.1:8770/experiments/r10-18/src/Replica.tsx" target="_blank">experiments/r10-18/src/Replica.tsx:2</a></p><pre>b&gt;&lt;br/&gt;{t&gt;21.3&amp;&amp;&lt;&gt;$ claude plugin marketplace add Channing666/echook&lt;br/&gt;&lt;/&gt;}{t&gt;22&amp;&amp;&lt;&gt;$ claude plugin install audio-hooks@channing-as&lt;br/&gt;&lt;/&gt;}{t&gt;22.6&amp;&amp;&lt;&gt;&lt;span style={{fontSize:6,color:&#x27;#666&#x27;}}&gt;# then, in the </pre></details></article><article><h3>2. Hook 名称有一项不同</h3><span class="tag">行为差异</span><div class="cols"><p><b>原片怎么做</b><br>原片最后一个可选 Hook 名为 TabFileEdit。</p><p><b>复刻怎么做</b><br>复刻写成 ToolFileEdit。</p></div><p class="impact"><b>画面影响：</b>列表数量仍是 33，但一个元素内容错误。</p><details><summary>查看两份代码的位置与片段</summary><p><b>原源码</b> · <a href="http://127.0.0.1:8770/source-catalog/round10/ChanMeng666--echook-promo-video/src/sections/features/HookTypes.tsx" target="_blank">source-catalog/round10/ChanMeng666--echook-promo-video/src/sections/features/HookTypes.tsx:35</a></p><pre>ntResponse&quot;, &quot;AgentThinking&quot;,
+  &quot;WorkspaceOpen&quot;, &quot;TabFileEdit&quot;,
+];
+
+export const HookTypes: React.FC = () =&gt; {
+  const frame = useCurrentFrame();
+  const { fps } = useVideoConfig();
+
+  // Essential lab</pre><p><b>复刻源码</b> · <a href="http://127.0.0.1:8770/experiments/r10-18/src/Replica.tsx" target="_blank">experiments/r10-18/src/Replica.tsx:3</a></p><pre>,&#x27;AgentResponse&#x27;,&#x27;AgentThinking&#x27;,&#x27;WorkspaceOpen&#x27;,&#x27;ToolFileEdit&#x27;];
+export const Replica:React.FC=()=&gt;{const t=useCurrentFrame()/30;return &lt;AbsoluteFill style={{background:t&gt;9&amp;&amp;t&lt;12?&#x27;radial-gradient(ellip</pre></details></article><article><h3>3. 命令没有逐字输入</h3><span class="tag">行为差异</span><div class="cols"><p><b>原片怎么做</b><br>原片每条命令有独立开始时间及打字速度。</p><p><b>复刻怎么做</b><br>复刻按几个时间阈值直接显示整行。</p></div><p class="impact"><b>画面影响：</b>输入过程以及进度条、徽章之间的时序不同。</p><details><summary>查看两份代码的位置与片段</summary><p><b>原源码</b> · <a href="http://127.0.0.1:8770/source-catalog/round10/ChanMeng666--echook-promo-video/src/sections/features/QuickSetup.tsx" target="_blank">source-catalog/round10/ChanMeng666--echook-promo-video/src/sections/features/QuickSetup.tsx:77</a></p><pre>marketplace add ChanMeng666/echook&quot;
+              startFrame={5}
+              speed={1.6}
+              fontSize={16}
+              showCursor={false}
+            /&gt;
+          &lt;/div&gt;
+          {frame &gt; 2</pre><p><b>复刻源码</b> · <a href="http://127.0.0.1:8770/experiments/r10-18/src/Replica.tsx" target="_blank">experiments/r10-18/src/Replica.tsx:2</a></p><pre>up?&lt;&gt;&lt;b&gt;# Install via plugin marketplace&lt;/b&gt;&lt;br/&gt;{t&gt;21.3&amp;&amp;&lt;&gt;$ claude plugin marketplace add Channing666/echook&lt;br/&gt;&lt;/&gt;}{t&gt;22&amp;&amp;&lt;&gt;$ claude plugin install audio-hooks@channing-as&lt;br/&gt;&lt;/&gt;}{t&gt;22.6&amp;&amp;&lt;&gt;&lt;sp</pre></details></article><article><h3>4. 进入问题与解决方案的时间推迟</h3><span class="tag">行为差异</span><div class="cols"><p><b>原片怎么做</b><br>原片问题场景从 130/30=4.333 秒开始，解决方案从 320/30=10.667 秒开始，包含 wipe/fade。</p><p><b>复刻怎么做</b><br>复刻分别在 5 秒和 12 秒直接切换。</p></div><p class="impact"><b>画面影响：</b>问题场景延后 0.667 秒，解决方案延后 1.333 秒。</p><details><summary>查看两份代码的位置与片段</summary><p><b>原源码</b> · <a href="http://127.0.0.1:8770/source-catalog/round10/ChanMeng666--echook-promo-video/src/PromoVideo.tsx" target="_blank">source-catalog/round10/ChanMeng666--echook-promo-video/src/PromoVideo.tsx:203</a></p><pre> &quot;from-left&quot; })}
+          timing={linearTiming({ durationInFrames: DURATIONS.transition1 })}
+        /&gt;
+
+        {/* Section 2: Problem Statement */}
+        &lt;TransitionSeries.Sequence durationInFrames={DURATIONS.problem}&gt;
+     </pre><p><b>复刻源码</b> · <a href="http://127.0.0.1:8770/experiments/r10-18/src/Replica.tsx" target="_blank">experiments/r10-18/src/Replica.tsx:4</a></p><pre>)/30;return &lt;AbsoluteFill style={{background:t&gt;9&amp;&amp;t&lt;12?&#x27;radial-gradient(ellipse at center,#000 50%,#170605 100%)&#x27;:&#x27;black&#x27;,fontFamily:&#x27;Arial&#x27;,color:&#x27;white&#x27;,justifyContent:&#x27;center&#x27;,alignItems:&#x27;cente</pre></details></article><article><h3>5. Logo 出现过早，省略缩放与扫描背景</h3><span class="tag">行为差异</span><div class="cols"><p><b>原片怎么做</b><br>原片 1 秒开始 Logo 的 0.8→1 缩放和淡入，背景另有扫描线和网格。</p><p><b>复刻怎么做</b><br>复刻重画 SVG Logo 后整体淡入，另加虚线圆环。</p></div><p class="impact"><b>画面影响：</b>复刻从 0.4 秒后就出现 Logo，少了缩放、扫描背景及原来的粒子爆发。</p><details><summary>查看两份代码的位置与片段</summary><p><b>原源码</b> · <a href="http://127.0.0.1:8770/source-catalog/round10/ChanMeng666--echook-promo-video/src/sections/IntroLogoReveal.tsx" target="_blank">source-catalog/round10/ChanMeng666--echook-promo-video/src/sections/IntroLogoReveal.tsx:31</a></p><pre>
+        });
+
+  // Logo animation (frame 30-75)
+  const logoScale = spring({
+    frame: frame - 30,
+    fps,
+    config: { damping: 200 },
+    from: 0.8,
+    to: 1,
+  });
+
+  const logoOpacity = interpolate</pre><p><b>复刻源码</b> · <a href="http://127.0.0.1:8770/experiments/r10-18/src/Replica.tsx" target="_blank">experiments/r10-18/src/Replica.tsx:4</a></p><pre>:&#x27;absolute&#x27;,top:170,opacity:Math.min(1,Math.max(0,t-.4)*3)}}&gt;&lt;Logo/&gt;&lt;/div&gt;{t&gt;1.7&amp;&amp;t&lt;3&amp;&amp;&lt;svg width=&quot;270&quot; height=&quot;270&quot; style={{position:&#x27;absolute&#x27;,top:90}}&gt;&lt;circle cx=&quot;135&quot; cy=&quot;135&quot; r={70+(t-1.7)*30</pre></details></article><article><h3>6. 版本号也抄错了</h3><span class="tag">行为差异</span><div class="cols"><p><b>原片怎么做</b><br>原片版本号为 v6.3.3。</p><p><b>复刻怎么做</b><br>复刻写成 v0.3.3。</p></div><p class="impact"><b>画面影响：</b>这一项是具体文字错误，与素材是否提供无关。</p><details><summary>查看两份代码的位置与片段</summary><p><b>原源码</b> · <a href="http://127.0.0.1:8770/source-catalog/round10/ChanMeng666--echook-promo-video/src/sections/IntroLogoReveal.tsx" target="_blank">source-catalog/round10/ChanMeng666--echook-promo-video/src/sections/IntroLogoReveal.tsx:180</a></p><pre>: `${COLORS.green}11`,
+        }}
+      &gt;
+        v6.3.3
+      &lt;/div&gt;
+    &lt;/div&gt;
+  );
+};
+</pre><p><b>复刻源码</b> · <a href="http://127.0.0.1:8770/experiments/r10-18/src/Replica.tsx" target="_blank">experiments/r10-18/src/Replica.tsx:4</a></p><pre>,padding:&#x27;4px 10px&#x27;,borderRadius:16,fontSize:10}}&gt;v0.3.3&lt;/div&gt;}&lt;/&gt;:t&lt;12?&lt;&gt;&lt;div style={{position:&#x27;absolute&#x27;,top:185,left:230}}&gt;&lt;Terminal t={t}/&gt;&lt;/div&gt;&lt;div style={{position:&#x27;absolute&#x27;,top:166,left:6</pre></details></article></section><section id="r10-19" data-category="知识讲解"><h2>r10-19 · 三角形面积讲解</h2><p class="muted">知识讲解 · 5 项具体差异 · <a href="http://127.0.0.1:8770/compare-round10.html#r10-19" target="_blank">打开视频对照</a></p><p>第 345 帧：参考描边尚未走完，复刻已完成。第 360 帧：参考只有高度虚线，复刻连高度标签也已出现。</p><details><summary>查看指定帧对照（左参考，右复刻）</summary><a href="data/round10-deep-review/r10-19.jpg" target="_blank"><img src="data/round10-deep-review/r10-19.jpg" loading="lazy" alt="r10-19 指定帧对照"></a></details><article><h3>1. 三角形描边起止时间和速度不同</h3><span class="tag">行为差异</span><div class="cols"><p><b>原片怎么做</b><br>原片 9.733–12 秒线性描边。</p><p><b>复刻怎么做</b><br>复刻 10–11.25 秒使用 cubic ease-out 描边。</p></div><p class="impact"><b>画面影响：</b>起笔更晚但画完更早，线条速度明显不同。</p><details><summary>查看两份代码的位置与片段</summary><p><b>原源码</b> · <a href="http://127.0.0.1:8770/source-catalog/round10/znyupup--knowledge-explainer-skill/templates/Triangle.jsx" target="_blank">source-catalog/round10/znyupup--knowledge-explainer-skill/templates/Triangle.jsx:30</a></p><pre>harray)
+  const drawProgress = interpolate(frame, [22, 90], [0, 1], clamp());
+  // 标签依次出现
+  const baseLabelOp = interpolate(frame, [60, 80], [0, 1], clamp());
+  // 高(虚线)
+  const heightLineOp = inter</pre><p><b>复刻源码</b> · <a href="http://127.0.0.1:8770/experiments/r10-19/src/Replica.tsx" target="_blank">experiments/r10-19/src/Replica.tsx:3</a></p><pre> strokeDasharray=&quot;340&quot; strokeDashoffset={340*(1-E((t-10)*.8))} filter=&quot;url(#gl)&quot;/&gt;&lt;path d=&quot;M150 280H282L216 200Z&quot; fill=&quot;none&quot; stroke=&quot;#6860d3&quot; strokeWidth=&quot;1.5&quot; strokeDasharray=&quot;340&quot; strokeDashoffset={34</pre></details></article><article><h3>2. 高度虚线和标签被合成一个动作</h3><span class="tag">行为差异</span><div class="cols"><p><b>原片怎么做</b><br>原片先出现高的虚线，再延后 15 帧出现“高 6 cm”。</p><p><b>复刻怎么做</b><br>复刻把虚线与标签放在同一个透明度组里。</p></div><p class="impact"><b>画面影响：</b>图解逐步说明的顺序丢失。</p><details><summary>查看两份代码的位置与片段</summary><p><b>原源码</b> · <a href="http://127.0.0.1:8770/source-catalog/round10/znyupup--knowledge-explainer-skill/templates/Triangle.jsx" target="_blank">source-catalog/round10/znyupup--knowledge-explainer-skill/templates/Triangle.jsx:35</a></p><pre>mp());
+  const heightLabelOp = interpolate(frame, [95, 115], [0, 1], clamp());
+  // 公式
+  const formulaOp = interpolate(frame, [125, 150], [0, 1], clamp());
+  const formulaY = spring({frame: Math.max(</pre><p><b>复刻源码</b> · <a href="http://127.0.0.1:8770/experiments/r10-19/src/Replica.tsx" target="_blank">experiments/r10-19/src/Replica.tsx:3</a></p><pre>acity={E((t-10.8)*2)}&gt;底 10 cm&lt;/text&gt;&lt;g opacity={E((t-11.7)*2)}&gt;&lt;path d=&quot;M216 200V280&quot; stroke=&quot;#ceb276&quot; strokeWidth=&quot;1&quot; strokeDasharray=&quot;3 3&quot;/&gt;&lt;path d=&quot;M209 280V273H216&quot; stroke=&quot;#bda068&quot; fill=&quot;none&quot;/&gt;&lt;</pre></details></article><article><h3>3. 答案少了放大强调</h3><span class="tag">行为差异</span><div class="cols"><p><b>原片怎么做</b><br>原片答案透明度增加同时从 0.85 弹到 1。</p><p><b>复刻怎么做</b><br>复刻只改答案卡片透明度。</p></div><p class="impact"><b>画面影响：</b>计算结束后的强调力度和运动不同。</p><details><summary>查看两份代码的位置与片段</summary><p><b>原源码</b> · <a href="http://127.0.0.1:8770/source-catalog/round10/znyupup--knowledge-explainer-skill/templates/Triangle.jsx" target="_blank">source-catalog/round10/znyupup--knowledge-explainer-skill/templates/Triangle.jsx:44</a></p><pre>nterpolate(frame, [200, 230], [0, 1], clamp());
+  const resultScale = spring({frame: Math.max(0, frame - 200), fps,
+    from: 0.85, to: 1, durationInFrames: 22});
+
+  // ===== 三角形几何参数(在 SVG viewBox 内) =====
+ </pre><p><b>复刻源码</b> · <a href="http://127.0.0.1:8770/experiments/r10-19/src/Replica.tsx" target="_blank">experiments/r10-19/src/Replica.tsx:3</a></p><pre>4341b44&#x27;,boxShadow:&#x27;0 0 10px #e5b34b33&#x27;,opacity:E((t-15.7)*1.5)}}&gt;&lt;div style={{fontSize:9,color:&#x27;#baa575&#x27;,marginBottom:4,fontWeight:400}}&gt;✧ 答案&lt;/div&gt;&lt;span style={{fontFamily:&#x27;monospace&#x27;,fontSize:23}}&gt;3</pre></details></article><article><h3>4. 冷知识打字和光标不一致</h3><span class="tag">行为差异</span><div class="cols"><p><b>原片怎么做</b><br>原片 18.733 秒开始逐字显示，光标按半秒明暗交替。</p><p><b>复刻怎么做</b><br>复刻从 18.2 秒以每秒 5.7 字打字，光标常亮。</p></div><p class="impact"><b>画面影响：</b>文字出现时间、完成时间和光标状态均不同。</p><details><summary>查看两份代码的位置与片段</summary><p><b>原源码</b> · <a href="http://127.0.0.1:8770/source-catalog/round10/znyupup--knowledge-explainer-skill/custom/CustomFunFact.jsx" target="_blank">source-catalog/round10/znyupup--knowledge-explainer-skill/custom/CustomFunFact.jsx:21</a></p><pre>in(fact.length,
+    Math.floor(interpolate(frame, [22, 80], [0, fact.length], clamp())));
+  const factVisible = fact.slice(0, factCharsShown);
+
+  // hint 卡片飞入
+  const hintOp = interpolate(frame, [70</pre><p><b>复刻源码</b> · <a href="http://127.0.0.1:8770/experiments/r10-19/src/Replica.tsx" target="_blank">experiments/r10-19/src/Replica.tsx:3</a></p><pre>}}&gt;{&#x27;等腰直角三角形,两条腰相等&#x27;.slice(0,Math.floor(Math.max(0,t-18.2)*5.7))}&lt;span style={{color:&#x27;#e2b765&#x27;,fontWeight:400}}&gt;|&lt;/span&gt;&lt;/div&gt;&lt;Box style={{display:&#x27;inline-block&#x27;,marginTop:17,color:&#x27;#bebbbb&#x27;,fontSize</pre></details></article><article><h3>5. 已知条件卡片从不同方向进入</h3><span class="tag">行为差异</span><div class="cols"><p><b>原片怎么做</b><br>原片卡片从左向右进入，逐项间隔 12 帧。</p><p><b>复刻怎么做</b><br>复刻卡片向上进入，逐项间隔 0.55 秒。</p></div><p class="impact"><b>画面影响：</b>方向和相邻项目的节奏都变了。</p><details><summary>查看两份代码的位置与片段</summary><p><b>原源码</b> · <a href="http://127.0.0.1:8770/source-catalog/round10/znyupup--knowledge-explainer-skill/templates/ContentCard.jsx" target="_blank">source-catalog/round10/znyupup--knowledge-explainer-skill/templates/ContentCard.jsx:41</a></p><pre>ath.max(0, frame - 22 - i * 12), fps,
+            from: -30, to: 0, durationInFrames: 22});
+          return (
+            &lt;div key={i} style={{
+              opacity: op, transform: `translateX(${x}</pre><p><b>复刻源码</b> · <a href="http://127.0.0.1:8770/experiments/r10-19/src/Replica.tsx" target="_blank">experiments/r10-19/src/Replica.tsx:3</a></p><pre>&#x27;11px 12px&#x27;,opacity:E((t-4.4-i*.55)*3),transform:`translateY(${12*(1-E((t-4.4-i*.55)*3))}px)`}}&gt;{s}&lt;/Box&gt;)}&lt;/div&gt;&lt;/&gt;:t&lt;18?&lt;&gt;&lt;div style={{position:&#x27;absolute&#x27;,top:23,width:&#x27;100%&#x27;,textAlign:&#x27;center&#x27;,fontSize:</pre></details></article></section><section id="r10-20" data-category="知识讲解"><h2>r10-20 · AI 剪辑的三个步骤</h2><p class="muted">知识讲解 · 5 项具体差异 · <a href="http://127.0.0.1:8770/compare-round10.html#r10-20" target="_blank">打开视频对照</a></p><p>第 660 帧提示文案改变；第 870 帧出现“微饭”错字。标题字号、间距和卡片光晕也有差异，但正文优先列内容与运动问题。</p><details><summary>查看指定帧对照（左参考，右复刻）</summary><a href="data/round10-deep-review/r10-20.jpg" target="_blank"><img src="data/round10-deep-review/r10-20.jpg" loading="lazy" alt="r10-20 指定帧对照"></a></details><article><h3>1. 总结提示被改写</h3><span class="tag">行为差异</span><div class="cols"><p><b>原片怎么做</b><br>原片提示是“不告诉它主题,它自己推断”。</p><p><b>复刻怎么做</b><br>复刻写成“不会写也能让它自己判断”。</p></div><p class="impact"><b>画面影响：</b>从“主题推断”变成“不会写”，说明内容发生变化。</p><details><summary>查看两份代码的位置与片段</summary><p><b>原源码</b> · <a href="http://127.0.0.1:8770/source-catalog/round10/znyupup--knowledge-explainer-skill/src/ai_video_3steps.jsx" target="_blank">source-catalog/round10/znyupup--knowledge-explainer-skill/src/ai_video_3steps.jsx:63</a></p><pre> 14 处语音截断&quot;
+            ],
+            &quot;callout&quot;: &quot;不告诉它主题,它自己推断&quot;
+          }}
+        /&gt;
+      &lt;/Sequence&gt;
+      &lt;Sequence from={750} durationInFrames={210}&gt;
+        &lt;ContentCard
+          {...{
+  </pre><p><b>复刻源码</b> · <a href="http://127.0.0.1:8770/experiments/r10-20/src/Replica.tsx" target="_blank">experiments/r10-20/src/Replica.tsx:4</a></p><pre>1px solid #7256de55&#x27;,opacity:clamp((q-3.3)*2)}}&gt;💡 不会写也能让它自己判断&lt;/div&gt;}&lt;/&gt;:&lt;&gt;&lt;div style={{position:&#x27;absolute&#x27;,top:34,width:640,textAlign:&#x27;center&#x27;,fontSize:24,fontWeight:800,opacity:clamp(q*2)}}&gt;&lt;span styl</pre></details></article><article><h3>2. 修改指令有错字</h3><span class="tag">行为差异</span><div class="cols"><p><b>原片怎么做</b><br>原片第三步示例为“做饭那段短一些”。</p><p><b>复刻怎么做</b><br>复刻写成“微饭那段短一些”。</p></div><p class="impact"><b>画面影响：</b>需要逐条核对屏幕文字，不能只确认卡片数量和位置。</p><details><summary>查看两份代码的位置与片段</summary><p><b>原源码</b> · <a href="http://127.0.0.1:8770/source-catalog/round10/znyupup--knowledge-explainer-skill/src/ai_video_3steps.jsx" target="_blank">source-catalog/round10/znyupup--knowledge-explainer-skill/src/ai_video_3steps.jsx:75</a></p><pre>           &quot;💬 \&quot;音乐大一点\&quot; → 秒改&quot;,
+              &quot;💬 \&quot;做饭那段短一些\&quot; → 秒改&quot;,
+              &quot;🚀 不用拖时间轴,不用重导&quot;
+            ]
+          }}
+        /&gt;
+      &lt;/Sequence&gt;
+      &lt;Sequence from={960} durationInFrames=</pre><p><b>复刻源码</b> · <a href="http://127.0.0.1:8770/experiments/r10-20/src/Replica.tsx" target="_blank">experiments/r10-20/src/Replica.tsx:4</a></p><pre>⚙️ ffmpeg 自动裁剪 / 拼接 / 混 BGM&#x27;,&#x27;💬 “音乐大一点” → 秒改&#x27;,&#x27;💬 “微饭那段短一些” → 秒改&#x27;,&#x27;🚀 不用拖时间轴,不用重导&#x27;]}/&gt;&lt;/&gt;}&lt;/AbsoluteFill&gt;};
+</pre></details></article><article><h3>3. 左右两列出现次序被压缩</h3><span class="tag">行为差异</span><div class="cols"><p><b>原片怎么做</b><br>原片左列从 0.667 秒、右列从 1.667 秒开始，逐项间隔约 0.267 秒。</p><p><b>复刻怎么做</b><br>复刻左列 0.7 秒、右列 1.25 秒开始，逐项间隔 0.4 秒。</p></div><p class="impact"><b>画面影响：</b>右列过早进入，输入与输出的展示节奏改变。</p><details><summary>查看两份代码的位置与片段</summary><p><b>原源码</b> · <a href="http://127.0.0.1:8770/source-catalog/round10/znyupup--knowledge-explainer-skill/templates/TwoColumn.jsx" target="_blank">source-catalog/round10/znyupup--knowledge-explainer-skill/templates/TwoColumn.jsx:67</a></p><pre>ight} color={color2} label={rightLabel}
+          delay={50} fps={fps} frame={frame} /&gt;
+      &lt;/div&gt;
+
+      {callout &amp;&amp; (
+        &lt;Callout text={callout} color={color1} frame={frame} fps={fps} delay={</pre><p><b>复刻源码</b> · <a href="http://127.0.0.1:8770/experiments/r10-20/src/Replica.tsx" target="_blank">experiments/r10-20/src/Replica.tsx:4</a></p><pre>marginBottom:5,borderRadius:3,opacity:clamp((q-.7-j*.55-i*.4)*2)}}&gt;{v}&lt;/div&gt;)}&lt;/div&gt;)}&lt;div style={{position:&#x27;absolute&#x27;,left:300,top:111,fontSize:44,color:&#x27;#785bed&#x27;,opacity:clamp((q-1.2)*2)}}&gt;→&lt;/div</pre></details></article><article><h3>4. 箭头没有流动光点</h3><span class="tag">行为差异</span><div class="cols"><p><b>原片怎么做</b><br>原片箭头为双色渐变 SVG，白色亮段沿箭头持续移动。</p><p><b>复刻怎么做</b><br>复刻用固定紫色文字箭头。</p></div><p class="impact"><b>画面影响：</b>输入传到输出的方向提示弱化，形状和运动都不同。</p><details><summary>查看两份代码的位置与片段</summary><p><b>原源码</b> · <a href="http://127.0.0.1:8770/source-catalog/round10/znyupup--knowledge-explainer-skill/templates/TwoColumn.jsx" target="_blank">source-catalog/round10/znyupup--knowledge-explainer-skill/templates/TwoColumn.jsx:25</a></p><pre> interpolate(frame, [40, 70], [0, 1], clamp());
+  const dashOffset = (frame * 1.2) % 80;
+
+  return (
+    &lt;AbsoluteFill style={{
+      background: `radial-gradient(ellipse at top, #1a1a2e 0%, ${bg} 70%)`,
+  </pre><p><b>复刻源码</b> · <a href="http://127.0.0.1:8770/experiments/r10-20/src/Replica.tsx" target="_blank">experiments/r10-20/src/Replica.tsx:4</a></p><pre>&lt;div style={{position:&#x27;absolute&#x27;,left:300,top:111,fontSize:44,color:&#x27;#785bed&#x27;,opacity:clamp((q-1.2)*2)}}&gt;→&lt;/div&gt;{q&gt;3.3&amp;&amp;&lt;div style={{position:&#x27;absolute&#x27;,left:235,top:211,padding:&#x27;8px 13px&#x27;,fontSize:10,f</pre></details></article><article><h3>5. 提示提前，标题缺少位移</h3><span class="tag">行为差异</span><div class="cols"><p><b>原片怎么做</b><br>原片提示在双列场景 4 秒后进入；标题同时淡入并向下落定。</p><p><b>复刻怎么做</b><br>复刻提示从 3.3 秒后出现，标题只淡入。</p></div><p class="impact"><b>画面影响：</b>提示早 0.7 秒，文字进入方式也不一致。</p><details><summary>查看两份代码的位置与片段</summary><p><b>原源码</b> · <a href="http://127.0.0.1:8770/source-catalog/round10/znyupup--knowledge-explainer-skill/templates/TwoColumn.jsx" target="_blank">source-catalog/round10/znyupup--knowledge-explainer-skill/templates/TwoColumn.jsx:71</a></p><pre>={callout} color={color1} frame={frame} fps={fps} delay={120} /&gt;
+      )}
+    &lt;/AbsoluteFill&gt;
+  );
+};
+
+const Column = ({items, color, label, delay, fps, frame}) =&gt; (
+  &lt;div style={{flex: 1,
+    backgro</pre><p><b>复刻源码</b> · <a href="http://127.0.0.1:8770/experiments/r10-20/src/Replica.tsx" target="_blank">experiments/r10-20/src/Replica.tsx:4</a></p><pre>olor:&#x27;#785bed&#x27;,opacity:clamp((q-1.2)*2)}}&gt;→&lt;/div&gt;{q&gt;3.3&amp;&amp;&lt;div style={{position:&#x27;absolute&#x27;,left:235,top:211,padding:&#x27;8px 13px&#x27;,fontSize:10,fontWeight:600,background:&#x27;#7256de14&#x27;,border:&#x27;1px solid #72</pre></details></article></section><section><h2>参考自身需要先处理的问题</h2><ul><li>07 条形排名：文字数值公式使用 prev−next，条形宽度使用 next−prev，方向相反。需要区分“与参考不一致”和“数学上写错”；不能把复制这个错误当作能力目标。</li><li>08 信息茧房：原片 likeEvents 指向的初始卡片有搞笑、萌宠、美食，与“只点赞科技”的文字并不一致。复刻的对象时序仍可比较，但这个参考不宜直接当作正确推荐逻辑。</li><li>05 双摆：原片固定标签约 115°，但实际第二摆初始值是 1.5 弧度。复刻照着标签把两角都设成 115°，可解释一部分误判；另外分母写错、角度差单位错误仍是明确问题。</li><li>19 三角形：冷知识说“等腰直角三角形”，但示例底 10、高 6 的图形并不满足这一条件。这句原片已有，不归为复刻新增错误。</li><li>18 Echook：原片粒子尺寸调用 Math.random()，重渲染不一定得到相同细节。正式基准应先固定随机性。</li></ul></section><section><h2>下一轮可继续使用的 seed</h2><table><tr><th>简单描述</th><th>下一轮找什么</th><th>例子</th></tr><tr><td>内容准确</td><td>同一布局内含多条命令、标签、单位或细小文案</td><td>17、18、20</td></tr><tr><td>对象持续对应</td><td>同一批卡片、节点或圆点多次换状态，数量相同但位置不能乱</td><td>01、03、08、15</td></tr><tr><td>数据与画面同步</td><td>数字、图形高度/占比、颜色与提示一起变化</td><td>05、06、09、12、15</td></tr><tr><td>操作引发结果</td><td>游标选择或点击以后才出现反馈，而不是定时换一张图</td><td>02、06、10、13</td></tr><tr><td>转场的中间过程</td><td>遮罩、粒子变形、翻面，以及短时间重叠多个场景</td><td>03、04、11、14、17</td></tr><tr><td>同一素材持续运动</td><td>裁剪、缩放和运镜中，素材内容与对象身份保持不变</td><td>01、10、13、16</td></tr></table><p>需用跨类别视频和独立重复复刻，验证这些问题是否稳定出现。</p></section><p>20 条参考、复刻视频及原登记源码哈希均未改变。离线可读全部结论和代码片段；视频与完整源码链接需本地 8770 服务。</p></main></html>

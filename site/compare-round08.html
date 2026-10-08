@@ -1,0 +1,22 @@
+<!doctype html>
+<meta charset="utf-8">
+<title>Round 08 复杂素材复刻</title>
+<style>body{font:16px system-ui;margin:24px;background:#111722;color:#e9edf3}select,button{font:inherit;padding:8px;background:#263348;color:#fff;border:1px solid #536278;border-radius:6px}main{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:16px}video{width:100%;background:#000}aside{padding:14px;background:#202c3c;line-height:1.7;margin-top:16px}a{color:#9bc7ff}.muted{color:#afbbcb}</style>
+<h1>Round 08：输入不匹配的试验记录</h1><aside>这 4 条不计入有效 bench：所配素材与原片不对应。以下是输出记录，不能据此归因模型弱点。缺素材版本是人工替换占位图的演示，并非独立试验。</aside>
+<p class="muted">左侧参考片，右侧 Remotion 首次复刻。素材包分为完整素材和缺素材两种条件。</p>
+<select id="pick"></select> <select id="condition"><option value="recreation.mp4">替代素材试验（非完整素材）</option><option value="missing-recreation.mp4">占位演示（非独立试验）</option></select>
+<main><section><h3>参考视频</h3><video id="ref" controls muted playsinline></video></section><section><h3>复刻视频</h3><video id="rec" controls muted playsinline></video></section></main>
+<aside id="notes"></aside>
+<p><a href="docs/complex-material-round08.md">选片与素材规则</a> · <a href="docs/complex-material-round08-results.md">复刻结果与 weakness</a> · <a id="source" target="_blank" rel="noopener">原片来源</a></p>
+<script>
+const root='experiments/';
+const items=[
+ {id:'r08-human-explainer',name:'真人讲解：抠像、身份连续、推近',note:'复刻保留青绿色背景和推近，但人物变成另一张静态肖像，缺少透明抠像、口型和手部动作。',source:'https://vimeo.com/1162036108'},
+ {id:'r08-lyric-photo',name:'歌词 MV：字体、照片、逐句时序',note:'复刻保留深色背景和放射线，但字的大小、位置、逐词出现时间和背景画面都不一致。',source:'https://vimeo.com/1046458536'},
+ {id:'r08-software-device',name:'软件演示：真人、设备、UI 状态',note:'复刻能画出设备和后台 UI，但没有保持原片真人、酒店实景和原始 UI 状态之间的因果关系。',source:'https://vimeo.com/1107343615'},
+ {id:'r08-product-city',name:'产品/城市图形：已输出，但不符合复杂素材条件',note:'参考片为城市照明图形，复刻 agent 正在生成；先用于观察产品/图形层级。',source:'https://vimeo.com/151133356'}
+];
+const pick=document.querySelector('#pick');items.forEach((x,i)=>{let o=document.createElement('option');o.value=i;o.textContent=x.name;pick.append(o)});
+function load(i){let x=items[i];document.querySelector('#ref').src=root+x.id+'/reference.mp4';document.querySelector('#rec').src=root+x.id+'/'+document.querySelector('#condition').value;document.querySelector('#notes').textContent='输入核验未通过；历史描述不作为模型弱点结论。原文件与输出保留供审查。';document.querySelector('#source').href=x.source;location.hash=x.id}
+pick.onchange=()=>load(+pick.value);document.querySelector('#condition').onchange=()=>load(+pick.value);let initial=items.findIndex(x=>location.hash.slice(1)===x.id);pick.value=initial<0?0:initial;load(+pick.value);
+</script>
