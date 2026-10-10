@@ -23,6 +23,8 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+      - name: Fetch scored comparison media
+        run: python3 fetch_scored_media.py --site site
       - name: Upload viewer
         uses: actions/upload-pages-artifact@v3
         with:

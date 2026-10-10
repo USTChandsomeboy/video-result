@@ -1,0 +1,1 @@
+{"status":"complete","total":41.666,"provisional_total":null,"dimensions":{"presence":100.0,"attributes":25.0,"relations":0.0,"binding":75.0,"motion":51.66253649794478,"timing":0.0},"weights":{"presence":0.1,"attributes":0.15,"relations":0.15,"binding":0.2,"motion":0.25,"timing":0.15},"coverage":{"resolved":24,"declared":24,"unresolved_or_unsupported":0},"reason":null}

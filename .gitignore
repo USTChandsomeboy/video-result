@@ -7,3 +7,6 @@ examples/**/source-frames/
 examples/**/recreation-frames/
 examples/**/differences.json
 examples/**/source.json
+
+# Scored media is fetched from its immutable GitHub Release at deploy time.
+site/media/object-contract-v3/
