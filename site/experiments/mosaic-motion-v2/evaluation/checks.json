@@ -1,0 +1,1184 @@
+[
+  {
+    "id": "portrait.presence.正确图像进入绘制",
+    "object_id": "portrait",
+    "dimension": "presence",
+    "description": "正确图像进入绘制",
+    "status": "ok",
+    "score": 100.0,
+    "score_100": 100.0,
+    "metrics": {
+      "draws": 123
+    },
+    "evidence": {
+      "file": "src/Replica.tsx",
+      "line": 58,
+      "column": 5,
+      "expression": "ctx.drawImage(scene.after, x, y, tile, tile, x, y, tile + 0.2, tile + 0.2)"
+    }
+  },
+  {
+    "id": "portrait.attributes.块的几何尺寸",
+    "object_id": "portrait",
+    "dimension": "attributes",
+    "description": "块的几何尺寸",
+    "status": "ok",
+    "score": 79.857,
+    "score_100": 79.857,
+    "metrics": {
+      "normalization": "mean |log(size ratio)| / log(4)",
+      "samples": 5
+    },
+    "evidence": {
+      "reference": {
+        "file": "src/engine/draw.ts",
+        "line": 64,
+        "column": 5,
+        "expression": "ctx.drawImage(scene.after, tile.x, tile.y, w, h, -w / 2, -h / 2, w, h)"
+      },
+      "replica": {
+        "file": "src/Replica.tsx",
+        "line": 53,
+        "column": 7,
+        "expression": "ctx.drawImage(scene.after, x, y, tile, tile, x, y, tile + 0.15, tile + 0.15)"
+      }
+    }
+  },
+  {
+    "id": "portrait.attributes.块的多边形遮罩",
+    "object_id": "portrait",
+    "dimension": "attributes",
+    "description": "块的多边形遮罩",
+    "status": "ok",
+    "score": 0.0,
+    "score_100": 0.0,
+    "metrics": {
+      "partial_samples": 5
+    },
+    "evidence": {
+      "reference": {
+        "file": "src/engine/draw.ts",
+        "line": 64,
+        "column": 5,
+        "expression": "ctx.drawImage(scene.after, tile.x, tile.y, w, h, -w / 2, -h / 2, w, h)"
+      },
+      "replica": {
+        "file": "src/Replica.tsx",
+        "line": 53,
+        "column": 7,
+        "expression": "ctx.drawImage(scene.after, x, y, tile, tile, x, y, tile + 0.15, tile + 0.15)"
+      }
+    }
+  },
+  {
+    "id": "portrait.relations.画面与镜头的位置和缩放",
+    "object_id": "portrait",
+    "dimension": "relations",
+    "description": "画面与镜头的位置和缩放",
+    "status": "ok",
+    "score": 68.38,
+    "score_100": 68.38,
+    "metrics": {
+      "samples": 23,
+      "position_full_penalty_px": 250,
+      "zoom_full_penalty": 0.25
+    },
+    "evidence": {}
+  },
+  {
+    "id": "portrait.binding.该图像区域的运动通道",
+    "object_id": "portrait",
+    "dimension": "binding",
+    "description": "该图像区域的运动通道",
+    "status": "ok",
+    "score": 27.942,
+    "score_100": 27.942,
+    "metrics": {
+      "channels": "alpha, translation, scale, rotation",
+      "representatives": 3
+    },
+    "evidence": {
+      "reference": {
+        "file": "src/engine/draw.ts",
+        "line": 64,
+        "column": 5,
+        "expression": "ctx.drawImage(scene.after, tile.x, tile.y, w, h, -w / 2, -h / 2, w, h)"
+      },
+      "replica": {
+        "file": "src/Replica.tsx",
+        "line": 53,
+        "column": 7,
+        "expression": "ctx.drawImage(scene.after, x, y, tile, tile, x, y, tile + 0.15, tile + 0.15)"
+      }
+    }
+  },
+  {
+    "id": "portrait.motion.块的位移轨迹",
+    "object_id": "portrait",
+    "dimension": "motion",
+    "description": "块的位移轨迹",
+    "status": "ok",
+    "score": 80.609,
+    "score_100": 80.609,
+    "metrics": {
+      "mean_world_px_error": 5.817433189321275,
+      "full_penalty_world_px": 30
+    },
+    "evidence": {
+      "reference": {
+        "file": "src/engine/draw.ts",
+        "line": 64,
+        "column": 5,
+        "expression": "ctx.drawImage(scene.after, tile.x, tile.y, w, h, -w / 2, -h / 2, w, h)"
+      },
+      "replica": {
+        "file": "src/Replica.tsx",
+        "line": 53,
+        "column": 7,
+        "expression": "ctx.drawImage(scene.after, x, y, tile, tile, x, y, tile + 0.15, tile + 0.15)"
+      }
+    }
+  },
+  {
+    "id": "portrait.motion.块的缩放和旋转轨迹",
+    "object_id": "portrait",
+    "dimension": "motion",
+    "description": "块的缩放和旋转轨迹",
+    "status": "ok",
+    "score": 27.719,
+    "score_100": 27.719,
+    "metrics": {
+      "normalized_mean_error": 0.7228095307849252,
+      "scale_normalization": 0.26,
+      "rotation_normalization_radians": 0.25
+    },
+    "evidence": {
+      "reference": {
+        "file": "src/engine/draw.ts",
+        "line": 64,
+        "column": 5,
+        "expression": "ctx.drawImage(scene.after, tile.x, tile.y, w, h, -w / 2, -h / 2, w, h)"
+      },
+      "replica": {
+        "file": "src/Replica.tsx",
+        "line": 53,
+        "column": 7,
+        "expression": "ctx.drawImage(scene.after, x, y, tile, tile, x, y, tile + 0.15, tile + 0.15)"
+      }
+    }
+  },
+  {
+    "id": "portrait.timing.逐块透明度变化过程",
+    "object_id": "portrait",
+    "dimension": "timing",
+    "description": "逐块透明度变化过程",
+    "status": "ok",
+    "score": 96.58,
+    "score_100": 96.58,
+    "metrics": {
+      "mean_alpha_error": 0.01709870527614084,
+      "full_penalty": 0.5
+    },
+    "evidence": {}
+  },
+  {
+    "id": "portrait.timing.逐块开始和完成时间",
+    "object_id": "portrait",
+    "dimension": "timing",
+    "description": "逐块开始和完成时间",
+    "status": "ok",
+    "score": 83.333,
+    "score_100": 83.333,
+    "metrics": {
+      "mean_start_error_seconds": 0.19999999999999996,
+      "mean_end_error_seconds": 0.1333333333333333,
+      "full_penalty_seconds": 1
+    },
+    "evidence": {}
+  },
+  {
+    "id": "lounge.presence.正确图像进入绘制",
+    "object_id": "lounge",
+    "dimension": "presence",
+    "description": "正确图像进入绘制",
+    "status": "ok",
+    "score": 100.0,
+    "score_100": 100.0,
+    "metrics": {
+      "draws": 130
+    },
+    "evidence": {
+      "file": "src/Replica.tsx",
+      "line": 58,
+      "column": 5,
+      "expression": "ctx.drawImage(scene.after, x, y, tile, tile, x, y, tile + 0.2, tile + 0.2)"
+    }
+  },
+  {
+    "id": "lounge.attributes.块的几何尺寸",
+    "object_id": "lounge",
+    "dimension": "attributes",
+    "description": "块的几何尺寸",
+    "status": "ok",
+    "score": 85.4,
+    "score_100": 85.4,
+    "metrics": {
+      "normalization": "mean |log(size ratio)| / log(4)",
+      "samples": 19
+    },
+    "evidence": {
+      "reference": {
+        "file": "src/engine/draw.ts",
+        "line": 64,
+        "column": 5,
+        "expression": "ctx.drawImage(scene.after, tile.x, tile.y, w, h, -w / 2, -h / 2, w, h)"
+      },
+      "replica": {
+        "file": "src/Replica.tsx",
+        "line": 53,
+        "column": 7,
+        "expression": "ctx.drawImage(scene.after, x, y, tile, tile, x, y, tile + 0.15, tile + 0.15)"
+      }
+    }
+  },
+  {
+    "id": "lounge.attributes.块的多边形遮罩",
+    "object_id": "lounge",
+    "dimension": "attributes",
+    "description": "块的多边形遮罩",
+    "status": "ok",
+    "score": 0.0,
+    "score_100": 0.0,
+    "metrics": {
+      "partial_samples": 19
+    },
+    "evidence": {
+      "reference": {
+        "file": "src/engine/draw.ts",
+        "line": 64,
+        "column": 5,
+        "expression": "ctx.drawImage(scene.after, tile.x, tile.y, w, h, -w / 2, -h / 2, w, h)"
+      },
+      "replica": {
+        "file": "src/Replica.tsx",
+        "line": 53,
+        "column": 7,
+        "expression": "ctx.drawImage(scene.after, x, y, tile, tile, x, y, tile + 0.15, tile + 0.15)"
+      }
+    }
+  },
+  {
+    "id": "lounge.relations.画面与镜头的位置和缩放",
+    "object_id": "lounge",
+    "dimension": "relations",
+    "description": "画面与镜头的位置和缩放",
+    "status": "ok",
+    "score": 92.996,
+    "score_100": 92.996,
+    "metrics": {
+      "samples": 24,
+      "position_full_penalty_px": 250,
+      "zoom_full_penalty": 0.25
+    },
+    "evidence": {}
+  },
+  {
+    "id": "lounge.binding.该图像区域的运动通道",
+    "object_id": "lounge",
+    "dimension": "binding",
+    "description": "该图像区域的运动通道",
+    "status": "ok",
+    "score": 34.447,
+    "score_100": 34.447,
+    "metrics": {
+      "channels": "alpha, translation, scale, rotation",
+      "representatives": 12
+    },
+    "evidence": {
+      "reference": {
+        "file": "src/engine/draw.ts",
+        "line": 64,
+        "column": 5,
+        "expression": "ctx.drawImage(scene.after, tile.x, tile.y, w, h, -w / 2, -h / 2, w, h)"
+      },
+      "replica": {
+        "file": "src/Replica.tsx",
+        "line": 53,
+        "column": 7,
+        "expression": "ctx.drawImage(scene.after, x, y, tile, tile, x, y, tile + 0.15, tile + 0.15)"
+      }
+    }
+  },
+  {
+    "id": "lounge.motion.块的位移轨迹",
+    "object_id": "lounge",
+    "dimension": "motion",
+    "description": "块的位移轨迹",
+    "status": "ok",
+    "score": 53.467,
+    "score_100": 53.467,
+    "metrics": {
+      "mean_world_px_error": 13.959972978900229,
+      "full_penalty_world_px": 30
+    },
+    "evidence": {
+      "reference": {
+        "file": "src/engine/draw.ts",
+        "line": 64,
+        "column": 5,
+        "expression": "ctx.drawImage(scene.after, tile.x, tile.y, w, h, -w / 2, -h / 2, w, h)"
+      },
+      "replica": {
+        "file": "src/Replica.tsx",
+        "line": 53,
+        "column": 7,
+        "expression": "ctx.drawImage(scene.after, x, y, tile, tile, x, y, tile + 0.15, tile + 0.15)"
+      }
+    }
+  },
+  {
+    "id": "lounge.motion.块的缩放和旋转轨迹",
+    "object_id": "lounge",
+    "dimension": "motion",
+    "description": "块的缩放和旋转轨迹",
+    "status": "ok",
+    "score": 2.127,
+    "score_100": 2.127,
+    "metrics": {
+      "normalized_mean_error": 0.9787298198745072,
+      "scale_normalization": 0.26,
+      "rotation_normalization_radians": 0.25
+    },
+    "evidence": {
+      "reference": {
+        "file": "src/engine/draw.ts",
+        "line": 64,
+        "column": 5,
+        "expression": "ctx.drawImage(scene.after, tile.x, tile.y, w, h, -w / 2, -h / 2, w, h)"
+      },
+      "replica": {
+        "file": "src/Replica.tsx",
+        "line": 53,
+        "column": 7,
+        "expression": "ctx.drawImage(scene.after, x, y, tile, tile, x, y, tile + 0.15, tile + 0.15)"
+      }
+    }
+  },
+  {
+    "id": "lounge.timing.逐块透明度变化过程",
+    "object_id": "lounge",
+    "dimension": "timing",
+    "description": "逐块透明度变化过程",
+    "status": "ok",
+    "score": 94.671,
+    "score_100": 94.671,
+    "metrics": {
+      "mean_alpha_error": 0.026646899735148617,
+      "full_penalty": 0.5
+    },
+    "evidence": {}
+  },
+  {
+    "id": "lounge.timing.逐块开始和完成时间",
+    "object_id": "lounge",
+    "dimension": "timing",
+    "description": "逐块开始和完成时间",
+    "status": "ok",
+    "score": 88.333,
+    "score_100": 88.333,
+    "metrics": {
+      "mean_start_error_seconds": 0.1166666666666667,
+      "mean_end_error_seconds": 0.11666666666666677,
+      "full_penalty_seconds": 1
+    },
+    "evidence": {}
+  },
+  {
+    "id": "flight.presence.正确图像进入绘制",
+    "object_id": "flight",
+    "dimension": "presence",
+    "description": "正确图像进入绘制",
+    "status": "ok",
+    "score": 100.0,
+    "score_100": 100.0,
+    "metrics": {
+      "draws": 124
+    },
+    "evidence": {
+      "file": "src/Replica.tsx",
+      "line": 58,
+      "column": 5,
+      "expression": "ctx.drawImage(scene.after, x, y, tile, tile, x, y, tile + 0.2, tile + 0.2)"
+    }
+  },
+  {
+    "id": "flight.attributes.块的几何尺寸",
+    "object_id": "flight",
+    "dimension": "attributes",
+    "description": "块的几何尺寸",
+    "status": "ok",
+    "score": 87.468,
+    "score_100": 87.468,
+    "metrics": {
+      "normalization": "mean |log(size ratio)| / log(4)",
+      "samples": 22
+    },
+    "evidence": {
+      "reference": {
+        "file": "src/engine/draw.ts",
+        "line": 64,
+        "column": 5,
+        "expression": "ctx.drawImage(scene.after, tile.x, tile.y, w, h, -w / 2, -h / 2, w, h)"
+      },
+      "replica": {
+        "file": "src/Replica.tsx",
+        "line": 53,
+        "column": 7,
+        "expression": "ctx.drawImage(scene.after, x, y, tile, tile, x, y, tile + 0.15, tile + 0.15)"
+      }
+    }
+  },
+  {
+    "id": "flight.attributes.块的多边形遮罩",
+    "object_id": "flight",
+    "dimension": "attributes",
+    "description": "块的多边形遮罩",
+    "status": "ok",
+    "score": 0.0,
+    "score_100": 0.0,
+    "metrics": {
+      "partial_samples": 22
+    },
+    "evidence": {
+      "reference": {
+        "file": "src/engine/draw.ts",
+        "line": 64,
+        "column": 5,
+        "expression": "ctx.drawImage(scene.after, tile.x, tile.y, w, h, -w / 2, -h / 2, w, h)"
+      },
+      "replica": {
+        "file": "src/Replica.tsx",
+        "line": 53,
+        "column": 7,
+        "expression": "ctx.drawImage(scene.after, x, y, tile, tile, x, y, tile + 0.15, tile + 0.15)"
+      }
+    }
+  },
+  {
+    "id": "flight.relations.画面与镜头的位置和缩放",
+    "object_id": "flight",
+    "dimension": "relations",
+    "description": "画面与镜头的位置和缩放",
+    "status": "ok",
+    "score": 93.416,
+    "score_100": 93.416,
+    "metrics": {
+      "samples": 24,
+      "position_full_penalty_px": 250,
+      "zoom_full_penalty": 0.25
+    },
+    "evidence": {}
+  },
+  {
+    "id": "flight.binding.该图像区域的运动通道",
+    "object_id": "flight",
+    "dimension": "binding",
+    "description": "该图像区域的运动通道",
+    "status": "ok",
+    "score": 23.309,
+    "score_100": 23.309,
+    "metrics": {
+      "channels": "alpha, translation, scale, rotation",
+      "representatives": 12
+    },
+    "evidence": {
+      "reference": {
+        "file": "src/engine/draw.ts",
+        "line": 64,
+        "column": 5,
+        "expression": "ctx.drawImage(scene.after, tile.x, tile.y, w, h, -w / 2, -h / 2, w, h)"
+      },
+      "replica": {
+        "file": "src/Replica.tsx",
+        "line": 53,
+        "column": 7,
+        "expression": "ctx.drawImage(scene.after, x, y, tile, tile, x, y, tile + 0.15, tile + 0.15)"
+      }
+    }
+  },
+  {
+    "id": "flight.motion.块的位移轨迹",
+    "object_id": "flight",
+    "dimension": "motion",
+    "description": "块的位移轨迹",
+    "status": "ok",
+    "score": 71.769,
+    "score_100": 71.769,
+    "metrics": {
+      "mean_world_px_error": 8.469365873294636,
+      "full_penalty_world_px": 30
+    },
+    "evidence": {
+      "reference": {
+        "file": "src/engine/draw.ts",
+        "line": 64,
+        "column": 5,
+        "expression": "ctx.drawImage(scene.after, tile.x, tile.y, w, h, -w / 2, -h / 2, w, h)"
+      },
+      "replica": {
+        "file": "src/Replica.tsx",
+        "line": 53,
+        "column": 7,
+        "expression": "ctx.drawImage(scene.after, x, y, tile, tile, x, y, tile + 0.15, tile + 0.15)"
+      }
+    }
+  },
+  {
+    "id": "flight.motion.块的缩放和旋转轨迹",
+    "object_id": "flight",
+    "dimension": "motion",
+    "description": "块的缩放和旋转轨迹",
+    "status": "ok",
+    "score": 10.558,
+    "score_100": 10.558,
+    "metrics": {
+      "normalized_mean_error": 0.8944240851508204,
+      "scale_normalization": 0.26,
+      "rotation_normalization_radians": 0.25
+    },
+    "evidence": {
+      "reference": {
+        "file": "src/engine/draw.ts",
+        "line": 64,
+        "column": 5,
+        "expression": "ctx.drawImage(scene.after, tile.x, tile.y, w, h, -w / 2, -h / 2, w, h)"
+      },
+      "replica": {
+        "file": "src/Replica.tsx",
+        "line": 53,
+        "column": 7,
+        "expression": "ctx.drawImage(scene.after, x, y, tile, tile, x, y, tile + 0.15, tile + 0.15)"
+      }
+    }
+  },
+  {
+    "id": "flight.timing.逐块透明度变化过程",
+    "object_id": "flight",
+    "dimension": "timing",
+    "description": "逐块透明度变化过程",
+    "status": "ok",
+    "score": 88.499,
+    "score_100": 88.499,
+    "metrics": {
+      "mean_alpha_error": 0.057503447280928016,
+      "full_penalty": 0.5
+    },
+    "evidence": {}
+  },
+  {
+    "id": "flight.timing.逐块开始和完成时间",
+    "object_id": "flight",
+    "dimension": "timing",
+    "description": "逐块开始和完成时间",
+    "status": "ok",
+    "score": 76.667,
+    "score_100": 76.667,
+    "metrics": {
+      "mean_start_error_seconds": 0.21666666666666665,
+      "mean_end_error_seconds": 0.24999999999999986,
+      "full_penalty_seconds": 1
+    },
+    "evidence": {}
+  },
+  {
+    "id": "suite.presence.正确图像进入绘制",
+    "object_id": "suite",
+    "dimension": "presence",
+    "description": "正确图像进入绘制",
+    "status": "ok",
+    "score": 100.0,
+    "score_100": 100.0,
+    "metrics": {
+      "draws": 143
+    },
+    "evidence": {
+      "file": "src/Replica.tsx",
+      "line": 58,
+      "column": 5,
+      "expression": "ctx.drawImage(scene.after, x, y, tile, tile, x, y, tile + 0.2, tile + 0.2)"
+    }
+  },
+  {
+    "id": "suite.attributes.块的几何尺寸",
+    "object_id": "suite",
+    "dimension": "attributes",
+    "description": "块的几何尺寸",
+    "status": "ok",
+    "score": 85.638,
+    "score_100": 85.638,
+    "metrics": {
+      "normalization": "mean |log(size ratio)| / log(4)",
+      "samples": 22
+    },
+    "evidence": {
+      "reference": {
+        "file": "src/engine/draw.ts",
+        "line": 64,
+        "column": 5,
+        "expression": "ctx.drawImage(scene.after, tile.x, tile.y, w, h, -w / 2, -h / 2, w, h)"
+      },
+      "replica": {
+        "file": "src/Replica.tsx",
+        "line": 53,
+        "column": 7,
+        "expression": "ctx.drawImage(scene.after, x, y, tile, tile, x, y, tile + 0.15, tile + 0.15)"
+      }
+    }
+  },
+  {
+    "id": "suite.attributes.块的多边形遮罩",
+    "object_id": "suite",
+    "dimension": "attributes",
+    "description": "块的多边形遮罩",
+    "status": "ok",
+    "score": 0.0,
+    "score_100": 0.0,
+    "metrics": {
+      "partial_samples": 22
+    },
+    "evidence": {
+      "reference": {
+        "file": "src/engine/draw.ts",
+        "line": 64,
+        "column": 5,
+        "expression": "ctx.drawImage(scene.after, tile.x, tile.y, w, h, -w / 2, -h / 2, w, h)"
+      },
+      "replica": {
+        "file": "src/Replica.tsx",
+        "line": 53,
+        "column": 7,
+        "expression": "ctx.drawImage(scene.after, x, y, tile, tile, x, y, tile + 0.15, tile + 0.15)"
+      }
+    }
+  },
+  {
+    "id": "suite.relations.画面与镜头的位置和缩放",
+    "object_id": "suite",
+    "dimension": "relations",
+    "description": "画面与镜头的位置和缩放",
+    "status": "ok",
+    "score": 91.043,
+    "score_100": 91.043,
+    "metrics": {
+      "samples": 26,
+      "position_full_penalty_px": 250,
+      "zoom_full_penalty": 0.25
+    },
+    "evidence": {}
+  },
+  {
+    "id": "suite.binding.该图像区域的运动通道",
+    "object_id": "suite",
+    "dimension": "binding",
+    "description": "该图像区域的运动通道",
+    "status": "ok",
+    "score": 35.635,
+    "score_100": 35.635,
+    "metrics": {
+      "channels": "alpha, translation, scale, rotation",
+      "representatives": 12
+    },
+    "evidence": {
+      "reference": {
+        "file": "src/engine/draw.ts",
+        "line": 64,
+        "column": 5,
+        "expression": "ctx.drawImage(scene.after, tile.x, tile.y, w, h, -w / 2, -h / 2, w, h)"
+      },
+      "replica": {
+        "file": "src/Replica.tsx",
+        "line": 53,
+        "column": 7,
+        "expression": "ctx.drawImage(scene.after, x, y, tile, tile, x, y, tile + 0.15, tile + 0.15)"
+      }
+    }
+  },
+  {
+    "id": "suite.motion.块的位移轨迹",
+    "object_id": "suite",
+    "dimension": "motion",
+    "description": "块的位移轨迹",
+    "status": "ok",
+    "score": 60.381,
+    "score_100": 60.381,
+    "metrics": {
+      "mean_world_px_error": 11.885631958384751,
+      "full_penalty_world_px": 30
+    },
+    "evidence": {
+      "reference": {
+        "file": "src/engine/draw.ts",
+        "line": 64,
+        "column": 5,
+        "expression": "ctx.drawImage(scene.after, tile.x, tile.y, w, h, -w / 2, -h / 2, w, h)"
+      },
+      "replica": {
+        "file": "src/Replica.tsx",
+        "line": 53,
+        "column": 7,
+        "expression": "ctx.drawImage(scene.after, x, y, tile, tile, x, y, tile + 0.15, tile + 0.15)"
+      }
+    }
+  },
+  {
+    "id": "suite.motion.块的缩放和旋转轨迹",
+    "object_id": "suite",
+    "dimension": "motion",
+    "description": "块的缩放和旋转轨迹",
+    "status": "ok",
+    "score": 23.78,
+    "score_100": 23.78,
+    "metrics": {
+      "normalized_mean_error": 0.7621950544910163,
+      "scale_normalization": 0.26,
+      "rotation_normalization_radians": 0.25
+    },
+    "evidence": {
+      "reference": {
+        "file": "src/engine/draw.ts",
+        "line": 64,
+        "column": 5,
+        "expression": "ctx.drawImage(scene.after, tile.x, tile.y, w, h, -w / 2, -h / 2, w, h)"
+      },
+      "replica": {
+        "file": "src/Replica.tsx",
+        "line": 53,
+        "column": 7,
+        "expression": "ctx.drawImage(scene.after, x, y, tile, tile, x, y, tile + 0.15, tile + 0.15)"
+      }
+    }
+  },
+  {
+    "id": "suite.timing.逐块透明度变化过程",
+    "object_id": "suite",
+    "dimension": "timing",
+    "description": "逐块透明度变化过程",
+    "status": "ok",
+    "score": 91.427,
+    "score_100": 91.427,
+    "metrics": {
+      "mean_alpha_error": 0.04286705671947868,
+      "full_penalty": 0.5
+    },
+    "evidence": {}
+  },
+  {
+    "id": "suite.timing.逐块开始和完成时间",
+    "object_id": "suite",
+    "dimension": "timing",
+    "description": "逐块开始和完成时间",
+    "status": "ok",
+    "score": 76.667,
+    "score_100": 76.667,
+    "metrics": {
+      "mean_start_error_seconds": 0.26666666666666633,
+      "mean_end_error_seconds": 0.20000000000000048,
+      "full_penalty_seconds": 1
+    },
+    "evidence": {}
+  },
+  {
+    "id": "dinner.presence.正确图像进入绘制",
+    "object_id": "dinner",
+    "dimension": "presence",
+    "description": "正确图像进入绘制",
+    "status": "ok",
+    "score": 100.0,
+    "score_100": 100.0,
+    "metrics": {
+      "draws": 134
+    },
+    "evidence": {
+      "file": "src/Replica.tsx",
+      "line": 58,
+      "column": 5,
+      "expression": "ctx.drawImage(scene.after, x, y, tile, tile, x, y, tile + 0.2, tile + 0.2)"
+    }
+  },
+  {
+    "id": "dinner.attributes.块的几何尺寸",
+    "object_id": "dinner",
+    "dimension": "attributes",
+    "description": "块的几何尺寸",
+    "status": "ok",
+    "score": 92.135,
+    "score_100": 92.135,
+    "metrics": {
+      "normalization": "mean |log(size ratio)| / log(4)",
+      "samples": 18
+    },
+    "evidence": {
+      "reference": {
+        "file": "src/engine/draw.ts",
+        "line": 64,
+        "column": 5,
+        "expression": "ctx.drawImage(scene.after, tile.x, tile.y, w, h, -w / 2, -h / 2, w, h)"
+      },
+      "replica": {
+        "file": "src/Replica.tsx",
+        "line": 53,
+        "column": 7,
+        "expression": "ctx.drawImage(scene.after, x, y, tile, tile, x, y, tile + 0.15, tile + 0.15)"
+      }
+    }
+  },
+  {
+    "id": "dinner.attributes.块的多边形遮罩",
+    "object_id": "dinner",
+    "dimension": "attributes",
+    "description": "块的多边形遮罩",
+    "status": "ok",
+    "score": 0.0,
+    "score_100": 0.0,
+    "metrics": {
+      "partial_samples": 18
+    },
+    "evidence": {
+      "reference": {
+        "file": "src/engine/draw.ts",
+        "line": 64,
+        "column": 5,
+        "expression": "ctx.drawImage(scene.after, tile.x, tile.y, w, h, -w / 2, -h / 2, w, h)"
+      },
+      "replica": {
+        "file": "src/Replica.tsx",
+        "line": 53,
+        "column": 7,
+        "expression": "ctx.drawImage(scene.after, x, y, tile, tile, x, y, tile + 0.15, tile + 0.15)"
+      }
+    }
+  },
+  {
+    "id": "dinner.relations.画面与镜头的位置和缩放",
+    "object_id": "dinner",
+    "dimension": "relations",
+    "description": "画面与镜头的位置和缩放",
+    "status": "ok",
+    "score": 90.145,
+    "score_100": 90.145,
+    "metrics": {
+      "samples": 21,
+      "position_full_penalty_px": 250,
+      "zoom_full_penalty": 0.25
+    },
+    "evidence": {}
+  },
+  {
+    "id": "dinner.binding.该图像区域的运动通道",
+    "object_id": "dinner",
+    "dimension": "binding",
+    "description": "该图像区域的运动通道",
+    "status": "ok",
+    "score": 8.355,
+    "score_100": 8.355,
+    "metrics": {
+      "channels": "alpha, translation, scale, rotation",
+      "representatives": 12
+    },
+    "evidence": {
+      "reference": {
+        "file": "src/engine/draw.ts",
+        "line": 64,
+        "column": 5,
+        "expression": "ctx.drawImage(scene.after, tile.x, tile.y, w, h, -w / 2, -h / 2, w, h)"
+      },
+      "replica": {
+        "file": "src/Replica.tsx",
+        "line": 53,
+        "column": 7,
+        "expression": "ctx.drawImage(scene.after, x, y, tile, tile, x, y, tile + 0.15, tile + 0.15)"
+      }
+    }
+  },
+  {
+    "id": "dinner.motion.块的位移轨迹",
+    "object_id": "dinner",
+    "dimension": "motion",
+    "description": "块的位移轨迹",
+    "status": "ok",
+    "score": 77.083,
+    "score_100": 77.083,
+    "metrics": {
+      "mean_world_px_error": 6.875121172030577,
+      "full_penalty_world_px": 30
+    },
+    "evidence": {
+      "reference": {
+        "file": "src/engine/draw.ts",
+        "line": 64,
+        "column": 5,
+        "expression": "ctx.drawImage(scene.after, tile.x, tile.y, w, h, -w / 2, -h / 2, w, h)"
+      },
+      "replica": {
+        "file": "src/Replica.tsx",
+        "line": 53,
+        "column": 7,
+        "expression": "ctx.drawImage(scene.after, x, y, tile, tile, x, y, tile + 0.15, tile + 0.15)"
+      }
+    }
+  },
+  {
+    "id": "dinner.motion.块的缩放和旋转轨迹",
+    "object_id": "dinner",
+    "dimension": "motion",
+    "description": "块的缩放和旋转轨迹",
+    "status": "ok",
+    "score": 26.059,
+    "score_100": 26.059,
+    "metrics": {
+      "normalized_mean_error": 0.7394074279611001,
+      "scale_normalization": 0.26,
+      "rotation_normalization_radians": 0.25
+    },
+    "evidence": {
+      "reference": {
+        "file": "src/engine/draw.ts",
+        "line": 64,
+        "column": 5,
+        "expression": "ctx.drawImage(scene.after, tile.x, tile.y, w, h, -w / 2, -h / 2, w, h)"
+      },
+      "replica": {
+        "file": "src/Replica.tsx",
+        "line": 53,
+        "column": 7,
+        "expression": "ctx.drawImage(scene.after, x, y, tile, tile, x, y, tile + 0.15, tile + 0.15)"
+      }
+    }
+  },
+  {
+    "id": "dinner.timing.逐块透明度变化过程",
+    "object_id": "dinner",
+    "dimension": "timing",
+    "description": "逐块透明度变化过程",
+    "status": "ok",
+    "score": 84.563,
+    "score_100": 84.563,
+    "metrics": {
+      "mean_alpha_error": 0.0771874442871712,
+      "full_penalty": 0.5
+    },
+    "evidence": {}
+  },
+  {
+    "id": "dinner.timing.逐块开始和完成时间",
+    "object_id": "dinner",
+    "dimension": "timing",
+    "description": "逐块开始和完成时间",
+    "status": "ok",
+    "score": 70.833,
+    "score_100": 70.833,
+    "metrics": {
+      "mean_start_error_seconds": 0.2333333333333328,
+      "mean_end_error_seconds": 0.35000000000000114,
+      "full_penalty_seconds": 1
+    },
+    "evidence": {}
+  },
+  {
+    "id": "card.presence.正确图像进入绘制",
+    "object_id": "card",
+    "dimension": "presence",
+    "description": "正确图像进入绘制",
+    "status": "ok",
+    "score": 100.0,
+    "score_100": 100.0,
+    "metrics": {
+      "draws": 135
+    },
+    "evidence": {
+      "file": "src/Replica.tsx",
+      "line": 58,
+      "column": 5,
+      "expression": "ctx.drawImage(scene.after, x, y, tile, tile, x, y, tile + 0.2, tile + 0.2)"
+    }
+  },
+  {
+    "id": "card.attributes.块的几何尺寸",
+    "object_id": "card",
+    "dimension": "attributes",
+    "description": "块的几何尺寸",
+    "status": "ok",
+    "score": 85.595,
+    "score_100": 85.595,
+    "metrics": {
+      "normalization": "mean |log(size ratio)| / log(4)",
+      "samples": 17
+    },
+    "evidence": {
+      "reference": {
+        "file": "src/engine/draw.ts",
+        "line": 64,
+        "column": 5,
+        "expression": "ctx.drawImage(scene.after, tile.x, tile.y, w, h, -w / 2, -h / 2, w, h)"
+      },
+      "replica": {
+        "file": "src/Replica.tsx",
+        "line": 53,
+        "column": 7,
+        "expression": "ctx.drawImage(scene.after, x, y, tile, tile, x, y, tile + 0.15, tile + 0.15)"
+      }
+    }
+  },
+  {
+    "id": "card.attributes.块的多边形遮罩",
+    "object_id": "card",
+    "dimension": "attributes",
+    "description": "块的多边形遮罩",
+    "status": "ok",
+    "score": 0.0,
+    "score_100": 0.0,
+    "metrics": {
+      "partial_samples": 17
+    },
+    "evidence": {
+      "reference": {
+        "file": "src/engine/draw.ts",
+        "line": 64,
+        "column": 5,
+        "expression": "ctx.drawImage(scene.after, tile.x, tile.y, w, h, -w / 2, -h / 2, w, h)"
+      },
+      "replica": {
+        "file": "src/Replica.tsx",
+        "line": 53,
+        "column": 7,
+        "expression": "ctx.drawImage(scene.after, x, y, tile, tile, x, y, tile + 0.15, tile + 0.15)"
+      }
+    }
+  },
+  {
+    "id": "card.relations.画面与镜头的位置和缩放",
+    "object_id": "card",
+    "dimension": "relations",
+    "description": "画面与镜头的位置和缩放",
+    "status": "ok",
+    "score": 91.129,
+    "score_100": 91.129,
+    "metrics": {
+      "samples": 34,
+      "position_full_penalty_px": 250,
+      "zoom_full_penalty": 0.25
+    },
+    "evidence": {}
+  },
+  {
+    "id": "card.binding.该图像区域的运动通道",
+    "object_id": "card",
+    "dimension": "binding",
+    "description": "该图像区域的运动通道",
+    "status": "ok",
+    "score": 29.95,
+    "score_100": 29.95,
+    "metrics": {
+      "channels": "alpha, translation, scale, rotation",
+      "representatives": 12
+    },
+    "evidence": {
+      "reference": {
+        "file": "src/engine/draw.ts",
+        "line": 64,
+        "column": 5,
+        "expression": "ctx.drawImage(scene.after, tile.x, tile.y, w, h, -w / 2, -h / 2, w, h)"
+      },
+      "replica": {
+        "file": "src/Replica.tsx",
+        "line": 53,
+        "column": 7,
+        "expression": "ctx.drawImage(scene.after, x, y, tile, tile, x, y, tile + 0.15, tile + 0.15)"
+      }
+    }
+  },
+  {
+    "id": "card.motion.块的位移轨迹",
+    "object_id": "card",
+    "dimension": "motion",
+    "description": "块的位移轨迹",
+    "status": "ok",
+    "score": 69.118,
+    "score_100": 69.118,
+    "metrics": {
+      "mean_world_px_error": 9.264556692886378,
+      "full_penalty_world_px": 30
+    },
+    "evidence": {
+      "reference": {
+        "file": "src/engine/draw.ts",
+        "line": 64,
+        "column": 5,
+        "expression": "ctx.drawImage(scene.after, tile.x, tile.y, w, h, -w / 2, -h / 2, w, h)"
+      },
+      "replica": {
+        "file": "src/Replica.tsx",
+        "line": 53,
+        "column": 7,
+        "expression": "ctx.drawImage(scene.after, x, y, tile, tile, x, y, tile + 0.15, tile + 0.15)"
+      }
+    }
+  },
+  {
+    "id": "card.motion.块的缩放和旋转轨迹",
+    "object_id": "card",
+    "dimension": "motion",
+    "description": "块的缩放和旋转轨迹",
+    "status": "ok",
+    "score": 0.0,
+    "score_100": 0.0,
+    "metrics": {
+      "normalized_mean_error": 1.2815982078735946,
+      "scale_normalization": 0.26,
+      "rotation_normalization_radians": 0.25
+    },
+    "evidence": {
+      "reference": {
+        "file": "src/engine/draw.ts",
+        "line": 64,
+        "column": 5,
+        "expression": "ctx.drawImage(scene.after, tile.x, tile.y, w, h, -w / 2, -h / 2, w, h)"
+      },
+      "replica": {
+        "file": "src/Replica.tsx",
+        "line": 53,
+        "column": 7,
+        "expression": "ctx.drawImage(scene.after, x, y, tile, tile, x, y, tile + 0.15, tile + 0.15)"
+      }
+    }
+  },
+  {
+    "id": "card.timing.逐块透明度变化过程",
+    "object_id": "card",
+    "dimension": "timing",
+    "description": "逐块透明度变化过程",
+    "status": "ok",
+    "score": 96.31,
+    "score_100": 96.31,
+    "metrics": {
+      "mean_alpha_error": 0.018449852652513078,
+      "full_penalty": 0.5
+    },
+    "evidence": {}
+  },
+  {
+    "id": "card.timing.逐块开始和完成时间",
+    "object_id": "card",
+    "dimension": "timing",
+    "description": "逐块开始和完成时间",
+    "status": "ok",
+    "score": 89.167,
+    "score_100": 89.167,
+    "metrics": {
+      "mean_start_error_seconds": 0.09999999999999994,
+      "mean_end_error_seconds": 0.11666666666666714,
+      "full_penalty_seconds": 1
+    },
+    "evidence": {}
+  }
+]

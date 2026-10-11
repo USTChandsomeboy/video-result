@@ -1,0 +1,121 @@
+{
+  "status": "valid",
+  "total": 58.385,
+  "dimensions": {
+    "presence": 100.0,
+    "attributes": 43.008,
+    "relations": 87.851,
+    "binding": 26.606,
+    "motion": 41.889,
+    "timing": 86.421
+  },
+  "dimension_weights": {
+    "presence": 0.1,
+    "attributes": 0.15,
+    "relations": 0.15,
+    "binding": 0.2,
+    "motion": 0.25,
+    "timing": 0.15
+  },
+  "checks_total": 54,
+  "checks_resolved": 54,
+  "coverage": 1,
+  "unsupported": 0,
+  "scope": "Canvas 源码数值评分：六组图像、镜头、局部块几何/位移/旋转/缩放/透明度及揭示时序。每场景 12 个候选位置、151 个时间点，仅比较原视频画面中可见的采样区域；光照、颗粒、模糊和音频质量不计入此分数。",
+  "reference_source_files": [
+    {
+      "path": "src/engine/draw.ts",
+      "sha256": "bf5caea3f8f36d40b6e2560ad204e97423870eebacb865bbeecb55ea10c7ed73"
+    },
+    {
+      "path": "src/engine/math.ts",
+      "sha256": "262e39f877ac8cd79dfc795992c382828ca3d8561fb65cfc68c3fee18a0ef758"
+    },
+    {
+      "path": "src/engine/reveal.ts",
+      "sha256": "3952e8ec4e39f6a6b9adcc30211a493883eedae674f5c653e9679f7e8f5d1f96"
+    },
+    {
+      "path": "src/engine/timeline.ts",
+      "sha256": "743c74154023802462a3c383f13b8ce620ddea3dc123a3555e210f243a2bb446"
+    }
+  ],
+  "replica_source_files": [
+    {
+      "path": "src/Replica.tsx",
+      "sha256": "bc07b5c705c83f6fe4cb59bee7d914a5e5132835322047d3fa9b1b41f613caa2"
+    }
+  ],
+  "actual_component_validated_at": [
+    1,
+    6,
+    11,
+    16,
+    21,
+    24,
+    29
+  ],
+  "integrity_ok": true,
+  "plan_coverage": {
+    "status": "complete",
+    "objects": 6,
+    "checks": 54
+  },
+  "inputs": {
+    "source_sha256": {
+      "reference": {
+        "src/MosaicJourney.tsx": "d166131f2cd139fed5fe6c236c03033a8f32dd2d157280bd1d9f1034a8fd0ff6",
+        "src/MosaicLab.tsx": "05c7f8b4595281e93e3808c68a00b3cee47cb53be1d7e29a9f4efb5167de3fc5",
+        "src/Root.tsx": "a500110ebcadc23561ba58946b16f513c92ffb236e841ed976f7f714fff9c30f",
+        "src/engine/draw.ts": "bf5caea3f8f36d40b6e2560ad204e97423870eebacb865bbeecb55ea10c7ed73",
+        "src/engine/engine.test.ts": "97caed5d3cbff49189b77b03a48cef4fc349146bebd223de27ca4a2b2500fd3c",
+        "src/engine/math.ts": "262e39f877ac8cd79dfc795992c382828ca3d8561fb65cfc68c3fee18a0ef758",
+        "src/engine/reveal.ts": "3952e8ec4e39f6a6b9adcc30211a493883eedae674f5c653e9679f7e8f5d1f96",
+        "src/engine/timeline.ts": "743c74154023802462a3c383f13b8ce620ddea3dc123a3555e210f243a2bb446",
+        "src/engine/types.ts": "9fb140240fc90ef6505ecd6ebba6828af3bb0fc02f4e6047898344cc95cb8d42",
+        "src/engine/useAssets.ts": "fba4060299422ca711f6914d56c8dc0769c4a3e46a6a9be25d8f0305bdeac8f5",
+        "src/index.ts": "a58f804bf74bab68b4549aa5c715eb4a89ec5835206d198fc79b462b4fc71ef9",
+        "src/settings.ts": "0f1b7af4181ffa13789fd344bd632edc3a1589c3a363754ee9e4076a45298028"
+      },
+      "replica": {
+        "src/Replica.tsx": "bc07b5c705c83f6fe4cb59bee7d914a5e5132835322047d3fa9b1b41f613caa2",
+        "src/index.tsx": "d2e23efa0754dd6b40e5cc307d6b0dfba938b04b52028e93951d6624297e1d0e"
+      }
+    },
+    "reference_composition": {
+      "entry": "src/engine/draw.ts",
+      "export": "drawJourney",
+      "width": 1920,
+      "height": 1080,
+      "fps": 30,
+      "durationInFrames": 900,
+      "props": {},
+      "time_offset_seconds": 0
+    },
+    "replica_composition": {
+      "entry": "src/Replica.tsx",
+      "export": "Replica",
+      "props": {},
+      "time_offset_seconds": 0,
+      "width": 1920,
+      "height": 1080,
+      "fps": 30,
+      "durationInFrames": 900
+    }
+  },
+  "calibration": {
+    "status": "passed",
+    "rubric_sha256": "968720232f295e523e70f3fe91a794e57cf76ee5fec0b199f335f07c40863838",
+    "measurement_sha256": {
+      "verify.py": "c0a8e2ca84899736ae0a26f20c1bddea8a0664d9071fd7ed8903b6d9f538b3db",
+      "canvas_analyzer.cjs": "1be6666acc1ca21d4b5a6d9f2f5e495654afd2ac6a5e030300b0d3ed0990f4fb",
+      "ast_core.cjs": "1c757da4359a3fa9902b67f8f4870e848a6fca630d14860842c30377192a7f8e",
+      "source_index.py": "0f3d179afa3cc08ce8d1deca9882a50f44dbf478d30ac5d074aff9367ea087c0",
+      "package_integrity.py": "3b329802975318a3c82a3b30e0c39eac54edd92d991c21c1195724e193bee027",
+      "package.json": "d8594b21a324032a46350ff2b2aba67eb6ec2b893b3d24e30eed1adf6c01688e",
+      "package-lock.json": "36fb9ab9047114e0b70f29807918c55d119e673963a792bbc2a5f20f47923b75",
+      "private/rubric.json": "968720232f295e523e70f3fe91a794e57cf76ee5fec0b199f335f07c40863838",
+      "private/input-manifest.json": "3a4459bda562da86127f70b670d4b23023626fed6ef94a67e8bbda5fd3275d48"
+    }
+  }
+}

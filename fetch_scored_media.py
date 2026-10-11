@@ -8,13 +8,17 @@ import urllib.request
 from pathlib import Path
 
 
-def main(site):
-    manifest = json.loads((site / 'object-contract-v3-media.json').read_text())
-    target = site / 'media/object-contract-v3'
+def fetch_manifest(site, manifest_path):
+    manifest = json.loads(manifest_path.read_text())
+    media_dir = manifest.get('media_dir', 'media/' + manifest_path.name.removesuffix('-media.json'))
+    relative = Path(media_dir)
+    if relative.is_absolute() or '..' in relative.parts or relative.parts[0] != 'media':
+        raise ValueError('Invalid media directory: ' + media_dir)
+    target = site / relative
     target.mkdir(parents=True, exist_ok=True)
     for item in manifest['files']:
         name, expected = item['name'], item['sha256']
-        assert name == expected + '.mp4' and len(expected) == 64
+        assert name == expected + '.mp4' and len(expected) == 64 and all(c in '0123456789abcdef' for c in expected)
         assert item['url'].startswith('https://github.com/USTChandsomeboy/video-result/releases/download/')
         dest = target / name
         if dest.exists() and dest.stat().st_size == item['bytes']:
@@ -41,6 +45,14 @@ def main(site):
                 if attempt == 2:
                     raise
                 time.sleep(2 ** attempt)
+
+
+def main(site):
+    manifests = sorted(site.glob('*-media.json'))
+    if not manifests:
+        raise ValueError('No media manifests found')
+    for manifest_path in manifests:
+        fetch_manifest(site, manifest_path)
 
 
 if __name__ == '__main__':

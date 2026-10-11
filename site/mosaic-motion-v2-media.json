@@ -1,0 +1,21 @@
+{
+  "repository": "USTChandsomeboy/video-result",
+  "release_tag": "mosaic-motion-v2-media-20261011",
+  "media_dir": "media/mosaic-motion-v2",
+  "files": [
+    {
+      "kind": "reference",
+      "name": "07c54afb5d46a6778724266295df3a6ff61d4e05db3b615ee7b4bf83f06769f7.mp4",
+      "sha256": "07c54afb5d46a6778724266295df3a6ff61d4e05db3b615ee7b4bf83f06769f7",
+      "bytes": 15157842,
+      "url": "https://github.com/USTChandsomeboy/video-result/releases/download/mosaic-motion-v2-media-20261011/07c54afb5d46a6778724266295df3a6ff61d4e05db3b615ee7b4bf83f06769f7.mp4"
+    },
+    {
+      "kind": "replica",
+      "name": "007d238cc6296883cc0bd60822bb649b855302f075bfd6dbfc29414c3a70242c.mp4",
+      "sha256": "007d238cc6296883cc0bd60822bb649b855302f075bfd6dbfc29414c3a70242c",
+      "bytes": 76291512,
+      "url": "https://github.com/USTChandsomeboy/video-result/releases/download/mosaic-motion-v2-media-20261011/007d238cc6296883cc0bd60822bb649b855302f075bfd6dbfc29414c3a70242c.mp4"
+    }
+  ]
+}

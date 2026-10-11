@@ -24,3 +24,14 @@ http://127.0.0.1:8770/compare.html
 - `examples.json`：展示例子列表和差异数据。
 - `examples/knowledge-network/`：当前唯一上传的展示例子。
 - `serve.mjs`：本地静态文件服务。
+
+## GitHub Pages 展示
+
+公开站点：<https://ustchandsomeboy.github.io/video-result/>。
+
+- `site/object-contract-v3.html`：四条视频复刻与六维评分。
+- `site/experiments/mosaic-motion-v2/compare.html`：Mosaic Motion 30 秒复刻，58.385 分，54 项源码检查。
+
+新增案例的视频保存在 GitHub Release，页面与评分 JSON 保存在 Git 中。`site/*-media.json` 指定视频的下载地址、字节数和 SHA-256；GitHub Actions 运行 `fetch_scored_media.py` 核验后将视频和页面一起发布至 Pages。视频通过站点同域播放。
+
+Mosaic Motion 使用 Release `mosaic-motion-v2-media-20261011`。发布前先上传清单中的两个 MP4，然后提交页面、清单和评分 JSON；推送 `main` 会自动部署。
