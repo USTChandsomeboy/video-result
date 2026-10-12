@@ -1,0 +1,188 @@
+<!doctype html><html lang="zh-CN"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Motion Lab · 源码差异</title><style>body{margin:0;background:#101722;color:#edf1f8;font:16px/1.6 system-ui}main{max-width:1500px;margin:auto;padding:24px}a{color:#9ebfff}section{background:#172233;border:1px solid #33445e;border-radius:14px;padding:20px;margin:22px 0}.pair{display:grid;grid-template-columns:1fr 1fr;gap:16px}pre{background:#0e1725;font:12px/1.6 monospace;overflow:auto;padding:14px;max-height:500px}p{color:#afbdd1}@media(max-width:800px){.pair{grid-template-columns:1fr}}</style><main><a href="index.html">返回视频与评分</a><h1>Motion Lab：源码差异</h1><p>左侧为指定参考工程，右侧为新子 agent 的原始提交。行号对应各自源码文件。</p>
+<section><h2>地砖波动</h2><p>参考根据距离和落地时刻计算每块地砖高度；复刻高度固定。</p><div class="pair">
+<div><h3>参考源码 remotion.tsx</h3><pre> 95  function Timeline({frame}:{frame:number}){
+ 96   const lit=frame&lt;468,glow=useMemo(glowTexture,[]);
+ 97   const cells=useMemo(()=&gt;Array.from({length:45*3},(_,i)=&gt;({x:-5.5+(i%45)*.25,z:Math.floor(i/45)*1.25-1.25})),[]);
+ 98   const play=frame&lt;45?-4:frame&lt;285?-4+(frame-45)/60*2:frame&lt;330?4:frame&lt;384?4-8*(frame-330)/54:-4;
+ 99   const label=String(Math.round((play+4)*30)).padStart(3,&#x27;0&#x27;);
+100   return &lt;group&gt;
+101    &lt;mesh geometry={roundedGeo} position={[0,.2,0]} castShadow receiveShadow&gt;{[0,1,2,3,4,5].map(i=&gt;&lt;meshStandardMaterial key={i} attach={`material-${i}`} color={i===4?&#x27;#fbf0dc&#x27;:&#x27;#f9f8f4&#x27;} emissive={i===4?&#x27;#ffddab&#x27;:&#x27;#f9f7ed&#x27;} emissiveIntensity={frame&gt;=6&amp;&amp;frame&lt;468?(i===2?.3:i===4?.16:.08):0} roughness={.6}/&gt;)}&lt;/mesh&gt;
+102    {cells.map(({x,z},i)=&gt;{let ripple=0;for(let k=0;k&lt;5;k++){const d=Math.hypot(x-(-2+k*2),z);const q=(frame-(k&lt;4?LANDINGS[k]:384)-d*9);if(q&gt;=0&amp;&amp;q&lt;35)ripple+=.08*Math.sin(q*.35)*Math.exp(-q/11)}return &lt;Box key={i} at={[x,.345+ripple,z]} size={[.22,.034,1.08]} color={&#x27;#efeeea&#x27;} emissive={&#x27;#efeeea&#x27;} emission={frame&gt;=6&amp;&amp;frame&lt;468?.27:0} roughness={.95}/&gt;})}
+103    &lt;Rod a={[-5.65,.33,-2.03]} b={[5.65,.33,-2.03]} color=&#x27;#b5b2aa&#x27; r={.006}/&gt;</pre></div>
+<div><h3>复刻源码 Replica.tsx</h3><pre> 62  function Platform({frame}:{frame:number}) {
+ 63    const reset=frame&gt;=466;
+ 64    return &lt;&gt;
+ 65      &lt;group userData={{benchObject:&#x27;timeline.platform&#x27;}}&gt;
+ 66        &lt;Box position={[0,0,0]} size={[W,.22,6.6]} color=&#x27;#eeeee5&#x27;/&gt;
+ 67      &lt;/group&gt;
+ 68      &lt;group userData={{benchObject:&#x27;timeline.tiles&#x27;}}&gt;
+ 69        {Array.from({length:49},(_,i)=&gt;Array.from({length:3},(_,j)=&gt;
+ 70          &lt;Box key={`${i}-${j}`} position={[-6.12+i*.255,.128,-1.21+j*1.21]} size={[.236,.025,1.15]} color=&#x27;#efefe8&#x27;/&gt;
+ 71        ))}</pre></div>
+</div></section>
+<section><h2>虚线弧揭示</h2><p>参考按进度增加可见点；复刻让全部点共同渐显。</p><div class="pair">
+<div><h3>参考源码 remotion.tsx</h3><pre>151  function Arc({frame}:{frame:number}){
+152   if(frame&lt;303||frame&gt;=384)return null;
+153   const progress=clamp((frame-303)/15),opacity=frame&gt;375?clamp((384-frame)/9):.75;
+154   return &lt;group&gt;{Array.from({length:33},(_,i)=&gt;{const p=i/32;if(p&gt;progress)return null;return &lt;mesh key={i} position={[4-8*p,.6+3.5*4*p*(1-p),0]}&gt;&lt;sphereGeometry args={[.035,8,6]}/&gt;&lt;meshStandardMaterial color={&#x27;#282820&#x27;} transparent opacity={opacity}/&gt;&lt;/mesh&gt;})}&lt;/group&gt;
+155  }</pre></div>
+<div><h3>复刻源码 Replica.tsx</h3><pre>221  function Arc({frame}:{frame:number}) {
+222    const opacity=smooth((frame-306)/9)*(1-smooth((frame-386)/20));
+223    return &lt;group userData={{benchObject:&#x27;effects.arc&#x27;}}&gt;
+224      {Array.from({length:39},(_,i)=&gt;{
+225        const p=i/38;
+226        return &lt;mesh key={i} position={[mix(-4.6,4.6,p),.30+3.50*Math.sin(Math.PI*p),0]} scale={[opacity,opacity,opacity]}&gt;
+227          &lt;sphereGeometry args={[.026,8,6]}/&gt;&lt;meshStandardMaterial color=&#x27;#92978b&#x27; transparent opacity={opacity} roughness={1}/&gt;
+228        &lt;/mesh&gt;;
+229      })}</pre></div>
+</div></section>
+<section><h2>跳跃与回弹</h2><p>参考 25 帧跳跃和指数衰减回弹；复刻使用 33 帧正弦跳跃。</p><div class="pair">
+<div><h3>参考源码 remotion.tsx</h3><pre> 21  function pose(frame:number){
+ 22   let x=-4,h=0,sx=1,sy=1,spin=0,air=0;
+ 23   for(let k=0;k&lt;4;k++){
+ 24    const crouch=69+k*60,takeoff=80+k*60,land=105+k*60;
+ 25    if(frame&gt;=land)x=-2+k*2;
+ 26    if(frame&gt;=crouch&amp;&amp;frame&lt;takeoff){const q=smooth((frame-crouch)/11);x=-4+k*2;sx=mix(1,1.2,q);sy=mix(1,.75,q)}
+ 27    if(frame&gt;=takeoff&amp;&amp;frame&lt;land){const p=(frame-takeoff)/25;x=-4+k*2+2*smooth(p);h=1.25*4*p*(1-p);sx=mix(.85,1,smooth(p));sy=mix(1.28,1,smooth(p));air=Math.sin(p*Math.PI)}
+ 28    if(frame&gt;=land&amp;&amp;frame&lt;land+32){const q=frame-land;const b=Math.exp(-q/9)*Math.cos(q*.39);sx=1+.25*Math.exp(-q/9)*Math.sin(q*.39);sy=1-.3*Math.exp(-q/9)*Math.sin(q*.39)}
+ 29   }
+ 30   if(frame&gt;=312&amp;&amp;frame&lt;330){const q=smooth((frame-312)/18);x=4;sx=1+.3*q;sy=1-.4*q}
+ 31   if(frame&gt;=330&amp;&amp;frame&lt;384){const p=(frame-330)/54;x=4-8*p;h=3.5*4*p*(1-p);spin=-2*Math.PI*smooth(p);sx=mix(.85,1,smooth(p*4));sy=mix(1.28,1,smooth(p*4));air=Math.sin(p*Math.PI)}
+ 32   if(frame&gt;=384){x=-4;const q=frame-384;const b=q&lt;65?Math.exp(-q/10)*Math.cos(q*.38):0;sx=1+.3*Math.exp(-q/10)*Math.sin(q*.38);sy=1-.38*Math.exp(-q/10)*Math.sin(q*.38)}
+ 33   return {x,h,sx,sy,spin,air};</pre></div>
+<div><h3>复刻源码 Replica.tsx</h3><pre> 92  function mascotPose(frame:number) {
+ 93    let x=-4.6,y=.34,sx=1,sy=1,sz=1,rz=0,ry=0,rx=0,air=0;
+ 94    for(let i=0;i&lt;4;i++) {
+ 95      const start=75+i*60,end=108+i*60;
+ 96      if(frame&gt;=start) {
+ 97        const p=clamp((frame-start)/(end-start));
+ 98        x=mix(keyX[i],keyX[i+1],smooth(p));
+ 99        air=Math.sin(p*Math.PI);y=.34+1.15*air;
+100        const stretch=Math.sin(Math.PI*clamp(p/.32));
+101        sx=1-.13*stretch;sy=1+.28*stretch;sz=1-.06*stretch;
+102        rz=-.075*Math.sin(p*Math.PI*2);
+103      }
+104      const anticipation=clamp((frame-(start-13))/13)*(1-clamp((frame-start)/3));
+105      if(frame&gt;=start-13 &amp;&amp; frame&lt;start){sx=1+.13*anticipation;sy=1-.23*anticipation;sz=1+.10*anticipation; y=.34; rz=.055*anticipation;}
+106      const landing=frame-end;
+107      if(landing&gt;=0 &amp;&amp; landing&lt;18) {
+108        const squash=Math.sin(Math.PI*clamp(landing/10))*Math.max(0,1-landing/18);
+109        sx=1+.23*squash;sy=1-.31*squash;sz=1+.12*squash;
+110        if(landing&gt;9){const recoil=Math.sin((landing-9)/9*Math.PI)*.05;sy=1+recoil;sx=1-recoil*.5;}
+111        rz=Math.sin(landing*.55)*Math.exp(-landing*.17)*.045;
+112      }
+113    }
+114    if(frame&gt;=318 &amp;&amp; frame&lt;330) {
+115      const p=(frame-318)/12;sx=1+.24*p;sy=1-.34*p;sz=1+.13*p;
+116    }
+117    if(frame&gt;=330 &amp;&amp; frame&lt;=384) {
+118      const p=clamp((frame-330)/54);
+119      x=mix(4.6,-4.6,p);air=Math.sin(Math.PI*p);y=.34+3.5*air;
+120      rz=-Math.PI*2*p;ry=.16*Math.sin(p*Math.PI*2);rx=.12*Math.sin(p*Math.PI);
+121      sx=1-.11*air;sy=1+.10*air;sz=1-.08*air;
+122    }
+123    if(frame&gt;384) {
+124      x=-4.6;air=0;y=.34;
+125      const q=frame-384;
+126      const impact=Math.exp(-q/12)*Math.sin(q*.30);
+127      sx=1+.30*impact;sy=1-.32*impact;sz=1+.12*impact;
+128      rz=.065*Math.exp(-q/16)*Math.sin(q*.3);
+129      ry=.075*Math.sin((frame-420)/20)*Math.exp(-Math.max(0,frame-420)/55);
+130    }
+131    if(frame&gt;=466) {sx=1;sy=1;sz=1;rx=0;ry=0;rz=0;}
+132    return {x,y,sx,sy,sz,rx,ry,rz,air};</pre></div>
+</div></section>
+<section><h2>四肢跟随</h2><p>参考有延迟和衰减振荡；复刻主要绑定空中高度。</p><div class="pair">
+<div><h3>参考源码 remotion.tsx</h3><pre> 69  function limbs(f:number,delay:number){let val=0;for(const take of [80,140,200,260,330]){const t=(f-take-delay)/60;if(t&gt;=0&amp;&amp;t&lt;1.1)val+=Math.sin(t*2.2*Math.PI*2)*Math.exp(-t*4.4)*.45}return val}
+ 70  function Mascot({frame}:{frame:number}){
+ 71   const p=pose(frame),arm=limbs(frame,4),leg=limbs(frame,6);
+ 72   const blink=(frame&gt;=430&amp;&amp;frame&lt;=436)?mix(1,.08,Math.sin((frame-430)/6*Math.PI)):1;
+ 73   const glance=frame&lt;20?-.035:frame&lt;38?.055:0;
+ 74   return &lt;group position={[p.x,.45+p.h,0]}&gt;&lt;group position={[0,.75,0]} rotation={[0,0,p.spin]}&gt;&lt;group position={[0,-.75,0]} scale={[p.sx,p.sy,1/(p.sx*p.sy)**.35]}&gt;
+ 75    &lt;VoxelBlock nx={14} ny={10} nz={8} at={[0,.8,0]}/&gt;&lt;VoxelGrid/&gt;
+ 76    {[-1,1].map(side=&gt;&lt;group key={side} position={[side*.68,.65,0]} rotation={[arm*side,0,arm*side]}&gt;&lt;VoxelBlock nx={3} ny={2} nz={3} at={[side*.07,-.025,0]}/&gt;&lt;/group&gt;)}
+ 77    {[-.5,-.2,.2,.5].map((x,i)=&gt;&lt;group key={i} position={[x,.3,0]} rotation={[leg*(i%2===0?1:-1),0,leg*.25]}&gt;&lt;VoxelBlock nx={2} ny={3} nz={3} at={[0,-.15,0]}/&gt;&lt;/group&gt;)}
+ 78    {[-.31,.31].map(x=&gt;&lt;Box key={x} at={[x+glance,.81,.403]} size={[.2,.3*blink,.012]} color={INK} roughness={.85}/&gt;)}</pre></div>
+<div><h3>复刻源码 Replica.tsx</h3><pre>135  function Mascot({frame}:{frame:number}) {
+136    const p=mascotPose(frame);
+137    const idle=Math.sin(frame*.09)*.012;
+138    const armSwing=p.air*.42*Math.sin(frame*.10)+Math.sin(frame*.15)*.012;
+139    const follow=frame&gt;267?Math.sin(frame*.37)*.15*p.air:0;
+140    const blink=frame&gt;=35&amp;&amp;frame&lt;40 || frame&gt;=252&amp;&amp;frame&lt;257 || frame&gt;=432&amp;&amp;frame&lt;437;
+141    return &lt;group position={[p.x,p.y+idle,0]} rotation={[p.rx,p.ry,p.rz]} scale={[p.sx,p.sy,p.sz]}&gt;
+142      &lt;group userData={{benchObject:&#x27;mascot.body&#x27;}} position={[0,.68,0]}&gt;
+143        &lt;Box size={[1.4,1.26,.88]} color=&#x27;#e8846c&#x27;/&gt;
+144        {Array.from({length:7},(_,i)=&gt;&lt;React.Fragment key={i}&gt;
+145          &lt;Box position={[-.7+i*.2,.0,.443]} size={[.006,1.26,.005]} color=&#x27;#de7d66&#x27; opacity={.35} shadow={false}/&gt;
+146          &lt;Box position={[-.7+i*.2,.633,0]} size={[.005,.004,.88]} color=&#x27;#d77963&#x27; opacity={.30} shadow={false}/&gt;
+147        &lt;/React.Fragment&gt;)}
+148        {Array.from({length:7},(_,i)=&gt;&lt;React.Fragment key={i}&gt;
+149          &lt;Box position={[0,-.63+i*.2,.443]} size={[1.4,.006,.005]} color=&#x27;#de7d66&#x27; opacity={.35} shadow={false}/&gt;
+150          &lt;Box position={[-.703,-.63+i*.2,0]} size={[.006,.005,.88]} color=&#x27;#da7864&#x27; opacity={.4} shadow={false}/&gt;
+151        &lt;/React.Fragment&gt;)}
+152        {Array.from({length:5},(_,i)=&gt;&lt;React.Fragment key={i}&gt;
+153          &lt;Box position={[-.703,0,-.44+i*.2]} size={[.005,1.26,.006]} color=&#x27;#da7864&#x27; opacity={.38} shadow={false}/&gt;
+154          &lt;Box position={[0,.634,-.44+i*.2]} size={[1.4,.004,.005]} color=&#x27;#d77963&#x27; opacity={.32} shadow={false}/&gt;
+155        &lt;/React.Fragment&gt;)}
+156      &lt;/group&gt;
+157      &lt;group userData={{benchObject:&#x27;mascot.arms&#x27;}}&gt;
+158        {[-1,1].map((side,i)=&gt;&lt;group key={side} position={[side*.79,.52,-.025]} rotation={[armSwing+side*follow,0,side*.06*p.air]}&gt;
+159          &lt;Box size={[.24,.24,.24]} color=&#x27;#eb876e&#x27;/&gt;
+160        &lt;/group&gt;)}
+161      &lt;/group&gt;
+162      &lt;group userData={{benchObject:&#x27;mascot.legs&#x27;}}&gt;
+163        {[-.54,-.18,.18,.54].map((x,i)=&gt;&lt;group key={i} position={[x,.02,-.035]} rotation={[p.air*Math.sin(frame*.18+i*.7)*.20,0,0]}&gt;
+164          &lt;Box size={[.19,.22,.29]} color=&#x27;#e8846c&#x27;/&gt;
+165        &lt;/group&gt;)}
+166      &lt;/group&gt;
+167      &lt;group userData={{benchObject:&#x27;mascot.eyes&#x27;}}&gt;
+168        {[-.26,.26].map((x,i)=&gt;&lt;Box key={i} position={[x,.63,.451]} size={[.145,blink?.034:.29,.022]} color=&#x27;#050702&#x27; shadow={false}/&gt;)}</pre></div>
+</div></section>
+<section><h2>镜头</h2><p>两份实现的视角、距离和跟随目标不同。</p><div class="pair">
+<div><h3>参考源码 remotion.tsx</h3><pre> 36  function cameraData(f:number){
+ 37   const push=smooth((f-60)/60)*(1-smooth((f-285)/45));
+ 38   const track=.45*pose(f).x*smooth((f-60)/45)*(1-smooth((f-300)/30));
+ 39   const yaw=-38*Math.PI/180+10*Math.sin(2*Math.PI*f/480)*Math.PI/180;
+ 40   const distance=(44.5-2.0*smooth((f-300)/30)*(1-smooth((f-420)/48)))*(1-.25*push)*(1-.04*Math.exp(-Math.pow((f-384)/9,2)));
+ 41   return {yaw,distance,target:[track,.95+1.35*smooth((f-300)/30)*(1-smooth((f-420)/48)),0]};</pre></div>
+<div><h3>复刻源码 Replica.tsx</h3><pre> 16  function cameraPose(frame:number) {
+ 17    const push=smooth((frame-63)/53)*(1-smooth((frame-292)/43));
+ 18    const orbit=smooth((frame-285)/48)*(1-smooth((frame-408)/54));
+ 19    const tracking=clamp((frame-78)/210);
+ 20    const targetX=mix(0,mix(-1.5,2.4,tracking),push);
+ 21    const targetY=mix(.48,.75,push)+orbit*.95;
+ 22    const distance=mix(23.4,16.7,push);
+ 23    const azimuth=mix(-.72,-.78,orbit)+push*.09;
+ 24    const elevation=mix(.47,.49,push);
+ 25    const cx=targetX+Math.sin(azimuth)*Math.cos(elevation)*distance;
+ 26    const cy=targetY+Math.sin(elevation)*distance;
+ 27    const cz=Math.cos(azimuth)*Math.cos(elevation)*distance;
+ 28    return {position:[cx,cy,cz] as V3,target:[targetX,targetY,0] as V3};
+ 29  }
+ 30
+ 31  function CameraRig({frame}:{frame:number}) {
+ 32    const {camera}=useThree();
+ 33    const pose=cameraPose(frame);
+ 34    useLayoutEffect(()=&gt;{
+ 35      camera.position.set(pose.position[0],pose.position[1],pose.position[2]);
+ 36      camera.lookAt(pose.target[0],pose.target[1],pose.target[2]);
+ 37      (camera as THREE.PerspectiveCamera).fov=38;
+ 38      camera.updateProjectionMatrix();</pre></div>
+</div></section>
+<section><h2>左侧标记</h2><p>参考标记触发时有缩放脉冲，复刻未实现。</p><div class="pair">
+<div><h3>参考源码 remotion.tsx</h3><pre>170  function Labels({frame}:{frame:number}){
+171   const labels=[&#x27;ANTICIPATION&#x27;,&#x27;SQUASH &amp; STRETCH&#x27;,&#x27;OVERLAPPING ACTION&#x27;,&#x27;FOLLOW-THROUGH&#x27;,&#x27;ARCS&#x27;],trigger=[69,140,200,285,303];
+172   return &lt;div style={{position:&#x27;absolute&#x27;,left:58,top:50,fontFamily:&#x27;Geist Mono&#x27;,fontSize:28,fontWeight:500,letterSpacing:1.2,lineHeight:&#x27;46px&#x27;}}&gt;{labels.map((label,i)=&gt;{const on=frame&gt;=trigger[i]&amp;&amp;frame&lt;468,pulse=1+.35*Math.max(0,1-Math.abs(frame-trigger[i])/6);return &lt;div key={i} style={{display:&#x27;flex&#x27;,alignItems:&#x27;center&#x27;,gap:22,color:on?INK:&#x27;#8e8a83&#x27;}}&gt;&lt;span style={{width:14,height:14,boxSizing:&#x27;border-box&#x27;,border:`2px solid ${on?INK:&#x27;#9d9a93&#x27;}`,background:on?ORANGE:&#x27;#fbfaf5&#x27;,transform:`rotate(45deg) scale(${pulse})`,margin:2}}/&gt;&lt;span&gt;{String(i+1).padStart(2,&#x27;0&#x27;)} {i===1?&lt;&gt;{&#x27;SQUASH &#x27;}&lt;span style={{color:BODY}}&gt;&amp;&lt;/span&gt;{&#x27; STRETCH&#x27;}&lt;/&gt;:label}&lt;/span&gt;&lt;/div&gt;})}&lt;/div&gt;</pre></div>
+<div><h3>复刻源码 Replica.tsx</h3><pre>273  function Principles({frame}:{frame:number}) {
+274    const starts=[68,132,192,266,306];
+275    const words=[&#x27;01 ANTICIPATION&#x27;,&#x27;02 SQUASH &amp; STRETCH&#x27;,&#x27;03 OVERLAPPING ACTION&#x27;,&#x27;04 FOLLOW-THROUGH&#x27;,&#x27;05 ARCS&#x27;];
+276    return &lt;div data-bench-object=&quot;labels.principles&quot; style={{position:&#x27;absolute&#x27;,left:58,top:54,fontFamily:&#x27;Geist Mono&#x27;,fontWeight:500,fontSize:30,lineHeight:&#x27;46px&#x27;,letterSpacing:0,color:&#x27;#8d8e85&#x27;}}&gt;
+277      {words.map((word,i)=&gt;{
+278        const on=frame&gt;=starts[i]&amp;&amp;frame&lt;466;
+279        return &lt;div key={word} style={{height:46,display:&#x27;flex&#x27;,alignItems:&#x27;center&#x27;,gap:24,color:on?&#x27;#070a04&#x27;:&#x27;#8d8e85&#x27;}}&gt;
+280          &lt;span style={{display:&#x27;block&#x27;,width:14,height:14,transform:&#x27;rotate(45deg)&#x27;,background:on?&#x27;#ff7628&#x27;:&#x27;#fffff7&#x27;,border:`2px solid ${on?&#x27;#171b10&#x27;:&#x27;#9d9f92&#x27;}`,marginLeft:0}}/&gt;
+281          {i===1?&lt;span&gt;02 SQUASH &lt;span style={{color:&#x27;#ec9168&#x27;}}&gt;&amp;amp;&lt;/span&gt; STRETCH&lt;/span&gt;:&lt;span&gt;{word}&lt;/span&gt;}
+282        &lt;/div&gt;;
+283      })}</pre></div>
+</div></section>
+</main></html>

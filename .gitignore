@@ -11,3 +11,4 @@ examples/**/source.json
 # Scored media is fetched from its immutable GitHub Release at deploy time.
 site/media/object-contract-v3/
 site/media/mosaic-motion-v2/
+site/media/florence-motion-lab/
