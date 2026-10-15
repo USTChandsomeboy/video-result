@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="zh-CN"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>羽毛与铁球 · 关键源码差异</title>
+<style>:root{color-scheme:dark}*{box-sizing:border-box}body{background:#101722;color:#edf1f8;font:16px/1.75 system-ui,sans-serif;margin:0}main{max-width:1100px;margin:auto;padding:30px 22px}a{color:#a9c3ff}h1{font-size:29px}h2{font-size:22px;margin:0 0 8px}p{color:#bdc9db}.pair{display:grid;grid-template-columns:1fr 1fr;gap:16px}section{border:1px solid #34445b;border-radius:12px;margin:24px 0;padding:22px}pre{background:#09111c;padding:15px;font-size:13px;overflow:auto;white-space:pre-wrap}small{color:#9db1ce}@media(max-width:700px){.pair{grid-template-columns:1fr}}</style>
+<main><a href="index.html">← 视频对比与评分</a><h1>相似的画面，哪些过程没有还原？</h1>
+<p>以下来自原作与本次冻结复刻源码的直接对照。视频用于确认这些代码差异的实际表现；这里列出的说明不额外改动自动分数。</p>
+<section><h2>1. 羽毛下落：换了运动规律</h2><small>开场与空气实验 · intro.feather / air.feather</small>
+<div class="pair"><div>原作：速度逐渐趋于稳定，摆动随时间建立。<pre>const d = vt * t - vt * 10 * (1 - Math.exp(-t / 10));
+const k = Math.min(1, t / 20);
+dx = Math.sin(t / 13) * 46 * k;
+rot = Math.sin(t / 13 + 1.3) * 30 * k;</pre></div><div>复刻：纵向匀速插值，横向和旋转改成另一组正弦。<pre>falling = inp(t, 12, 17);
+fy = 200 + falling * 330;
+fx = 1400 + Math.sin((t-12)*5) * 55 * ...;
+rot = Math.sin((t-12)*5.4) * 28;</pre></div></div>
+<p>都能看出“羽毛飘落”，但加速过程、摆动频率、幅度和落地时间不同。这体现了模型抓住动作大意，却没有反推出运动曲线。</p><small>左侧公式的 t 是局部帧数，右侧 t 是视频秒数；评分时按 30 fps 换算到相同的视频时刻比较。</small></section>
+<section><h2>2. 绑球实验：移动起点和绳子关系不同</h2><small>约 30–32 秒 · thought.tied-heavy / thought.tied-light / thought.rope</small>
+<div class="pair"><div>原作：重球和轻球从各自位置移动到同一竖线上，绳子的端点跟随两球。<pre>cL = {x: mix(1010, 1400, tie), y: mix(300, 214, tie)};
+cH = {x: mix(760, 1400, tie), y: mix(300, 330, tie)};
+path = `M${cL.x} ${cL.y+30} Q ... ${cH.x} ${cH.y-58}`;</pre></div><div>复刻：重球从更靠右的位置出现；绳子下端固定在最终位置。<pre>heavyX = mix(1240, 1400, tied);
+heavyY = 330;
+path = `M${tx} ${ty+30} Q ... 1400 274`;</pre></div></div>
+<p>最终布局接近，但移动中的重球路径、绳子端点和连接过程不同。检查相对关系需要覆盖整个移动过程，不能只检查最后一帧。</p></section>
+<section><h2>3. 约去质量：只淡出，没有收拢空位</h2><small>约 54–56 秒 · formula.mass-left / formula.mass-right</small>
+<div class="pair"><div>原作：字母淡出、向上移动，宽度同时缩到零，后面的字符自然收拢。<pre>width: mix(size * 0.86, 0, gone),
+opacity: 1 - gone,
+transform: `translateY(${-gone * 40}px)`</pre></div><div>复刻：质量字母固定宽度，仅淡出；后续字符另行绝对定位。<pre>width: 73,
+height: 100,
+// m glyph
+opacity: fade
+// 另一个 div 显示 a = g</pre></div></div>
+<p>“m 消失了”被还原，但没有还原删除字母带来的排版变化。视频里等式在过渡期间更松散，字符之间的衔接也不同。</p><p>对应自动检查（等式左侧 m）：淡出曲线 55.13 分，删除线绘制过程 0 分，宽度收拢 0 分。</p></section>
+<section><h2>4. 抽走空气：吸走轨迹换成依次消失</h2><small>约 68–72 秒 · vacuum.molecules</small>
+<div class="pair"><div>原作：70 个分子在管内反弹，再沿各自时间逐渐移到顶部出口。<pre>const k = ramp(f, p.leave, p.leave + 26, INOUT);
+cx = mix(ax, (TUBE.l + TUBE.r) / 2, k);
+cy = mix(ay, TUBE.t - 10, k);
+opacity = 0.7 * (1 - k);</pre></div><div>复刻：90 个分子持续循环运动，按编号依次降低透明度。<pre>const remain = clamp((1-pump)*90 - i + 1);
+px = (...) % 330;
+py = (...) % 435;
+opacity = remain * .8;</pre></div></div>
+<p>两者都从“很多分子”变成“没有分子”，但只有原作表现了空气被吸向出口的过程。这是终态相同、运动机制不同的典型例子。自动检查中，“分子被抽走的轨迹”得 0 分。</p></section>
+<section><h2>如何看待这次分数</h2><p>分数检查 25 个公开对象的存在、属性、相对关系、绑定、运动参数和进出时序。它不等同于整片画质分：角色表情、所有装饰、字体像素效果、音频听感没有全部计入。</p><p>“动效绑定 100”表示该项要求的属性确实有时间驱动；具体是否按原作的幅度、速度和时间变化，要看运动参数与进出时序。例如开场铁球的下落绑定是 100，但下落曲线是 0。</p><p>305 / 305 表示已登记的检查全部可测。本版绳子检查覆盖终态形状、相对位置、透明度和进出时序；还没有直接评分“移动时绳子两端始终连接两球”这一约束。上面第 2 项属于源码复核发现的问题，不能把绳子绑定项的 100 理解成整个连接过程正确。</p><p>本版颜色检查按颜色值和渐变色停点精确比较；很小的色差也可能扣掉该项。应结合六维分数、逐项源码证据和视频来看，不能把总分当作人的审美判断。</p><p>复刻源码由独立 agent 在 Harbor 环境完成。首次容器超时后，使用同一冻结源码补完渲染；没有修改复刻内容。</p></section>
+</main></html>
