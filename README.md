@@ -31,6 +31,7 @@ http://127.0.0.1:8770/compare.html
 
 - `site/object-contract-v3.html`：四条视频复刻与六维评分。
 - `site/experiments/mosaic-motion-v2/compare.html`：Mosaic Motion 30 秒复刻，58.385 分，54 项源码检查。
+- `site/experiments/nines-equals-one-harbor/index.html`：0.999… = 1，完整 96 秒数学讲解复刻，55.92 分，73 个对象、438 项检查；包含同步播放和源码差异。
 - `site/experiments/lyric-mv-verifier/index.html`：歌词 MV 素材合成 GT 与 SVG 独立重绘，50.3 分，658 项检查；原视频展示版已去除平台标识和导演、监制署名。
 
 新增案例的视频保存在 GitHub Release，页面与评分 JSON 保存在 Git 中。`site/*-media.json` 指定视频的下载地址、字节数和 SHA-256；GitHub Actions 运行 `fetch_scored_media.py` 核验后将视频和页面一起发布至 Pages。视频通过站点同域播放。
