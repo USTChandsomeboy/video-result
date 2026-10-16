@@ -38,3 +38,5 @@ http://127.0.0.1:8770/compare.html
 新增案例的视频保存在 GitHub Release，页面与评分 JSON 保存在 Git 中。`site/*-media.json` 指定视频的下载地址、字节数和 SHA-256；GitHub Actions 运行 `fetch_scored_media.py` 核验后将视频和页面一起发布至 Pages。视频通过站点同域播放。
 
 Mosaic Motion 使用 Release `mosaic-motion-v2-media-20261011`。发布前先上传清单中的两个 MP4，然后提交页面、清单和评分 JSON；推送 `main` 会自动部署。
+
+- `site/experiments/clawd-dressup-harbor/index.html`：Clawd 换装，9.5秒；v1 82.94分，v2探索性事后重评分54.37分。37个对象、340项检查，保留两版规则与结果。
