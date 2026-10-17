@@ -1,0 +1,1121 @@
+{
+  "updated": "2026-10-17",
+  "cases": [
+    {
+      "id": "qixiong",
+      "title": "七雄并立：战国地图叙事",
+      "category": "知识讲解",
+      "variant": "独立复刻",
+      "score": {
+        "total": 55.34471372923672,
+        "dimensions": {
+          "presence": 99.9999999999994,
+          "attributes": 85.5496692788091,
+          "relations": 96.01330409259522,
+          "binding": 18.148412000242974,
+          "motion": 33.92365134821066,
+          "timing": 39.99781657616585
+        },
+        "dimension_weights": {
+          "presence": 0.1,
+          "attributes": 0.15,
+          "relations": 0.15,
+          "binding": 0.2,
+          "motion": 0.25,
+          "timing": 0.15
+        },
+        "checks_resolved": 3378,
+        "checks_total": 3378,
+        "version": "2.0.0"
+      },
+      "notes": [
+        "评分器 v2：144 个对象、全部检查可测。旧版成绩及证据已保留。",
+        "镜头与局部动作分开测量；补充原作中实际发生的字号变化、相对位置、部件比例、描边粗细与字距。",
+        "动效比较变化方向与过程；曲线误差按原作动作范围计算；时序增加动作完成 10%、50%、90% 的时刻。",
+        "六维权重与内容预算保持不变。评分规则在复核固定提交后修正，本次属于评分器重评实验。",
+        "分数描述源码检查，精确字形、纸张/笔触滤镜像素和音频波形未计入。"
+      ],
+      "scope": "",
+      "findings": [
+        {
+          "title": "国名缺少独立的字号变化",
+          "description": "原作根据疆域大小改变国名字号，复刻为各国固定字号。旧版没有单独检查这个动作；v2 去掉镜头缩放后比较同一国名的字号。",
+          "check_ids": [
+            "label.yan.main.1-100.local_font.binding",
+            "label.yan.main.1-100.local_font.motion"
+          ]
+        },
+        {
+          "title": "局部位移不能靠镜头移动得分",
+          "description": "复刻的一些国名移动方向、幅度与发生时间不同。v2 比较国名相对底图的位移，避免画面整体移动掩盖局部错误。",
+          "check_ids": [
+            "label.qin.main.1-100.local_x.binding",
+            "label.qin.main.1-100.local_x.motion"
+          ]
+        },
+        {
+          "title": "战事标记缺少入场时的回缩",
+          "description": "原作标记入场后从放大状态缩回，复刻主要使用渐显。v2 对文字、红叉和胶囊分别检查缩放及动作时间。",
+          "check_ids": [
+            "battle.01.main.1113-1124.screen_font.binding",
+            "battle.01.cross.1113-1124.scale.motion"
+          ]
+        },
+        {
+          "title": "字幕和结尾标题的时序不一致",
+          "description": "字幕的停留和渐变时长存在偏差；结尾标题也提前切换。v2 除进出事件外，还检查渐变过程的三个进度时刻。",
+          "check_ids": [
+            "subtitle.02.events",
+            "subtitle.02.main.217-224.opacity.timing",
+            "title.next-main.main.2255-2279.opacity.timing"
+          ]
+        },
+        {
+          "title": "静态结构保留较好，过程还原较弱",
+          "description": "提供的地图和疆域素材大多使用正确，画面内的位置关系也较接近。主要扣分来自局部动作、运动曲线和时间安排。等价实现与错误实现用独立样例区分。",
+          "check_ids": []
+        }
+      ],
+      "score_note": "",
+      "validation": "",
+      "source_url": null,
+      "attribution": "",
+      "related": null,
+      "reference_label": "参考视频",
+      "crop_reference": false,
+      "score_state": "valid",
+      "reference": {
+        "sha256": "2f2971cc27e2b69c1a6c1308cd13959cbd070cff11274fe06a40d05fc5a6bf33",
+        "bytes": 21604668,
+        "duration": 76.0,
+        "width": 1920,
+        "height": 1080,
+        "fps": 30.0,
+        "url": "https://github.com/USTChandsomeboy/video-result/releases/download/remaining-replicas-media-20261017/2f2971cc27e2b69c1a6c1308cd13959cbd070cff11274fe06a40d05fc5a6bf33.mp4",
+        "poster": "data/remaining-replicas/qixiong/reference.jpg"
+      },
+      "replica": {
+        "sha256": "4449330b22aed1fbcf54833f949a207850a5dab9f463a26384b644e5a4b605a9",
+        "bytes": 67746654,
+        "duration": 76.011,
+        "width": 1920,
+        "height": 1080,
+        "fps": 30.0,
+        "url": "https://github.com/USTChandsomeboy/video-result/releases/download/remaining-replicas-media-20261017/4449330b22aed1fbcf54833f949a207850a5dab9f463a26384b644e5a4b605a9.mp4",
+        "poster": "data/remaining-replicas/qixiong/replica.jpg"
+      },
+      "duration": 76.0,
+      "fps": 30.0,
+      "display_aspect": 1.7777777777777777,
+      "evidence": [
+        {
+          "label": "完整评分 JSON",
+          "url": "data/remaining-replicas/qixiong/scores.json"
+        },
+        {
+          "label": "逐项检查证据（JSON.gz）",
+          "url": "data/remaining-replicas/qixiong/checks.json.gz"
+        },
+        {
+          "label": "源码差异说明",
+          "url": "data/remaining-replicas/qixiong/code-differences.md"
+        }
+      ],
+      "url": "replicas.html#qixiong"
+    },
+    {
+      "id": "svg-tutorial",
+      "title": "SVG 眨眼动画原理：代码、分组树与时间轴",
+      "category": "操作指导",
+      "variant": "独立复刻",
+      "score": {
+        "status": "valid",
+        "total": 58.64843750173522,
+        "dimensions": {
+          "presence": 100.0,
+          "attributes": 74.530436438505,
+          "relations": 96.22078341867561,
+          "binding": 54.245865501625865,
+          "motion": 38.01074765329843,
+          "timing": 17.892630063388978
+        },
+        "dimension_weights": {
+          "presence": 0.1,
+          "attributes": 0.15,
+          "relations": 0.15,
+          "binding": 0.2,
+          "motion": 0.25,
+          "timing": 0.15
+        },
+        "checks_resolved": 1338,
+        "checks_total": 1338
+      },
+      "notes": [],
+      "scope": "六项评分：元素存在、元素属性、相对关系、动效绑定、运动参数、进出时序。",
+      "findings": [
+        "画面主体和教学结构基本保留；开场画板的移动缩放被省略，代码逐字出现变成了整行淡入。",
+        "框和箭头的逐步绘制变成了整体淡入；六个时间参数的逐个转换被改成同时替换。",
+        "复刻还额外加入了从21秒开始的持续眨眼。该问题已列入源码差异说明，现有清单对额外动作的检查仍不完整。"
+      ],
+      "score_note": "分数对应已登记的源码检查。完整字体像素排版、抗锯齿和音频听感通过视频对比查看。",
+      "validation": "Harbor独立容器评分完成；原作标注对照100分；1338项均已得到分数。",
+      "source_url": null,
+      "attribution": "",
+      "related": null,
+      "reference_label": "参考视频",
+      "crop_reference": false,
+      "score_state": "valid",
+      "reference": {
+        "sha256": "e8ea8f6231d1e2d97ed917749254002d04886ea21d2ff6fbecffb057a63cc24e",
+        "bytes": 5400567,
+        "duration": 64.0,
+        "width": 1920,
+        "height": 1080,
+        "fps": 30.0,
+        "url": "https://github.com/USTChandsomeboy/video-result/releases/download/remaining-replicas-media-20261017/e8ea8f6231d1e2d97ed917749254002d04886ea21d2ff6fbecffb057a63cc24e.mp4",
+        "poster": "data/remaining-replicas/svg-tutorial/reference.jpg"
+      },
+      "replica": {
+        "sha256": "27744da05b46fa280a65afe7b5d0be26f5cac0df8344a26247a0395dec52ecd6",
+        "bytes": 7703378,
+        "duration": 64.042667,
+        "width": 1920,
+        "height": 1080,
+        "fps": 30.0,
+        "url": "https://github.com/USTChandsomeboy/video-result/releases/download/remaining-replicas-media-20261017/27744da05b46fa280a65afe7b5d0be26f5cac0df8344a26247a0395dec52ecd6.mp4",
+        "poster": "data/remaining-replicas/svg-tutorial/replica.jpg"
+      },
+      "duration": 64.0,
+      "fps": 30.0,
+      "display_aspect": 1.7777777777777777,
+      "evidence": [
+        {
+          "label": "完整评分 JSON",
+          "url": "data/remaining-replicas/svg-tutorial/scores.json"
+        },
+        {
+          "label": "逐项检查证据（JSON.gz）",
+          "url": "data/remaining-replicas/svg-tutorial/checks.json.gz"
+        },
+        {
+          "label": "源码差异说明",
+          "url": "data/remaining-replicas/svg-tutorial/code-differences.html.txt"
+        }
+      ],
+      "url": "replicas.html#svg-tutorial"
+    },
+    {
+      "id": "rome-epic",
+      "title": "Rome Epic：从罗马诞生到帝国黄昏",
+      "category": "知识讲解",
+      "variant": "独立复刻",
+      "score": {
+        "status": "experimental_incomplete",
+        "total": null,
+        "resolved_portion_score": 53.32632036653289,
+        "score_bounds": {
+          "minimum": 34.6887713984296,
+          "maximum": 69.63877139842968
+        },
+        "coverage": {
+          "resolved": 1123,
+          "declared": 1202,
+          "weighted": 0.6504999999999992,
+          "measured_weighted": 0.6504999999999992
+        },
+        "dimensions": {
+          "presence": null,
+          "attributes": null,
+          "relations": null,
+          "binding": null,
+          "motion": null,
+          "timing": null
+        },
+        "dimension_bounds": {
+          "presence": {
+            "minimum": 68.25152142543448,
+            "maximum": 99.25152142543446,
+            "measured_weight": 0.6900000000000004
+          },
+          "attributes": {
+            "minimum": 44.10535916903271,
+            "maximum": 80.1053591690327,
+            "measured_weight": 0.6399999999999999
+          },
+          "relations": {
+            "minimum": 32.44909556638909,
+            "maximum": 65.78242889972242,
+            "measured_weight": 0.666666666666667
+          },
+          "binding": {
+            "minimum": 49.87474747474747,
+            "maximum": 85.87474747474747,
+            "measured_weight": 0.6400000000000001
+          },
+          "motion": {
+            "minimum": 9.812625009915694,
+            "maximum": 45.81262500991568,
+            "measured_weight": 0.6399999999999998
+          },
+          "timing": {
+            "minimum": 26.348968654296534,
+            "maximum": 61.348968654296534,
+            "measured_weight": 0.6500000000000004
+          }
+        },
+        "checks_resolved": 1123,
+        "checks_total": 1202,
+        "dimension_weights": {
+          "presence": 0.1,
+          "attributes": 0.15,
+          "relations": 0.15,
+          "binding": 0.2,
+          "motion": 0.25,
+          "timing": 0.15
+        }
+      },
+      "notes": [],
+      "scope": "42 个公开对象、1202 项检查。内容预算：地形与疆域30%、镜头与屏幕运动20%、路径城市粒子20%、文字画框20%、天空光照气氛10%；组内沿用六项维度权重。",
+      "findings": [
+        "ROMA 上下横线：原作从0展开到640px；复刻宽度固定，仅父容器微缩。修正后展开绑定和长度运动均为0分。",
+        "章节II竖线：原作高度0→58px，复刻固定62px。高度运动由14.70降为0分。",
+        "字幕逐字渐显、模糊和上移过程不同；年份推进与显示区间也不同。文字统一使用20%内容预算，无法靠数量稀释主画面差异。",
+        "镜头投影与轨迹的语义运动检查仍为0分；镜头确实在动，绑定检查本身不能证明镜头正确。",
+        "地形疆域、天空云雾和后期仍有测量缺口；它们权重提高后，加权覆盖率由旧版91.5%变为65.05%。"
+      ],
+      "score_note": "已测诊断分53.33，完整总分为空。1123项已测检查占新权重65.05%；79项未知占34.95%，继续保留空值。全量区间34.69–69.64不能解释为正式成绩。",
+      "validation": "14 个测量测试、7 个实际TSX源码变体通过；347 个标量动作检查的观测自对照通过。新规则未完成全套四组源码校准、封存或Harbor准入。",
+      "source_url": null,
+      "attribution": "",
+      "related": null,
+      "reference_label": "参考视频",
+      "crop_reference": false,
+      "score_state": "incomplete",
+      "reference": {
+        "sha256": "19585bb8ca0167119b8e82505ef271e216cc222dcf49a7b74dc78bcb3c0777de",
+        "bytes": 100316341,
+        "duration": 60.011,
+        "width": 1920,
+        "height": 1080,
+        "fps": 30.0,
+        "url": "https://github.com/USTChandsomeboy/video-result/releases/download/remaining-replicas-media-20261017/19585bb8ca0167119b8e82505ef271e216cc222dcf49a7b74dc78bcb3c0777de.mp4",
+        "poster": "data/remaining-replicas/rome-epic/reference.jpg"
+      },
+      "replica": {
+        "sha256": "5d5d56051cdb76cf1d2b7d2ae0db6e593d6ac25bd94f93e177b484b3055a6be0",
+        "bytes": 120414568,
+        "duration": 60.011,
+        "width": 1920,
+        "height": 1080,
+        "fps": 30.0,
+        "url": "https://github.com/USTChandsomeboy/video-result/releases/download/remaining-replicas-media-20261017/5d5d56051cdb76cf1d2b7d2ae0db6e593d6ac25bd94f93e177b484b3055a6be0.mp4",
+        "poster": "data/remaining-replicas/rome-epic/replica.jpg"
+      },
+      "duration": 60.011,
+      "fps": 30.0,
+      "display_aspect": 1.7777777777777777,
+      "evidence": [
+        {
+          "label": "完整评分 JSON",
+          "url": "data/remaining-replicas/rome-epic/scores.json"
+        },
+        {
+          "label": "逐项检查证据（JSON.gz）",
+          "url": "data/remaining-replicas/rome-epic/checks.json.gz"
+        },
+        {
+          "label": "源码差异说明",
+          "url": "data/remaining-replicas/rome-epic/code-differences.md"
+        }
+      ],
+      "url": "replicas.html#rome-epic"
+    },
+    {
+      "id": "mercury",
+      "title": "Mercury Hub Trailer",
+      "category": "宣传推广",
+      "variant": "独立复刻",
+      "score": {
+        "total": 75.94850388804123,
+        "status": "valid",
+        "checks_resolved": 532,
+        "checks_total": 532,
+        "dimensions": {
+          "presence": 100.0,
+          "attributes": 81.78790132017973,
+          "relations": 84.6583769896981,
+          "binding": 66.66666666666667,
+          "motion": 53.526248032904896,
+          "timing": 95.11111199999999
+        },
+        "dimension_weights": {
+          "presence": 0.1,
+          "attributes": 0.15,
+          "relations": 0.15,
+          "binding": 0.2,
+          "motion": 0.25,
+          "timing": 0.15
+        }
+      },
+      "notes": [],
+      "scope": "覆盖76个前景对象的源码数值：文字、Logo、手机UI、数字、圆点、连线、计数器及既有动效/切场时序。背景光晕、网格、字体像素、emoji字形不计分；后段新增圆点运动未纳入动效检查。",
+      "findings": [
+        "首幕文字入场使用了估计的渐变区间，与原作的透明度、位移曲线不完全一致。",
+        "圆点用了浮动和闪烁，首幕没有还原原作的缩放入场；后段新增运动也能在视频中看到。",
+        "手机外壳位置接近，但聊天气泡、内边距、头像、文字字号和内部相对位置存在差异。"
+      ],
+      "score_note": "显示修正版 v2 的75.95分；v1原始评分72.68分已保留。仅修正SVG外层标注与行高单位解析，提交源码、视频、权重和阈值均未改变。",
+      "validation": "标准解自动评分 100.0 分；本次结果来自实际 Harbor trial，源码和视频均由新子 agent 提交。",
+      "source_url": "https://github.com/asimov-cell/mercury-trailer/tree/08ae4e7cf249654257688d00babef3288f88dc70",
+      "attribution": "",
+      "related": null,
+      "reference_label": "参考视频",
+      "crop_reference": false,
+      "score_state": "valid",
+      "reference": {
+        "sha256": "0506bc821ea0f39fd6e48ca8a28ef6cf50b44a4291bea8af71d04ee3670e0086",
+        "bytes": 183422,
+        "duration": 34.0,
+        "width": 768,
+        "height": 432,
+        "fps": 30.0,
+        "url": "https://github.com/USTChandsomeboy/video-result/releases/download/remaining-replicas-media-20261017/0506bc821ea0f39fd6e48ca8a28ef6cf50b44a4291bea8af71d04ee3670e0086.mp4",
+        "poster": "data/remaining-replicas/mercury/reference.jpg"
+      },
+      "replica": {
+        "sha256": "837864b5b0493ab4e99902c0364bf95c79ae303ffefe41d8819d6496129e1210",
+        "bytes": 712436,
+        "duration": 34.0,
+        "width": 1920,
+        "height": 1080,
+        "fps": 30.0,
+        "url": "https://github.com/USTChandsomeboy/video-result/releases/download/remaining-replicas-media-20261017/837864b5b0493ab4e99902c0364bf95c79ae303ffefe41d8819d6496129e1210.mp4",
+        "poster": "data/remaining-replicas/mercury/replica.jpg"
+      },
+      "duration": 34.0,
+      "fps": 30.0,
+      "display_aspect": 1.7777777777777777,
+      "evidence": [
+        {
+          "label": "完整评分 JSON",
+          "url": "data/remaining-replicas/mercury/scores.json"
+        },
+        {
+          "label": "逐项检查证据（JSON.gz）",
+          "url": "data/remaining-replicas/mercury/checks.json.gz"
+        }
+      ],
+      "url": "replicas.html#mercury"
+    },
+    {
+      "id": "automation",
+      "title": "AI Automation Commercial",
+      "category": "宣传推广",
+      "variant": "独立复刻",
+      "score": {
+        "total": null,
+        "status": "incomplete",
+        "checks_resolved": 653,
+        "checks_total": 2317,
+        "dimensions": {
+          "presence": null,
+          "attributes": null,
+          "relations": null,
+          "binding": null,
+          "motion": null,
+          "timing": null
+        },
+        "dimension_weights": {
+          "presence": 0.1,
+          "attributes": 0.15,
+          "relations": 0.15,
+          "binding": 0.2,
+          "motion": 0.25,
+          "timing": 0.15
+        }
+      },
+      "notes": [],
+      "scope": "本轮针对 181 个对象检查元素存在、属性、相对位置、动效绑定、运动参数和进出时序。当前结果保留原始评分错误，等待解析器修复后对同一提交重新评分。",
+      "findings": [],
+      "score_note": "评分器暂未支持显式指定语言的数字格式化 total.toLocaleString('en-US')。1664 项因此未解析；653 项已解析。当前没有正式总分，这不代表视频未完成。",
+      "validation": "标准解：100 分，2317/2317 项。新子 agent 已完成 40 秒复刻并提交；评分阶段未形成有效总分。",
+      "source_url": "https://github.com/cheikhMoustaph/ai-automation-commercial/tree/112817c9ccacde545e10d6ebe5ac7af86c707430",
+      "attribution": "",
+      "related": null,
+      "reference_label": "参考视频",
+      "crop_reference": false,
+      "score_state": "incomplete",
+      "reference": {
+        "sha256": "75adc07219ab5af3292fcdd452a9842127dba97469d7828841cd85e8fd486555",
+        "bytes": 10518932,
+        "duration": 40.064,
+        "width": 1920,
+        "height": 1080,
+        "fps": 30.0,
+        "url": "https://github.com/USTChandsomeboy/video-result/releases/download/remaining-replicas-media-20261017/75adc07219ab5af3292fcdd452a9842127dba97469d7828841cd85e8fd486555.mp4",
+        "poster": "data/remaining-replicas/automation/reference.jpg"
+      },
+      "replica": {
+        "sha256": "e10fd0e2cc95d845a5394e48ee24e9bf8c426bcec193c02e8fb90e7eb623ad69",
+        "bytes": 6187585,
+        "duration": 40.064,
+        "width": 1920,
+        "height": 1080,
+        "fps": 30.0,
+        "url": "https://github.com/USTChandsomeboy/video-result/releases/download/remaining-replicas-media-20261017/e10fd0e2cc95d845a5394e48ee24e9bf8c426bcec193c02e8fb90e7eb623ad69.mp4",
+        "poster": "data/remaining-replicas/automation/replica.jpg"
+      },
+      "duration": 40.064,
+      "fps": 30.0,
+      "display_aspect": 1.7777777777777777,
+      "evidence": [
+        {
+          "label": "完整评分 JSON",
+          "url": "data/remaining-replicas/automation/scores.json"
+        },
+        {
+          "label": "逐项检查证据（JSON.gz）",
+          "url": "data/remaining-replicas/automation/checks.json.gz"
+        }
+      ],
+      "url": "replicas.html#automation"
+    },
+    {
+      "id": "western-duel",
+      "title": "Western Duel：西部对决",
+      "category": "叙事娱乐",
+      "variant": "独立复刻",
+      "score": {
+        "status": "preparing",
+        "status_label": "成片完成 · 评分校准中",
+        "total": null,
+        "summary": "36 秒独立复刻已完成。原作 oracle 已通过 3383 项源码检查；正在完成等价改写、定向错误校准和复刻评分。",
+        "dimensions": {},
+        "weights": {
+          "presence": 0.05,
+          "attributes": 0.05,
+          "relations": 0.05,
+          "binding": 0.15,
+          "motion": 0.6,
+          "timing": 0.1
+        },
+        "objects": [],
+        "findings": [
+          {
+            "title": "主街只有静态透视，没有还原镜头向前推进",
+            "time": 7.5,
+            "detail": "原作使用同一个相机参数投影街道、建筑和人物。复刻把建筑画在固定坐标上，只改变人物位置与大小，因此人物在走，街道的推进感和前后比例没有同步变化。",
+            "reference": "src/Shots.tsx:69–91：camZ 从 -3 变化到 1.2；Street、StreetGround 和人物位置都由相机 c 投影。",
+            "replica": "src/Replica.tsx:100–115：Street 使用固定 xs、ys，f 没有参与建筑坐标；203 行只插值人物 x、y、scale。"
+          },
+          {
+            "title": "人物登场被改成缩小，原作是走入画面并抬镜头",
+            "time": 12.0,
+            "detail": "原作先展示靴子，人物从右侧走入，然后镜头沿身体上移，背景以较小幅度跟随。复刻主要缩小整个人物，缺少独立的抬镜头和前后景位移，人物登场的过程不同。",
+            "reference": "src/Shots.tsx:105–132：x 从 1180 到 660，人物 scale 保持 7；dy 用关键点 -262、-250、34，背景单独使用 dy × 0.3。",
+            "replica": "src/Replica.tsx:204：x 从 620 到 650，y 从 785 到 805，scale 从 3.55 到 1.87；背景没有对应的竖直镜头位移。"
+          },
+          {
+            "title": "拔枪、枪口火光和烟雾没有共享同一套动作坐标",
+            "time": 28.2333333333,
+            "detail": "原作先计算角色手部、枪和枪口的位置，再让火光、弹道及烟雾跟随枪口。复刻的枪在人物组件中变化，特效却写在另外一组固定坐标上，枪和特效的连接关系容易错位。",
+            "reference": "src/Shots.tsx:266–275：sm、jm 从角色 rig.muzzle 转成世界坐标；同一组坐标供开枪特效使用。",
+            "replica": "src/Replica.tsx:91、166–176：枪的变换由 Character 的 draw 决定，Flash 固定在 (371,398)/(908,413)，Smoke 固定在 (395,394)/(909,410)。"
+          },
+          {
+            "title": "倒地用整体旋转代替了跪下再前扑",
+            "time": 30.6666666667,
+            "detail": "原作依次改变髋部、脚、躯干和手的位置，先屈膝，再向前扑。复刻主要旋转整个人物，并平移、缩放；关节姿态没有经历同样的变化，所以倒地看起来像一个完整剪影倾倒。",
+            "reference": "src/duel.ts:79–94：分别混合跪地姿态 K 和前扑姿态 L；fallAng 保持 0。",
+            "replica": "src/Replica.tsx:74、215：对象根节点 rotate(fall)，fall 从 -12° 到 87°，同时插值 x、y 和 scale。"
+          },
+          {
+            "title": "眼部细节有变化，但眯眼的变化幅度与节奏不同",
+            "time": 23.2666666667,
+            "detail": "原作让眼睑随紧张程度逐步收窄，并把视线、镜头推进单独控制。复刻给眼睛高度和视线加了小幅正弦变化；这能产生运动，但不等于还原原作逐渐眯眼的过程。",
+            "reference": "src/Shots.tsx:228–233、423–438：第一组 squint 从 0.1/0.15 增至 0.45/0.5，第二组增至 0.7/0.72；zoom 单独插值。",
+            "replica": "src/Replica.tsx:118：gaze=sin(local×0.045)×7，眼睛高度 h 随 sin(local×0.03) 小幅改变；143 行第二组 zoom 固定为 1.42。"
+          }
+        ]
+      },
+      "notes": [],
+      "scope": "",
+      "findings": [],
+      "score_note": "完整成片已完成；评分任务仍在校准，没有正式总分。",
+      "validation": "",
+      "source_url": null,
+      "attribution": "",
+      "related": null,
+      "reference_label": "参考视频",
+      "crop_reference": false,
+      "score_state": "incomplete",
+      "reference": {
+        "sha256": "1ad65faab794a9cf101175de40d8e4a96edb7e203f8296a8d81b7b882ab9f54e",
+        "bytes": 22693665,
+        "duration": 36.011,
+        "width": 1280,
+        "height": 720,
+        "fps": 30.0,
+        "url": "https://github.com/USTChandsomeboy/video-result/releases/download/remaining-replicas-media-20261017/1ad65faab794a9cf101175de40d8e4a96edb7e203f8296a8d81b7b882ab9f54e.mp4",
+        "poster": "data/remaining-replicas/western-duel/reference.jpg"
+      },
+      "replica": {
+        "sha256": "f8e956099576d4e618304406d807efe6440435503dd5adf31c8791ca4d36ece3",
+        "bytes": 7389315,
+        "duration": 36.053333,
+        "width": 1280,
+        "height": 720,
+        "fps": 30.0,
+        "url": "https://github.com/USTChandsomeboy/video-result/releases/download/remaining-replicas-media-20261017/f8e956099576d4e618304406d807efe6440435503dd5adf31c8791ca4d36ece3.mp4",
+        "poster": "data/remaining-replicas/western-duel/replica.jpg"
+      },
+      "duration": 36.011,
+      "fps": 30.0,
+      "display_aspect": 1.7777777777777777,
+      "evidence": [],
+      "url": "replicas.html#western-duel"
+    },
+    {
+      "id": "fp-bloomberg",
+      "title": "Bloomberg：金融图表分析",
+      "category": "分析汇报",
+      "variant": "历史复刻",
+      "score": null,
+      "notes": [],
+      "scope": "",
+      "findings": [
+        "此组历史实验未生成源码自动评分。",
+        "品牌标志和部分照片使用了替代元素，字体也有替换；复刻未重建音频。请结合视频查看。"
+      ],
+      "score_note": "",
+      "validation": "",
+      "source_url": null,
+      "attribution": "",
+      "related": null,
+      "reference_label": "参考视频",
+      "crop_reference": false,
+      "score_state": "unscored",
+      "reference": {
+        "sha256": "33c9ae33b3fd093527e54eadab6df9429c0a5f18375e32802c8a3d8a86a7f45c",
+        "bytes": 2552816,
+        "duration": 20.0,
+        "width": 1920,
+        "height": 1080,
+        "fps": 25.0,
+        "url": "https://github.com/USTChandsomeboy/video-result/releases/download/remaining-replicas-media-20261017/33c9ae33b3fd093527e54eadab6df9429c0a5f18375e32802c8a3d8a86a7f45c.mp4",
+        "poster": "data/remaining-replicas/fp-bloomberg/reference.jpg"
+      },
+      "replica": {
+        "sha256": "e936f7ddcd42e5729ca3dfe497d317aa82416eb30a6e9050e197161ecaa7d8da",
+        "bytes": 2074527,
+        "duration": 20.0,
+        "width": 1920,
+        "height": 1080,
+        "fps": 25.0,
+        "url": "https://github.com/USTChandsomeboy/video-result/releases/download/remaining-replicas-media-20261017/e936f7ddcd42e5729ca3dfe497d317aa82416eb30a6e9050e197161ecaa7d8da.mp4",
+        "poster": "data/remaining-replicas/fp-bloomberg/replica.jpg"
+      },
+      "duration": 20.0,
+      "fps": 25.0,
+      "display_aspect": 1.7777777777777777,
+      "evidence": [],
+      "url": "replicas.html#fp-bloomberg"
+    },
+    {
+      "id": "fp-zeed",
+      "title": "Zeed：投资组合数据",
+      "category": "分析汇报",
+      "variant": "历史复刻",
+      "score": null,
+      "notes": [],
+      "scope": "",
+      "findings": [
+        "此组历史实验未生成源码自动评分。",
+        "品牌标志和部分照片使用了替代元素，字体也有替换；复刻未重建音频。请结合视频查看。"
+      ],
+      "score_note": "",
+      "validation": "",
+      "source_url": null,
+      "attribution": "",
+      "related": null,
+      "reference_label": "参考视频",
+      "crop_reference": false,
+      "score_state": "unscored",
+      "reference": {
+        "sha256": "d93540795db5a9a6c4b45fbe1a54b6ecfaf221f17c809e5e46a0a897002e7dbf",
+        "bytes": 4215427,
+        "duration": 28.0,
+        "width": 1080,
+        "height": 1920,
+        "fps": 25.0,
+        "url": "https://github.com/USTChandsomeboy/video-result/releases/download/remaining-replicas-media-20261017/d93540795db5a9a6c4b45fbe1a54b6ecfaf221f17c809e5e46a0a897002e7dbf.mp4",
+        "poster": "data/remaining-replicas/fp-zeed/reference.jpg"
+      },
+      "replica": {
+        "sha256": "de4e7e1b8fc3dd2627044363f630ee5cb805e05b5d5f2448ef83a8ee35cc44b1",
+        "bytes": 1076757,
+        "duration": 28.0,
+        "width": 1080,
+        "height": 1920,
+        "fps": 25.0,
+        "url": "https://github.com/USTChandsomeboy/video-result/releases/download/remaining-replicas-media-20261017/de4e7e1b8fc3dd2627044363f630ee5cb805e05b5d5f2448ef83a8ee35cc44b1.mp4",
+        "poster": "data/remaining-replicas/fp-zeed/replica.jpg"
+      },
+      "duration": 28.0,
+      "fps": 25.0,
+      "display_aspect": 0.5625,
+      "evidence": [],
+      "url": "replicas.html#fp-zeed"
+    },
+    {
+      "id": "fp-framer",
+      "title": "Framer：界面操作教程",
+      "category": "操作指导",
+      "variant": "历史复刻",
+      "score": null,
+      "notes": [],
+      "scope": "",
+      "findings": [
+        "此组历史实验未生成源码自动评分。",
+        "品牌标志和部分照片使用了替代元素，字体也有替换；复刻未重建音频。请结合视频查看。"
+      ],
+      "score_note": "",
+      "validation": "",
+      "source_url": null,
+      "attribution": "",
+      "related": null,
+      "reference_label": "参考视频",
+      "crop_reference": false,
+      "score_state": "unscored",
+      "reference": {
+        "sha256": "65ef0a477dbe8faa42de0b812fe56cf0bac782c1cf5590c03ad541bfc9036de5",
+        "bytes": 5695246,
+        "duration": 36.001995,
+        "width": 1920,
+        "height": 1080,
+        "fps": 60.0,
+        "url": "https://github.com/USTChandsomeboy/video-result/releases/download/remaining-replicas-media-20261017/65ef0a477dbe8faa42de0b812fe56cf0bac782c1cf5590c03ad541bfc9036de5.mp4",
+        "poster": "data/remaining-replicas/fp-framer/reference.jpg"
+      },
+      "replica": {
+        "sha256": "0503579490fd6e9ecdeafc2e6ae28009f4880f1fbc96eeae43d4826679bf8156",
+        "bytes": 2353359,
+        "duration": 36.0,
+        "width": 1920,
+        "height": 1080,
+        "fps": 60.0,
+        "url": "https://github.com/USTChandsomeboy/video-result/releases/download/remaining-replicas-media-20261017/0503579490fd6e9ecdeafc2e6ae28009f4880f1fbc96eeae43d4826679bf8156.mp4",
+        "poster": "data/remaining-replicas/fp-framer/replica.jpg"
+      },
+      "duration": 36.0,
+      "fps": 60.0,
+      "display_aspect": 1.7777777777777777,
+      "evidence": [],
+      "url": "replicas.html#fp-framer"
+    },
+    {
+      "id": "fp-jhu",
+      "title": "JHU：数据与地图播报",
+      "category": "资讯播报",
+      "variant": "历史复刻",
+      "score": null,
+      "notes": [],
+      "scope": "",
+      "findings": [
+        "此组历史实验未生成源码自动评分。",
+        "品牌标志和部分照片使用了替代元素，字体也有替换；复刻未重建音频。请结合视频查看。"
+      ],
+      "score_note": "",
+      "validation": "",
+      "source_url": null,
+      "attribution": "",
+      "related": null,
+      "reference_label": "参考视频",
+      "crop_reference": false,
+      "score_state": "unscored",
+      "reference": {
+        "sha256": "51a13e1fc3a7208af3c7dbfea6a6388c2e4a3232d15bd7a237d6f6feb9c562a7",
+        "bytes": 26685548,
+        "duration": 30.0,
+        "width": 1920,
+        "height": 1080,
+        "fps": 25.0,
+        "url": "https://github.com/USTChandsomeboy/video-result/releases/download/remaining-replicas-media-20261017/51a13e1fc3a7208af3c7dbfea6a6388c2e4a3232d15bd7a237d6f6feb9c562a7.mp4",
+        "poster": "data/remaining-replicas/fp-jhu/reference.jpg"
+      },
+      "replica": {
+        "sha256": "85ecbd2fc6010ad777e0a6b2d6f56fd711029f6ed3b5ac2e65d54ab2f1659f9f",
+        "bytes": 3619326,
+        "duration": 30.0,
+        "width": 1920,
+        "height": 1080,
+        "fps": 25.0,
+        "url": "https://github.com/USTChandsomeboy/video-result/releases/download/remaining-replicas-media-20261017/85ecbd2fc6010ad777e0a6b2d6f56fd711029f6ed3b5ac2e65d54ab2f1659f9f.mp4",
+        "poster": "data/remaining-replicas/fp-jhu/replica.jpg"
+      },
+      "duration": 30.0,
+      "fps": 25.0,
+      "display_aspect": 1.7777777777777777,
+      "evidence": [],
+      "url": "replicas.html#fp-jhu"
+    },
+    {
+      "id": "fp-apple",
+      "title": "Apple Motion：动效片段回顾",
+      "category": "记录回顾",
+      "variant": "历史复刻",
+      "score": null,
+      "notes": [],
+      "scope": "",
+      "findings": [
+        "此组历史实验未生成源码自动评分。",
+        "品牌标志和部分照片使用了替代元素，字体也有替换；复刻未重建音频。请结合视频查看。"
+      ],
+      "score_note": "",
+      "validation": "",
+      "source_url": null,
+      "attribution": "",
+      "related": null,
+      "reference_label": "参考视频",
+      "crop_reference": false,
+      "score_state": "unscored",
+      "reference": {
+        "sha256": "fc04589905ce62411b47e54bbf984fccbb9f4168fe3822fc83e763157a2142b9",
+        "bytes": 1290601,
+        "duration": 37.0,
+        "width": 480,
+        "height": 270,
+        "fps": 12.0,
+        "url": "https://github.com/USTChandsomeboy/video-result/releases/download/remaining-replicas-media-20261017/fc04589905ce62411b47e54bbf984fccbb9f4168fe3822fc83e763157a2142b9.mp4",
+        "poster": "data/remaining-replicas/fp-apple/reference.jpg"
+      },
+      "replica": {
+        "sha256": "c7a825cd12cefad41d5c0a5cb132902c0bb4b8ee1c6a6bfc27e939bf4c886649",
+        "bytes": 1092206,
+        "duration": 37.0,
+        "width": 480,
+        "height": 270,
+        "fps": 12.0,
+        "url": "https://github.com/USTChandsomeboy/video-result/releases/download/remaining-replicas-media-20261017/c7a825cd12cefad41d5c0a5cb132902c0bb4b8ee1c6a6bfc27e939bf4c886649.mp4",
+        "poster": "data/remaining-replicas/fp-apple/replica.jpg"
+      },
+      "duration": 37.0,
+      "fps": 12.0,
+      "display_aspect": 1.7777777777777777,
+      "evidence": [],
+      "url": "replicas.html#fp-apple"
+    },
+    {
+      "id": "fp-skrrt",
+      "title": "Skrrt：年度音乐数据回顾",
+      "category": "记录回顾",
+      "variant": "历史复刻",
+      "score": null,
+      "notes": [],
+      "scope": "",
+      "findings": [
+        "此组历史实验未生成源码自动评分。",
+        "品牌标志和部分照片使用了替代元素，字体也有替换；复刻未重建音频。请结合视频查看。"
+      ],
+      "score_note": "",
+      "validation": "",
+      "source_url": null,
+      "attribution": "",
+      "related": null,
+      "reference_label": "参考视频",
+      "crop_reference": false,
+      "score_state": "unscored",
+      "reference": {
+        "sha256": "683246e911ef271054ba03dd6c642ebd90d84818558db45658c0573f579f703e",
+        "bytes": 27943315,
+        "duration": 45.056,
+        "width": 1920,
+        "height": 1080,
+        "fps": 30.0,
+        "url": "https://github.com/USTChandsomeboy/video-result/releases/download/remaining-replicas-media-20261017/683246e911ef271054ba03dd6c642ebd90d84818558db45658c0573f579f703e.mp4",
+        "poster": "data/remaining-replicas/fp-skrrt/reference.jpg"
+      },
+      "replica": {
+        "sha256": "18021cdfbae8c9b79e5052ed5ca94236e51a6af99367b0145a6c0c592335bb14",
+        "bytes": 8438514,
+        "duration": 45.0,
+        "width": 1920,
+        "height": 1080,
+        "fps": 30.0,
+        "url": "https://github.com/USTChandsomeboy/video-result/releases/download/remaining-replicas-media-20261017/18021cdfbae8c9b79e5052ed5ca94236e51a6af99367b0145a6c0c592335bb14.mp4",
+        "poster": "data/remaining-replicas/fp-skrrt/replica.jpg"
+      },
+      "duration": 45.0,
+      "fps": 30.0,
+      "display_aspect": 1.7777777777777777,
+      "evidence": [],
+      "url": "replicas.html#fp-skrrt"
+    },
+    {
+      "id": "claude-story",
+      "title": "是谁还没用上 Claude：完整故事动画",
+      "category": "叙事娱乐",
+      "variant": "独立复刻",
+      "score": null,
+      "notes": [],
+      "scope": "约84秒完整对照：弹窗、账号、搜索经验、配件升级、终端与星际穿梭。",
+      "findings": [],
+      "score_note": "",
+      "validation": "",
+      "source_url": "https://www.douyin.com/video/7696108445728019027",
+      "attribution": "",
+      "related": null,
+      "reference_label": "参考视频",
+      "crop_reference": false,
+      "score_state": "unscored",
+      "reference": {
+        "sha256": "b468d48a7314c702b59f2638a7bf491ff4785ebe5b5ca3e30a227e1d783ab54b",
+        "bytes": 7514192,
+        "duration": 84.033333,
+        "width": 576,
+        "height": 1024,
+        "fps": 30.0,
+        "url": "https://github.com/USTChandsomeboy/video-result/releases/download/remaining-replicas-media-20261017/b468d48a7314c702b59f2638a7bf491ff4785ebe5b5ca3e30a227e1d783ab54b.mp4",
+        "poster": "data/remaining-replicas/claude-story/reference.jpg"
+      },
+      "replica": {
+        "sha256": "b534721566733f6448ea1c8632593ae2f5f9a03bd2f8b4ff7e87490f6e7d2564",
+        "bytes": 23570856,
+        "duration": 84.096,
+        "width": 576,
+        "height": 1024,
+        "fps": 30.0,
+        "url": "https://github.com/USTChandsomeboy/video-result/releases/download/remaining-replicas-media-20261017/b534721566733f6448ea1c8632593ae2f5f9a03bd2f8b4ff7e87490f6e7d2564.mp4",
+        "poster": "data/remaining-replicas/claude-story/replica.jpg"
+      },
+      "duration": 84.033,
+      "fps": 30.0,
+      "display_aspect": 0.5625,
+      "evidence": [],
+      "url": "replicas.html#claude-story"
+    },
+    {
+      "id": "kicks-collage",
+      "title": "KICKS：撕纸与照片拼贴",
+      "category": "艺术表达",
+      "variant": "独立复刻",
+      "score": null,
+      "notes": [],
+      "scope": "原片按原有对比页的裁切方式，仅展示右侧动画。复刻使用从原片整理的静态素材与代码动效。",
+      "findings": [
+        "部分遮挡后的边缘、汽车细节、马的内部动作与撕纸折皱为近似处理。"
+      ],
+      "score_note": "",
+      "validation": "",
+      "source_url": "https://x.com/gkxspace/status/2108368287591751969",
+      "attribution": "",
+      "related": null,
+      "reference_label": "参考视频",
+      "crop_reference": true,
+      "score_state": "unscored",
+      "reference": {
+        "sha256": "4423c42b50fd218cff3a5b3bc2746fa99fd3ff6e17dc7fd0ba4dd7924317f526",
+        "bytes": 10779046,
+        "duration": 15.061333,
+        "width": 1920,
+        "height": 1080,
+        "fps": 24.0,
+        "url": "https://github.com/USTChandsomeboy/video-result/releases/download/remaining-replicas-media-20261017/4423c42b50fd218cff3a5b3bc2746fa99fd3ff6e17dc7fd0ba4dd7924317f526.mp4",
+        "poster": "data/remaining-replicas/kicks-collage/reference.jpg"
+      },
+      "replica": {
+        "sha256": "c9d77838d689467ab9eb6f67b9e38c969e77e018852469894f379f907b5c3bda",
+        "bytes": 9925766,
+        "duration": 15.061333,
+        "width": 1080,
+        "height": 1080,
+        "fps": 24.0,
+        "url": "https://github.com/USTChandsomeboy/video-result/releases/download/remaining-replicas-media-20261017/c9d77838d689467ab9eb6f67b9e38c969e77e018852469894f379f907b5c3bda.mp4",
+        "poster": "data/remaining-replicas/kicks-collage/replica.jpg"
+      },
+      "duration": 15.061,
+      "fps": 24.0,
+      "display_aspect": 1,
+      "evidence": [],
+      "url": "replicas.html#kicks-collage"
+    },
+    {
+      "id": "cute-lyric",
+      "title": "歌词 MV：小熊与兔子（角色替换版）",
+      "category": "叙事娱乐",
+      "variant": "历史角色替换试作",
+      "score": null,
+      "notes": [],
+      "scope": "历史版本有意替换角色，不作为严格的同角色复刻。参考展示复用已发布的去标识、去署名版本。",
+      "findings": [],
+      "score_note": "",
+      "validation": "",
+      "source_url": "https://github.com/twitter/twemoji",
+      "attribution": "小熊与兔子轮廓来自 Twitter Twemoji，CC BY 4.0；身体、服装与动作另行绘制。",
+      "related": null,
+      "reference_label": "去标识的素材合成参考",
+      "crop_reference": false,
+      "score_state": "unscored",
+      "reference": {
+        "sha256": "cebbb67570fffafbeb06d038eca737d7506fdfedfeb5dabaad57272ef1b2b180",
+        "bytes": 34408569,
+        "duration": 62.933333,
+        "width": 1280,
+        "height": 720,
+        "fps": 24.0,
+        "url": "https://github.com/USTChandsomeboy/video-result/releases/download/lyric-mv-verifier-media-20261014/cebbb67570fffafbeb06d038eca737d7506fdfedfeb5dabaad57272ef1b2b180.mp4",
+        "poster": "data/remaining-replicas/cute-lyric/reference.jpg"
+      },
+      "replica": {
+        "sha256": "755b6e778081b1cdc168b372932f55d27331ada1af122677a0887dd8a0dd6e9f",
+        "bytes": 18598385,
+        "duration": 62.890667,
+        "width": 1280,
+        "height": 720,
+        "fps": 24.0,
+        "url": "https://github.com/USTChandsomeboy/video-result/releases/download/remaining-replicas-media-20261017/755b6e778081b1cdc168b372932f55d27331ada1af122677a0887dd8a0dd6e9f.mp4",
+        "poster": "data/remaining-replicas/cute-lyric/replica.jpg"
+      },
+      "duration": 62.891,
+      "fps": 24.0,
+      "display_aspect": 1.7777777777777777,
+      "evidence": [],
+      "url": "replicas.html#cute-lyric"
+    },
+    {
+      "id": "smalltown-codex-deepseek",
+      "title": "小镇姑娘：Codex × DeepSeek 独立试作",
+      "category": "叙事娱乐",
+      "variant": "历史独立试作 · 仅视频对比",
+      "score": null,
+      "notes": [],
+      "scope": "约22秒片段；形象、镜头与歌词画面由独立 Remotion 工程重绘。与已发布的完整鲸鱼娘 MV Harbor 任务是不同实验。",
+      "findings": [],
+      "score_note": "",
+      "validation": "",
+      "source_url": "https://github.com/USTChandsomeboy/video-seed-bench",
+      "attribution": "",
+      "related": null,
+      "reference_label": "参考视频",
+      "crop_reference": false,
+      "score_state": "unscored",
+      "reference": {
+        "sha256": "73a50cd105a3f597f25a0974dd9187b3d9ef8a517194047fe27902d0f96340d4",
+        "bytes": 5036057,
+        "duration": 62.898345,
+        "width": 1280,
+        "height": 720,
+        "fps": 24.0,
+        "url": "https://github.com/USTChandsomeboy/video-result/releases/download/remaining-replicas-media-20261017/73a50cd105a3f597f25a0974dd9187b3d9ef8a517194047fe27902d0f96340d4.mp4",
+        "poster": "data/remaining-replicas/smalltown-codex-deepseek/reference.jpg"
+      },
+      "replica": {
+        "sha256": "774e5d397657e82281233107ce8c2f8e11d4dfa0364ec7fe1b0a9732f1028570",
+        "bytes": 19870393,
+        "duration": 22.058667,
+        "width": 1920,
+        "height": 1080,
+        "fps": 30.0,
+        "url": "https://github.com/USTChandsomeboy/video-result/releases/download/remaining-replicas-media-20261017/774e5d397657e82281233107ce8c2f8e11d4dfa0364ec7fe1b0a9732f1028570.mp4",
+        "poster": "data/remaining-replicas/smalltown-codex-deepseek/replica.jpg"
+      },
+      "duration": 22.059,
+      "fps": 30.0,
+      "display_aspect": 1.7777777777777777,
+      "evidence": [],
+      "url": "replicas.html#smalltown-codex-deepseek"
+    },
+    {
+      "id": "motion-lab-first",
+      "title": "Motion Lab：原帖与首次复刻",
+      "category": "艺术表达",
+      "variant": "首次复刻 · 尚无源码评分",
+      "score": null,
+      "notes": [],
+      "scope": "此处是原帖与第一次重新实现的对照。已发布的 Harbor 页面用这次实现作为GT，评估另一次独立复刻，两组实验不同。",
+      "findings": [],
+      "score_note": "",
+      "validation": "",
+      "source_url": "https://x.com/flxrnc/status/2108899503092740561",
+      "attribution": "",
+      "related": {
+        "url": "experiments/florence-motion-lab-harbor/index.html",
+        "label": "后续 Harbor 复刻与评分"
+      },
+      "reference_label": "参考视频",
+      "crop_reference": false,
+      "score_state": "unscored",
+      "reference": {
+        "sha256": "2c8372a3239b5c361d1a909ded0a5ce529eaf9f73b5c992f326a05f38fb11089",
+        "bytes": 2045976,
+        "duration": 8.042667,
+        "width": 1080,
+        "height": 1080,
+        "fps": 60.0,
+        "url": "https://github.com/USTChandsomeboy/video-result/releases/download/remaining-replicas-media-20261017/2c8372a3239b5c361d1a909ded0a5ce529eaf9f73b5c992f326a05f38fb11089.mp4",
+        "poster": "data/remaining-replicas/motion-lab-first/reference.jpg"
+      },
+      "replica": {
+        "sha256": "21a015ba99b00ea948b99b19c3541c8373331e20475b21035af319359f7a0748",
+        "bytes": 5339137,
+        "duration": 8.042667,
+        "width": 1080,
+        "height": 1080,
+        "fps": 60.0,
+        "url": "https://github.com/USTChandsomeboy/video-result/releases/download/florence-motion-lab-media-20261012/21a015ba99b00ea948b99b19c3541c8373331e20475b21035af319359f7a0748.mp4",
+        "poster": "data/remaining-replicas/motion-lab-first/replica.jpg"
+      },
+      "duration": 8.043,
+      "fps": 60.0,
+      "display_aspect": 1.0,
+      "evidence": [],
+      "url": "replicas.html#motion-lab-first"
+    },
+    {
+      "id": "clawd-first",
+      "title": "Clawd 换装：原帖与首次复刻",
+      "category": "叙事娱乐",
+      "variant": "首次复刻 · 尚无源码评分",
+      "score": null,
+      "notes": [],
+      "scope": "此处是原帖与第一次实现的对照。已发布的 Clawd Harbor 页面用这次实现作为GT，再交给独立 agent 复刻。",
+      "findings": [],
+      "score_note": "",
+      "validation": "",
+      "source_url": "https://www.douyin.com/video/7695989308771401107",
+      "attribution": "",
+      "related": {
+        "url": "experiments/clawd-dressup-harbor/index.html",
+        "label": "后续 Harbor 复刻与评分"
+      },
+      "reference_label": "参考视频",
+      "crop_reference": false,
+      "score_state": "unscored",
+      "reference": {
+        "sha256": "0887a21902ed78c86f019cdcae35bfe1deb734e740f94765e8aa76ff7d5a8c8e",
+        "bytes": 237730,
+        "duration": 9.5,
+        "width": 1280,
+        "height": 720,
+        "fps": 30.0,
+        "url": "https://github.com/USTChandsomeboy/video-result/releases/download/remaining-replicas-media-20261017/0887a21902ed78c86f019cdcae35bfe1deb734e740f94765e8aa76ff7d5a8c8e.mp4",
+        "poster": "data/remaining-replicas/clawd-first/reference.jpg"
+      },
+      "replica": {
+        "sha256": "c1deb88777259c129a319b2d080d9f3468d1c23b12a20667677d1e2601e75e9f",
+        "bytes": 2131443,
+        "duration": 9.557333,
+        "width": 1280,
+        "height": 720,
+        "fps": 30.0,
+        "url": "https://github.com/USTChandsomeboy/video-result/releases/download/clawd-dressup-media-20261016/c1deb88777259c129a319b2d080d9f3468d1c23b12a20667677d1e2601e75e9f.mp4",
+        "poster": "data/remaining-replicas/clawd-first/replica.jpg"
+      },
+      "duration": 9.5,
+      "fps": 30.0,
+      "display_aspect": 1.7777777777777777,
+      "evidence": [],
+      "url": "replicas.html#clawd-first"
+    }
+  ]
+}

@@ -1,0 +1,160 @@
+<!doctype html><html lang="zh-CN"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>SVG教程：源码差异</title>
+<style>body{margin:0;background:#101722;color:#edf1f8;font:16px/1.7 system-ui}main{max-width:1250px;margin:auto;padding:28px}a{color:#9ebfff}section{border:1px solid #33445e;border-radius:14px;padding:22px;margin:24px 0;background:#172233}img{width:100%;height:auto}pre{white-space:pre-wrap;overflow-wrap:anywhere;background:#0e1725;padding:14px;font-size:12px}h1{font-size:28px}h2{font-size:22px}.columns{display:grid;grid-template-columns:1fr 1fr;gap:16px}.muted{color:#aebdd2}@media(max-width:750px){.columns{grid-template-columns:1fr}main{padding:16px}}</style><main>
+<p><a href="index.html">返回视频与评分</a></p><h1>主要源码差异</h1>
+<p>原作与这次固定提交逐项对照。左图为原视频，右图为复刻；代码摘录保留原文件行号。自动评分的逐项结果在主页面展开查看。</p>
+<p class="muted">画面主体、教学内容和整体结构基本保留；下面聚焦动作过程的差异。字体使用任务提供的Noto替代原作的macOS字体，完整字形像素布局属于视频对照范围。</p>
+<section id="opening"><h2>开场画板的移动和缩放被省略</h2><p>原作在前38帧把宽画板从画面中间缩小并移到右侧。复刻直接从右侧最终位置开始，直到34.2秒才开始后一次移动。0.5秒的对照中，画板的位置和大小明显不同。</p>
+<img loading="lazy" src="evidence/video-review/00-pair.jpg" alt="原作与复刻相同时刻的画面">
+<div class="columns">
+<div><h3>原作 · src/Card.tsx:7</h3><pre>  7  const WIDE: Box = { x: 173, y: 243, w: 934, h: 456, s: 1 };
+  8  const MAIN: Box = { x: 790, y: 318, w: 411, h: 336, s: 1 };
+  9  const SMALL: Box = { x: 860, y: 144, w: 343, h: 279, s: 0.835 };
+ 10
+ 11  const mix = (a: Box, b: Box, t: number): Box =&gt; ({
+ 12    x: lerp(a.x, b.x, t),
+ 13    y: lerp(a.y, b.y, t),
+ 14    w: lerp(a.w, b.w, t),
+ 15    h: lerp(a.h, b.h, t),
+ 16    s: lerp(a.s, b.s, t),
+ 17  });
+ 18
+ 19  const cardBox = (f: number) =&gt;
+ 20    f &lt; 1000 ? mix(WIDE, MAIN, tw(f, 0, 38)) : mix(MAIN, SMALL, tw(f, 1035, 1092));</pre></div>
+<div><h3>复刻 · src/Replica.tsx:18</h3><pre> 18  function Drawing({t}:any){const q=p(t,34.2,36.8),s=mix(1,5/6,q),x=mix(1185,1290,q),y=mix(477,216,q);const phase=(Math.max(0,t-21)%3)/3;const blink= t&lt;21?1:interpolate(phase,[0,.78,.81,.84,.88,1],[1,1,.1,.1,1,1]);return &lt;g {...obj(&#x27;drawing.card&#x27;)} transform={`translate(${x} ${y}) scale(${s})`}&gt;
+ 19  &lt;rect {...part(&#x27;frame&#x27;)} width={617} height={504} rx={19} fill={C.paper} stroke=&quot;#959598&quot; strokeWidth={2.5}/&gt;
+ 20  &lt;g {...part(&#x27;grid&#x27;)} stroke={C.grid} strokeWidth={1.5} opacity={p(t,0,.6)}&gt;{Array.from({length:17},(_,i)=&gt;&lt;line key={&#x27;v&#x27;+i} x1={43+i*33.2} x2={43+i*33.2} y1={37} y2={468}/&gt;)}{Array.from({length:13},(_,i)=&gt;&lt;line key={&#x27;h&#x27;+i} x1={43} x2={574} y1={37+i*33.2} y2={37+i*33.2}/&gt;)}&lt;/g&gt;</pre></div>
+</div></section>
+<section id="typing"><h2>逐字显示被替换成整行淡入</h2><p>原作编辑器用reveal控制已显示字符数，7行各有自己的起止帧；后面的动画命令还有逐字符解码和位移。复刻始终保留完整字符串，只改变整行透明度，动画命令则整块移动缩放。1.5秒时，原作才输入第一行的一部分，复刻已经出现两整行。</p>
+<img loading="lazy" src="evidence/video-review/01-pair.jpg" alt="原作与复刻相同时刻的画面">
+<div class="columns">
+<div><h3>原作 · src/kit.tsx:25</h3><pre> 25  }&gt; = ({ x, y, text, size, reveal = 1, soft = 5, opacity = 1 }) =&gt; {
+ 26    if (reveal &lt;= 0 || opacity &lt;= 0) return null;
+ 27    const cols = charColors(text);
+ 28    const n = text.length;
+ 29    const spans: React.ReactNode[] = [];
+ 30    if (reveal &gt;= 1) {
+ 31      let s = 0;
+ 32      for (let i = 1; i &lt;= n; i++) {
+ 33        if (i === n || cols[i] !== cols[s]) {
+ 34          spans.push(
+ 35            &lt;tspan key={s} fill={cols[s]}&gt;
+ 36              {text.slice(s, i)}
+ 37            &lt;/tspan&gt;
+ 38          );
+ 39          s = i;
+ 40        }
+ 41      }
+ 42    } else {
+ 43      const shown = reveal * (n + soft);
+ 44      for (let i = 0; i &lt; n; i++) {
+ 45        const o = Math.max(0, Math.min(1, (shown - i) / soft));
+ 46        if (o &lt;= 0) break;
+ 47        spans.push(
+ 48          &lt;tspan key={i} fill={cols[i]} fillOpacity={o}&gt;
+ 49            {text[i]}
+ 50          &lt;/tspan&gt;
+ 51        );</pre></div>
+<div><h3>复刻 · src/Replica.tsx:28</h3><pre> 28  const editorLines=[&#x27;&lt;rect x=&quot;26&quot; y=&quot;30&quot; width=&quot;108&quot; height=&quot;68&quot;&#x27;,&#x27;      fill=&quot;#DC9168&quot; stroke=&quot;#3C2C2B&quot;/&gt;&#x27;,&#x27;&lt;rect x=&quot;10&quot; y=&quot;56&quot; width=&quot;16&quot; height=&quot;20&quot; fill=&quot;#DC9168&quot;/&gt;&#x27;,&#x27;&lt;rect x=&quot;134&quot; y=&quot;56&quot; width=&quot;16&quot; height=&quot;20&quot; fill=&quot;#DC9168&quot;/&gt;&#x27;,&#x27;&lt;rect x=&quot;40&quot; y=&quot;98&quot; width=&quot;14&quot; height=&quot;18&quot; fill=&quot;#DC9168&quot;/&gt;&#x27;,&#x27;&lt;rect x=&quot;106&quot; y=&quot;98&quot; width=&quot;14&quot; height=&quot;18&quot; fill=&quot;#DC9168&quot;/&gt;&#x27;,&#x27;&lt;path d=&quot;M 73 69 Q 80 76 87 69&quot;/&gt;&#x27;];
+ 29  function Editor({t}:any){return &lt;g {...obj(&#x27;editor.window&#x27;)} opacity={1-p(t,7,8.8)}&gt;&lt;g {...part(&#x27;chrome&#x27;)}&gt;&lt;rect x={55} y={445} width={1039} height={565} rx={16} fill=&quot;#080d12&quot; stroke=&quot;#393e47&quot; strokeWidth={2}/&gt;&lt;path d=&quot;M71 445 H1078 Q1094 445 1094 461 V505 H55 V461 Q55 445 71 445&quot; fill=&quot;#131c25&quot; stroke=&quot;#393e47&quot; strokeWidth={1.5}/&gt;{[&#x27;#f05d58&#x27;,&#x27;#f5c432&#x27;,&#x27;#29c84d&#x27;].map((v,i)=&gt;&lt;circle key={v} cx={82+i*47.5} cy={475} r={9.5} fill={v}/&gt;)}&lt;Text x={574} y={484} size={24} anchor=&quot;middle&quot; fill=&quot;#858d96&quot; fontFamily={mono}&gt;claude.svg&lt;/Text&gt;&lt;/g&gt;{editorLines.map((line,i)=&gt;&lt;g {...part(&#x27;line&#x27;+String(i+1).padStart(2,&#x27;0&#x27;))} key={i} opacity={p(t,.6+i*.37,1+i*.37)}&gt;&lt;Text x={119} y={560+i*48} size={25} fontFamily={mono}&gt;&lt;Syntax text={line}/&gt;&lt;/Text&gt;&lt;/g&gt;)}&lt;/g&gt;}</pre></div>
+</div></section>
+<section id="draw"><h2>框和箭头的逐步绘制变成了整体淡入</h2><p>原作给框、箭头、说明文字分别安排时间：先描边，再伸长箭头，最后显示文字。框的strokeDashoffset随进度变化，箭头端点也随p移动。复刻一开始就画出完整的框与箭头，让它们共享父组透明度，动作的过程和先后关系都变了。</p>
+<img loading="lazy" src="evidence/video-review/07-pair.jpg" alt="原作与复刻相同时刻的画面">
+<div class="columns">
+<div><h3>原作 · src/Code.tsx:108</h3><pre>108        {NOTES.map((n) =&gt; {
+109          const idx = AT_LINES[n.line].text.indexOf(n.key);
+110          const b = tokenBox(n.line, idx, n.key.length);
+111          const box = tw(f, n.at, n.at + 11, 0, 1, EASE_OUT);
+112          const arr = tw(f, n.at + 8, n.at + 20, 0, 1, EASE_OUT);
+113          const lab = tw(f, n.at + 12, n.at + 26);
+114          const x1 = b.x + b.w;
+115          return (
+116            &lt;g key={n.key}&gt;
+117              &lt;DrawRect x={b.x} y={b.y} w={b.w} h={b.h} p={box} color={C.hl} rx={4} width={2.2} /&gt;
+118              &lt;Arrow x1={x1} y1={AT_LINES[n.line].y} x2={706} y2={AT_LINES[n.line].y} p={arr} color={C.hl} width={3} head={12} /&gt;
+119              &lt;text
+120                x={718}
+121                y={AT_LINES[n.line].y}
+122                dominantBaseline=&quot;central&quot;
+123                fontFamily={FONT_CJK}
+124                fontSize={18}
+125                fontWeight={700}
+126                fill={C.hl}
+127                opacity={lab}
+128              &gt;</pre></div>
+<div><h3>复刻 · src/Replica.tsx:38</h3><pre> 38  function CodeNotes({t}:any){return &lt;&gt;{[{id:&#x27;type&#x27;,x:746,y:136,w:193,label:&#x27;缩放动画&#x27;,start:25.3},{id:&#x27;values&#x27;,x:135,y:182,w:564,label:&#x27;缩放数值&#x27;,start:27.7},{id:&#x27;keytimes&#x27;,x:135,y:228,w:535,label:&#x27;相对时间线&#x27;,start:29.4},{id:&#x27;duration&#x27;,x:135,y:274,w:132,label:&#x27;动画长度&#x27;,start:31.2}].map(n=&gt;&lt;g key={n.id} {...obj(&#x27;note.&#x27;+n.id)} opacity={fade(t,n.start,34,.4)}&gt;&lt;rect {...part(&#x27;frame&#x27;)} x={n.x} y={n.y} width={n.w} height={34} rx={6} stroke={C.gold} strokeWidth={3} fill=&quot;none&quot;/&gt;&lt;g {...part(&#x27;arrow&#x27;)}&gt;&lt;Arrow x1={n.x+n.w} y1={n.y+17} x2={1058} y2={n.y+17} color={C.gold} width={4}/&gt;&lt;/g&gt;&lt;Text {...part(&#x27;label&#x27;)} x={1076} y={n.y+27} size={27} fill={C.gold} weight={700}&gt;{n.label}&lt;/Text&gt;&lt;/g&gt;)}&lt;/&gt;}</pre></div>
+</div></section>
+<section id="absolute"><h2>六个时间参数逐个转换，被改成同时替换</h2><p>原作每个参数错开5帧，转换持续14帧，并在中间显示变化中的数字。复刻六个参数共用一个absolute值，超过0.5后同时替换文本。51.5秒时原作还在逐个转换，复刻已经全部变成最终绝对时间。</p>
+<img loading="lazy" src="evidence/video-review/12-pair.jpg" alt="原作与复刻相同时刻的画面">
+<div class="columns">
+<div><h3>原作 · src/Boxes.tsx:109</h3><pre>109    // keyTimes 变为绝对时间（逐个翻牌）
+110    const absP = (i: number) =&gt; tw(f, 1532 + i * 5, 1546 + i * 5);</pre></div>
+<div><h3>复刻 · src/Replica.tsx:40</h3><pre> 40  function Rows({t}:any){const appear=p(t,34,36.8),layout=p(t,34.7,37),absolute=p(t,50.3,52);const scroll=Math.max(0,t-62.933333)*540;return &lt;&gt;
+ 41  &lt;g {...obj(&#x27;rows.labels&#x27;)} opacity={appear} fontFamily={mono}&gt;&lt;Text {...part(&#x27;values&#x27;)} x={mix(140,60,layout)} y={mix(207,355,layout)} size={30} fill={C.blue}&gt;values&lt;/Text&gt;&lt;Text {...part(&#x27;keytimes&#x27;)} x={mix(140,60,layout)} y={mix(253,537,layout)} size={30} fill={C.blue}&gt;keyTimes&lt;/Text&gt;&lt;/g&gt;
+ 42  {times.map((v,i)=&gt;{const n=String(i+1).padStart(2,&#x27;0&#x27;),sx=304+151.5*i;const travelKey=p(t,57.4+i*.07,58.7+i*.07),moveKey=p(t,59.1+i*.04,59.8+i*.04),moveValue=p(t,59.6+i*.08,60.8+i*.08);const tx=150+540*abs[i]-scroll;const iconY=i%2===0?788:728;const vx=mix(mix(265+i*68,sx+67.5,layout),tx,moveValue),vy=mix(mix(200,345,layout),iconY,moveValue);const kx=mix(mix(307+i*62,sx+67.5,layout),tx,travelKey),ky=mix(mix(mix(246,527,layout),762,travelKey),856,moveKey);return &lt;React.Fragment key={i}&gt;
+ 43  &lt;g {...obj(&#x27;values.member&#x27;+n)} opacity={appear}&gt;&lt;g {...part(&#x27;content&#x27;)} transform={`translate(${vx} ${vy})`}&gt;&lt;rect x={-mix(67.5,23,moveValue)} y={-mix(36,14,moveValue)} width={mix(135,46,moveValue)} height={mix(72,28,moveValue)} rx={mix(12,3,moveValue)} fill={moveValue&gt;.6?C.skin:C.panel} stroke=&quot;#5b5b65&quot; strokeWidth={2*(1-moveValue)} opacity={layout}/&gt;&lt;Text x={0} y={10} anchor=&quot;middle&quot; size={mix(27,30,layout)} fontFamily={mono} opacity={1-moveValue}&gt;{valueStrings[i]}&lt;/Text&gt;&lt;g opacity={moveValue}&gt;{[-10,10].map((x,j)=&gt;&lt;rect key={j} x={x-1.8} y={i===2||i===3?-.7:-7} width={3.6} height={i===2||i===3?1.4:14} fill={C.ink}/&gt;)}&lt;/g&gt;&lt;/g&gt;&lt;/g&gt;
+ 44  &lt;g {...obj(&#x27;keytimes.member&#x27;+n)} opacity={appear}&gt;&lt;g {...part(&#x27;content&#x27;)} transform={`translate(${kx} ${ky})`}&gt;&lt;rect x={-mix(mix(67.5,27,travelKey),12,moveKey)} y={-mix(mix(36,14,travelKey),12,moveKey)} width={mix(mix(135,54,travelKey),24,moveKey)} height={mix(mix(72,28,travelKey),24,moveKey)} rx={mix(mix(12,4,travelKey),2,moveKey)} fill={moveKey&gt;.6?&#x27;#ffd139&#x27;:absolute&gt;.5?&#x27;#19180f&#x27;:C.panel} stroke={absolute&gt;.5?C.gold:&#x27;#5b5b65&#x27;} strokeWidth={2*(1-moveKey)} transform={`rotate(${moveKey*45})`} opacity={layout}/&gt;&lt;Text x={0} y={mix(10,i===0||i%2===1?47:114,moveKey)} anchor=&quot;middle&quot; size={mix(mix(30,12,travelKey),18,moveKey)} fill={absolute&gt;.5?C.gold:C.white} fontFamily={mono} weight={moveKey&gt;.5?700:400}&gt;{absolute&gt;.5?String(abs[i])+(moveKey&lt;.5?&#x27;s&#x27;:&#x27;&#x27;):String(v)}&lt;/Text&gt;&lt;/g&gt;&lt;/g&gt;&lt;/React.Fragment&gt;})}</pre></div>
+</div></section>
+<section id="easing"><h2>弹出、减速等不同曲线被统一成一种过渡</h2><p>原作分别使用贝塞尔减速和带回弹的BACK曲线，例如节点、眼睛图示的弹出。复刻的p函数统一采用smoothstep，并且重新估计了多处起止时间。静止后的画面较接近，过渡中的位置、大小和出现顺序仍有区别。</p>
+<img loading="lazy" src="evidence/video-review/10-pair.jpg" alt="原作与复刻相同时刻的画面">
+<div class="columns">
+<div><h3>原作 · src/util.ts:3</h3><pre>  3  export const clamp = { extrapolateLeft: &#x27;clamp&#x27;, extrapolateRight: &#x27;clamp&#x27; } as const;
+  4  export const EASE = Easing.bezier(0.45, 0, 0.2, 1);
+  5  export const EASE_OUT = Easing.bezier(0.16, 1, 0.3, 1);
+  6  export const BACK = Easing.bezier(0.34, 1.56, 0.64, 1);
+  7
+  8  // frame 在 [a,b] 区间内从 from 过渡到 to
+  9  export const tw = (f: number, a: number, b: number, from = 0, to = 1, easing = EASE) =&gt;
+ 10    interpolate(f, [a, b], [from, to], { ...clamp, easing });</pre></div>
+<div><h3>复刻 · src/Replica.tsx:4</h3><pre>  4  const clamp=(x:number)=&gt;Math.max(0,Math.min(1,x));
+  5  const p=(t:number,a:number,b:number)=&gt;{let x=clamp((t-a)/(b-a));return x*x*(3-2*x)};
+  6  const mix=(a:number,b:number,q:number)=&gt;a+(b-a)*q;
+  7  const fade=(t:number,a:number,b:number,z=0.35)=&gt;p(t,a,a+z)*(1-p(t,b-z,b));</pre></div>
+</div></section>
+<section id="blink"><h2>额外加入了原片这段时间内没有的持续眨眼</h2><p>原作主画板的眼睛动画从第1888帧才开始，首次闭眼过渡要等2.34秒后才开始，超过这段64秒视频的末尾。复刻从21秒就循环眨眼。这个差异从源码可以确认，但现有清单并没有专门完整检查所有额外动作，因此需要结合视频查看。</p>
+<img loading="lazy" src="evidence/video-review/17-pair.jpg" alt="原作与复刻相同时刻的画面">
+<div class="columns">
+<div><h3>原作 · src/Boxes.tsx:350</h3><pre>350      &lt;g&gt;
+351        &lt;line x1={Math.min(100, tlX(0, f))} y1={TL_Y} x2={end} y2={TL_Y} stroke={C.timeline} strokeWidth={2} /&gt;
+352        {ticks}
+353      &lt;/g&gt;
+354    );
+355  };
+356
+357  // 卡片中 Claude 的眼睛：播放头启动后按 animateTransform 规则循环眨眼
+358  export const cardEyeScale = (f: number) =&gt; (f &gt;= PLAY_START ? blinkScale(playTime(f)) : 1);</pre></div>
+<div><h3>复刻 · src/Replica.tsx:18</h3><pre> 18  function Drawing({t}:any){const q=p(t,34.2,36.8),s=mix(1,5/6,q),x=mix(1185,1290,q),y=mix(477,216,q);const phase=(Math.max(0,t-21)%3)/3;const blink= t&lt;21?1:interpolate(phase,[0,.78,.81,.84,.88,1],[1,1,.1,.1,1,1]);return &lt;g {...obj(&#x27;drawing.card&#x27;)} transform={`translate(${x} ${y}) scale(${s})`}&gt;
+ 19  &lt;rect {...part(&#x27;frame&#x27;)} width={617} height={504} rx={19} fill={C.paper} stroke=&quot;#959598&quot; strokeWidth={2.5}/&gt;
+ 20  &lt;g {...part(&#x27;grid&#x27;)} stroke={C.grid} strokeWidth={1.5} opacity={p(t,0,.6)}&gt;{Array.from({length:17},(_,i)=&gt;&lt;line key={&#x27;v&#x27;+i} x1={43+i*33.2} x2={43+i*33.2} y1={37} y2={468}/&gt;)}{Array.from({length:13},(_,i)=&gt;&lt;line key={&#x27;h&#x27;+i} x1={43} x2={574} y1={37+i*33.2} y2={37+i*33.2}/&gt;)}&lt;/g&gt;
+ 21  &lt;g transform=&quot;translate(43 37) scale(3.32)&quot;&gt;
+ 22  &lt;rect {...part(&#x27;left-arm&#x27;)} opacity={p(t,1.8,2.1)} x={10} y={56} width={16} height={20} fill={C.skin}/&gt;&lt;rect {...part(&#x27;right-arm&#x27;)} opacity={p(t,2.1,2.4)} x={134} y={56} width={16} height={20} fill={C.skin}/&gt;
+ 23  &lt;rect {...part(&#x27;left-leg&#x27;)} opacity={p(t,2.4,2.7)} x={40} y={98} width={14} height={18} fill={C.skin}/&gt;&lt;rect {...part(&#x27;right-leg&#x27;)} opacity={p(t,2.7,3)} x={106} y={98} width={14} height={18} fill={C.skin}/&gt;
+ 24  &lt;rect {...part(&#x27;body&#x27;)} opacity={p(t,.7,1.5)} x={26} y={30} width={108} height={68} fill={C.skin} stroke={C.brown} strokeWidth={1.4}/&gt;
+ 25  &lt;g {...part(&#x27;eyes&#x27;)} opacity={p(t,17.2,18.2)} transform={`translate(0 50.8) scale(1 ${blink}) translate(0 -50.8)`}&gt;&lt;rect x={52.5} y={44} width={8} height={13.6} fill={C.ink}/&gt;&lt;rect x={100.5} y={44} width={8} height={13.6} fill={C.ink}/&gt;&lt;/g&gt;</pre></div>
+</div></section>
+<section id="subtitles"><h2>字幕的切换时间、位置和变形也有差异</h2><p>原作按帧切换字幕，进出各3帧，并对文字进行skewX(-9)和横向0.86缩放。复刻手填秒数、进出约4.8帧，使用斜体但没有相同变换，字的大小和纵向位置也不同。20秒附近原作已有字幕，复刻刚进入下一句而还不可见。</p>
+<img loading="lazy" src="evidence/video-review/05-pair.jpg" alt="原作与复刻相同时刻的画面">
+<div class="columns">
+<div><h3>原作 · src/Video.tsx:39</h3><pre> 39  const Subtitle: React.FC&lt;{ f: number }&gt; = ({ f }) =&gt; {
+ 40    const seg = SUBS.find((s) =&gt; f &gt;= s[0] &amp;&amp; f &lt; s[1]);
+ 41    if (!seg) return null;
+ 42    const o = inOut(f, seg[0], seg[0] + 3, seg[1] - 3, seg[1]);
+ 43    return (
+ 44      &lt;text
+ 45        x={W / 2}
+ 46        y={622}
+ 47        textAnchor=&quot;middle&quot;
+ 48        dominantBaseline=&quot;central&quot;
+ 49        fontFamily={FONT_CJK}
+ 50        fontSize={40}
+ 51        fontWeight={700}
+ 52        fill={C.white}
+ 53        stroke=&quot;#000&quot;
+ 54        strokeWidth={4}
+ 55        paintOrder=&quot;stroke&quot;
+ 56        opacity={o}
+ 57        transform={`translate(${W / 2} 622) skewX(-9) scale(0.86 1) translate(${-W / 2} -622)`}
+ 58      &gt;
+ 59        {seg[2]}</pre></div>
+<div><h3>复刻 · src/Replica.tsx:62</h3><pre> 62  &lt;g {...obj(&#x27;subtitles&#x27;)}&gt;&lt;Text {...part(&#x27;content&#x27;)} x={960} y={955} anchor=&quot;middle&quot; size={52} weight={700} fontStyle=&quot;italic&quot; stroke=&quot;#000&quot; strokeWidth={3} paintOrder=&quot;stroke&quot; opacity={sub?fade(t,sub[0],sub[1],.16):0}&gt;{sub?.[2]||&#x27;&#x27;}&lt;/Text&gt;&lt;/g&gt;</pre></div>
+</div></section>
+</main></html>

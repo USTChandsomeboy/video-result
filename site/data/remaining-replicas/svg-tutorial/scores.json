@@ -1,0 +1,2624 @@
+{
+  "status": "valid",
+  "total": 58.64843750173522,
+  "provisional_total": null,
+  "integrity_ok": true,
+  "calibration": {
+    "status": "passed",
+    "kinds": [
+      "controlled_errors",
+      "equivalent_pair",
+      "real_pair",
+      "self_pair"
+    ],
+    "checks_per_kind": 1338,
+    "rubric_sha256": "3a62d0f8ca44a1b2c496b649cc450ca2eef228ba4d15dd17cfc0aff7f86e45ee",
+    "measurement_sha256": {
+      "source_compare.py": "8bd6520fbc4da472c1feb364a8594a7e70aa93791ce271bac58d846fd8b20362",
+      "source_analyzer.cjs": "a21623d22869b9eb40eb816cbb2e5fe68df59308d2e0644d644ffdd3f313eb2a",
+      "case_adapter.py": "9712982d69838a523b978e2e211e0137ba85c74600335e95430e5c821acd4aa4",
+      "reference_preflight.py": "fc17a97099983431fc13ee7d9063c27010700019e7f2237450be0fb000ba2729",
+      "score_core.py": "303b3ac83d8b9668caea6a964635b7bc1d38dc4618542582f522171178638ffa",
+      "verify.py": "0fb21555b71255fcea2b6ee4ecaead25199adbf3a14801415cb57b2997bad563",
+      "package_integrity.py": "0fbb689b06d0e7b7128de12058d0f01120c5af571d73ce1bee4a6be4de82ce2e",
+      "source_index.py": "0875e9927acdf1474fbd8e794be3a7669599507c26a8ce537a7a06454d88a474",
+      "coordinate_measurements.py": "489556305ed7cdfa801d17c71c3cb6aea3de586301d799e139610fd80cd78c45",
+      "private/objects.json": "e88f8e43815c055e4ed20463841cd9165e94e2791a3252f28090fac9bf1ab046",
+      "private/source-objects.json": "a6b5c8687eb7078d038011f1d9de5eea0c760064aa5015b5fd1ba19368beed3d",
+      "semantic_measurements.py": "fd0e6cfb7ad21443278cac0d6e828e148c6b776ef3adddd496e1245b16783781",
+      "measure_source.py": "ff358ca43af7bc77cf75b33badeb6e855fef6c73cdb2197bd6b9108e41dcd1c6",
+      "analyze_stream.cjs": "c07def7f6f6626900fd7c34a8f581ed885b39e98659b14e858b926800cfff98c",
+      "build_rubric.py": "05fe1ee103fd2b0684778a3edb2d1e5fe48455a3f72d836f9d546649d5927b64",
+      "observation_store.py": "265d0f04be0aaf2fa221ba0b61177d75b77203f79e55e24391230674ccb4999a"
+    }
+  },
+  "score_bounds": {
+    "minimum": 58.64843750173522,
+    "maximum": 58.64843750173522
+  },
+  "dimensions": {
+    "presence": 100.0,
+    "attributes": 74.530436438505,
+    "relations": 96.22078341867561,
+    "binding": 54.245865501625865,
+    "motion": 38.01074765329843,
+    "timing": 17.892630063388978
+  },
+  "weights": {
+    "presence": 0.1,
+    "attributes": 0.15,
+    "relations": 0.15,
+    "binding": 0.2,
+    "motion": 0.25,
+    "timing": 0.15
+  },
+  "coverage": {
+    "resolved": 1338,
+    "declared": 1338,
+    "weighted": 1.0,
+    "measured_weighted": 1.0
+  },
+  "plan_coverage": {
+    "status": "complete",
+    "objects": 33,
+    "dimensions_per_object": 6,
+    "applicable": 193,
+    "not_applicable": 5,
+    "unsupported": 0,
+    "cells": [
+      {
+        "id": "header.title",
+        "dimensions": {
+          "presence": {
+            "status": "applicable",
+            "check_ids": [
+              "header.title/content/presence/drawable"
+            ]
+          },
+          "attributes": {
+            "status": "applicable",
+            "check_ids": [
+              "header.title/content/attributes/geometry",
+              "header.title/content/attributes/paint",
+              "header.title/content/attributes/size",
+              "header.title/content/attributes/text"
+            ]
+          },
+          "relations": {
+            "status": "applicable",
+            "check_ids": [
+              "header.title/content/relations/relative-position"
+            ]
+          },
+          "binding": {
+            "status": "not_applicable",
+            "check_ids": [],
+            "reason": "No reference behavior in this dimension within the supplied 64-second clip."
+          },
+          "motion": {
+            "status": "not_applicable",
+            "check_ids": [],
+            "reason": "No reference behavior in this dimension within the supplied 64-second clip."
+          },
+          "timing": {
+            "status": "not_applicable",
+            "check_ids": [],
+            "reason": "No reference behavior in this dimension within the supplied 64-second clip."
+          }
+        }
+      },
+      {
+        "id": "drawing.card",
+        "dimensions": {
+          "presence": {
+            "status": "applicable",
+            "check_ids": [
+              "drawing.card/frame/presence/drawable",
+              "drawing.card/grid/presence/drawable",
+              "drawing.card/body/presence/drawable",
+              "drawing.card/left-arm/presence/drawable",
+              "drawing.card/right-arm/presence/drawable",
+              "drawing.card/left-leg/presence/drawable",
+              "drawing.card/right-leg/presence/drawable",
+              "drawing.card/eyes/presence/drawable",
+              "drawing.card/smile/presence/drawable"
+            ]
+          },
+          "attributes": {
+            "status": "applicable",
+            "check_ids": [
+              "drawing.card/frame/attributes/geometry",
+              "drawing.card/frame/attributes/paint",
+              "drawing.card/frame/attributes/size",
+              "drawing.card/grid/attributes/geometry",
+              "drawing.card/grid/attributes/paint",
+              "drawing.card/grid/attributes/size",
+              "drawing.card/body/attributes/geometry",
+              "drawing.card/body/attributes/paint",
+              "drawing.card/body/attributes/size",
+              "drawing.card/left-arm/attributes/geometry",
+              "drawing.card/left-arm/attributes/paint",
+              "drawing.card/left-arm/attributes/size",
+              "drawing.card/right-arm/attributes/geometry",
+              "drawing.card/right-arm/attributes/paint",
+              "drawing.card/right-arm/attributes/size",
+              "drawing.card/left-leg/attributes/geometry",
+              "drawing.card/left-leg/attributes/paint",
+              "drawing.card/left-leg/attributes/size",
+              "drawing.card/right-leg/attributes/geometry",
+              "drawing.card/right-leg/attributes/paint",
+              "drawing.card/right-leg/attributes/size",
+              "drawing.card/eyes/attributes/geometry",
+              "drawing.card/eyes/attributes/paint",
+              "drawing.card/eyes/attributes/size",
+              "drawing.card/smile/attributes/geometry",
+              "drawing.card/smile/attributes/paint",
+              "drawing.card/smile/attributes/size"
+            ]
+          },
+          "relations": {
+            "status": "applicable",
+            "check_ids": [
+              "drawing.card/frame/relations/relative-position",
+              "drawing.card/grid/relations/relative-position",
+              "drawing.card/body/relations/relative-position",
+              "drawing.card/left-arm/relations/relative-position",
+              "drawing.card/right-arm/relations/relative-position",
+              "drawing.card/left-leg/relations/relative-position",
+              "drawing.card/right-leg/relations/relative-position",
+              "drawing.card/eyes/relations/relative-position",
+              "drawing.card/smile/relations/relative-position"
+            ]
+          },
+          "binding": {
+            "status": "applicable",
+            "check_ids": [
+              "drawing.card/frame/binding/channel-active/x/action00",
+              "drawing.card/frame/binding/channel-active/y/action00",
+              "drawing.card/frame/binding/channel-active/width/action00",
+              "drawing.card/frame/binding/channel-active/height/action00",
+              "drawing.card/frame/binding/channel-active/x/action01",
+              "drawing.card/frame/binding/channel-active/y/action01",
+              "drawing.card/frame/binding/channel-active/width/action01",
+              "drawing.card/frame/binding/channel-active/height/action01",
+              "drawing.card/grid/binding/channel-active/x/action00",
+              "drawing.card/grid/binding/channel-active/y/action00",
+              "drawing.card/grid/binding/channel-active/width/action00",
+              "drawing.card/grid/binding/channel-active/height/action00",
+              "drawing.card/grid/binding/channel-active/x/action01",
+              "drawing.card/grid/binding/channel-active/y/action01",
+              "drawing.card/grid/binding/channel-active/width/action01",
+              "drawing.card/grid/binding/channel-active/height/action01",
+              "drawing.card/body/binding/channel-active/x/action01",
+              "drawing.card/body/binding/channel-active/y/action01",
+              "drawing.card/body/binding/channel-active/width/action01",
+              "drawing.card/body/binding/channel-active/height/action01",
+              "drawing.card/body/binding/channel-active/opacity/action02",
+              "drawing.card/left-arm/binding/channel-active/x/action01",
+              "drawing.card/left-arm/binding/channel-active/y/action01",
+              "drawing.card/left-arm/binding/channel-active/width/action01",
+              "drawing.card/left-arm/binding/channel-active/height/action01",
+              "drawing.card/right-arm/binding/channel-active/x/action01",
+              "drawing.card/right-arm/binding/channel-active/y/action01",
+              "drawing.card/right-arm/binding/channel-active/width/action01",
+              "drawing.card/right-arm/binding/channel-active/height/action01",
+              "drawing.card/left-leg/binding/channel-active/x/action01",
+              "drawing.card/left-leg/binding/channel-active/y/action01",
+              "drawing.card/left-leg/binding/channel-active/width/action01",
+              "drawing.card/left-leg/binding/channel-active/height/action01",
+              "drawing.card/left-leg/binding/channel-active/opacity/action02",
+              "drawing.card/right-leg/binding/channel-active/x/action01",
+              "drawing.card/right-leg/binding/channel-active/y/action01",
+              "drawing.card/right-leg/binding/channel-active/width/action01",
+              "drawing.card/right-leg/binding/channel-active/height/action01",
+              "drawing.card/right-leg/binding/channel-active/opacity/action02",
+              "drawing.card/eyes/binding/channel-active/x/action01",
+              "drawing.card/eyes/binding/channel-active/y/action01",
+              "drawing.card/eyes/binding/channel-active/width/action01",
+              "drawing.card/eyes/binding/channel-active/height/action01",
+              "drawing.card/smile/binding/channel-active/x/action01",
+              "drawing.card/smile/binding/channel-active/y/action01",
+              "drawing.card/smile/binding/channel-active/width/action01",
+              "drawing.card/smile/binding/channel-active/height/action01",
+              "drawing.card/smile/binding/channel-active/draw/action02"
+            ]
+          },
+          "motion": {
+            "status": "applicable",
+            "check_ids": [
+              "drawing.card/frame/motion/trajectory/x/action00",
+              "drawing.card/frame/motion/trajectory/y/action00",
+              "drawing.card/frame/motion/trajectory/width/action00",
+              "drawing.card/frame/motion/trajectory/height/action00",
+              "drawing.card/frame/motion/trajectory/x/action01",
+              "drawing.card/frame/motion/trajectory/y/action01",
+              "drawing.card/frame/motion/trajectory/width/action01",
+              "drawing.card/frame/motion/trajectory/height/action01",
+              "drawing.card/grid/motion/trajectory/x/action00",
+              "drawing.card/grid/motion/trajectory/y/action00",
+              "drawing.card/grid/motion/trajectory/width/action00",
+              "drawing.card/grid/motion/trajectory/height/action00",
+              "drawing.card/grid/motion/trajectory/x/action01",
+              "drawing.card/grid/motion/trajectory/y/action01",
+              "drawing.card/grid/motion/trajectory/width/action01",
+              "drawing.card/grid/motion/trajectory/height/action01",
+              "drawing.card/body/motion/trajectory/x/action01",
+              "drawing.card/body/motion/trajectory/y/action01",
+              "drawing.card/body/motion/trajectory/width/action01",
+              "drawing.card/body/motion/trajectory/height/action01",
+              "drawing.card/body/motion/trajectory/opacity/action02",
+              "drawing.card/left-arm/motion/trajectory/x/action01",
+              "drawing.card/left-arm/motion/trajectory/y/action01",
+              "drawing.card/left-arm/motion/trajectory/width/action01",
+              "drawing.card/left-arm/motion/trajectory/height/action01",
+              "drawing.card/right-arm/motion/trajectory/x/action01",
+              "drawing.card/right-arm/motion/trajectory/y/action01",
+              "drawing.card/right-arm/motion/trajectory/width/action01",
+              "drawing.card/right-arm/motion/trajectory/height/action01",
+              "drawing.card/left-leg/motion/trajectory/x/action01",
+              "drawing.card/left-leg/motion/trajectory/y/action01",
+              "drawing.card/left-leg/motion/trajectory/width/action01",
+              "drawing.card/left-leg/motion/trajectory/height/action01",
+              "drawing.card/left-leg/motion/trajectory/opacity/action02",
+              "drawing.card/right-leg/motion/trajectory/x/action01",
+              "drawing.card/right-leg/motion/trajectory/y/action01",
+              "drawing.card/right-leg/motion/trajectory/width/action01",
+              "drawing.card/right-leg/motion/trajectory/height/action01",
+              "drawing.card/right-leg/motion/trajectory/opacity/action02",
+              "drawing.card/eyes/motion/trajectory/x/action01",
+              "drawing.card/eyes/motion/trajectory/y/action01",
+              "drawing.card/eyes/motion/trajectory/width/action01",
+              "drawing.card/eyes/motion/trajectory/height/action01",
+              "drawing.card/smile/motion/trajectory/x/action01",
+              "drawing.card/smile/motion/trajectory/y/action01",
+              "drawing.card/smile/motion/trajectory/width/action01",
+              "drawing.card/smile/motion/trajectory/height/action01",
+              "drawing.card/smile/motion/trajectory/draw/action02"
+            ]
+          },
+          "timing": {
+            "status": "applicable",
+            "check_ids": [
+              "drawing.card/body/timing/visibility-events",
+              "drawing.card/left-arm/timing/visibility-events",
+              "drawing.card/right-arm/timing/visibility-events",
+              "drawing.card/left-leg/timing/visibility-events",
+              "drawing.card/right-leg/timing/visibility-events",
+              "drawing.card/eyes/timing/visibility-events",
+              "drawing.card/smile/timing/visibility-events"
+            ]
+          }
+        }
+      },
+      {
+        "id": "editor.window",
+        "dimensions": {
+          "presence": {
+            "status": "applicable",
+            "check_ids": [
+              "editor.window/chrome/presence/drawable",
+              "editor.window/line01/presence/drawable",
+              "editor.window/line02/presence/drawable",
+              "editor.window/line03/presence/drawable",
+              "editor.window/line04/presence/drawable",
+              "editor.window/line05/presence/drawable",
+              "editor.window/line06/presence/drawable",
+              "editor.window/line07/presence/drawable"
+            ]
+          },
+          "attributes": {
+            "status": "applicable",
+            "check_ids": [
+              "editor.window/chrome/attributes/geometry",
+              "editor.window/chrome/attributes/paint",
+              "editor.window/chrome/attributes/size",
+              "editor.window/chrome/attributes/text",
+              "editor.window/line01/attributes/geometry",
+              "editor.window/line01/attributes/paint",
+              "editor.window/line01/attributes/size",
+              "editor.window/line01/attributes/text",
+              "editor.window/line02/attributes/geometry",
+              "editor.window/line02/attributes/paint",
+              "editor.window/line02/attributes/size",
+              "editor.window/line02/attributes/text",
+              "editor.window/line03/attributes/geometry",
+              "editor.window/line03/attributes/paint",
+              "editor.window/line03/attributes/size",
+              "editor.window/line03/attributes/text",
+              "editor.window/line04/attributes/geometry",
+              "editor.window/line04/attributes/paint",
+              "editor.window/line04/attributes/size",
+              "editor.window/line04/attributes/text",
+              "editor.window/line05/attributes/geometry",
+              "editor.window/line05/attributes/paint",
+              "editor.window/line05/attributes/size",
+              "editor.window/line05/attributes/text",
+              "editor.window/line06/attributes/geometry",
+              "editor.window/line06/attributes/paint",
+              "editor.window/line06/attributes/size",
+              "editor.window/line06/attributes/text",
+              "editor.window/line07/attributes/geometry",
+              "editor.window/line07/attributes/paint",
+              "editor.window/line07/attributes/size",
+              "editor.window/line07/attributes/text"
+            ]
+          },
+          "relations": {
+            "status": "applicable",
+            "check_ids": [
+              "editor.window/chrome/relations/relative-position",
+              "editor.window/line01/relations/relative-position",
+              "editor.window/line02/relations/relative-position",
+              "editor.window/line03/relations/relative-position",
+              "editor.window/line04/relations/relative-position",
+              "editor.window/line05/relations/relative-position",
+              "editor.window/line06/relations/relative-position",
+              "editor.window/line07/relations/relative-position"
+            ]
+          },
+          "binding": {
+            "status": "applicable",
+            "check_ids": [
+              "editor.window/chrome/binding/channel-active/opacity/action00",
+              "editor.window/line01/binding/channel-active/opacity/action00",
+              "editor.window/line02/binding/channel-active/opacity/action00",
+              "editor.window/line03/binding/channel-active/opacity/action00",
+              "editor.window/line04/binding/channel-active/opacity/action00",
+              "editor.window/line05/binding/channel-active/opacity/action00",
+              "editor.window/line06/binding/channel-active/opacity/action00",
+              "editor.window/line07/binding/channel-active/opacity/action00"
+            ]
+          },
+          "motion": {
+            "status": "applicable",
+            "check_ids": [
+              "editor.window/chrome/motion/trajectory/opacity/action00",
+              "editor.window/line01/motion/trajectory/opacity/action00",
+              "editor.window/line02/motion/trajectory/opacity/action00",
+              "editor.window/line03/motion/trajectory/opacity/action00",
+              "editor.window/line04/motion/trajectory/opacity/action00",
+              "editor.window/line05/motion/trajectory/opacity/action00",
+              "editor.window/line06/motion/trajectory/opacity/action00",
+              "editor.window/line07/motion/trajectory/opacity/action00"
+            ]
+          },
+          "timing": {
+            "status": "applicable",
+            "check_ids": [
+              "editor.window/chrome/timing/visibility-events",
+              "editor.window/line01/timing/visibility-events",
+              "editor.window/line02/timing/visibility-events",
+              "editor.window/line03/timing/visibility-events",
+              "editor.window/line04/timing/visibility-events",
+              "editor.window/line05/timing/visibility-events",
+              "editor.window/line06/timing/visibility-events",
+              "editor.window/line07/timing/visibility-events"
+            ]
+          }
+        }
+      },
+      {
+        "id": "group.hint",
+        "dimensions": {
+          "presence": {
+            "status": "applicable",
+            "check_ids": [
+              "group.hint/content/presence/drawable"
+            ]
+          },
+          "attributes": {
+            "status": "applicable",
+            "check_ids": [
+              "group.hint/content/attributes/geometry",
+              "group.hint/content/attributes/paint",
+              "group.hint/content/attributes/size",
+              "group.hint/content/attributes/text"
+            ]
+          },
+          "relations": {
+            "status": "applicable",
+            "check_ids": [
+              "group.hint/content/relations/relative-position"
+            ]
+          },
+          "binding": {
+            "status": "applicable",
+            "check_ids": [
+              "group.hint/content/binding/channel-active/x/action01",
+              "group.hint/content/binding/channel-active/width/action01",
+              "group.hint/content/binding/channel-active/opacity/action01"
+            ]
+          },
+          "motion": {
+            "status": "applicable",
+            "check_ids": [
+              "group.hint/content/motion/trajectory/x/action01",
+              "group.hint/content/motion/trajectory/width/action01",
+              "group.hint/content/motion/trajectory/opacity/action01"
+            ]
+          },
+          "timing": {
+            "status": "applicable",
+            "check_ids": [
+              "group.hint/content/timing/visibility-events"
+            ]
+          }
+        }
+      },
+      {
+        "id": "tree.diagram",
+        "dimensions": {
+          "presence": {
+            "status": "applicable",
+            "check_ids": [
+              "tree.diagram/svg/presence/drawable",
+              "tree.diagram/static/presence/drawable",
+              "tree.diagram/animated/presence/drawable",
+              "tree.diagram/child01/presence/drawable",
+              "tree.diagram/child02/presence/drawable",
+              "tree.diagram/child03/presence/drawable",
+              "tree.diagram/child04/presence/drawable",
+              "tree.diagram/child05/presence/drawable",
+              "tree.diagram/child06/presence/drawable",
+              "tree.diagram/left-eye/presence/drawable",
+              "tree.diagram/right-eye/presence/drawable",
+              "tree.diagram/animation/presence/drawable",
+              "tree.diagram/direct-edges/presence/drawable",
+              "tree.diagram/static-edges/presence/drawable",
+              "tree.diagram/animated-edges/presence/drawable"
+            ]
+          },
+          "attributes": {
+            "status": "applicable",
+            "check_ids": [
+              "tree.diagram/svg/attributes/geometry",
+              "tree.diagram/svg/attributes/paint",
+              "tree.diagram/svg/attributes/size",
+              "tree.diagram/svg/attributes/text",
+              "tree.diagram/static/attributes/geometry",
+              "tree.diagram/static/attributes/paint",
+              "tree.diagram/static/attributes/size",
+              "tree.diagram/static/attributes/text",
+              "tree.diagram/animated/attributes/geometry",
+              "tree.diagram/animated/attributes/paint",
+              "tree.diagram/animated/attributes/size",
+              "tree.diagram/animated/attributes/text",
+              "tree.diagram/child01/attributes/geometry",
+              "tree.diagram/child01/attributes/paint",
+              "tree.diagram/child01/attributes/size",
+              "tree.diagram/child01/attributes/text",
+              "tree.diagram/child02/attributes/geometry",
+              "tree.diagram/child02/attributes/paint",
+              "tree.diagram/child02/attributes/size",
+              "tree.diagram/child02/attributes/text",
+              "tree.diagram/child03/attributes/geometry",
+              "tree.diagram/child03/attributes/paint",
+              "tree.diagram/child03/attributes/size",
+              "tree.diagram/child03/attributes/text",
+              "tree.diagram/child04/attributes/geometry",
+              "tree.diagram/child04/attributes/paint",
+              "tree.diagram/child04/attributes/size",
+              "tree.diagram/child04/attributes/text",
+              "tree.diagram/child05/attributes/geometry",
+              "tree.diagram/child05/attributes/paint",
+              "tree.diagram/child05/attributes/size",
+              "tree.diagram/child05/attributes/text",
+              "tree.diagram/child06/attributes/geometry",
+              "tree.diagram/child06/attributes/paint",
+              "tree.diagram/child06/attributes/size",
+              "tree.diagram/child06/attributes/text",
+              "tree.diagram/left-eye/attributes/geometry",
+              "tree.diagram/left-eye/attributes/paint",
+              "tree.diagram/left-eye/attributes/size",
+              "tree.diagram/left-eye/attributes/text",
+              "tree.diagram/right-eye/attributes/geometry",
+              "tree.diagram/right-eye/attributes/paint",
+              "tree.diagram/right-eye/attributes/size",
+              "tree.diagram/right-eye/attributes/text",
+              "tree.diagram/animation/attributes/geometry",
+              "tree.diagram/animation/attributes/paint",
+              "tree.diagram/animation/attributes/size",
+              "tree.diagram/animation/attributes/text",
+              "tree.diagram/direct-edges/attributes/geometry",
+              "tree.diagram/direct-edges/attributes/paint",
+              "tree.diagram/direct-edges/attributes/size",
+              "tree.diagram/static-edges/attributes/geometry",
+              "tree.diagram/static-edges/attributes/paint",
+              "tree.diagram/static-edges/attributes/size",
+              "tree.diagram/animated-edges/attributes/geometry",
+              "tree.diagram/animated-edges/attributes/paint",
+              "tree.diagram/animated-edges/attributes/size"
+            ]
+          },
+          "relations": {
+            "status": "applicable",
+            "check_ids": [
+              "tree.diagram/svg/relations/relative-position",
+              "tree.diagram/static/relations/relative-position",
+              "tree.diagram/animated/relations/relative-position",
+              "tree.diagram/child01/relations/relative-position",
+              "tree.diagram/child02/relations/relative-position",
+              "tree.diagram/child03/relations/relative-position",
+              "tree.diagram/child04/relations/relative-position",
+              "tree.diagram/child05/relations/relative-position",
+              "tree.diagram/child06/relations/relative-position",
+              "tree.diagram/left-eye/relations/relative-position",
+              "tree.diagram/right-eye/relations/relative-position",
+              "tree.diagram/animation/relations/relative-position",
+              "tree.diagram/direct-edges/relations/relative-position",
+              "tree.diagram/static-edges/relations/relative-position",
+              "tree.diagram/animated-edges/relations/relative-position"
+            ]
+          },
+          "binding": {
+            "status": "applicable",
+            "check_ids": [
+              "tree.diagram/svg/binding/channel-active/width/action00",
+              "tree.diagram/svg/binding/channel-active/height/action00",
+              "tree.diagram/svg/binding/channel-active/opacity/action01",
+              "tree.diagram/static/binding/channel-active/width/action00",
+              "tree.diagram/static/binding/channel-active/height/action00",
+              "tree.diagram/static/binding/channel-active/x/action02",
+              "tree.diagram/static/binding/channel-active/x/action03",
+              "tree.diagram/static/binding/channel-active/opacity/action04",
+              "tree.diagram/animated/binding/channel-active/width/action00",
+              "tree.diagram/animated/binding/channel-active/height/action00",
+              "tree.diagram/animated/binding/channel-active/x/action01",
+              "tree.diagram/animated/binding/channel-active/opacity/action02",
+              "tree.diagram/child01/binding/channel-active/x/action00",
+              "tree.diagram/child01/binding/channel-active/y/action00",
+              "tree.diagram/child01/binding/channel-active/width/action00",
+              "tree.diagram/child01/binding/channel-active/height/action00",
+              "tree.diagram/child01/binding/channel-active/textlength/action00",
+              "tree.diagram/child01/binding/channel-active/y/action01",
+              "tree.diagram/child01/binding/channel-active/x/action02",
+              "tree.diagram/child01/binding/channel-active/x/action03",
+              "tree.diagram/child01/binding/channel-active/opacity/action04",
+              "tree.diagram/child02/binding/channel-active/x/action00",
+              "tree.diagram/child02/binding/channel-active/y/action00",
+              "tree.diagram/child02/binding/channel-active/width/action00",
+              "tree.diagram/child02/binding/channel-active/height/action00",
+              "tree.diagram/child02/binding/channel-active/textlength/action00",
+              "tree.diagram/child02/binding/channel-active/y/action01",
+              "tree.diagram/child02/binding/channel-active/x/action02",
+              "tree.diagram/child02/binding/channel-active/x/action03",
+              "tree.diagram/child02/binding/channel-active/opacity/action04",
+              "tree.diagram/child03/binding/channel-active/x/action00",
+              "tree.diagram/child03/binding/channel-active/y/action00",
+              "tree.diagram/child03/binding/channel-active/width/action00",
+              "tree.diagram/child03/binding/channel-active/height/action00",
+              "tree.diagram/child03/binding/channel-active/textlength/action00",
+              "tree.diagram/child03/binding/channel-active/y/action01",
+              "tree.diagram/child03/binding/channel-active/x/action02",
+              "tree.diagram/child03/binding/channel-active/x/action03",
+              "tree.diagram/child03/binding/channel-active/opacity/action04",
+              "tree.diagram/child04/binding/channel-active/x/action00",
+              "tree.diagram/child04/binding/channel-active/y/action00",
+              "tree.diagram/child04/binding/channel-active/width/action00",
+              "tree.diagram/child04/binding/channel-active/height/action00",
+              "tree.diagram/child04/binding/channel-active/textlength/action00",
+              "tree.diagram/child04/binding/channel-active/y/action01",
+              "tree.diagram/child04/binding/channel-active/x/action02",
+              "tree.diagram/child04/binding/channel-active/x/action03",
+              "tree.diagram/child04/binding/channel-active/opacity/action04",
+              "tree.diagram/child05/binding/channel-active/x/action00",
+              "tree.diagram/child05/binding/channel-active/y/action00",
+              "tree.diagram/child05/binding/channel-active/width/action00",
+              "tree.diagram/child05/binding/channel-active/height/action00",
+              "tree.diagram/child05/binding/channel-active/textlength/action00",
+              "tree.diagram/child05/binding/channel-active/y/action01",
+              "tree.diagram/child05/binding/channel-active/x/action02",
+              "tree.diagram/child05/binding/channel-active/x/action03",
+              "tree.diagram/child05/binding/channel-active/opacity/action04",
+              "tree.diagram/child06/binding/channel-active/x/action00",
+              "tree.diagram/child06/binding/channel-active/y/action00",
+              "tree.diagram/child06/binding/channel-active/width/action00",
+              "tree.diagram/child06/binding/channel-active/height/action00",
+              "tree.diagram/child06/binding/channel-active/textlength/action00",
+              "tree.diagram/child06/binding/channel-active/y/action01",
+              "tree.diagram/child06/binding/channel-active/x/action02",
+              "tree.diagram/child06/binding/channel-active/x/action03",
+              "tree.diagram/child06/binding/channel-active/opacity/action04",
+              "tree.diagram/left-eye/binding/channel-active/width/action00",
+              "tree.diagram/left-eye/binding/channel-active/height/action00",
+              "tree.diagram/left-eye/binding/channel-active/x/action01",
+              "tree.diagram/left-eye/binding/channel-active/opacity/action02",
+              "tree.diagram/right-eye/binding/channel-active/width/action00",
+              "tree.diagram/right-eye/binding/channel-active/height/action00",
+              "tree.diagram/right-eye/binding/channel-active/x/action01",
+              "tree.diagram/right-eye/binding/channel-active/opacity/action02",
+              "tree.diagram/animation/binding/channel-active/width/action01",
+              "tree.diagram/animation/binding/channel-active/height/action01",
+              "tree.diagram/animation/binding/channel-active/opacity/action02",
+              "tree.diagram/direct-edges/binding/channel-active/y/action00",
+              "tree.diagram/direct-edges/binding/channel-active/width/action00",
+              "tree.diagram/direct-edges/binding/channel-active/height/action00",
+              "tree.diagram/static-edges/binding/channel-active/x/action01",
+              "tree.diagram/static-edges/binding/channel-active/y/action01",
+              "tree.diagram/static-edges/binding/channel-active/width/action01",
+              "tree.diagram/static-edges/binding/channel-active/height/action01",
+              "tree.diagram/static-edges/binding/channel-active/x/action02",
+              "tree.diagram/static-edges/binding/channel-active/y/action02",
+              "tree.diagram/static-edges/binding/channel-active/width/action02",
+              "tree.diagram/static-edges/binding/channel-active/height/action02",
+              "tree.diagram/static-edges/binding/channel-active/opacity/action03",
+              "tree.diagram/animated-edges/binding/channel-active/x/action00",
+              "tree.diagram/animated-edges/binding/channel-active/y/action00",
+              "tree.diagram/animated-edges/binding/channel-active/width/action00",
+              "tree.diagram/animated-edges/binding/channel-active/height/action00",
+              "tree.diagram/animated-edges/binding/channel-active/x/action01",
+              "tree.diagram/animated-edges/binding/channel-active/y/action01",
+              "tree.diagram/animated-edges/binding/channel-active/width/action01",
+              "tree.diagram/animated-edges/binding/channel-active/height/action01",
+              "tree.diagram/animated-edges/binding/channel-active/opacity/action02"
+            ]
+          },
+          "motion": {
+            "status": "applicable",
+            "check_ids": [
+              "tree.diagram/svg/motion/trajectory/width/action00",
+              "tree.diagram/svg/motion/trajectory/height/action00",
+              "tree.diagram/svg/motion/trajectory/opacity/action01",
+              "tree.diagram/static/motion/trajectory/width/action00",
+              "tree.diagram/static/motion/trajectory/height/action00",
+              "tree.diagram/static/motion/trajectory/x/action02",
+              "tree.diagram/static/motion/trajectory/x/action03",
+              "tree.diagram/static/motion/trajectory/opacity/action04",
+              "tree.diagram/animated/motion/trajectory/width/action00",
+              "tree.diagram/animated/motion/trajectory/height/action00",
+              "tree.diagram/animated/motion/trajectory/x/action01",
+              "tree.diagram/animated/motion/trajectory/opacity/action02",
+              "tree.diagram/child01/motion/trajectory/x/action00",
+              "tree.diagram/child01/motion/trajectory/y/action00",
+              "tree.diagram/child01/motion/trajectory/width/action00",
+              "tree.diagram/child01/motion/trajectory/height/action00",
+              "tree.diagram/child01/motion/trajectory/textlength/action00",
+              "tree.diagram/child01/motion/trajectory/y/action01",
+              "tree.diagram/child01/motion/trajectory/x/action02",
+              "tree.diagram/child01/motion/trajectory/x/action03",
+              "tree.diagram/child01/motion/trajectory/opacity/action04",
+              "tree.diagram/child02/motion/trajectory/x/action00",
+              "tree.diagram/child02/motion/trajectory/y/action00",
+              "tree.diagram/child02/motion/trajectory/width/action00",
+              "tree.diagram/child02/motion/trajectory/height/action00",
+              "tree.diagram/child02/motion/trajectory/textlength/action00",
+              "tree.diagram/child02/motion/trajectory/y/action01",
+              "tree.diagram/child02/motion/trajectory/x/action02",
+              "tree.diagram/child02/motion/trajectory/x/action03",
+              "tree.diagram/child02/motion/trajectory/opacity/action04",
+              "tree.diagram/child03/motion/trajectory/x/action00",
+              "tree.diagram/child03/motion/trajectory/y/action00",
+              "tree.diagram/child03/motion/trajectory/width/action00",
+              "tree.diagram/child03/motion/trajectory/height/action00",
+              "tree.diagram/child03/motion/trajectory/textlength/action00",
+              "tree.diagram/child03/motion/trajectory/y/action01",
+              "tree.diagram/child03/motion/trajectory/x/action02",
+              "tree.diagram/child03/motion/trajectory/x/action03",
+              "tree.diagram/child03/motion/trajectory/opacity/action04",
+              "tree.diagram/child04/motion/trajectory/x/action00",
+              "tree.diagram/child04/motion/trajectory/y/action00",
+              "tree.diagram/child04/motion/trajectory/width/action00",
+              "tree.diagram/child04/motion/trajectory/height/action00",
+              "tree.diagram/child04/motion/trajectory/textlength/action00",
+              "tree.diagram/child04/motion/trajectory/y/action01",
+              "tree.diagram/child04/motion/trajectory/x/action02",
+              "tree.diagram/child04/motion/trajectory/x/action03",
+              "tree.diagram/child04/motion/trajectory/opacity/action04",
+              "tree.diagram/child05/motion/trajectory/x/action00",
+              "tree.diagram/child05/motion/trajectory/y/action00",
+              "tree.diagram/child05/motion/trajectory/width/action00",
+              "tree.diagram/child05/motion/trajectory/height/action00",
+              "tree.diagram/child05/motion/trajectory/textlength/action00",
+              "tree.diagram/child05/motion/trajectory/y/action01",
+              "tree.diagram/child05/motion/trajectory/x/action02",
+              "tree.diagram/child05/motion/trajectory/x/action03",
+              "tree.diagram/child05/motion/trajectory/opacity/action04",
+              "tree.diagram/child06/motion/trajectory/x/action00",
+              "tree.diagram/child06/motion/trajectory/y/action00",
+              "tree.diagram/child06/motion/trajectory/width/action00",
+              "tree.diagram/child06/motion/trajectory/height/action00",
+              "tree.diagram/child06/motion/trajectory/textlength/action00",
+              "tree.diagram/child06/motion/trajectory/y/action01",
+              "tree.diagram/child06/motion/trajectory/x/action02",
+              "tree.diagram/child06/motion/trajectory/x/action03",
+              "tree.diagram/child06/motion/trajectory/opacity/action04",
+              "tree.diagram/left-eye/motion/trajectory/width/action00",
+              "tree.diagram/left-eye/motion/trajectory/height/action00",
+              "tree.diagram/left-eye/motion/trajectory/x/action01",
+              "tree.diagram/left-eye/motion/trajectory/opacity/action02",
+              "tree.diagram/right-eye/motion/trajectory/width/action00",
+              "tree.diagram/right-eye/motion/trajectory/height/action00",
+              "tree.diagram/right-eye/motion/trajectory/x/action01",
+              "tree.diagram/right-eye/motion/trajectory/opacity/action02",
+              "tree.diagram/animation/motion/trajectory/width/action01",
+              "tree.diagram/animation/motion/trajectory/height/action01",
+              "tree.diagram/animation/motion/trajectory/opacity/action02",
+              "tree.diagram/direct-edges/motion/trajectory/y/action00",
+              "tree.diagram/direct-edges/motion/trajectory/width/action00",
+              "tree.diagram/direct-edges/motion/trajectory/height/action00",
+              "tree.diagram/static-edges/motion/trajectory/x/action01",
+              "tree.diagram/static-edges/motion/trajectory/y/action01",
+              "tree.diagram/static-edges/motion/trajectory/width/action01",
+              "tree.diagram/static-edges/motion/trajectory/height/action01",
+              "tree.diagram/static-edges/motion/trajectory/x/action02",
+              "tree.diagram/static-edges/motion/trajectory/y/action02",
+              "tree.diagram/static-edges/motion/trajectory/width/action02",
+              "tree.diagram/static-edges/motion/trajectory/height/action02",
+              "tree.diagram/static-edges/motion/trajectory/opacity/action03",
+              "tree.diagram/animated-edges/motion/trajectory/x/action00",
+              "tree.diagram/animated-edges/motion/trajectory/y/action00",
+              "tree.diagram/animated-edges/motion/trajectory/width/action00",
+              "tree.diagram/animated-edges/motion/trajectory/height/action00",
+              "tree.diagram/animated-edges/motion/trajectory/x/action01",
+              "tree.diagram/animated-edges/motion/trajectory/y/action01",
+              "tree.diagram/animated-edges/motion/trajectory/width/action01",
+              "tree.diagram/animated-edges/motion/trajectory/height/action01",
+              "tree.diagram/animated-edges/motion/trajectory/opacity/action02"
+            ]
+          },
+          "timing": {
+            "status": "applicable",
+            "check_ids": [
+              "tree.diagram/svg/timing/visibility-events",
+              "tree.diagram/static/timing/visibility-events",
+              "tree.diagram/animated/timing/visibility-events",
+              "tree.diagram/child01/timing/visibility-events",
+              "tree.diagram/child02/timing/visibility-events",
+              "tree.diagram/child03/timing/visibility-events",
+              "tree.diagram/child04/timing/visibility-events",
+              "tree.diagram/child05/timing/visibility-events",
+              "tree.diagram/child06/timing/visibility-events",
+              "tree.diagram/left-eye/timing/visibility-events",
+              "tree.diagram/right-eye/timing/visibility-events",
+              "tree.diagram/animation/timing/visibility-events",
+              "tree.diagram/direct-edges/timing/visibility-events",
+              "tree.diagram/static-edges/timing/visibility-events",
+              "tree.diagram/animated-edges/timing/visibility-events"
+            ]
+          }
+        }
+      },
+      {
+        "id": "animation.code",
+        "dimensions": {
+          "presence": {
+            "status": "applicable",
+            "check_ids": [
+              "animation.code/line01/presence/drawable",
+              "animation.code/line02/presence/drawable",
+              "animation.code/line03/presence/drawable",
+              "animation.code/line04/presence/drawable",
+              "animation.code/line05/presence/drawable"
+            ]
+          },
+          "attributes": {
+            "status": "applicable",
+            "check_ids": [
+              "animation.code/line01/attributes/geometry",
+              "animation.code/line01/attributes/paint",
+              "animation.code/line01/attributes/size",
+              "animation.code/line01/attributes/text",
+              "animation.code/line02/attributes/geometry",
+              "animation.code/line02/attributes/paint",
+              "animation.code/line02/attributes/size",
+              "animation.code/line02/attributes/text",
+              "animation.code/line03/attributes/geometry",
+              "animation.code/line03/attributes/paint",
+              "animation.code/line03/attributes/size",
+              "animation.code/line03/attributes/text",
+              "animation.code/line04/attributes/geometry",
+              "animation.code/line04/attributes/paint",
+              "animation.code/line04/attributes/size",
+              "animation.code/line04/attributes/text",
+              "animation.code/line05/attributes/geometry",
+              "animation.code/line05/attributes/paint",
+              "animation.code/line05/attributes/size",
+              "animation.code/line05/attributes/text"
+            ]
+          },
+          "relations": {
+            "status": "applicable",
+            "check_ids": [
+              "animation.code/line01/relations/relative-position",
+              "animation.code/line02/relations/relative-position",
+              "animation.code/line03/relations/relative-position",
+              "animation.code/line04/relations/relative-position",
+              "animation.code/line05/relations/relative-position"
+            ]
+          },
+          "binding": {
+            "status": "applicable",
+            "check_ids": [
+              "animation.code/line01/binding/channel-active/x/action00",
+              "animation.code/line01/binding/channel-active/width/action00",
+              "animation.code/line01/binding/channel-active/opacity/action01",
+              "animation.code/line02/binding/channel-active/x/action00",
+              "animation.code/line02/binding/channel-active/width/action00",
+              "animation.code/line02/binding/channel-active/textlength/action00",
+              "animation.code/line02/binding/channel-active/opacity/action01",
+              "animation.code/line03/binding/channel-active/x/action00",
+              "animation.code/line03/binding/channel-active/width/action00",
+              "animation.code/line03/binding/channel-active/textlength/action00",
+              "animation.code/line03/binding/channel-active/opacity/action01",
+              "animation.code/line04/binding/channel-active/x/action00",
+              "animation.code/line04/binding/channel-active/width/action00",
+              "animation.code/line04/binding/channel-active/textlength/action00",
+              "animation.code/line04/binding/channel-active/opacity/action01",
+              "animation.code/line05/binding/channel-active/x/action00",
+              "animation.code/line05/binding/channel-active/width/action00",
+              "animation.code/line05/binding/channel-active/opacity/action01"
+            ]
+          },
+          "motion": {
+            "status": "applicable",
+            "check_ids": [
+              "animation.code/line01/motion/trajectory/x/action00",
+              "animation.code/line01/motion/trajectory/width/action00",
+              "animation.code/line01/motion/trajectory/opacity/action01",
+              "animation.code/line02/motion/trajectory/x/action00",
+              "animation.code/line02/motion/trajectory/width/action00",
+              "animation.code/line02/motion/trajectory/textlength/action00",
+              "animation.code/line02/motion/trajectory/opacity/action01",
+              "animation.code/line03/motion/trajectory/x/action00",
+              "animation.code/line03/motion/trajectory/width/action00",
+              "animation.code/line03/motion/trajectory/textlength/action00",
+              "animation.code/line03/motion/trajectory/opacity/action01",
+              "animation.code/line04/motion/trajectory/x/action00",
+              "animation.code/line04/motion/trajectory/width/action00",
+              "animation.code/line04/motion/trajectory/textlength/action00",
+              "animation.code/line04/motion/trajectory/opacity/action01",
+              "animation.code/line05/motion/trajectory/x/action00",
+              "animation.code/line05/motion/trajectory/width/action00",
+              "animation.code/line05/motion/trajectory/opacity/action01"
+            ]
+          },
+          "timing": {
+            "status": "applicable",
+            "check_ids": [
+              "animation.code/line01/timing/visibility-events",
+              "animation.code/line02/timing/visibility-events",
+              "animation.code/line03/timing/visibility-events",
+              "animation.code/line04/timing/visibility-events",
+              "animation.code/line05/timing/visibility-events"
+            ]
+          }
+        }
+      },
+      {
+        "id": "note.type",
+        "dimensions": {
+          "presence": {
+            "status": "applicable",
+            "check_ids": [
+              "note.type/frame/presence/drawable",
+              "note.type/arrow/presence/drawable",
+              "note.type/label/presence/drawable"
+            ]
+          },
+          "attributes": {
+            "status": "applicable",
+            "check_ids": [
+              "note.type/frame/attributes/geometry",
+              "note.type/frame/attributes/paint",
+              "note.type/frame/attributes/size",
+              "note.type/arrow/attributes/geometry",
+              "note.type/arrow/attributes/paint",
+              "note.type/arrow/attributes/size",
+              "note.type/label/attributes/geometry",
+              "note.type/label/attributes/paint",
+              "note.type/label/attributes/size",
+              "note.type/label/attributes/text"
+            ]
+          },
+          "relations": {
+            "status": "applicable",
+            "check_ids": [
+              "note.type/frame/relations/relative-position",
+              "note.type/arrow/relations/relative-position",
+              "note.type/label/relations/relative-position"
+            ]
+          },
+          "binding": {
+            "status": "applicable",
+            "check_ids": [
+              "note.type/frame/binding/channel-active/draw/action00",
+              "note.type/label/binding/channel-active/opacity/action00"
+            ]
+          },
+          "motion": {
+            "status": "applicable",
+            "check_ids": [
+              "note.type/frame/motion/trajectory/draw/action00",
+              "note.type/label/motion/trajectory/opacity/action00"
+            ]
+          },
+          "timing": {
+            "status": "applicable",
+            "check_ids": [
+              "note.type/frame/timing/visibility-events",
+              "note.type/arrow/timing/visibility-events",
+              "note.type/label/timing/visibility-events"
+            ]
+          }
+        }
+      },
+      {
+        "id": "note.values",
+        "dimensions": {
+          "presence": {
+            "status": "applicable",
+            "check_ids": [
+              "note.values/frame/presence/drawable",
+              "note.values/arrow/presence/drawable",
+              "note.values/label/presence/drawable"
+            ]
+          },
+          "attributes": {
+            "status": "applicable",
+            "check_ids": [
+              "note.values/frame/attributes/geometry",
+              "note.values/frame/attributes/paint",
+              "note.values/frame/attributes/size",
+              "note.values/arrow/attributes/geometry",
+              "note.values/arrow/attributes/paint",
+              "note.values/arrow/attributes/size",
+              "note.values/label/attributes/geometry",
+              "note.values/label/attributes/paint",
+              "note.values/label/attributes/size",
+              "note.values/label/attributes/text"
+            ]
+          },
+          "relations": {
+            "status": "applicable",
+            "check_ids": [
+              "note.values/frame/relations/relative-position",
+              "note.values/arrow/relations/relative-position",
+              "note.values/label/relations/relative-position"
+            ]
+          },
+          "binding": {
+            "status": "applicable",
+            "check_ids": [
+              "note.values/frame/binding/channel-active/draw/action00",
+              "note.values/label/binding/channel-active/opacity/action00"
+            ]
+          },
+          "motion": {
+            "status": "applicable",
+            "check_ids": [
+              "note.values/frame/motion/trajectory/draw/action00",
+              "note.values/label/motion/trajectory/opacity/action00"
+            ]
+          },
+          "timing": {
+            "status": "applicable",
+            "check_ids": [
+              "note.values/frame/timing/visibility-events",
+              "note.values/arrow/timing/visibility-events",
+              "note.values/label/timing/visibility-events"
+            ]
+          }
+        }
+      },
+      {
+        "id": "note.keytimes",
+        "dimensions": {
+          "presence": {
+            "status": "applicable",
+            "check_ids": [
+              "note.keytimes/frame/presence/drawable",
+              "note.keytimes/arrow/presence/drawable",
+              "note.keytimes/label/presence/drawable"
+            ]
+          },
+          "attributes": {
+            "status": "applicable",
+            "check_ids": [
+              "note.keytimes/frame/attributes/geometry",
+              "note.keytimes/frame/attributes/paint",
+              "note.keytimes/frame/attributes/size",
+              "note.keytimes/arrow/attributes/geometry",
+              "note.keytimes/arrow/attributes/paint",
+              "note.keytimes/arrow/attributes/size",
+              "note.keytimes/label/attributes/geometry",
+              "note.keytimes/label/attributes/paint",
+              "note.keytimes/label/attributes/size",
+              "note.keytimes/label/attributes/text"
+            ]
+          },
+          "relations": {
+            "status": "applicable",
+            "check_ids": [
+              "note.keytimes/frame/relations/relative-position",
+              "note.keytimes/arrow/relations/relative-position",
+              "note.keytimes/label/relations/relative-position"
+            ]
+          },
+          "binding": {
+            "status": "applicable",
+            "check_ids": [
+              "note.keytimes/frame/binding/channel-active/draw/action00",
+              "note.keytimes/label/binding/channel-active/opacity/action00"
+            ]
+          },
+          "motion": {
+            "status": "applicable",
+            "check_ids": [
+              "note.keytimes/frame/motion/trajectory/draw/action00",
+              "note.keytimes/label/motion/trajectory/opacity/action00"
+            ]
+          },
+          "timing": {
+            "status": "applicable",
+            "check_ids": [
+              "note.keytimes/frame/timing/visibility-events",
+              "note.keytimes/arrow/timing/visibility-events",
+              "note.keytimes/label/timing/visibility-events"
+            ]
+          }
+        }
+      },
+      {
+        "id": "note.duration",
+        "dimensions": {
+          "presence": {
+            "status": "applicable",
+            "check_ids": [
+              "note.duration/frame/presence/drawable",
+              "note.duration/arrow/presence/drawable",
+              "note.duration/label/presence/drawable"
+            ]
+          },
+          "attributes": {
+            "status": "applicable",
+            "check_ids": [
+              "note.duration/frame/attributes/geometry",
+              "note.duration/frame/attributes/paint",
+              "note.duration/frame/attributes/size",
+              "note.duration/arrow/attributes/geometry",
+              "note.duration/arrow/attributes/paint",
+              "note.duration/arrow/attributes/size",
+              "note.duration/label/attributes/geometry",
+              "note.duration/label/attributes/paint",
+              "note.duration/label/attributes/size",
+              "note.duration/label/attributes/text"
+            ]
+          },
+          "relations": {
+            "status": "applicable",
+            "check_ids": [
+              "note.duration/frame/relations/relative-position",
+              "note.duration/arrow/relations/relative-position",
+              "note.duration/label/relations/relative-position"
+            ]
+          },
+          "binding": {
+            "status": "applicable",
+            "check_ids": [
+              "note.duration/frame/binding/channel-active/draw/action00",
+              "note.duration/label/binding/channel-active/opacity/action00"
+            ]
+          },
+          "motion": {
+            "status": "applicable",
+            "check_ids": [
+              "note.duration/frame/motion/trajectory/draw/action00",
+              "note.duration/label/motion/trajectory/opacity/action00"
+            ]
+          },
+          "timing": {
+            "status": "applicable",
+            "check_ids": [
+              "note.duration/frame/timing/visibility-events",
+              "note.duration/arrow/timing/visibility-events",
+              "note.duration/label/timing/visibility-events"
+            ]
+          }
+        }
+      },
+      {
+        "id": "values.member01",
+        "dimensions": {
+          "presence": {
+            "status": "applicable",
+            "check_ids": [
+              "values.member01/content/presence/drawable"
+            ]
+          },
+          "attributes": {
+            "status": "applicable",
+            "check_ids": [
+              "values.member01/content/attributes/geometry",
+              "values.member01/content/attributes/paint",
+              "values.member01/content/attributes/size",
+              "values.member01/content/attributes/text"
+            ]
+          },
+          "relations": {
+            "status": "applicable",
+            "check_ids": [
+              "values.member01/content/relations/relative-position"
+            ]
+          },
+          "binding": {
+            "status": "applicable",
+            "check_ids": [
+              "values.member01/content/binding/channel-active/x/action00",
+              "values.member01/content/binding/channel-active/y/action00",
+              "values.member01/content/binding/channel-active/width/action00",
+              "values.member01/content/binding/channel-active/height/action00",
+              "values.member01/content/binding/channel-active/opacity/action00",
+              "values.member01/content/binding/channel-active/x/action01",
+              "values.member01/content/binding/channel-active/y/action01",
+              "values.member01/content/binding/channel-active/width/action01",
+              "values.member01/content/binding/channel-active/height/action01",
+              "values.member01/content/binding/channel-active/opacity/action01",
+              "values.member01/content/binding/channel-active/textlength/action01",
+              "values.member01/content/binding/channel-active/x/action02"
+            ]
+          },
+          "motion": {
+            "status": "applicable",
+            "check_ids": [
+              "values.member01/content/motion/trajectory/x/action00",
+              "values.member01/content/motion/trajectory/y/action00",
+              "values.member01/content/motion/trajectory/width/action00",
+              "values.member01/content/motion/trajectory/height/action00",
+              "values.member01/content/motion/trajectory/opacity/action00",
+              "values.member01/content/motion/trajectory/x/action01",
+              "values.member01/content/motion/trajectory/y/action01",
+              "values.member01/content/motion/trajectory/width/action01",
+              "values.member01/content/motion/trajectory/height/action01",
+              "values.member01/content/motion/trajectory/opacity/action01",
+              "values.member01/content/motion/trajectory/textlength/action01",
+              "values.member01/content/motion/trajectory/x/action02"
+            ]
+          },
+          "timing": {
+            "status": "applicable",
+            "check_ids": [
+              "values.member01/content/timing/visibility-events"
+            ]
+          }
+        }
+      },
+      {
+        "id": "keytimes.member01",
+        "dimensions": {
+          "presence": {
+            "status": "applicable",
+            "check_ids": [
+              "keytimes.member01/content/presence/drawable"
+            ]
+          },
+          "attributes": {
+            "status": "applicable",
+            "check_ids": [
+              "keytimes.member01/content/attributes/geometry",
+              "keytimes.member01/content/attributes/paint",
+              "keytimes.member01/content/attributes/size",
+              "keytimes.member01/content/attributes/text"
+            ]
+          },
+          "relations": {
+            "status": "applicable",
+            "check_ids": [
+              "keytimes.member01/content/relations/relative-position"
+            ]
+          },
+          "binding": {
+            "status": "applicable",
+            "check_ids": [
+              "keytimes.member01/content/binding/channel-active/x/action00",
+              "keytimes.member01/content/binding/channel-active/y/action00",
+              "keytimes.member01/content/binding/channel-active/width/action00",
+              "keytimes.member01/content/binding/channel-active/height/action00",
+              "keytimes.member01/content/binding/channel-active/opacity/action00",
+              "keytimes.member01/content/binding/channel-active/x/action02",
+              "keytimes.member01/content/binding/channel-active/y/action02",
+              "keytimes.member01/content/binding/channel-active/width/action02",
+              "keytimes.member01/content/binding/channel-active/height/action02",
+              "keytimes.member01/content/binding/channel-active/y/action03",
+              "keytimes.member01/content/binding/channel-active/width/action03",
+              "keytimes.member01/content/binding/channel-active/height/action03",
+              "keytimes.member01/content/binding/channel-active/textlength/action03",
+              "keytimes.member01/content/binding/channel-active/x/action04"
+            ]
+          },
+          "motion": {
+            "status": "applicable",
+            "check_ids": [
+              "keytimes.member01/content/motion/trajectory/x/action00",
+              "keytimes.member01/content/motion/trajectory/y/action00",
+              "keytimes.member01/content/motion/trajectory/width/action00",
+              "keytimes.member01/content/motion/trajectory/height/action00",
+              "keytimes.member01/content/motion/trajectory/opacity/action00",
+              "keytimes.member01/content/motion/trajectory/x/action02",
+              "keytimes.member01/content/motion/trajectory/y/action02",
+              "keytimes.member01/content/motion/trajectory/width/action02",
+              "keytimes.member01/content/motion/trajectory/height/action02",
+              "keytimes.member01/content/motion/trajectory/y/action03",
+              "keytimes.member01/content/motion/trajectory/width/action03",
+              "keytimes.member01/content/motion/trajectory/height/action03",
+              "keytimes.member01/content/motion/trajectory/textlength/action03",
+              "keytimes.member01/content/motion/trajectory/x/action04"
+            ]
+          },
+          "timing": {
+            "status": "applicable",
+            "check_ids": [
+              "keytimes.member01/content/timing/visibility-events"
+            ]
+          }
+        }
+      },
+      {
+        "id": "values.member02",
+        "dimensions": {
+          "presence": {
+            "status": "applicable",
+            "check_ids": [
+              "values.member02/content/presence/drawable"
+            ]
+          },
+          "attributes": {
+            "status": "applicable",
+            "check_ids": [
+              "values.member02/content/attributes/geometry",
+              "values.member02/content/attributes/paint",
+              "values.member02/content/attributes/size",
+              "values.member02/content/attributes/text"
+            ]
+          },
+          "relations": {
+            "status": "applicable",
+            "check_ids": [
+              "values.member02/content/relations/relative-position"
+            ]
+          },
+          "binding": {
+            "status": "applicable",
+            "check_ids": [
+              "values.member02/content/binding/channel-active/x/action00",
+              "values.member02/content/binding/channel-active/y/action00",
+              "values.member02/content/binding/channel-active/width/action00",
+              "values.member02/content/binding/channel-active/height/action00",
+              "values.member02/content/binding/channel-active/opacity/action00",
+              "values.member02/content/binding/channel-active/x/action01",
+              "values.member02/content/binding/channel-active/y/action01",
+              "values.member02/content/binding/channel-active/width/action01",
+              "values.member02/content/binding/channel-active/height/action01",
+              "values.member02/content/binding/channel-active/opacity/action01",
+              "values.member02/content/binding/channel-active/textlength/action01",
+              "values.member02/content/binding/channel-active/x/action02"
+            ]
+          },
+          "motion": {
+            "status": "applicable",
+            "check_ids": [
+              "values.member02/content/motion/trajectory/x/action00",
+              "values.member02/content/motion/trajectory/y/action00",
+              "values.member02/content/motion/trajectory/width/action00",
+              "values.member02/content/motion/trajectory/height/action00",
+              "values.member02/content/motion/trajectory/opacity/action00",
+              "values.member02/content/motion/trajectory/x/action01",
+              "values.member02/content/motion/trajectory/y/action01",
+              "values.member02/content/motion/trajectory/width/action01",
+              "values.member02/content/motion/trajectory/height/action01",
+              "values.member02/content/motion/trajectory/opacity/action01",
+              "values.member02/content/motion/trajectory/textlength/action01",
+              "values.member02/content/motion/trajectory/x/action02"
+            ]
+          },
+          "timing": {
+            "status": "applicable",
+            "check_ids": [
+              "values.member02/content/timing/visibility-events"
+            ]
+          }
+        }
+      },
+      {
+        "id": "keytimes.member02",
+        "dimensions": {
+          "presence": {
+            "status": "applicable",
+            "check_ids": [
+              "keytimes.member02/content/presence/drawable"
+            ]
+          },
+          "attributes": {
+            "status": "applicable",
+            "check_ids": [
+              "keytimes.member02/content/attributes/geometry",
+              "keytimes.member02/content/attributes/paint",
+              "keytimes.member02/content/attributes/size",
+              "keytimes.member02/content/attributes/text"
+            ]
+          },
+          "relations": {
+            "status": "applicable",
+            "check_ids": [
+              "keytimes.member02/content/relations/relative-position"
+            ]
+          },
+          "binding": {
+            "status": "applicable",
+            "check_ids": [
+              "keytimes.member02/content/binding/channel-active/x/action00",
+              "keytimes.member02/content/binding/channel-active/y/action00",
+              "keytimes.member02/content/binding/channel-active/width/action00",
+              "keytimes.member02/content/binding/channel-active/height/action00",
+              "keytimes.member02/content/binding/channel-active/opacity/action00",
+              "keytimes.member02/content/binding/channel-active/textlength/action01",
+              "keytimes.member02/content/binding/channel-active/x/action02",
+              "keytimes.member02/content/binding/channel-active/y/action02",
+              "keytimes.member02/content/binding/channel-active/width/action02",
+              "keytimes.member02/content/binding/channel-active/height/action02",
+              "keytimes.member02/content/binding/channel-active/y/action03",
+              "keytimes.member02/content/binding/channel-active/height/action03",
+              "keytimes.member02/content/binding/channel-active/textlength/action03",
+              "keytimes.member02/content/binding/channel-active/x/action04"
+            ]
+          },
+          "motion": {
+            "status": "applicable",
+            "check_ids": [
+              "keytimes.member02/content/motion/trajectory/x/action00",
+              "keytimes.member02/content/motion/trajectory/y/action00",
+              "keytimes.member02/content/motion/trajectory/width/action00",
+              "keytimes.member02/content/motion/trajectory/height/action00",
+              "keytimes.member02/content/motion/trajectory/opacity/action00",
+              "keytimes.member02/content/motion/trajectory/textlength/action01",
+              "keytimes.member02/content/motion/trajectory/x/action02",
+              "keytimes.member02/content/motion/trajectory/y/action02",
+              "keytimes.member02/content/motion/trajectory/width/action02",
+              "keytimes.member02/content/motion/trajectory/height/action02",
+              "keytimes.member02/content/motion/trajectory/y/action03",
+              "keytimes.member02/content/motion/trajectory/height/action03",
+              "keytimes.member02/content/motion/trajectory/textlength/action03",
+              "keytimes.member02/content/motion/trajectory/x/action04"
+            ]
+          },
+          "timing": {
+            "status": "applicable",
+            "check_ids": [
+              "keytimes.member02/content/timing/visibility-events"
+            ]
+          }
+        }
+      },
+      {
+        "id": "values.member03",
+        "dimensions": {
+          "presence": {
+            "status": "applicable",
+            "check_ids": [
+              "values.member03/content/presence/drawable"
+            ]
+          },
+          "attributes": {
+            "status": "applicable",
+            "check_ids": [
+              "values.member03/content/attributes/geometry",
+              "values.member03/content/attributes/paint",
+              "values.member03/content/attributes/size",
+              "values.member03/content/attributes/text"
+            ]
+          },
+          "relations": {
+            "status": "applicable",
+            "check_ids": [
+              "values.member03/content/relations/relative-position"
+            ]
+          },
+          "binding": {
+            "status": "applicable",
+            "check_ids": [
+              "values.member03/content/binding/channel-active/x/action00",
+              "values.member03/content/binding/channel-active/y/action00",
+              "values.member03/content/binding/channel-active/width/action00",
+              "values.member03/content/binding/channel-active/height/action00",
+              "values.member03/content/binding/channel-active/opacity/action00",
+              "values.member03/content/binding/channel-active/x/action01",
+              "values.member03/content/binding/channel-active/y/action01",
+              "values.member03/content/binding/channel-active/width/action01",
+              "values.member03/content/binding/channel-active/height/action01",
+              "values.member03/content/binding/channel-active/opacity/action01",
+              "values.member03/content/binding/channel-active/textlength/action01",
+              "values.member03/content/binding/channel-active/x/action02"
+            ]
+          },
+          "motion": {
+            "status": "applicable",
+            "check_ids": [
+              "values.member03/content/motion/trajectory/x/action00",
+              "values.member03/content/motion/trajectory/y/action00",
+              "values.member03/content/motion/trajectory/width/action00",
+              "values.member03/content/motion/trajectory/height/action00",
+              "values.member03/content/motion/trajectory/opacity/action00",
+              "values.member03/content/motion/trajectory/x/action01",
+              "values.member03/content/motion/trajectory/y/action01",
+              "values.member03/content/motion/trajectory/width/action01",
+              "values.member03/content/motion/trajectory/height/action01",
+              "values.member03/content/motion/trajectory/opacity/action01",
+              "values.member03/content/motion/trajectory/textlength/action01",
+              "values.member03/content/motion/trajectory/x/action02"
+            ]
+          },
+          "timing": {
+            "status": "applicable",
+            "check_ids": [
+              "values.member03/content/timing/visibility-events"
+            ]
+          }
+        }
+      },
+      {
+        "id": "keytimes.member03",
+        "dimensions": {
+          "presence": {
+            "status": "applicable",
+            "check_ids": [
+              "keytimes.member03/content/presence/drawable"
+            ]
+          },
+          "attributes": {
+            "status": "applicable",
+            "check_ids": [
+              "keytimes.member03/content/attributes/geometry",
+              "keytimes.member03/content/attributes/paint",
+              "keytimes.member03/content/attributes/size",
+              "keytimes.member03/content/attributes/text"
+            ]
+          },
+          "relations": {
+            "status": "applicable",
+            "check_ids": [
+              "keytimes.member03/content/relations/relative-position"
+            ]
+          },
+          "binding": {
+            "status": "applicable",
+            "check_ids": [
+              "keytimes.member03/content/binding/channel-active/x/action00",
+              "keytimes.member03/content/binding/channel-active/y/action00",
+              "keytimes.member03/content/binding/channel-active/width/action00",
+              "keytimes.member03/content/binding/channel-active/height/action00",
+              "keytimes.member03/content/binding/channel-active/opacity/action00",
+              "keytimes.member03/content/binding/channel-active/textlength/action01",
+              "keytimes.member03/content/binding/channel-active/x/action02",
+              "keytimes.member03/content/binding/channel-active/y/action02",
+              "keytimes.member03/content/binding/channel-active/width/action02",
+              "keytimes.member03/content/binding/channel-active/height/action02",
+              "keytimes.member03/content/binding/channel-active/y/action03",
+              "keytimes.member03/content/binding/channel-active/height/action03",
+              "keytimes.member03/content/binding/channel-active/textlength/action03",
+              "keytimes.member03/content/binding/channel-active/x/action04"
+            ]
+          },
+          "motion": {
+            "status": "applicable",
+            "check_ids": [
+              "keytimes.member03/content/motion/trajectory/x/action00",
+              "keytimes.member03/content/motion/trajectory/y/action00",
+              "keytimes.member03/content/motion/trajectory/width/action00",
+              "keytimes.member03/content/motion/trajectory/height/action00",
+              "keytimes.member03/content/motion/trajectory/opacity/action00",
+              "keytimes.member03/content/motion/trajectory/textlength/action01",
+              "keytimes.member03/content/motion/trajectory/x/action02",
+              "keytimes.member03/content/motion/trajectory/y/action02",
+              "keytimes.member03/content/motion/trajectory/width/action02",
+              "keytimes.member03/content/motion/trajectory/height/action02",
+              "keytimes.member03/content/motion/trajectory/y/action03",
+              "keytimes.member03/content/motion/trajectory/height/action03",
+              "keytimes.member03/content/motion/trajectory/textlength/action03",
+              "keytimes.member03/content/motion/trajectory/x/action04"
+            ]
+          },
+          "timing": {
+            "status": "applicable",
+            "check_ids": [
+              "keytimes.member03/content/timing/visibility-events"
+            ]
+          }
+        }
+      },
+      {
+        "id": "values.member04",
+        "dimensions": {
+          "presence": {
+            "status": "applicable",
+            "check_ids": [
+              "values.member04/content/presence/drawable"
+            ]
+          },
+          "attributes": {
+            "status": "applicable",
+            "check_ids": [
+              "values.member04/content/attributes/geometry",
+              "values.member04/content/attributes/paint",
+              "values.member04/content/attributes/size",
+              "values.member04/content/attributes/text"
+            ]
+          },
+          "relations": {
+            "status": "applicable",
+            "check_ids": [
+              "values.member04/content/relations/relative-position"
+            ]
+          },
+          "binding": {
+            "status": "applicable",
+            "check_ids": [
+              "values.member04/content/binding/channel-active/x/action00",
+              "values.member04/content/binding/channel-active/y/action00",
+              "values.member04/content/binding/channel-active/width/action00",
+              "values.member04/content/binding/channel-active/height/action00",
+              "values.member04/content/binding/channel-active/opacity/action00",
+              "values.member04/content/binding/channel-active/x/action01",
+              "values.member04/content/binding/channel-active/y/action01",
+              "values.member04/content/binding/channel-active/width/action01",
+              "values.member04/content/binding/channel-active/height/action01",
+              "values.member04/content/binding/channel-active/opacity/action01",
+              "values.member04/content/binding/channel-active/textlength/action01",
+              "values.member04/content/binding/channel-active/x/action02"
+            ]
+          },
+          "motion": {
+            "status": "applicable",
+            "check_ids": [
+              "values.member04/content/motion/trajectory/x/action00",
+              "values.member04/content/motion/trajectory/y/action00",
+              "values.member04/content/motion/trajectory/width/action00",
+              "values.member04/content/motion/trajectory/height/action00",
+              "values.member04/content/motion/trajectory/opacity/action00",
+              "values.member04/content/motion/trajectory/x/action01",
+              "values.member04/content/motion/trajectory/y/action01",
+              "values.member04/content/motion/trajectory/width/action01",
+              "values.member04/content/motion/trajectory/height/action01",
+              "values.member04/content/motion/trajectory/opacity/action01",
+              "values.member04/content/motion/trajectory/textlength/action01",
+              "values.member04/content/motion/trajectory/x/action02"
+            ]
+          },
+          "timing": {
+            "status": "applicable",
+            "check_ids": [
+              "values.member04/content/timing/visibility-events"
+            ]
+          }
+        }
+      },
+      {
+        "id": "keytimes.member04",
+        "dimensions": {
+          "presence": {
+            "status": "applicable",
+            "check_ids": [
+              "keytimes.member04/content/presence/drawable"
+            ]
+          },
+          "attributes": {
+            "status": "applicable",
+            "check_ids": [
+              "keytimes.member04/content/attributes/geometry",
+              "keytimes.member04/content/attributes/paint",
+              "keytimes.member04/content/attributes/size",
+              "keytimes.member04/content/attributes/text"
+            ]
+          },
+          "relations": {
+            "status": "applicable",
+            "check_ids": [
+              "keytimes.member04/content/relations/relative-position"
+            ]
+          },
+          "binding": {
+            "status": "applicable",
+            "check_ids": [
+              "keytimes.member04/content/binding/channel-active/x/action00",
+              "keytimes.member04/content/binding/channel-active/y/action00",
+              "keytimes.member04/content/binding/channel-active/width/action00",
+              "keytimes.member04/content/binding/channel-active/height/action00",
+              "keytimes.member04/content/binding/channel-active/opacity/action00",
+              "keytimes.member04/content/binding/channel-active/textlength/action01",
+              "keytimes.member04/content/binding/channel-active/x/action02",
+              "keytimes.member04/content/binding/channel-active/y/action02",
+              "keytimes.member04/content/binding/channel-active/width/action02",
+              "keytimes.member04/content/binding/channel-active/height/action02",
+              "keytimes.member04/content/binding/channel-active/y/action03",
+              "keytimes.member04/content/binding/channel-active/height/action03",
+              "keytimes.member04/content/binding/channel-active/textlength/action03",
+              "keytimes.member04/content/binding/channel-active/x/action04"
+            ]
+          },
+          "motion": {
+            "status": "applicable",
+            "check_ids": [
+              "keytimes.member04/content/motion/trajectory/x/action00",
+              "keytimes.member04/content/motion/trajectory/y/action00",
+              "keytimes.member04/content/motion/trajectory/width/action00",
+              "keytimes.member04/content/motion/trajectory/height/action00",
+              "keytimes.member04/content/motion/trajectory/opacity/action00",
+              "keytimes.member04/content/motion/trajectory/textlength/action01",
+              "keytimes.member04/content/motion/trajectory/x/action02",
+              "keytimes.member04/content/motion/trajectory/y/action02",
+              "keytimes.member04/content/motion/trajectory/width/action02",
+              "keytimes.member04/content/motion/trajectory/height/action02",
+              "keytimes.member04/content/motion/trajectory/y/action03",
+              "keytimes.member04/content/motion/trajectory/height/action03",
+              "keytimes.member04/content/motion/trajectory/textlength/action03",
+              "keytimes.member04/content/motion/trajectory/x/action04"
+            ]
+          },
+          "timing": {
+            "status": "applicable",
+            "check_ids": [
+              "keytimes.member04/content/timing/visibility-events"
+            ]
+          }
+        }
+      },
+      {
+        "id": "values.member05",
+        "dimensions": {
+          "presence": {
+            "status": "applicable",
+            "check_ids": [
+              "values.member05/content/presence/drawable"
+            ]
+          },
+          "attributes": {
+            "status": "applicable",
+            "check_ids": [
+              "values.member05/content/attributes/geometry",
+              "values.member05/content/attributes/paint",
+              "values.member05/content/attributes/size",
+              "values.member05/content/attributes/text"
+            ]
+          },
+          "relations": {
+            "status": "applicable",
+            "check_ids": [
+              "values.member05/content/relations/relative-position"
+            ]
+          },
+          "binding": {
+            "status": "applicable",
+            "check_ids": [
+              "values.member05/content/binding/channel-active/x/action00",
+              "values.member05/content/binding/channel-active/y/action00",
+              "values.member05/content/binding/channel-active/width/action00",
+              "values.member05/content/binding/channel-active/height/action00",
+              "values.member05/content/binding/channel-active/opacity/action00",
+              "values.member05/content/binding/channel-active/x/action01",
+              "values.member05/content/binding/channel-active/y/action01",
+              "values.member05/content/binding/channel-active/width/action01",
+              "values.member05/content/binding/channel-active/height/action01",
+              "values.member05/content/binding/channel-active/opacity/action01",
+              "values.member05/content/binding/channel-active/textlength/action01",
+              "values.member05/content/binding/channel-active/x/action02"
+            ]
+          },
+          "motion": {
+            "status": "applicable",
+            "check_ids": [
+              "values.member05/content/motion/trajectory/x/action00",
+              "values.member05/content/motion/trajectory/y/action00",
+              "values.member05/content/motion/trajectory/width/action00",
+              "values.member05/content/motion/trajectory/height/action00",
+              "values.member05/content/motion/trajectory/opacity/action00",
+              "values.member05/content/motion/trajectory/x/action01",
+              "values.member05/content/motion/trajectory/y/action01",
+              "values.member05/content/motion/trajectory/width/action01",
+              "values.member05/content/motion/trajectory/height/action01",
+              "values.member05/content/motion/trajectory/opacity/action01",
+              "values.member05/content/motion/trajectory/textlength/action01",
+              "values.member05/content/motion/trajectory/x/action02"
+            ]
+          },
+          "timing": {
+            "status": "applicable",
+            "check_ids": [
+              "values.member05/content/timing/visibility-events"
+            ]
+          }
+        }
+      },
+      {
+        "id": "keytimes.member05",
+        "dimensions": {
+          "presence": {
+            "status": "applicable",
+            "check_ids": [
+              "keytimes.member05/content/presence/drawable"
+            ]
+          },
+          "attributes": {
+            "status": "applicable",
+            "check_ids": [
+              "keytimes.member05/content/attributes/geometry",
+              "keytimes.member05/content/attributes/paint",
+              "keytimes.member05/content/attributes/size",
+              "keytimes.member05/content/attributes/text"
+            ]
+          },
+          "relations": {
+            "status": "applicable",
+            "check_ids": [
+              "keytimes.member05/content/relations/relative-position"
+            ]
+          },
+          "binding": {
+            "status": "applicable",
+            "check_ids": [
+              "keytimes.member05/content/binding/channel-active/x/action00",
+              "keytimes.member05/content/binding/channel-active/y/action00",
+              "keytimes.member05/content/binding/channel-active/width/action00",
+              "keytimes.member05/content/binding/channel-active/height/action00",
+              "keytimes.member05/content/binding/channel-active/opacity/action00",
+              "keytimes.member05/content/binding/channel-active/textlength/action01",
+              "keytimes.member05/content/binding/channel-active/x/action02",
+              "keytimes.member05/content/binding/channel-active/y/action02",
+              "keytimes.member05/content/binding/channel-active/width/action02",
+              "keytimes.member05/content/binding/channel-active/height/action02",
+              "keytimes.member05/content/binding/channel-active/y/action03",
+              "keytimes.member05/content/binding/channel-active/height/action03",
+              "keytimes.member05/content/binding/channel-active/textlength/action03",
+              "keytimes.member05/content/binding/channel-active/x/action04"
+            ]
+          },
+          "motion": {
+            "status": "applicable",
+            "check_ids": [
+              "keytimes.member05/content/motion/trajectory/x/action00",
+              "keytimes.member05/content/motion/trajectory/y/action00",
+              "keytimes.member05/content/motion/trajectory/width/action00",
+              "keytimes.member05/content/motion/trajectory/height/action00",
+              "keytimes.member05/content/motion/trajectory/opacity/action00",
+              "keytimes.member05/content/motion/trajectory/textlength/action01",
+              "keytimes.member05/content/motion/trajectory/x/action02",
+              "keytimes.member05/content/motion/trajectory/y/action02",
+              "keytimes.member05/content/motion/trajectory/width/action02",
+              "keytimes.member05/content/motion/trajectory/height/action02",
+              "keytimes.member05/content/motion/trajectory/y/action03",
+              "keytimes.member05/content/motion/trajectory/height/action03",
+              "keytimes.member05/content/motion/trajectory/textlength/action03",
+              "keytimes.member05/content/motion/trajectory/x/action04"
+            ]
+          },
+          "timing": {
+            "status": "applicable",
+            "check_ids": [
+              "keytimes.member05/content/timing/visibility-events"
+            ]
+          }
+        }
+      },
+      {
+        "id": "values.member06",
+        "dimensions": {
+          "presence": {
+            "status": "applicable",
+            "check_ids": [
+              "values.member06/content/presence/drawable"
+            ]
+          },
+          "attributes": {
+            "status": "applicable",
+            "check_ids": [
+              "values.member06/content/attributes/geometry",
+              "values.member06/content/attributes/paint",
+              "values.member06/content/attributes/size",
+              "values.member06/content/attributes/text"
+            ]
+          },
+          "relations": {
+            "status": "applicable",
+            "check_ids": [
+              "values.member06/content/relations/relative-position"
+            ]
+          },
+          "binding": {
+            "status": "applicable",
+            "check_ids": [
+              "values.member06/content/binding/channel-active/x/action00",
+              "values.member06/content/binding/channel-active/y/action00",
+              "values.member06/content/binding/channel-active/width/action00",
+              "values.member06/content/binding/channel-active/height/action00",
+              "values.member06/content/binding/channel-active/opacity/action00",
+              "values.member06/content/binding/channel-active/x/action01",
+              "values.member06/content/binding/channel-active/y/action01",
+              "values.member06/content/binding/channel-active/width/action01",
+              "values.member06/content/binding/channel-active/height/action01",
+              "values.member06/content/binding/channel-active/textlength/action01",
+              "values.member06/content/binding/channel-active/x/action02"
+            ]
+          },
+          "motion": {
+            "status": "applicable",
+            "check_ids": [
+              "values.member06/content/motion/trajectory/x/action00",
+              "values.member06/content/motion/trajectory/y/action00",
+              "values.member06/content/motion/trajectory/width/action00",
+              "values.member06/content/motion/trajectory/height/action00",
+              "values.member06/content/motion/trajectory/opacity/action00",
+              "values.member06/content/motion/trajectory/x/action01",
+              "values.member06/content/motion/trajectory/y/action01",
+              "values.member06/content/motion/trajectory/width/action01",
+              "values.member06/content/motion/trajectory/height/action01",
+              "values.member06/content/motion/trajectory/textlength/action01",
+              "values.member06/content/motion/trajectory/x/action02"
+            ]
+          },
+          "timing": {
+            "status": "applicable",
+            "check_ids": [
+              "values.member06/content/timing/visibility-events"
+            ]
+          }
+        }
+      },
+      {
+        "id": "keytimes.member06",
+        "dimensions": {
+          "presence": {
+            "status": "applicable",
+            "check_ids": [
+              "keytimes.member06/content/presence/drawable"
+            ]
+          },
+          "attributes": {
+            "status": "applicable",
+            "check_ids": [
+              "keytimes.member06/content/attributes/geometry",
+              "keytimes.member06/content/attributes/paint",
+              "keytimes.member06/content/attributes/size",
+              "keytimes.member06/content/attributes/text"
+            ]
+          },
+          "relations": {
+            "status": "applicable",
+            "check_ids": [
+              "keytimes.member06/content/relations/relative-position"
+            ]
+          },
+          "binding": {
+            "status": "applicable",
+            "check_ids": [
+              "keytimes.member06/content/binding/channel-active/x/action00",
+              "keytimes.member06/content/binding/channel-active/y/action00",
+              "keytimes.member06/content/binding/channel-active/width/action00",
+              "keytimes.member06/content/binding/channel-active/height/action00",
+              "keytimes.member06/content/binding/channel-active/opacity/action00",
+              "keytimes.member06/content/binding/channel-active/textlength/action01",
+              "keytimes.member06/content/binding/channel-active/x/action02",
+              "keytimes.member06/content/binding/channel-active/y/action02",
+              "keytimes.member06/content/binding/channel-active/width/action02",
+              "keytimes.member06/content/binding/channel-active/height/action02",
+              "keytimes.member06/content/binding/channel-active/y/action03",
+              "keytimes.member06/content/binding/channel-active/width/action03",
+              "keytimes.member06/content/binding/channel-active/height/action03",
+              "keytimes.member06/content/binding/channel-active/textlength/action03",
+              "keytimes.member06/content/binding/channel-active/x/action04"
+            ]
+          },
+          "motion": {
+            "status": "applicable",
+            "check_ids": [
+              "keytimes.member06/content/motion/trajectory/x/action00",
+              "keytimes.member06/content/motion/trajectory/y/action00",
+              "keytimes.member06/content/motion/trajectory/width/action00",
+              "keytimes.member06/content/motion/trajectory/height/action00",
+              "keytimes.member06/content/motion/trajectory/opacity/action00",
+              "keytimes.member06/content/motion/trajectory/textlength/action01",
+              "keytimes.member06/content/motion/trajectory/x/action02",
+              "keytimes.member06/content/motion/trajectory/y/action02",
+              "keytimes.member06/content/motion/trajectory/width/action02",
+              "keytimes.member06/content/motion/trajectory/height/action02",
+              "keytimes.member06/content/motion/trajectory/y/action03",
+              "keytimes.member06/content/motion/trajectory/width/action03",
+              "keytimes.member06/content/motion/trajectory/height/action03",
+              "keytimes.member06/content/motion/trajectory/textlength/action03",
+              "keytimes.member06/content/motion/trajectory/x/action04"
+            ]
+          },
+          "timing": {
+            "status": "applicable",
+            "check_ids": [
+              "keytimes.member06/content/timing/visibility-events"
+            ]
+          }
+        }
+      },
+      {
+        "id": "rows.labels",
+        "dimensions": {
+          "presence": {
+            "status": "applicable",
+            "check_ids": [
+              "rows.labels/values/presence/drawable",
+              "rows.labels/keytimes/presence/drawable"
+            ]
+          },
+          "attributes": {
+            "status": "applicable",
+            "check_ids": [
+              "rows.labels/values/attributes/geometry",
+              "rows.labels/values/attributes/paint",
+              "rows.labels/values/attributes/size",
+              "rows.labels/values/attributes/text",
+              "rows.labels/keytimes/attributes/geometry",
+              "rows.labels/keytimes/attributes/paint",
+              "rows.labels/keytimes/attributes/size",
+              "rows.labels/keytimes/attributes/text"
+            ]
+          },
+          "relations": {
+            "status": "applicable",
+            "check_ids": [
+              "rows.labels/values/relations/relative-position",
+              "rows.labels/keytimes/relations/relative-position"
+            ]
+          },
+          "binding": {
+            "status": "applicable",
+            "check_ids": [
+              "rows.labels/values/binding/channel-active/x/action00",
+              "rows.labels/values/binding/channel-active/y/action00",
+              "rows.labels/keytimes/binding/channel-active/x/action00",
+              "rows.labels/keytimes/binding/channel-active/y/action00"
+            ]
+          },
+          "motion": {
+            "status": "applicable",
+            "check_ids": [
+              "rows.labels/values/motion/trajectory/x/action00",
+              "rows.labels/values/motion/trajectory/y/action00",
+              "rows.labels/keytimes/motion/trajectory/x/action00",
+              "rows.labels/keytimes/motion/trajectory/y/action00"
+            ]
+          },
+          "timing": {
+            "status": "applicable",
+            "check_ids": [
+              "rows.labels/values/timing/visibility-events",
+              "rows.labels/keytimes/timing/visibility-events"
+            ]
+          }
+        }
+      },
+      {
+        "id": "scale.notes",
+        "dimensions": {
+          "presence": {
+            "status": "applicable",
+            "check_ids": [
+              "scale.notes/horizontal-frame/presence/drawable",
+              "scale.notes/horizontal-arrow/presence/drawable",
+              "scale.notes/horizontal-label/presence/drawable",
+              "scale.notes/vertical-frame/presence/drawable",
+              "scale.notes/vertical-arrow/presence/drawable",
+              "scale.notes/vertical-label/presence/drawable"
+            ]
+          },
+          "attributes": {
+            "status": "applicable",
+            "check_ids": [
+              "scale.notes/horizontal-frame/attributes/geometry",
+              "scale.notes/horizontal-frame/attributes/paint",
+              "scale.notes/horizontal-frame/attributes/size",
+              "scale.notes/horizontal-arrow/attributes/geometry",
+              "scale.notes/horizontal-arrow/attributes/paint",
+              "scale.notes/horizontal-arrow/attributes/size",
+              "scale.notes/horizontal-label/attributes/geometry",
+              "scale.notes/horizontal-label/attributes/paint",
+              "scale.notes/horizontal-label/attributes/size",
+              "scale.notes/horizontal-label/attributes/text",
+              "scale.notes/vertical-frame/attributes/geometry",
+              "scale.notes/vertical-frame/attributes/paint",
+              "scale.notes/vertical-frame/attributes/size",
+              "scale.notes/vertical-arrow/attributes/geometry",
+              "scale.notes/vertical-arrow/attributes/paint",
+              "scale.notes/vertical-arrow/attributes/size",
+              "scale.notes/vertical-label/attributes/geometry",
+              "scale.notes/vertical-label/attributes/paint",
+              "scale.notes/vertical-label/attributes/size",
+              "scale.notes/vertical-label/attributes/text"
+            ]
+          },
+          "relations": {
+            "status": "applicable",
+            "check_ids": [
+              "scale.notes/horizontal-frame/relations/relative-position",
+              "scale.notes/horizontal-arrow/relations/relative-position",
+              "scale.notes/horizontal-label/relations/relative-position",
+              "scale.notes/vertical-frame/relations/relative-position",
+              "scale.notes/vertical-arrow/relations/relative-position",
+              "scale.notes/vertical-label/relations/relative-position"
+            ]
+          },
+          "binding": {
+            "status": "applicable",
+            "check_ids": [
+              "scale.notes/horizontal-frame/binding/channel-active/draw/action00",
+              "scale.notes/horizontal-arrow/binding/channel-active/x/action00",
+              "scale.notes/horizontal-arrow/binding/channel-active/y/action00",
+              "scale.notes/horizontal-arrow/binding/channel-active/width/action00",
+              "scale.notes/horizontal-arrow/binding/channel-active/height/action00",
+              "scale.notes/horizontal-label/binding/channel-active/opacity/action00",
+              "scale.notes/vertical-frame/binding/channel-active/draw/action00",
+              "scale.notes/vertical-arrow/binding/channel-active/x/action00",
+              "scale.notes/vertical-arrow/binding/channel-active/y/action00",
+              "scale.notes/vertical-arrow/binding/channel-active/width/action00",
+              "scale.notes/vertical-arrow/binding/channel-active/height/action00",
+              "scale.notes/vertical-label/binding/channel-active/opacity/action00"
+            ]
+          },
+          "motion": {
+            "status": "applicable",
+            "check_ids": [
+              "scale.notes/horizontal-frame/motion/trajectory/draw/action00",
+              "scale.notes/horizontal-arrow/motion/trajectory/x/action00",
+              "scale.notes/horizontal-arrow/motion/trajectory/y/action00",
+              "scale.notes/horizontal-arrow/motion/trajectory/width/action00",
+              "scale.notes/horizontal-arrow/motion/trajectory/height/action00",
+              "scale.notes/horizontal-label/motion/trajectory/opacity/action00",
+              "scale.notes/vertical-frame/motion/trajectory/draw/action00",
+              "scale.notes/vertical-arrow/motion/trajectory/x/action00",
+              "scale.notes/vertical-arrow/motion/trajectory/y/action00",
+              "scale.notes/vertical-arrow/motion/trajectory/width/action00",
+              "scale.notes/vertical-arrow/motion/trajectory/height/action00",
+              "scale.notes/vertical-label/motion/trajectory/opacity/action00"
+            ]
+          },
+          "timing": {
+            "status": "applicable",
+            "check_ids": [
+              "scale.notes/horizontal-frame/timing/visibility-events",
+              "scale.notes/horizontal-arrow/timing/visibility-events",
+              "scale.notes/horizontal-label/timing/visibility-events",
+              "scale.notes/vertical-frame/timing/visibility-events",
+              "scale.notes/vertical-arrow/timing/visibility-events",
+              "scale.notes/vertical-label/timing/visibility-events"
+            ]
+          }
+        }
+      },
+      {
+        "id": "eyes.group1",
+        "dimensions": {
+          "presence": {
+            "status": "applicable",
+            "check_ids": [
+              "eyes.group1/frame/presence/drawable",
+              "eyes.group1/arrow/presence/drawable",
+              "eyes.group1/icon/presence/drawable"
+            ]
+          },
+          "attributes": {
+            "status": "applicable",
+            "check_ids": [
+              "eyes.group1/frame/attributes/geometry",
+              "eyes.group1/frame/attributes/paint",
+              "eyes.group1/frame/attributes/size",
+              "eyes.group1/arrow/attributes/geometry",
+              "eyes.group1/arrow/attributes/paint",
+              "eyes.group1/arrow/attributes/size",
+              "eyes.group1/icon/attributes/geometry",
+              "eyes.group1/icon/attributes/paint",
+              "eyes.group1/icon/attributes/size"
+            ]
+          },
+          "relations": {
+            "status": "applicable",
+            "check_ids": [
+              "eyes.group1/frame/relations/relative-position",
+              "eyes.group1/arrow/relations/relative-position",
+              "eyes.group1/icon/relations/relative-position"
+            ]
+          },
+          "binding": {
+            "status": "applicable",
+            "check_ids": [
+              "eyes.group1/frame/binding/channel-active/draw/action00"
+            ]
+          },
+          "motion": {
+            "status": "applicable",
+            "check_ids": [
+              "eyes.group1/frame/motion/trajectory/draw/action00"
+            ]
+          },
+          "timing": {
+            "status": "applicable",
+            "check_ids": [
+              "eyes.group1/frame/timing/visibility-events",
+              "eyes.group1/arrow/timing/visibility-events",
+              "eyes.group1/icon/timing/visibility-events"
+            ]
+          }
+        }
+      },
+      {
+        "id": "eyes.group2",
+        "dimensions": {
+          "presence": {
+            "status": "applicable",
+            "check_ids": [
+              "eyes.group2/frame/presence/drawable",
+              "eyes.group2/arrow/presence/drawable",
+              "eyes.group2/icon/presence/drawable"
+            ]
+          },
+          "attributes": {
+            "status": "applicable",
+            "check_ids": [
+              "eyes.group2/frame/attributes/geometry",
+              "eyes.group2/frame/attributes/paint",
+              "eyes.group2/frame/attributes/size",
+              "eyes.group2/arrow/attributes/geometry",
+              "eyes.group2/arrow/attributes/paint",
+              "eyes.group2/arrow/attributes/size",
+              "eyes.group2/icon/attributes/geometry",
+              "eyes.group2/icon/attributes/paint",
+              "eyes.group2/icon/attributes/size"
+            ]
+          },
+          "relations": {
+            "status": "applicable",
+            "check_ids": [
+              "eyes.group2/frame/relations/relative-position",
+              "eyes.group2/arrow/relations/relative-position",
+              "eyes.group2/icon/relations/relative-position"
+            ]
+          },
+          "binding": {
+            "status": "applicable",
+            "check_ids": [
+              "eyes.group2/frame/binding/channel-active/draw/action00"
+            ]
+          },
+          "motion": {
+            "status": "applicable",
+            "check_ids": [
+              "eyes.group2/frame/motion/trajectory/draw/action00"
+            ]
+          },
+          "timing": {
+            "status": "applicable",
+            "check_ids": [
+              "eyes.group2/frame/timing/visibility-events",
+              "eyes.group2/arrow/timing/visibility-events",
+              "eyes.group2/icon/timing/visibility-events"
+            ]
+          }
+        }
+      },
+      {
+        "id": "eyes.group3",
+        "dimensions": {
+          "presence": {
+            "status": "applicable",
+            "check_ids": [
+              "eyes.group3/frame/presence/drawable",
+              "eyes.group3/arrow/presence/drawable",
+              "eyes.group3/icon/presence/drawable"
+            ]
+          },
+          "attributes": {
+            "status": "applicable",
+            "check_ids": [
+              "eyes.group3/frame/attributes/geometry",
+              "eyes.group3/frame/attributes/paint",
+              "eyes.group3/frame/attributes/size",
+              "eyes.group3/arrow/attributes/geometry",
+              "eyes.group3/arrow/attributes/paint",
+              "eyes.group3/arrow/attributes/size",
+              "eyes.group3/icon/attributes/geometry",
+              "eyes.group3/icon/attributes/paint",
+              "eyes.group3/icon/attributes/size"
+            ]
+          },
+          "relations": {
+            "status": "applicable",
+            "check_ids": [
+              "eyes.group3/frame/relations/relative-position",
+              "eyes.group3/arrow/relations/relative-position",
+              "eyes.group3/icon/relations/relative-position"
+            ]
+          },
+          "binding": {
+            "status": "applicable",
+            "check_ids": [
+              "eyes.group3/frame/binding/channel-active/draw/action00"
+            ]
+          },
+          "motion": {
+            "status": "applicable",
+            "check_ids": [
+              "eyes.group3/frame/motion/trajectory/draw/action00"
+            ]
+          },
+          "timing": {
+            "status": "applicable",
+            "check_ids": [
+              "eyes.group3/frame/timing/visibility-events",
+              "eyes.group3/arrow/timing/visibility-events",
+              "eyes.group3/icon/timing/visibility-events"
+            ]
+          }
+        }
+      },
+      {
+        "id": "time.multiplier",
+        "dimensions": {
+          "presence": {
+            "status": "applicable",
+            "check_ids": [
+              "time.multiplier/content/presence/drawable"
+            ]
+          },
+          "attributes": {
+            "status": "applicable",
+            "check_ids": [
+              "time.multiplier/content/attributes/geometry",
+              "time.multiplier/content/attributes/paint",
+              "time.multiplier/content/attributes/size",
+              "time.multiplier/content/attributes/text"
+            ]
+          },
+          "relations": {
+            "status": "applicable",
+            "check_ids": [
+              "time.multiplier/content/relations/relative-position"
+            ]
+          },
+          "binding": {
+            "status": "not_applicable",
+            "check_ids": [],
+            "reason": "No reference behavior in this dimension within the supplied 64-second clip."
+          },
+          "motion": {
+            "status": "not_applicable",
+            "check_ids": [],
+            "reason": "No reference behavior in this dimension within the supplied 64-second clip."
+          },
+          "timing": {
+            "status": "applicable",
+            "check_ids": [
+              "time.multiplier/content/timing/visibility-events"
+            ]
+          }
+        }
+      },
+      {
+        "id": "time.absolute-note",
+        "dimensions": {
+          "presence": {
+            "status": "applicable",
+            "check_ids": [
+              "time.absolute-note/frame/presence/drawable",
+              "time.absolute-note/arrow/presence/drawable",
+              "time.absolute-note/label/presence/drawable"
+            ]
+          },
+          "attributes": {
+            "status": "applicable",
+            "check_ids": [
+              "time.absolute-note/frame/attributes/geometry",
+              "time.absolute-note/frame/attributes/paint",
+              "time.absolute-note/frame/attributes/size",
+              "time.absolute-note/arrow/attributes/geometry",
+              "time.absolute-note/arrow/attributes/paint",
+              "time.absolute-note/arrow/attributes/size",
+              "time.absolute-note/label/attributes/geometry",
+              "time.absolute-note/label/attributes/paint",
+              "time.absolute-note/label/attributes/size",
+              "time.absolute-note/label/attributes/text"
+            ]
+          },
+          "relations": {
+            "status": "applicable",
+            "check_ids": [
+              "time.absolute-note/frame/relations/relative-position",
+              "time.absolute-note/arrow/relations/relative-position",
+              "time.absolute-note/label/relations/relative-position"
+            ]
+          },
+          "binding": {
+            "status": "applicable",
+            "check_ids": [
+              "time.absolute-note/frame/binding/channel-active/opacity/action00",
+              "time.absolute-note/frame/binding/channel-active/draw/action00",
+              "time.absolute-note/label/binding/channel-active/opacity/action00"
+            ]
+          },
+          "motion": {
+            "status": "applicable",
+            "check_ids": [
+              "time.absolute-note/frame/motion/trajectory/opacity/action00",
+              "time.absolute-note/frame/motion/trajectory/draw/action00",
+              "time.absolute-note/label/motion/trajectory/opacity/action00"
+            ]
+          },
+          "timing": {
+            "status": "applicable",
+            "check_ids": [
+              "time.absolute-note/frame/timing/visibility-events",
+              "time.absolute-note/arrow/timing/visibility-events",
+              "time.absolute-note/label/timing/visibility-events"
+            ]
+          }
+        }
+      },
+      {
+        "id": "timeline.axis",
+        "dimensions": {
+          "presence": {
+            "status": "applicable",
+            "check_ids": [
+              "timeline.axis/axis/presence/drawable",
+              "timeline.axis/ticks/presence/drawable"
+            ]
+          },
+          "attributes": {
+            "status": "applicable",
+            "check_ids": [
+              "timeline.axis/axis/attributes/geometry",
+              "timeline.axis/axis/attributes/paint",
+              "timeline.axis/axis/attributes/size",
+              "timeline.axis/ticks/attributes/geometry",
+              "timeline.axis/ticks/attributes/paint",
+              "timeline.axis/ticks/attributes/size",
+              "timeline.axis/ticks/attributes/text"
+            ]
+          },
+          "relations": {
+            "status": "applicable",
+            "check_ids": [
+              "timeline.axis/axis/relations/relative-position",
+              "timeline.axis/ticks/relations/relative-position"
+            ]
+          },
+          "binding": {
+            "status": "applicable",
+            "check_ids": [
+              "timeline.axis/axis/binding/channel-active/x/action00",
+              "timeline.axis/axis/binding/channel-active/width/action00",
+              "timeline.axis/axis/binding/channel-active/x/action01",
+              "timeline.axis/axis/binding/channel-active/width/action01",
+              "timeline.axis/ticks/binding/channel-active/x/action00",
+              "timeline.axis/ticks/binding/channel-active/width/action00",
+              "timeline.axis/ticks/binding/channel-active/textlength/action00",
+              "timeline.axis/ticks/binding/channel-active/x/action01",
+              "timeline.axis/ticks/binding/channel-active/width/action01",
+              "timeline.axis/ticks/binding/channel-active/textlength/action01"
+            ]
+          },
+          "motion": {
+            "status": "applicable",
+            "check_ids": [
+              "timeline.axis/axis/motion/trajectory/x/action00",
+              "timeline.axis/axis/motion/trajectory/width/action00",
+              "timeline.axis/axis/motion/trajectory/x/action01",
+              "timeline.axis/axis/motion/trajectory/width/action01",
+              "timeline.axis/ticks/motion/trajectory/x/action00",
+              "timeline.axis/ticks/motion/trajectory/width/action00",
+              "timeline.axis/ticks/motion/trajectory/textlength/action00",
+              "timeline.axis/ticks/motion/trajectory/x/action01",
+              "timeline.axis/ticks/motion/trajectory/width/action01",
+              "timeline.axis/ticks/motion/trajectory/textlength/action01"
+            ]
+          },
+          "timing": {
+            "status": "applicable",
+            "check_ids": [
+              "timeline.axis/axis/timing/visibility-events",
+              "timeline.axis/ticks/timing/visibility-events"
+            ]
+          }
+        }
+      },
+      {
+        "id": "timeline.repeat",
+        "dimensions": {
+          "presence": {
+            "status": "applicable",
+            "check_ids": [
+              "timeline.repeat/icons/presence/drawable",
+              "timeline.repeat/diamonds/presence/drawable"
+            ]
+          },
+          "attributes": {
+            "status": "applicable",
+            "check_ids": [
+              "timeline.repeat/icons/attributes/geometry",
+              "timeline.repeat/icons/attributes/paint",
+              "timeline.repeat/icons/attributes/size",
+              "timeline.repeat/diamonds/attributes/geometry",
+              "timeline.repeat/diamonds/attributes/paint",
+              "timeline.repeat/diamonds/attributes/size"
+            ]
+          },
+          "relations": {
+            "status": "applicable",
+            "check_ids": [
+              "timeline.repeat/icons/relations/relative-position",
+              "timeline.repeat/diamonds/relations/relative-position"
+            ]
+          },
+          "binding": {
+            "status": "applicable",
+            "check_ids": [
+              "timeline.repeat/icons/binding/channel-active/x/action01",
+              "timeline.repeat/diamonds/binding/channel-active/x/action01"
+            ]
+          },
+          "motion": {
+            "status": "applicable",
+            "check_ids": [
+              "timeline.repeat/icons/motion/trajectory/x/action01",
+              "timeline.repeat/diamonds/motion/trajectory/x/action01"
+            ]
+          },
+          "timing": {
+            "status": "applicable",
+            "check_ids": [
+              "timeline.repeat/icons/timing/visibility-events",
+              "timeline.repeat/diamonds/timing/visibility-events"
+            ]
+          }
+        }
+      },
+      {
+        "id": "timeline.playhead",
+        "dimensions": {
+          "presence": {
+            "status": "applicable",
+            "check_ids": [
+              "timeline.playhead/content/presence/drawable"
+            ]
+          },
+          "attributes": {
+            "status": "applicable",
+            "check_ids": [
+              "timeline.playhead/content/attributes/geometry",
+              "timeline.playhead/content/attributes/paint",
+              "timeline.playhead/content/attributes/size"
+            ]
+          },
+          "relations": {
+            "status": "applicable",
+            "check_ids": [
+              "timeline.playhead/content/relations/relative-position"
+            ]
+          },
+          "binding": {
+            "status": "applicable",
+            "check_ids": [
+              "timeline.playhead/content/binding/channel-active/opacity/action00"
+            ]
+          },
+          "motion": {
+            "status": "applicable",
+            "check_ids": [
+              "timeline.playhead/content/motion/trajectory/opacity/action00"
+            ]
+          },
+          "timing": {
+            "status": "applicable",
+            "check_ids": [
+              "timeline.playhead/content/timing/visibility-events"
+            ]
+          }
+        }
+      },
+      {
+        "id": "subtitles",
+        "dimensions": {
+          "presence": {
+            "status": "applicable",
+            "check_ids": [
+              "subtitles/content/presence/drawable"
+            ]
+          },
+          "attributes": {
+            "status": "applicable",
+            "check_ids": [
+              "subtitles/content/attributes/geometry",
+              "subtitles/content/attributes/paint",
+              "subtitles/content/attributes/size",
+              "subtitles/content/attributes/text"
+            ]
+          },
+          "relations": {
+            "status": "applicable",
+            "check_ids": [
+              "subtitles/content/relations/relative-position"
+            ]
+          },
+          "binding": {
+            "status": "applicable",
+            "check_ids": [
+              "subtitles/content/binding/channel-active/opacity/action00"
+            ]
+          },
+          "motion": {
+            "status": "applicable",
+            "check_ids": [
+              "subtitles/content/motion/trajectory/opacity/action00"
+            ]
+          },
+          "timing": {
+            "status": "applicable",
+            "check_ids": [
+              "subtitles/content/timing/visibility-events"
+            ]
+          }
+        }
+      }
+    ]
+  },
+  "case_id": "reconstruct-motion-svg-tutorial",
+  "rubric_version": "1.0.2",
+  "inputs": {
+    "source_sha256": {
+      "reference": {
+        "package-lock.json": "484f1ddf345a050bea4b3b8b0dea81e9a386b8689c20795b3db5df582aebf250",
+        "package.json": "4dcf06eb0458f3f00823d3bd9ac75967119ed36b7cd64223c34bf18d788354bc",
+        "remotion.config.ts": "a53d0ad65bd844d7f01a0b18d654d54ef70c0343c1832c71c5cd719f00c97a6d",
+        "src/Boxes.tsx": "bcb5bf1795aacb8f69e1502ada35ac6693c7863be4c418309afa281a66a66f77",
+        "src/Card.tsx": "170c9e6fa38bf8a0c6b8336bd98605366c267f2b26840c7a659ece447f434634",
+        "src/Code.tsx": "756ee0f8eed07f124731e1aaf1a105a6407231af125702acc47526c4344b70b9",
+        "src/Editor.tsx": "c184d26e9b6721aed84d326762f47aa988e1828fbb7b2002c5a92912e677f180",
+        "src/Root.tsx": "ff14f08635c22563a5b703d0f901be6d103916da9fe116e975f2b7da58aa65ad",
+        "src/Tree.tsx": "08bd377e311c6b66ef977b396cd7cd5423989f22533da577871f259602263891",
+        "src/Video.tsx": "7b18418aa262f1092c08bafd86616cd7f48b2c251525cbd58db5e94139953858",
+        "src/data.ts": "7407bb29c935d14b64e6033fdfb486229d8e1198996046b914d8a020937ea2ed",
+        "src/index.ts": "8ad7cfb50e32546485a1a2ef5e468e5b6bdee2bc5c9b92d08882f96e3750b4a3",
+        "src/kit.tsx": "8e9b6bd1ad13da784f6556ff71046faf0257842d8f4f37728c27da13a0944492",
+        "src/theme.ts": "0c2c9cb0b49cd71df96773c167220112b77032e16edacff08eb0daa488690608",
+        "src/util.ts": "86585802d6a5cad34655daf7ee5e85816fcc66d7039dddd5c61926145b10b0d6",
+        "tsconfig.json": "2ead50c0ff13a24b5a3dde7a959d9032f0da09030b3c190e012f6c01d371c78e"
+      },
+      "replica": {
+        "package-lock.json": "6895fd1e7f0d2d1184759751aa59d80c70e9e2c9fa4d74c594c0519bdcb50d2e",
+        "package.json": "dcb2bdb8f719d281690634bbe3853904e88b825e61dc1d58e3961c839bf7f393",
+        "remotion.config.ts": "200c7914526b14a7178c811ca6edd9ecd77210a24c2286e3c51c2549c0fffd85",
+        "src/Replica.tsx": "365308ef92fac153835b675c27ae24c6f0366b059cf1c11cb3ab1fe4c2d494c0",
+        "src/index.tsx": "eb8e3cd8ea3f136e754e8742e38522976bbe42cb2e0a48181071a57f12d4e3f8",
+        "src/provided-fonts.css": "313703d7263cab158257e988259b3a90de77cf88d06a6da5e6df97a090525da8",
+        "tsconfig.json": "d4a88b6e2a7060356201d9ae8a7fa11782b9f6ff1b4a5580f10ee09d59fc80af"
+      }
+    },
+    "reference_composition": {
+      "entry": "src/Video.tsx",
+      "export": "Video",
+      "fps": 30.0,
+      "width": 1920,
+      "height": 1080,
+      "props": {},
+      "durationInFrames": 1920,
+      "time_offset_seconds": 0,
+      "asset_roots": [
+        "/tests/assets"
+      ]
+    },
+    "replica_composition": {
+      "entry": "src/Replica.tsx",
+      "export": "Replica",
+      "fps": 30.0,
+      "width": 1920,
+      "height": 1080,
+      "props": {},
+      "durationInFrames": 1920,
+      "time_offset_seconds": 0,
+      "asset_roots": [
+        "/tests/assets"
+      ]
+    }
+  },
+  "scope": "Declared source checks"
+}
