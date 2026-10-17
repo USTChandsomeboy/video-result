@@ -1,0 +1,3679 @@
+{
+  "case_id": "western-duel",
+  "status": "valid",
+  "total": 21.75794948695414,
+  "dimensions": {
+    "presence": 74.25072284953119,
+    "attributes": 46.395968152954715,
+    "relations": 54.553030687305565,
+    "binding": 39.241650322184206,
+    "motion": 1.8122473716066825,
+    "timing": 60.243674311729265
+  },
+  "weights": {
+    "presence": 0.05,
+    "attributes": 0.05,
+    "relations": 0.05,
+    "binding": 0.15,
+    "motion": 0.6,
+    "timing": 0.1
+  },
+  "coverage": {
+    "resolved": 3383,
+    "declared": 3383,
+    "weighted": 1.0,
+    "measured_weighted": 1.0
+  },
+  "rubric_version": "1.0.0-strict-v2",
+  "score_classification": "calibrated_source_score",
+  "summary": "212 个公开对象，3383 / 3383 项已得到数值。",
+  "objects": [
+    {
+      "id": "vista.sky",
+      "name": "日落天空与高空星点",
+      "dimensions": {
+        "presence": 65.51724137931035,
+        "attributes": 41.30559520131605,
+        "relations": 20.4134476882816,
+        "binding": 64.16666666666667,
+        "motion": 0.0,
+        "timing": 0.0
+      },
+      "scene": "vista",
+      "time_range_seconds": [
+        0.0,
+        5.5
+      ]
+    },
+    {
+      "id": "vista.sun",
+      "name": "太阳与光晕",
+      "dimensions": {
+        "presence": 100.0,
+        "attributes": 58.21364890776381,
+        "relations": 94.19606771888711,
+        "binding": 71.03174603174604,
+        "motion": 0.0,
+        "timing": 100.0
+      },
+      "scene": "vista",
+      "time_range_seconds": [
+        0.0,
+        5.5
+      ]
+    },
+    {
+      "id": "vista.clouds",
+      "name": "横向云层",
+      "dimensions": {
+        "presence": 66.66666666666667,
+        "attributes": 38.190430864096996,
+        "relations": 69.17698593192048,
+        "binding": 40.4040404040404,
+        "motion": 0.0,
+        "timing": 99.99999999999999
+      },
+      "scene": "vista",
+      "time_range_seconds": [
+        0.0,
+        5.5
+      ]
+    },
+    {
+      "id": "vista.vultures",
+      "name": "盘旋秃鹫",
+      "dimensions": {
+        "presence": 100.0,
+        "attributes": 65.84148436350905,
+        "relations": 73.92068871608579,
+        "binding": 100.0,
+        "motion": 0.0,
+        "timing": 100.0
+      },
+      "scene": "vista",
+      "time_range_seconds": [
+        0.0,
+        5.5
+      ]
+    },
+    {
+      "id": "vista.rays",
+      "name": "放射光束",
+      "dimensions": {
+        "presence": 75.0,
+        "attributes": 33.32150605807666,
+        "relations": 69.98522487315564,
+        "binding": 51.30890052356021,
+        "motion": 0.0,
+        "timing": 100.0
+      },
+      "scene": "vista",
+      "time_range_seconds": [
+        0.0,
+        5.5
+      ]
+    },
+    {
+      "id": "vista.ranges-1",
+      "name": "远处台地山脉（第1组）",
+      "dimensions": {
+        "presence": 19.999999999999996,
+        "attributes": 1.8074945929858863,
+        "relations": 0.0,
+        "binding": 51.973684210526315,
+        "motion": 0.0,
+        "timing": 29.999999999999982
+      },
+      "scene": "vista",
+      "time_range_seconds": [
+        0.0,
+        5.5
+      ]
+    },
+    {
+      "id": "vista.ranges-2",
+      "name": "远处台地山脉（第2组）",
+      "dimensions": {
+        "presence": 21.052631578947366,
+        "attributes": 4.0768323943172415,
+        "relations": 13.319672822571869,
+        "binding": 43.8006230529595,
+        "motion": 0.0,
+        "timing": 31.578947368421066
+      },
+      "scene": "vista",
+      "time_range_seconds": [
+        0.0,
+        5.5
+      ]
+    },
+    {
+      "id": "vista.ranges-3",
+      "name": "远处台地山脉（第3组）",
+      "dimensions": {
+        "presence": 21.052631578947366,
+        "attributes": 3.4232486421062704,
+        "relations": 6.743670513631907,
+        "binding": 63.541666666666664,
+        "motion": 0.0,
+        "timing": 31.578947368421066
+      },
+      "scene": "vista",
+      "time_range_seconds": [
+        0.0,
+        5.5
+      ]
+    },
+    {
+      "id": "vista.ground",
+      "name": "沙地",
+      "dimensions": {
+        "presence": 61.15702479338842,
+        "attributes": 32.62145914489773,
+        "relations": 35.87210614211591,
+        "binding": 77.8965053763441,
+        "motion": 0.0,
+        "timing": 34.09090909090909
+      },
+      "scene": "vista",
+      "time_range_seconds": [
+        0.0,
+        5.5
+      ]
+    },
+    {
+      "id": "vista.shimmer",
+      "name": "地平线热浪细线",
+      "dimensions": {
+        "presence": 71.42857142857143,
+        "attributes": 71.8273643054291,
+        "relations": 93.28116747074188,
+        "binding": 100.0,
+        "motion": 0.0,
+        "timing": 100.0
+      },
+      "scene": "vista",
+      "time_range_seconds": [
+        0.0,
+        5.5
+      ]
+    },
+    {
+      "id": "vista.town",
+      "name": "远方小镇轮廓",
+      "dimensions": {
+        "presence": 85.71428571428572,
+        "attributes": 75.31003793270358,
+        "relations": 88.53377056454602,
+        "binding": 96.66666666666667,
+        "motion": 0.0,
+        "timing": 100.0
+      },
+      "scene": "vista",
+      "time_range_seconds": [
+        0.0,
+        5.5
+      ]
+    },
+    {
+      "id": "vista.hill-1",
+      "name": "前景沙丘（第1组）",
+      "dimensions": {
+        "presence": 100.0,
+        "attributes": 68.90072282505292,
+        "relations": 77.12808974423135,
+        "binding": 100.0,
+        "motion": 0.0,
+        "timing": 100.0
+      },
+      "scene": "vista",
+      "time_range_seconds": [
+        0.0,
+        5.5
+      ]
+    },
+    {
+      "id": "vista.dust-1",
+      "name": "漂移沙尘团（第1组）",
+      "dimensions": {
+        "presence": 58.33333333333333,
+        "attributes": 20.269428875227526,
+        "relations": 1.5148359578708541,
+        "binding": 41.880341880341874,
+        "motion": 0.0,
+        "timing": 0.0
+      },
+      "scene": "vista",
+      "time_range_seconds": [
+        0.0,
+        5.5
+      ]
+    },
+    {
+      "id": "vista.hill-2",
+      "name": "前景沙丘（第2组）",
+      "dimensions": {
+        "presence": 100.0,
+        "attributes": 38.481990983617074,
+        "relations": 68.2120664680945,
+        "binding": 100.0,
+        "motion": 0.0,
+        "timing": 12.499875000000143
+      },
+      "scene": "vista",
+      "time_range_seconds": [
+        0.0,
+        5.5
+      ]
+    },
+    {
+      "id": "vista.tumbleweed",
+      "name": "滚动风滚草",
+      "dimensions": {
+        "presence": 100.0,
+        "attributes": 49.41885246416783,
+        "relations": 72.69347771163922,
+        "binding": 80.71428571428572,
+        "motion": 0.0,
+        "timing": 0.0
+      },
+      "scene": "vista",
+      "time_range_seconds": [
+        0.0,
+        5.5
+      ]
+    },
+    {
+      "id": "vista.motes",
+      "name": "漂浮微尘与散景",
+      "dimensions": {
+        "presence": 74.0,
+        "attributes": 62.90523289919165,
+        "relations": 30.217208979826243,
+        "binding": 74.59917544663307,
+        "motion": 0.0,
+        "timing": 0.0
+      },
+      "scene": "vista",
+      "time_range_seconds": [
+        0.0,
+        5.5
+      ]
+    },
+    {
+      "id": "vista.grass-1",
+      "name": "随风摆动的前景草（第1组）",
+      "dimensions": {
+        "presence": 100.0,
+        "attributes": 48.26597597984555,
+        "relations": 94.27697776058474,
+        "binding": 100.0,
+        "motion": 0.0,
+        "timing": 100.0
+      },
+      "scene": "vista",
+      "time_range_seconds": [
+        0.0,
+        5.5
+      ]
+    },
+    {
+      "id": "vista.grass-2",
+      "name": "随风摆动的前景草（第2组）",
+      "dimensions": {
+        "presence": 100.0,
+        "attributes": 69.42664575105316,
+        "relations": 89.71114342757048,
+        "binding": 100.0,
+        "motion": 0.0,
+        "timing": 100.0
+      },
+      "scene": "vista",
+      "time_range_seconds": [
+        0.0,
+        5.5
+      ]
+    },
+    {
+      "id": "vista.flare",
+      "name": "横向镜头光晕与光斑",
+      "dimensions": {
+        "presence": 85.71428571428572,
+        "attributes": 59.102910151722575,
+        "relations": 82.90706536913486,
+        "binding": 51.785714285714285,
+        "motion": 0.0,
+        "timing": 100.0
+      },
+      "scene": "vista",
+      "time_range_seconds": [
+        0.0,
+        5.5
+      ]
+    },
+    {
+      "id": "vista.dust-2",
+      "name": "漂移沙尘团（第2组）",
+      "dimensions": {
+        "presence": 62.5,
+        "attributes": 18.732884357815532,
+        "relations": 0.0,
+        "binding": 36.25000000000001,
+        "motion": 0.0,
+        "timing": 0.0
+      },
+      "scene": "vista",
+      "time_range_seconds": [
+        0.0,
+        5.5
+      ]
+    },
+    {
+      "id": "vista.windmill",
+      "name": "转动风车",
+      "dimensions": {
+        "presence": 100.0,
+        "attributes": 46.80640133890825,
+        "relations": 64.15882224069885,
+        "binding": 100.0,
+        "motion": 0.0,
+        "timing": 100.0
+      },
+      "scene": "vista",
+      "time_range_seconds": [
+        0.0,
+        5.5
+      ]
+    },
+    {
+      "id": "vista.water-tower",
+      "name": "远方水塔",
+      "dimensions": {
+        "presence": 100.0,
+        "attributes": 69.23581639954583,
+        "relations": 66.63675645875452,
+        "binding": 100.0,
+        "motion": 0.0,
+        "timing": 100.0
+      },
+      "scene": "vista",
+      "time_range_seconds": [
+        0.0,
+        5.5
+      ]
+    },
+    {
+      "id": "vista.cactus-49",
+      "name": "前景仙人掌",
+      "dimensions": {
+        "presence": 100.0,
+        "attributes": 72.98520423869311,
+        "relations": 80.17685431093823,
+        "binding": 100.0,
+        "motion": 0.0,
+        "timing": 100.0
+      },
+      "scene": "vista",
+      "time_range_seconds": [
+        0.0,
+        5.5
+      ]
+    },
+    {
+      "id": "vista.cactus-50",
+      "name": "前景仙人掌",
+      "dimensions": {
+        "presence": 100.0,
+        "attributes": 70.6799364270364,
+        "relations": 79.09188191093762,
+        "binding": 100.0,
+        "motion": 0.0,
+        "timing": 100.0
+      },
+      "scene": "vista",
+      "time_range_seconds": [
+        0.0,
+        5.5
+      ]
+    },
+    {
+      "id": "vista.brush",
+      "name": "前景灌木及仙人掌",
+      "dimensions": {
+        "presence": 0.0,
+        "attributes": 69.49807528249715,
+        "relations": 0.0,
+        "binding": 100.0,
+        "motion": 0.0,
+        "timing": 0.0
+      },
+      "scene": "vista",
+      "time_range_seconds": [
+        0.0,
+        5.5
+      ]
+    },
+    {
+      "id": "street.sky",
+      "name": "日落天空与高空星点",
+      "dimensions": {
+        "presence": 70.37037037037037,
+        "attributes": 39.44839602007203,
+        "relations": 23.72187740086391,
+        "binding": 0.0,
+        "motion": 0.0,
+        "timing": 100.0
+      },
+      "scene": "street",
+      "time_range_seconds": [
+        5.5,
+        9.5
+      ]
+    },
+    {
+      "id": "street.sun",
+      "name": "太阳与光晕",
+      "dimensions": {
+        "presence": 100.0,
+        "attributes": 58.67373850362526,
+        "relations": 88.67229428037318,
+        "binding": 0.0,
+        "motion": 0.0,
+        "timing": 100.0
+      },
+      "scene": "street",
+      "time_range_seconds": [
+        5.5,
+        9.5
+      ]
+    },
+    {
+      "id": "street.clouds",
+      "name": "横向云层",
+      "dimensions": {
+        "presence": 83.33333333333334,
+        "attributes": 23.576783082208856,
+        "relations": 40.47576542534569,
+        "binding": 32.83582089552239,
+        "motion": 0.0,
+        "timing": 100.0
+      },
+      "scene": "street",
+      "time_range_seconds": [
+        5.5,
+        9.5
+      ]
+    },
+    {
+      "id": "street.ranges",
+      "name": "远处台地山脉",
+      "dimensions": {
+        "presence": 33.333333333333336,
+        "attributes": 4.803480009723531,
+        "relations": 8.636800117330205,
+        "binding": null,
+        "motion": null,
+        "timing": 49.99999999999998
+      },
+      "scene": "street",
+      "time_range_seconds": [
+        5.5,
+        9.5
+      ]
+    },
+    {
+      "id": "street.ground",
+      "name": "沙地",
+      "dimensions": {
+        "presence": 70.37037037037037,
+        "attributes": 32.9819658663084,
+        "relations": 39.266828069977365,
+        "binding": null,
+        "motion": null,
+        "timing": 100.0
+      },
+      "scene": "street",
+      "time_range_seconds": [
+        5.5,
+        9.5
+      ]
+    },
+    {
+      "id": "street.rays-1",
+      "name": "放射光束（第1组）",
+      "dimensions": {
+        "presence": 75.0,
+        "attributes": 33.151221909278796,
+        "relations": 59.202208223402565,
+        "binding": 0.0,
+        "motion": 0.0,
+        "timing": 100.0
+      },
+      "scene": "street",
+      "time_range_seconds": [
+        5.5,
+        9.5
+      ]
+    },
+    {
+      "id": "street.street-ground",
+      "name": "透视车辙与石子",
+      "dimensions": {
+        "presence": 26.086956521739136,
+        "attributes": 27.040240933182684,
+        "relations": 16.310547115385127,
+        "binding": 0.0,
+        "motion": 0.0,
+        "timing": 0.0
+      },
+      "scene": "street",
+      "time_range_seconds": [
+        5.5,
+        9.5
+      ]
+    },
+    {
+      "id": "street.buildings",
+      "name": "街道两侧木建筑",
+      "dimensions": {
+        "presence": 66.52360515021459,
+        "attributes": 34.27169053427858,
+        "relations": 52.526199692071316,
+        "binding": 0.0,
+        "motion": 0.0,
+        "timing": 20.49356330472102
+      },
+      "scene": "street",
+      "time_range_seconds": [
+        5.5,
+        9.5
+      ]
+    },
+    {
+      "id": "street.rays-2",
+      "name": "放射光束（第2组）",
+      "dimensions": {
+        "presence": 35.71428571428571,
+        "attributes": 12.20591142885225,
+        "relations": 32.62854139940561,
+        "binding": 0.0,
+        "motion": 0.0,
+        "timing": 53.571428571428555
+      },
+      "scene": "street",
+      "time_range_seconds": [
+        5.5,
+        9.5
+      ]
+    },
+    {
+      "id": "street.dust-1",
+      "name": "漂移沙尘团（第1组）",
+      "dimensions": {
+        "presence": 70.0,
+        "attributes": 29.87769923123643,
+        "relations": 17.5704346511605,
+        "binding": 37.23404255319149,
+        "motion": 0.0,
+        "timing": 0.0
+      },
+      "scene": "street",
+      "time_range_seconds": [
+        5.5,
+        9.5
+      ]
+    },
+    {
+      "id": "street.stranger",
+      "name": "无名客全身与独立肢体",
+      "dimensions": {
+        "presence": 93.33333333333333,
+        "attributes": 47.22983176945673,
+        "relations": 72.17261779236676,
+        "binding": 92.00854700854701,
+        "motion": 0.04630723621399863,
+        "timing": 0.0
+      },
+      "scene": "street",
+      "time_range_seconds": [
+        5.5,
+        9.5
+      ]
+    },
+    {
+      "id": "street.dust-2",
+      "name": "漂移沙尘团（第2组）",
+      "dimensions": {
+        "presence": 83.33333333333334,
+        "attributes": 33.850215139162216,
+        "relations": 0.0,
+        "binding": 41.379310344827594,
+        "motion": 0.0,
+        "timing": 0.0
+      },
+      "scene": "street",
+      "time_range_seconds": [
+        5.5,
+        9.5
+      ]
+    },
+    {
+      "id": "street.motes",
+      "name": "漂浮微尘与散景",
+      "dimensions": {
+        "presence": 85.1063829787234,
+        "attributes": 68.76863219297118,
+        "relations": 34.417254020104444,
+        "binding": 66.07012035583463,
+        "motion": 0.0,
+        "timing": 0.0
+      },
+      "scene": "street",
+      "time_range_seconds": [
+        5.5,
+        9.5
+      ]
+    },
+    {
+      "id": "street.flare",
+      "name": "横向镜头光晕与光斑",
+      "dimensions": {
+        "presence": 85.71428571428572,
+        "attributes": 58.24609250344522,
+        "relations": 69.2724282248752,
+        "binding": null,
+        "motion": null,
+        "timing": 100.0
+      },
+      "scene": "street",
+      "time_range_seconds": [
+        5.5,
+        9.5
+      ]
+    },
+    {
+      "id": "arrival.sky",
+      "name": "日落天空与高空星点",
+      "dimensions": {
+        "presence": 66.66666666666667,
+        "attributes": 39.142732807486404,
+        "relations": 26.059395013031356,
+        "binding": 0.0,
+        "motion": 0.0,
+        "timing": 0.0
+      },
+      "scene": "arrival",
+      "time_range_seconds": [
+        9.5,
+        13.5
+      ]
+    },
+    {
+      "id": "arrival.sun",
+      "name": "太阳与光晕",
+      "dimensions": {
+        "presence": 100.0,
+        "attributes": 48.27277863267485,
+        "relations": 71.75450239068707,
+        "binding": 0.0,
+        "motion": 0.0,
+        "timing": 100.0
+      },
+      "scene": "arrival",
+      "time_range_seconds": [
+        9.5,
+        13.5
+      ]
+    },
+    {
+      "id": "arrival.clouds",
+      "name": "横向云层",
+      "dimensions": {
+        "presence": 44.44444444444444,
+        "attributes": 13.990310222615364,
+        "relations": 23.93740483510233,
+        "binding": 22.38805970149254,
+        "motion": 0.0,
+        "timing": 66.66666666666667
+      },
+      "scene": "arrival",
+      "time_range_seconds": [
+        9.5,
+        13.5
+      ]
+    },
+    {
+      "id": "arrival.rays",
+      "name": "放射光束",
+      "dimensions": {
+        "presence": 75.0,
+        "attributes": 27.165708940945102,
+        "relations": 70.84350592459008,
+        "binding": 0.0,
+        "motion": 0.0,
+        "timing": 100.0
+      },
+      "scene": "arrival",
+      "time_range_seconds": [
+        9.5,
+        13.5
+      ]
+    },
+    {
+      "id": "arrival.ranges",
+      "name": "远处台地山脉",
+      "dimensions": {
+        "presence": 31.57894736842105,
+        "attributes": 3.653462856201814,
+        "relations": 8.788452165651861,
+        "binding": 0.0,
+        "motion": 0.0,
+        "timing": 47.36842105263157
+      },
+      "scene": "arrival",
+      "time_range_seconds": [
+        9.5,
+        13.5
+      ]
+    },
+    {
+      "id": "arrival.ground",
+      "name": "沙地",
+      "dimensions": {
+        "presence": 58.67768595041323,
+        "attributes": 29.83903229215046,
+        "relations": 26.238876302001504,
+        "binding": 0.0,
+        "motion": 0.0,
+        "timing": 88.01652892561982
+      },
+      "scene": "arrival",
+      "time_range_seconds": [
+        9.5,
+        13.5
+      ]
+    },
+    {
+      "id": "arrival.dust-1",
+      "name": "漂移沙尘团（第1组）",
+      "dimensions": {
+        "presence": 70.0,
+        "attributes": 22.854056208091183,
+        "relations": 0.0,
+        "binding": 35.1063829787234,
+        "motion": 0.0,
+        "timing": 0.0
+      },
+      "scene": "arrival",
+      "time_range_seconds": [
+        9.5,
+        13.5
+      ]
+    },
+    {
+      "id": "arrival.stranger",
+      "name": "无名客全身与独立肢体",
+      "dimensions": {
+        "presence": 83.33333333333334,
+        "attributes": 33.562933669783256,
+        "relations": 34.152201162159535,
+        "binding": 91.41025641025641,
+        "motion": 0.0,
+        "timing": 0.0
+      },
+      "scene": "arrival",
+      "time_range_seconds": [
+        9.5,
+        13.5
+      ]
+    },
+    {
+      "id": "arrival.dust-2",
+      "name": "漂移沙尘团（第2组）",
+      "dimensions": {
+        "presence": 71.42857142857143,
+        "attributes": 22.87360211061009,
+        "relations": 0.0,
+        "binding": 35.29411764705882,
+        "motion": 0.0,
+        "timing": 0.0
+      },
+      "scene": "arrival",
+      "time_range_seconds": [
+        9.5,
+        13.5
+      ]
+    },
+    {
+      "id": "arrival.motes",
+      "name": "漂浮微尘与散景",
+      "dimensions": {
+        "presence": 66.66666666666667,
+        "attributes": 57.11063283433543,
+        "relations": 23.0831121099605,
+        "binding": 56.233421750663126,
+        "motion": 0.0,
+        "timing": 0.0
+      },
+      "scene": "arrival",
+      "time_range_seconds": [
+        9.5,
+        13.5
+      ]
+    },
+    {
+      "id": "arrival.grass",
+      "name": "随风摆动的前景草",
+      "dimensions": {
+        "presence": 100.0,
+        "attributes": 49.23880449545031,
+        "relations": 88.01638641636421,
+        "binding": 100.0,
+        "motion": 0.0,
+        "timing": 100.0
+      },
+      "scene": "arrival",
+      "time_range_seconds": [
+        9.5,
+        13.5
+      ]
+    },
+    {
+      "id": "opponent.sky",
+      "name": "日落天空与高空星点",
+      "dimensions": {
+        "presence": 70.83333333333333,
+        "attributes": 44.38180073401567,
+        "relations": 24.337668581594947,
+        "binding": 0.0,
+        "motion": 0.0,
+        "timing": 100.0
+      },
+      "scene": "opponent",
+      "time_range_seconds": [
+        13.5,
+        17.5
+      ]
+    },
+    {
+      "id": "opponent.sun",
+      "name": "太阳与光晕",
+      "dimensions": {
+        "presence": 100.0,
+        "attributes": 55.00384164630002,
+        "relations": 89.72236826808658,
+        "binding": 0.0,
+        "motion": 0.0,
+        "timing": 100.0
+      },
+      "scene": "opponent",
+      "time_range_seconds": [
+        13.5,
+        17.5
+      ]
+    },
+    {
+      "id": "opponent.clouds",
+      "name": "横向云层",
+      "dimensions": {
+        "presence": 75.0,
+        "attributes": 25.16137467554663,
+        "relations": 37.341423662135924,
+        "binding": 29.411764705882355,
+        "motion": 0.0,
+        "timing": 100.0
+      },
+      "scene": "opponent",
+      "time_range_seconds": [
+        13.5,
+        17.5
+      ]
+    },
+    {
+      "id": "opponent.ranges",
+      "name": "远处台地山脉",
+      "dimensions": {
+        "presence": 31.57894736842105,
+        "attributes": 4.62944145006745,
+        "relations": 8.610597519202525,
+        "binding": null,
+        "motion": null,
+        "timing": 47.36842105263157
+      },
+      "scene": "opponent",
+      "time_range_seconds": [
+        13.5,
+        17.5
+      ]
+    },
+    {
+      "id": "opponent.ground",
+      "name": "沙地",
+      "dimensions": {
+        "presence": 70.37037037037037,
+        "attributes": 31.975495116968517,
+        "relations": 39.92816039162472,
+        "binding": null,
+        "motion": null,
+        "timing": 100.0
+      },
+      "scene": "opponent",
+      "time_range_seconds": [
+        13.5,
+        17.5
+      ]
+    },
+    {
+      "id": "opponent.street-ground",
+      "name": "透视车辙与石子",
+      "dimensions": {
+        "presence": 34.285714285714285,
+        "attributes": 30.15317967178571,
+        "relations": 12.922393732084599,
+        "binding": 0.0,
+        "motion": 0.0,
+        "timing": 0.0
+      },
+      "scene": "opponent",
+      "time_range_seconds": [
+        13.5,
+        17.5
+      ]
+    },
+    {
+      "id": "opponent.buildings",
+      "name": "街道两侧木建筑",
+      "dimensions": {
+        "presence": 70.83333333333333,
+        "attributes": 34.362049684281935,
+        "relations": 51.778869666555636,
+        "binding": 0.0,
+        "motion": 0.0,
+        "timing": 29.166666666666686
+      },
+      "scene": "opponent",
+      "time_range_seconds": [
+        13.5,
+        17.5
+      ]
+    },
+    {
+      "id": "opponent.dust",
+      "name": "漂移沙尘团",
+      "dimensions": {
+        "presence": 70.0,
+        "attributes": 29.87160360105591,
+        "relations": 11.468366297549807,
+        "binding": 37.07865168539326,
+        "motion": 0.0,
+        "timing": 0.0
+      },
+      "scene": "opponent",
+      "time_range_seconds": [
+        13.5,
+        17.5
+      ]
+    },
+    {
+      "id": "opponent.jack",
+      "name": "黑杰克全身与独立肢体",
+      "dimensions": {
+        "presence": 72.41379310344827,
+        "attributes": 25.969998401167857,
+        "relations": 26.335830620779056,
+        "binding": 92.86666666666666,
+        "motion": 0.0,
+        "timing": 73.25581395348836
+      },
+      "scene": "opponent",
+      "time_range_seconds": [
+        13.5,
+        17.5
+      ]
+    },
+    {
+      "id": "opponent.tumbleweed",
+      "name": "滚动风滚草",
+      "dimensions": {
+        "presence": 100.0,
+        "attributes": 36.28824834752065,
+        "relations": 22.30520818424269,
+        "binding": 70.71428571428572,
+        "motion": 0.0,
+        "timing": 0.0
+      },
+      "scene": "opponent",
+      "time_range_seconds": [
+        13.5,
+        17.5
+      ]
+    },
+    {
+      "id": "opponent.motes",
+      "name": "漂浮微尘与散景",
+      "dimensions": {
+        "presence": 90.9090909090909,
+        "attributes": 74.04404239817777,
+        "relations": 29.323528012980788,
+        "binding": 69.06314024958093,
+        "motion": 0.0,
+        "timing": 7.386374999999965
+      },
+      "scene": "opponent",
+      "time_range_seconds": [
+        13.5,
+        17.5
+      ]
+    },
+    {
+      "id": "opponent.stranger",
+      "name": "无名客全身与独立肢体",
+      "dimensions": {
+        "presence": 90.9090909090909,
+        "attributes": 19.71902175598637,
+        "relations": 32.06322016133817,
+        "binding": 71.9047619047619,
+        "motion": 0.0,
+        "timing": 69.76744186046511
+      },
+      "scene": "opponent",
+      "time_range_seconds": [
+        13.5,
+        17.5
+      ]
+    },
+    {
+      "id": "opponent.flare",
+      "name": "横向镜头光晕与光斑",
+      "dimensions": {
+        "presence": 85.71428571428572,
+        "attributes": 59.782737403518965,
+        "relations": 78.8255168240781,
+        "binding": null,
+        "motion": null,
+        "timing": 100.0
+      },
+      "scene": "opponent",
+      "time_range_seconds": [
+        13.5,
+        17.5
+      ]
+    },
+    {
+      "id": "standoff.sky",
+      "name": "日落天空与高空星点",
+      "dimensions": {
+        "presence": 52.5,
+        "attributes": 33.45883034984516,
+        "relations": 21.01999655716406,
+        "binding": 0.0,
+        "motion": 0.0,
+        "timing": 0.0
+      },
+      "scene": "standoff",
+      "time_range_seconds": [
+        17.5,
+        21.5
+      ]
+    },
+    {
+      "id": "standoff.sun",
+      "name": "太阳与光晕",
+      "dimensions": {
+        "presence": 100.0,
+        "attributes": 57.32810189296699,
+        "relations": 80.99794631070252,
+        "binding": 0.0,
+        "motion": 0.0,
+        "timing": 100.0
+      },
+      "scene": "standoff",
+      "time_range_seconds": [
+        17.5,
+        21.5
+      ]
+    },
+    {
+      "id": "standoff.clouds",
+      "name": "横向云层",
+      "dimensions": {
+        "presence": 50.0,
+        "attributes": 24.698507378366944,
+        "relations": 40.404765008552914,
+        "binding": 23.529411764705888,
+        "motion": 0.0,
+        "timing": 74.99999999999999
+      },
+      "scene": "standoff",
+      "time_range_seconds": [
+        17.5,
+        21.5
+      ]
+    },
+    {
+      "id": "standoff.rays",
+      "name": "放射光束",
+      "dimensions": {
+        "presence": 75.0,
+        "attributes": 31.87081838458861,
+        "relations": 73.11991271069634,
+        "binding": 0.0,
+        "motion": 0.0,
+        "timing": 100.0
+      },
+      "scene": "standoff",
+      "time_range_seconds": [
+        17.5,
+        21.5
+      ]
+    },
+    {
+      "id": "standoff.ranges-1",
+      "name": "远处台地山脉（第1组）",
+      "dimensions": {
+        "presence": 26.315789473684216,
+        "attributes": 3.874594416059863,
+        "relations": 9.251501701151817,
+        "binding": 0.0,
+        "motion": 0.0,
+        "timing": 39.4736842105263
+      },
+      "scene": "standoff",
+      "time_range_seconds": [
+        17.5,
+        21.5
+      ]
+    },
+    {
+      "id": "standoff.ranges-2",
+      "name": "远处台地山脉（第2组）",
+      "dimensions": {
+        "presence": 21.052631578947366,
+        "attributes": 4.244723860173345,
+        "relations": 14.666661915693293,
+        "binding": 0.0,
+        "motion": 0.0,
+        "timing": 31.578947368421066
+      },
+      "scene": "standoff",
+      "time_range_seconds": [
+        17.5,
+        21.5
+      ]
+    },
+    {
+      "id": "standoff.ground",
+      "name": "沙地",
+      "dimensions": {
+        "presence": 59.34959349593496,
+        "attributes": 33.74020330544671,
+        "relations": 36.536288393291535,
+        "binding": 0.0,
+        "motion": 0.0,
+        "timing": 64.43089024390243
+      },
+      "scene": "standoff",
+      "time_range_seconds": [
+        17.5,
+        21.5
+      ]
+    },
+    {
+      "id": "standoff.shimmer",
+      "name": "地平线热浪细线",
+      "dimensions": {
+        "presence": 71.42857142857143,
+        "attributes": 70.5091367877052,
+        "relations": 93.09475781830571,
+        "binding": 100.0,
+        "motion": 0.0,
+        "timing": 100.0
+      },
+      "scene": "standoff",
+      "time_range_seconds": [
+        17.5,
+        21.5
+      ]
+    },
+    {
+      "id": "standoff.dust-1",
+      "name": "漂移沙尘团（第1组）",
+      "dimensions": {
+        "presence": 70.0,
+        "attributes": 30.680282553213864,
+        "relations": 13.499065694306784,
+        "binding": 34.73684210526316,
+        "motion": 0.0,
+        "timing": 0.0
+      },
+      "scene": "standoff",
+      "time_range_seconds": [
+        17.5,
+        21.5
+      ]
+    },
+    {
+      "id": "standoff.stranger",
+      "name": "无名客全身与独立肢体",
+      "dimensions": {
+        "presence": 93.33333333333333,
+        "attributes": 53.5047560148479,
+        "relations": 85.21434490013372,
+        "binding": 90.88217338217338,
+        "motion": 0.0,
+        "timing": 95.45454545454542
+      },
+      "scene": "standoff",
+      "time_range_seconds": [
+        17.5,
+        21.5
+      ]
+    },
+    {
+      "id": "standoff.jack",
+      "name": "黑杰克全身与独立肢体",
+      "dimensions": {
+        "presence": 93.33333333333333,
+        "attributes": 53.911169484376195,
+        "relations": 86.07541757672499,
+        "binding": 91.30952380952382,
+        "motion": 0.0,
+        "timing": 95.45454545454542
+      },
+      "scene": "standoff",
+      "time_range_seconds": [
+        17.5,
+        21.5
+      ]
+    },
+    {
+      "id": "standoff.tumbleweed",
+      "name": "滚动风滚草",
+      "dimensions": {
+        "presence": 100.0,
+        "attributes": 47.78905310160934,
+        "relations": 71.62649531349419,
+        "binding": 76.66666666666667,
+        "motion": 0.0,
+        "timing": 0.0
+      },
+      "scene": "standoff",
+      "time_range_seconds": [
+        17.5,
+        21.5
+      ]
+    },
+    {
+      "id": "standoff.hill",
+      "name": "前景沙丘",
+      "dimensions": {
+        "presence": 100.0,
+        "attributes": 63.94755695374216,
+        "relations": 78.42159377063615,
+        "binding": 0.0,
+        "motion": 0.0,
+        "timing": 100.0
+      },
+      "scene": "standoff",
+      "time_range_seconds": [
+        17.5,
+        21.5
+      ]
+    },
+    {
+      "id": "standoff.dust-2",
+      "name": "漂移沙尘团（第2组）",
+      "dimensions": {
+        "presence": 83.33333333333334,
+        "attributes": 27.55944453079174,
+        "relations": 0.0,
+        "binding": 40.0,
+        "motion": 0.0,
+        "timing": 0.0
+      },
+      "scene": "standoff",
+      "time_range_seconds": [
+        17.5,
+        21.5
+      ]
+    },
+    {
+      "id": "standoff.motes",
+      "name": "漂浮微尘与散景",
+      "dimensions": {
+        "presence": 63.793103448275865,
+        "attributes": 57.22675730472463,
+        "relations": 42.33778071812799,
+        "binding": 48.65276688190212,
+        "motion": 0.0,
+        "timing": 0.0
+      },
+      "scene": "standoff",
+      "time_range_seconds": [
+        17.5,
+        21.5
+      ]
+    },
+    {
+      "id": "standoff.grass",
+      "name": "随风摆动的前景草",
+      "dimensions": {
+        "presence": 100.0,
+        "attributes": 63.398412804508084,
+        "relations": 85.34406242134158,
+        "binding": 100.0,
+        "motion": 0.0,
+        "timing": 100.0
+      },
+      "scene": "standoff",
+      "time_range_seconds": [
+        17.5,
+        21.5
+      ]
+    },
+    {
+      "id": "standoff.flare",
+      "name": "横向镜头光晕与光斑",
+      "dimensions": {
+        "presence": 85.71428571428572,
+        "attributes": 61.00816301481329,
+        "relations": 75.59714248266145,
+        "binding": 0.0,
+        "motion": 0.0,
+        "timing": 100.0
+      },
+      "scene": "standoff",
+      "time_range_seconds": [
+        17.5,
+        21.5
+      ]
+    },
+    {
+      "id": "standoff.brush",
+      "name": "前景灌木及仙人掌",
+      "dimensions": {
+        "presence": 0.0,
+        "attributes": 75.38022329157154,
+        "relations": 0.0,
+        "binding": 0.0,
+        "motion": 0.0,
+        "timing": 0.0
+      },
+      "scene": "standoff",
+      "time_range_seconds": [
+        17.5,
+        21.5
+      ]
+    },
+    {
+      "id": "still.sky",
+      "name": "日落天空与高空星点",
+      "dimensions": {
+        "presence": 33.333333333333336,
+        "attributes": 10.762371429592765,
+        "relations": 52.84495556672885,
+        "binding": 0.0,
+        "motion": 0.0,
+        "timing": 8.333312499999973
+      },
+      "scene": "still",
+      "time_range_seconds": [
+        26.166666666666668,
+        26.666666666666668
+      ]
+    },
+    {
+      "id": "still.sun",
+      "name": "太阳与光晕",
+      "dimensions": {
+        "presence": 100.0,
+        "attributes": 58.738966480984416,
+        "relations": 79.68795839480543,
+        "binding": 0.0,
+        "motion": 0.0,
+        "timing": 100.0
+      },
+      "scene": "still",
+      "time_range_seconds": [
+        26.166666666666668,
+        26.666666666666668
+      ]
+    },
+    {
+      "id": "still.clouds",
+      "name": "横向云层",
+      "dimensions": {
+        "presence": 50.0,
+        "attributes": 24.781200163831542,
+        "relations": 40.96670990577643,
+        "binding": 29.824561403508774,
+        "motion": 0.0,
+        "timing": 74.99999999999999
+      },
+      "scene": "still",
+      "time_range_seconds": [
+        26.166666666666668,
+        26.666666666666668
+      ]
+    },
+    {
+      "id": "still.rays",
+      "name": "放射光束",
+      "dimensions": {
+        "presence": 75.0,
+        "attributes": 32.52620827541976,
+        "relations": 73.72262234641038,
+        "binding": 0.0,
+        "motion": 0.0,
+        "timing": 100.0
+      },
+      "scene": "still",
+      "time_range_seconds": [
+        26.166666666666668,
+        26.666666666666668
+      ]
+    },
+    {
+      "id": "still.ranges-1",
+      "name": "远处台地山脉（第1组）",
+      "dimensions": {
+        "presence": 26.315789473684216,
+        "attributes": 3.4387659657009566,
+        "relations": 8.282112697394549,
+        "binding": 0.0,
+        "motion": 0.0,
+        "timing": 39.4736842105263
+      },
+      "scene": "still",
+      "time_range_seconds": [
+        26.166666666666668,
+        26.666666666666668
+      ]
+    },
+    {
+      "id": "still.ranges-2",
+      "name": "远处台地山脉（第2组）",
+      "dimensions": {
+        "presence": 21.052631578947366,
+        "attributes": 4.125367405043006,
+        "relations": 15.535029375632147,
+        "binding": 0.0,
+        "motion": 0.0,
+        "timing": 31.578947368421066
+      },
+      "scene": "still",
+      "time_range_seconds": [
+        26.166666666666668,
+        26.666666666666668
+      ]
+    },
+    {
+      "id": "still.ground",
+      "name": "沙地",
+      "dimensions": {
+        "presence": 58.69565217391304,
+        "attributes": 33.350821932994116,
+        "relations": 32.18990403581532,
+        "binding": 0.0,
+        "motion": 0.0,
+        "timing": 83.6956385869565
+      },
+      "scene": "still",
+      "time_range_seconds": [
+        26.166666666666668,
+        26.666666666666668
+      ]
+    },
+    {
+      "id": "still.shimmer",
+      "name": "地平线热浪细线",
+      "dimensions": {
+        "presence": 71.42857142857143,
+        "attributes": 70.74892992838869,
+        "relations": 91.98617797806999,
+        "binding": 92.85714285714286,
+        "motion": 0.0,
+        "timing": 100.0
+      },
+      "scene": "still",
+      "time_range_seconds": [
+        26.166666666666668,
+        26.666666666666668
+      ]
+    },
+    {
+      "id": "still.dust-1",
+      "name": "漂移沙尘团（第1组）",
+      "dimensions": {
+        "presence": 71.42857142857143,
+        "attributes": 36.379313821078945,
+        "relations": 44.95673073784513,
+        "binding": 34.78260869565217,
+        "motion": 0.0,
+        "timing": 100.0
+      },
+      "scene": "still",
+      "time_range_seconds": [
+        26.166666666666668,
+        26.666666666666668
+      ]
+    },
+    {
+      "id": "still.stranger",
+      "name": "无名客全身与独立肢体",
+      "dimensions": {
+        "presence": 93.33333333333333,
+        "attributes": 49.8193856170446,
+        "relations": 82.80026733707221,
+        "binding": 15.47008547008547,
+        "motion": 0.0,
+        "timing": 95.45454545454542
+      },
+      "scene": "still",
+      "time_range_seconds": [
+        26.166666666666668,
+        26.666666666666668
+      ]
+    },
+    {
+      "id": "still.jack",
+      "name": "黑杰克全身与独立肢体",
+      "dimensions": {
+        "presence": 93.33333333333333,
+        "attributes": 49.26221612507096,
+        "relations": 74.77016343844672,
+        "binding": 15.47008547008547,
+        "motion": 0.0,
+        "timing": 95.45454545454542
+      },
+      "scene": "still",
+      "time_range_seconds": [
+        26.166666666666668,
+        26.666666666666668
+      ]
+    },
+    {
+      "id": "still.tumbleweed",
+      "name": "滚动风滚草",
+      "dimensions": {
+        "presence": 0.0,
+        "attributes": null,
+        "relations": null,
+        "binding": null,
+        "motion": null,
+        "timing": null
+      },
+      "scene": "still",
+      "time_range_seconds": [
+        26.166666666666668,
+        26.666666666666668
+      ]
+    },
+    {
+      "id": "still.hill",
+      "name": "前景沙丘",
+      "dimensions": {
+        "presence": 0.0,
+        "attributes": 30.090169214248874,
+        "relations": 0.0,
+        "binding": 0.0,
+        "motion": 0.0,
+        "timing": 0.0
+      },
+      "scene": "still",
+      "time_range_seconds": [
+        26.166666666666668,
+        26.666666666666668
+      ]
+    },
+    {
+      "id": "still.dust-2",
+      "name": "漂移沙尘团（第2组）",
+      "dimensions": {
+        "presence": 60.0,
+        "attributes": 52.419992358610784,
+        "relations": 17.342119587923456,
+        "binding": 42.85714285714286,
+        "motion": 0.0,
+        "timing": 90.0
+      },
+      "scene": "still",
+      "time_range_seconds": [
+        26.166666666666668,
+        26.666666666666668
+      ]
+    },
+    {
+      "id": "still.motes",
+      "name": "漂浮微尘与散景",
+      "dimensions": {
+        "presence": 56.81818181818181,
+        "attributes": 57.585983204002936,
+        "relations": 40.08629171922215,
+        "binding": 30.353925353925355,
+        "motion": 0.0,
+        "timing": 81.81818181818183
+      },
+      "scene": "still",
+      "time_range_seconds": [
+        26.166666666666668,
+        26.666666666666668
+      ]
+    },
+    {
+      "id": "still.grass",
+      "name": "随风摆动的前景草",
+      "dimensions": {
+        "presence": 100.0,
+        "attributes": null,
+        "relations": null,
+        "binding": null,
+        "motion": null,
+        "timing": null
+      },
+      "scene": "still",
+      "time_range_seconds": [
+        26.166666666666668,
+        26.666666666666668
+      ]
+    },
+    {
+      "id": "still.flare",
+      "name": "横向镜头光晕与光斑",
+      "dimensions": {
+        "presence": 85.71428571428572,
+        "attributes": 58.05855973614263,
+        "relations": 70.8552615606869,
+        "binding": 0.0,
+        "motion": 0.0,
+        "timing": 100.0
+      },
+      "scene": "still",
+      "time_range_seconds": [
+        26.166666666666668,
+        26.666666666666668
+      ]
+    },
+    {
+      "id": "still.brush",
+      "name": "前景灌木及仙人掌",
+      "dimensions": {
+        "presence": 0.0,
+        "attributes": 53.91328852819727,
+        "relations": 0.0,
+        "binding": 0.0,
+        "motion": 0.0,
+        "timing": 0.0
+      },
+      "scene": "still",
+      "time_range_seconds": [
+        26.166666666666668,
+        26.666666666666668
+      ]
+    },
+    {
+      "id": "draw.sky",
+      "name": "日落天空与高空星点",
+      "dimensions": {
+        "presence": 45.45454545454546,
+        "attributes": 28.974044677307752,
+        "relations": 35.79033221696966,
+        "binding": 0.0,
+        "motion": 0.0,
+        "timing": 0.0
+      },
+      "scene": "draw",
+      "time_range_seconds": [
+        26.666666666666668,
+        29.466666666666665
+      ]
+    },
+    {
+      "id": "draw.sun",
+      "name": "太阳与光晕",
+      "dimensions": {
+        "presence": 100.0,
+        "attributes": 56.38191502046599,
+        "relations": 70.69071017053325,
+        "binding": 0.0,
+        "motion": 0.0,
+        "timing": 100.0
+      },
+      "scene": "draw",
+      "time_range_seconds": [
+        26.666666666666668,
+        29.466666666666665
+      ]
+    },
+    {
+      "id": "draw.clouds",
+      "name": "横向云层",
+      "dimensions": {
+        "presence": 66.66666666666667,
+        "attributes": 22.967554149735392,
+        "relations": 30.698430121793987,
+        "binding": 26.22950819672131,
+        "motion": 0.0,
+        "timing": 100.0
+      },
+      "scene": "draw",
+      "time_range_seconds": [
+        26.666666666666668,
+        29.466666666666665
+      ]
+    },
+    {
+      "id": "draw.rays",
+      "name": "放射光束",
+      "dimensions": {
+        "presence": 75.0,
+        "attributes": 31.47895005512472,
+        "relations": 74.32775728689663,
+        "binding": 0.0,
+        "motion": 0.0,
+        "timing": 100.0
+      },
+      "scene": "draw",
+      "time_range_seconds": [
+        26.666666666666668,
+        29.466666666666665
+      ]
+    },
+    {
+      "id": "draw.ranges-1",
+      "name": "远处台地山脉（第1组）",
+      "dimensions": {
+        "presence": 26.315789473684216,
+        "attributes": 3.9325256803872035,
+        "relations": 11.78737567017065,
+        "binding": 0.0,
+        "motion": 0.0,
+        "timing": 39.4736842105263
+      },
+      "scene": "draw",
+      "time_range_seconds": [
+        26.666666666666668,
+        29.466666666666665
+      ]
+    },
+    {
+      "id": "draw.ranges-2",
+      "name": "远处台地山脉（第2组）",
+      "dimensions": {
+        "presence": 21.052631578947366,
+        "attributes": 4.257040280842941,
+        "relations": 17.31837728443395,
+        "binding": 0.0,
+        "motion": 0.0,
+        "timing": 31.578947368421066
+      },
+      "scene": "draw",
+      "time_range_seconds": [
+        26.666666666666668,
+        29.466666666666665
+      ]
+    },
+    {
+      "id": "draw.ground",
+      "name": "沙地",
+      "dimensions": {
+        "presence": 52.94117647058824,
+        "attributes": 38.1567909557818,
+        "relations": 37.40849655162772,
+        "binding": 0.0,
+        "motion": 0.0,
+        "timing": 0.0
+      },
+      "scene": "draw",
+      "time_range_seconds": [
+        26.666666666666668,
+        29.466666666666665
+      ]
+    },
+    {
+      "id": "draw.dust",
+      "name": "漂移沙尘团",
+      "dimensions": {
+        "presence": 66.66666666666667,
+        "attributes": 40.42990626980945,
+        "relations": 44.71905595440858,
+        "binding": 39.08045977011494,
+        "motion": 0.0,
+        "timing": 0.0
+      },
+      "scene": "draw",
+      "time_range_seconds": [
+        26.666666666666668,
+        29.466666666666665
+      ]
+    },
+    {
+      "id": "draw.stranger",
+      "name": "无名客全身与独立肢体",
+      "dimensions": {
+        "presence": 93.33333333333333,
+        "attributes": 57.0838083834012,
+        "relations": 71.68056788411499,
+        "binding": 34.27350427350427,
+        "motion": 0.0,
+        "timing": 0.0
+      },
+      "scene": "draw",
+      "time_range_seconds": [
+        26.666666666666668,
+        29.466666666666665
+      ]
+    },
+    {
+      "id": "draw.jack",
+      "name": "黑杰克全身与独立肢体",
+      "dimensions": {
+        "presence": 93.33333333333333,
+        "attributes": 56.23123129628148,
+        "relations": 68.69726937763448,
+        "binding": 92.00854700854701,
+        "motion": 0.0,
+        "timing": 0.0
+      },
+      "scene": "draw",
+      "time_range_seconds": [
+        26.666666666666668,
+        29.466666666666665
+      ]
+    },
+    {
+      "id": "draw.motes",
+      "name": "漂浮微尘与散景",
+      "dimensions": {
+        "presence": 80.48780487804879,
+        "attributes": 72.70603285494443,
+        "relations": 15.300509526461852,
+        "binding": 54.222494449123346,
+        "motion": 0.0,
+        "timing": 0.0
+      },
+      "scene": "draw",
+      "time_range_seconds": [
+        26.666666666666668,
+        29.466666666666665
+      ]
+    },
+    {
+      "id": "draw.flying-hat",
+      "name": "旋转飞离的黑杰克帽子",
+      "dimensions": {
+        "presence": 100.0,
+        "attributes": 36.150284492075144,
+        "relations": 72.1226547891582,
+        "binding": 100.0,
+        "motion": 0.0,
+        "timing": 0.0
+      },
+      "scene": "draw",
+      "time_range_seconds": [
+        26.666666666666668,
+        29.466666666666665
+      ]
+    },
+    {
+      "id": "fall.sky",
+      "name": "日落天空与高空星点",
+      "dimensions": {
+        "presence": 66.66666666666667,
+        "attributes": 37.58870481313545,
+        "relations": 21.93845083218843,
+        "binding": 0.0,
+        "motion": 0.0,
+        "timing": 100.0
+      },
+      "scene": "fall",
+      "time_range_seconds": [
+        29.466666666666665,
+        32.0
+      ]
+    },
+    {
+      "id": "fall.sun",
+      "name": "太阳与光晕",
+      "dimensions": {
+        "presence": 100.0,
+        "attributes": 55.1600752890104,
+        "relations": 79.2744421576426,
+        "binding": 0.0,
+        "motion": 0.0,
+        "timing": 100.0
+      },
+      "scene": "fall",
+      "time_range_seconds": [
+        29.466666666666665,
+        32.0
+      ]
+    },
+    {
+      "id": "fall.clouds",
+      "name": "横向云层",
+      "dimensions": {
+        "presence": 50.0,
+        "attributes": 16.150916025584912,
+        "relations": 31.159784851388363,
+        "binding": 16.911764705882355,
+        "motion": 0.0,
+        "timing": 74.99999999999999
+      },
+      "scene": "fall",
+      "time_range_seconds": [
+        29.466666666666665,
+        32.0
+      ]
+    },
+    {
+      "id": "fall.rays",
+      "name": "放射光束",
+      "dimensions": {
+        "presence": 75.0,
+        "attributes": 29.369700976498184,
+        "relations": 71.3136222831489,
+        "binding": 0.0,
+        "motion": 0.0,
+        "timing": 100.0
+      },
+      "scene": "fall",
+      "time_range_seconds": [
+        29.466666666666665,
+        32.0
+      ]
+    },
+    {
+      "id": "fall.ranges-1",
+      "name": "远处台地山脉（第1组）",
+      "dimensions": {
+        "presence": 26.315789473684216,
+        "attributes": 3.9294350656942343,
+        "relations": 8.209280389004428,
+        "binding": null,
+        "motion": null,
+        "timing": 39.4736842105263
+      },
+      "scene": "fall",
+      "time_range_seconds": [
+        29.466666666666665,
+        32.0
+      ]
+    },
+    {
+      "id": "fall.ranges-2",
+      "name": "远处台地山脉（第2组）",
+      "dimensions": {
+        "presence": 22.22222222222222,
+        "attributes": 3.9322797048782605,
+        "relations": 12.092089456297318,
+        "binding": null,
+        "motion": null,
+        "timing": 33.333333333333336
+      },
+      "scene": "fall",
+      "time_range_seconds": [
+        29.466666666666665,
+        32.0
+      ]
+    },
+    {
+      "id": "fall.ground",
+      "name": "沙地",
+      "dimensions": {
+        "presence": 61.98347107438016,
+        "attributes": 33.36319089672669,
+        "relations": 38.81757586612555,
+        "binding": null,
+        "motion": null,
+        "timing": 92.97520661157023
+      },
+      "scene": "fall",
+      "time_range_seconds": [
+        29.466666666666665,
+        32.0
+      ]
+    },
+    {
+      "id": "fall.dust",
+      "name": "漂移沙尘团",
+      "dimensions": {
+        "presence": 70.0,
+        "attributes": 26.068905653765796,
+        "relations": 2.0000962521593104,
+        "binding": 35.95505617977528,
+        "motion": 0.0,
+        "timing": 0.0
+      },
+      "scene": "fall",
+      "time_range_seconds": [
+        29.466666666666665,
+        32.0
+      ]
+    },
+    {
+      "id": "fall.jack",
+      "name": "黑杰克全身与独立肢体",
+      "dimensions": {
+        "presence": 96.42857142857143,
+        "attributes": 43.086470999769375,
+        "relations": 73.02928992961596,
+        "binding": 99.16666666666667,
+        "motion": 0.0,
+        "timing": 100.0
+      },
+      "scene": "fall",
+      "time_range_seconds": [
+        29.466666666666665,
+        32.0
+      ]
+    },
+    {
+      "id": "fall.motes",
+      "name": "漂浮微尘与散景",
+      "dimensions": {
+        "presence": 86.66666666666667,
+        "attributes": 70.72375805006881,
+        "relations": 37.074782814868726,
+        "binding": 67.94085827623512,
+        "motion": 0.0,
+        "timing": 71.11113333333337
+      },
+      "scene": "fall",
+      "time_range_seconds": [
+        29.466666666666665,
+        32.0
+      ]
+    },
+    {
+      "id": "fall.stranger",
+      "name": "无名客全身与独立肢体",
+      "dimensions": {
+        "presence": 85.0,
+        "attributes": 46.065960251270745,
+        "relations": 77.77149043547618,
+        "binding": 45.4563492063492,
+        "motion": 0.0,
+        "timing": 72.85714285714285
+      },
+      "scene": "fall",
+      "time_range_seconds": [
+        29.466666666666665,
+        32.0
+      ]
+    },
+    {
+      "id": "fall.flare",
+      "name": "横向镜头光晕与光斑",
+      "dimensions": {
+        "presence": 85.71428571428572,
+        "attributes": 60.1078560007811,
+        "relations": 80.5671651625369,
+        "binding": null,
+        "motion": null,
+        "timing": 100.0
+      },
+      "scene": "fall",
+      "time_range_seconds": [
+        29.466666666666665,
+        32.0
+      ]
+    },
+    {
+      "id": "fall.dropped-gun",
+      "name": "落在地面的左轮枪",
+      "dimensions": {
+        "presence": 0.0,
+        "attributes": 0.0,
+        "relations": 5.964946443489455,
+        "binding": null,
+        "motion": null,
+        "timing": 0.0
+      },
+      "scene": "fall",
+      "time_range_seconds": [
+        29.466666666666665,
+        32.0
+      ]
+    },
+    {
+      "id": "away.sky",
+      "name": "日落天空与高空星点",
+      "dimensions": {
+        "presence": 43.75,
+        "attributes": 25.69421306160795,
+        "relations": 19.22476544236676,
+        "binding": 0.0,
+        "motion": 0.0,
+        "timing": 65.62499999999999
+      },
+      "scene": "away",
+      "time_range_seconds": [
+        33.93333333333333,
+        36.0
+      ]
+    },
+    {
+      "id": "away.sun",
+      "name": "太阳与光晕",
+      "dimensions": {
+        "presence": 100.0,
+        "attributes": 57.087786276274485,
+        "relations": 86.67497631965107,
+        "binding": 0.0,
+        "motion": 0.0,
+        "timing": 100.0
+      },
+      "scene": "away",
+      "time_range_seconds": [
+        33.93333333333333,
+        36.0
+      ]
+    },
+    {
+      "id": "away.clouds",
+      "name": "横向云层",
+      "dimensions": {
+        "presence": 44.44444444444444,
+        "attributes": 20.381608786512476,
+        "relations": 34.343741353237284,
+        "binding": 27.78730703259005,
+        "motion": 0.0,
+        "timing": 66.66666666666667
+      },
+      "scene": "away",
+      "time_range_seconds": [
+        33.93333333333333,
+        36.0
+      ]
+    },
+    {
+      "id": "away.rays",
+      "name": "放射光束",
+      "dimensions": {
+        "presence": 75.0,
+        "attributes": 33.7873899921412,
+        "relations": 72.20365153661193,
+        "binding": 0.0,
+        "motion": 0.0,
+        "timing": 100.0
+      },
+      "scene": "away",
+      "time_range_seconds": [
+        33.93333333333333,
+        36.0
+      ]
+    },
+    {
+      "id": "away.ranges-1",
+      "name": "远处台地山脉（第1组）",
+      "dimensions": {
+        "presence": 26.315789473684216,
+        "attributes": 3.771063296968279,
+        "relations": 12.76789583593407,
+        "binding": null,
+        "motion": null,
+        "timing": 39.4736842105263
+      },
+      "scene": "away",
+      "time_range_seconds": [
+        33.93333333333333,
+        36.0
+      ]
+    },
+    {
+      "id": "away.ranges-2",
+      "name": "远处台地山脉（第2组）",
+      "dimensions": {
+        "presence": 21.052631578947366,
+        "attributes": 4.593583257915718,
+        "relations": 18.52710335214129,
+        "binding": null,
+        "motion": null,
+        "timing": 31.578947368421066
+      },
+      "scene": "away",
+      "time_range_seconds": [
+        33.93333333333333,
+        36.0
+      ]
+    },
+    {
+      "id": "away.ground",
+      "name": "沙地",
+      "dimensions": {
+        "presence": 56.88073394495412,
+        "attributes": 33.96983172835312,
+        "relations": 35.51196948585867,
+        "binding": null,
+        "motion": null,
+        "timing": 85.32110091743118
+      },
+      "scene": "away",
+      "time_range_seconds": [
+        33.93333333333333,
+        36.0
+      ]
+    },
+    {
+      "id": "away.vultures",
+      "name": "盘旋秃鹫",
+      "dimensions": {
+        "presence": 100.0,
+        "attributes": 47.472625413801886,
+        "relations": 52.54873072954422,
+        "binding": 100.0,
+        "motion": 0.0,
+        "timing": 100.0
+      },
+      "scene": "away",
+      "time_range_seconds": [
+        33.93333333333333,
+        36.0
+      ]
+    },
+    {
+      "id": "away.dust",
+      "name": "漂移沙尘团",
+      "dimensions": {
+        "presence": 70.0,
+        "attributes": 31.701141342437126,
+        "relations": 17.786010673364913,
+        "binding": 36.904761904761905,
+        "motion": 0.0,
+        "timing": 0.0
+      },
+      "scene": "away",
+      "time_range_seconds": [
+        33.93333333333333,
+        36.0
+      ]
+    },
+    {
+      "id": "away.stranger",
+      "name": "无名客全身与独立肢体",
+      "dimensions": {
+        "presence": 93.33333333333333,
+        "attributes": 52.906516590904666,
+        "relations": 77.54987333463711,
+        "binding": 79.46581196581198,
+        "motion": 0.0,
+        "timing": 95.45454545454542
+      },
+      "scene": "away",
+      "time_range_seconds": [
+        33.93333333333333,
+        36.0
+      ]
+    },
+    {
+      "id": "away.jack",
+      "name": "黑杰克全身与独立肢体",
+      "dimensions": {
+        "presence": 96.2962962962963,
+        "attributes": 51.1567990892167,
+        "relations": 76.79921959528816,
+        "binding": 20.869565217391305,
+        "motion": 1.8036435801144222,
+        "timing": 100.0
+      },
+      "scene": "away",
+      "time_range_seconds": [
+        33.93333333333333,
+        36.0
+      ]
+    },
+    {
+      "id": "away.hill",
+      "name": "前景沙丘",
+      "dimensions": {
+        "presence": 100.0,
+        "attributes": 64.22255687034973,
+        "relations": 82.32075455279717,
+        "binding": null,
+        "motion": null,
+        "timing": 100.0
+      },
+      "scene": "away",
+      "time_range_seconds": [
+        33.93333333333333,
+        36.0
+      ]
+    },
+    {
+      "id": "away.motes",
+      "name": "漂浮微尘与散景",
+      "dimensions": {
+        "presence": 63.1578947368421,
+        "attributes": 55.71844988408225,
+        "relations": 34.313202185828885,
+        "binding": 63.17927882173693,
+        "motion": 0.0,
+        "timing": 91.52542372881355
+      },
+      "scene": "away",
+      "time_range_seconds": [
+        33.93333333333333,
+        36.0
+      ]
+    },
+    {
+      "id": "away.flare",
+      "name": "横向镜头光晕与光斑",
+      "dimensions": {
+        "presence": 85.71428571428572,
+        "attributes": 59.06206029535798,
+        "relations": 65.1607286847075,
+        "binding": 0.0,
+        "motion": 0.0,
+        "timing": 100.0
+      },
+      "scene": "away",
+      "time_range_seconds": [
+        33.93333333333333,
+        36.0
+      ]
+    },
+    {
+      "id": "away.brush",
+      "name": "前景灌木及仙人掌",
+      "dimensions": {
+        "presence": 0.0,
+        "attributes": 70.3503098526646,
+        "relations": 0.0,
+        "binding": null,
+        "motion": null,
+        "timing": 0.0
+      },
+      "scene": "away",
+      "time_range_seconds": [
+        33.93333333333333,
+        36.0
+      ]
+    },
+    {
+      "id": "draw.stranger-tracer",
+      "name": "无名客的弹道",
+      "dimensions": {
+        "presence": 100.0,
+        "attributes": 81.08184590409753,
+        "relations": 92.97638828432049,
+        "binding": 27.777777777777782,
+        "motion": 1.072702337421622,
+        "timing": 100.0
+      },
+      "scene": "draw",
+      "time_range_seconds": [
+        26.666666666666668,
+        29.466666666666665
+      ]
+    },
+    {
+      "id": "draw.jack-tracer",
+      "name": "黑杰克射向地面的弹道",
+      "dimensions": {
+        "presence": 100.0,
+        "attributes": 47.71645850659907,
+        "relations": 49.70866290486683,
+        "binding": 27.777777777777782,
+        "motion": 13.739769752786808,
+        "timing": 0.0
+      },
+      "scene": "draw",
+      "time_range_seconds": [
+        26.666666666666668,
+        29.466666666666665
+      ]
+    },
+    {
+      "id": "draw.stranger-smoke",
+      "name": "无名客枪口硝烟",
+      "dimensions": {
+        "presence": 57.692307692307686,
+        "attributes": 36.132695154209685,
+        "relations": 52.04411674717674,
+        "binding": 57.692307692307686,
+        "motion": 0.0,
+        "timing": 25.96153846153822
+      },
+      "scene": "draw",
+      "time_range_seconds": [
+        26.666666666666668,
+        29.466666666666665
+      ]
+    },
+    {
+      "id": "draw.jack-smoke",
+      "name": "黑杰克枪口硝烟",
+      "dimensions": {
+        "presence": 34.61538461538461,
+        "attributes": 18.187523418378543,
+        "relations": 28.249200557808447,
+        "binding": 34.61538461538461,
+        "motion": 0.0,
+        "timing": 0.0
+      },
+      "scene": "draw",
+      "time_range_seconds": [
+        26.666666666666668,
+        29.466666666666665
+      ]
+    },
+    {
+      "id": "draw.stranger-flash",
+      "name": "无名客枪口火焰",
+      "dimensions": {
+        "presence": 100.0,
+        "attributes": 7.207101920923877,
+        "relations": 10.676079065666883,
+        "binding": 41.58549783549784,
+        "motion": 0.0,
+        "timing": 0.0
+      },
+      "scene": "draw",
+      "time_range_seconds": [
+        26.666666666666668,
+        29.466666666666665
+      ]
+    },
+    {
+      "id": "draw.jack-flash",
+      "name": "黑杰克枪口火焰",
+      "dimensions": {
+        "presence": 100.0,
+        "attributes": 11.455992491563217,
+        "relations": 25.125418627050326,
+        "binding": 41.58549783549784,
+        "motion": 0.0,
+        "timing": 0.0
+      },
+      "scene": "draw",
+      "time_range_seconds": [
+        26.666666666666668,
+        29.466666666666665
+      ]
+    },
+    {
+      "id": "draw.impact-dirt",
+      "name": "子弹击地扬尘",
+      "dimensions": {
+        "presence": 85.18518518518519,
+        "attributes": 73.78656725156458,
+        "relations": 77.8188425779818,
+        "binding": 60.68376068376068,
+        "motion": 0.0,
+        "timing": 100.0
+      },
+      "scene": "draw",
+      "time_range_seconds": [
+        26.666666666666668,
+        29.466666666666665
+      ]
+    },
+    {
+      "id": "draw.shock-ring",
+      "name": "无名客枪口扩散冲击环",
+      "dimensions": {
+        "presence": 100.0,
+        "attributes": 42.72317689044071,
+        "relations": 64.26754560588617,
+        "binding": 42.85714285714286,
+        "motion": 0.0,
+        "timing": 0.0
+      },
+      "scene": "draw",
+      "time_range_seconds": [
+        26.666666666666668,
+        29.466666666666665
+      ]
+    },
+    {
+      "id": "draw.flash-streak",
+      "name": "开枪瞬间的水平亮线",
+      "dimensions": {
+        "presence": 100.0,
+        "attributes": 18.318947383716846,
+        "relations": 28.936164241180023,
+        "binding": 14.583333333333332,
+        "motion": 0.0,
+        "timing": 0.0
+      },
+      "scene": "draw",
+      "time_range_seconds": [
+        26.666666666666668,
+        29.466666666666665
+      ]
+    },
+    {
+      "id": "draw.blood",
+      "name": "击中胸部的血雾",
+      "dimensions": {
+        "presence": 88.88888888888889,
+        "attributes": 76.11442792365341,
+        "relations": 72.13487215149581,
+        "binding": 69.1358024691358,
+        "motion": 0.0,
+        "timing": 4.787836793695987e-13
+      },
+      "scene": "draw",
+      "time_range_seconds": [
+        26.666666666666668,
+        29.466666666666665
+      ]
+    },
+    {
+      "id": "fall.impact-dirt",
+      "name": "倒地扬起的尘土",
+      "dimensions": {
+        "presence": 85.18518518518519,
+        "attributes": 64.91637131797174,
+        "relations": 71.6474767301817,
+        "binding": 81.1965811965812,
+        "motion": 0.0,
+        "timing": 0.0
+      },
+      "scene": "fall",
+      "time_range_seconds": [
+        29.466666666666665,
+        32.0
+      ]
+    },
+    {
+      "id": "fall.smoke",
+      "name": "近景枪口缓缓上飘的硝烟",
+      "dimensions": {
+        "presence": 19.23076923076923,
+        "attributes": 5.368354202602027,
+        "relations": 10.586938039198015,
+        "binding": 18.218623481781382,
+        "motion": 0.0,
+        "timing": 18.26922115384617
+      },
+      "scene": "fall",
+      "time_range_seconds": [
+        29.466666666666665,
+        32.0
+      ]
+    },
+    {
+      "id": "eyes-stranger-1.face",
+      "name": "眼部特写的皮肤、鼻梁、皱纹和帽檐阴影",
+      "dimensions": {
+        "presence": 88.88888888888889,
+        "attributes": 52.8133879132998,
+        "relations": 90.96401780371205,
+        "binding": 94.44444444444444,
+        "motion": 0.0,
+        "timing": 100.0
+      },
+      "scene": "eyes-stranger-1",
+      "time_range_seconds": [
+        21.5,
+        22.7
+      ]
+    },
+    {
+      "id": "eyes-stranger-1.left-eye",
+      "name": "left眼睛及独立收紧眼睑",
+      "dimensions": {
+        "presence": 88.88888888888889,
+        "attributes": 80.91435651384903,
+        "relations": 89.65956816748813,
+        "binding": 84.83204920248716,
+        "motion": 0.0,
+        "timing": 100.0
+      },
+      "scene": "eyes-stranger-1",
+      "time_range_seconds": [
+        21.5,
+        22.7
+      ]
+    },
+    {
+      "id": "eyes-stranger-1.left-brow",
+      "name": "left眉毛",
+      "dimensions": {
+        "presence": 43.27485380116959,
+        "attributes": 35.276548162002214,
+        "relations": 43.25090760177845,
+        "binding": 42.88515406162465,
+        "motion": 0.0,
+        "timing": 64.91228070175438
+      },
+      "scene": "eyes-stranger-1",
+      "time_range_seconds": [
+        21.5,
+        22.7
+      ]
+    },
+    {
+      "id": "eyes-stranger-1.right-eye",
+      "name": "right眼睛及独立收紧眼睑",
+      "dimensions": {
+        "presence": 85.9375,
+        "attributes": 75.84854020348789,
+        "relations": 90.44214644997483,
+        "binding": 80.89498464498465,
+        "motion": 0.0,
+        "timing": 100.0
+      },
+      "scene": "eyes-stranger-1",
+      "time_range_seconds": [
+        21.5,
+        22.7
+      ]
+    },
+    {
+      "id": "eyes-stranger-1.right-brow",
+      "name": "right眉毛",
+      "dimensions": {
+        "presence": 43.27485380116959,
+        "attributes": 34.89352190733767,
+        "relations": 42.69722300128474,
+        "binding": 42.88515406162465,
+        "motion": 0.0,
+        "timing": 64.91228070175438
+      },
+      "scene": "eyes-stranger-1",
+      "time_range_seconds": [
+        21.5,
+        22.7
+      ]
+    },
+    {
+      "id": "eyes-jack-1.face",
+      "name": "眼部特写的皮肤、鼻梁、皱纹和帽檐阴影",
+      "dimensions": {
+        "presence": 88.88888888888889,
+        "attributes": 52.77832941016436,
+        "relations": 91.11602135497847,
+        "binding": 94.44444444444444,
+        "motion": 0.0,
+        "timing": 100.0
+      },
+      "scene": "eyes-jack-1",
+      "time_range_seconds": [
+        22.7,
+        23.766666666666666
+      ]
+    },
+    {
+      "id": "eyes-jack-1.left-eye",
+      "name": "left眼睛及独立收紧眼睑",
+      "dimensions": {
+        "presence": 84.05797101449275,
+        "attributes": 79.3462380936098,
+        "relations": 87.58196750689046,
+        "binding": 84.34472934472934,
+        "motion": 0.0,
+        "timing": 100.0
+      },
+      "scene": "eyes-jack-1",
+      "time_range_seconds": [
+        22.7,
+        23.766666666666666
+      ]
+    },
+    {
+      "id": "eyes-jack-1.left-brow",
+      "name": "left眉毛",
+      "dimensions": {
+        "presence": 43.27485380116959,
+        "attributes": 35.05808509432057,
+        "relations": 43.10141859727584,
+        "binding": 42.88515406162465,
+        "motion": 0.0,
+        "timing": 64.91228070175438
+      },
+      "scene": "eyes-jack-1",
+      "time_range_seconds": [
+        22.7,
+        23.766666666666666
+      ]
+    },
+    {
+      "id": "eyes-jack-1.right-eye",
+      "name": "right眼睛及独立收紧眼睑",
+      "dimensions": {
+        "presence": 84.05797101449275,
+        "attributes": 72.46597607804364,
+        "relations": 87.9886002747514,
+        "binding": 83.87222887222887,
+        "motion": 0.0,
+        "timing": 100.0
+      },
+      "scene": "eyes-jack-1",
+      "time_range_seconds": [
+        22.7,
+        23.766666666666666
+      ]
+    },
+    {
+      "id": "eyes-jack-1.right-brow",
+      "name": "right眉毛",
+      "dimensions": {
+        "presence": 48.366013071895416,
+        "attributes": 39.11924101804243,
+        "relations": 47.74131170839265,
+        "binding": 44.58020050125313,
+        "motion": 0.0,
+        "timing": 72.54901960784314
+      },
+      "scene": "eyes-jack-1",
+      "time_range_seconds": [
+        22.7,
+        23.766666666666666
+      ]
+    },
+    {
+      "id": "eyes-jack-1.scar",
+      "name": "眉眼刀疤",
+      "dimensions": {
+        "presence": 100.0,
+        "attributes": 77.752399544922,
+        "relations": 97.77543981992838,
+        "binding": 100.0,
+        "motion": 0.0,
+        "timing": 100.0
+      },
+      "scene": "eyes-jack-1",
+      "time_range_seconds": [
+        22.7,
+        23.766666666666666
+      ]
+    },
+    {
+      "id": "eyes-jack-1.sweat",
+      "name": "下滑汗珠",
+      "dimensions": {
+        "presence": 100.0,
+        "attributes": 73.95674857467674,
+        "relations": 95.77853712761079,
+        "binding": 66.66666666666667,
+        "motion": 0.0,
+        "timing": 100.0
+      },
+      "scene": "eyes-jack-1",
+      "time_range_seconds": [
+        22.7,
+        23.766666666666666
+      ]
+    },
+    {
+      "id": "eyes-stranger-2.face",
+      "name": "眼部特写的皮肤、鼻梁、皱纹和帽檐阴影",
+      "dimensions": {
+        "presence": 100.0,
+        "attributes": 51.907455116232356,
+        "relations": 89.23455285691486,
+        "binding": 0.0,
+        "motion": 0.0,
+        "timing": 100.0
+      },
+      "scene": "eyes-stranger-2",
+      "time_range_seconds": [
+        25.3,
+        25.766666666666666
+      ]
+    },
+    {
+      "id": "eyes-stranger-2.left-eye",
+      "name": "left眼睛及独立收紧眼睑",
+      "dimensions": {
+        "presence": 88.88888888888889,
+        "attributes": 78.41181501465742,
+        "relations": 82.71724387316225,
+        "binding": 37.2757723160949,
+        "motion": 0.0,
+        "timing": 100.0
+      },
+      "scene": "eyes-stranger-2",
+      "time_range_seconds": [
+        25.3,
+        25.766666666666666
+      ]
+    },
+    {
+      "id": "eyes-stranger-2.left-brow",
+      "name": "left眉毛",
+      "dimensions": {
+        "presence": 43.27485380116959,
+        "attributes": 34.351060928702154,
+        "relations": 42.12992808089813,
+        "binding": 0.0,
+        "motion": 0.0,
+        "timing": 64.91228070175438
+      },
+      "scene": "eyes-stranger-2",
+      "time_range_seconds": [
+        25.3,
+        25.766666666666666
+      ]
+    },
+    {
+      "id": "eyes-stranger-2.right-eye",
+      "name": "right眼睛及独立收紧眼睑",
+      "dimensions": {
+        "presence": 85.9375,
+        "attributes": 74.63472058359434,
+        "relations": 83.8280239557886,
+        "binding": 36.39729355921527,
+        "motion": 0.0,
+        "timing": 100.0
+      },
+      "scene": "eyes-stranger-2",
+      "time_range_seconds": [
+        25.3,
+        25.766666666666666
+      ]
+    },
+    {
+      "id": "eyes-stranger-2.right-brow",
+      "name": "right眉毛",
+      "dimensions": {
+        "presence": 43.27485380116959,
+        "attributes": 34.493411994926525,
+        "relations": 41.236977318732606,
+        "binding": 0.0,
+        "motion": 0.0,
+        "timing": 64.91228070175438
+      },
+      "scene": "eyes-stranger-2",
+      "time_range_seconds": [
+        25.3,
+        25.766666666666666
+      ]
+    },
+    {
+      "id": "eyes-jack-2.face",
+      "name": "眼部特写的皮肤、鼻梁、皱纹和帽檐阴影",
+      "dimensions": {
+        "presence": 100.0,
+        "attributes": 51.81827297340004,
+        "relations": 89.33423307393825,
+        "binding": 0.0,
+        "motion": 0.0,
+        "timing": 100.0
+      },
+      "scene": "eyes-jack-2",
+      "time_range_seconds": [
+        25.766666666666666,
+        26.166666666666668
+      ]
+    },
+    {
+      "id": "eyes-jack-2.left-eye",
+      "name": "left眼睛及独立收紧眼睑",
+      "dimensions": {
+        "presence": 86.76470588235294,
+        "attributes": 76.4090057166103,
+        "relations": 78.86456292448376,
+        "binding": 35.82451991578664,
+        "motion": 0.0,
+        "timing": 100.0
+      },
+      "scene": "eyes-jack-2",
+      "time_range_seconds": [
+        25.766666666666666,
+        26.166666666666668
+      ]
+    },
+    {
+      "id": "eyes-jack-2.left-brow",
+      "name": "left眉毛",
+      "dimensions": {
+        "presence": 43.27485380116959,
+        "attributes": 34.85660853269646,
+        "relations": 40.990453270688946,
+        "binding": 0.0,
+        "motion": 0.0,
+        "timing": 64.91228070175438
+      },
+      "scene": "eyes-jack-2",
+      "time_range_seconds": [
+        25.766666666666666,
+        26.166666666666668
+      ]
+    },
+    {
+      "id": "eyes-jack-2.right-eye",
+      "name": "right眼睛及独立收紧眼睑",
+      "dimensions": {
+        "presence": 85.29411764705883,
+        "attributes": 73.65618369485426,
+        "relations": 80.33359001463687,
+        "binding": 36.07322740376496,
+        "motion": 0.0,
+        "timing": 100.0
+      },
+      "scene": "eyes-jack-2",
+      "time_range_seconds": [
+        25.766666666666666,
+        26.166666666666668
+      ]
+    },
+    {
+      "id": "eyes-jack-2.right-brow",
+      "name": "right眉毛",
+      "dimensions": {
+        "presence": 48.366013071895416,
+        "attributes": 39.323605025401,
+        "relations": 46.78134207765635,
+        "binding": 0.0,
+        "motion": 0.0,
+        "timing": 72.54901960784314
+      },
+      "scene": "eyes-jack-2",
+      "time_range_seconds": [
+        25.766666666666666,
+        26.166666666666668
+      ]
+    },
+    {
+      "id": "eyes-jack-2.scar",
+      "name": "眉眼刀疤",
+      "dimensions": {
+        "presence": 100.0,
+        "attributes": 74.22723469566326,
+        "relations": 95.81310317990089,
+        "binding": 0.0,
+        "motion": 0.0,
+        "timing": 100.0
+      },
+      "scene": "eyes-jack-2",
+      "time_range_seconds": [
+        25.766666666666666,
+        26.166666666666668
+      ]
+    },
+    {
+      "id": "eyes-jack-2.sweat",
+      "name": "下滑汗珠",
+      "dimensions": {
+        "presence": 100.0,
+        "attributes": 70.80420545517791,
+        "relations": 92.10923109803707,
+        "binding": 14.814814814814815,
+        "motion": 0.0,
+        "timing": 100.0
+      },
+      "scene": "eyes-jack-2",
+      "time_range_seconds": [
+        25.766666666666666,
+        26.166666666666668
+      ]
+    },
+    {
+      "id": "hand-jack.background",
+      "name": "手部特写夕阳背景与远处对手",
+      "dimensions": {
+        "presence": 80.0,
+        "attributes": 33.15142919124893,
+        "relations": 48.00534545555496,
+        "binding": 0.0,
+        "motion": 0.0,
+        "timing": 100.0
+      },
+      "scene": "hand-jack",
+      "time_range_seconds": [
+        23.766666666666666,
+        24.566666666666666
+      ]
+    },
+    {
+      "id": "hand-jack.dust",
+      "name": "特写散景尘点",
+      "dimensions": {
+        "presence": 82.35294117647058,
+        "attributes": 81.56819971309996,
+        "relations": 29.49700380875507,
+        "binding": 21.333333333333336,
+        "motion": 0.0,
+        "timing": 88.23525000000008
+      },
+      "scene": "hand-jack",
+      "time_range_seconds": [
+        23.766666666666666,
+        24.566666666666666
+      ]
+    },
+    {
+      "id": "hand-jack.belt",
+      "name": "枪带与缝线",
+      "dimensions": {
+        "presence": 100.0,
+        "attributes": 78.03531173423963,
+        "relations": 98.82024057008967,
+        "binding": 0.0,
+        "motion": 0.0,
+        "timing": 100.0
+      },
+      "scene": "hand-jack",
+      "time_range_seconds": [
+        23.766666666666666,
+        24.566666666666666
+      ]
+    },
+    {
+      "id": "hand-jack.cartridges",
+      "name": "枪带弹药",
+      "dimensions": {
+        "presence": 72.38095238095238,
+        "attributes": 78.20616604180672,
+        "relations": 89.51134608812774,
+        "binding": 0.0,
+        "motion": 0.0,
+        "timing": 100.0
+      },
+      "scene": "hand-jack",
+      "time_range_seconds": [
+        23.766666666666666,
+        24.566666666666666
+      ]
+    },
+    {
+      "id": "hand-jack.gun",
+      "name": "枪套中的左轮手枪",
+      "dimensions": {
+        "presence": 91.66666666666666,
+        "attributes": 38.26650040636005,
+        "relations": 64.27020785402755,
+        "binding": 15.978835978835978,
+        "motion": 0.0,
+        "timing": 100.0
+      },
+      "scene": "hand-jack",
+      "time_range_seconds": [
+        23.766666666666666,
+        24.566666666666666
+      ]
+    },
+    {
+      "id": "hand-jack.holster",
+      "name": "皮革枪套",
+      "dimensions": {
+        "presence": 75.0,
+        "attributes": 74.99803949454059,
+        "relations": 87.13496665911693,
+        "binding": 0.0,
+        "motion": 0.0,
+        "timing": 100.0
+      },
+      "scene": "hand-jack",
+      "time_range_seconds": [
+        23.766666666666666,
+        24.566666666666666
+      ]
+    },
+    {
+      "id": "hand-jack.coat",
+      "name": "随风摆动的外衣边缘",
+      "dimensions": {
+        "presence": 100.0,
+        "attributes": 64.85230347497672,
+        "relations": 94.55321557826943,
+        "binding": 0.0,
+        "motion": 0.0,
+        "timing": 100.0
+      },
+      "scene": "hand-jack",
+      "time_range_seconds": [
+        23.766666666666666,
+        24.566666666666666
+      ]
+    },
+    {
+      "id": "hand-jack.hand",
+      "name": "悬在枪柄上方的手与颤动手指",
+      "dimensions": {
+        "presence": 100.0,
+        "attributes": 59.4360454022801,
+        "relations": 85.20343381947791,
+        "binding": 82.01058201058201,
+        "motion": 0.0,
+        "timing": 100.0
+      },
+      "scene": "hand-jack",
+      "time_range_seconds": [
+        23.766666666666666,
+        24.566666666666666
+      ]
+    },
+    {
+      "id": "hand-stranger.background",
+      "name": "手部特写夕阳背景与远处对手",
+      "dimensions": {
+        "presence": 100.0,
+        "attributes": 39.67982066146825,
+        "relations": 78.34961082804034,
+        "binding": 0.0,
+        "motion": 0.0,
+        "timing": 100.0
+      },
+      "scene": "hand-stranger",
+      "time_range_seconds": [
+        24.566666666666666,
+        25.3
+      ]
+    },
+    {
+      "id": "hand-stranger.dust",
+      "name": "特写散景尘点",
+      "dimensions": {
+        "presence": 94.11764705882352,
+        "attributes": 76.19037102719882,
+        "relations": 13.571938822667407,
+        "binding": 21.91780821917808,
+        "motion": 0.0,
+        "timing": 100.0
+      },
+      "scene": "hand-stranger",
+      "time_range_seconds": [
+        24.566666666666666,
+        25.3
+      ]
+    },
+    {
+      "id": "hand-stranger.belt",
+      "name": "枪带与缝线",
+      "dimensions": {
+        "presence": 100.0,
+        "attributes": 80.42429452252654,
+        "relations": 100.0,
+        "binding": 0.0,
+        "motion": 0.0,
+        "timing": 100.0
+      },
+      "scene": "hand-stranger",
+      "time_range_seconds": [
+        24.566666666666666,
+        25.3
+      ]
+    },
+    {
+      "id": "hand-stranger.cartridges",
+      "name": "枪带弹药",
+      "dimensions": {
+        "presence": 72.38095238095238,
+        "attributes": 78.23068711189038,
+        "relations": 89.57339456550426,
+        "binding": 0.0,
+        "motion": 0.0,
+        "timing": 100.0
+      },
+      "scene": "hand-stranger",
+      "time_range_seconds": [
+        24.566666666666666,
+        25.3
+      ]
+    },
+    {
+      "id": "hand-stranger.gun",
+      "name": "枪套中的左轮手枪",
+      "dimensions": {
+        "presence": 91.66666666666666,
+        "attributes": 38.2681505928456,
+        "relations": 64.27828231962116,
+        "binding": 15.978835978835978,
+        "motion": 0.0,
+        "timing": 100.0
+      },
+      "scene": "hand-stranger",
+      "time_range_seconds": [
+        24.566666666666666,
+        25.3
+      ]
+    },
+    {
+      "id": "hand-stranger.holster",
+      "name": "皮革枪套",
+      "dimensions": {
+        "presence": 75.0,
+        "attributes": 74.99989565363792,
+        "relations": 87.13212650874961,
+        "binding": 0.0,
+        "motion": 0.0,
+        "timing": 100.0
+      },
+      "scene": "hand-stranger",
+      "time_range_seconds": [
+        24.566666666666666,
+        25.3
+      ]
+    },
+    {
+      "id": "hand-stranger.coat",
+      "name": "随风摆动的外衣边缘",
+      "dimensions": {
+        "presence": 100.0,
+        "attributes": 80.41770969318038,
+        "relations": 97.44528181556537,
+        "binding": 0.0,
+        "motion": 0.0,
+        "timing": 100.0
+      },
+      "scene": "hand-stranger",
+      "time_range_seconds": [
+        24.566666666666666,
+        25.3
+      ]
+    },
+    {
+      "id": "hand-stranger.hand",
+      "name": "悬在枪柄上方的手与颤动手指",
+      "dimensions": {
+        "presence": 100.0,
+        "attributes": 52.28353204002296,
+        "relations": 85.52003691924051,
+        "binding": 85.31746031746032,
+        "motion": 0.0,
+        "timing": 100.0
+      },
+      "scene": "hand-stranger",
+      "time_range_seconds": [
+        24.566666666666666,
+        25.3
+      ]
+    },
+    {
+      "id": "blow.background",
+      "name": "吹烟特写的夕阳背景",
+      "dimensions": {
+        "presence": 100.0,
+        "attributes": 50.380609459530255,
+        "relations": 93.7285377540359,
+        "binding": 0.0,
+        "motion": 0.0,
+        "timing": 100.0
+      },
+      "scene": "blow",
+      "time_range_seconds": [
+        32.0,
+        33.93333333333333
+      ]
+    },
+    {
+      "id": "blow.profile",
+      "name": "无名客侧脸和吹气时的嘴唇",
+      "dimensions": {
+        "presence": 100.0,
+        "attributes": 33.1087554641506,
+        "relations": 75.83465397511239,
+        "binding": 4.999999999999999,
+        "motion": 0.0,
+        "timing": 100.0
+      },
+      "scene": "blow",
+      "time_range_seconds": [
+        32.0,
+        33.93333333333333
+      ]
+    },
+    {
+      "id": "blow.stubble",
+      "name": "下颌胡茬",
+      "dimensions": {
+        "presence": 95.0,
+        "attributes": 46.09291961257925,
+        "relations": 88.68637819819658,
+        "binding": 0.0,
+        "motion": 0.0,
+        "timing": 100.0
+      },
+      "scene": "blow",
+      "time_range_seconds": [
+        32.0,
+        33.93333333333333
+      ]
+    },
+    {
+      "id": "blow.gun",
+      "name": "举起并放低的左轮枪",
+      "dimensions": {
+        "presence": 91.66666666666666,
+        "attributes": 42.528915827291414,
+        "relations": 80.20176847202042,
+        "binding": 86.16161616161617,
+        "motion": 0.09632578355126913,
+        "timing": 0.0
+      },
+      "scene": "blow",
+      "time_range_seconds": [
+        32.0,
+        33.93333333333333
+      ]
+    },
+    {
+      "id": "blow.fist",
+      "name": "握枪的手与前臂",
+      "dimensions": {
+        "presence": 100.0,
+        "attributes": 58.72684711130987,
+        "relations": 81.03362369181762,
+        "binding": 95.0,
+        "motion": 0.0,
+        "timing": 4.545477272726763
+      },
+      "scene": "blow",
+      "time_range_seconds": [
+        32.0,
+        33.93333333333333
+      ]
+    },
+    {
+      "id": "blow.smoke",
+      "name": "吹气推动并消散的烟丝",
+      "dimensions": {
+        "presence": 83.33333333333334,
+        "attributes": 40.77095667578103,
+        "relations": 78.50374712068476,
+        "binding": 82.75862068965517,
+        "motion": 0.0,
+        "timing": 41.666874999999784
+      },
+      "scene": "blow",
+      "time_range_seconds": [
+        32.0,
+        33.93333333333333
+      ]
+    },
+    {
+      "id": "vista.opening",
+      "name": "左下角地点年份双语文字",
+      "dimensions": {
+        "presence": 100.0,
+        "attributes": 99.52917532047802,
+        "relations": 98.0652020596168,
+        "binding": 100.0,
+        "motion": 28.893669417180924,
+        "timing": 0.0
+      },
+      "scene": "vista",
+      "time_range_seconds": [
+        0.0,
+        5.5
+      ]
+    },
+    {
+      "id": "arrival.name-card",
+      "name": "无名客人物介绍文字",
+      "dimensions": {
+        "presence": 100.0,
+        "attributes": 84.73211966852743,
+        "relations": 97.72523761597853,
+        "binding": 24.404761904761905,
+        "motion": 15.790706616209558,
+        "timing": 0.0
+      },
+      "scene": "arrival",
+      "time_range_seconds": [
+        9.5,
+        13.5
+      ]
+    },
+    {
+      "id": "opponent.name-card",
+      "name": "黑杰克人物介绍文字",
+      "dimensions": {
+        "presence": 100.0,
+        "attributes": 87.02673394982871,
+        "relations": 97.35999764458676,
+        "binding": 32.142857142857146,
+        "motion": 23.408157789499477,
+        "timing": 0.0
+      },
+      "scene": "opponent",
+      "time_range_seconds": [
+        13.5,
+        17.5
+      ]
+    },
+    {
+      "id": "standoff.caption",
+      "name": "对峙时的双语字幕",
+      "dimensions": {
+        "presence": 100.0,
+        "attributes": 83.33333333333333,
+        "relations": 82.50812939740403,
+        "binding": 100.0,
+        "motion": 82.75197160203794,
+        "timing": 0.0
+      },
+      "scene": "standoff",
+      "time_range_seconds": [
+        17.5,
+        21.5
+      ]
+    },
+    {
+      "id": "away.title",
+      "name": "片尾 SUNDOWN 与日落决斗标题",
+      "dimensions": {
+        "presence": 100.0,
+        "attributes": 74.61384211284754,
+        "relations": 58.954572306112105,
+        "binding": 13.214285714285717,
+        "motion": 0.0,
+        "timing": 0.0
+      },
+      "scene": "away",
+      "time_range_seconds": [
+        33.93333333333333,
+        36.0
+      ]
+    },
+    {
+      "id": "global.vignette",
+      "name": "vignette",
+      "dimensions": {
+        "presence": 100.0,
+        "attributes": 80.97402597402598,
+        "relations": 100.0,
+        "binding": 0.0,
+        "motion": 93.27417986565803,
+        "timing": null
+      },
+      "scene": "global",
+      "time_range_seconds": [
+        0.0,
+        36.0
+      ]
+    },
+    {
+      "id": "global.warm-wash",
+      "name": "warm-wash",
+      "dimensions": {
+        "presence": 100.0,
+        "attributes": 64.80660951249186,
+        "relations": 100.0,
+        "binding": null,
+        "motion": null,
+        "timing": null
+      },
+      "scene": "global",
+      "time_range_seconds": [
+        0.0,
+        36.0
+      ]
+    },
+    {
+      "id": "global.light-leak",
+      "name": "light-leak",
+      "dimensions": {
+        "presence": 100.0,
+        "attributes": 23.232435331872118,
+        "relations": 34.828163817670934,
+        "binding": 0.0,
+        "motion": 0.0,
+        "timing": null
+      },
+      "scene": "global",
+      "time_range_seconds": [
+        0.0,
+        36.0
+      ]
+    },
+    {
+      "id": "global.grain",
+      "name": "grain",
+      "dimensions": {
+        "presence": 100.0,
+        "attributes": 100.0,
+        "relations": 100.0,
+        "binding": null,
+        "motion": null,
+        "timing": null
+      },
+      "scene": "global",
+      "time_range_seconds": [
+        0.0,
+        36.0
+      ]
+    },
+    {
+      "id": "global.scratch",
+      "name": "scratch",
+      "dimensions": {
+        "presence": 100.0,
+        "attributes": 14.725712938351302,
+        "relations": 25.878733712600628,
+        "binding": 100.0,
+        "motion": 0.0,
+        "timing": 0.0
+      },
+      "scene": "global",
+      "time_range_seconds": [
+        0.0,
+        36.0
+      ]
+    },
+    {
+      "id": "global.flash",
+      "name": "flash",
+      "dimensions": {
+        "presence": 100.0,
+        "attributes": 30.87268113111635,
+        "relations": 30.82191780821917,
+        "binding": 100.0,
+        "motion": 0.0,
+        "timing": 0.0
+      },
+      "scene": "global",
+      "time_range_seconds": [
+        0.0,
+        36.0
+      ]
+    },
+    {
+      "id": "global.fade",
+      "name": "fade",
+      "dimensions": {
+        "presence": 100.0,
+        "attributes": 90.43524866450826,
+        "relations": 89.8972602739726,
+        "binding": 100.0,
+        "motion": 60.97909923887402,
+        "timing": 49.99949999999995
+      },
+      "scene": "global",
+      "time_range_seconds": [
+        0.0,
+        36.0
+      ]
+    },
+    {
+      "id": "global.top-bar",
+      "name": "top-bar",
+      "dimensions": {
+        "presence": 100.0,
+        "attributes": 100.0,
+        "relations": 100.0,
+        "binding": null,
+        "motion": null,
+        "timing": null
+      },
+      "scene": "global",
+      "time_range_seconds": [
+        0.0,
+        36.0
+      ]
+    },
+    {
+      "id": "global.bottom-bar",
+      "name": "bottom-bar",
+      "dimensions": {
+        "presence": 100.0,
+        "attributes": 100.0,
+        "relations": 100.0,
+        "binding": null,
+        "motion": null,
+        "timing": null
+      },
+      "scene": "global",
+      "time_range_seconds": [
+        0.0,
+        36.0
+      ]
+    },
+    {
+      "id": "global.end-fade",
+      "name": "片尾黑场渐隐",
+      "dimensions": {
+        "presence": 100.0,
+        "attributes": 100.0,
+        "relations": 100.0,
+        "binding": 100.0,
+        "motion": 22.47046738572163,
+        "timing": 0.0
+      },
+      "scene": "global",
+      "time_range_seconds": [
+        0.0,
+        36.0
+      ]
+    }
+  ],
+  "findings": [
+    {
+      "title": "主街只有静态透视，没有还原镜头向前推进",
+      "time": 7.5,
+      "detail": "原作使用同一个相机参数投影街道、建筑和人物。复刻把建筑画在固定坐标上，只改变人物位置与大小，因此人物在走，街道的推进感和前后比例没有同步变化。",
+      "reference": "src/Shots.tsx:69–91：camZ 从 -3 变化到 1.2；Street、StreetGround 和人物位置都由相机 c 投影。",
+      "replica": "src/Replica.tsx:100–115：Street 使用固定 xs、ys，f 没有参与建筑坐标；203 行只插值人物 x、y、scale。"
+    },
+    {
+      "title": "人物登场被改成缩小，原作是走入画面并抬镜头",
+      "time": 12.0,
+      "detail": "原作先展示靴子，人物从右侧走入，然后镜头沿身体上移，背景以较小幅度跟随。复刻主要缩小整个人物，缺少独立的抬镜头和前后景位移，人物登场的过程不同。",
+      "reference": "src/Shots.tsx:105–132：x 从 1180 到 660，人物 scale 保持 7；dy 用关键点 -262、-250、34，背景单独使用 dy × 0.3。",
+      "replica": "src/Replica.tsx:204：x 从 620 到 650，y 从 785 到 805，scale 从 3.55 到 1.87；背景没有对应的竖直镜头位移。"
+    },
+    {
+      "title": "拔枪、枪口火光和烟雾没有共享同一套动作坐标",
+      "time": 28.2333333333,
+      "detail": "原作先计算角色手部、枪和枪口的位置，再让火光、弹道及烟雾跟随枪口。复刻的枪在人物组件中变化，特效却写在另外一组固定坐标上，枪和特效的连接关系容易错位。",
+      "reference": "src/Shots.tsx:266–275：sm、jm 从角色 rig.muzzle 转成世界坐标；同一组坐标供开枪特效使用。",
+      "replica": "src/Replica.tsx:91、166–176：枪的变换由 Character 的 draw 决定，Flash 固定在 (371,398)/(908,413)，Smoke 固定在 (395,394)/(909,410)。"
+    },
+    {
+      "title": "倒地用整体旋转代替了跪下再前扑",
+      "time": 30.6666666667,
+      "detail": "原作依次改变髋部、脚、躯干和手的位置，先屈膝，再向前扑。复刻主要旋转整个人物，并平移、缩放；关节姿态没有经历同样的变化，所以倒地看起来像一个完整剪影倾倒。",
+      "reference": "src/duel.ts:79–94：分别混合跪地姿态 K 和前扑姿态 L；fallAng 保持 0。",
+      "replica": "src/Replica.tsx:74、215：对象根节点 rotate(fall)，fall 从 -12° 到 87°，同时插值 x、y 和 scale。"
+    },
+    {
+      "title": "眼部细节有变化，但眯眼的变化幅度与节奏不同",
+      "time": 23.2666666667,
+      "detail": "原作让眼睑随紧张程度逐步收窄，并把视线、镜头推进单独控制。复刻给眼睛高度和视线加了小幅正弦变化；这能产生运动，但不等于还原原作逐渐眯眼的过程。",
+      "reference": "src/Shots.tsx:228–233、423–438：第一组 squint 从 0.1/0.15 增至 0.45/0.5，第二组增至 0.7/0.72；zoom 单独插值。",
+      "replica": "src/Replica.tsx:118：gaze=sin(local×0.045)×7，眼睛高度 h 随 sin(local×0.03) 小幅改变；143 行第二组 zoom 固定为 1.42。"
+    }
+  ],
+  "evidence": {
+    "scores": "evidence/replica/scores.json",
+    "checks": "evidence/replica/checks.json.gz"
+  },
+  "scope_note": "源码评分覆盖公开对象、部件与集合成员的存在、属性、关系、绑定、运动和时序。字体字形、复杂滤镜和音轨波形相似度不计入源码分数。具体范围与测量限制见实验说明。",
+  "public_page": "https://ustchandsomeboy.github.io/video-result/experiments/western-duel-harbor/index.html"
+}
