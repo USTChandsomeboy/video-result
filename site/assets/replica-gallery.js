@@ -11,7 +11,7 @@
   function nav() {
     const search=$('search').value.toLowerCase().trim(), filter=$('filter').value;
     const shown=cases.filter(c=>(filter==='all'||c.score_state===filter)&&`${c.title} ${c.category}`.toLowerCase().includes(search));
-    $('count').textContent=`${shown.length} / ${cases.length} 组对比 · 3 组已有有效评分`;
+    $('count').textContent=`${shown.length} / ${cases.length} 组对比 · ${cases.filter(c=>c.score_state==='valid').length} 组已有有效评分`;
     $('case-nav').replaceChildren(...shown.map(c=>{const b=el('button',c.title,c.id===current?.id?'active':'');b.dataset.case=c.id;b.setAttribute('aria-current',String(c.id===current?.id));b.append(el('span',`${c.category} · ${c.duration.toFixed(1)}s · ${c.score_state==='valid'?c.score.total.toFixed(2)+' 分':states[c.score_state]}`,'nav-sub'));b.onclick=()=>{if(location.hash.slice(1)===c.id)show(c);else location.hash=c.id};return b}));
     if(!shown.length)$('case-nav').append(el('p','没有符合条件的案例。','muted'));
   }
