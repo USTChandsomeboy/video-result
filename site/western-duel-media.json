@@ -1,0 +1,18 @@
+{
+  "release": "western-duel-media-20261017",
+  "media_dir": "media/western-duel",
+  "files": [
+    {
+      "name": "1ad65faab794a9cf101175de40d8e4a96edb7e203f8296a8d81b7b882ab9f54e.mp4",
+      "sha256": "1ad65faab794a9cf101175de40d8e4a96edb7e203f8296a8d81b7b882ab9f54e",
+      "bytes": 22693665,
+      "url": "https://github.com/USTChandsomeboy/video-result/releases/download/western-duel-media-20261017/reference.mp4"
+    },
+    {
+      "name": "f8e956099576d4e618304406d807efe6440435503dd5adf31c8791ca4d36ece3.mp4",
+      "sha256": "f8e956099576d4e618304406d807efe6440435503dd5adf31c8791ca4d36ece3",
+      "bytes": 7389315,
+      "url": "https://github.com/USTChandsomeboy/video-result/releases/download/western-duel-media-20261017/replica.mp4"
+    }
+  ]
+}
