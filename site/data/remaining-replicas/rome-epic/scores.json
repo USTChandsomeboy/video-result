@@ -1,0 +1,54 @@
+{
+  "case_id": "rome-epic",
+  "version": "6.0.0-scoped",
+  "status": "scoped_valid",
+  "total": 53.32632036653284,
+  "resolved_portion_score": 53.32632036653284,
+  "dimensions": {
+    "presence": 98.91524844265867,
+    "attributes": 68.9146237016136,
+    "relations": 48.67364334958363,
+    "binding": 77.92929292929293,
+    "motion": 15.332226577993277,
+    "timing": 40.53687485276391
+  },
+  "dimension_weights": {
+    "presence": 0.1,
+    "attributes": 0.15,
+    "relations": 0.15,
+    "binding": 0.2,
+    "motion": 0.25,
+    "timing": 0.15
+  },
+  "groups": {
+    "atmosphere": 45.25423496218729,
+    "camera": 47.91560718447695,
+    "map": 46.43029987303065,
+    "terrain": 100.0,
+    "titles": 66.30261148074288
+  },
+  "checks_resolved": 1123,
+  "checks_total": 1123,
+  "checks_excluded": 79,
+  "original_declared_checks": 1202,
+  "coverage": {
+    "resolved": 1123,
+    "declared": 1123,
+    "excluded": 79,
+    "weighted_original": 0.6505000000000001
+  },
+  "exclusion_policy": "仅将当前解析器无法可靠观测的 79 项排除；已测检查按原 v6 内容预算和六维权重重新归一化。排除项不按 0 分计入。",
+  "excluded_reasons": {
+    "Expected ; got , at 51": 56,
+    "Public object annotation is not on actual corresponding mesh/group": 16,
+    "Unique actual final-screen composite material not found": 5,
+    "Internal Three world units differ; canonical geometry conversion is not validated. Screen projection is scored separately.": 2
+  },
+  "source_score_v6": "evidence/source-score-v6/scores.json",
+  "checks_source": "evidence/source-score-v6/checks.json",
+  "created_at_utc": "2026-10-17T07:36:37.791376+00:00",
+  "limitations": [
+    "地形 GLSL 表达式、天空/云雾对象绑定、最终后期合成和两个内部世界单位检查未纳入本分数。",
+    "该分数适合本页面比较；若要作为无范围限制的 Harbor 正式 benchmark，仍需补齐这些测量器并重新校准。"
+  ]
+}

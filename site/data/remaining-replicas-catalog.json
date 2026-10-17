@@ -203,6 +203,121 @@
         }
       ],
       "url": "replicas.html#svg-tutorial"
+    },
+    {
+      "id": "rome-epic",
+      "title": "Rome Epic：从罗马诞生到帝国黄昏",
+      "category": "知识讲解",
+      "variant": "独立复刻",
+      "score": {
+        "case_id": "rome-epic",
+        "version": "6.0.0-scoped",
+        "status": "scoped_valid",
+        "total": 53.32632036653284,
+        "resolved_portion_score": 53.32632036653284,
+        "dimensions": {
+          "presence": 98.91524844265867,
+          "attributes": 68.9146237016136,
+          "relations": 48.67364334958363,
+          "binding": 77.92929292929293,
+          "motion": 15.332226577993277,
+          "timing": 40.53687485276391
+        },
+        "dimension_weights": {
+          "presence": 0.1,
+          "attributes": 0.15,
+          "relations": 0.15,
+          "binding": 0.2,
+          "motion": 0.25,
+          "timing": 0.15
+        },
+        "groups": {
+          "atmosphere": 45.25423496218729,
+          "camera": 47.91560718447695,
+          "map": 46.43029987303065,
+          "terrain": 100.0,
+          "titles": 66.30261148074288
+        },
+        "checks_resolved": 1123,
+        "checks_total": 1123,
+        "checks_excluded": 79,
+        "original_declared_checks": 1202,
+        "coverage": {
+          "resolved": 1123,
+          "declared": 1123,
+          "excluded": 79,
+          "weighted_original": 0.6505000000000001
+        },
+        "exclusion_policy": "仅将当前解析器无法可靠观测的 79 项排除；已测检查按原 v6 内容预算和六维权重重新归一化。排除项不按 0 分计入。",
+        "excluded_reasons": {
+          "Expected ; got , at 51": 56,
+          "Public object annotation is not on actual corresponding mesh/group": 16,
+          "Unique actual final-screen composite material not found": 5,
+          "Internal Three world units differ; canonical geometry conversion is not validated. Screen projection is scored separately.": 2
+        },
+        "source_score_v6": "evidence/source-score-v6/scores.json",
+        "checks_source": "evidence/source-score-v6/checks.json",
+        "created_at_utc": "2026-10-17T07:36:37.791376+00:00",
+        "limitations": [
+          "地形 GLSL 表达式、天空/云雾对象绑定、最终后期合成和两个内部世界单位检查未纳入本分数。",
+          "该分数适合本页面比较；若要作为无范围限制的 Harbor 正式 benchmark，仍需补齐这些测量器并重新校准。"
+        ]
+      },
+      "notes": [],
+      "scope": "42 个公开对象、1202 项检查。内容预算：地形与疆域30%、镜头与屏幕运动20%、路径城市粒子20%、文字画框20%、天空光照气氛10%；组内沿用六项维度权重。",
+      "findings": [
+        "ROMA 上下横线：原作从0展开到640px；复刻宽度固定，仅父容器微缩。修正后展开绑定和长度运动均为0分。",
+        "章节II竖线：原作高度0→58px，复刻固定62px。高度运动由14.70降为0分。",
+        "字幕逐字渐显、模糊和上移过程不同；年份推进与显示区间也不同。文字统一使用20%内容预算，无法靠数量稀释主画面差异。",
+        "镜头投影与轨迹的语义运动检查仍为0分；镜头确实在动，绑定检查本身不能证明镜头正确。",
+        "地形疆域、天空云雾和后期仍有测量缺口；它们权重提高后，加权覆盖率由旧版91.5%变为65.05%。"
+      ],
+      "score_note": "可测范围评分 53.33 / 100：1123 项已解析检查计入；79 项源码表示限制项明确排除，不按 0 分或满分计入。",
+      "validation": "完整视频与源码固定；评分按 v6 规则对 1123 项可可靠测量检查归一化，排除项和原因写入 scoped-score.json。",
+      "source_url": null,
+      "attribution": "",
+      "related": null,
+      "reference_label": "参考视频",
+      "crop_reference": false,
+      "score_state": "valid",
+      "reference": {
+        "sha256": "19585bb8ca0167119b8e82505ef271e216cc222dcf49a7b74dc78bcb3c0777de",
+        "bytes": 100316341,
+        "duration": 60.011,
+        "width": 1920,
+        "height": 1080,
+        "fps": 30.0,
+        "url": "https://github.com/USTChandsomeboy/video-result/releases/download/remaining-replicas-media-20261017/19585bb8ca0167119b8e82505ef271e216cc222dcf49a7b74dc78bcb3c0777de.mp4",
+        "poster": "data/remaining-replicas/rome-epic/reference.jpg"
+      },
+      "replica": {
+        "sha256": "5d5d56051cdb76cf1d2b7d2ae0db6e593d6ac25bd94f93e177b484b3055a6be0",
+        "bytes": 120414568,
+        "duration": 60.011,
+        "width": 1920,
+        "height": 1080,
+        "fps": 30.0,
+        "url": "https://github.com/USTChandsomeboy/video-result/releases/download/remaining-replicas-media-20261017/5d5d56051cdb76cf1d2b7d2ae0db6e593d6ac25bd94f93e177b484b3055a6be0.mp4",
+        "poster": "data/remaining-replicas/rome-epic/replica.jpg"
+      },
+      "duration": 60.011,
+      "fps": 30.0,
+      "display_aspect": 1.7777777777777777,
+      "evidence": [
+        {
+          "label": "完整评分 JSON",
+          "url": "data/remaining-replicas/rome-epic/scores.json"
+        },
+        {
+          "label": "逐项检查证据（JSON.gz）",
+          "url": "data/remaining-replicas/rome-epic/checks.json.gz"
+        },
+        {
+          "label": "源码差异说明",
+          "url": "data/remaining-replicas/rome-epic/code-differences.md"
+        }
+      ],
+      "url": "replicas.html#rome-epic"
     }
   ]
 }

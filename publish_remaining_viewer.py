@@ -90,13 +90,17 @@ def main(args):
     files, local_sources, cases = {}, {}, []
     svg_root = work / 'svg-tutorial-standard-work/delivery'
     qixiong_root = work / 'qixiong-standard-work/delivery'
+    rome_root = work / 'rome-epic-standard-work/delivery'
     svg = json.loads((svg_root / 'results.json').read_text())['cases'][0]
     qixiong = json.loads((qixiong_root / 'results.json').read_text())
+    rome = json.loads((rome_root / 'results.json').read_text())['cases'][0]
     specs = [
         ('qixiong', '七雄并立：战国地图叙事', '知识讲解', qixiong_root,
          'media/reference.mp4', 'media/replica.mp4', qixiong, 'qixiong-harbor'),
         ('svg-tutorial', svg['title'], '操作指导', svg_root,
          'media/reference.mp4', 'media/replica.mp4', svg, 'svg-anim-tutorial-harbor'),
+        ('rome-epic', rome['title'], '知识讲解', rome_root,
+         'media/reference.mp4', 'media/replica.mp4', rome, 'rome-epic-harbor'),
     ]
 
     for cid, title, category, root, ref, rep, raw, route in specs:
