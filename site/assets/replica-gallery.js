@@ -65,6 +65,6 @@
     const links=el('div',null,'links');if(c.source_url)links.append(link('原始来源 ↗',c.source_url,true));for(const e of c.evidence)links.append(link(e.label,e.url));if(c.related)links.append(link(c.related.label,c.related.url));links.append(link('本例分享链接',`replicas.html#${c.id}`));root.append(links);
   }
   $('search').oninput=nav;$('filter').onchange=nav;
-  function fromHash(){const id=decodeURIComponent(location.hash.slice(1))||document.body.dataset.preset;show(cases.find(c=>c.id===id)||cases[0]);}
+  function fromHash(){const id=decodeURIComponent(location.hash.slice(1))||document.body.dataset.preset;const c=cases.find(c=>c.id===id)||cases[0];if(id&&id!==c.id)history.replaceState(null,'',`#${c.id}`);show(c);}
   fetch(url('data/remaining-replicas-catalog.json')).then(r=>{if(!r.ok)throw Error(r.status);return r.json()}).then(data=>{cases=data.cases;fromHash();window.addEventListener('hashchange',fromHash)}).catch(e=>{$('detail').textContent='案例数据加载失败：'+e.message});
 })();

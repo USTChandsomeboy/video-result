@@ -88,82 +88,16 @@ def main(args):
         for item in json.loads(path.read_text()).get('files', []):
             existing[item['sha256']] = item['url']
     files, local_sources, cases = {}, {}, []
-    mercury_root = project / 'experiments/mercury-automation'
     svg_root = work / 'svg-tutorial-standard-work/delivery'
     qixiong_root = work / 'qixiong-standard-work/delivery'
-    rome_root = work / 'rome-epic-standard-work/delivery'
-    western_root = project / 'experiments/western-duel-harbor'
-    mercury = json.loads((mercury_root / 'results.json').read_text())['cases']
     svg = json.loads((svg_root / 'results.json').read_text())['cases'][0]
     qixiong = json.loads((qixiong_root / 'results.json').read_text())
-    rome = json.loads((rome_root / 'results.json').read_text())['cases'][0]
     specs = [
         ('qixiong', '七雄并立：战国地图叙事', '知识讲解', qixiong_root,
          'media/reference.mp4', 'media/replica.mp4', qixiong, 'qixiong-harbor'),
         ('svg-tutorial', svg['title'], '操作指导', svg_root,
          'media/reference.mp4', 'media/replica.mp4', svg, 'svg-anim-tutorial-harbor'),
-        ('rome-epic', rome['title'], '知识讲解', rome_root,
-         'media/reference.mp4', 'media/replica.mp4', rome, 'rome-epic-harbor'),
-        ('mercury', mercury[0]['title'], '宣传推广', mercury_root,
-         'media/mercury-reference.mp4', 'media/mercury-replica.mp4', mercury[0], 'mercury-automation'),
-        ('automation', mercury[1]['title'], '宣传推广', mercury_root,
-         'media/automation-reference.mp4', 'media/automation-replica.mp4', mercury[1], ''),
-        ('western-duel', 'Western Duel：西部对决', '叙事娱乐', western_root,
-         'media/reference.mp4', 'media/replica.mp4',
-         {'score': json.loads((western_root / 'results.json').read_text()),
-          'score_note': '完整成片已完成；评分任务仍在校准，没有正式总分。'}, 'western-duel-harbor'),
     ]
-    fp_notes = ['此组历史实验未生成源码自动评分。',
-                '品牌标志和部分照片使用了替代元素，字体也有替换；复刻未重建音频。请结合视频查看。']
-    for short, title, category in [
-        ('bloomberg', 'Bloomberg：金融图表分析', '分析汇报'),
-        ('zeed', 'Zeed：投资组合数据', '分析汇报'),
-        ('framer', 'Framer：界面操作教程', '操作指导'),
-        ('jhu', 'JHU：数据与地图播报', '资讯播报'),
-        ('apple', 'Apple Motion：动效片段回顾', '记录回顾'),
-        ('skrrt', 'Skrrt：年度音乐数据回顾', '记录回顾'),
-    ]:
-        d = project / f'experiments/多个复刻任务/fp-{short}'
-        specs.append((f'fp-{short}', title, category, d, 'reference.mp4', 'recreation.mp4',
-                      {'findings': fp_notes, 'variant': '历史复刻'}, 'fp-' + short))
-    specs.extend([
-        ('claude-story', '是谁还没用上 Claude：完整故事动画', '叙事娱乐',
-         project / 'experiments/douyin-claude-pair', 'anmuxi-story/reference/original.mp4',
-         'anmuxi-story/out/replica.mp4',
-         {'source_url': 'https://www.douyin.com/video/7696108445728019027',
-          'scope': '约84秒完整对照：弹窗、账号、搜索经验、配件升级、终端与星际穿梭。'}, 'douyin-claude-story'),
-        ('kicks-collage', 'KICKS：撕纸与照片拼贴', '艺术表达',
-         project / 'experiments/twitter-katana-collage', 'reference/twitter-original.mp4',
-         'out/kicks-twitter-replica.mp4',
-         {'source_url': 'https://x.com/gkxspace/status/2108368287591751969',
-          'scope': '原片按原有对比页的裁切方式，仅展示右侧动画。复刻使用从原片整理的静态素材与代码动效。',
-          'crop_reference': True, 'display_aspect': 1,
-          'findings': ['部分遮挡后的边缘、汽车细节、马的内部动作与撕纸折皱为近似处理。']}, 'twitter-katana-collage'),
-        ('cute-lyric', '歌词 MV：小熊与兔子（角色替换版）', '叙事娱乐', project,
-         'experiments/lyric-mv-faithful/out/faithful-lyric-mv-no-watermark.mp4',
-         'experiments/lyric-mv-cute-replica/out/cute-lyric-mv.mp4',
-         {'variant': '历史角色替换试作', 'reference_label': '去标识的素材合成参考',
-          'scope': '历史版本有意替换角色，不作为严格的同角色复刻。参考展示复用已发布的去标识、去署名版本。',
-          'attribution': '小熊与兔子轮廓来自 Twitter Twemoji，CC BY 4.0；身体、服装与动作另行绘制。',
-          'source_url': 'https://github.com/twitter/twemoji'}, 'lyric-mv-cute-replica'),
-        ('smalltown-codex-deepseek', '小镇姑娘：Codex × DeepSeek 独立试作', '叙事娱乐',
-         project, 'experiments/codex-deepseek-smalltown/reference-review/reference.mp4',
-         'experiments/codex-deepseek-smalltown/out/small-town-codex-deepseek.mp4',
-         {'variant': '历史风格试作 · 未评分',
-          'scope': '22秒风格试作，借鉴参考片画风；歌曲、角色和时长不同，不按同一时间线判断还原度。与已发布的完整鲸鱼娘 MV Harbor 任务为不同实验。'}, 'codex-deepseek-smalltown'),
-        ('motion-lab-first', 'Motion Lab：原帖与首次复刻', '艺术表达',
-         project / 'experiments/florence-motion-lab', 'reference/original.mp4', 'out/replica.mp4',
-         {'variant': '首次复刻 · 尚无源码评分', 'source_url': 'https://x.com/flxrnc/status/2108899503092740561',
-          'scope': '此处是原帖与第一次重新实现的对照。已发布的 Harbor 页面用这次实现作为GT，评估另一次独立复刻，两组实验不同。',
-          'related': {'url': 'experiments/florence-motion-lab-harbor/index.html', 'label': '后续 Harbor 复刻与评分'}},
-         'florence-motion-lab'),
-        ('clawd-first', 'Clawd 换装：原帖与首次复刻', '叙事娱乐',
-         project / 'experiments/douyin-claude-pair/clawd-dressup', 'reference/original.mp4', 'out/replica.mp4',
-         {'variant': '首次复刻 · 尚无源码评分', 'source_url': 'https://www.douyin.com/video/7695989308771401107',
-          'scope': '此处是原帖与第一次实现的对照。已发布的 Clawd Harbor 页面用这次实现作为GT，再交给独立 agent 复刻。',
-          'related': {'url': 'experiments/clawd-dressup-harbor/index.html', 'label': '后续 Harbor 复刻与评分'}},
-         'clawd-dressup-first'),
-    ])
 
     for cid, title, category, root, ref, rep, raw, route in specs:
         raw = clean(raw)
