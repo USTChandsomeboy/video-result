@@ -1,0 +1,33 @@
+import json
+from pathlib import Path
+
+root=Path(__file__).resolve().parents[1]
+lines=['# 三条视频的视频对比分数','',
+       'Reel26、FullStop、Horizon 先按交付成片计算一个自动总分。三条使用相同规则；现有源码评分结果和未支持状态保留。此分用于先查看复刻效果，和其他五条 v3 六维源码评分不能直接排名。','',
+       '| 视频 | 总分 | 画面结构 | 颜色 | 运动变化 | 抽帧数 |',
+       '|---|---:|---:|---:|---:|---:|']
+for slug in ['reel26','fullstop','horizon']:
+    score=json.loads((root/slug/'evaluation-video-provisional/scores.json').read_text())
+    d=score['dimensions']
+    lines.append(f"| {slug} | {score['total']:.1f} | {d['structure']:.1f} | {d['color']:.1f} | {d['motion']:.1f} | {score['sampling']['frames']} |")
+lines+=['','## 计算方式','',
+        '总分 = 画面结构 × 50% + 颜色 × 25% + 运动变化 × 25%。','',
+        '1. 从参考和复刻 MP4 的零秒开始对齐，每秒取 10 帧，统一缩小为 480×270；不平移时间去寻找最好看的匹配。',
+        '2. 画面结构：同一时刻亮度图的局部 SSIM，负值截为零。',
+        '3. 颜色：每个像素 RGB 平均绝对误差，以 0–1 全色域归一化后取 1−误差。',
+        '4. 主体区域：分别估计两帧边缘的背景颜色，取偏离背景超过 0.06 的区域并合并、扩张 2 像素。结构和颜色均按主体区域 85%、全画面 15% 汇总，减少相同空白背景的影响。',
+        '5. 运动变化：相邻帧 RGB 有符号差分的相似度。公式为 1−Σ|原作差分−复刻差分| / Σ(|原作差分|+|复刻差分|)。整个片段按运动量汇总，静止片段不会凭空增加运动分。此项检查时空像素变化，不能证明粒子身份或 3D 运动参数。',
+        '6. 保存每帧观测、每秒分数，以及输入视频、脚本和解码器的 SHA-256，方便复查。','',
+        '## 范围和验证','',
+        '这个分数衡量视频相似度。它受文字位置、整体偏移和快速切镜影响，也可能漏掉细小对象、10 fps 采样间的快速运动和缩放后消失的细节。它不证明元素身份、动作绑定、3D 几何或着色器参数是否正确；音频不参与。颜色使用线性绝对误差，观感明显不同的低对比图像仍可能有较高颜色分。权重尚未通过人工偏好样本校准。','',
+        '数值自检覆盖同图 100、颜色改错、位置错位、动作一致 100、冻结动作 0 和反向动作 0。记录见 [video-provisional-selftest.json](video-provisional-selftest.json)。','',
+        '每例 `evaluation-video-provisional/scores.json` 为视频对比结果，`checks.json` 为抽帧数值。正式源码结果仍在各例的 `evaluation-v2/`，保留 incomplete 状态。Harbor 的正式评分入口没有被替换。','',
+        '复算命令：','',
+        '```sh',
+        '/Users/zhanyi/Code/x-reels-eval-python/bin/python scripts/score_video_provisional.py reel26 fullstop horizon',
+        'python3 scripts/write_video_provisional_report.py',
+        'python3 scripts/write_summary.py',
+        'python3 scripts/build_viewer.py',
+        '```','']
+(root/'scoring-review/VIDEO-PROVISIONAL.md').write_text('\n'.join(lines))
+print('\n'.join(lines[:11]))

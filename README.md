@@ -40,3 +40,5 @@ http://127.0.0.1:8770/compare.html
 Mosaic Motion 使用 Release `mosaic-motion-v2-media-20261011`。发布前先上传清单中的两个 MP4，然后提交页面、清单和评分 JSON；推送 `main` 会自动部署。
 
 - `site/experiments/clawd-dressup-harbor/index.html`：Clawd 换装，9.5秒；v1 82.94分，v2探索性事后重评分54.37分。37个对象、340项检查，保留两版规则与结果。
+
+- [X-Reels：8 条完整视频复刻与最新评分](https://ustchandsomeboy.github.io/video-result/experiments/x-reels-standard/compare.html)：Kinetic、LinkPulse、Showreel、Reel26、FullStop、Horizon、TeamLaunch、SketchDay。页面提供同步对比、总分、分项、源码与检查记录下载。
