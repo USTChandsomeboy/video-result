@@ -1,0 +1,1370 @@
+{
+  "schema_version": 1,
+  "objects": [
+    {
+      "id": "girl.figure",
+      "name": "穿绿色衣服的小女孩",
+      "time_range_seconds": [
+        0,
+        28
+      ],
+      "bbox_norm": [
+        0.23,
+        0.34,
+        0.61,
+        0.88
+      ],
+      "required_parts": [
+        "头部",
+        "身体",
+        "双手"
+      ],
+      "anchor_seconds": 5.6,
+      "role": "editable_object",
+      "scene": "girl",
+      "asset_ids": [],
+      "asset_mode": "frame_only",
+      "checks": [
+        "presence",
+        "attributes",
+        "relations",
+        "binding",
+        "motion",
+        "timing"
+      ]
+    },
+    {
+      "id": "girl.head",
+      "name": "女孩的头部与头发",
+      "time_range_seconds": [
+        0,
+        28
+      ],
+      "bbox_norm": [
+        0.25,
+        0.34,
+        0.53,
+        0.65
+      ],
+      "required_parts": [],
+      "anchor_seconds": 5.6,
+      "role": "editable_object",
+      "scene": "girl",
+      "asset_ids": [],
+      "asset_mode": "frame_only",
+      "checks": [
+        "presence",
+        "attributes",
+        "relations",
+        "binding",
+        "motion",
+        "timing"
+      ]
+    },
+    {
+      "id": "girl.arms",
+      "name": "女孩的手臂和手掌",
+      "time_range_seconds": [
+        0,
+        28
+      ],
+      "bbox_norm": [
+        0.23,
+        0.55,
+        0.65,
+        0.91
+      ],
+      "required_parts": [
+        "左手臂",
+        "右手臂"
+      ],
+      "anchor_seconds": 5.6,
+      "role": "editable_object",
+      "scene": "girl",
+      "asset_ids": [],
+      "asset_mode": "frame_only",
+      "checks": [
+        "presence",
+        "attributes",
+        "relations",
+        "binding",
+        "motion",
+        "timing"
+      ]
+    },
+    {
+      "id": "girl.face",
+      "name": "女孩的眼睛和嘴",
+      "time_range_seconds": [
+        0,
+        28
+      ],
+      "bbox_norm": [
+        0.28,
+        0.36,
+        0.5,
+        0.61
+      ],
+      "required_parts": [
+        "眼睛",
+        "嘴"
+      ],
+      "anchor_seconds": 23.3,
+      "role": "editable_object",
+      "scene": "girl",
+      "asset_ids": [],
+      "asset_mode": "frame_only",
+      "checks": [
+        "presence",
+        "attributes",
+        "relations",
+        "binding",
+        "motion",
+        "timing"
+      ]
+    },
+    {
+      "id": "girl.pen",
+      "name": "女孩手里的蓝色笔",
+      "time_range_seconds": [
+        0,
+        2
+      ],
+      "bbox_norm": [
+        0.4,
+        0.5,
+        0.58,
+        0.77
+      ],
+      "required_parts": [],
+      "anchor_seconds": 1.8,
+      "role": "editable_object",
+      "scene": "girl",
+      "asset_ids": [],
+      "asset_mode": "frame_only",
+      "checks": [
+        "presence",
+        "attributes",
+        "relations",
+        "binding",
+        "motion",
+        "timing"
+      ]
+    },
+    {
+      "id": "girl.note",
+      "name": "女孩手持的回信",
+      "time_range_seconds": [
+        21,
+        26
+      ],
+      "bbox_norm": [
+        0.24,
+        0.57,
+        0.58,
+        0.88
+      ],
+      "required_parts": [],
+      "anchor_seconds": 23.4,
+      "role": "editable_object",
+      "scene": "girl",
+      "asset_ids": [],
+      "asset_mode": "frame_only",
+      "checks": [
+        "presence",
+        "attributes",
+        "relations",
+        "binding",
+        "motion",
+        "timing"
+      ]
+    },
+    {
+      "id": "sun.figure",
+      "name": "橙红色放射状太阳角色",
+      "time_range_seconds": [
+        0,
+        28
+      ],
+      "bbox_norm": [
+        0.15,
+        0.12,
+        0.83,
+        0.78
+      ],
+      "required_parts": [
+        "放射光芒",
+        "中央圆脸"
+      ],
+      "anchor_seconds": 8.1,
+      "role": "editable_object",
+      "scene": "sun",
+      "asset_ids": [],
+      "asset_mode": "frame_only",
+      "checks": [
+        "presence",
+        "attributes",
+        "relations",
+        "binding",
+        "motion",
+        "timing"
+      ]
+    },
+    {
+      "id": "sun.face",
+      "name": "太阳的眼睛和嘴",
+      "time_range_seconds": [
+        0,
+        28
+      ],
+      "bbox_norm": [
+        0.35,
+        0.3,
+        0.65,
+        0.52
+      ],
+      "required_parts": [
+        "眼睛",
+        "嘴"
+      ],
+      "anchor_seconds": 8.1,
+      "role": "editable_object",
+      "scene": "sun",
+      "asset_ids": [],
+      "asset_mode": "frame_only",
+      "checks": [
+        "presence",
+        "attributes",
+        "relations",
+        "binding",
+        "motion",
+        "timing"
+      ]
+    },
+    {
+      "id": "sun.paper",
+      "name": "太阳拿着并翻折的纸张",
+      "time_range_seconds": [
+        7.5,
+        20
+      ],
+      "bbox_norm": [
+        0.3,
+        0.57,
+        0.7,
+        0.94
+      ],
+      "required_parts": [],
+      "anchor_seconds": 18.5,
+      "role": "editable_object",
+      "scene": "sun",
+      "asset_ids": [],
+      "asset_mode": "frame_only",
+      "checks": [
+        "presence",
+        "attributes",
+        "relations",
+        "binding",
+        "motion",
+        "timing"
+      ]
+    },
+    {
+      "id": "sky.moon",
+      "name": "蓝色夜空里的月牙",
+      "time_range_seconds": [
+        0,
+        28
+      ],
+      "bbox_norm": [
+        0.03,
+        0.04,
+        0.2,
+        0.24
+      ],
+      "required_parts": [],
+      "anchor_seconds": 0.5,
+      "role": "editable_object",
+      "scene": "sky",
+      "asset_ids": [],
+      "asset_mode": "frame_only",
+      "checks": [
+        "presence",
+        "attributes",
+        "relations",
+        "binding",
+        "motion",
+        "timing"
+      ]
+    },
+    {
+      "id": "town.buildings",
+      "name": "远景中的房屋和窗灯",
+      "time_range_seconds": [
+        0,
+        28
+      ],
+      "bbox_norm": [
+        0.52,
+        0.52,
+        1,
+        1
+      ],
+      "required_parts": [],
+      "anchor_seconds": 25.4,
+      "role": "editable_object",
+      "scene": "town",
+      "asset_ids": [],
+      "asset_mode": "frame_only",
+      "checks": [
+        "presence",
+        "attributes",
+        "relations",
+        "binding",
+        "motion",
+        "timing"
+      ]
+    },
+    {
+      "id": "opening.planes",
+      "name": "开头和结尾窗外上升的纸飞机及尾迹",
+      "time_range_seconds": [
+        0,
+        28
+      ],
+      "bbox_norm": [
+        0.3,
+        0.15,
+        0.9,
+        0.83
+      ],
+      "required_parts": [],
+      "anchor_seconds": 0.5,
+      "role": "editable_object",
+      "scene": "opening",
+      "asset_ids": [],
+      "asset_mode": "frame_only",
+      "checks": [
+        "presence",
+        "attributes",
+        "relations",
+        "binding",
+        "motion",
+        "timing"
+      ]
+    },
+    {
+      "id": "notebook.page",
+      "name": "俯视镜头里的横线笔记本",
+      "time_range_seconds": [
+        2,
+        4.5
+      ],
+      "bbox_norm": [
+        0.08,
+        0.22,
+        0.91,
+        0.91
+      ],
+      "required_parts": [],
+      "anchor_seconds": 2.5,
+      "role": "editable_object",
+      "scene": "notebook",
+      "asset_ids": [],
+      "asset_mode": "frame_only",
+      "checks": [
+        "presence",
+        "attributes",
+        "relations",
+        "binding",
+        "motion",
+        "timing"
+      ]
+    },
+    {
+      "id": "writing.first",
+      "name": "逐渐写出的 what do",
+      "time_range_seconds": [
+        2,
+        4.5
+      ],
+      "bbox_norm": [
+        0.18,
+        0.34,
+        0.8,
+        0.53
+      ],
+      "required_parts": [],
+      "anchor_seconds": 2.7,
+      "role": "editable_object",
+      "scene": "writing",
+      "asset_ids": [],
+      "asset_mode": "frame_only",
+      "checks": [
+        "presence",
+        "attributes",
+        "relations",
+        "binding",
+        "motion",
+        "timing"
+      ]
+    },
+    {
+      "id": "writing.second",
+      "name": "逐渐写出的 you love?",
+      "time_range_seconds": [
+        2,
+        4.5
+      ],
+      "bbox_norm": [
+        0.12,
+        0.54,
+        0.87,
+        0.76
+      ],
+      "required_parts": [],
+      "anchor_seconds": 4.0,
+      "role": "editable_object",
+      "scene": "writing",
+      "asset_ids": [],
+      "asset_mode": "frame_only",
+      "checks": [
+        "presence",
+        "attributes",
+        "relations",
+        "binding",
+        "motion",
+        "timing"
+      ]
+    },
+    {
+      "id": "writing.arm",
+      "name": "俯视写字镜头的袖子、手掌和笔",
+      "time_range_seconds": [
+        2,
+        4.5
+      ],
+      "bbox_norm": [
+        0.28,
+        0.24,
+        1,
+        1
+      ],
+      "required_parts": [
+        "绿色袖子",
+        "手掌",
+        "蓝色笔"
+      ],
+      "anchor_seconds": 3.4,
+      "role": "editable_object",
+      "scene": "writing",
+      "asset_ids": [],
+      "asset_mode": "frame_only",
+      "checks": [
+        "presence",
+        "attributes",
+        "relations",
+        "binding",
+        "motion",
+        "timing"
+      ]
+    },
+    {
+      "id": "writing.tear",
+      "name": "从笔记本上撕起的纸页",
+      "time_range_seconds": [
+        4.1,
+        4.5
+      ],
+      "bbox_norm": [
+        0.1,
+        0.24,
+        0.95,
+        0.95
+      ],
+      "required_parts": [],
+      "anchor_seconds": 4.4,
+      "role": "editable_object",
+      "scene": "writing",
+      "asset_ids": [],
+      "asset_mode": "frame_only",
+      "checks": [
+        "presence",
+        "attributes",
+        "relations",
+        "binding",
+        "motion",
+        "timing"
+      ]
+    },
+    {
+      "id": "folding.paper",
+      "name": "折叠成纸飞机的纸张",
+      "time_range_seconds": [
+        4.5,
+        5.25
+      ],
+      "bbox_norm": [
+        0.31,
+        0.2,
+        0.69,
+        0.88
+      ],
+      "required_parts": [
+        "纸张主体",
+        "折角",
+        "折痕"
+      ],
+      "anchor_seconds": 4.9,
+      "role": "editable_object",
+      "scene": "folding",
+      "asset_ids": [],
+      "asset_mode": "frame_only",
+      "checks": [
+        "presence",
+        "attributes",
+        "relations",
+        "binding",
+        "motion",
+        "timing"
+      ]
+    },
+    {
+      "id": "folding.hands",
+      "name": "折纸镜头的左右手和袖子",
+      "time_range_seconds": [
+        4.5,
+        5.25
+      ],
+      "bbox_norm": [
+        0,
+        0.3,
+        1,
+        1
+      ],
+      "required_parts": [
+        "左手",
+        "右手"
+      ],
+      "anchor_seconds": 4.9,
+      "role": "editable_object",
+      "scene": "folding",
+      "asset_ids": [],
+      "asset_mode": "frame_only",
+      "checks": [
+        "presence",
+        "attributes",
+        "relations",
+        "binding",
+        "motion",
+        "timing"
+      ]
+    },
+    {
+      "id": "throw.trail",
+      "name": "女孩抛出纸飞机时的蓝色虚线",
+      "time_range_seconds": [
+        5.25,
+        6
+      ],
+      "bbox_norm": [
+        0.5,
+        0,
+        1,
+        0.67
+      ],
+      "required_parts": [],
+      "anchor_seconds": 5.8,
+      "role": "editable_object",
+      "scene": "throw",
+      "asset_ids": [],
+      "asset_mode": "frame_only",
+      "checks": [
+        "presence",
+        "attributes",
+        "relations",
+        "binding",
+        "motion",
+        "timing"
+      ]
+    },
+    {
+      "id": "flight.planes",
+      "name": "飞向太阳的三架纸飞机",
+      "time_range_seconds": [
+        6,
+        7
+      ],
+      "bbox_norm": [
+        0.1,
+        0.3,
+        0.95,
+        0.9
+      ],
+      "required_parts": [
+        "主纸飞机",
+        "另外两架纸飞机"
+      ],
+      "anchor_seconds": 6.6,
+      "role": "editable_object",
+      "scene": "flight",
+      "asset_ids": [],
+      "asset_mode": "frame_only",
+      "checks": [
+        "presence",
+        "attributes",
+        "relations",
+        "binding",
+        "motion",
+        "timing"
+      ]
+    },
+    {
+      "id": "flight.trails",
+      "name": "飞向太阳的虚线航迹",
+      "time_range_seconds": [
+        6,
+        7
+      ],
+      "bbox_norm": [
+        0,
+        0.25,
+        1,
+        0.95
+      ],
+      "required_parts": [],
+      "anchor_seconds": 6.6,
+      "role": "editable_object",
+      "scene": "flight",
+      "asset_ids": [],
+      "asset_mode": "frame_only",
+      "checks": [
+        "presence",
+        "attributes",
+        "relations",
+        "binding",
+        "motion",
+        "timing"
+      ]
+    },
+    {
+      "id": "catch.plane",
+      "name": "太阳接住的纸飞机",
+      "time_range_seconds": [
+        7,
+        7.5
+      ],
+      "bbox_norm": [
+        0,
+        0.53,
+        0.41,
+        0.98
+      ],
+      "required_parts": [],
+      "anchor_seconds": 7.25,
+      "role": "editable_object",
+      "scene": "catch",
+      "asset_ids": [],
+      "asset_mode": "frame_only",
+      "checks": [
+        "presence",
+        "attributes",
+        "relations",
+        "binding",
+        "motion",
+        "timing"
+      ]
+    },
+    {
+      "id": "read.bubbles",
+      "name": "太阳思考时逐个出现的圆点",
+      "time_range_seconds": [
+        8,
+        9
+      ],
+      "bbox_norm": [
+        0.66,
+        0.1,
+        0.85,
+        0.28
+      ],
+      "required_parts": [
+        "三个圆点"
+      ],
+      "anchor_seconds": 8.5,
+      "role": "editable_object",
+      "scene": "read",
+      "asset_ids": [],
+      "asset_mode": "frame_only",
+      "checks": [
+        "presence",
+        "attributes",
+        "relations",
+        "binding",
+        "motion",
+        "timing"
+      ]
+    },
+    {
+      "id": "montage.words",
+      "name": "快切小场景：书本与字母",
+      "time_range_seconds": [
+        10.0,
+        10.5
+      ],
+      "bbox_norm": [
+        0.12,
+        0.1,
+        0.9,
+        0.84
+      ],
+      "required_parts": [],
+      "anchor_seconds": 10.25,
+      "role": "editable_object",
+      "scene": "montage",
+      "asset_ids": [],
+      "asset_mode": "frame_only",
+      "checks": [
+        "presence",
+        "attributes",
+        "relations",
+        "binding",
+        "motion",
+        "timing"
+      ]
+    },
+    {
+      "id": "montage.music",
+      "name": "快切小场景：音符",
+      "time_range_seconds": [
+        10.5,
+        11.0
+      ],
+      "bbox_norm": [
+        0.12,
+        0.1,
+        0.9,
+        0.84
+      ],
+      "required_parts": [],
+      "anchor_seconds": 10.75,
+      "role": "editable_object",
+      "scene": "montage",
+      "asset_ids": [],
+      "asset_mode": "frame_only",
+      "checks": [
+        "presence",
+        "attributes",
+        "relations",
+        "binding",
+        "motion",
+        "timing"
+      ]
+    },
+    {
+      "id": "montage.sea",
+      "name": "快切小场景：帆船与海浪",
+      "time_range_seconds": [
+        11.0,
+        11.5
+      ],
+      "bbox_norm": [
+        0.12,
+        0.1,
+        0.9,
+        0.84
+      ],
+      "required_parts": [],
+      "anchor_seconds": 11.25,
+      "role": "editable_object",
+      "scene": "montage",
+      "asset_ids": [],
+      "asset_mode": "frame_only",
+      "checks": [
+        "presence",
+        "attributes",
+        "relations",
+        "binding",
+        "motion",
+        "timing"
+      ]
+    },
+    {
+      "id": "montage.trees",
+      "name": "快切小场景：树木",
+      "time_range_seconds": [
+        11.5,
+        12.0
+      ],
+      "bbox_norm": [
+        0.12,
+        0.1,
+        0.9,
+        0.84
+      ],
+      "required_parts": [],
+      "anchor_seconds": 11.75,
+      "role": "editable_object",
+      "scene": "montage",
+      "asset_ids": [],
+      "asset_mode": "frame_only",
+      "checks": [
+        "presence",
+        "attributes",
+        "relations",
+        "binding",
+        "motion",
+        "timing"
+      ]
+    },
+    {
+      "id": "montage.dogs",
+      "name": "快切小场景：小狗",
+      "time_range_seconds": [
+        12.0,
+        12.5
+      ],
+      "bbox_norm": [
+        0.12,
+        0.1,
+        0.9,
+        0.84
+      ],
+      "required_parts": [],
+      "anchor_seconds": 12.25,
+      "role": "editable_object",
+      "scene": "montage",
+      "asset_ids": [],
+      "asset_mode": "frame_only",
+      "checks": [
+        "presence",
+        "attributes",
+        "relations",
+        "binding",
+        "motion",
+        "timing"
+      ]
+    },
+    {
+      "id": "montage.bread",
+      "name": "快切小场景：面包",
+      "time_range_seconds": [
+        12.5,
+        13.0
+      ],
+      "bbox_norm": [
+        0.12,
+        0.1,
+        0.9,
+        0.84
+      ],
+      "required_parts": [],
+      "anchor_seconds": 12.75,
+      "role": "editable_object",
+      "scene": "montage",
+      "asset_ids": [],
+      "asset_mode": "frame_only",
+      "checks": [
+        "presence",
+        "attributes",
+        "relations",
+        "binding",
+        "motion",
+        "timing"
+      ]
+    },
+    {
+      "id": "montage.rain",
+      "name": "快切小场景：云雨和雨伞",
+      "time_range_seconds": [
+        13.0,
+        13.5
+      ],
+      "bbox_norm": [
+        0.12,
+        0.1,
+        0.9,
+        0.84
+      ],
+      "required_parts": [],
+      "anchor_seconds": 13.25,
+      "role": "editable_object",
+      "scene": "montage",
+      "asset_ids": [],
+      "asset_mode": "frame_only",
+      "checks": [
+        "presence",
+        "attributes",
+        "relations",
+        "binding",
+        "motion",
+        "timing"
+      ]
+    },
+    {
+      "id": "montage.math",
+      "name": "快切小场景：数学图形",
+      "time_range_seconds": [
+        13.5,
+        14.0
+      ],
+      "bbox_norm": [
+        0.12,
+        0.1,
+        0.9,
+        0.84
+      ],
+      "required_parts": [],
+      "anchor_seconds": 13.75,
+      "role": "editable_object",
+      "scene": "montage",
+      "asset_ids": [],
+      "asset_mode": "frame_only",
+      "checks": [
+        "presence",
+        "attributes",
+        "relations",
+        "binding",
+        "motion",
+        "timing"
+      ]
+    },
+    {
+      "id": "montage.stars",
+      "name": "快切小场景：星球与轨道",
+      "time_range_seconds": [
+        14.0,
+        15.0
+      ],
+      "bbox_norm": [
+        0.12,
+        0.1,
+        0.9,
+        0.84
+      ],
+      "required_parts": [],
+      "anchor_seconds": 14.5,
+      "role": "editable_object",
+      "scene": "montage",
+      "asset_ids": [],
+      "asset_mode": "frame_only",
+      "checks": [
+        "presence",
+        "attributes",
+        "relations",
+        "binding",
+        "motion",
+        "timing"
+      ]
+    },
+    {
+      "id": "montage.octopus",
+      "name": "快切小场景：章鱼",
+      "time_range_seconds": [
+        15.0,
+        15.25
+      ],
+      "bbox_norm": [
+        0.12,
+        0.1,
+        0.9,
+        0.84
+      ],
+      "required_parts": [],
+      "anchor_seconds": 15.125,
+      "role": "editable_object",
+      "scene": "montage",
+      "asset_ids": [],
+      "asset_mode": "frame_only",
+      "checks": [
+        "presence",
+        "attributes",
+        "relations",
+        "binding",
+        "motion",
+        "timing"
+      ]
+    },
+    {
+      "id": "montage.tea",
+      "name": "快切小场景：茶杯",
+      "time_range_seconds": [
+        15.25,
+        15.5
+      ],
+      "bbox_norm": [
+        0.12,
+        0.1,
+        0.9,
+        0.84
+      ],
+      "required_parts": [],
+      "anchor_seconds": 15.375,
+      "role": "editable_object",
+      "scene": "montage",
+      "asset_ids": [],
+      "asset_mode": "frame_only",
+      "checks": [
+        "presence",
+        "attributes",
+        "relations",
+        "binding",
+        "motion",
+        "timing"
+      ]
+    },
+    {
+      "id": "montage.flowers",
+      "name": "快切小场景：花朵",
+      "time_range_seconds": [
+        15.5,
+        15.75
+      ],
+      "bbox_norm": [
+        0.12,
+        0.1,
+        0.9,
+        0.84
+      ],
+      "required_parts": [],
+      "anchor_seconds": 15.625,
+      "role": "editable_object",
+      "scene": "montage",
+      "asset_ids": [],
+      "asset_mode": "frame_only",
+      "checks": [
+        "presence",
+        "attributes",
+        "relations",
+        "binding",
+        "motion",
+        "timing"
+      ]
+    },
+    {
+      "id": "montage.cats",
+      "name": "快切小场景：猫",
+      "time_range_seconds": [
+        15.75,
+        16.0
+      ],
+      "bbox_norm": [
+        0.12,
+        0.1,
+        0.9,
+        0.84
+      ],
+      "required_parts": [],
+      "anchor_seconds": 15.875,
+      "role": "editable_object",
+      "scene": "montage",
+      "asset_ids": [],
+      "asset_mode": "frame_only",
+      "checks": [
+        "presence",
+        "attributes",
+        "relations",
+        "binding",
+        "motion",
+        "timing"
+      ]
+    },
+    {
+      "id": "montage.labels",
+      "name": "快切小场景底部的手写名称",
+      "time_range_seconds": [
+        10,
+        16
+      ],
+      "bbox_norm": [
+        0.15,
+        0.79,
+        0.86,
+        0.96
+      ],
+      "required_parts": [],
+      "anchor_seconds": 12.7,
+      "role": "editable_object",
+      "scene": "montage",
+      "asset_ids": [],
+      "asset_mode": "frame_only",
+      "checks": [
+        "presence",
+        "attributes",
+        "relations",
+        "binding",
+        "motion",
+        "timing"
+      ]
+    },
+    {
+      "id": "heart.large",
+      "name": "中间的大粉色纸爱心",
+      "time_range_seconds": [
+        16,
+        18
+      ],
+      "bbox_norm": [
+        0.1,
+        0.14,
+        0.9,
+        0.9
+      ],
+      "required_parts": [],
+      "anchor_seconds": 16.7,
+      "role": "editable_object",
+      "scene": "heart",
+      "asset_ids": [],
+      "asset_mode": "frame_only",
+      "checks": [
+        "presence",
+        "attributes",
+        "relations",
+        "binding",
+        "motion",
+        "timing"
+      ]
+    },
+    {
+      "id": "heart.items",
+      "name": "围绕爱心依次出现的小物件",
+      "time_range_seconds": [
+        16,
+        18
+      ],
+      "bbox_norm": [
+        0.03,
+        0.04,
+        0.98,
+        0.95
+      ],
+      "required_parts": [
+        "书本与字母",
+        "音符",
+        "帆船与海浪",
+        "树木",
+        "小狗",
+        "面包",
+        "云雨和雨伞",
+        "数学图形",
+        "星球与轨道",
+        "章鱼",
+        "茶杯",
+        "花朵",
+        "猫"
+      ],
+      "anchor_seconds": 17.2,
+      "role": "editable_object",
+      "scene": "heart",
+      "asset_ids": [],
+      "asset_mode": "frame_only",
+      "checks": [
+        "presence",
+        "attributes",
+        "relations",
+        "binding",
+        "motion",
+        "timing"
+      ]
+    },
+    {
+      "id": "heart.question",
+      "name": "爱心上方放大的蓝色问号",
+      "time_range_seconds": [
+        16,
+        18
+      ],
+      "bbox_norm": [
+        0.45,
+        0.11,
+        0.69,
+        0.4
+      ],
+      "required_parts": [],
+      "anchor_seconds": 17.6,
+      "role": "editable_object",
+      "scene": "heart",
+      "asset_ids": [],
+      "asset_mode": "frame_only",
+      "checks": [
+        "presence",
+        "attributes",
+        "relations",
+        "binding",
+        "motion",
+        "timing"
+      ]
+    },
+    {
+      "id": "reply.plane",
+      "name": "太阳放出的回信纸飞机",
+      "time_range_seconds": [
+        19,
+        20
+      ],
+      "bbox_norm": [
+        0.17,
+        0.65,
+        0.56,
+        1
+      ],
+      "required_parts": [],
+      "anchor_seconds": 19.7,
+      "role": "editable_object",
+      "scene": "reply",
+      "asset_ids": [],
+      "asset_mode": "frame_only",
+      "checks": [
+        "presence",
+        "attributes",
+        "relations",
+        "binding",
+        "motion",
+        "timing"
+      ]
+    },
+    {
+      "id": "return.plane",
+      "name": "飞回女孩窗口的纸飞机",
+      "time_range_seconds": [
+        20,
+        21
+      ],
+      "bbox_norm": [
+        0.25,
+        0.14,
+        0.67,
+        0.83
+      ],
+      "required_parts": [],
+      "anchor_seconds": 20.4,
+      "role": "editable_object",
+      "scene": "return",
+      "asset_ids": [],
+      "asset_mode": "frame_only",
+      "checks": [
+        "presence",
+        "attributes",
+        "relations",
+        "binding",
+        "motion",
+        "timing"
+      ]
+    },
+    {
+      "id": "note.words",
+      "name": "回信特写中的两行文字",
+      "time_range_seconds": [
+        22,
+        22.75
+      ],
+      "bbox_norm": [
+        0.2,
+        0.3,
+        0.86,
+        0.68
+      ],
+      "required_parts": [
+        "what do",
+        "you love?"
+      ],
+      "anchor_seconds": 22.4,
+      "role": "editable_object",
+      "scene": "note",
+      "asset_ids": [],
+      "asset_mode": "frame_only",
+      "checks": [
+        "presence",
+        "attributes",
+        "relations",
+        "binding",
+        "motion",
+        "timing"
+      ]
+    },
+    {
+      "id": "note.circle",
+      "name": "回信特写中逐渐画出的红圈",
+      "time_range_seconds": [
+        22,
+        22.75
+      ],
+      "bbox_norm": [
+        0.2,
+        0.49,
+        0.55,
+        0.69
+      ],
+      "required_parts": [],
+      "anchor_seconds": 22.5,
+      "role": "editable_object",
+      "scene": "note",
+      "asset_ids": [],
+      "asset_mode": "frame_only",
+      "checks": [
+        "presence",
+        "attributes",
+        "relations",
+        "binding",
+        "motion",
+        "timing"
+      ]
+    },
+    {
+      "id": "wave.trails",
+      "name": "女孩挥手时窗外的飞行虚线",
+      "time_range_seconds": [
+        24,
+        26
+      ],
+      "bbox_norm": [
+        0.22,
+        0.11,
+        0.95,
+        0.83
+      ],
+      "required_parts": [],
+      "anchor_seconds": 25,
+      "role": "editable_object",
+      "scene": "wave",
+      "asset_ids": [],
+      "asset_mode": "frame_only",
+      "checks": [
+        "presence",
+        "attributes",
+        "relations",
+        "binding",
+        "motion",
+        "timing"
+      ]
+    },
+    {
+      "id": "pin.note",
+      "name": "最后贴到墙上的纸条",
+      "time_range_seconds": [
+        26,
+        27
+      ],
+      "bbox_norm": [
+        0.6,
+        0.4,
+        0.89,
+        0.76
+      ],
+      "required_parts": [],
+      "anchor_seconds": 26.5,
+      "role": "editable_object",
+      "scene": "pin",
+      "asset_ids": [],
+      "asset_mode": "frame_only",
+      "checks": [
+        "presence",
+        "attributes",
+        "relations",
+        "binding",
+        "motion",
+        "timing"
+      ]
+    }
+  ]
+}

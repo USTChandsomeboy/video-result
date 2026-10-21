@@ -1,0 +1,2979 @@
+{
+  "status": "valid",
+  "total": 37.501409922189964,
+  "provisional_total": null,
+  "integrity_ok": true,
+  "calibration": {
+    "status": "passed",
+    "kinds": [
+      "controlled_errors",
+      "equivalent_pair",
+      "real_pair",
+      "self_pair"
+    ],
+    "checks_per_kind": 1193,
+    "rubric_sha256": "ceaf49d75b2f4f6b2761b54579d444a28f60af863df77794c3b8cec4ee3a9c57",
+    "measurement_sha256": {
+      "source_compare.py": "be3a6b4ca1974ef53930eb9cb33810aeda028d6fe35c4c43b8c663029dd4b484",
+      "source_analyzer.cjs": "876ef6e9af628f0720f49f72442cd894943b7a8c3eb08d3876009f308dcc48a1",
+      "case_adapter.py": "bd6a2bd03be929c7d9cd59b8cfd918a91fb033de8e1494ec1f1fd5ff1f4a128e",
+      "reference_preflight.py": "5118d032f0dfe95f67b92c46ff8411b39e569dc702d1dc73c91f208a2ebe1370",
+      "score_core.py": "303b3ac83d8b9668caea6a964635b7bc1d38dc4618542582f522171178638ffa",
+      "verify.py": "0fb21555b71255fcea2b6ee4ecaead25199adbf3a14801415cb57b2997bad563",
+      "package_integrity.py": "d86edcd8cae7064d7e064cc4e041f77d1e9c176a4c154759fe139caaeb4b801e",
+      "source_index.py": "0875e9927acdf1474fbd8e794be3a7669599507c26a8ce537a7a06454d88a474",
+      "coordinate_measurements.py": "489556305ed7cdfa801d17c71c3cb6aea3de586301d799e139610fd80cd78c45",
+      "layout_adapter.py": "46a717cf8ea1010e3eb4cdbc10abeb06fbb43dc087ab95dd53988cf29a95ca10",
+      "layout_metrics_v3.py": "4d6211f52f696d1dd5afee162c40f54b45e3dce98b583b8e8544bb9ed0ddcd78",
+      "source_probe.cjs": "bd74d2cbd5e1fd6e0ceaf26df25d7ae884ce65d59a6b751eaa1927da14c2c00f",
+      "static_css.cjs": "fa09fff25685c077de191ced1738e8fee79db78ab3b9bf801057d9954a3f36af",
+      "package.json": "324224a16a8bd9619a5d47eee13cea625ac20e1172a7b01dced7b33c8b143adc",
+      "package-lock.json": "23841bb482aceaa4e2a763b32c505367afd79aefeaa34251acbc88119c3958a0",
+      "private/assets.json": "003379fab4761e2eb8281a4637174bb7198afb9ee56df69f4ea6812a1bd7f1a9",
+      "private/objects.json": "0cde513d98079341a50065651d24c820ccb9c4d9e0c0a918e786dc08711192ee",
+      "private/source-objects.json": "eaa0e828d5788966d8a29a8055d02d259446e6510d13e46124c8b726e6bc1ff7",
+      "private/reference-data/layout-observations.json": "f1fd2c39ab3bf685d75c4065bb07cf3513e505bbb3191d6b99418d417169cbf4"
+    }
+  },
+  "score_bounds": {
+    "minimum": 37.501409922189964,
+    "maximum": 37.501409922189964
+  },
+  "dimensions": {
+    "presence": 98.61702127659575,
+    "attributes": 47.5428739543301,
+    "relations": 34.77388402756882,
+    "binding": 13.36625029052075,
+    "motion": 19.63125649183319,
+    "timing": 51.407532774554035
+  },
+  "weights": {
+    "presence": 0.1,
+    "attributes": 0.15,
+    "relations": 0.15,
+    "binding": 0.2,
+    "motion": 0.25,
+    "timing": 0.15
+  },
+  "coverage": {
+    "resolved": 1193,
+    "declared": 1193,
+    "weighted": 1.0,
+    "measured_weighted": 1.0
+  },
+  "plan_coverage": {
+    "status": "complete",
+    "objects": 47,
+    "dimensions_per_object": 6,
+    "applicable": 278,
+    "not_applicable": 4,
+    "unsupported": 0,
+    "cells": [
+      {
+        "id": "girl.figure",
+        "dimensions": {
+          "presence": {
+            "status": "applicable",
+            "check_ids": [
+              "girl.figure.content"
+            ]
+          },
+          "attributes": {
+            "status": "applicable",
+            "check_ids": [
+              "girl.figure.attribute-color",
+              "girl.figure.attribute-size",
+              "girl.figure.attribute-shape"
+            ]
+          },
+          "relations": {
+            "status": "applicable",
+            "check_ids": [
+              "girl.figure.position"
+            ]
+          },
+          "binding": {
+            "status": "applicable",
+            "check_ids": [
+              "girl.figure.binding-x",
+              "girl.figure.binding-y",
+              "girl.figure.binding-width",
+              "girl.figure.binding-height",
+              "girl.figure.binding-opacity",
+              "girl.figure.binding-geometry",
+              "girl.figure.binding-shape",
+              "girl.figure.binding-clip",
+              "girl.figure.binding-draw_progress",
+              "girl.figure.binding-color"
+            ]
+          },
+          "motion": {
+            "status": "applicable",
+            "check_ids": [
+              "girl.figure.curve-x",
+              "girl.figure.curve-y",
+              "girl.figure.curve-width",
+              "girl.figure.curve-height",
+              "girl.figure.curve-opacity",
+              "girl.figure.curve-geometry",
+              "girl.figure.curve-shape",
+              "girl.figure.curve-clip",
+              "girl.figure.curve-draw_progress",
+              "girl.figure.curve-color"
+            ]
+          },
+          "timing": {
+            "status": "applicable",
+            "check_ids": [
+              "girl.figure.action-x",
+              "girl.figure.action-y",
+              "girl.figure.action-width",
+              "girl.figure.action-height",
+              "girl.figure.action-opacity",
+              "girl.figure.action-geometry",
+              "girl.figure.action-shape",
+              "girl.figure.action-clip",
+              "girl.figure.action-draw_progress",
+              "girl.figure.action-color",
+              "girl.figure.visible-interval"
+            ]
+          }
+        }
+      },
+      {
+        "id": "girl.head",
+        "dimensions": {
+          "presence": {
+            "status": "applicable",
+            "check_ids": [
+              "girl.head.content"
+            ]
+          },
+          "attributes": {
+            "status": "applicable",
+            "check_ids": [
+              "girl.head.attribute-color",
+              "girl.head.attribute-size",
+              "girl.head.attribute-shape"
+            ]
+          },
+          "relations": {
+            "status": "applicable",
+            "check_ids": [
+              "girl.head.position"
+            ]
+          },
+          "binding": {
+            "status": "applicable",
+            "check_ids": [
+              "girl.head.binding-x",
+              "girl.head.binding-y",
+              "girl.head.binding-width",
+              "girl.head.binding-height",
+              "girl.head.binding-geometry",
+              "girl.head.binding-shape",
+              "girl.head.binding-clip",
+              "girl.head.binding-color"
+            ]
+          },
+          "motion": {
+            "status": "applicable",
+            "check_ids": [
+              "girl.head.curve-x",
+              "girl.head.curve-y",
+              "girl.head.curve-width",
+              "girl.head.curve-height",
+              "girl.head.curve-geometry",
+              "girl.head.curve-shape",
+              "girl.head.curve-clip",
+              "girl.head.curve-color"
+            ]
+          },
+          "timing": {
+            "status": "applicable",
+            "check_ids": [
+              "girl.head.action-x",
+              "girl.head.action-y",
+              "girl.head.action-width",
+              "girl.head.action-height",
+              "girl.head.action-geometry",
+              "girl.head.action-shape",
+              "girl.head.action-clip",
+              "girl.head.action-color",
+              "girl.head.visible-interval"
+            ]
+          }
+        }
+      },
+      {
+        "id": "girl.arms",
+        "dimensions": {
+          "presence": {
+            "status": "applicable",
+            "check_ids": [
+              "girl.arms.content"
+            ]
+          },
+          "attributes": {
+            "status": "applicable",
+            "check_ids": [
+              "girl.arms.attribute-color",
+              "girl.arms.attribute-size",
+              "girl.arms.attribute-shape"
+            ]
+          },
+          "relations": {
+            "status": "applicable",
+            "check_ids": [
+              "girl.arms.position"
+            ]
+          },
+          "binding": {
+            "status": "applicable",
+            "check_ids": [
+              "girl.arms.binding-x",
+              "girl.arms.binding-y",
+              "girl.arms.binding-width",
+              "girl.arms.binding-height",
+              "girl.arms.binding-geometry",
+              "girl.arms.binding-shape",
+              "girl.arms.binding-clip"
+            ]
+          },
+          "motion": {
+            "status": "applicable",
+            "check_ids": [
+              "girl.arms.curve-x",
+              "girl.arms.curve-y",
+              "girl.arms.curve-width",
+              "girl.arms.curve-height",
+              "girl.arms.curve-geometry",
+              "girl.arms.curve-shape",
+              "girl.arms.curve-clip"
+            ]
+          },
+          "timing": {
+            "status": "applicable",
+            "check_ids": [
+              "girl.arms.action-x",
+              "girl.arms.action-y",
+              "girl.arms.action-width",
+              "girl.arms.action-height",
+              "girl.arms.action-geometry",
+              "girl.arms.action-shape",
+              "girl.arms.action-clip",
+              "girl.arms.visible-interval"
+            ]
+          }
+        }
+      },
+      {
+        "id": "girl.face",
+        "dimensions": {
+          "presence": {
+            "status": "applicable",
+            "check_ids": [
+              "girl.face.content"
+            ]
+          },
+          "attributes": {
+            "status": "applicable",
+            "check_ids": [
+              "girl.face.attribute-color",
+              "girl.face.attribute-size",
+              "girl.face.attribute-shape"
+            ]
+          },
+          "relations": {
+            "status": "applicable",
+            "check_ids": [
+              "girl.face.position"
+            ]
+          },
+          "binding": {
+            "status": "applicable",
+            "check_ids": [
+              "girl.face.binding-x",
+              "girl.face.binding-y",
+              "girl.face.binding-width",
+              "girl.face.binding-height",
+              "girl.face.binding-geometry",
+              "girl.face.binding-shape",
+              "girl.face.binding-clip",
+              "girl.face.binding-color"
+            ]
+          },
+          "motion": {
+            "status": "applicable",
+            "check_ids": [
+              "girl.face.curve-x",
+              "girl.face.curve-y",
+              "girl.face.curve-width",
+              "girl.face.curve-height",
+              "girl.face.curve-geometry",
+              "girl.face.curve-shape",
+              "girl.face.curve-clip",
+              "girl.face.curve-color"
+            ]
+          },
+          "timing": {
+            "status": "applicable",
+            "check_ids": [
+              "girl.face.action-x",
+              "girl.face.action-y",
+              "girl.face.action-width",
+              "girl.face.action-height",
+              "girl.face.action-geometry",
+              "girl.face.action-shape",
+              "girl.face.action-clip",
+              "girl.face.action-color",
+              "girl.face.visible-interval"
+            ]
+          }
+        }
+      },
+      {
+        "id": "girl.pen",
+        "dimensions": {
+          "presence": {
+            "status": "applicable",
+            "check_ids": [
+              "girl.pen.content"
+            ]
+          },
+          "attributes": {
+            "status": "applicable",
+            "check_ids": [
+              "girl.pen.attribute-color",
+              "girl.pen.attribute-size",
+              "girl.pen.attribute-shape"
+            ]
+          },
+          "relations": {
+            "status": "applicable",
+            "check_ids": [
+              "girl.pen.position"
+            ]
+          },
+          "binding": {
+            "status": "applicable",
+            "check_ids": [
+              "girl.pen.binding-x",
+              "girl.pen.binding-y",
+              "girl.pen.binding-width",
+              "girl.pen.binding-height",
+              "girl.pen.binding-geometry",
+              "girl.pen.binding-clip"
+            ]
+          },
+          "motion": {
+            "status": "applicable",
+            "check_ids": [
+              "girl.pen.curve-x",
+              "girl.pen.curve-y",
+              "girl.pen.curve-width",
+              "girl.pen.curve-height",
+              "girl.pen.curve-geometry",
+              "girl.pen.curve-clip"
+            ]
+          },
+          "timing": {
+            "status": "applicable",
+            "check_ids": [
+              "girl.pen.action-x",
+              "girl.pen.action-y",
+              "girl.pen.action-width",
+              "girl.pen.action-height",
+              "girl.pen.action-geometry",
+              "girl.pen.action-clip",
+              "girl.pen.visible-interval"
+            ]
+          }
+        }
+      },
+      {
+        "id": "girl.note",
+        "dimensions": {
+          "presence": {
+            "status": "applicable",
+            "check_ids": [
+              "girl.note.content"
+            ]
+          },
+          "attributes": {
+            "status": "applicable",
+            "check_ids": [
+              "girl.note.attribute-color",
+              "girl.note.attribute-size",
+              "girl.note.attribute-text",
+              "girl.note.attribute-font",
+              "girl.note.attribute-shape"
+            ]
+          },
+          "relations": {
+            "status": "applicable",
+            "check_ids": [
+              "girl.note.position"
+            ]
+          },
+          "binding": {
+            "status": "applicable",
+            "check_ids": [
+              "girl.note.binding-x",
+              "girl.note.binding-y",
+              "girl.note.binding-width",
+              "girl.note.binding-height",
+              "girl.note.binding-opacity",
+              "girl.note.binding-geometry",
+              "girl.note.binding-shape",
+              "girl.note.binding-draw_progress",
+              "girl.note.binding-color"
+            ]
+          },
+          "motion": {
+            "status": "applicable",
+            "check_ids": [
+              "girl.note.curve-x",
+              "girl.note.curve-y",
+              "girl.note.curve-width",
+              "girl.note.curve-height",
+              "girl.note.curve-opacity",
+              "girl.note.curve-geometry",
+              "girl.note.curve-shape",
+              "girl.note.curve-draw_progress",
+              "girl.note.curve-color"
+            ]
+          },
+          "timing": {
+            "status": "applicable",
+            "check_ids": [
+              "girl.note.action-x",
+              "girl.note.action-y",
+              "girl.note.action-width",
+              "girl.note.action-height",
+              "girl.note.action-opacity",
+              "girl.note.action-geometry",
+              "girl.note.action-shape",
+              "girl.note.action-draw_progress",
+              "girl.note.action-color",
+              "girl.note.visible-interval"
+            ]
+          }
+        }
+      },
+      {
+        "id": "sun.figure",
+        "dimensions": {
+          "presence": {
+            "status": "applicable",
+            "check_ids": [
+              "sun.figure.content"
+            ]
+          },
+          "attributes": {
+            "status": "applicable",
+            "check_ids": [
+              "sun.figure.attribute-color",
+              "sun.figure.attribute-size",
+              "sun.figure.attribute-shape"
+            ]
+          },
+          "relations": {
+            "status": "applicable",
+            "check_ids": [
+              "sun.figure.position"
+            ]
+          },
+          "binding": {
+            "status": "applicable",
+            "check_ids": [
+              "sun.figure.binding-x",
+              "sun.figure.binding-y",
+              "sun.figure.binding-width",
+              "sun.figure.binding-height",
+              "sun.figure.binding-opacity",
+              "sun.figure.binding-geometry",
+              "sun.figure.binding-shape",
+              "sun.figure.binding-color"
+            ]
+          },
+          "motion": {
+            "status": "applicable",
+            "check_ids": [
+              "sun.figure.curve-x",
+              "sun.figure.curve-y",
+              "sun.figure.curve-width",
+              "sun.figure.curve-height",
+              "sun.figure.curve-opacity",
+              "sun.figure.curve-geometry",
+              "sun.figure.curve-shape",
+              "sun.figure.curve-color"
+            ]
+          },
+          "timing": {
+            "status": "applicable",
+            "check_ids": [
+              "sun.figure.action-x",
+              "sun.figure.action-y",
+              "sun.figure.action-width",
+              "sun.figure.action-height",
+              "sun.figure.action-opacity",
+              "sun.figure.action-geometry",
+              "sun.figure.action-shape",
+              "sun.figure.action-color",
+              "sun.figure.visible-interval"
+            ]
+          }
+        }
+      },
+      {
+        "id": "sun.face",
+        "dimensions": {
+          "presence": {
+            "status": "applicable",
+            "check_ids": [
+              "sun.face.content"
+            ]
+          },
+          "attributes": {
+            "status": "applicable",
+            "check_ids": [
+              "sun.face.attribute-color",
+              "sun.face.attribute-size",
+              "sun.face.attribute-shape"
+            ]
+          },
+          "relations": {
+            "status": "applicable",
+            "check_ids": [
+              "sun.face.position"
+            ]
+          },
+          "binding": {
+            "status": "applicable",
+            "check_ids": [
+              "sun.face.binding-x",
+              "sun.face.binding-y",
+              "sun.face.binding-width",
+              "sun.face.binding-height",
+              "sun.face.binding-opacity",
+              "sun.face.binding-geometry",
+              "sun.face.binding-shape",
+              "sun.face.binding-color"
+            ]
+          },
+          "motion": {
+            "status": "applicable",
+            "check_ids": [
+              "sun.face.curve-x",
+              "sun.face.curve-y",
+              "sun.face.curve-width",
+              "sun.face.curve-height",
+              "sun.face.curve-opacity",
+              "sun.face.curve-geometry",
+              "sun.face.curve-shape",
+              "sun.face.curve-color"
+            ]
+          },
+          "timing": {
+            "status": "applicable",
+            "check_ids": [
+              "sun.face.action-x",
+              "sun.face.action-y",
+              "sun.face.action-width",
+              "sun.face.action-height",
+              "sun.face.action-opacity",
+              "sun.face.action-geometry",
+              "sun.face.action-shape",
+              "sun.face.action-color",
+              "sun.face.visible-interval"
+            ]
+          }
+        }
+      },
+      {
+        "id": "sun.paper",
+        "dimensions": {
+          "presence": {
+            "status": "applicable",
+            "check_ids": [
+              "sun.paper.content"
+            ]
+          },
+          "attributes": {
+            "status": "applicable",
+            "check_ids": [
+              "sun.paper.attribute-color",
+              "sun.paper.attribute-size",
+              "sun.paper.attribute-text",
+              "sun.paper.attribute-font",
+              "sun.paper.attribute-shape"
+            ]
+          },
+          "relations": {
+            "status": "applicable",
+            "check_ids": [
+              "sun.paper.position"
+            ]
+          },
+          "binding": {
+            "status": "applicable",
+            "check_ids": [
+              "sun.paper.binding-x",
+              "sun.paper.binding-y",
+              "sun.paper.binding-width",
+              "sun.paper.binding-height",
+              "sun.paper.binding-opacity",
+              "sun.paper.binding-geometry",
+              "sun.paper.binding-shape",
+              "sun.paper.binding-draw_progress",
+              "sun.paper.binding-color"
+            ]
+          },
+          "motion": {
+            "status": "applicable",
+            "check_ids": [
+              "sun.paper.curve-x",
+              "sun.paper.curve-y",
+              "sun.paper.curve-width",
+              "sun.paper.curve-height",
+              "sun.paper.curve-opacity",
+              "sun.paper.curve-geometry",
+              "sun.paper.curve-shape",
+              "sun.paper.curve-draw_progress",
+              "sun.paper.curve-color"
+            ]
+          },
+          "timing": {
+            "status": "applicable",
+            "check_ids": [
+              "sun.paper.action-x",
+              "sun.paper.action-y",
+              "sun.paper.action-width",
+              "sun.paper.action-height",
+              "sun.paper.action-opacity",
+              "sun.paper.action-geometry",
+              "sun.paper.action-shape",
+              "sun.paper.action-draw_progress",
+              "sun.paper.action-color",
+              "sun.paper.visible-interval"
+            ]
+          }
+        }
+      },
+      {
+        "id": "sky.moon",
+        "dimensions": {
+          "presence": {
+            "status": "applicable",
+            "check_ids": [
+              "sky.moon.content"
+            ]
+          },
+          "attributes": {
+            "status": "applicable",
+            "check_ids": [
+              "sky.moon.attribute-color",
+              "sky.moon.attribute-size",
+              "sky.moon.attribute-shape"
+            ]
+          },
+          "relations": {
+            "status": "applicable",
+            "check_ids": [
+              "sky.moon.position"
+            ]
+          },
+          "binding": {
+            "status": "applicable",
+            "check_ids": [
+              "sky.moon.binding-x",
+              "sky.moon.binding-y",
+              "sky.moon.binding-width",
+              "sky.moon.binding-height",
+              "sky.moon.binding-geometry"
+            ]
+          },
+          "motion": {
+            "status": "applicable",
+            "check_ids": [
+              "sky.moon.curve-x",
+              "sky.moon.curve-y",
+              "sky.moon.curve-width",
+              "sky.moon.curve-height",
+              "sky.moon.curve-geometry"
+            ]
+          },
+          "timing": {
+            "status": "applicable",
+            "check_ids": [
+              "sky.moon.action-x",
+              "sky.moon.action-y",
+              "sky.moon.action-width",
+              "sky.moon.action-height",
+              "sky.moon.action-geometry",
+              "sky.moon.visible-interval"
+            ]
+          }
+        }
+      },
+      {
+        "id": "town.buildings",
+        "dimensions": {
+          "presence": {
+            "status": "applicable",
+            "check_ids": [
+              "town.buildings.content"
+            ]
+          },
+          "attributes": {
+            "status": "applicable",
+            "check_ids": [
+              "town.buildings.attribute-color",
+              "town.buildings.attribute-size",
+              "town.buildings.attribute-shape"
+            ]
+          },
+          "relations": {
+            "status": "applicable",
+            "check_ids": [
+              "town.buildings.position"
+            ]
+          },
+          "binding": {
+            "status": "applicable",
+            "check_ids": [
+              "town.buildings.binding-x",
+              "town.buildings.binding-y",
+              "town.buildings.binding-width",
+              "town.buildings.binding-height",
+              "town.buildings.binding-opacity",
+              "town.buildings.binding-geometry",
+              "town.buildings.binding-shape",
+              "town.buildings.binding-color"
+            ]
+          },
+          "motion": {
+            "status": "applicable",
+            "check_ids": [
+              "town.buildings.curve-x",
+              "town.buildings.curve-y",
+              "town.buildings.curve-width",
+              "town.buildings.curve-height",
+              "town.buildings.curve-opacity",
+              "town.buildings.curve-geometry",
+              "town.buildings.curve-shape",
+              "town.buildings.curve-color"
+            ]
+          },
+          "timing": {
+            "status": "applicable",
+            "check_ids": [
+              "town.buildings.action-x",
+              "town.buildings.action-y",
+              "town.buildings.action-width",
+              "town.buildings.action-height",
+              "town.buildings.action-opacity",
+              "town.buildings.action-geometry",
+              "town.buildings.action-shape",
+              "town.buildings.action-color",
+              "town.buildings.visible-interval"
+            ]
+          }
+        }
+      },
+      {
+        "id": "opening.planes",
+        "dimensions": {
+          "presence": {
+            "status": "applicable",
+            "check_ids": [
+              "opening.planes.content"
+            ]
+          },
+          "attributes": {
+            "status": "applicable",
+            "check_ids": [
+              "opening.planes.attribute-color",
+              "opening.planes.attribute-size",
+              "opening.planes.attribute-shape"
+            ]
+          },
+          "relations": {
+            "status": "applicable",
+            "check_ids": [
+              "opening.planes.position"
+            ]
+          },
+          "binding": {
+            "status": "applicable",
+            "check_ids": [
+              "opening.planes.binding-x",
+              "opening.planes.binding-y",
+              "opening.planes.binding-width",
+              "opening.planes.binding-height",
+              "opening.planes.binding-opacity",
+              "opening.planes.binding-geometry",
+              "opening.planes.binding-shape",
+              "opening.planes.binding-draw_progress",
+              "opening.planes.binding-color"
+            ]
+          },
+          "motion": {
+            "status": "applicable",
+            "check_ids": [
+              "opening.planes.curve-x",
+              "opening.planes.curve-y",
+              "opening.planes.curve-width",
+              "opening.planes.curve-height",
+              "opening.planes.curve-opacity",
+              "opening.planes.curve-geometry",
+              "opening.planes.curve-shape",
+              "opening.planes.curve-draw_progress",
+              "opening.planes.curve-color"
+            ]
+          },
+          "timing": {
+            "status": "applicable",
+            "check_ids": [
+              "opening.planes.action-x",
+              "opening.planes.action-y",
+              "opening.planes.action-width",
+              "opening.planes.action-height",
+              "opening.planes.action-opacity",
+              "opening.planes.action-geometry",
+              "opening.planes.action-shape",
+              "opening.planes.action-draw_progress",
+              "opening.planes.action-color",
+              "opening.planes.visible-interval"
+            ]
+          }
+        }
+      },
+      {
+        "id": "notebook.page",
+        "dimensions": {
+          "presence": {
+            "status": "applicable",
+            "check_ids": [
+              "notebook.page.content"
+            ]
+          },
+          "attributes": {
+            "status": "applicable",
+            "check_ids": [
+              "notebook.page.attribute-color",
+              "notebook.page.attribute-size",
+              "notebook.page.attribute-text",
+              "notebook.page.attribute-font",
+              "notebook.page.attribute-shape"
+            ]
+          },
+          "relations": {
+            "status": "applicable",
+            "check_ids": [
+              "notebook.page.position"
+            ]
+          },
+          "binding": {
+            "status": "applicable",
+            "check_ids": [
+              "notebook.page.binding-x",
+              "notebook.page.binding-y",
+              "notebook.page.binding-width",
+              "notebook.page.binding-height",
+              "notebook.page.binding-geometry",
+              "notebook.page.binding-shape",
+              "notebook.page.binding-clip"
+            ]
+          },
+          "motion": {
+            "status": "applicable",
+            "check_ids": [
+              "notebook.page.curve-x",
+              "notebook.page.curve-y",
+              "notebook.page.curve-width",
+              "notebook.page.curve-height",
+              "notebook.page.curve-geometry",
+              "notebook.page.curve-shape",
+              "notebook.page.curve-clip"
+            ]
+          },
+          "timing": {
+            "status": "applicable",
+            "check_ids": [
+              "notebook.page.action-x",
+              "notebook.page.action-y",
+              "notebook.page.action-width",
+              "notebook.page.action-height",
+              "notebook.page.action-geometry",
+              "notebook.page.action-shape",
+              "notebook.page.action-clip",
+              "notebook.page.visible-interval"
+            ]
+          }
+        }
+      },
+      {
+        "id": "writing.first",
+        "dimensions": {
+          "presence": {
+            "status": "applicable",
+            "check_ids": [
+              "writing.first.content"
+            ]
+          },
+          "attributes": {
+            "status": "applicable",
+            "check_ids": [
+              "writing.first.attribute-color",
+              "writing.first.attribute-size",
+              "writing.first.attribute-text",
+              "writing.first.attribute-font"
+            ]
+          },
+          "relations": {
+            "status": "applicable",
+            "check_ids": [
+              "writing.first.position"
+            ]
+          },
+          "binding": {
+            "status": "applicable",
+            "check_ids": [
+              "writing.first.binding-x",
+              "writing.first.binding-y",
+              "writing.first.binding-width",
+              "writing.first.binding-height",
+              "writing.first.binding-geometry",
+              "writing.first.binding-clip"
+            ]
+          },
+          "motion": {
+            "status": "applicable",
+            "check_ids": [
+              "writing.first.curve-x",
+              "writing.first.curve-y",
+              "writing.first.curve-width",
+              "writing.first.curve-height",
+              "writing.first.curve-geometry",
+              "writing.first.curve-clip"
+            ]
+          },
+          "timing": {
+            "status": "applicable",
+            "check_ids": [
+              "writing.first.action-x",
+              "writing.first.action-y",
+              "writing.first.action-width",
+              "writing.first.action-height",
+              "writing.first.action-geometry",
+              "writing.first.action-clip",
+              "writing.first.visible-interval"
+            ]
+          }
+        }
+      },
+      {
+        "id": "writing.second",
+        "dimensions": {
+          "presence": {
+            "status": "applicable",
+            "check_ids": [
+              "writing.second.content"
+            ]
+          },
+          "attributes": {
+            "status": "applicable",
+            "check_ids": [
+              "writing.second.attribute-color",
+              "writing.second.attribute-size",
+              "writing.second.attribute-text",
+              "writing.second.attribute-font"
+            ]
+          },
+          "relations": {
+            "status": "applicable",
+            "check_ids": [
+              "writing.second.position"
+            ]
+          },
+          "binding": {
+            "status": "applicable",
+            "check_ids": [
+              "writing.second.binding-x",
+              "writing.second.binding-y",
+              "writing.second.binding-width",
+              "writing.second.binding-height",
+              "writing.second.binding-geometry",
+              "writing.second.binding-clip"
+            ]
+          },
+          "motion": {
+            "status": "applicable",
+            "check_ids": [
+              "writing.second.curve-x",
+              "writing.second.curve-y",
+              "writing.second.curve-width",
+              "writing.second.curve-height",
+              "writing.second.curve-geometry",
+              "writing.second.curve-clip"
+            ]
+          },
+          "timing": {
+            "status": "applicable",
+            "check_ids": [
+              "writing.second.action-x",
+              "writing.second.action-y",
+              "writing.second.action-width",
+              "writing.second.action-height",
+              "writing.second.action-geometry",
+              "writing.second.action-clip",
+              "writing.second.visible-interval"
+            ]
+          }
+        }
+      },
+      {
+        "id": "writing.arm",
+        "dimensions": {
+          "presence": {
+            "status": "applicable",
+            "check_ids": [
+              "writing.arm.content"
+            ]
+          },
+          "attributes": {
+            "status": "applicable",
+            "check_ids": [
+              "writing.arm.attribute-color",
+              "writing.arm.attribute-size",
+              "writing.arm.attribute-shape"
+            ]
+          },
+          "relations": {
+            "status": "applicable",
+            "check_ids": [
+              "writing.arm.position"
+            ]
+          },
+          "binding": {
+            "status": "applicable",
+            "check_ids": [
+              "writing.arm.binding-x",
+              "writing.arm.binding-y",
+              "writing.arm.binding-width",
+              "writing.arm.binding-height",
+              "writing.arm.binding-geometry",
+              "writing.arm.binding-shape"
+            ]
+          },
+          "motion": {
+            "status": "applicable",
+            "check_ids": [
+              "writing.arm.curve-x",
+              "writing.arm.curve-y",
+              "writing.arm.curve-width",
+              "writing.arm.curve-height",
+              "writing.arm.curve-geometry",
+              "writing.arm.curve-shape"
+            ]
+          },
+          "timing": {
+            "status": "applicable",
+            "check_ids": [
+              "writing.arm.action-x",
+              "writing.arm.action-y",
+              "writing.arm.action-width",
+              "writing.arm.action-height",
+              "writing.arm.action-geometry",
+              "writing.arm.action-shape",
+              "writing.arm.visible-interval"
+            ]
+          }
+        }
+      },
+      {
+        "id": "writing.tear",
+        "dimensions": {
+          "presence": {
+            "status": "applicable",
+            "check_ids": [
+              "writing.tear.content"
+            ]
+          },
+          "attributes": {
+            "status": "applicable",
+            "check_ids": [
+              "writing.tear.attribute-color",
+              "writing.tear.attribute-size",
+              "writing.tear.attribute-text",
+              "writing.tear.attribute-font",
+              "writing.tear.attribute-shape"
+            ]
+          },
+          "relations": {
+            "status": "applicable",
+            "check_ids": [
+              "writing.tear.position"
+            ]
+          },
+          "binding": {
+            "status": "applicable",
+            "check_ids": [
+              "writing.tear.binding-x",
+              "writing.tear.binding-y",
+              "writing.tear.binding-width",
+              "writing.tear.binding-height",
+              "writing.tear.binding-geometry",
+              "writing.tear.binding-shape"
+            ]
+          },
+          "motion": {
+            "status": "applicable",
+            "check_ids": [
+              "writing.tear.curve-x",
+              "writing.tear.curve-y",
+              "writing.tear.curve-width",
+              "writing.tear.curve-height",
+              "writing.tear.curve-geometry",
+              "writing.tear.curve-shape"
+            ]
+          },
+          "timing": {
+            "status": "applicable",
+            "check_ids": [
+              "writing.tear.action-x",
+              "writing.tear.action-y",
+              "writing.tear.action-width",
+              "writing.tear.action-height",
+              "writing.tear.action-geometry",
+              "writing.tear.action-shape",
+              "writing.tear.visible-interval"
+            ]
+          }
+        }
+      },
+      {
+        "id": "folding.paper",
+        "dimensions": {
+          "presence": {
+            "status": "applicable",
+            "check_ids": [
+              "folding.paper.content"
+            ]
+          },
+          "attributes": {
+            "status": "applicable",
+            "check_ids": [
+              "folding.paper.attribute-color",
+              "folding.paper.attribute-size",
+              "folding.paper.attribute-shape"
+            ]
+          },
+          "relations": {
+            "status": "applicable",
+            "check_ids": [
+              "folding.paper.position"
+            ]
+          },
+          "binding": {
+            "status": "applicable",
+            "check_ids": [
+              "folding.paper.binding-x",
+              "folding.paper.binding-y",
+              "folding.paper.binding-width",
+              "folding.paper.binding-height",
+              "folding.paper.binding-opacity",
+              "folding.paper.binding-geometry",
+              "folding.paper.binding-shape"
+            ]
+          },
+          "motion": {
+            "status": "applicable",
+            "check_ids": [
+              "folding.paper.curve-x",
+              "folding.paper.curve-y",
+              "folding.paper.curve-width",
+              "folding.paper.curve-height",
+              "folding.paper.curve-opacity",
+              "folding.paper.curve-geometry",
+              "folding.paper.curve-shape"
+            ]
+          },
+          "timing": {
+            "status": "applicable",
+            "check_ids": [
+              "folding.paper.action-x",
+              "folding.paper.action-y",
+              "folding.paper.action-width",
+              "folding.paper.action-height",
+              "folding.paper.action-opacity",
+              "folding.paper.action-geometry",
+              "folding.paper.action-shape",
+              "folding.paper.visible-interval"
+            ]
+          }
+        }
+      },
+      {
+        "id": "folding.hands",
+        "dimensions": {
+          "presence": {
+            "status": "applicable",
+            "check_ids": [
+              "folding.hands.content"
+            ]
+          },
+          "attributes": {
+            "status": "applicable",
+            "check_ids": [
+              "folding.hands.attribute-color",
+              "folding.hands.attribute-size",
+              "folding.hands.attribute-shape"
+            ]
+          },
+          "relations": {
+            "status": "applicable",
+            "check_ids": [
+              "folding.hands.position"
+            ]
+          },
+          "binding": {
+            "status": "applicable",
+            "check_ids": [
+              "folding.hands.binding-x",
+              "folding.hands.binding-y",
+              "folding.hands.binding-width",
+              "folding.hands.binding-height",
+              "folding.hands.binding-geometry",
+              "folding.hands.binding-shape"
+            ]
+          },
+          "motion": {
+            "status": "applicable",
+            "check_ids": [
+              "folding.hands.curve-x",
+              "folding.hands.curve-y",
+              "folding.hands.curve-width",
+              "folding.hands.curve-height",
+              "folding.hands.curve-geometry",
+              "folding.hands.curve-shape"
+            ]
+          },
+          "timing": {
+            "status": "applicable",
+            "check_ids": [
+              "folding.hands.action-x",
+              "folding.hands.action-y",
+              "folding.hands.action-width",
+              "folding.hands.action-height",
+              "folding.hands.action-geometry",
+              "folding.hands.action-shape",
+              "folding.hands.visible-interval"
+            ]
+          }
+        }
+      },
+      {
+        "id": "throw.trail",
+        "dimensions": {
+          "presence": {
+            "status": "applicable",
+            "check_ids": [
+              "throw.trail.content"
+            ]
+          },
+          "attributes": {
+            "status": "applicable",
+            "check_ids": [
+              "throw.trail.attribute-color",
+              "throw.trail.attribute-size",
+              "throw.trail.attribute-shape"
+            ]
+          },
+          "relations": {
+            "status": "applicable",
+            "check_ids": [
+              "throw.trail.position"
+            ]
+          },
+          "binding": {
+            "status": "applicable",
+            "check_ids": [
+              "throw.trail.binding-x",
+              "throw.trail.binding-y",
+              "throw.trail.binding-width",
+              "throw.trail.binding-height",
+              "throw.trail.binding-geometry",
+              "throw.trail.binding-shape",
+              "throw.trail.binding-draw_progress"
+            ]
+          },
+          "motion": {
+            "status": "applicable",
+            "check_ids": [
+              "throw.trail.curve-x",
+              "throw.trail.curve-y",
+              "throw.trail.curve-width",
+              "throw.trail.curve-height",
+              "throw.trail.curve-geometry",
+              "throw.trail.curve-shape",
+              "throw.trail.curve-draw_progress"
+            ]
+          },
+          "timing": {
+            "status": "applicable",
+            "check_ids": [
+              "throw.trail.action-x",
+              "throw.trail.action-y",
+              "throw.trail.action-width",
+              "throw.trail.action-height",
+              "throw.trail.action-geometry",
+              "throw.trail.action-shape",
+              "throw.trail.action-draw_progress",
+              "throw.trail.visible-interval"
+            ]
+          }
+        }
+      },
+      {
+        "id": "flight.planes",
+        "dimensions": {
+          "presence": {
+            "status": "applicable",
+            "check_ids": [
+              "flight.planes.content"
+            ]
+          },
+          "attributes": {
+            "status": "applicable",
+            "check_ids": [
+              "flight.planes.attribute-color",
+              "flight.planes.attribute-size",
+              "flight.planes.attribute-shape"
+            ]
+          },
+          "relations": {
+            "status": "applicable",
+            "check_ids": [
+              "flight.planes.position"
+            ]
+          },
+          "binding": {
+            "status": "applicable",
+            "check_ids": [
+              "flight.planes.binding-x",
+              "flight.planes.binding-y",
+              "flight.planes.binding-width",
+              "flight.planes.binding-height",
+              "flight.planes.binding-geometry",
+              "flight.planes.binding-shape"
+            ]
+          },
+          "motion": {
+            "status": "applicable",
+            "check_ids": [
+              "flight.planes.curve-x",
+              "flight.planes.curve-y",
+              "flight.planes.curve-width",
+              "flight.planes.curve-height",
+              "flight.planes.curve-geometry",
+              "flight.planes.curve-shape"
+            ]
+          },
+          "timing": {
+            "status": "applicable",
+            "check_ids": [
+              "flight.planes.action-x",
+              "flight.planes.action-y",
+              "flight.planes.action-width",
+              "flight.planes.action-height",
+              "flight.planes.action-geometry",
+              "flight.planes.action-shape",
+              "flight.planes.visible-interval"
+            ]
+          }
+        }
+      },
+      {
+        "id": "flight.trails",
+        "dimensions": {
+          "presence": {
+            "status": "applicable",
+            "check_ids": [
+              "flight.trails.content"
+            ]
+          },
+          "attributes": {
+            "status": "applicable",
+            "check_ids": [
+              "flight.trails.attribute-color",
+              "flight.trails.attribute-size",
+              "flight.trails.attribute-shape"
+            ]
+          },
+          "relations": {
+            "status": "applicable",
+            "check_ids": [
+              "flight.trails.position"
+            ]
+          },
+          "binding": {
+            "status": "applicable",
+            "check_ids": [
+              "flight.trails.binding-x",
+              "flight.trails.binding-y",
+              "flight.trails.binding-width",
+              "flight.trails.binding-height",
+              "flight.trails.binding-geometry",
+              "flight.trails.binding-shape",
+              "flight.trails.binding-draw_progress"
+            ]
+          },
+          "motion": {
+            "status": "applicable",
+            "check_ids": [
+              "flight.trails.curve-x",
+              "flight.trails.curve-y",
+              "flight.trails.curve-width",
+              "flight.trails.curve-height",
+              "flight.trails.curve-geometry",
+              "flight.trails.curve-shape",
+              "flight.trails.curve-draw_progress"
+            ]
+          },
+          "timing": {
+            "status": "applicable",
+            "check_ids": [
+              "flight.trails.action-x",
+              "flight.trails.action-y",
+              "flight.trails.action-width",
+              "flight.trails.action-height",
+              "flight.trails.action-geometry",
+              "flight.trails.action-shape",
+              "flight.trails.action-draw_progress",
+              "flight.trails.visible-interval"
+            ]
+          }
+        }
+      },
+      {
+        "id": "catch.plane",
+        "dimensions": {
+          "presence": {
+            "status": "applicable",
+            "check_ids": [
+              "catch.plane.content"
+            ]
+          },
+          "attributes": {
+            "status": "applicable",
+            "check_ids": [
+              "catch.plane.attribute-color",
+              "catch.plane.attribute-size",
+              "catch.plane.attribute-shape"
+            ]
+          },
+          "relations": {
+            "status": "applicable",
+            "check_ids": [
+              "catch.plane.position"
+            ]
+          },
+          "binding": {
+            "status": "applicable",
+            "check_ids": [
+              "catch.plane.binding-x",
+              "catch.plane.binding-y",
+              "catch.plane.binding-geometry"
+            ]
+          },
+          "motion": {
+            "status": "applicable",
+            "check_ids": [
+              "catch.plane.curve-x",
+              "catch.plane.curve-y",
+              "catch.plane.curve-geometry"
+            ]
+          },
+          "timing": {
+            "status": "applicable",
+            "check_ids": [
+              "catch.plane.action-x",
+              "catch.plane.action-y",
+              "catch.plane.action-geometry",
+              "catch.plane.visible-interval"
+            ]
+          }
+        }
+      },
+      {
+        "id": "read.bubbles",
+        "dimensions": {
+          "presence": {
+            "status": "applicable",
+            "check_ids": [
+              "read.bubbles.content"
+            ]
+          },
+          "attributes": {
+            "status": "applicable",
+            "check_ids": [
+              "read.bubbles.attribute-color",
+              "read.bubbles.attribute-size",
+              "read.bubbles.attribute-shape"
+            ]
+          },
+          "relations": {
+            "status": "applicable",
+            "check_ids": [
+              "read.bubbles.position"
+            ]
+          },
+          "binding": {
+            "status": "applicable",
+            "check_ids": [
+              "read.bubbles.binding-width",
+              "read.bubbles.binding-height",
+              "read.bubbles.binding-geometry",
+              "read.bubbles.binding-shape"
+            ]
+          },
+          "motion": {
+            "status": "applicable",
+            "check_ids": [
+              "read.bubbles.curve-width",
+              "read.bubbles.curve-height",
+              "read.bubbles.curve-geometry",
+              "read.bubbles.curve-shape"
+            ]
+          },
+          "timing": {
+            "status": "applicable",
+            "check_ids": [
+              "read.bubbles.action-width",
+              "read.bubbles.action-height",
+              "read.bubbles.action-geometry",
+              "read.bubbles.action-shape",
+              "read.bubbles.visible-interval"
+            ]
+          }
+        }
+      },
+      {
+        "id": "montage.words",
+        "dimensions": {
+          "presence": {
+            "status": "applicable",
+            "check_ids": [
+              "montage.words.content"
+            ]
+          },
+          "attributes": {
+            "status": "applicable",
+            "check_ids": [
+              "montage.words.attribute-color",
+              "montage.words.attribute-size",
+              "montage.words.attribute-text",
+              "montage.words.attribute-font",
+              "montage.words.attribute-shape"
+            ]
+          },
+          "relations": {
+            "status": "applicable",
+            "check_ids": [
+              "montage.words.position"
+            ]
+          },
+          "binding": {
+            "status": "applicable",
+            "check_ids": [
+              "montage.words.binding-x",
+              "montage.words.binding-y",
+              "montage.words.binding-width",
+              "montage.words.binding-height",
+              "montage.words.binding-geometry",
+              "montage.words.binding-shape"
+            ]
+          },
+          "motion": {
+            "status": "applicable",
+            "check_ids": [
+              "montage.words.curve-x",
+              "montage.words.curve-y",
+              "montage.words.curve-width",
+              "montage.words.curve-height",
+              "montage.words.curve-geometry",
+              "montage.words.curve-shape"
+            ]
+          },
+          "timing": {
+            "status": "applicable",
+            "check_ids": [
+              "montage.words.action-x",
+              "montage.words.action-y",
+              "montage.words.action-width",
+              "montage.words.action-height",
+              "montage.words.action-geometry",
+              "montage.words.action-shape",
+              "montage.words.visible-interval"
+            ]
+          }
+        }
+      },
+      {
+        "id": "montage.music",
+        "dimensions": {
+          "presence": {
+            "status": "applicable",
+            "check_ids": [
+              "montage.music.content"
+            ]
+          },
+          "attributes": {
+            "status": "applicable",
+            "check_ids": [
+              "montage.music.attribute-color",
+              "montage.music.attribute-size",
+              "montage.music.attribute-shape"
+            ]
+          },
+          "relations": {
+            "status": "applicable",
+            "check_ids": [
+              "montage.music.position"
+            ]
+          },
+          "binding": {
+            "status": "applicable",
+            "check_ids": [
+              "montage.music.binding-x",
+              "montage.music.binding-y",
+              "montage.music.binding-width",
+              "montage.music.binding-height",
+              "montage.music.binding-geometry",
+              "montage.music.binding-shape"
+            ]
+          },
+          "motion": {
+            "status": "applicable",
+            "check_ids": [
+              "montage.music.curve-x",
+              "montage.music.curve-y",
+              "montage.music.curve-width",
+              "montage.music.curve-height",
+              "montage.music.curve-geometry",
+              "montage.music.curve-shape"
+            ]
+          },
+          "timing": {
+            "status": "applicable",
+            "check_ids": [
+              "montage.music.action-x",
+              "montage.music.action-y",
+              "montage.music.action-width",
+              "montage.music.action-height",
+              "montage.music.action-geometry",
+              "montage.music.action-shape",
+              "montage.music.visible-interval"
+            ]
+          }
+        }
+      },
+      {
+        "id": "montage.sea",
+        "dimensions": {
+          "presence": {
+            "status": "applicable",
+            "check_ids": [
+              "montage.sea.content"
+            ]
+          },
+          "attributes": {
+            "status": "applicable",
+            "check_ids": [
+              "montage.sea.attribute-color",
+              "montage.sea.attribute-size",
+              "montage.sea.attribute-shape"
+            ]
+          },
+          "relations": {
+            "status": "applicable",
+            "check_ids": [
+              "montage.sea.position"
+            ]
+          },
+          "binding": {
+            "status": "applicable",
+            "check_ids": [
+              "montage.sea.binding-x",
+              "montage.sea.binding-y",
+              "montage.sea.binding-width",
+              "montage.sea.binding-height",
+              "montage.sea.binding-geometry",
+              "montage.sea.binding-shape"
+            ]
+          },
+          "motion": {
+            "status": "applicable",
+            "check_ids": [
+              "montage.sea.curve-x",
+              "montage.sea.curve-y",
+              "montage.sea.curve-width",
+              "montage.sea.curve-height",
+              "montage.sea.curve-geometry",
+              "montage.sea.curve-shape"
+            ]
+          },
+          "timing": {
+            "status": "applicable",
+            "check_ids": [
+              "montage.sea.action-x",
+              "montage.sea.action-y",
+              "montage.sea.action-width",
+              "montage.sea.action-height",
+              "montage.sea.action-geometry",
+              "montage.sea.action-shape",
+              "montage.sea.visible-interval"
+            ]
+          }
+        }
+      },
+      {
+        "id": "montage.trees",
+        "dimensions": {
+          "presence": {
+            "status": "applicable",
+            "check_ids": [
+              "montage.trees.content"
+            ]
+          },
+          "attributes": {
+            "status": "applicable",
+            "check_ids": [
+              "montage.trees.attribute-color",
+              "montage.trees.attribute-size",
+              "montage.trees.attribute-shape"
+            ]
+          },
+          "relations": {
+            "status": "applicable",
+            "check_ids": [
+              "montage.trees.position"
+            ]
+          },
+          "binding": {
+            "status": "applicable",
+            "check_ids": [
+              "montage.trees.binding-x",
+              "montage.trees.binding-y",
+              "montage.trees.binding-width",
+              "montage.trees.binding-height",
+              "montage.trees.binding-geometry",
+              "montage.trees.binding-shape",
+              "montage.trees.binding-color"
+            ]
+          },
+          "motion": {
+            "status": "applicable",
+            "check_ids": [
+              "montage.trees.curve-x",
+              "montage.trees.curve-y",
+              "montage.trees.curve-width",
+              "montage.trees.curve-height",
+              "montage.trees.curve-geometry",
+              "montage.trees.curve-shape",
+              "montage.trees.curve-color"
+            ]
+          },
+          "timing": {
+            "status": "applicable",
+            "check_ids": [
+              "montage.trees.action-x",
+              "montage.trees.action-y",
+              "montage.trees.action-width",
+              "montage.trees.action-height",
+              "montage.trees.action-geometry",
+              "montage.trees.action-shape",
+              "montage.trees.action-color",
+              "montage.trees.visible-interval"
+            ]
+          }
+        }
+      },
+      {
+        "id": "montage.dogs",
+        "dimensions": {
+          "presence": {
+            "status": "applicable",
+            "check_ids": [
+              "montage.dogs.content"
+            ]
+          },
+          "attributes": {
+            "status": "applicable",
+            "check_ids": [
+              "montage.dogs.attribute-color",
+              "montage.dogs.attribute-size",
+              "montage.dogs.attribute-shape"
+            ]
+          },
+          "relations": {
+            "status": "applicable",
+            "check_ids": [
+              "montage.dogs.position"
+            ]
+          },
+          "binding": {
+            "status": "applicable",
+            "check_ids": [
+              "montage.dogs.binding-x",
+              "montage.dogs.binding-y",
+              "montage.dogs.binding-width",
+              "montage.dogs.binding-height",
+              "montage.dogs.binding-geometry",
+              "montage.dogs.binding-shape"
+            ]
+          },
+          "motion": {
+            "status": "applicable",
+            "check_ids": [
+              "montage.dogs.curve-x",
+              "montage.dogs.curve-y",
+              "montage.dogs.curve-width",
+              "montage.dogs.curve-height",
+              "montage.dogs.curve-geometry",
+              "montage.dogs.curve-shape"
+            ]
+          },
+          "timing": {
+            "status": "applicable",
+            "check_ids": [
+              "montage.dogs.action-x",
+              "montage.dogs.action-y",
+              "montage.dogs.action-width",
+              "montage.dogs.action-height",
+              "montage.dogs.action-geometry",
+              "montage.dogs.action-shape",
+              "montage.dogs.visible-interval"
+            ]
+          }
+        }
+      },
+      {
+        "id": "montage.bread",
+        "dimensions": {
+          "presence": {
+            "status": "applicable",
+            "check_ids": [
+              "montage.bread.content"
+            ]
+          },
+          "attributes": {
+            "status": "applicable",
+            "check_ids": [
+              "montage.bread.attribute-color",
+              "montage.bread.attribute-size",
+              "montage.bread.attribute-shape"
+            ]
+          },
+          "relations": {
+            "status": "applicable",
+            "check_ids": [
+              "montage.bread.position"
+            ]
+          },
+          "binding": {
+            "status": "applicable",
+            "check_ids": [
+              "montage.bread.binding-x",
+              "montage.bread.binding-y",
+              "montage.bread.binding-width",
+              "montage.bread.binding-height",
+              "montage.bread.binding-geometry",
+              "montage.bread.binding-shape"
+            ]
+          },
+          "motion": {
+            "status": "applicable",
+            "check_ids": [
+              "montage.bread.curve-x",
+              "montage.bread.curve-y",
+              "montage.bread.curve-width",
+              "montage.bread.curve-height",
+              "montage.bread.curve-geometry",
+              "montage.bread.curve-shape"
+            ]
+          },
+          "timing": {
+            "status": "applicable",
+            "check_ids": [
+              "montage.bread.action-x",
+              "montage.bread.action-y",
+              "montage.bread.action-width",
+              "montage.bread.action-height",
+              "montage.bread.action-geometry",
+              "montage.bread.action-shape",
+              "montage.bread.visible-interval"
+            ]
+          }
+        }
+      },
+      {
+        "id": "montage.rain",
+        "dimensions": {
+          "presence": {
+            "status": "applicable",
+            "check_ids": [
+              "montage.rain.content"
+            ]
+          },
+          "attributes": {
+            "status": "applicable",
+            "check_ids": [
+              "montage.rain.attribute-color",
+              "montage.rain.attribute-size",
+              "montage.rain.attribute-shape"
+            ]
+          },
+          "relations": {
+            "status": "applicable",
+            "check_ids": [
+              "montage.rain.position"
+            ]
+          },
+          "binding": {
+            "status": "applicable",
+            "check_ids": [
+              "montage.rain.binding-x",
+              "montage.rain.binding-y",
+              "montage.rain.binding-width",
+              "montage.rain.binding-height",
+              "montage.rain.binding-geometry",
+              "montage.rain.binding-shape"
+            ]
+          },
+          "motion": {
+            "status": "applicable",
+            "check_ids": [
+              "montage.rain.curve-x",
+              "montage.rain.curve-y",
+              "montage.rain.curve-width",
+              "montage.rain.curve-height",
+              "montage.rain.curve-geometry",
+              "montage.rain.curve-shape"
+            ]
+          },
+          "timing": {
+            "status": "applicable",
+            "check_ids": [
+              "montage.rain.action-x",
+              "montage.rain.action-y",
+              "montage.rain.action-width",
+              "montage.rain.action-height",
+              "montage.rain.action-geometry",
+              "montage.rain.action-shape",
+              "montage.rain.visible-interval"
+            ]
+          }
+        }
+      },
+      {
+        "id": "montage.math",
+        "dimensions": {
+          "presence": {
+            "status": "applicable",
+            "check_ids": [
+              "montage.math.content"
+            ]
+          },
+          "attributes": {
+            "status": "applicable",
+            "check_ids": [
+              "montage.math.attribute-color",
+              "montage.math.attribute-size",
+              "montage.math.attribute-text",
+              "montage.math.attribute-font",
+              "montage.math.attribute-shape"
+            ]
+          },
+          "relations": {
+            "status": "applicable",
+            "check_ids": [
+              "montage.math.position"
+            ]
+          },
+          "binding": {
+            "status": "applicable",
+            "check_ids": [
+              "montage.math.binding-x",
+              "montage.math.binding-y",
+              "montage.math.binding-width",
+              "montage.math.binding-height",
+              "montage.math.binding-geometry",
+              "montage.math.binding-shape"
+            ]
+          },
+          "motion": {
+            "status": "applicable",
+            "check_ids": [
+              "montage.math.curve-x",
+              "montage.math.curve-y",
+              "montage.math.curve-width",
+              "montage.math.curve-height",
+              "montage.math.curve-geometry",
+              "montage.math.curve-shape"
+            ]
+          },
+          "timing": {
+            "status": "applicable",
+            "check_ids": [
+              "montage.math.action-x",
+              "montage.math.action-y",
+              "montage.math.action-width",
+              "montage.math.action-height",
+              "montage.math.action-geometry",
+              "montage.math.action-shape",
+              "montage.math.visible-interval"
+            ]
+          }
+        }
+      },
+      {
+        "id": "montage.stars",
+        "dimensions": {
+          "presence": {
+            "status": "applicable",
+            "check_ids": [
+              "montage.stars.content"
+            ]
+          },
+          "attributes": {
+            "status": "applicable",
+            "check_ids": [
+              "montage.stars.attribute-color",
+              "montage.stars.attribute-size",
+              "montage.stars.attribute-shape"
+            ]
+          },
+          "relations": {
+            "status": "applicable",
+            "check_ids": [
+              "montage.stars.position"
+            ]
+          },
+          "binding": {
+            "status": "applicable",
+            "check_ids": [
+              "montage.stars.binding-x",
+              "montage.stars.binding-y",
+              "montage.stars.binding-width",
+              "montage.stars.binding-height",
+              "montage.stars.binding-geometry",
+              "montage.stars.binding-shape",
+              "montage.stars.binding-color"
+            ]
+          },
+          "motion": {
+            "status": "applicable",
+            "check_ids": [
+              "montage.stars.curve-x",
+              "montage.stars.curve-y",
+              "montage.stars.curve-width",
+              "montage.stars.curve-height",
+              "montage.stars.curve-geometry",
+              "montage.stars.curve-shape",
+              "montage.stars.curve-color"
+            ]
+          },
+          "timing": {
+            "status": "applicable",
+            "check_ids": [
+              "montage.stars.action-x",
+              "montage.stars.action-y",
+              "montage.stars.action-width",
+              "montage.stars.action-height",
+              "montage.stars.action-geometry",
+              "montage.stars.action-shape",
+              "montage.stars.action-color",
+              "montage.stars.visible-interval"
+            ]
+          }
+        }
+      },
+      {
+        "id": "montage.octopus",
+        "dimensions": {
+          "presence": {
+            "status": "applicable",
+            "check_ids": [
+              "montage.octopus.content"
+            ]
+          },
+          "attributes": {
+            "status": "applicable",
+            "check_ids": [
+              "montage.octopus.attribute-color",
+              "montage.octopus.attribute-size",
+              "montage.octopus.attribute-shape"
+            ]
+          },
+          "relations": {
+            "status": "applicable",
+            "check_ids": [
+              "montage.octopus.position"
+            ]
+          },
+          "binding": {
+            "status": "applicable",
+            "check_ids": [
+              "montage.octopus.binding-x",
+              "montage.octopus.binding-y",
+              "montage.octopus.binding-width",
+              "montage.octopus.binding-height",
+              "montage.octopus.binding-geometry",
+              "montage.octopus.binding-shape"
+            ]
+          },
+          "motion": {
+            "status": "applicable",
+            "check_ids": [
+              "montage.octopus.curve-x",
+              "montage.octopus.curve-y",
+              "montage.octopus.curve-width",
+              "montage.octopus.curve-height",
+              "montage.octopus.curve-geometry",
+              "montage.octopus.curve-shape"
+            ]
+          },
+          "timing": {
+            "status": "applicable",
+            "check_ids": [
+              "montage.octopus.action-x",
+              "montage.octopus.action-y",
+              "montage.octopus.action-width",
+              "montage.octopus.action-height",
+              "montage.octopus.action-geometry",
+              "montage.octopus.action-shape",
+              "montage.octopus.visible-interval"
+            ]
+          }
+        }
+      },
+      {
+        "id": "montage.tea",
+        "dimensions": {
+          "presence": {
+            "status": "applicable",
+            "check_ids": [
+              "montage.tea.content"
+            ]
+          },
+          "attributes": {
+            "status": "applicable",
+            "check_ids": [
+              "montage.tea.attribute-color",
+              "montage.tea.attribute-size",
+              "montage.tea.attribute-shape"
+            ]
+          },
+          "relations": {
+            "status": "applicable",
+            "check_ids": [
+              "montage.tea.position"
+            ]
+          },
+          "binding": {
+            "status": "applicable",
+            "check_ids": [
+              "montage.tea.binding-x",
+              "montage.tea.binding-y",
+              "montage.tea.binding-width",
+              "montage.tea.binding-height",
+              "montage.tea.binding-geometry",
+              "montage.tea.binding-shape"
+            ]
+          },
+          "motion": {
+            "status": "applicable",
+            "check_ids": [
+              "montage.tea.curve-x",
+              "montage.tea.curve-y",
+              "montage.tea.curve-width",
+              "montage.tea.curve-height",
+              "montage.tea.curve-geometry",
+              "montage.tea.curve-shape"
+            ]
+          },
+          "timing": {
+            "status": "applicable",
+            "check_ids": [
+              "montage.tea.action-x",
+              "montage.tea.action-y",
+              "montage.tea.action-width",
+              "montage.tea.action-height",
+              "montage.tea.action-geometry",
+              "montage.tea.action-shape",
+              "montage.tea.visible-interval"
+            ]
+          }
+        }
+      },
+      {
+        "id": "montage.flowers",
+        "dimensions": {
+          "presence": {
+            "status": "applicable",
+            "check_ids": [
+              "montage.flowers.content"
+            ]
+          },
+          "attributes": {
+            "status": "applicable",
+            "check_ids": [
+              "montage.flowers.attribute-color",
+              "montage.flowers.attribute-size",
+              "montage.flowers.attribute-shape"
+            ]
+          },
+          "relations": {
+            "status": "applicable",
+            "check_ids": [
+              "montage.flowers.position"
+            ]
+          },
+          "binding": {
+            "status": "applicable",
+            "check_ids": [
+              "montage.flowers.binding-x",
+              "montage.flowers.binding-y",
+              "montage.flowers.binding-width",
+              "montage.flowers.binding-height",
+              "montage.flowers.binding-geometry",
+              "montage.flowers.binding-shape",
+              "montage.flowers.binding-color"
+            ]
+          },
+          "motion": {
+            "status": "applicable",
+            "check_ids": [
+              "montage.flowers.curve-x",
+              "montage.flowers.curve-y",
+              "montage.flowers.curve-width",
+              "montage.flowers.curve-height",
+              "montage.flowers.curve-geometry",
+              "montage.flowers.curve-shape",
+              "montage.flowers.curve-color"
+            ]
+          },
+          "timing": {
+            "status": "applicable",
+            "check_ids": [
+              "montage.flowers.action-x",
+              "montage.flowers.action-y",
+              "montage.flowers.action-width",
+              "montage.flowers.action-height",
+              "montage.flowers.action-geometry",
+              "montage.flowers.action-shape",
+              "montage.flowers.action-color",
+              "montage.flowers.visible-interval"
+            ]
+          }
+        }
+      },
+      {
+        "id": "montage.cats",
+        "dimensions": {
+          "presence": {
+            "status": "applicable",
+            "check_ids": [
+              "montage.cats.content"
+            ]
+          },
+          "attributes": {
+            "status": "applicable",
+            "check_ids": [
+              "montage.cats.attribute-color",
+              "montage.cats.attribute-size",
+              "montage.cats.attribute-text",
+              "montage.cats.attribute-font",
+              "montage.cats.attribute-shape"
+            ]
+          },
+          "relations": {
+            "status": "applicable",
+            "check_ids": [
+              "montage.cats.position"
+            ]
+          },
+          "binding": {
+            "status": "applicable",
+            "check_ids": [
+              "montage.cats.binding-x",
+              "montage.cats.binding-y",
+              "montage.cats.binding-width",
+              "montage.cats.binding-height",
+              "montage.cats.binding-geometry",
+              "montage.cats.binding-shape"
+            ]
+          },
+          "motion": {
+            "status": "applicable",
+            "check_ids": [
+              "montage.cats.curve-x",
+              "montage.cats.curve-y",
+              "montage.cats.curve-width",
+              "montage.cats.curve-height",
+              "montage.cats.curve-geometry",
+              "montage.cats.curve-shape"
+            ]
+          },
+          "timing": {
+            "status": "applicable",
+            "check_ids": [
+              "montage.cats.action-x",
+              "montage.cats.action-y",
+              "montage.cats.action-width",
+              "montage.cats.action-height",
+              "montage.cats.action-geometry",
+              "montage.cats.action-shape",
+              "montage.cats.visible-interval"
+            ]
+          }
+        }
+      },
+      {
+        "id": "montage.labels",
+        "dimensions": {
+          "presence": {
+            "status": "applicable",
+            "check_ids": [
+              "montage.labels.content"
+            ]
+          },
+          "attributes": {
+            "status": "applicable",
+            "check_ids": [
+              "montage.labels.attribute-color",
+              "montage.labels.attribute-size",
+              "montage.labels.attribute-text",
+              "montage.labels.attribute-font"
+            ]
+          },
+          "relations": {
+            "status": "applicable",
+            "check_ids": [
+              "montage.labels.position"
+            ]
+          },
+          "binding": {
+            "status": "applicable",
+            "check_ids": [
+              "montage.labels.binding-y",
+              "montage.labels.binding-width",
+              "montage.labels.binding-geometry",
+              "montage.labels.binding-color"
+            ]
+          },
+          "motion": {
+            "status": "applicable",
+            "check_ids": [
+              "montage.labels.curve-y",
+              "montage.labels.curve-width",
+              "montage.labels.curve-geometry",
+              "montage.labels.curve-color"
+            ]
+          },
+          "timing": {
+            "status": "applicable",
+            "check_ids": [
+              "montage.labels.action-y",
+              "montage.labels.action-width",
+              "montage.labels.action-geometry",
+              "montage.labels.action-color",
+              "montage.labels.visible-interval"
+            ]
+          }
+        }
+      },
+      {
+        "id": "heart.large",
+        "dimensions": {
+          "presence": {
+            "status": "applicable",
+            "check_ids": [
+              "heart.large.content"
+            ]
+          },
+          "attributes": {
+            "status": "applicable",
+            "check_ids": [
+              "heart.large.attribute-color",
+              "heart.large.attribute-size",
+              "heart.large.attribute-shape"
+            ]
+          },
+          "relations": {
+            "status": "applicable",
+            "check_ids": [
+              "heart.large.position"
+            ]
+          },
+          "binding": {
+            "status": "not_applicable",
+            "check_ids": [],
+            "reason": "原作在已登记窗口没有该通道的可测变化"
+          },
+          "motion": {
+            "status": "not_applicable",
+            "check_ids": [],
+            "reason": "原作在已登记窗口没有该通道的可测变化"
+          },
+          "timing": {
+            "status": "applicable",
+            "check_ids": [
+              "heart.large.visible-interval"
+            ]
+          }
+        }
+      },
+      {
+        "id": "heart.items",
+        "dimensions": {
+          "presence": {
+            "status": "applicable",
+            "check_ids": [
+              "heart.items.content"
+            ]
+          },
+          "attributes": {
+            "status": "applicable",
+            "check_ids": [
+              "heart.items.attribute-color",
+              "heart.items.attribute-size",
+              "heart.items.attribute-text",
+              "heart.items.attribute-font",
+              "heart.items.attribute-shape"
+            ]
+          },
+          "relations": {
+            "status": "applicable",
+            "check_ids": [
+              "heart.items.position"
+            ]
+          },
+          "binding": {
+            "status": "applicable",
+            "check_ids": [
+              "heart.items.binding-x",
+              "heart.items.binding-y",
+              "heart.items.binding-width",
+              "heart.items.binding-height",
+              "heart.items.binding-opacity",
+              "heart.items.binding-geometry",
+              "heart.items.binding-shape",
+              "heart.items.binding-draw_progress",
+              "heart.items.binding-color"
+            ]
+          },
+          "motion": {
+            "status": "applicable",
+            "check_ids": [
+              "heart.items.curve-x",
+              "heart.items.curve-y",
+              "heart.items.curve-width",
+              "heart.items.curve-height",
+              "heart.items.curve-opacity",
+              "heart.items.curve-geometry",
+              "heart.items.curve-shape",
+              "heart.items.curve-draw_progress",
+              "heart.items.curve-color"
+            ]
+          },
+          "timing": {
+            "status": "applicable",
+            "check_ids": [
+              "heart.items.action-x",
+              "heart.items.action-y",
+              "heart.items.action-width",
+              "heart.items.action-height",
+              "heart.items.action-opacity",
+              "heart.items.action-geometry",
+              "heart.items.action-shape",
+              "heart.items.action-draw_progress",
+              "heart.items.action-color",
+              "heart.items.visible-interval"
+            ]
+          }
+        }
+      },
+      {
+        "id": "heart.question",
+        "dimensions": {
+          "presence": {
+            "status": "applicable",
+            "check_ids": [
+              "heart.question.content"
+            ]
+          },
+          "attributes": {
+            "status": "applicable",
+            "check_ids": [
+              "heart.question.attribute-color",
+              "heart.question.attribute-size",
+              "heart.question.attribute-text",
+              "heart.question.attribute-font"
+            ]
+          },
+          "relations": {
+            "status": "applicable",
+            "check_ids": [
+              "heart.question.position"
+            ]
+          },
+          "binding": {
+            "status": "applicable",
+            "check_ids": [
+              "heart.question.binding-x",
+              "heart.question.binding-y",
+              "heart.question.binding-width",
+              "heart.question.binding-height",
+              "heart.question.binding-opacity",
+              "heart.question.binding-geometry"
+            ]
+          },
+          "motion": {
+            "status": "applicable",
+            "check_ids": [
+              "heart.question.curve-x",
+              "heart.question.curve-y",
+              "heart.question.curve-width",
+              "heart.question.curve-height",
+              "heart.question.curve-opacity",
+              "heart.question.curve-geometry"
+            ]
+          },
+          "timing": {
+            "status": "applicable",
+            "check_ids": [
+              "heart.question.action-x",
+              "heart.question.action-y",
+              "heart.question.action-width",
+              "heart.question.action-height",
+              "heart.question.action-opacity",
+              "heart.question.action-geometry",
+              "heart.question.visible-interval"
+            ]
+          }
+        }
+      },
+      {
+        "id": "reply.plane",
+        "dimensions": {
+          "presence": {
+            "status": "applicable",
+            "check_ids": [
+              "reply.plane.content"
+            ]
+          },
+          "attributes": {
+            "status": "applicable",
+            "check_ids": [
+              "reply.plane.attribute-color",
+              "reply.plane.attribute-size",
+              "reply.plane.attribute-shape"
+            ]
+          },
+          "relations": {
+            "status": "applicable",
+            "check_ids": [
+              "reply.plane.position"
+            ]
+          },
+          "binding": {
+            "status": "applicable",
+            "check_ids": [
+              "reply.plane.binding-x",
+              "reply.plane.binding-y",
+              "reply.plane.binding-width",
+              "reply.plane.binding-height",
+              "reply.plane.binding-geometry",
+              "reply.plane.binding-shape"
+            ]
+          },
+          "motion": {
+            "status": "applicable",
+            "check_ids": [
+              "reply.plane.curve-x",
+              "reply.plane.curve-y",
+              "reply.plane.curve-width",
+              "reply.plane.curve-height",
+              "reply.plane.curve-geometry",
+              "reply.plane.curve-shape"
+            ]
+          },
+          "timing": {
+            "status": "applicable",
+            "check_ids": [
+              "reply.plane.action-x",
+              "reply.plane.action-y",
+              "reply.plane.action-width",
+              "reply.plane.action-height",
+              "reply.plane.action-geometry",
+              "reply.plane.action-shape",
+              "reply.plane.visible-interval"
+            ]
+          }
+        }
+      },
+      {
+        "id": "return.plane",
+        "dimensions": {
+          "presence": {
+            "status": "applicable",
+            "check_ids": [
+              "return.plane.content"
+            ]
+          },
+          "attributes": {
+            "status": "applicable",
+            "check_ids": [
+              "return.plane.attribute-color",
+              "return.plane.attribute-size",
+              "return.plane.attribute-shape"
+            ]
+          },
+          "relations": {
+            "status": "applicable",
+            "check_ids": [
+              "return.plane.position"
+            ]
+          },
+          "binding": {
+            "status": "applicable",
+            "check_ids": [
+              "return.plane.binding-x",
+              "return.plane.binding-y",
+              "return.plane.binding-width",
+              "return.plane.binding-height",
+              "return.plane.binding-geometry",
+              "return.plane.binding-shape"
+            ]
+          },
+          "motion": {
+            "status": "applicable",
+            "check_ids": [
+              "return.plane.curve-x",
+              "return.plane.curve-y",
+              "return.plane.curve-width",
+              "return.plane.curve-height",
+              "return.plane.curve-geometry",
+              "return.plane.curve-shape"
+            ]
+          },
+          "timing": {
+            "status": "applicable",
+            "check_ids": [
+              "return.plane.action-x",
+              "return.plane.action-y",
+              "return.plane.action-width",
+              "return.plane.action-height",
+              "return.plane.action-geometry",
+              "return.plane.action-shape",
+              "return.plane.visible-interval"
+            ]
+          }
+        }
+      },
+      {
+        "id": "note.words",
+        "dimensions": {
+          "presence": {
+            "status": "applicable",
+            "check_ids": [
+              "note.words.content"
+            ]
+          },
+          "attributes": {
+            "status": "applicable",
+            "check_ids": [
+              "note.words.attribute-color",
+              "note.words.attribute-size",
+              "note.words.attribute-text",
+              "note.words.attribute-font"
+            ]
+          },
+          "relations": {
+            "status": "applicable",
+            "check_ids": [
+              "note.words.position"
+            ]
+          },
+          "binding": {
+            "status": "applicable",
+            "check_ids": [
+              "note.words.binding-x",
+              "note.words.binding-y",
+              "note.words.binding-width",
+              "note.words.binding-height",
+              "note.words.binding-geometry"
+            ]
+          },
+          "motion": {
+            "status": "applicable",
+            "check_ids": [
+              "note.words.curve-x",
+              "note.words.curve-y",
+              "note.words.curve-width",
+              "note.words.curve-height",
+              "note.words.curve-geometry"
+            ]
+          },
+          "timing": {
+            "status": "applicable",
+            "check_ids": [
+              "note.words.action-x",
+              "note.words.action-y",
+              "note.words.action-width",
+              "note.words.action-height",
+              "note.words.action-geometry",
+              "note.words.visible-interval"
+            ]
+          }
+        }
+      },
+      {
+        "id": "note.circle",
+        "dimensions": {
+          "presence": {
+            "status": "applicable",
+            "check_ids": [
+              "note.circle.content"
+            ]
+          },
+          "attributes": {
+            "status": "applicable",
+            "check_ids": [
+              "note.circle.attribute-color",
+              "note.circle.attribute-size",
+              "note.circle.attribute-shape"
+            ]
+          },
+          "relations": {
+            "status": "applicable",
+            "check_ids": [
+              "note.circle.position"
+            ]
+          },
+          "binding": {
+            "status": "applicable",
+            "check_ids": [
+              "note.circle.binding-x",
+              "note.circle.binding-y",
+              "note.circle.binding-width",
+              "note.circle.binding-height",
+              "note.circle.binding-geometry",
+              "note.circle.binding-draw_progress"
+            ]
+          },
+          "motion": {
+            "status": "applicable",
+            "check_ids": [
+              "note.circle.curve-x",
+              "note.circle.curve-y",
+              "note.circle.curve-width",
+              "note.circle.curve-height",
+              "note.circle.curve-geometry",
+              "note.circle.curve-draw_progress"
+            ]
+          },
+          "timing": {
+            "status": "applicable",
+            "check_ids": [
+              "note.circle.action-x",
+              "note.circle.action-y",
+              "note.circle.action-width",
+              "note.circle.action-height",
+              "note.circle.action-geometry",
+              "note.circle.action-draw_progress",
+              "note.circle.visible-interval"
+            ]
+          }
+        }
+      },
+      {
+        "id": "wave.trails",
+        "dimensions": {
+          "presence": {
+            "status": "applicable",
+            "check_ids": [
+              "wave.trails.content"
+            ]
+          },
+          "attributes": {
+            "status": "applicable",
+            "check_ids": [
+              "wave.trails.attribute-color",
+              "wave.trails.attribute-size",
+              "wave.trails.attribute-shape"
+            ]
+          },
+          "relations": {
+            "status": "applicable",
+            "check_ids": [
+              "wave.trails.position"
+            ]
+          },
+          "binding": {
+            "status": "applicable",
+            "check_ids": [
+              "wave.trails.binding-x",
+              "wave.trails.binding-y",
+              "wave.trails.binding-width",
+              "wave.trails.binding-height",
+              "wave.trails.binding-geometry",
+              "wave.trails.binding-shape",
+              "wave.trails.binding-draw_progress"
+            ]
+          },
+          "motion": {
+            "status": "applicable",
+            "check_ids": [
+              "wave.trails.curve-x",
+              "wave.trails.curve-y",
+              "wave.trails.curve-width",
+              "wave.trails.curve-height",
+              "wave.trails.curve-geometry",
+              "wave.trails.curve-shape",
+              "wave.trails.curve-draw_progress"
+            ]
+          },
+          "timing": {
+            "status": "applicable",
+            "check_ids": [
+              "wave.trails.action-x",
+              "wave.trails.action-y",
+              "wave.trails.action-width",
+              "wave.trails.action-height",
+              "wave.trails.action-geometry",
+              "wave.trails.action-shape",
+              "wave.trails.action-draw_progress",
+              "wave.trails.visible-interval"
+            ]
+          }
+        }
+      },
+      {
+        "id": "pin.note",
+        "dimensions": {
+          "presence": {
+            "status": "applicable",
+            "check_ids": [
+              "pin.note.content"
+            ]
+          },
+          "attributes": {
+            "status": "applicable",
+            "check_ids": [
+              "pin.note.attribute-color",
+              "pin.note.attribute-size",
+              "pin.note.attribute-text",
+              "pin.note.attribute-font",
+              "pin.note.attribute-shape"
+            ]
+          },
+          "relations": {
+            "status": "applicable",
+            "check_ids": [
+              "pin.note.position"
+            ]
+          },
+          "binding": {
+            "status": "not_applicable",
+            "check_ids": [],
+            "reason": "原作在已登记窗口没有该通道的可测变化"
+          },
+          "motion": {
+            "status": "not_applicable",
+            "check_ids": [],
+            "reason": "原作在已登记窗口没有该通道的可测变化"
+          },
+          "timing": {
+            "status": "applicable",
+            "check_ids": [
+              "pin.note.visible-interval"
+            ]
+          }
+        }
+      }
+    ]
+  },
+  "case_id": "paper-girl-standard",
+  "rubric_version": "3.0.0-joint-geometry-actions",
+  "inputs": {
+    "source_sha256": {
+      "reference": {
+        "package-lock.json": "325a1340cf208325229aada53d71ab7b58d51c95867dd3a633cf4e349f5d0200",
+        "package.json": "646ee949e6cf214699edddf21fb46016b5a7f2a45affd15f429c1b9f313e1c8b",
+        "remotion.config.ts": "a53d0ad65bd844d7f01a0b18d654d54ef70c0343c1832c71c5cd719f00c97a6d",
+        "src/Root.tsx": "a41b8707e4f45a4399300137e1fb86b3923d8572336d2ad33c7ce24a724da101",
+        "src/Video.tsx": "7de74430e7445673754193b93aac4466d0bd2151117a9cf8d9471e0933b45277",
+        "src/chars/Girl.tsx": "6df0194c5e377532f2bc8230ca931d5982a6f6c1c4dc575ea28ce8d109bc25ec",
+        "src/chars/Sun.tsx": "b9c847b25797f788d2dcc0abee702b34954c34803417fbb2a2db1fa779c14349",
+        "src/index.ts": "5462d3268136731ce43bfd7c5072ea1ba48b51fec94fa30076f5044f4b39e4a2",
+        "src/lib/defs.tsx": "810f14fce716b580de4659823d855579d7efaa024307b5d04468124bcfc26375",
+        "src/lib/shapes.tsx": "2db3b8e5ec3ca89e2e6c68bec3938fe0ef5e75b30e1bcccf8093ca6c60fe8e86",
+        "src/lib/util.ts": "63efc2206c6c82b2f9989b3e58021737f2b313dd9cf0632f8a0fc3d10294f3c3",
+        "src/scenes/Backdrops.tsx": "63ea8f1eedc270db8fcdcc027881bf0a7d037e2830e16323e35c1055e3625438",
+        "src/scenes/Items.tsx": "8662a0d8f05a335830a1afa409b9349123fc67efdd9bc803f938c17dd0ea63a6",
+        "src/scenes/Notebook.tsx": "10e2d2bfe4dec6fe4922d7a427bc4ad0efa55f3864ab7f1bde8762f051478d22",
+        "src/scenes/Room.tsx": "4e8a83182ca866c56a6c40f9b8315bee96d4d343b131709851bfb786af9fd052",
+        "src/scenes/Sky.tsx": "785ae4bcf8a7d030bfd3a956764906025bfddca499ae050c7c5bd2dcc8a61c86",
+        "src/scenes/Wide.tsx": "3567a51a7fe44fe847a0bc5d1623f58ba3041c76eab70aa020be61dde075fc3d",
+        "src/scenes/WindowWide.tsx": "49986078d66298483bb76ec9e626abcdf241ca0d0292c41d921531e8c47442e4",
+        "tsconfig.json": "2ead50c0ff13a24b5a3dde7a959d9032f0da09030b3c190e012f6c01d371c78e"
+      },
+      "replica": {
+        "analysis/object-inventory.json": "f8ffcc3d3b4d8cc5d8f712fdf0e530216b435a212259a6344c1edcb0b016989b",
+        "delivery-manifest.json": "64fc2b930c8db36aac08c3803cba3543a2d7a04cd1ae9f25c7ef8106d3acfe1e",
+        "package-lock.json": "8897522d6eac7258318aa0305a9771f6325dcf8b657df8cce14d81f8d23aaaa4",
+        "package.json": "9f84e90152bb67a724183a9796c8cbf24802c4c75c449d54795e9394d86a209c",
+        "remotion.config.ts": "c3036864ba022e54c104d253b48894d719bcc53708f8d51909ff2daada3b48ad",
+        "src/Art.tsx": "d22a7d8a858d4f481e9a6de6c4f3696ad7fc178bf39568e866dc3849339af8d8",
+        "src/Montage.tsx": "179561e593937bb800aa92cc66c29e3b0f2238b9b15300ab8b7d707a4ec2a677",
+        "src/Replica.tsx": "4c4a17bedd1ea4fb848a678505525196c76d0e4cc3f992fdec3302422ff3be86",
+        "src/index.tsx": "c3466e40c864b2427bc1dfe078c41170bd40a0ea7dae2add047f9cc83c525531",
+        "src/provided-fonts.css": "07cc3e6a1abc99a9412c019f22746dc46b99d3c4f3716dfc0b6ad50aef759d1a",
+        "tsconfig.json": "b9d545fe70100b466819525094f28d287b0cd852c7494bbe680abb46cd748996"
+      }
+    },
+    "reference_composition": {
+      "entry": "src/Video.tsx",
+      "export": "PaperGirl",
+      "width": 720,
+      "height": 720,
+      "fps": 24,
+      "durationInFrames": 672,
+      "time_offset_seconds": 0,
+      "props": {},
+      "asset_roots": [
+        "[local artifact]"
+      ]
+    },
+    "replica_composition": {
+      "entry": "src/Replica.tsx",
+      "export": "Replica",
+      "width": 720,
+      "height": 720,
+      "fps": 24,
+      "durationInFrames": 672,
+      "time_offset_seconds": 0,
+      "props": {},
+      "asset_roots": [
+        "[local artifact]"
+      ]
+    }
+  },
+  "scope": "公开对象范围内的多状态文字、RGB颜色、二维SVG轮廓、尺寸和像素位置；检查目标对象的方向变化、幅度、逐时刻运动值和动作10%/50%/90%进度时刻。对象内部采用有界绘制集合比较，匿名成员不声称逐个身份对应。音频、精确字形像素、滤镜、未登记背景及3D/GLSL不计分。"
+}

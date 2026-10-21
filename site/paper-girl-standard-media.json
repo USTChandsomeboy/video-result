@@ -1,0 +1,19 @@
+{
+  "repository": "USTChandsomeboy/video-result",
+  "release_tag": "paper-girl-media-20261021",
+  "media_dir": "media/paper-girl-standard",
+  "files": [
+    {
+      "name": "ce2031c185d485e4ba8a6b1e7532b542f9ecd925452aeb1655d18a31232d0e21.mp4",
+      "sha256": "ce2031c185d485e4ba8a6b1e7532b542f9ecd925452aeb1655d18a31232d0e21",
+      "bytes": 7828194,
+      "url": "https://github.com/USTChandsomeboy/video-result/releases/download/paper-girl-media-20261021/ce2031c185d485e4ba8a6b1e7532b542f9ecd925452aeb1655d18a31232d0e21.mp4"
+    },
+    {
+      "name": "8c3f3eb55131f82251949d352f1f91b975c7605905ad570cc4f11af055a01d1c.mp4",
+      "sha256": "8c3f3eb55131f82251949d352f1f91b975c7605905ad570cc4f11af055a01d1c",
+      "bytes": 5414963,
+      "url": "https://github.com/USTChandsomeboy/video-result/releases/download/paper-girl-media-20261021/8c3f3eb55131f82251949d352f1f91b975c7605905ad570cc4f11af055a01d1c.mp4"
+    }
+  ]
+}
