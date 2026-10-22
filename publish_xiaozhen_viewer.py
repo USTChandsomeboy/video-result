@@ -107,7 +107,7 @@ def build(experiment, site, local_media=False):
         target = site / name
         text = target.read_text()
         if PAGE_DIR + '/index.html' not in text:
-            marker = '<p style="margin-top:12px"><a href="experiments/nines-equals-one-harbor/index.html"'
+            marker = '<p style="margin-top:12px"><a href="experiments/western-duel-harbor/index.html"'
             assert text.count(marker) == 1
             link = (f'<p style="margin-top:12px"><a href="{PAGE_DIR}/index.html" '
                     'style="color:var(--blue)">新增：小镇姑娘 · 鲸鱼娘 MV 复刻 · 63.73 分</a></p>\n        ')

@@ -1,1 +1,0 @@
-{"status":"passed","cli_vs_harbor_checks":305,"max_absolute_score_difference":2.842170943040401e-14,"same_input_source_hashes":true,"cli_total":63.629543041486485,"native_total":63.629543041486485,"native_score_directory":"local-authoring/verifier","reward":{"reward":0.6362954304148648,"score_100":63.629543041486485}}

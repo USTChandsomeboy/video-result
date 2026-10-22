@@ -94,7 +94,7 @@ def build(experiment, site, local_media=False):
         home = site / filename
         text = home.read_text()
         if PAGE_DIR + '/index.html' not in text:
-            marker = '<p style="margin-top:12px"><a href="experiments/mosaic-motion-v2/compare.html"'
+            marker = '<p style="margin-top:12px"><a href="experiments/western-duel-harbor/index.html"'
             assert text.count(marker) == 1
             text = text.replace(marker, '<p style="margin-top:12px"><a href="' + PAGE_DIR +
                                 '/index.html" style="color:var(--blue)">新增：Motion Lab 3D 动效复刻 · 43.09 分</a></p>\n        ' + marker, 1)

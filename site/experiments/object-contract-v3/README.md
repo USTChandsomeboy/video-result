@@ -1,4 +1,4 @@
-# Object Contract v3：五条视频复刻实验
+# Object Contract v3：三条视频复刻实验
 
 本轮实验验证两件事：复刻任务能否拿到原作实际使用的素材；生成的 verifier 能否从源码检查“对象是否对应、动效绑在谁身上、动效在什么时间以什么过程变化”。复刻 agent 只收到 `public/` 目录、参考视频、对象卡片和素材清单，不读取原作源码、隐藏规则、评分结果或历史复刻。
 
@@ -30,14 +30,13 @@
 
 本轮冻结六项权重：对象存在 10%，元素属性 15%，相对关系 15%，动效绑定 20%，运动参数 25%，进出时序 15%。每条检查用 `error_score` 将误差映射到 0–100；检查未能解析时不擅自改分母，报告中把它列为 `unresolved_or_unsupported`。完整案例只有六个维度都得到可信结果时才输出 `total`；否则只输出 `provisional_total`。
 
-## 四个案例的最新结果
+## 三个案例的最新结果
 
 | 案例 | 状态 | 分数 | 已解析/检查数 | 主要信息 |
 |---|---:|---:|---:|---|
 | 扩散与渗透：粒子运动 | complete | **45.925** | 30/30 | 已校准箭头、渗透膜和粒子集合的对象位置与时间；粒子运动、下方场景进入和箭头退出存在偏差。 |
 | Starry Night：星夜画作揭示 | complete | **41.666** | 24/24 | 信息面板的属性/时序、对象关系和部分运动过程没有还原；画作主体仍能匹配。 |
 | 秋日邮局：水彩视觉短片 | complete | **35.937** | 27/27 | 对象存在，但多个对象的相对进入顺序、运动曲线和时序偏差较大。 |
-| mimo：pipopipo 歌词 MV | complete | **53.066** | 16/16 | 已读取歌词字框完整位置、逐字进出和击打闪光；复刻的歌词轨迹、进出时序和计数缩放存在偏差。 |
 
 Theneo 仍保留在实验清单中，但没有可确认的原作 Remotion 源码，状态为 `not_applicable`，不参与 Code+Video 评分。
 
@@ -62,5 +61,5 @@ Theneo 仍保留在实验清单中，但没有可确认的原作 Remotion 源码
 - 解析限制：`evaluation-results/<case>/diagnostics.json`
 - 校准验证：[calibration-validation.json](calibration-validation.json)，运行 `python3 experiments/object-contract-v3/validate_calibration.py`
 - 重新评分：在项目根目录运行 `python3 experiments/object-contract-v3/run_eval.py`
-- 任务输入示例：[diffusion/public](diffusion/public)、[starry-night/public](starry-night/public)、[autumn-post/public](autumn-post/public)、[mimo-pipopipo/public](mimo-pipopipo/public)、[theneo/public](theneo/public)
+- 任务输入示例：[diffusion/public](diffusion/public)、[starry-night/public](starry-night/public)、[autumn-post/public](autumn-post/public)、[theneo/public](theneo/public)
 - 复刻提交：各案例下的 `submission/` 目录

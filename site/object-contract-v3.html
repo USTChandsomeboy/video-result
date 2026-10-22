@@ -146,11 +146,8 @@
         <p>左右同步对比原视频与复刻视频；查看六项评分，点击对象或分数，定位视频中的对象和对应源码证据。</p>
         <p style="margin-top:12px"><a href="experiments/clawd-dressup-harbor/index.html" style="color:var(--blue)">新增：Clawd 换装 · 视频对比 · v1 82.94 / 探索性重评分 54.37</a></p>
         <p style="margin-top:12px"><a href="experiments/xiaozhen-whale-harbor/index.html" style="color:var(--blue)">新增：小镇姑娘 · 鲸鱼娘 MV 复刻 · 63.73 分</a></p>
-        <p style="margin-top:12px"><a href="experiments/nines-equals-one-harbor/index.html" style="color:var(--blue)">新增：0.999… = 1 · 完整数学讲解复刻 · 55.92 分</a></p>
-        <p style="margin-top:12px"><a href="experiments/feather-vs-ball-harbor/index.html" style="color:var(--blue)">新增：羽毛与铁球 · 完整科普视频复刻 · 63.63 分</a></p>
         <p style="margin-top:12px"><a href="experiments/lyric-mv-verifier/index.html" style="color:var(--blue)">新增：歌词 MV · 素材合成与 SVG 重绘 · 50.3 分</a></p>
         <p style="margin-top:12px"><a href="experiments/florence-motion-lab-harbor/index.html" style="color:var(--blue)">新增：Motion Lab 3D 动效复刻 · 43.09 分</a></p>
-        <p style="margin-top:12px"><a href="experiments/mosaic-motion-v2/compare.html" style="color:var(--blue)">新增：Mosaic Motion 马赛克动效复刻 · 58.385 分</a></p>
       </div>
       <div class="hero-note" id="hero-summary"><strong>4 条复刻视频</strong>正在读取最新评分…</div>
     </header>
@@ -172,12 +169,11 @@
 
   <script>
     const ROOT = 'experiments/object-contract-v3';
-    const MEDIA = {"diffusion":{"reference":"media/object-contract-v3/b33c1fc77a8ec0eda23091cecd511c7dbf66aba6ccd84d5bae2460d184cf4ead.mp4","replica":"media/object-contract-v3/c33fc6df5611b623c9b6e2a935ee25b7eee4f927823aacb32fb60c76949a08ce.mp4"},"starry-night":{"reference":"media/object-contract-v3/f208f8ee71b594f087d9a4891ffcccc83365d516cb94c3bc089ae5df33e82cf4.mp4","replica":"media/object-contract-v3/a09464032a590d8172808abf3b72bb69d84320950a7b978a4dce5cd643161598.mp4"},"autumn-post":{"reference":"media/object-contract-v3/ee023aacc67f2018c95a3ca1979e74bdfaa4ebe685efb257cb1424a2578fe076.mp4","replica":"media/object-contract-v3/4d8ad44903032945dbebf861b9be868e92b29923379bff1d740ff35acb245f21.mp4"},"mimo-pipopipo":{"reference":"media/object-contract-v3/8fe0e5a4829997ccc27737fd6fcac514c36ec142aa5f4fa58dee1a49781df96a.mp4","replica":"media/object-contract-v3/188aadf29adea8d6f085047ad6515d44ed85404c797eaac3e043e3832f4125ab.mp4"}}; // Public exports replace this with same-origin media paths.
+    const MEDIA = {"diffusion": {"reference": "media/object-contract-v3/b33c1fc77a8ec0eda23091cecd511c7dbf66aba6ccd84d5bae2460d184cf4ead.mp4", "replica": "media/object-contract-v3/c33fc6df5611b623c9b6e2a935ee25b7eee4f927823aacb32fb60c76949a08ce.mp4"}, "starry-night": {"reference": "media/object-contract-v3/f208f8ee71b594f087d9a4891ffcccc83365d516cb94c3bc089ae5df33e82cf4.mp4", "replica": "media/object-contract-v3/a09464032a590d8172808abf3b72bb69d84320950a7b978a4dce5cd643161598.mp4"}, "autumn-post": {"reference": "media/object-contract-v3/ee023aacc67f2018c95a3ca1979e74bdfaa4ebe685efb257cb1424a2578fe076.mp4", "replica": "media/object-contract-v3/4d8ad44903032945dbebf861b9be868e92b29923379bff1d740ff35acb245f21.mp4"}}; // Public exports replace this with same-origin media paths.
     const CASES = [
       { id: 'diffusion', title: '扩散与渗透：粒子运动', kind: '知识讲解', short: '粒子运动' },
       { id: 'starry-night', title: 'Starry Night：星夜画作揭示', kind: '艺术表达', short: '星夜揭示' },
       { id: 'autumn-post', title: '秋日邮局：水彩视觉短片', kind: '艺术表达', short: '秋日邮局' },
-      { id: 'mimo-pipopipo', title: 'mimo：pipopipo 歌词 MV', kind: '叙事娱乐', short: '歌词 MV' },
     ];
     const state = { selected: 'diffusion', cases: new Map(), ref: null, replica: null, duration: 0, syncing: false };
     const $ = (s) => document.querySelector(s);
