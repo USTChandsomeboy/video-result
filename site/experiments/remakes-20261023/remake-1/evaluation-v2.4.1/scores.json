@@ -1,0 +1,1224 @@
+{
+  "status": "valid",
+  "total": 44.7385405627375,
+  "provisional_total": null,
+  "integrity_ok": true,
+  "calibration": {
+    "status": "passed",
+    "kinds": [
+      "controlled_errors",
+      "equivalent_pair",
+      "real_pair",
+      "self_pair"
+    ],
+    "checks_per_kind": 321,
+    "rubric_sha256": "15a74ed305f030c660cd7107f36724157dd877d68a68418677b218c09774108b",
+    "measurement_sha256": {
+      "source_compare.py": "be3a6b4ca1974ef53930eb9cb33810aeda028d6fe35c4c43b8c663029dd4b484",
+      "source_analyzer.cjs": "8158440ffe6652ee11d67ada6126b6dafe0f78b703f7e936a74e6c1cfb19df11",
+      "case_adapter.py": "bd6a2bd03be929c7d9cd59b8cfd918a91fb033de8e1494ec1f1fd5ff1f4a128e",
+      "reference_preflight.py": "5118d032f0dfe95f67b92c46ff8411b39e569dc702d1dc73c91f208a2ebe1370",
+      "score_core.py": "303b3ac83d8b9668caea6a964635b7bc1d38dc4618542582f522171178638ffa",
+      "verify.py": "671300a26a53e422c0cd3da472354ea9f2d3049e0b930e1c2716ba7bf8ddf1f9",
+      "package_integrity.py": "05f2475df472da8355c17113c3862ef0679648d30cdefc5b3c80ba10f82ed50d",
+      "source_index.py": "0875e9927acdf1474fbd8e794be3a7669599507c26a8ce537a7a06454d88a474",
+      "coordinate_measurements.py": "489556305ed7cdfa801d17c71c3cb6aea3de586301d799e139610fd80cd78c45",
+      "layout_adapter.py": "7431733fa3a3a35a332e9640c62dd70633b983c55585dd4eb7c28e19c499e2a4",
+      "source_probe.cjs": "7f423b6adb0edc730f2f2535d19503a8d276fe92877e5948539bf025dbbb35d6",
+      "static_css.cjs": "fa09fff25685c077de191ced1738e8fee79db78ab3b9bf801057d9954a3f36af",
+      "package.json": "992149be2b86c9bef3b5f4034e814c0c279b2a2379345ab35799852a2e71d9f9",
+      "package-lock.json": "d3126b794aaea4b16e5ed99f3551cd2ec1c119e411b3d3c1eb1690eb4d52a4be",
+      "private/assets.json": "ce810fe543e01a4fa66659b51323d7d4c78983f02eb7c3c44ec74c7ca8157623",
+      "private/objects.json": "6a29992d73f1435aaae93ef2a0b949dc8272b0828e1e4494364507ac18e78bb7",
+      "private/source-objects.json": "1b9f516205c6e0589c4813c6ff6f6fae4e1b5e15064c5da1762030565194203a",
+      "private/reference-data/layout-observations.json.gz": "535492dbd24552cf8e03b33041522a19d4d86e7634872ac8bc439665524f8529"
+    }
+  },
+  "score_bounds": {
+    "minimum": 44.7385405627375,
+    "maximum": 44.7385405627375
+  },
+  "dimensions": {
+    "presence": 100.0,
+    "attributes": 45.726442864468204,
+    "relations": 31.369249708624707,
+    "binding": 52.62429223526418,
+    "motion": 12.255066929578078,
+    "timing": 63.903743315508024
+  },
+  "weights": {
+    "presence": 0.1,
+    "attributes": 0.15,
+    "relations": 0.15,
+    "binding": 0.2,
+    "motion": 0.25,
+    "timing": 0.15
+  },
+  "coverage": {
+    "resolved": 321,
+    "declared": 321,
+    "weighted": 1.0,
+    "measured_weighted": 1.0
+  },
+  "plan_coverage": {
+    "status": "complete",
+    "objects": 22,
+    "dimensions_per_object": 6,
+    "applicable": 128,
+    "not_applicable": 4,
+    "unsupported": 0,
+    "cells": [
+      {
+        "id": "terminal.command",
+        "dimensions": {
+          "presence": {
+            "status": "applicable",
+            "check_ids": [
+              "terminal.command.content"
+            ]
+          },
+          "attributes": {
+            "status": "applicable",
+            "check_ids": [
+              "terminal.command.attribute-color",
+              "terminal.command.attribute-size",
+              "terminal.command.attribute-count",
+              "terminal.command.attribute-text",
+              "terminal.command.attribute-font"
+            ]
+          },
+          "relations": {
+            "status": "applicable",
+            "check_ids": [
+              "terminal.command.position"
+            ]
+          },
+          "binding": {
+            "status": "applicable",
+            "check_ids": [
+              "terminal.command.binding-x",
+              "terminal.command.binding-width"
+            ]
+          },
+          "motion": {
+            "status": "applicable",
+            "check_ids": [
+              "terminal.command.curve-x",
+              "terminal.command.curve-width"
+            ]
+          },
+          "timing": {
+            "status": "applicable",
+            "check_ids": [
+              "terminal.command.visible-interval"
+            ]
+          }
+        }
+      },
+      {
+        "id": "terminal.options",
+        "dimensions": {
+          "presence": {
+            "status": "applicable",
+            "check_ids": [
+              "terminal.options.content"
+            ]
+          },
+          "attributes": {
+            "status": "applicable",
+            "check_ids": [
+              "terminal.options.attribute-color",
+              "terminal.options.attribute-size",
+              "terminal.options.attribute-count",
+              "terminal.options.attribute-text",
+              "terminal.options.attribute-font",
+              "terminal.options.attribute-shape",
+              "terminal.options.attribute-gradient"
+            ]
+          },
+          "relations": {
+            "status": "applicable",
+            "check_ids": [
+              "terminal.options.position"
+            ]
+          },
+          "binding": {
+            "status": "applicable",
+            "check_ids": [
+              "terminal.options.binding-x",
+              "terminal.options.binding-y",
+              "terminal.options.binding-width",
+              "terminal.options.binding-height"
+            ]
+          },
+          "motion": {
+            "status": "applicable",
+            "check_ids": [
+              "terminal.options.curve-x",
+              "terminal.options.curve-y",
+              "terminal.options.curve-width",
+              "terminal.options.curve-height"
+            ]
+          },
+          "timing": {
+            "status": "applicable",
+            "check_ids": [
+              "terminal.options.visible-interval"
+            ]
+          }
+        }
+      },
+      {
+        "id": "terminal.output",
+        "dimensions": {
+          "presence": {
+            "status": "applicable",
+            "check_ids": [
+              "terminal.output.content"
+            ]
+          },
+          "attributes": {
+            "status": "applicable",
+            "check_ids": [
+              "terminal.output.attribute-color",
+              "terminal.output.attribute-size",
+              "terminal.output.attribute-count",
+              "terminal.output.attribute-shape"
+            ]
+          },
+          "relations": {
+            "status": "applicable",
+            "check_ids": [
+              "terminal.output.position"
+            ]
+          },
+          "binding": {
+            "status": "applicable",
+            "check_ids": [
+              "terminal.output.binding-x",
+              "terminal.output.binding-y",
+              "terminal.output.binding-width",
+              "terminal.output.binding-height",
+              "terminal.output.binding-opacity"
+            ]
+          },
+          "motion": {
+            "status": "applicable",
+            "check_ids": [
+              "terminal.output.curve-x",
+              "terminal.output.curve-y",
+              "terminal.output.curve-width",
+              "terminal.output.curve-height",
+              "terminal.output.curve-opacity"
+            ]
+          },
+          "timing": {
+            "status": "applicable",
+            "check_ids": [
+              "terminal.output.visible-interval"
+            ]
+          }
+        }
+      },
+      {
+        "id": "clapper.first",
+        "dimensions": {
+          "presence": {
+            "status": "applicable",
+            "check_ids": [
+              "clapper.first.content"
+            ]
+          },
+          "attributes": {
+            "status": "applicable",
+            "check_ids": [
+              "clapper.first.attribute-color",
+              "clapper.first.attribute-size",
+              "clapper.first.attribute-count",
+              "clapper.first.attribute-text",
+              "clapper.first.attribute-font",
+              "clapper.first.attribute-shape"
+            ]
+          },
+          "relations": {
+            "status": "applicable",
+            "check_ids": [
+              "clapper.first.position"
+            ]
+          },
+          "binding": {
+            "status": "applicable",
+            "check_ids": [
+              "clapper.first.binding-x",
+              "clapper.first.binding-y",
+              "clapper.first.binding-width",
+              "clapper.first.binding-height"
+            ]
+          },
+          "motion": {
+            "status": "applicable",
+            "check_ids": [
+              "clapper.first.curve-x",
+              "clapper.first.curve-y",
+              "clapper.first.curve-width",
+              "clapper.first.curve-height"
+            ]
+          },
+          "timing": {
+            "status": "applicable",
+            "check_ids": [
+              "clapper.first.visible-interval"
+            ]
+          }
+        }
+      },
+      {
+        "id": "gauge.first",
+        "dimensions": {
+          "presence": {
+            "status": "applicable",
+            "check_ids": [
+              "gauge.first.content"
+            ]
+          },
+          "attributes": {
+            "status": "applicable",
+            "check_ids": [
+              "gauge.first.attribute-color",
+              "gauge.first.attribute-size",
+              "gauge.first.attribute-count",
+              "gauge.first.attribute-text",
+              "gauge.first.attribute-font",
+              "gauge.first.attribute-shape"
+            ]
+          },
+          "relations": {
+            "status": "applicable",
+            "check_ids": [
+              "gauge.first.position"
+            ]
+          },
+          "binding": {
+            "status": "applicable",
+            "check_ids": [
+              "gauge.first.binding-x",
+              "gauge.first.binding-y"
+            ]
+          },
+          "motion": {
+            "status": "applicable",
+            "check_ids": [
+              "gauge.first.curve-x",
+              "gauge.first.curve-y"
+            ]
+          },
+          "timing": {
+            "status": "applicable",
+            "check_ids": [
+              "gauge.first.visible-interval"
+            ]
+          }
+        }
+      },
+      {
+        "id": "actor.first",
+        "dimensions": {
+          "presence": {
+            "status": "applicable",
+            "check_ids": [
+              "actor.first.content"
+            ]
+          },
+          "attributes": {
+            "status": "applicable",
+            "check_ids": [
+              "actor.first.attribute-color",
+              "actor.first.attribute-size",
+              "actor.first.attribute-count",
+              "actor.first.attribute-shape"
+            ]
+          },
+          "relations": {
+            "status": "applicable",
+            "check_ids": [
+              "actor.first.position"
+            ]
+          },
+          "binding": {
+            "status": "applicable",
+            "check_ids": [
+              "actor.first.binding-x",
+              "actor.first.binding-y",
+              "actor.first.binding-width",
+              "actor.first.binding-height"
+            ]
+          },
+          "motion": {
+            "status": "applicable",
+            "check_ids": [
+              "actor.first.curve-x",
+              "actor.first.curve-y",
+              "actor.first.curve-width",
+              "actor.first.curve-height"
+            ]
+          },
+          "timing": {
+            "status": "applicable",
+            "check_ids": [
+              "actor.first.visible-interval"
+            ]
+          }
+        }
+      },
+      {
+        "id": "director.action",
+        "dimensions": {
+          "presence": {
+            "status": "applicable",
+            "check_ids": [
+              "director.action.content"
+            ]
+          },
+          "attributes": {
+            "status": "applicable",
+            "check_ids": [
+              "director.action.attribute-color",
+              "director.action.attribute-size",
+              "director.action.attribute-count",
+              "director.action.attribute-shape"
+            ]
+          },
+          "relations": {
+            "status": "applicable",
+            "check_ids": [
+              "director.action.position"
+            ]
+          },
+          "binding": {
+            "status": "applicable",
+            "check_ids": [
+              "director.action.binding-x",
+              "director.action.binding-y",
+              "director.action.binding-width",
+              "director.action.binding-height"
+            ]
+          },
+          "motion": {
+            "status": "applicable",
+            "check_ids": [
+              "director.action.curve-x",
+              "director.action.curve-y",
+              "director.action.curve-width",
+              "director.action.curve-height"
+            ]
+          },
+          "timing": {
+            "status": "applicable",
+            "check_ids": [
+              "director.action.visible-interval"
+            ]
+          }
+        }
+      },
+      {
+        "id": "network.photos",
+        "dimensions": {
+          "presence": {
+            "status": "applicable",
+            "check_ids": [
+              "network.photos.content"
+            ]
+          },
+          "attributes": {
+            "status": "applicable",
+            "check_ids": [
+              "network.photos.attribute-color",
+              "network.photos.attribute-size",
+              "network.photos.attribute-count",
+              "network.photos.attribute-shape"
+            ]
+          },
+          "relations": {
+            "status": "applicable",
+            "check_ids": [
+              "network.photos.position"
+            ]
+          },
+          "binding": {
+            "status": "applicable",
+            "check_ids": [
+              "network.photos.binding-x",
+              "network.photos.binding-y",
+              "network.photos.binding-width",
+              "network.photos.binding-height",
+              "network.photos.binding-opacity"
+            ]
+          },
+          "motion": {
+            "status": "applicable",
+            "check_ids": [
+              "network.photos.curve-x",
+              "network.photos.curve-y",
+              "network.photos.curve-width",
+              "network.photos.curve-height",
+              "network.photos.curve-opacity"
+            ]
+          },
+          "timing": {
+            "status": "applicable",
+            "check_ids": [
+              "network.photos.visible-interval"
+            ]
+          }
+        }
+      },
+      {
+        "id": "split.two",
+        "dimensions": {
+          "presence": {
+            "status": "applicable",
+            "check_ids": [
+              "split.two.content"
+            ]
+          },
+          "attributes": {
+            "status": "applicable",
+            "check_ids": [
+              "split.two.attribute-color",
+              "split.two.attribute-size",
+              "split.two.attribute-count",
+              "split.two.attribute-text",
+              "split.two.attribute-font",
+              "split.two.attribute-shape"
+            ]
+          },
+          "relations": {
+            "status": "applicable",
+            "check_ids": [
+              "split.two.position"
+            ]
+          },
+          "binding": {
+            "status": "applicable",
+            "check_ids": [
+              "split.two.binding-x",
+              "split.two.binding-width",
+              "split.two.binding-height"
+            ]
+          },
+          "motion": {
+            "status": "applicable",
+            "check_ids": [
+              "split.two.curve-x",
+              "split.two.curve-width",
+              "split.two.curve-height"
+            ]
+          },
+          "timing": {
+            "status": "applicable",
+            "check_ids": [
+              "split.two.visible-interval"
+            ]
+          }
+        }
+      },
+      {
+        "id": "split.four",
+        "dimensions": {
+          "presence": {
+            "status": "applicable",
+            "check_ids": [
+              "split.four.content"
+            ]
+          },
+          "attributes": {
+            "status": "applicable",
+            "check_ids": [
+              "split.four.attribute-color",
+              "split.four.attribute-size",
+              "split.four.attribute-count",
+              "split.four.attribute-shape"
+            ]
+          },
+          "relations": {
+            "status": "applicable",
+            "check_ids": [
+              "split.four.position"
+            ]
+          },
+          "binding": {
+            "status": "applicable",
+            "check_ids": [
+              "split.four.binding-y",
+              "split.four.binding-width",
+              "split.four.binding-height"
+            ]
+          },
+          "motion": {
+            "status": "applicable",
+            "check_ids": [
+              "split.four.curve-y",
+              "split.four.curve-width",
+              "split.four.curve-height"
+            ]
+          },
+          "timing": {
+            "status": "applicable",
+            "check_ids": [
+              "split.four.visible-interval"
+            ]
+          }
+        }
+      },
+      {
+        "id": "grid.nine",
+        "dimensions": {
+          "presence": {
+            "status": "applicable",
+            "check_ids": [
+              "grid.nine.content"
+            ]
+          },
+          "attributes": {
+            "status": "applicable",
+            "check_ids": [
+              "grid.nine.attribute-color",
+              "grid.nine.attribute-size",
+              "grid.nine.attribute-count",
+              "grid.nine.attribute-text",
+              "grid.nine.attribute-font",
+              "grid.nine.attribute-shape"
+            ]
+          },
+          "relations": {
+            "status": "applicable",
+            "check_ids": [
+              "grid.nine.position"
+            ]
+          },
+          "binding": {
+            "status": "applicable",
+            "check_ids": [
+              "grid.nine.binding-x",
+              "grid.nine.binding-y",
+              "grid.nine.binding-width",
+              "grid.nine.binding-height"
+            ]
+          },
+          "motion": {
+            "status": "applicable",
+            "check_ids": [
+              "grid.nine.curve-x",
+              "grid.nine.curve-y",
+              "grid.nine.curve-width",
+              "grid.nine.curve-height"
+            ]
+          },
+          "timing": {
+            "status": "applicable",
+            "check_ids": [
+              "grid.nine.visible-interval"
+            ]
+          }
+        }
+      },
+      {
+        "id": "film.strip",
+        "dimensions": {
+          "presence": {
+            "status": "applicable",
+            "check_ids": [
+              "film.strip.content"
+            ]
+          },
+          "attributes": {
+            "status": "applicable",
+            "check_ids": [
+              "film.strip.attribute-color",
+              "film.strip.attribute-size",
+              "film.strip.attribute-count",
+              "film.strip.attribute-shape"
+            ]
+          },
+          "relations": {
+            "status": "applicable",
+            "check_ids": [
+              "film.strip.position"
+            ]
+          },
+          "binding": {
+            "status": "applicable",
+            "check_ids": [
+              "film.strip.binding-x"
+            ]
+          },
+          "motion": {
+            "status": "applicable",
+            "check_ids": [
+              "film.strip.curve-x"
+            ]
+          },
+          "timing": {
+            "status": "applicable",
+            "check_ids": [
+              "film.strip.visible-interval"
+            ]
+          }
+        }
+      },
+      {
+        "id": "stunt.strip",
+        "dimensions": {
+          "presence": {
+            "status": "applicable",
+            "check_ids": [
+              "stunt.strip.content"
+            ]
+          },
+          "attributes": {
+            "status": "applicable",
+            "check_ids": [
+              "stunt.strip.attribute-color",
+              "stunt.strip.attribute-size",
+              "stunt.strip.attribute-count",
+              "stunt.strip.attribute-text",
+              "stunt.strip.attribute-font",
+              "stunt.strip.attribute-shape"
+            ]
+          },
+          "relations": {
+            "status": "applicable",
+            "check_ids": [
+              "stunt.strip.position"
+            ]
+          },
+          "binding": {
+            "status": "applicable",
+            "check_ids": [
+              "stunt.strip.binding-x",
+              "stunt.strip.binding-y",
+              "stunt.strip.binding-width",
+              "stunt.strip.binding-height",
+              "stunt.strip.binding-opacity"
+            ]
+          },
+          "motion": {
+            "status": "applicable",
+            "check_ids": [
+              "stunt.strip.curve-x",
+              "stunt.strip.curve-y",
+              "stunt.strip.curve-width",
+              "stunt.strip.curve-height",
+              "stunt.strip.curve-opacity"
+            ]
+          },
+          "timing": {
+            "status": "applicable",
+            "check_ids": [
+              "stunt.strip.visible-interval"
+            ]
+          }
+        }
+      },
+      {
+        "id": "explosion.burst",
+        "dimensions": {
+          "presence": {
+            "status": "applicable",
+            "check_ids": [
+              "explosion.burst.content"
+            ]
+          },
+          "attributes": {
+            "status": "applicable",
+            "check_ids": [
+              "explosion.burst.attribute-color",
+              "explosion.burst.attribute-size",
+              "explosion.burst.attribute-count",
+              "explosion.burst.attribute-shape"
+            ]
+          },
+          "relations": {
+            "status": "applicable",
+            "check_ids": [
+              "explosion.burst.position"
+            ]
+          },
+          "binding": {
+            "status": "applicable",
+            "check_ids": [
+              "explosion.burst.binding-x",
+              "explosion.burst.binding-y",
+              "explosion.burst.binding-width",
+              "explosion.burst.binding-height"
+            ]
+          },
+          "motion": {
+            "status": "applicable",
+            "check_ids": [
+              "explosion.burst.curve-x",
+              "explosion.burst.curve-y",
+              "explosion.burst.curve-width",
+              "explosion.burst.curve-height"
+            ]
+          },
+          "timing": {
+            "status": "applicable",
+            "check_ids": [
+              "explosion.burst.visible-interval"
+            ]
+          }
+        }
+      },
+      {
+        "id": "smoke.clouds",
+        "dimensions": {
+          "presence": {
+            "status": "applicable",
+            "check_ids": [
+              "smoke.clouds.content"
+            ]
+          },
+          "attributes": {
+            "status": "applicable",
+            "check_ids": [
+              "smoke.clouds.attribute-color",
+              "smoke.clouds.attribute-size",
+              "smoke.clouds.attribute-count",
+              "smoke.clouds.attribute-shape"
+            ]
+          },
+          "relations": {
+            "status": "applicable",
+            "check_ids": [
+              "smoke.clouds.position"
+            ]
+          },
+          "binding": {
+            "status": "applicable",
+            "check_ids": [
+              "smoke.clouds.binding-x",
+              "smoke.clouds.binding-y",
+              "smoke.clouds.binding-width",
+              "smoke.clouds.binding-height",
+              "smoke.clouds.binding-opacity"
+            ]
+          },
+          "motion": {
+            "status": "applicable",
+            "check_ids": [
+              "smoke.clouds.curve-x",
+              "smoke.clouds.curve-y",
+              "smoke.clouds.curve-width",
+              "smoke.clouds.curve-height",
+              "smoke.clouds.curve-opacity"
+            ]
+          },
+          "timing": {
+            "status": "applicable",
+            "check_ids": [
+              "smoke.clouds.visible-interval"
+            ]
+          }
+        }
+      },
+      {
+        "id": "gauge.close",
+        "dimensions": {
+          "presence": {
+            "status": "applicable",
+            "check_ids": [
+              "gauge.close.content"
+            ]
+          },
+          "attributes": {
+            "status": "applicable",
+            "check_ids": [
+              "gauge.close.attribute-color",
+              "gauge.close.attribute-size",
+              "gauge.close.attribute-count",
+              "gauge.close.attribute-text",
+              "gauge.close.attribute-font",
+              "gauge.close.attribute-shape"
+            ]
+          },
+          "relations": {
+            "status": "applicable",
+            "check_ids": [
+              "gauge.close.position"
+            ]
+          },
+          "binding": {
+            "status": "applicable",
+            "check_ids": [
+              "gauge.close.binding-x",
+              "gauge.close.binding-y",
+              "gauge.close.binding-height",
+              "gauge.close.binding-opacity"
+            ]
+          },
+          "motion": {
+            "status": "applicable",
+            "check_ids": [
+              "gauge.close.curve-x",
+              "gauge.close.curve-y",
+              "gauge.close.curve-height",
+              "gauge.close.curve-opacity"
+            ]
+          },
+          "timing": {
+            "status": "applicable",
+            "check_ids": [
+              "gauge.close.visible-interval"
+            ]
+          }
+        }
+      },
+      {
+        "id": "actor.happy",
+        "dimensions": {
+          "presence": {
+            "status": "applicable",
+            "check_ids": [
+              "actor.happy.content"
+            ]
+          },
+          "attributes": {
+            "status": "applicable",
+            "check_ids": [
+              "actor.happy.attribute-color",
+              "actor.happy.attribute-size",
+              "actor.happy.attribute-count",
+              "actor.happy.attribute-shape"
+            ]
+          },
+          "relations": {
+            "status": "applicable",
+            "check_ids": [
+              "actor.happy.position"
+            ]
+          },
+          "binding": {
+            "status": "applicable",
+            "check_ids": [
+              "actor.happy.binding-x",
+              "actor.happy.binding-y",
+              "actor.happy.binding-width",
+              "actor.happy.binding-height"
+            ]
+          },
+          "motion": {
+            "status": "applicable",
+            "check_ids": [
+              "actor.happy.curve-x",
+              "actor.happy.curve-y",
+              "actor.happy.curve-width",
+              "actor.happy.curve-height"
+            ]
+          },
+          "timing": {
+            "status": "applicable",
+            "check_ids": [
+              "actor.happy.visible-interval"
+            ]
+          }
+        }
+      },
+      {
+        "id": "director.return",
+        "dimensions": {
+          "presence": {
+            "status": "applicable",
+            "check_ids": [
+              "director.return.content"
+            ]
+          },
+          "attributes": {
+            "status": "applicable",
+            "check_ids": [
+              "director.return.attribute-color",
+              "director.return.attribute-size",
+              "director.return.attribute-count",
+              "director.return.attribute-shape"
+            ]
+          },
+          "relations": {
+            "status": "applicable",
+            "check_ids": [
+              "director.return.position"
+            ]
+          },
+          "binding": {
+            "status": "not_applicable",
+            "check_ids": [],
+            "reason": "原作在已登记片段内没有该项变化"
+          },
+          "motion": {
+            "status": "not_applicable",
+            "check_ids": [],
+            "reason": "原作在已登记片段内没有该项变化"
+          },
+          "timing": {
+            "status": "applicable",
+            "check_ids": [
+              "director.return.visible-interval"
+            ]
+          }
+        }
+      },
+      {
+        "id": "again.actor",
+        "dimensions": {
+          "presence": {
+            "status": "applicable",
+            "check_ids": [
+              "again.actor.content"
+            ]
+          },
+          "attributes": {
+            "status": "applicable",
+            "check_ids": [
+              "again.actor.attribute-color",
+              "again.actor.attribute-size",
+              "again.actor.attribute-count",
+              "again.actor.attribute-shape"
+            ]
+          },
+          "relations": {
+            "status": "applicable",
+            "check_ids": [
+              "again.actor.position"
+            ]
+          },
+          "binding": {
+            "status": "not_applicable",
+            "check_ids": [],
+            "reason": "原作在已登记片段内没有该项变化"
+          },
+          "motion": {
+            "status": "not_applicable",
+            "check_ids": [],
+            "reason": "原作在已登记片段内没有该项变化"
+          },
+          "timing": {
+            "status": "applicable",
+            "check_ids": [
+              "again.actor.visible-interval"
+            ]
+          }
+        }
+      },
+      {
+        "id": "finale.lineup",
+        "dimensions": {
+          "presence": {
+            "status": "applicable",
+            "check_ids": [
+              "finale.lineup.content"
+            ]
+          },
+          "attributes": {
+            "status": "applicable",
+            "check_ids": [
+              "finale.lineup.attribute-color",
+              "finale.lineup.attribute-size",
+              "finale.lineup.attribute-count",
+              "finale.lineup.attribute-text",
+              "finale.lineup.attribute-font",
+              "finale.lineup.attribute-shape"
+            ]
+          },
+          "relations": {
+            "status": "applicable",
+            "check_ids": [
+              "finale.lineup.position"
+            ]
+          },
+          "binding": {
+            "status": "applicable",
+            "check_ids": [
+              "finale.lineup.binding-y",
+              "finale.lineup.binding-width",
+              "finale.lineup.binding-height",
+              "finale.lineup.binding-opacity"
+            ]
+          },
+          "motion": {
+            "status": "applicable",
+            "check_ids": [
+              "finale.lineup.curve-y",
+              "finale.lineup.curve-width",
+              "finale.lineup.curve-height",
+              "finale.lineup.curve-opacity"
+            ]
+          },
+          "timing": {
+            "status": "applicable",
+            "check_ids": [
+              "finale.lineup.visible-interval"
+            ]
+          }
+        }
+      },
+      {
+        "id": "finale.headline",
+        "dimensions": {
+          "presence": {
+            "status": "applicable",
+            "check_ids": [
+              "finale.headline.content"
+            ]
+          },
+          "attributes": {
+            "status": "applicable",
+            "check_ids": [
+              "finale.headline.attribute-color",
+              "finale.headline.attribute-size",
+              "finale.headline.attribute-count",
+              "finale.headline.attribute-text",
+              "finale.headline.attribute-font"
+            ]
+          },
+          "relations": {
+            "status": "applicable",
+            "check_ids": [
+              "finale.headline.position"
+            ]
+          },
+          "binding": {
+            "status": "applicable",
+            "check_ids": [
+              "finale.headline.binding-x",
+              "finale.headline.binding-width"
+            ]
+          },
+          "motion": {
+            "status": "applicable",
+            "check_ids": [
+              "finale.headline.curve-x",
+              "finale.headline.curve-width"
+            ]
+          },
+          "timing": {
+            "status": "applicable",
+            "check_ids": [
+              "finale.headline.visible-interval"
+            ]
+          }
+        }
+      },
+      {
+        "id": "clapper.last",
+        "dimensions": {
+          "presence": {
+            "status": "applicable",
+            "check_ids": [
+              "clapper.last.content"
+            ]
+          },
+          "attributes": {
+            "status": "applicable",
+            "check_ids": [
+              "clapper.last.attribute-color",
+              "clapper.last.attribute-size",
+              "clapper.last.attribute-count",
+              "clapper.last.attribute-text",
+              "clapper.last.attribute-font",
+              "clapper.last.attribute-shape"
+            ]
+          },
+          "relations": {
+            "status": "applicable",
+            "check_ids": [
+              "clapper.last.position"
+            ]
+          },
+          "binding": {
+            "status": "applicable",
+            "check_ids": [
+              "clapper.last.binding-x",
+              "clapper.last.binding-y",
+              "clapper.last.binding-width",
+              "clapper.last.binding-height"
+            ]
+          },
+          "motion": {
+            "status": "applicable",
+            "check_ids": [
+              "clapper.last.curve-x",
+              "clapper.last.curve-y",
+              "clapper.last.curve-width",
+              "clapper.last.curve-height"
+            ]
+          },
+          "timing": {
+            "status": "applicable",
+            "check_ids": [
+              "clapper.last.visible-interval"
+            ]
+          }
+        }
+      }
+    ]
+  },
+  "case_id": "remake-1",
+  "rubric_version": "2.4.1-remakes-source-layout",
+  "inputs": {
+    "source_sha256": {
+      "reference": {
+        "package.json": "cd6259822c1b43fb2aa30dccfb9d93169710868bfb3f7c190b82f4237ec2b14b",
+        "remotion.config.ts": "a53d0ad65bd844d7f01a0b18d654d54ef70c0343c1832c71c5cd719f00c97a6d",
+        "src/Root.tsx": "40651e4b10bca87a2cd66544a90483eccf53863ba358df8cbbe3134b11b88115",
+        "src/Video.tsx": "fe822cc1543292d5ef0d1770a080f7672fa00eeb1a9e2ec28679ce21ee6ed88d",
+        "src/index.ts": "5462d3268136731ce43bfd7c5072ea1ba48b51fec94fa30076f5044f4b39e4a2",
+        "src/lib/Ill.tsx": "4e13b56705312997c9c67f85ae15c5e885ae06dc694ee002a1266112b1b7acf1",
+        "src/lib/Pip.tsx": "839c9b882c5e83a69d23f41e30346809bb563fe1c3ff9e3c529c637d082fb054",
+        "src/lib/draw.tsx": "aa62c3cf78dba64678c41fbadfd3a5c606b856a224a7e2cfbf894aecc036138c",
+        "src/lib/props.tsx": "775621b68496fe6b8a9971e9cb60c08381167c46b33a0b0eac5f952fd3d541e5",
+        "src/lib/theme.ts": "541f5abd386d9eb59aebe5227e15dc7d9d6b9f4fe66ae8a6c94359996b6ea4c1",
+        "src/scenes/Set1.tsx": "dbc87dfd719f06d7f53e332a6d347fce86261ddf54f7e15e743c005c6f759283",
+        "src/scenes/Set2.tsx": "8de7a3162c3c0c32d6a198f0ad0b1500c985f1171f8592171542db63844168c7",
+        "src/scenes/Set3.tsx": "f5f58b17ca689504d8fbf9cf55526cd7e4fe860db46dd15ff9dcb939e53b37fa",
+        "src/scenes/Terminal.tsx": "c9441b80eb20fdda473671e3eaaf5824d1362abb457748b9014973c16c99ac61",
+        "tsconfig.json": "2ead50c0ff13a24b5a3dde7a959d9032f0da09030b3c190e012f6c01d371c78e"
+      },
+      "replica": {
+        "observation/times.json": "ef811b2de5f6adf7720c0838c9cc219e3e43ca5e31db73461f6773f4c4a3b2e2",
+        "package-lock.json": "132737ab280e852ba4c4bfefe8a3ea30702326b8c4cf962d7f7c400da5dadfb9",
+        "package.json": "f62a9fbf4f5f46ee4db149ea2066de96d97d9e1077ec8034ca9372365f086c68",
+        "remotion.config.ts": "de0b90f1e06256cb3648533a27329a3f3d73723b5a099e06a1f9fcda2f4886b7",
+        "src/Replica.tsx": "de5b0a636ed2ede00ce3ed918c96855e37b7d0458dc7a767edc6d9d8f9f27220",
+        "src/index.tsx": "62d2ab163aaa1df65977584c9852f864a6dfb66b377590db47d915472cca98b5",
+        "src/provided-fonts.css": "8ba98badfbfb3c59ce62b50c754e098dc179dcb03afae4ddf6c03f36daf2e04c",
+        "submission-hashes.json": "ae2299e1c2e9d56c1cce8f823137d007c1784f9b8eaa48622deee6552fb35102",
+        "tsconfig.json": "2ead50c0ff13a24b5a3dde7a959d9032f0da09030b3c190e012f6c01d371c78e"
+      }
+    },
+    "reference_composition": {
+      "width": 1080,
+      "height": 1080,
+      "fps": 30.0,
+      "durationInFrames": 879,
+      "entry": "src/Video.tsx",
+      "props": {},
+      "export": "Remake1",
+      "asset_roots": [
+        "[local artifact]"
+      ]
+    },
+    "replica_composition": {
+      "width": 1080,
+      "height": 1080,
+      "fps": 30.0,
+      "durationInFrames": 879,
+      "entry": "src/Replica.tsx",
+      "props": {},
+      "export": "Replica",
+      "asset_roots": [
+        "[local artifact]"
+      ],
+      "time_offset_seconds": 0
+    }
+  },
+  "scope": "公开对象清单中的文字、形状、尺寸、空间关系、有效透明度、位置/大小/数值变化与进出时间。集合比较成员数量及联合位置分布；不据此宣称匿名成员身份逐个对应。音频、滤镜外观、精确字形像素与未登记背景不计分。"
+}

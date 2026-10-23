@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-17",
+  "updated": "2026-10-23",
   "cases": [
     {
       "id": "qixiong",
@@ -318,6 +318,261 @@
         }
       ],
       "url": "replicas.html#rome-epic"
+    },
+    {
+      "id": "remake-1",
+      "title": "Ultracode · 插画宣传片",
+      "category": "宣传推广",
+      "variant": "独立复刻",
+      "score": {
+        "total": 44.7385405627375,
+        "dimensions": {
+          "presence": 100.0,
+          "attributes": 45.726442864468204,
+          "relations": 31.369249708624707,
+          "binding": 52.62429223526418,
+          "motion": 12.255066929578078,
+          "timing": 63.903743315508024
+        },
+        "dimension_weights": {
+          "presence": 0.1,
+          "attributes": 0.15,
+          "relations": 0.15,
+          "binding": 0.2,
+          "motion": 0.25,
+          "timing": 0.15
+        },
+        "checks_resolved": 321,
+        "checks_total": 321,
+        "version": "2.4.1-remakes-source-layout"
+      },
+      "score_state": "valid",
+      "duration": 29.3,
+      "fps": 30.0,
+      "display_aspect": 1.0,
+      "scope": "源码评分：元素存在、元素属性、相对关系、动效绑定、运动参数和进出时序。",
+      "notes": [],
+      "findings": [
+        {
+          "title": "分屏数量和切换时间不一致",
+          "description": "原作已进入九宫格，复刻仍停留在四分屏；角色和道具的位置也发生变化。"
+        },
+        {
+          "title": "连接线出现黑色填充",
+          "description": "复刻用 SVG path 画连接线，部分路径没有关闭默认填充，形成黑色遮挡。"
+        },
+        {
+          "title": "胶片段落的构图没有保留",
+          "description": "原作把动作放进胶片窗口，复刻直接铺满画面；容器、裁切和缩放关系不同。"
+        }
+      ],
+      "score_note": "已登记的检查均有结果；音频、滤镜外观、精确字形像素及未登记背景不计入此源码分。",
+      "reference_label": "参考视频",
+      "url": "experiments/remakes-20261023/compare.html#remake-1",
+      "reference": {
+        "sha256": "5e09731b7dc0436020217b74a4fd3a8066a24b81630ba7782d98913f6b29e7da",
+        "bytes": 10677268,
+        "width": 1080,
+        "height": 1080,
+        "fps": 30.0,
+        "duration": 29.3,
+        "url": "https://ustchandsomeboy.github.io/video-result/media/remakes-20261023/5e09731b7dc0436020217b74a4fd3a8066a24b81630ba7782d98913f6b29e7da.mp4",
+        "poster": "experiments/remakes-20261023/remake-1/reference.jpg"
+      },
+      "replica": {
+        "sha256": "5f1eadfc27616f1b30349726319be5569341b8c9d4e127caff4fddf4c061a50c",
+        "bytes": 9708976,
+        "width": 1080,
+        "height": 1080,
+        "fps": 30.0,
+        "duration": 29.3,
+        "url": "https://ustchandsomeboy.github.io/video-result/media/remakes-20261023/5f1eadfc27616f1b30349726319be5569341b8c9d4e127caff4fddf4c061a50c.mp4",
+        "poster": "experiments/remakes-20261023/remake-1/replica.jpg"
+      },
+      "evidence": [
+        {
+          "label": "完整评分 JSON",
+          "url": "experiments/remakes-20261023/remake-1/evaluation-v2.4.1/scores.json"
+        },
+        {
+          "label": "逐项评分与源码证据",
+          "url": "experiments/remakes-20261023/remake-1/evaluation-v2.4.1/checks.json"
+        },
+        {
+          "label": "对象分数与同步视频对比",
+          "url": "experiments/remakes-20261023/compare.html#remake-1"
+        }
+      ]
+    },
+    {
+      "id": "remake-2",
+      "title": "Field locks · 软件演示",
+      "category": "操作指导",
+      "variant": "独立复刻",
+      "score": {
+        "total": 64.95442639183455,
+        "dimensions": {
+          "presence": 100.0,
+          "attributes": 71.94780968768264,
+          "relations": 85.056084682861,
+          "binding": 82.15264744656862,
+          "motion": 17.39701038625338,
+          "timing": 70.82706766917289
+        },
+        "dimension_weights": {
+          "presence": 0.1,
+          "attributes": 0.15,
+          "relations": 0.15,
+          "binding": 0.2,
+          "motion": 0.25,
+          "timing": 0.15
+        },
+        "checks_resolved": 258,
+        "checks_total": 258,
+        "version": "2.4.1-remakes-source-layout"
+      },
+      "score_state": "valid",
+      "duration": 31.883333333333333,
+      "fps": 60.0,
+      "display_aspect": 1.7777777777777777,
+      "scope": "源码评分：元素存在、元素属性、相对关系、动效绑定、运动参数和进出时序。",
+      "notes": [],
+      "findings": [
+        {
+          "title": "逐词进入的速度和位移不同",
+          "description": "原作按帧错开文字，复刻使用另一套开始时间、持续时间和上移幅度；静态画面接近，过渡仍有差异。"
+        },
+        {
+          "title": "头像集合的数量和动作不同",
+          "description": "原作有 15 个头像，逐个缩放出现；复刻生成 16 个头像，并增加上移动作。"
+        },
+        {
+          "title": "角色外观与权限切换仍有偏差",
+          "description": "复刻保留了表格流程，但头像细节、选框尺寸和切换时刻没有完全对齐。"
+        }
+      ],
+      "score_note": "已登记的检查均有结果；音频、滤镜外观、精确字形像素及未登记背景不计入此源码分。",
+      "reference_label": "参考视频",
+      "url": "experiments/remakes-20261023/compare.html#remake-2",
+      "reference": {
+        "sha256": "dbc671f2923217161a9706266fa533a37c26f363a073d387d7208a9001056329",
+        "bytes": 2588414,
+        "width": 1280,
+        "height": 720,
+        "fps": 60.0,
+        "duration": 31.883333333333333,
+        "url": "https://ustchandsomeboy.github.io/video-result/media/remakes-20261023/dbc671f2923217161a9706266fa533a37c26f363a073d387d7208a9001056329.mp4",
+        "poster": "experiments/remakes-20261023/remake-2/reference.jpg"
+      },
+      "replica": {
+        "sha256": "e29f03e4464ac60e7beebf6fe6c11a4ef885af374edac8be6525f902cfe5f2f3",
+        "bytes": 2933638,
+        "width": 1280,
+        "height": 720,
+        "fps": 60.0,
+        "duration": 31.883333333333333,
+        "url": "https://ustchandsomeboy.github.io/video-result/media/remakes-20261023/e29f03e4464ac60e7beebf6fe6c11a4ef885af374edac8be6525f902cfe5f2f3.mp4",
+        "poster": "experiments/remakes-20261023/remake-2/replica.jpg"
+      },
+      "evidence": [
+        {
+          "label": "完整评分 JSON",
+          "url": "experiments/remakes-20261023/remake-2/evaluation-v2.4.1/scores.json"
+        },
+        {
+          "label": "逐项评分与源码证据",
+          "url": "experiments/remakes-20261023/remake-2/evaluation-v2.4.1/checks.json"
+        },
+        {
+          "label": "对象分数与同步视频对比",
+          "url": "experiments/remakes-20261023/compare.html#remake-2"
+        }
+      ]
+    },
+    {
+      "id": "remake-3",
+      "title": "FORM · 动态字体短片",
+      "category": "艺术表达",
+      "variant": "独立复刻",
+      "score": {
+        "total": 50.398891707004424,
+        "dimensions": {
+          "presence": 100.0,
+          "attributes": 44.89032145866277,
+          "relations": 28.470073380566802,
+          "binding": 71.59590344710585,
+          "motion": 33.77629137732159,
+          "timing": 44.21052631578945
+        },
+        "dimension_weights": {
+          "presence": 0.1,
+          "attributes": 0.15,
+          "relations": 0.15,
+          "binding": 0.2,
+          "motion": 0.25,
+          "timing": 0.15
+        },
+        "checks_resolved": 307,
+        "checks_total": 307,
+        "version": "2.4.1-remakes-source-layout"
+      },
+      "score_state": "valid",
+      "duration": 30.066666666666666,
+      "fps": 60.0,
+      "display_aspect": 1.7777777777777777,
+      "scope": "源码评分：元素存在、元素属性、相对关系、动效绑定、运动参数和进出时序。",
+      "notes": [],
+      "findings": [
+        {
+          "title": "字形揭示过程不同",
+          "description": "原作用裁切逐步露出字形并调整可变字体；复刻主要用自定义 SVG 字形及另一组位移、缩放参数。"
+        },
+        {
+          "title": "海报与卡片的空间编排不同",
+          "description": "原作包含多个平面之间的透视和遮挡关系，复刻的卡片大小、位置和推进过程发生变化。"
+        },
+        {
+          "title": "字母场景的景深与镜头路线不同",
+          "description": "原作的字母排列、透视和镜头推进没有被完整恢复，导致前后遮挡及相对位置不同。"
+        }
+      ],
+      "score_note": "已登记的检查均有结果；音频、滤镜外观、精确字形像素及未登记背景不计入此源码分。",
+      "reference_label": "参考视频",
+      "url": "experiments/remakes-20261023/compare.html#remake-3",
+      "reference": {
+        "sha256": "16756cd8db26b8584c1222cf7ad1c9c76a6ed9531106db3ef98f057dbd3ca3fb",
+        "bytes": 10491704,
+        "width": 1280,
+        "height": 720,
+        "fps": 60.0,
+        "duration": 30.066666666666666,
+        "url": "https://ustchandsomeboy.github.io/video-result/media/remakes-20261023/16756cd8db26b8584c1222cf7ad1c9c76a6ed9531106db3ef98f057dbd3ca3fb.mp4",
+        "poster": "experiments/remakes-20261023/remake-3/reference.jpg"
+      },
+      "replica": {
+        "sha256": "72b9c6bfd9198625e031bffa98732f50c708ed9b8022eef4aaff523960bd65ee",
+        "bytes": 7680778,
+        "width": 1280,
+        "height": 720,
+        "fps": 60.0,
+        "duration": 30.066666666666666,
+        "url": "https://ustchandsomeboy.github.io/video-result/media/remakes-20261023/72b9c6bfd9198625e031bffa98732f50c708ed9b8022eef4aaff523960bd65ee.mp4",
+        "poster": "experiments/remakes-20261023/remake-3/replica.jpg"
+      },
+      "evidence": [
+        {
+          "label": "完整评分 JSON",
+          "url": "experiments/remakes-20261023/remake-3/evaluation-v2.4.1/scores.json"
+        },
+        {
+          "label": "逐项评分与源码证据",
+          "url": "experiments/remakes-20261023/remake-3/evaluation-v2.4.1/checks.json"
+        },
+        {
+          "label": "对象分数与同步视频对比",
+          "url": "experiments/remakes-20261023/compare.html#remake-3"
+        }
+      ]
     }
   ]
 }

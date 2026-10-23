@@ -1,0 +1,1 @@
+import React from "react";import {registerRoot,Composition} from "remotion";import {Replica} from "./Replica";import "./provided-fonts.css";registerRoot(()=> <Composition id="Replica" component={Replica} width={1280} height={720} fps={60.0} durationInFrames={1804}/>);

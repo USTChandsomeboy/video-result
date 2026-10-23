@@ -1,0 +1,43 @@
+{
+  "repository": "USTChandsomeboy/video-result",
+  "release_tag": "remakes-20261023-media",
+  "media_dir": "media/remakes-20261023",
+  "files": [
+    {
+      "name": "5e09731b7dc0436020217b74a4fd3a8066a24b81630ba7782d98913f6b29e7da.mp4",
+      "sha256": "5e09731b7dc0436020217b74a4fd3a8066a24b81630ba7782d98913f6b29e7da",
+      "bytes": 10677268,
+      "url": "https://github.com/USTChandsomeboy/video-result/releases/download/remakes-20261023-media/5e09731b7dc0436020217b74a4fd3a8066a24b81630ba7782d98913f6b29e7da.mp4"
+    },
+    {
+      "name": "5f1eadfc27616f1b30349726319be5569341b8c9d4e127caff4fddf4c061a50c.mp4",
+      "sha256": "5f1eadfc27616f1b30349726319be5569341b8c9d4e127caff4fddf4c061a50c",
+      "bytes": 9708976,
+      "url": "https://github.com/USTChandsomeboy/video-result/releases/download/remakes-20261023-media/5f1eadfc27616f1b30349726319be5569341b8c9d4e127caff4fddf4c061a50c.mp4"
+    },
+    {
+      "name": "dbc671f2923217161a9706266fa533a37c26f363a073d387d7208a9001056329.mp4",
+      "sha256": "dbc671f2923217161a9706266fa533a37c26f363a073d387d7208a9001056329",
+      "bytes": 2588414,
+      "url": "https://github.com/USTChandsomeboy/video-result/releases/download/remakes-20261023-media/dbc671f2923217161a9706266fa533a37c26f363a073d387d7208a9001056329.mp4"
+    },
+    {
+      "name": "e29f03e4464ac60e7beebf6fe6c11a4ef885af374edac8be6525f902cfe5f2f3.mp4",
+      "sha256": "e29f03e4464ac60e7beebf6fe6c11a4ef885af374edac8be6525f902cfe5f2f3",
+      "bytes": 2933638,
+      "url": "https://github.com/USTChandsomeboy/video-result/releases/download/remakes-20261023-media/e29f03e4464ac60e7beebf6fe6c11a4ef885af374edac8be6525f902cfe5f2f3.mp4"
+    },
+    {
+      "name": "16756cd8db26b8584c1222cf7ad1c9c76a6ed9531106db3ef98f057dbd3ca3fb.mp4",
+      "sha256": "16756cd8db26b8584c1222cf7ad1c9c76a6ed9531106db3ef98f057dbd3ca3fb",
+      "bytes": 10491704,
+      "url": "https://github.com/USTChandsomeboy/video-result/releases/download/remakes-20261023-media/16756cd8db26b8584c1222cf7ad1c9c76a6ed9531106db3ef98f057dbd3ca3fb.mp4"
+    },
+    {
+      "name": "72b9c6bfd9198625e031bffa98732f50c708ed9b8022eef4aaff523960bd65ee.mp4",
+      "sha256": "72b9c6bfd9198625e031bffa98732f50c708ed9b8022eef4aaff523960bd65ee",
+      "bytes": 7680778,
+      "url": "https://github.com/USTChandsomeboy/video-result/releases/download/remakes-20261023-media/72b9c6bfd9198625e031bffa98732f50c708ed9b8022eef4aaff523960bd65ee.mp4"
+    }
+  ]
+}

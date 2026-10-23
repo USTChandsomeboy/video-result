@@ -1,0 +1,1115 @@
+{
+  "status": "valid",
+  "total": 50.398891707004424,
+  "provisional_total": null,
+  "integrity_ok": true,
+  "calibration": {
+    "status": "passed",
+    "kinds": [
+      "controlled_errors",
+      "equivalent_pair",
+      "real_pair",
+      "self_pair"
+    ],
+    "checks_per_kind": 307,
+    "rubric_sha256": "fb55b16417d8ba72d49f4ccc4b4747e8f2742eae14e2c22a17e3c04a009be2a7",
+    "measurement_sha256": {
+      "source_compare.py": "be3a6b4ca1974ef53930eb9cb33810aeda028d6fe35c4c43b8c663029dd4b484",
+      "source_analyzer.cjs": "8158440ffe6652ee11d67ada6126b6dafe0f78b703f7e936a74e6c1cfb19df11",
+      "case_adapter.py": "bd6a2bd03be929c7d9cd59b8cfd918a91fb033de8e1494ec1f1fd5ff1f4a128e",
+      "reference_preflight.py": "5118d032f0dfe95f67b92c46ff8411b39e569dc702d1dc73c91f208a2ebe1370",
+      "score_core.py": "303b3ac83d8b9668caea6a964635b7bc1d38dc4618542582f522171178638ffa",
+      "verify.py": "671300a26a53e422c0cd3da472354ea9f2d3049e0b930e1c2716ba7bf8ddf1f9",
+      "package_integrity.py": "05f2475df472da8355c17113c3862ef0679648d30cdefc5b3c80ba10f82ed50d",
+      "source_index.py": "0875e9927acdf1474fbd8e794be3a7669599507c26a8ce537a7a06454d88a474",
+      "coordinate_measurements.py": "489556305ed7cdfa801d17c71c3cb6aea3de586301d799e139610fd80cd78c45",
+      "layout_adapter.py": "7431733fa3a3a35a332e9640c62dd70633b983c55585dd4eb7c28e19c499e2a4",
+      "source_probe.cjs": "7f423b6adb0edc730f2f2535d19503a8d276fe92877e5948539bf025dbbb35d6",
+      "static_css.cjs": "fa09fff25685c077de191ced1738e8fee79db78ab3b9bf801057d9954a3f36af",
+      "package.json": "992149be2b86c9bef3b5f4034e814c0c279b2a2379345ab35799852a2e71d9f9",
+      "package-lock.json": "d3126b794aaea4b16e5ed99f3551cd2ec1c119e411b3d3c1eb1690eb4d52a4be",
+      "private/assets.json": "15848da1ef8a6fc92a09bb37d7a3d057b5ec79447b9d67b7737c7176d1835955",
+      "private/objects.json": "540174f5de9d3fdf24a6bdcd87d7ce29705ad13351244ea6eb2b6909c2550ca8",
+      "private/source-objects.json": "f69ebeb9853cdc4468a630c7966157b43b3abb7312bb1e887ef4df0dd10461ab",
+      "private/reference-data/layout-observations.json.gz": "ab6d230d4acd3eeaff60a4f6bf14a4d85870e1c404b1a2832e72f32f48bdbdf9"
+    }
+  },
+  "score_bounds": {
+    "minimum": 50.398891707004424,
+    "maximum": 50.398891707004424
+  },
+  "dimensions": {
+    "presence": 100.0,
+    "attributes": 44.89032145866277,
+    "relations": 28.470073380566802,
+    "binding": 71.59590344710585,
+    "motion": 33.77629137732159,
+    "timing": 44.21052631578945
+  },
+  "weights": {
+    "presence": 0.1,
+    "attributes": 0.15,
+    "relations": 0.15,
+    "binding": 0.2,
+    "motion": 0.25,
+    "timing": 0.15
+  },
+  "coverage": {
+    "resolved": 307,
+    "declared": 307,
+    "weighted": 1.0,
+    "measured_weighted": 1.0
+  },
+  "plan_coverage": {
+    "status": "complete",
+    "objects": 19,
+    "dimensions_per_object": 6,
+    "applicable": 112,
+    "not_applicable": 2,
+    "unsupported": 0,
+    "cells": [
+      {
+        "id": "form.f",
+        "dimensions": {
+          "presence": {
+            "status": "applicable",
+            "check_ids": [
+              "form.f.content"
+            ]
+          },
+          "attributes": {
+            "status": "applicable",
+            "check_ids": [
+              "form.f.attribute-color",
+              "form.f.attribute-size",
+              "form.f.attribute-count",
+              "form.f.attribute-text",
+              "form.f.attribute-font"
+            ]
+          },
+          "relations": {
+            "status": "applicable",
+            "check_ids": [
+              "form.f.position"
+            ]
+          },
+          "binding": {
+            "status": "applicable",
+            "check_ids": [
+              "form.f.binding-x",
+              "form.f.binding-y",
+              "form.f.binding-width",
+              "form.f.binding-height",
+              "form.f.binding-geometry",
+              "form.f.binding-clip"
+            ]
+          },
+          "motion": {
+            "status": "applicable",
+            "check_ids": [
+              "form.f.curve-x",
+              "form.f.curve-y",
+              "form.f.curve-width",
+              "form.f.curve-height",
+              "form.f.curve-geometry",
+              "form.f.curve-clip"
+            ]
+          },
+          "timing": {
+            "status": "applicable",
+            "check_ids": [
+              "form.f.visible-interval"
+            ]
+          }
+        }
+      },
+      {
+        "id": "form.o",
+        "dimensions": {
+          "presence": {
+            "status": "applicable",
+            "check_ids": [
+              "form.o.content"
+            ]
+          },
+          "attributes": {
+            "status": "applicable",
+            "check_ids": [
+              "form.o.attribute-color",
+              "form.o.attribute-size",
+              "form.o.attribute-count",
+              "form.o.attribute-shape"
+            ]
+          },
+          "relations": {
+            "status": "applicable",
+            "check_ids": [
+              "form.o.position"
+            ]
+          },
+          "binding": {
+            "status": "applicable",
+            "check_ids": [
+              "form.o.binding-x",
+              "form.o.binding-y",
+              "form.o.binding-width",
+              "form.o.binding-height"
+            ]
+          },
+          "motion": {
+            "status": "applicable",
+            "check_ids": [
+              "form.o.curve-x",
+              "form.o.curve-y",
+              "form.o.curve-width",
+              "form.o.curve-height"
+            ]
+          },
+          "timing": {
+            "status": "applicable",
+            "check_ids": [
+              "form.o.visible-interval"
+            ]
+          }
+        }
+      },
+      {
+        "id": "form.r",
+        "dimensions": {
+          "presence": {
+            "status": "applicable",
+            "check_ids": [
+              "form.r.content"
+            ]
+          },
+          "attributes": {
+            "status": "applicable",
+            "check_ids": [
+              "form.r.attribute-color",
+              "form.r.attribute-size",
+              "form.r.attribute-count",
+              "form.r.attribute-text",
+              "form.r.attribute-font"
+            ]
+          },
+          "relations": {
+            "status": "applicable",
+            "check_ids": [
+              "form.r.position"
+            ]
+          },
+          "binding": {
+            "status": "applicable",
+            "check_ids": [
+              "form.r.binding-x",
+              "form.r.binding-y",
+              "form.r.binding-width",
+              "form.r.binding-height",
+              "form.r.binding-geometry",
+              "form.r.binding-clip"
+            ]
+          },
+          "motion": {
+            "status": "applicable",
+            "check_ids": [
+              "form.r.curve-x",
+              "form.r.curve-y",
+              "form.r.curve-width",
+              "form.r.curve-height",
+              "form.r.curve-geometry",
+              "form.r.curve-clip"
+            ]
+          },
+          "timing": {
+            "status": "applicable",
+            "check_ids": [
+              "form.r.visible-interval"
+            ]
+          }
+        }
+      },
+      {
+        "id": "form.m",
+        "dimensions": {
+          "presence": {
+            "status": "applicable",
+            "check_ids": [
+              "form.m.content"
+            ]
+          },
+          "attributes": {
+            "status": "applicable",
+            "check_ids": [
+              "form.m.attribute-color",
+              "form.m.attribute-size",
+              "form.m.attribute-count",
+              "form.m.attribute-text",
+              "form.m.attribute-font"
+            ]
+          },
+          "relations": {
+            "status": "applicable",
+            "check_ids": [
+              "form.m.position"
+            ]
+          },
+          "binding": {
+            "status": "applicable",
+            "check_ids": [
+              "form.m.binding-x",
+              "form.m.binding-y",
+              "form.m.binding-width",
+              "form.m.binding-height",
+              "form.m.binding-geometry",
+              "form.m.binding-clip"
+            ]
+          },
+          "motion": {
+            "status": "applicable",
+            "check_ids": [
+              "form.m.curve-x",
+              "form.m.curve-y",
+              "form.m.curve-width",
+              "form.m.curve-height",
+              "form.m.curve-geometry",
+              "form.m.curve-clip"
+            ]
+          },
+          "timing": {
+            "status": "applicable",
+            "check_ids": [
+              "form.m.visible-interval"
+            ]
+          }
+        }
+      },
+      {
+        "id": "form.motion-panel",
+        "dimensions": {
+          "presence": {
+            "status": "applicable",
+            "check_ids": [
+              "form.motion-panel.content"
+            ]
+          },
+          "attributes": {
+            "status": "applicable",
+            "check_ids": [
+              "form.motion-panel.attribute-color",
+              "form.motion-panel.attribute-size",
+              "form.motion-panel.attribute-count",
+              "form.motion-panel.attribute-text",
+              "form.motion-panel.attribute-font"
+            ]
+          },
+          "relations": {
+            "status": "applicable",
+            "check_ids": [
+              "form.motion-panel.position"
+            ]
+          },
+          "binding": {
+            "status": "applicable",
+            "check_ids": [
+              "form.motion-panel.binding-x",
+              "form.motion-panel.binding-y",
+              "form.motion-panel.binding-width",
+              "form.motion-panel.binding-height"
+            ]
+          },
+          "motion": {
+            "status": "applicable",
+            "check_ids": [
+              "form.motion-panel.curve-x",
+              "form.motion-panel.curve-y",
+              "form.motion-panel.curve-width",
+              "form.motion-panel.curve-height"
+            ]
+          },
+          "timing": {
+            "status": "applicable",
+            "check_ids": [
+              "form.motion-panel.visible-interval"
+            ]
+          }
+        }
+      },
+      {
+        "id": "desk.poster",
+        "dimensions": {
+          "presence": {
+            "status": "applicable",
+            "check_ids": [
+              "desk.poster.content"
+            ]
+          },
+          "attributes": {
+            "status": "applicable",
+            "check_ids": [
+              "desk.poster.attribute-color",
+              "desk.poster.attribute-size",
+              "desk.poster.attribute-count",
+              "desk.poster.attribute-text",
+              "desk.poster.attribute-font",
+              "desk.poster.attribute-shape"
+            ]
+          },
+          "relations": {
+            "status": "applicable",
+            "check_ids": [
+              "desk.poster.position"
+            ]
+          },
+          "binding": {
+            "status": "applicable",
+            "check_ids": [
+              "desk.poster.binding-x",
+              "desk.poster.binding-y",
+              "desk.poster.binding-width",
+              "desk.poster.binding-height"
+            ]
+          },
+          "motion": {
+            "status": "applicable",
+            "check_ids": [
+              "desk.poster.curve-x",
+              "desk.poster.curve-y",
+              "desk.poster.curve-width",
+              "desk.poster.curve-height"
+            ]
+          },
+          "timing": {
+            "status": "applicable",
+            "check_ids": [
+              "desk.poster.visible-interval"
+            ]
+          }
+        }
+      },
+      {
+        "id": "desk.motion",
+        "dimensions": {
+          "presence": {
+            "status": "applicable",
+            "check_ids": [
+              "desk.motion.content"
+            ]
+          },
+          "attributes": {
+            "status": "applicable",
+            "check_ids": [
+              "desk.motion.attribute-color",
+              "desk.motion.attribute-size",
+              "desk.motion.attribute-count",
+              "desk.motion.attribute-text",
+              "desk.motion.attribute-font"
+            ]
+          },
+          "relations": {
+            "status": "applicable",
+            "check_ids": [
+              "desk.motion.position"
+            ]
+          },
+          "binding": {
+            "status": "applicable",
+            "check_ids": [
+              "desk.motion.binding-x",
+              "desk.motion.binding-y",
+              "desk.motion.binding-width",
+              "desk.motion.binding-height"
+            ]
+          },
+          "motion": {
+            "status": "applicable",
+            "check_ids": [
+              "desk.motion.curve-x",
+              "desk.motion.curve-y",
+              "desk.motion.curve-width",
+              "desk.motion.curve-height"
+            ]
+          },
+          "timing": {
+            "status": "applicable",
+            "check_ids": [
+              "desk.motion.visible-interval"
+            ]
+          }
+        }
+      },
+      {
+        "id": "type.letters",
+        "dimensions": {
+          "presence": {
+            "status": "applicable",
+            "check_ids": [
+              "type.letters.content"
+            ]
+          },
+          "attributes": {
+            "status": "applicable",
+            "check_ids": [
+              "type.letters.attribute-color",
+              "type.letters.attribute-size",
+              "type.letters.attribute-count",
+              "type.letters.attribute-text",
+              "type.letters.attribute-font",
+              "type.letters.attribute-shape"
+            ]
+          },
+          "relations": {
+            "status": "applicable",
+            "check_ids": [
+              "type.letters.position"
+            ]
+          },
+          "binding": {
+            "status": "applicable",
+            "check_ids": [
+              "type.letters.binding-x",
+              "type.letters.binding-y",
+              "type.letters.binding-width",
+              "type.letters.binding-height"
+            ]
+          },
+          "motion": {
+            "status": "applicable",
+            "check_ids": [
+              "type.letters.curve-x",
+              "type.letters.curve-y",
+              "type.letters.curve-width",
+              "type.letters.curve-height"
+            ]
+          },
+          "timing": {
+            "status": "applicable",
+            "check_ids": [
+              "type.letters.visible-interval"
+            ]
+          }
+        }
+      },
+      {
+        "id": "break.sun",
+        "dimensions": {
+          "presence": {
+            "status": "applicable",
+            "check_ids": [
+              "break.sun.content"
+            ]
+          },
+          "attributes": {
+            "status": "applicable",
+            "check_ids": [
+              "break.sun.attribute-color",
+              "break.sun.attribute-size",
+              "break.sun.attribute-count",
+              "break.sun.attribute-shape"
+            ]
+          },
+          "relations": {
+            "status": "applicable",
+            "check_ids": [
+              "break.sun.position"
+            ]
+          },
+          "binding": {
+            "status": "applicable",
+            "check_ids": [
+              "break.sun.binding-x",
+              "break.sun.binding-y",
+              "break.sun.binding-width",
+              "break.sun.binding-height"
+            ]
+          },
+          "motion": {
+            "status": "applicable",
+            "check_ids": [
+              "break.sun.curve-x",
+              "break.sun.curve-y",
+              "break.sun.curve-width",
+              "break.sun.curve-height"
+            ]
+          },
+          "timing": {
+            "status": "applicable",
+            "check_ids": [
+              "break.sun.visible-interval"
+            ]
+          }
+        }
+      },
+      {
+        "id": "break.word",
+        "dimensions": {
+          "presence": {
+            "status": "applicable",
+            "check_ids": [
+              "break.word.content"
+            ]
+          },
+          "attributes": {
+            "status": "applicable",
+            "check_ids": [
+              "break.word.attribute-color",
+              "break.word.attribute-size",
+              "break.word.attribute-count",
+              "break.word.attribute-text",
+              "break.word.attribute-font"
+            ]
+          },
+          "relations": {
+            "status": "applicable",
+            "check_ids": [
+              "break.word.position"
+            ]
+          },
+          "binding": {
+            "status": "applicable",
+            "check_ids": [
+              "break.word.binding-x",
+              "break.word.binding-y",
+              "break.word.binding-width",
+              "break.word.binding-height"
+            ]
+          },
+          "motion": {
+            "status": "applicable",
+            "check_ids": [
+              "break.word.curve-x",
+              "break.word.curve-y",
+              "break.word.curve-width",
+              "break.word.curve-height"
+            ]
+          },
+          "timing": {
+            "status": "applicable",
+            "check_ids": [
+              "break.word.visible-interval"
+            ]
+          }
+        }
+      },
+      {
+        "id": "out.word",
+        "dimensions": {
+          "presence": {
+            "status": "applicable",
+            "check_ids": [
+              "out.word.content"
+            ]
+          },
+          "attributes": {
+            "status": "applicable",
+            "check_ids": [
+              "out.word.attribute-color",
+              "out.word.attribute-size",
+              "out.word.attribute-count",
+              "out.word.attribute-text",
+              "out.word.attribute-font",
+              "out.word.attribute-gradient"
+            ]
+          },
+          "relations": {
+            "status": "applicable",
+            "check_ids": [
+              "out.word.position"
+            ]
+          },
+          "binding": {
+            "status": "applicable",
+            "check_ids": [
+              "out.word.binding-x",
+              "out.word.binding-y",
+              "out.word.binding-width",
+              "out.word.binding-height"
+            ]
+          },
+          "motion": {
+            "status": "applicable",
+            "check_ids": [
+              "out.word.curve-x",
+              "out.word.curve-y",
+              "out.word.curve-width",
+              "out.word.curve-height"
+            ]
+          },
+          "timing": {
+            "status": "applicable",
+            "check_ids": [
+              "out.word.visible-interval"
+            ]
+          }
+        }
+      },
+      {
+        "id": "floor.letters",
+        "dimensions": {
+          "presence": {
+            "status": "applicable",
+            "check_ids": [
+              "floor.letters.content"
+            ]
+          },
+          "attributes": {
+            "status": "applicable",
+            "check_ids": [
+              "floor.letters.attribute-color",
+              "floor.letters.attribute-size",
+              "floor.letters.attribute-count",
+              "floor.letters.attribute-text",
+              "floor.letters.attribute-font"
+            ]
+          },
+          "relations": {
+            "status": "applicable",
+            "check_ids": [
+              "floor.letters.position"
+            ]
+          },
+          "binding": {
+            "status": "applicable",
+            "check_ids": [
+              "floor.letters.binding-x",
+              "floor.letters.binding-y",
+              "floor.letters.binding-width",
+              "floor.letters.binding-height"
+            ]
+          },
+          "motion": {
+            "status": "applicable",
+            "check_ids": [
+              "floor.letters.curve-x",
+              "floor.letters.curve-y",
+              "floor.letters.curve-width",
+              "floor.letters.curve-height"
+            ]
+          },
+          "timing": {
+            "status": "applicable",
+            "check_ids": [
+              "floor.letters.visible-interval"
+            ]
+          }
+        }
+      },
+      {
+        "id": "vortex.rings",
+        "dimensions": {
+          "presence": {
+            "status": "applicable",
+            "check_ids": [
+              "vortex.rings.content"
+            ]
+          },
+          "attributes": {
+            "status": "applicable",
+            "check_ids": [
+              "vortex.rings.attribute-color",
+              "vortex.rings.attribute-size",
+              "vortex.rings.attribute-count",
+              "vortex.rings.attribute-shape"
+            ]
+          },
+          "relations": {
+            "status": "applicable",
+            "check_ids": [
+              "vortex.rings.position"
+            ]
+          },
+          "binding": {
+            "status": "applicable",
+            "check_ids": [
+              "vortex.rings.binding-x",
+              "vortex.rings.binding-y",
+              "vortex.rings.binding-width",
+              "vortex.rings.binding-height"
+            ]
+          },
+          "motion": {
+            "status": "applicable",
+            "check_ids": [
+              "vortex.rings.curve-x",
+              "vortex.rings.curve-y",
+              "vortex.rings.curve-width",
+              "vortex.rings.curve-height"
+            ]
+          },
+          "timing": {
+            "status": "applicable",
+            "check_ids": [
+              "vortex.rings.visible-interval"
+            ]
+          }
+        }
+      },
+      {
+        "id": "grid.tiles",
+        "dimensions": {
+          "presence": {
+            "status": "applicable",
+            "check_ids": [
+              "grid.tiles.content"
+            ]
+          },
+          "attributes": {
+            "status": "applicable",
+            "check_ids": [
+              "grid.tiles.attribute-color",
+              "grid.tiles.attribute-size",
+              "grid.tiles.attribute-count",
+              "grid.tiles.attribute-shape"
+            ]
+          },
+          "relations": {
+            "status": "applicable",
+            "check_ids": [
+              "grid.tiles.position"
+            ]
+          },
+          "binding": {
+            "status": "applicable",
+            "check_ids": [
+              "grid.tiles.binding-x",
+              "grid.tiles.binding-y",
+              "grid.tiles.binding-width",
+              "grid.tiles.binding-height"
+            ]
+          },
+          "motion": {
+            "status": "applicable",
+            "check_ids": [
+              "grid.tiles.curve-x",
+              "grid.tiles.curve-y",
+              "grid.tiles.curve-width",
+              "grid.tiles.curve-height"
+            ]
+          },
+          "timing": {
+            "status": "applicable",
+            "check_ids": [
+              "grid.tiles.visible-interval"
+            ]
+          }
+        }
+      },
+      {
+        "id": "chaos.no",
+        "dimensions": {
+          "presence": {
+            "status": "applicable",
+            "check_ids": [
+              "chaos.no.content"
+            ]
+          },
+          "attributes": {
+            "status": "applicable",
+            "check_ids": [
+              "chaos.no.attribute-color",
+              "chaos.no.attribute-size",
+              "chaos.no.attribute-count",
+              "chaos.no.attribute-text",
+              "chaos.no.attribute-font"
+            ]
+          },
+          "relations": {
+            "status": "applicable",
+            "check_ids": [
+              "chaos.no.position"
+            ]
+          },
+          "binding": {
+            "status": "applicable",
+            "check_ids": [
+              "chaos.no.binding-x",
+              "chaos.no.binding-y",
+              "chaos.no.binding-width",
+              "chaos.no.binding-height"
+            ]
+          },
+          "motion": {
+            "status": "applicable",
+            "check_ids": [
+              "chaos.no.curve-x",
+              "chaos.no.curve-y",
+              "chaos.no.curve-width",
+              "chaos.no.curve-height"
+            ]
+          },
+          "timing": {
+            "status": "applicable",
+            "check_ids": [
+              "chaos.no.visible-interval"
+            ]
+          }
+        }
+      },
+      {
+        "id": "chaos.frame",
+        "dimensions": {
+          "presence": {
+            "status": "applicable",
+            "check_ids": [
+              "chaos.frame.content"
+            ]
+          },
+          "attributes": {
+            "status": "applicable",
+            "check_ids": [
+              "chaos.frame.attribute-color",
+              "chaos.frame.attribute-size",
+              "chaos.frame.attribute-count",
+              "chaos.frame.attribute-text",
+              "chaos.frame.attribute-font"
+            ]
+          },
+          "relations": {
+            "status": "applicable",
+            "check_ids": [
+              "chaos.frame.position"
+            ]
+          },
+          "binding": {
+            "status": "applicable",
+            "check_ids": [
+              "chaos.frame.binding-x",
+              "chaos.frame.binding-y",
+              "chaos.frame.binding-width",
+              "chaos.frame.binding-height"
+            ]
+          },
+          "motion": {
+            "status": "applicable",
+            "check_ids": [
+              "chaos.frame.curve-x",
+              "chaos.frame.curve-y",
+              "chaos.frame.curve-width",
+              "chaos.frame.curve-height"
+            ]
+          },
+          "timing": {
+            "status": "applicable",
+            "check_ids": [
+              "chaos.frame.visible-interval"
+            ]
+          }
+        }
+      },
+      {
+        "id": "chaos.type",
+        "dimensions": {
+          "presence": {
+            "status": "applicable",
+            "check_ids": [
+              "chaos.type.content"
+            ]
+          },
+          "attributes": {
+            "status": "applicable",
+            "check_ids": [
+              "chaos.type.attribute-color",
+              "chaos.type.attribute-size",
+              "chaos.type.attribute-count",
+              "chaos.type.attribute-text",
+              "chaos.type.attribute-font"
+            ]
+          },
+          "relations": {
+            "status": "applicable",
+            "check_ids": [
+              "chaos.type.position"
+            ]
+          },
+          "binding": {
+            "status": "applicable",
+            "check_ids": [
+              "chaos.type.binding-x",
+              "chaos.type.binding-y",
+              "chaos.type.binding-width",
+              "chaos.type.binding-height"
+            ]
+          },
+          "motion": {
+            "status": "applicable",
+            "check_ids": [
+              "chaos.type.curve-x",
+              "chaos.type.curve-y",
+              "chaos.type.curve-width",
+              "chaos.type.curve-height"
+            ]
+          },
+          "timing": {
+            "status": "applicable",
+            "check_ids": [
+              "chaos.type.visible-interval"
+            ]
+          }
+        }
+      },
+      {
+        "id": "chaos.motion",
+        "dimensions": {
+          "presence": {
+            "status": "applicable",
+            "check_ids": [
+              "chaos.motion.content"
+            ]
+          },
+          "attributes": {
+            "status": "applicable",
+            "check_ids": [
+              "chaos.motion.attribute-color",
+              "chaos.motion.attribute-size",
+              "chaos.motion.attribute-count",
+              "chaos.motion.attribute-text",
+              "chaos.motion.attribute-font"
+            ]
+          },
+          "relations": {
+            "status": "applicable",
+            "check_ids": [
+              "chaos.motion.position"
+            ]
+          },
+          "binding": {
+            "status": "applicable",
+            "check_ids": [
+              "chaos.motion.binding-x",
+              "chaos.motion.binding-y",
+              "chaos.motion.binding-width",
+              "chaos.motion.binding-height"
+            ]
+          },
+          "motion": {
+            "status": "applicable",
+            "check_ids": [
+              "chaos.motion.curve-x",
+              "chaos.motion.curve-y",
+              "chaos.motion.curve-width",
+              "chaos.motion.curve-height"
+            ]
+          },
+          "timing": {
+            "status": "applicable",
+            "check_ids": [
+              "chaos.motion.visible-interval"
+            ]
+          }
+        }
+      },
+      {
+        "id": "end.credit",
+        "dimensions": {
+          "presence": {
+            "status": "applicable",
+            "check_ids": [
+              "end.credit.content"
+            ]
+          },
+          "attributes": {
+            "status": "applicable",
+            "check_ids": [
+              "end.credit.attribute-color",
+              "end.credit.attribute-size",
+              "end.credit.attribute-count",
+              "end.credit.attribute-text",
+              "end.credit.attribute-font"
+            ]
+          },
+          "relations": {
+            "status": "applicable",
+            "check_ids": [
+              "end.credit.position"
+            ]
+          },
+          "binding": {
+            "status": "not_applicable",
+            "check_ids": [],
+            "reason": "原作在已登记片段内没有该项变化"
+          },
+          "motion": {
+            "status": "not_applicable",
+            "check_ids": [],
+            "reason": "原作在已登记片段内没有该项变化"
+          },
+          "timing": {
+            "status": "applicable",
+            "check_ids": [
+              "end.credit.visible-interval"
+            ]
+          }
+        }
+      }
+    ]
+  },
+  "case_id": "remake-3",
+  "rubric_version": "2.4.1-remakes-source-layout",
+  "inputs": {
+    "source_sha256": {
+      "reference": {
+        "package.json": "92996df8244e66255be8991c945feafde88331f4713176a226208624c4486ea1",
+        "remotion.config.ts": "a53d0ad65bd844d7f01a0b18d654d54ef70c0343c1832c71c5cd719f00c97a6d",
+        "src/Main.tsx": "5acad0bc94771b5d981c03ecd41e090be76fe6eafd5d0396ac3c618b21cfa702",
+        "src/Root.tsx": "483a924dbe4899aa8622614dd95f82aa5b28ef8523410a37912ca96e1b862dc0",
+        "src/index.ts": "5462d3268136731ce43bfd7c5072ea1ba48b51fec94fa30076f5044f4b39e4a2",
+        "src/lib/Camera.tsx": "d9268f321db30c8f7edb710f2fa0dfc557d13ec4d4e15caafc2965ccc248cff4",
+        "src/lib/FrameUI.tsx": "a8ca50b61e39491b1db8384847e302071e837a9a7a31a526503c667e1806cc8a",
+        "src/lib/Letter.tsx": "e2147dbf86400db8450bb436a2a94d4df2b2395e94c44c6b66f610f4ef34daaf",
+        "src/lib/Reveal.tsx": "6766769d16950a0bc1e10c59bbdb590d6a0baa8bf3b2874a9464375ccc7b0296",
+        "src/lib/anim.ts": "bf44635d5c7294549b0f6c6f437ac1ca4d68f0ee5e284d03a11d56a06a2efe57",
+        "src/lib/blob.ts": "21727850f1ec9e799aca93706daf8ef43746914ef382dfc565cff54e736e5187",
+        "src/lib/fonts.tsx": "123f13dc3d29cb8ecf06e892073a7fbd646b38fda1c3a6916f20db6e725e16cb",
+        "src/lib/glyphs.ts": "f827da0bd5072bb4145af02648a5553020dbfef7b074a8eb301c8baa422d1f24",
+        "src/lib/proj.ts": "ef392811dfa7ec8384c07c29cb6e26e2095e5b45b69baaaf9c8513117c5e09e5",
+        "src/scenes/S1Desk.tsx": "d69e1d40138fe21574dbe2c0874fd28f70fe08d6bf1996fc1b6af2ea7f800c55",
+        "src/scenes/S1Form.tsx": "cd07c6a240f66b101e472b46b52b9539b742b66651564ad5e86d74c53bbab79d",
+        "src/scenes/S2Type.tsx": "98361179a6102f000584839bcec865eba3793018759c01dc5231b8108cc7edcc",
+        "src/scenes/S3Break.tsx": "c8376203e3a95d1ef669d7466d770b5d8805d3b858b64f12a4393deaa18d86fe",
+        "src/scenes/S4Floor.tsx": "b094b00b077137627b40f45364a9e8764761771d75cc4428710518fcbadc029c",
+        "src/scenes/S5Vortex.tsx": "df22a9869df1460b2f4f74300c9b934e2befc49114cc76c37d074db774d3d6a3",
+        "src/scenes/S6Grid.tsx": "7f4558ba5e5e93982fca07cf5267d95402576c5b44e3fe71a05f92718787aab9",
+        "src/scenes/S7Chaos.tsx": "7350dd0249f767de4e44c580480ed706401ce6b4d3d6961371aee6b33500970b",
+        "src/scenes/S8End.tsx": "50850d531d6447d6fa66fd31dc3c01d986a04c03b4631ca9e0e544c2ca472894",
+        "tsconfig.json": "2ead50c0ff13a24b5a3dde7a959d9032f0da09030b3c190e012f6c01d371c78e"
+      },
+      "replica": {
+        "package-lock.json": "148cf19dbd7f34f89fe03b83ce0bf10c5a0932ba2eb908eb0d4a34921d367934",
+        "package.json": "18fd72b38fab8dde1e2669921da0cfb230afb32ae23dc64d6b4a3dd0e5e101cb",
+        "remotion.config.ts": "de0b90f1e06256cb3648533a27329a3f3d73723b5a099e06a1f9fcda2f4886b7",
+        "src/Replica.tsx": "c433a108ba0d350c1d523b15e4cd07fd455dacbe391ef2d6642619f1f4ac0ace",
+        "src/index.tsx": "8f22f864d4072a19578aaddeafc0341fdf98e2c2a20fd4a74dfe622d581c45ba",
+        "src/provided-fonts.css": "51ff281ec4c31d4858cdb8b9e0fbbafa0677262f5a6159850de7c804cc59cb5f",
+        "tsconfig.json": "2ead50c0ff13a24b5a3dde7a959d9032f0da09030b3c190e012f6c01d371c78e"
+      }
+    },
+    "reference_composition": {
+      "width": 1280,
+      "height": 720,
+      "fps": 60.0,
+      "durationInFrames": 1804,
+      "entry": "src/Main.tsx",
+      "props": {
+        "creditName": "PANKAJ KUMAR",
+        "creditLine": "DESIGN IN MOTION"
+      },
+      "export": "Main",
+      "asset_roots": [
+        "[local artifact]"
+      ]
+    },
+    "replica_composition": {
+      "width": 1280,
+      "height": 720,
+      "fps": 60.0,
+      "durationInFrames": 1804,
+      "entry": "src/Replica.tsx",
+      "props": {},
+      "export": "Replica",
+      "asset_roots": [
+        "[local artifact]"
+      ],
+      "time_offset_seconds": 0
+    }
+  },
+  "scope": "公开对象清单中的文字、形状、尺寸、空间关系、有效透明度、位置/大小/数值变化与进出时间。集合比较成员数量及联合位置分布；不据此宣称匿名成员身份逐个对应。音频、滤镜外观、精确字形像素与未登记背景不计分。"
+}

@@ -1,0 +1,442 @@
+{
+  "schema_version": 1,
+  "objects": [
+    {
+      "id": "intro.words",
+      "name": "开场逐词出现的 A few fields should stay private.",
+      "mask_id": 1,
+      "scene": "intro",
+      "role": "editable_visual",
+      "time_range_seconds": [
+        1.5,
+        1.5
+      ],
+      "asset_ids": [],
+      "asset_mode": "frame_only",
+      "required_parts": [],
+      "anchor_frame": "anchors/1.5.png",
+      "anchor_mask": "anchors/1.5.masks.png",
+      "anchor_time_seconds": 1.5,
+      "bbox_norm": [
+        0.14296875,
+        0.375,
+        0.7140625,
+        0.2902777777777778
+      ]
+    },
+    {
+      "id": "table.first",
+      "name": "第一张 Guest 表格",
+      "mask_id": 2,
+      "scene": "table",
+      "role": "editable_visual",
+      "time_range_seconds": [
+        3.3,
+        3.3
+      ],
+      "asset_ids": [],
+      "asset_mode": "frame_only",
+      "required_parts": [],
+      "anchor_frame": "anchors/3.3.png",
+      "anchor_mask": "anchors/3.3.masks.png",
+      "anchor_time_seconds": 3.3,
+      "bbox_norm": [
+        0.0375,
+        0.25972222222222224,
+        0.925,
+        0.48333333333333334
+      ]
+    },
+    {
+      "id": "selection.budget",
+      "name": "Budget 列选区",
+      "mask_id": 3,
+      "scene": "selection",
+      "role": "editable_visual",
+      "time_range_seconds": [
+        3.3,
+        3.3
+      ],
+      "asset_ids": [],
+      "asset_mode": "frame_only",
+      "required_parts": [],
+      "anchor_frame": "anchors/3.3.png",
+      "anchor_mask": "anchors/3.3.masks.png",
+      "anchor_time_seconds": 3.3,
+      "bbox_norm": [
+        0.6171875,
+        0.25972222222222224,
+        0.1734375,
+        0.44583333333333336
+      ]
+    },
+    {
+      "id": "same-sheet.text",
+      "name": "Same sheet. 标题",
+      "mask_id": 4,
+      "scene": "same-sheet",
+      "role": "editable_visual",
+      "time_range_seconds": [
+        4.1,
+        4.1
+      ],
+      "asset_ids": [],
+      "asset_mode": "frame_only",
+      "required_parts": [],
+      "anchor_frame": "anchors/4.1.png",
+      "anchor_mask": "anchors/4.1.masks.png",
+      "anchor_time_seconds": 4.1,
+      "bbox_norm": [
+        0.27734375,
+        0.4513888888888889,
+        0.44609375,
+        0.1111111111111111
+      ]
+    },
+    {
+      "id": "crowd.avatars",
+      "name": "Many hands 上方的头像队列",
+      "mask_id": 5,
+      "scene": "crowd",
+      "role": "editable_visual",
+      "time_range_seconds": [
+        6.7,
+        6.7
+      ],
+      "asset_ids": [],
+      "asset_mode": "frame_only",
+      "required_parts": [],
+      "anchor_frame": "anchors/6.7.png",
+      "anchor_mask": "anchors/6.7.masks.png",
+      "anchor_time_seconds": 6.7,
+      "bbox_norm": [
+        0.175,
+        0.28055555555555556,
+        0.684375,
+        0.09166666666666666
+      ]
+    },
+    {
+      "id": "crowd.title",
+      "name": "Many hands. 标题",
+      "mask_id": 6,
+      "scene": "crowd",
+      "role": "editable_visual",
+      "time_range_seconds": [
+        6.7,
+        6.7
+      ],
+      "asset_ids": [],
+      "asset_mode": "frame_only",
+      "required_parts": [],
+      "anchor_frame": "anchors/6.7.png",
+      "anchor_mask": "anchors/6.7.masks.png",
+      "anchor_time_seconds": 6.7,
+      "bbox_norm": [
+        0.321875,
+        0.6277777777777778,
+        0.3578125,
+        0.10555555555555556
+      ]
+    },
+    {
+      "id": "page.table",
+      "name": "Guest list 页面内缩放的表格",
+      "mask_id": 7,
+      "scene": "page",
+      "role": "editable_visual",
+      "time_range_seconds": [
+        8.9,
+        8.9
+      ],
+      "asset_ids": [],
+      "asset_mode": "frame_only",
+      "required_parts": [],
+      "anchor_frame": "anchors/8.9.png",
+      "anchor_mask": "anchors/8.9.masks.png",
+      "anchor_time_seconds": 8.9,
+      "bbox_norm": [
+        0.0453125,
+        0.35833333333333334,
+        0.909375,
+        0.4708333333333333
+      ]
+    },
+    {
+      "id": "page.selection",
+      "name": "Budget 和 Notes 两列的选框",
+      "mask_id": 8,
+      "scene": "page",
+      "role": "editable_visual",
+      "time_range_seconds": [
+        9.1,
+        9.1
+      ],
+      "asset_ids": [],
+      "asset_mode": "frame_only",
+      "required_parts": [],
+      "anchor_frame": "anchors/9.1.png",
+      "anchor_mask": "anchors/9.1.masks.png",
+      "anchor_time_seconds": 9.1,
+      "bbox_norm": [
+        0.515625,
+        0.35833333333333334,
+        0.29921875,
+        0.4708333333333333
+      ]
+    },
+    {
+      "id": "fields.grid",
+      "name": "4×4 字段卡片集合",
+      "mask_id": 9,
+      "scene": "fields",
+      "role": "editable_visual",
+      "time_range_seconds": [
+        13.5,
+        13.5
+      ],
+      "asset_ids": [],
+      "asset_mode": "frame_only",
+      "required_parts": [],
+      "anchor_frame": "anchors/13.5.png",
+      "anchor_mask": "anchors/13.5.masks.png",
+      "anchor_time_seconds": 13.5,
+      "bbox_norm": [
+        0.03984375,
+        0.25972222222222224,
+        0.9203125,
+        0.48055555555555557
+      ]
+    },
+    {
+      "id": "who.column",
+      "name": "Who opens Budget 左边的金额列",
+      "mask_id": 10,
+      "scene": "who",
+      "role": "editable_visual",
+      "time_range_seconds": [
+        15.8,
+        15.8
+      ],
+      "asset_ids": [],
+      "asset_mode": "frame_only",
+      "required_parts": [],
+      "anchor_frame": "anchors/15.8.png",
+      "anchor_mask": "anchors/15.8.masks.png",
+      "anchor_time_seconds": 15.8,
+      "bbox_norm": [
+        0.12265625,
+        0.1597222222222222,
+        0.3453125,
+        0.8402777777777778
+      ]
+    },
+    {
+      "id": "who.title",
+      "name": "Who opens Budget? 标题",
+      "mask_id": 11,
+      "scene": "who",
+      "role": "editable_visual",
+      "time_range_seconds": [
+        15.8,
+        15.8
+      ],
+      "asset_ids": [],
+      "asset_mode": "frame_only",
+      "required_parts": [],
+      "anchor_frame": "anchors/15.8.png",
+      "anchor_mask": "anchors/15.8.masks.png",
+      "anchor_time_seconds": 15.8,
+      "bbox_norm": [
+        0.52265625,
+        0.42083333333333334,
+        0.32109375,
+        0.2375
+      ]
+    },
+    {
+      "id": "your-call.title",
+      "name": "Your call. 标题",
+      "mask_id": 12,
+      "scene": "your-call",
+      "role": "editable_visual",
+      "time_range_seconds": [
+        17.7,
+        17.7
+      ],
+      "asset_ids": [],
+      "asset_mode": "frame_only",
+      "required_parts": [],
+      "anchor_frame": "anchors/17.7.png",
+      "anchor_mask": "anchors/17.7.masks.png",
+      "anchor_time_seconds": 17.7,
+      "bbox_norm": [
+        0.38515625,
+        0.1638888888888889,
+        0.22890625,
+        0.075
+      ]
+    },
+    {
+      "id": "your-call.table",
+      "name": "Your call 下方表格",
+      "mask_id": 13,
+      "scene": "your-call",
+      "role": "editable_visual",
+      "time_range_seconds": [
+        17.7,
+        17.7
+      ],
+      "asset_ids": [],
+      "asset_mode": "frame_only",
+      "required_parts": [],
+      "anchor_frame": "anchors/17.7.png",
+      "anchor_mask": "anchors/17.7.masks.png",
+      "anchor_time_seconds": 17.7,
+      "bbox_norm": [
+        0.06640625,
+        0.3472222222222222,
+        0.859375,
+        0.44583333333333336
+      ]
+    },
+    {
+      "id": "viewers.identity",
+      "name": "左侧切换的角色头像和标签",
+      "mask_id": 14,
+      "scene": "viewers",
+      "role": "editable_visual",
+      "time_range_seconds": [
+        20.0,
+        20.0
+      ],
+      "asset_ids": [],
+      "asset_mode": "frame_only",
+      "required_parts": [],
+      "anchor_frame": "anchors/20.png",
+      "anchor_mask": "anchors/20.masks.png",
+      "anchor_time_seconds": 20.0,
+      "bbox_norm": [
+        0.0875,
+        0.325,
+        0.1453125,
+        0.35138888888888886
+      ]
+    },
+    {
+      "id": "viewers.table",
+      "name": "随角色变化的权限表格",
+      "mask_id": 15,
+      "scene": "viewers",
+      "role": "editable_visual",
+      "time_range_seconds": [
+        20.0,
+        20.0
+      ],
+      "asset_ids": [],
+      "asset_mode": "frame_only",
+      "required_parts": [],
+      "anchor_frame": "anchors/20.png",
+      "anchor_mask": "anchors/20.masks.png",
+      "anchor_time_seconds": 20.0,
+      "bbox_norm": [
+        0.3125,
+        0.28055555555555556,
+        0.23671875,
+        0.4708333333333333
+      ]
+    },
+    {
+      "id": "lock-any.text",
+      "name": "Lock any field. 标题",
+      "mask_id": 16,
+      "scene": "lock-any",
+      "role": "editable_visual",
+      "time_range_seconds": [
+        22.8,
+        22.8
+      ],
+      "asset_ids": [],
+      "asset_mode": "frame_only",
+      "required_parts": [],
+      "anchor_frame": "anchors/22.8.png",
+      "anchor_mask": "anchors/22.8.masks.png",
+      "anchor_time_seconds": 22.8,
+      "bbox_norm": [
+        0.24296875,
+        0.44722222222222224,
+        0.51640625,
+        0.14305555555555555
+      ]
+    },
+    {
+      "id": "columns.carousel",
+      "name": "连续切换的单列字段卡片",
+      "mask_id": 17,
+      "scene": "columns",
+      "role": "editable_visual",
+      "time_range_seconds": [
+        25.8,
+        25.8
+      ],
+      "asset_ids": [],
+      "asset_mode": "frame_only",
+      "required_parts": [],
+      "anchor_frame": "anchors/25.8.png",
+      "anchor_mask": "anchors/25.8.masks.png",
+      "anchor_time_seconds": 25.8,
+      "bbox_norm": [
+        0.25,
+        0.12916666666666668,
+        0.5,
+        0.8319444444444445
+      ]
+    },
+    {
+      "id": "end.title",
+      "name": "Field locks 结尾标题",
+      "mask_id": 18,
+      "scene": "end",
+      "role": "editable_visual",
+      "time_range_seconds": [
+        29.0,
+        29.0
+      ],
+      "asset_ids": [],
+      "asset_mode": "frame_only",
+      "required_parts": [],
+      "anchor_frame": "anchors/29.png",
+      "anchor_mask": "anchors/29.masks.png",
+      "anchor_time_seconds": 29.0,
+      "bbox_norm": [
+        0.3203125,
+        0.3763888888888889,
+        0.36484375,
+        0.10972222222222222
+      ]
+    },
+    {
+      "id": "end.subtitle",
+      "name": "Now in every table 结尾副标题和锁",
+      "mask_id": 19,
+      "scene": "end",
+      "role": "editable_visual",
+      "time_range_seconds": [
+        29.0,
+        29.0
+      ],
+      "asset_ids": [],
+      "asset_mode": "frame_only",
+      "required_parts": [],
+      "anchor_frame": "anchors/29.png",
+      "anchor_mask": "anchors/29.masks.png",
+      "anchor_time_seconds": 29.0,
+      "bbox_norm": [
+        0.353125,
+        0.5458333333333333,
+        0.2953125,
+        0.06388888888888888
+      ]
+    }
+  ]
+}

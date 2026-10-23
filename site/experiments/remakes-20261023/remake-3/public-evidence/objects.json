@@ -1,0 +1,442 @@
+{
+  "schema_version": 1,
+  "objects": [
+    {
+      "id": "form.f",
+      "name": "开场海报中的 F",
+      "mask_id": 1,
+      "scene": "form",
+      "role": "editable_visual",
+      "time_range_seconds": [
+        2.4,
+        2.4
+      ],
+      "asset_ids": [],
+      "asset_mode": "frame_only",
+      "required_parts": [],
+      "anchor_frame": "anchors/2.4.png",
+      "anchor_mask": "anchors/2.4.masks.png",
+      "anchor_time_seconds": 2.4,
+      "bbox_norm": [
+        0.07421875,
+        0.10972222222222222,
+        0.17578125,
+        0.4444444444444444
+      ]
+    },
+    {
+      "id": "form.o",
+      "name": "由圆点长大的实心 O",
+      "mask_id": 2,
+      "scene": "form",
+      "role": "editable_visual",
+      "time_range_seconds": [
+        2.4,
+        2.4
+      ],
+      "asset_ids": [],
+      "asset_mode": "frame_only",
+      "required_parts": [],
+      "anchor_frame": "anchors/2.4.png",
+      "anchor_mask": "anchors/2.4.masks.png",
+      "anchor_time_seconds": 2.4,
+      "bbox_norm": [
+        0.24921875,
+        0.10972222222222222,
+        0.25078125,
+        0.44583333333333336
+      ]
+    },
+    {
+      "id": "form.r",
+      "name": "开场海报中的 R",
+      "mask_id": 3,
+      "scene": "form",
+      "role": "editable_visual",
+      "time_range_seconds": [
+        2.4,
+        2.4
+      ],
+      "asset_ids": [],
+      "asset_mode": "frame_only",
+      "required_parts": [],
+      "anchor_frame": "anchors/2.4.png",
+      "anchor_mask": "anchors/2.4.masks.png",
+      "anchor_time_seconds": 2.4,
+      "bbox_norm": [
+        0.5125,
+        0.1111111111111111,
+        0.1734375,
+        0.44305555555555554
+      ]
+    },
+    {
+      "id": "form.m",
+      "name": "挤压边框并飞出的 M",
+      "mask_id": 4,
+      "scene": "form",
+      "role": "editable_visual",
+      "time_range_seconds": [
+        2.4,
+        2.4
+      ],
+      "asset_ids": [],
+      "asset_mode": "frame_only",
+      "required_parts": [],
+      "anchor_frame": "anchors/2.4.png",
+      "anchor_mask": "anchors/2.4.masks.png",
+      "anchor_time_seconds": 2.4,
+      "bbox_norm": [
+        0.70078125,
+        0.10833333333333334,
+        0.2421875,
+        0.44583333333333336
+      ]
+    },
+    {
+      "id": "form.motion-panel",
+      "name": "蓝色 MOTION 面板",
+      "mask_id": 5,
+      "scene": "form",
+      "role": "editable_visual",
+      "time_range_seconds": [
+        5.1,
+        5.1
+      ],
+      "asset_ids": [],
+      "asset_mode": "frame_only",
+      "required_parts": [],
+      "anchor_frame": "anchors/5.1.png",
+      "anchor_mask": "anchors/5.1.masks.png",
+      "anchor_time_seconds": 5.1,
+      "bbox_norm": [
+        0.696875,
+        0.08472222222222223,
+        0.2640625,
+        0.4736111111111111
+      ]
+    },
+    {
+      "id": "desk.poster",
+      "name": "桌面上旋转缩放的 FORM 海报",
+      "mask_id": 6,
+      "scene": "desk",
+      "role": "editable_visual",
+      "time_range_seconds": [
+        7.3,
+        7.3
+      ],
+      "asset_ids": [],
+      "asset_mode": "frame_only",
+      "required_parts": [],
+      "anchor_frame": "anchors/7.3.png",
+      "anchor_mask": "anchors/7.3.masks.png",
+      "anchor_time_seconds": 7.3,
+      "bbox_norm": [
+        0.08125,
+        0.18888888888888888,
+        0.52421875,
+        0.5458333333333333
+      ]
+    },
+    {
+      "id": "desk.motion",
+      "name": "桌面蓝色 MOTION 纸张",
+      "mask_id": 7,
+      "scene": "desk",
+      "role": "editable_visual",
+      "time_range_seconds": [
+        7.3,
+        7.3
+      ],
+      "asset_ids": [],
+      "asset_mode": "frame_only",
+      "required_parts": [],
+      "anchor_frame": "anchors/7.3.png",
+      "anchor_mask": "anchors/7.3.masks.png",
+      "anchor_time_seconds": 7.3,
+      "bbox_norm": [
+        0.3796875,
+        0.18888888888888888,
+        0.6203125,
+        0.6847222222222222
+      ]
+    },
+    {
+      "id": "type.letters",
+      "name": "红底依次落下的 TYPE 四个字母",
+      "mask_id": 8,
+      "scene": "type",
+      "role": "editable_visual",
+      "time_range_seconds": [
+        10.2,
+        10.2
+      ],
+      "asset_ids": [],
+      "asset_mode": "frame_only",
+      "required_parts": [],
+      "anchor_frame": "anchors/10.2.png",
+      "anchor_mask": "anchors/10.2.masks.png",
+      "anchor_time_seconds": 10.2,
+      "bbox_norm": [
+        0.0703125,
+        0.225,
+        0.86015625,
+        0.55
+      ]
+    },
+    {
+      "id": "break.sun",
+      "name": "由圆点扩张的黄色太阳",
+      "mask_id": 9,
+      "scene": "break",
+      "role": "editable_visual",
+      "time_range_seconds": [
+        12.2,
+        12.2
+      ],
+      "asset_ids": [],
+      "asset_mode": "frame_only",
+      "required_parts": [],
+      "anchor_frame": "anchors/12.2.png",
+      "anchor_mask": "anchors/12.2.masks.png",
+      "anchor_time_seconds": 12.2,
+      "bbox_norm": [
+        0.396875,
+        0.06666666666666667,
+        0.3796875,
+        0.4388888888888889
+      ]
+    },
+    {
+      "id": "break.word",
+      "name": "落向地平线的 BREAK 字母",
+      "mask_id": 10,
+      "scene": "break",
+      "role": "editable_visual",
+      "time_range_seconds": [
+        12.2,
+        12.2
+      ],
+      "asset_ids": [],
+      "asset_mode": "frame_only",
+      "required_parts": [],
+      "anchor_frame": "anchors/12.2.png",
+      "anchor_mask": "anchors/12.2.masks.png",
+      "anchor_time_seconds": 12.2,
+      "bbox_norm": [
+        0.12890625,
+        0.025,
+        0.73984375,
+        0.47638888888888886
+      ]
+    },
+    {
+      "id": "out.word",
+      "name": "从蓝色区域升起的 OUT",
+      "mask_id": 11,
+      "scene": "out",
+      "role": "editable_visual",
+      "time_range_seconds": [
+        12.2,
+        12.2
+      ],
+      "asset_ids": [],
+      "asset_mode": "frame_only",
+      "required_parts": [],
+      "anchor_frame": "anchors/12.2.png",
+      "anchor_mask": "anchors/12.2.masks.png",
+      "anchor_time_seconds": 12.2,
+      "bbox_norm": [
+        0.275,
+        0.5944444444444444,
+        0.53828125,
+        0.29444444444444445
+      ]
+    },
+    {
+      "id": "floor.letters",
+      "name": "透视网格中的立体字母",
+      "mask_id": 12,
+      "scene": "floor",
+      "role": "editable_visual",
+      "time_range_seconds": [
+        14.7,
+        14.7
+      ],
+      "asset_ids": [],
+      "asset_mode": "frame_only",
+      "required_parts": [],
+      "anchor_frame": "anchors/14.7.png",
+      "anchor_mask": "anchors/14.7.masks.png",
+      "anchor_time_seconds": 14.7,
+      "bbox_norm": [
+        0.028125,
+        0.0,
+        0.940625,
+        0.7041666666666667
+      ]
+    },
+    {
+      "id": "vortex.rings",
+      "name": "多色不规则圆环隧道",
+      "mask_id": 13,
+      "scene": "vortex",
+      "role": "editable_visual",
+      "time_range_seconds": [
+        17.9,
+        17.9
+      ],
+      "asset_ids": [],
+      "asset_mode": "frame_only",
+      "required_parts": [],
+      "anchor_frame": "anchors/17.9.png",
+      "anchor_mask": "anchors/17.9.masks.png",
+      "anchor_time_seconds": 17.9,
+      "bbox_norm": [
+        0.1296875,
+        0.2902777777777778,
+        0.40234375,
+        0.7097222222222223
+      ]
+    },
+    {
+      "id": "grid.tiles",
+      "name": "蓝色过渡后的模块网格",
+      "mask_id": 14,
+      "scene": "grid",
+      "role": "editable_visual",
+      "time_range_seconds": [
+        19.3,
+        19.3
+      ],
+      "asset_ids": [],
+      "asset_mode": "frame_only",
+      "required_parts": [],
+      "anchor_frame": "anchors/19.3.png",
+      "anchor_mask": "anchors/19.3.masks.png",
+      "anchor_time_seconds": 19.3,
+      "bbox_norm": [
+        0.0,
+        0.0,
+        1.0,
+        1.0
+      ]
+    },
+    {
+      "id": "chaos.no",
+      "name": "NO 的巨大字母",
+      "mask_id": 15,
+      "scene": "chaos",
+      "role": "editable_visual",
+      "time_range_seconds": [
+        24.2,
+        24.2
+      ],
+      "asset_ids": [],
+      "asset_mode": "frame_only",
+      "required_parts": [],
+      "anchor_frame": "anchors/24.2.png",
+      "anchor_mask": "anchors/24.2.masks.png",
+      "anchor_time_seconds": 24.2,
+      "bbox_norm": [
+        0.0,
+        0.009722222222222222,
+        0.675,
+        0.5611111111111111
+      ]
+    },
+    {
+      "id": "chaos.frame",
+      "name": "倾斜的 FRAME 字样",
+      "mask_id": 16,
+      "scene": "chaos",
+      "role": "editable_visual",
+      "time_range_seconds": [
+        24.2,
+        24.2
+      ],
+      "asset_ids": [],
+      "asset_mode": "frame_only",
+      "required_parts": [],
+      "anchor_frame": "anchors/24.2.png",
+      "anchor_mask": "anchors/24.2.masks.png",
+      "anchor_time_seconds": 24.2,
+      "bbox_norm": [
+        0.4375,
+        0.5708333333333333,
+        0.5625,
+        0.38333333333333336
+      ]
+    },
+    {
+      "id": "chaos.type",
+      "name": "上侧红色 TYPE 字样",
+      "mask_id": 17,
+      "scene": "chaos",
+      "role": "editable_visual",
+      "time_range_seconds": [
+        24.2,
+        24.2
+      ],
+      "asset_ids": [],
+      "asset_mode": "frame_only",
+      "required_parts": [],
+      "anchor_frame": "anchors/24.2.png",
+      "anchor_mask": "anchors/24.2.masks.png",
+      "anchor_time_seconds": 24.2,
+      "bbox_norm": [
+        0.66484375,
+        0.0,
+        0.3296875,
+        0.1486111111111111
+      ]
+    },
+    {
+      "id": "chaos.motion",
+      "name": "右侧蓝色 MOTION 字样",
+      "mask_id": 18,
+      "scene": "chaos",
+      "role": "editable_visual",
+      "time_range_seconds": [
+        25.2,
+        25.2
+      ],
+      "asset_ids": [],
+      "asset_mode": "frame_only",
+      "required_parts": [],
+      "anchor_frame": "anchors/25.2.png",
+      "anchor_mask": "anchors/25.2.masks.png",
+      "anchor_time_seconds": 25.2,
+      "bbox_norm": [
+        0.92421875,
+        0.0,
+        0.07265625,
+        0.5263888888888889
+      ]
+    },
+    {
+      "id": "end.credit",
+      "name": "结尾 PANKAJ KUMAR 署名",
+      "mask_id": 19,
+      "scene": "end",
+      "role": "editable_visual",
+      "time_range_seconds": [
+        28.7,
+        28.7
+      ],
+      "asset_ids": [],
+      "asset_mode": "frame_only",
+      "required_parts": [],
+      "anchor_frame": "anchors/28.7.png",
+      "anchor_mask": "anchors/28.7.masks.png",
+      "anchor_time_seconds": 28.7,
+      "bbox_norm": [
+        0.5640625,
+        0.5972222222222222,
+        0.34453125,
+        0.058333333333333334
+      ]
+    }
+  ]
+}

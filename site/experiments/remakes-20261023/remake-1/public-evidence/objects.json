@@ -1,0 +1,511 @@
+{
+  "schema_version": 1,
+  "objects": [
+    {
+      "id": "terminal.command",
+      "name": "终端输入 /effort",
+      "mask_id": 1,
+      "scene": "terminal",
+      "role": "editable_visual",
+      "time_range_seconds": [
+        1.1333333333333333,
+        1.1333333333333333
+      ],
+      "asset_ids": [],
+      "asset_mode": "frame_only",
+      "required_parts": [],
+      "anchor_frame": "anchors/1.13333.png",
+      "anchor_mask": "anchors/1.13333.masks.png",
+      "anchor_time_seconds": 1.1333333333333333,
+      "bbox_norm": [
+        0.012037037037037037,
+        0.4666666666666667,
+        0.32222222222222224,
+        0.06666666666666667
+      ]
+    },
+    {
+      "id": "terminal.options",
+      "name": "终端选项与选中指示三角",
+      "mask_id": 2,
+      "scene": "terminal",
+      "role": "editable_visual",
+      "time_range_seconds": [
+        2.3,
+        2.3
+      ],
+      "asset_ids": [],
+      "asset_mode": "frame_only",
+      "required_parts": [],
+      "anchor_frame": "anchors/2.3.png",
+      "anchor_mask": "anchors/2.3.masks.png",
+      "anchor_time_seconds": 2.3,
+      "bbox_norm": [
+        0.0,
+        0.29814814814814816,
+        0.9361111111111111,
+        0.11481481481481481
+      ]
+    },
+    {
+      "id": "terminal.output",
+      "name": "终端输出与手绘下划线",
+      "mask_id": 3,
+      "scene": "terminal",
+      "role": "editable_visual",
+      "time_range_seconds": [
+        4.2,
+        4.2
+      ],
+      "asset_ids": [],
+      "asset_mode": "frame_only",
+      "required_parts": [],
+      "anchor_frame": "anchors/4.2.png",
+      "anchor_mask": "anchors/4.2.masks.png",
+      "anchor_time_seconds": 4.2,
+      "bbox_norm": [
+        0.10555555555555556,
+        0.5231481481481481,
+        0.8944444444444445,
+        0.006481481481481481
+      ]
+    },
+    {
+      "id": "clapper.first",
+      "name": "第一块 ULTRACODE 场记板",
+      "mask_id": 4,
+      "scene": "clapper",
+      "role": "editable_visual",
+      "time_range_seconds": [
+        5.633333333333334,
+        5.633333333333334
+      ],
+      "asset_ids": [],
+      "asset_mode": "frame_only",
+      "required_parts": [],
+      "anchor_frame": "anchors/5.63333.png",
+      "anchor_mask": "anchors/5.63333.masks.png",
+      "anchor_time_seconds": 5.633333333333334,
+      "bbox_norm": [
+        0.09259259259259259,
+        0.27314814814814814,
+        0.8064814814814815,
+        0.5481481481481482
+      ]
+    },
+    {
+      "id": "gauge.first",
+      "name": "第一只 USAGE 仪表盘",
+      "mask_id": 5,
+      "scene": "gauge",
+      "role": "editable_visual",
+      "time_range_seconds": [
+        7.1,
+        7.1
+      ],
+      "asset_ids": [],
+      "asset_mode": "frame_only",
+      "required_parts": [],
+      "anchor_frame": "anchors/7.1.png",
+      "anchor_mask": "anchors/7.1.masks.png",
+      "anchor_time_seconds": 7.1,
+      "bbox_norm": [
+        0.26944444444444443,
+        0.425,
+        0.7203703703703703,
+        0.37407407407407406
+      ]
+    },
+    {
+      "id": "actor.first",
+      "name": "仪表盘上方的红色角色",
+      "mask_id": 6,
+      "scene": "actor",
+      "role": "editable_visual",
+      "time_range_seconds": [
+        7.1,
+        7.1
+      ],
+      "asset_ids": [],
+      "asset_mode": "frame_only",
+      "required_parts": [],
+      "anchor_frame": "anchors/7.1.png",
+      "anchor_mask": "anchors/7.1.masks.png",
+      "anchor_time_seconds": 7.1,
+      "bbox_norm": [
+        0.5027777777777778,
+        0.20833333333333334,
+        0.2537037037037037,
+        0.24351851851851852
+      ]
+    },
+    {
+      "id": "director.action",
+      "name": "喊 ACTION 的导演",
+      "mask_id": 7,
+      "scene": "director",
+      "role": "editable_visual",
+      "time_range_seconds": [
+        8.266666666666667,
+        8.266666666666667
+      ],
+      "asset_ids": [],
+      "asset_mode": "frame_only",
+      "required_parts": [],
+      "anchor_frame": "anchors/8.26667.png",
+      "anchor_mask": "anchors/8.26667.masks.png",
+      "anchor_time_seconds": 8.266666666666667,
+      "bbox_norm": [
+        0.14074074074074075,
+        0.4351851851851852,
+        0.5601851851851852,
+        0.42777777777777776
+      ]
+    },
+    {
+      "id": "network.photos",
+      "name": "围绕导演旋转的照片环",
+      "mask_id": 8,
+      "scene": "network",
+      "role": "editable_visual",
+      "time_range_seconds": [
+        9.0,
+        9.0
+      ],
+      "asset_ids": [],
+      "asset_mode": "frame_only",
+      "required_parts": [],
+      "anchor_frame": "anchors/9.png",
+      "anchor_mask": "anchors/9.masks.png",
+      "anchor_time_seconds": 9.0,
+      "bbox_norm": [
+        0.19537037037037036,
+        0.21203703703703702,
+        0.587037037037037,
+        0.5824074074074074
+      ]
+    },
+    {
+      "id": "split.two",
+      "name": "两格分屏",
+      "mask_id": 9,
+      "scene": "split",
+      "role": "editable_visual",
+      "time_range_seconds": [
+        9.6,
+        9.6
+      ],
+      "asset_ids": [],
+      "asset_mode": "frame_only",
+      "required_parts": [],
+      "anchor_frame": "anchors/9.6.png",
+      "anchor_mask": "anchors/9.6.masks.png",
+      "anchor_time_seconds": 9.6,
+      "bbox_norm": [
+        0.012037037037037037,
+        0.012037037037037037,
+        0.975925925925926,
+        0.9722222222222222
+      ]
+    },
+    {
+      "id": "split.four",
+      "name": "四格分屏",
+      "mask_id": 10,
+      "scene": "split",
+      "role": "editable_visual",
+      "time_range_seconds": [
+        10.266666666666667,
+        10.266666666666667
+      ],
+      "asset_ids": [],
+      "asset_mode": "frame_only",
+      "required_parts": [],
+      "anchor_frame": "anchors/10.2667.png",
+      "anchor_mask": "anchors/10.2667.masks.png",
+      "anchor_time_seconds": 10.266666666666667,
+      "bbox_norm": [
+        0.012037037037037037,
+        0.012037037037037037,
+        0.975925925925926,
+        0.975925925925926
+      ]
+    },
+    {
+      "id": "grid.nine",
+      "name": "九格分屏内容",
+      "mask_id": 11,
+      "scene": "grid",
+      "role": "editable_visual",
+      "time_range_seconds": [
+        11.666666666666666,
+        11.666666666666666
+      ],
+      "asset_ids": [],
+      "asset_mode": "frame_only",
+      "required_parts": [],
+      "anchor_frame": "anchors/11.6667.png",
+      "anchor_mask": "anchors/11.6667.masks.png",
+      "anchor_time_seconds": 11.666666666666666,
+      "bbox_norm": [
+        0.004629629629629629,
+        0.004629629629629629,
+        0.975925925925926,
+        0.975925925925926
+      ]
+    },
+    {
+      "id": "film.strip",
+      "name": "横向移动的电影胶片",
+      "mask_id": 12,
+      "scene": "film",
+      "role": "editable_visual",
+      "time_range_seconds": [
+        13.8,
+        13.8
+      ],
+      "asset_ids": [],
+      "asset_mode": "frame_only",
+      "required_parts": [],
+      "anchor_frame": "anchors/13.8.png",
+      "anchor_mask": "anchors/13.8.masks.png",
+      "anchor_time_seconds": 13.8,
+      "bbox_norm": [
+        0.0,
+        0.35185185185185186,
+        1.0,
+        0.2037037037037037
+      ]
+    },
+    {
+      "id": "stunt.strip",
+      "name": "跳跃场景的胶片框",
+      "mask_id": 13,
+      "scene": "stunt",
+      "role": "editable_visual",
+      "time_range_seconds": [
+        15.2,
+        15.2
+      ],
+      "asset_ids": [],
+      "asset_mode": "frame_only",
+      "required_parts": [],
+      "anchor_frame": "anchors/15.2.png",
+      "anchor_mask": "anchors/15.2.masks.png",
+      "anchor_time_seconds": 15.2,
+      "bbox_norm": [
+        0.0,
+        0.0,
+        1.0,
+        1.0
+      ]
+    },
+    {
+      "id": "explosion.burst",
+      "name": "爆炸的放射形火花",
+      "mask_id": 14,
+      "scene": "explosion",
+      "role": "editable_visual",
+      "time_range_seconds": [
+        17.0,
+        17.0
+      ],
+      "asset_ids": [],
+      "asset_mode": "frame_only",
+      "required_parts": [],
+      "anchor_frame": "anchors/17.png",
+      "anchor_mask": "anchors/17.masks.png",
+      "anchor_time_seconds": 17.0,
+      "bbox_norm": [
+        0.11481481481481481,
+        0.03148148148148148,
+        0.8851851851851852,
+        0.9685185185185186
+      ]
+    },
+    {
+      "id": "smoke.clouds",
+      "name": "爆炸后的烟雾团",
+      "mask_id": 15,
+      "scene": "smoke",
+      "role": "editable_visual",
+      "time_range_seconds": [
+        19.0,
+        19.0
+      ],
+      "asset_ids": [],
+      "asset_mode": "frame_only",
+      "required_parts": [],
+      "anchor_frame": "anchors/19.png",
+      "anchor_mask": "anchors/19.masks.png",
+      "anchor_time_seconds": 19.0,
+      "bbox_norm": [
+        0.0,
+        0.0,
+        1.0,
+        1.0
+      ]
+    },
+    {
+      "id": "gauge.close",
+      "name": "特写仪表盘和指针",
+      "mask_id": 16,
+      "scene": "gauge",
+      "role": "editable_visual",
+      "time_range_seconds": [
+        20.6,
+        20.6
+      ],
+      "asset_ids": [],
+      "asset_mode": "frame_only",
+      "required_parts": [],
+      "anchor_frame": "anchors/20.6.png",
+      "anchor_mask": "anchors/20.6.masks.png",
+      "anchor_time_seconds": 20.6,
+      "bbox_norm": [
+        0.06018518518518518,
+        0.37592592592592594,
+        0.8796296296296297,
+        0.45740740740740743
+      ]
+    },
+    {
+      "id": "actor.happy",
+      "name": "弹跳的开心角色",
+      "mask_id": 17,
+      "scene": "actor",
+      "role": "editable_visual",
+      "time_range_seconds": [
+        21.6,
+        21.6
+      ],
+      "asset_ids": [],
+      "asset_mode": "frame_only",
+      "required_parts": [],
+      "anchor_frame": "anchors/21.6.png",
+      "anchor_mask": "anchors/21.6.masks.png",
+      "anchor_time_seconds": 21.6,
+      "bbox_norm": [
+        0.2824074074074074,
+        0.37777777777777777,
+        0.4351851851851852,
+        0.3055555555555556
+      ]
+    },
+    {
+      "id": "director.return",
+      "name": "后段被熏黑的导演",
+      "mask_id": 18,
+      "scene": "director",
+      "role": "editable_visual",
+      "time_range_seconds": [
+        22.3,
+        22.3
+      ],
+      "asset_ids": [],
+      "asset_mode": "frame_only",
+      "required_parts": [],
+      "anchor_frame": "anchors/22.3.png",
+      "anchor_mask": "anchors/22.3.masks.png",
+      "anchor_time_seconds": 22.3,
+      "bbox_norm": [
+        0.12314814814814815,
+        0.39166666666666666,
+        0.30925925925925923,
+        0.30833333333333335
+      ]
+    },
+    {
+      "id": "again.actor",
+      "name": "喊 AGAIN 的角色及扩音器",
+      "mask_id": 19,
+      "scene": "again",
+      "role": "editable_visual",
+      "time_range_seconds": [
+        23.2,
+        23.2
+      ],
+      "asset_ids": [],
+      "asset_mode": "frame_only",
+      "required_parts": [],
+      "anchor_frame": "anchors/23.2.png",
+      "anchor_mask": "anchors/23.2.masks.png",
+      "anchor_time_seconds": 23.2,
+      "bbox_norm": [
+        0.36944444444444446,
+        0.3527777777777778,
+        0.19444444444444445,
+        0.2222222222222222
+      ]
+    },
+    {
+      "id": "finale.lineup",
+      "name": "结尾的角色队列",
+      "mask_id": 20,
+      "scene": "finale",
+      "role": "editable_visual",
+      "time_range_seconds": [
+        26.4,
+        26.4
+      ],
+      "asset_ids": [],
+      "asset_mode": "frame_only",
+      "required_parts": [],
+      "anchor_frame": "anchors/26.4.png",
+      "anchor_mask": "anchors/26.4.masks.png",
+      "anchor_time_seconds": 26.4,
+      "bbox_norm": [
+        0.06851851851851852,
+        0.48333333333333334,
+        0.9037037037037037,
+        0.28703703703703703
+      ]
+    },
+    {
+      "id": "finale.headline",
+      "name": "Blow up the set. Not your limits. 文字",
+      "mask_id": 21,
+      "scene": "finale",
+      "role": "editable_visual",
+      "time_range_seconds": [
+        26.4,
+        26.4
+      ],
+      "asset_ids": [],
+      "asset_mode": "frame_only",
+      "required_parts": [],
+      "anchor_frame": "anchors/26.4.png",
+      "anchor_mask": "anchors/26.4.masks.png",
+      "anchor_time_seconds": 26.4,
+      "bbox_norm": [
+        0.1685185185185185,
+        0.12314814814814815,
+        0.6601851851851852,
+        0.08148148148148149
+      ]
+    },
+    {
+      "id": "clapper.last",
+      "name": "结尾合上的 ULTRACODE 场记板",
+      "mask_id": 22,
+      "scene": "clapper",
+      "role": "editable_visual",
+      "time_range_seconds": [
+        28.6,
+        28.6
+      ],
+      "asset_ids": [],
+      "asset_mode": "frame_only",
+      "required_parts": [],
+      "anchor_frame": "anchors/28.6.png",
+      "anchor_mask": "anchors/28.6.masks.png",
+      "anchor_time_seconds": 28.6,
+      "bbox_norm": [
+        0.06851851851851852,
+        0.0,
+        0.8342592592592593,
+        0.8222222222222222
+      ]
+    }
+  ]
+}

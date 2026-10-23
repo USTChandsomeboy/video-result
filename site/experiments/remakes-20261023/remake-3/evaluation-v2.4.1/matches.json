@@ -1,0 +1,211 @@
+[
+  {
+    "object_id": "form.f",
+    "reference_selector": {
+      "component_tag": "Wipe",
+      "source_file_suffix": "S1Form.tsx",
+      "source_line": 80
+    },
+    "replica_selector": {
+      "object_id": "form.f"
+    }
+  },
+  {
+    "object_id": "form.o",
+    "reference_selector": {
+      "source_file_suffix": "S1Form.tsx",
+      "source_line": 66
+    },
+    "replica_selector": {
+      "object_id": "form.o"
+    }
+  },
+  {
+    "object_id": "form.r",
+    "reference_selector": {
+      "component_tag": "Wipe",
+      "source_file_suffix": "S1Form.tsx",
+      "source_line": 83
+    },
+    "replica_selector": {
+      "object_id": "form.r"
+    }
+  },
+  {
+    "object_id": "form.m",
+    "reference_selector": {
+      "component_tag": "Wipe",
+      "source_file_suffix": "S1Form.tsx",
+      "source_line": 87
+    },
+    "replica_selector": {
+      "object_id": "form.m"
+    }
+  },
+  {
+    "object_id": "form.motion-panel",
+    "reference_selector": {
+      "source_file_suffix": "S1Form.tsx",
+      "source_line": 70
+    },
+    "replica_selector": {
+      "object_id": "form.motion-panel"
+    }
+  },
+  {
+    "object_id": "desk.poster",
+    "reference_selector": {
+      "source_file_suffix": "S1Desk.tsx",
+      "source_line": 92
+    },
+    "replica_selector": {
+      "object_id": "desk.poster"
+    }
+  },
+  {
+    "object_id": "desk.motion",
+    "reference_selector": {
+      "source_file_suffix": "S1Desk.tsx",
+      "source_line": 66
+    },
+    "replica_selector": {
+      "object_id": "desk.motion"
+    }
+  },
+  {
+    "object_id": "type.letters",
+    "reference_selector": {
+      "source_file_suffix": "S2Type.tsx",
+      "source_line": 29
+    },
+    "replica_selector": {
+      "object_id": "type.letters"
+    }
+  },
+  {
+    "object_id": "break.sun",
+    "reference_selector": {
+      "source_file_suffix": "S3Break.tsx",
+      "source_line": 52
+    },
+    "replica_selector": {
+      "object_id": "break.sun"
+    }
+  },
+  {
+    "object_id": "break.word",
+    "reference_selector": {
+      "source_file_suffix": "S3Break.tsx",
+      "source_line": 62
+    },
+    "replica_selector": {
+      "object_id": "break.word"
+    }
+  },
+  {
+    "object_id": "out.word",
+    "reference_selector": {
+      "source_file_suffix": "S3Break.tsx",
+      "source_line": 84,
+      "component_tag": "Glyph"
+    },
+    "replica_selector": {
+      "object_id": "out.word"
+    }
+  },
+  {
+    "object_id": "floor.letters",
+    "reference_selector": {
+      "source_file_suffix": "S4Floor.tsx",
+      "source_line": 111
+    },
+    "replica_selector": {
+      "object_id": "floor.letters"
+    }
+  },
+  {
+    "object_id": "vortex.rings",
+    "reference_selector": {
+      "source_file_suffix": "S5Vortex.tsx",
+      "source_line": 60
+    },
+    "replica_selector": {
+      "object_id": "vortex.rings"
+    }
+  },
+  {
+    "object_id": "grid.tiles",
+    "reference_selector": {
+      "source_file_suffix": "S6Grid.tsx",
+      "tags": [
+        "svg"
+      ]
+    },
+    "replica_selector": {
+      "object_id": "grid.tiles"
+    }
+  },
+  {
+    "object_id": "chaos.no",
+    "reference_selector": {
+      "any_of": [
+        {
+          "source_file_suffix": "S7Chaos.tsx",
+          "component_tag": "Glyph",
+          "source_line": 53
+        },
+        {
+          "source_file_suffix": "S7Chaos.tsx",
+          "component_tag": "Glyph",
+          "source_line": 54
+        }
+      ]
+    },
+    "replica_selector": {
+      "object_id": "chaos.no"
+    }
+  },
+  {
+    "object_id": "chaos.frame",
+    "reference_selector": {
+      "component_tag": "Glyph",
+      "source_file_suffix": "S7Chaos.tsx",
+      "source_line": 58
+    },
+    "replica_selector": {
+      "object_id": "chaos.frame"
+    }
+  },
+  {
+    "object_id": "chaos.type",
+    "reference_selector": {
+      "component_tag": "Glyph",
+      "source_file_suffix": "S7Chaos.tsx",
+      "source_line": 60
+    },
+    "replica_selector": {
+      "object_id": "chaos.type"
+    }
+  },
+  {
+    "object_id": "chaos.motion",
+    "reference_selector": {
+      "component_tag": "Glyph",
+      "source_file_suffix": "S7Chaos.tsx",
+      "source_line": 61
+    },
+    "replica_selector": {
+      "object_id": "chaos.motion"
+    }
+  },
+  {
+    "object_id": "end.credit",
+    "reference_selector": {
+      "source_file_suffix": "S8End.tsx",
+      "source_line": 27
+    },
+    "replica_selector": {
+      "object_id": "end.credit"
+    }
+  }
+]

@@ -1,0 +1,282 @@
+[
+  {
+    "path": "anchors/1.13333.png",
+    "sha256": "deab4f5b8fe8737f55796177c83faedaa5d3e81b07938b65c550db1d0045419a",
+    "bytes": 269326,
+    "local_path": "/Users/zhanyi/Documents/Codex/2026-09-30/ni-yo/code/video-seed-bench/experiments/remakes-20261023/remake-1/public-evidence/anchors/1.13333.png",
+    "urls": []
+  },
+  {
+    "path": "anchors/1.13333.masks.png",
+    "sha256": "4f41a3361b799da00c34abf33d239a0622774a23c5cd76ca8d4be835661bd8dd",
+    "bytes": 5584,
+    "local_path": "/Users/zhanyi/Documents/Codex/2026-09-30/ni-yo/code/video-seed-bench/experiments/remakes-20261023/remake-1/public-evidence/anchors/1.13333.masks.png",
+    "urls": []
+  },
+  {
+    "path": "anchors/2.3.png",
+    "sha256": "5226b6e4adae138c5427e72a47b301ead8c2119c748e64993f6e60087f59c753",
+    "bytes": 213445,
+    "local_path": "/Users/zhanyi/Documents/Codex/2026-09-30/ni-yo/code/video-seed-bench/experiments/remakes-20261023/remake-1/public-evidence/anchors/2.3.png",
+    "urls": []
+  },
+  {
+    "path": "anchors/2.3.masks.png",
+    "sha256": "3e058037584a7c68ff5448e946805db8de248b7089ab01777ec08d51c9e9669b",
+    "bytes": 6116,
+    "local_path": "/Users/zhanyi/Documents/Codex/2026-09-30/ni-yo/code/video-seed-bench/experiments/remakes-20261023/remake-1/public-evidence/anchors/2.3.masks.png",
+    "urls": []
+  },
+  {
+    "path": "anchors/4.2.png",
+    "sha256": "35ba4c8c6ff819f0e0c012085915273f0f71820ccd8abdb84d4ada77f79ae988",
+    "bytes": 558600,
+    "local_path": "/Users/zhanyi/Documents/Codex/2026-09-30/ni-yo/code/video-seed-bench/experiments/remakes-20261023/remake-1/public-evidence/anchors/4.2.png",
+    "urls": []
+  },
+  {
+    "path": "anchors/4.2.masks.png",
+    "sha256": "6f9d287e1f5fe0efbbaac9165b3029a2799ae8c1340bc6dbdaa8c9102ab5908e",
+    "bytes": 4829,
+    "local_path": "/Users/zhanyi/Documents/Codex/2026-09-30/ni-yo/code/video-seed-bench/experiments/remakes-20261023/remake-1/public-evidence/anchors/4.2.masks.png",
+    "urls": []
+  },
+  {
+    "path": "anchors/5.63333.png",
+    "sha256": "51ad6853d59991650758b5cb39678e06e51ac696b48ac34774e79922163d650f",
+    "bytes": 386423,
+    "local_path": "/Users/zhanyi/Documents/Codex/2026-09-30/ni-yo/code/video-seed-bench/experiments/remakes-20261023/remake-1/public-evidence/anchors/5.63333.png",
+    "urls": []
+  },
+  {
+    "path": "anchors/5.63333.masks.png",
+    "sha256": "4a75138b75189efd4491d5a7ec7ea6c639055838a40afb89b8754c6e6c3983d8",
+    "bytes": 6320,
+    "local_path": "/Users/zhanyi/Documents/Codex/2026-09-30/ni-yo/code/video-seed-bench/experiments/remakes-20261023/remake-1/public-evidence/anchors/5.63333.masks.png",
+    "urls": []
+  },
+  {
+    "path": "anchors/7.1.png",
+    "sha256": "add14d5f119dce0bd750e62ec30ca60c3c310ed9b8f71daf9a8a69ef3f2b97b4",
+    "bytes": 732324,
+    "local_path": "/Users/zhanyi/Documents/Codex/2026-09-30/ni-yo/code/video-seed-bench/experiments/remakes-20261023/remake-1/public-evidence/anchors/7.1.png",
+    "urls": []
+  },
+  {
+    "path": "anchors/7.1.masks.png",
+    "sha256": "18aad6965d87b9f602793f1c6e7eb0db324e1161625bc3af5a490ae4c05a0157",
+    "bytes": 9367,
+    "local_path": "/Users/zhanyi/Documents/Codex/2026-09-30/ni-yo/code/video-seed-bench/experiments/remakes-20261023/remake-1/public-evidence/anchors/7.1.masks.png",
+    "urls": []
+  },
+  {
+    "path": "anchors/8.26667.png",
+    "sha256": "248780a07ad7c8947bf9f6739361d071eeabd5ec8dcddb4828a706370ee9f40d",
+    "bytes": 490955,
+    "local_path": "/Users/zhanyi/Documents/Codex/2026-09-30/ni-yo/code/video-seed-bench/experiments/remakes-20261023/remake-1/public-evidence/anchors/8.26667.png",
+    "urls": []
+  },
+  {
+    "path": "anchors/8.26667.masks.png",
+    "sha256": "d0e6aa3d03dd9c946353dee6ba016700eae6db8db33f65b064bed6e711a24b06",
+    "bytes": 8470,
+    "local_path": "/Users/zhanyi/Documents/Codex/2026-09-30/ni-yo/code/video-seed-bench/experiments/remakes-20261023/remake-1/public-evidence/anchors/8.26667.masks.png",
+    "urls": []
+  },
+  {
+    "path": "anchors/9.png",
+    "sha256": "c3cb0497ee2bbcc7bddd9457986701019a85a6d22b6bcba1fa9403f2b20e7d0a",
+    "bytes": 442036,
+    "local_path": "/Users/zhanyi/Documents/Codex/2026-09-30/ni-yo/code/video-seed-bench/experiments/remakes-20261023/remake-1/public-evidence/anchors/9.png",
+    "urls": []
+  },
+  {
+    "path": "anchors/9.masks.png",
+    "sha256": "dcc5a8d724a394fcdbf295da24f8ad1fd8499af9e376fd51fe17c5f9579ceba5",
+    "bytes": 11288,
+    "local_path": "/Users/zhanyi/Documents/Codex/2026-09-30/ni-yo/code/video-seed-bench/experiments/remakes-20261023/remake-1/public-evidence/anchors/9.masks.png",
+    "urls": []
+  },
+  {
+    "path": "anchors/9.6.png",
+    "sha256": "9f79be031044f55f5a312f1dc23bbb2e3a65c4d35e5686933f7bef5e01a83501",
+    "bytes": 720749,
+    "local_path": "/Users/zhanyi/Documents/Codex/2026-09-30/ni-yo/code/video-seed-bench/experiments/remakes-20261023/remake-1/public-evidence/anchors/9.6.png",
+    "urls": []
+  },
+  {
+    "path": "anchors/9.6.masks.png",
+    "sha256": "34b2a21dbeea005b97143946b14e3f0715698b7178c2f884a3b73f7953f0d67d",
+    "bytes": 7565,
+    "local_path": "/Users/zhanyi/Documents/Codex/2026-09-30/ni-yo/code/video-seed-bench/experiments/remakes-20261023/remake-1/public-evidence/anchors/9.6.masks.png",
+    "urls": []
+  },
+  {
+    "path": "anchors/10.2667.png",
+    "sha256": "54565e604eba9e6f28b99d5151e31686bb74a21d7c3495d7f723b112e70dbbd0",
+    "bytes": 687559,
+    "local_path": "/Users/zhanyi/Documents/Codex/2026-09-30/ni-yo/code/video-seed-bench/experiments/remakes-20261023/remake-1/public-evidence/anchors/10.2667.png",
+    "urls": []
+  },
+  {
+    "path": "anchors/10.2667.masks.png",
+    "sha256": "cda3d0725b678311ca7ff4e6e20116091ccfd2e109bdc825e4ce919a4d75dbbe",
+    "bytes": 9339,
+    "local_path": "/Users/zhanyi/Documents/Codex/2026-09-30/ni-yo/code/video-seed-bench/experiments/remakes-20261023/remake-1/public-evidence/anchors/10.2667.masks.png",
+    "urls": []
+  },
+  {
+    "path": "anchors/11.6667.png",
+    "sha256": "4fc84f9c11a87b4da0e38913cbd73d9166692eb10786283164aea622d95da158",
+    "bytes": 862341,
+    "local_path": "/Users/zhanyi/Documents/Codex/2026-09-30/ni-yo/code/video-seed-bench/experiments/remakes-20261023/remake-1/public-evidence/anchors/11.6667.png",
+    "urls": []
+  },
+  {
+    "path": "anchors/11.6667.masks.png",
+    "sha256": "f44c43edbb368480c81a643891605ed72148d73a6b67c037be4ab6e77c34acb6",
+    "bytes": 12900,
+    "local_path": "/Users/zhanyi/Documents/Codex/2026-09-30/ni-yo/code/video-seed-bench/experiments/remakes-20261023/remake-1/public-evidence/anchors/11.6667.masks.png",
+    "urls": []
+  },
+  {
+    "path": "anchors/13.8.png",
+    "sha256": "0c9c5a266806d41f44c50ae0df9e1a38ca14c1e676d71504e7c491d5f3a2e3e5",
+    "bytes": 476883,
+    "local_path": "/Users/zhanyi/Documents/Codex/2026-09-30/ni-yo/code/video-seed-bench/experiments/remakes-20261023/remake-1/public-evidence/anchors/13.8.png",
+    "urls": []
+  },
+  {
+    "path": "anchors/13.8.masks.png",
+    "sha256": "0f7b421a5338f4f7db6c2a007f6243c00c5ac28e027da51fa3ec544443b0914c",
+    "bytes": 5497,
+    "local_path": "/Users/zhanyi/Documents/Codex/2026-09-30/ni-yo/code/video-seed-bench/experiments/remakes-20261023/remake-1/public-evidence/anchors/13.8.masks.png",
+    "urls": []
+  },
+  {
+    "path": "anchors/15.2.png",
+    "sha256": "e3b77826c0ab474a556d4827df32cdb30504d777d82ae0eef2d0860b644afc8c",
+    "bytes": 648265,
+    "local_path": "/Users/zhanyi/Documents/Codex/2026-09-30/ni-yo/code/video-seed-bench/experiments/remakes-20261023/remake-1/public-evidence/anchors/15.2.png",
+    "urls": []
+  },
+  {
+    "path": "anchors/15.2.masks.png",
+    "sha256": "c61c593c8a80fbb3e3ec5726713f5ad2a6df9494fdffb6d65fc70e8407beed97",
+    "bytes": 7110,
+    "local_path": "/Users/zhanyi/Documents/Codex/2026-09-30/ni-yo/code/video-seed-bench/experiments/remakes-20261023/remake-1/public-evidence/anchors/15.2.masks.png",
+    "urls": []
+  },
+  {
+    "path": "anchors/17.png",
+    "sha256": "6c4ddeef80e18d7dec37cfa45373d45fd1ab0fd45e047516c68e01452fbe3e8a",
+    "bytes": 1087669,
+    "local_path": "/Users/zhanyi/Documents/Codex/2026-09-30/ni-yo/code/video-seed-bench/experiments/remakes-20261023/remake-1/public-evidence/anchors/17.png",
+    "urls": []
+  },
+  {
+    "path": "anchors/17.masks.png",
+    "sha256": "96e36d6313d3dea8b94cd1d13e92613d05baadcc7f31e0710761f4410cfcd307",
+    "bytes": 17367,
+    "local_path": "/Users/zhanyi/Documents/Codex/2026-09-30/ni-yo/code/video-seed-bench/experiments/remakes-20261023/remake-1/public-evidence/anchors/17.masks.png",
+    "urls": []
+  },
+  {
+    "path": "anchors/19.png",
+    "sha256": "f3cd530e6c30ef1da70a911d408a5f94d2ad4c92343c6660e8200e9e4e791187",
+    "bytes": 597522,
+    "local_path": "/Users/zhanyi/Documents/Codex/2026-09-30/ni-yo/code/video-seed-bench/experiments/remakes-20261023/remake-1/public-evidence/anchors/19.png",
+    "urls": []
+  },
+  {
+    "path": "anchors/19.masks.png",
+    "sha256": "023f962ca28fd2be3cc3ba14c850d92a40a56b58efeb151fdb19b5226b1d8f5f",
+    "bytes": 10337,
+    "local_path": "/Users/zhanyi/Documents/Codex/2026-09-30/ni-yo/code/video-seed-bench/experiments/remakes-20261023/remake-1/public-evidence/anchors/19.masks.png",
+    "urls": []
+  },
+  {
+    "path": "anchors/20.6.png",
+    "sha256": "20f16d67767705516b1f2817d558c6e7657bd56d66bd0ca42a6049d5b9e53b4f",
+    "bytes": 478806,
+    "local_path": "/Users/zhanyi/Documents/Codex/2026-09-30/ni-yo/code/video-seed-bench/experiments/remakes-20261023/remake-1/public-evidence/anchors/20.6.png",
+    "urls": []
+  },
+  {
+    "path": "anchors/20.6.masks.png",
+    "sha256": "b74fc45ed9d313868be5531b492ddd0836beeb3fbfab5fc5d6f4f83a0f80cd3c",
+    "bytes": 7784,
+    "local_path": "/Users/zhanyi/Documents/Codex/2026-09-30/ni-yo/code/video-seed-bench/experiments/remakes-20261023/remake-1/public-evidence/anchors/20.6.masks.png",
+    "urls": []
+  },
+  {
+    "path": "anchors/21.6.png",
+    "sha256": "825a1069e5be0481d0f3bc0a110484b56572ef95407d9e811b6206c111ece286",
+    "bytes": 592179,
+    "local_path": "/Users/zhanyi/Documents/Codex/2026-09-30/ni-yo/code/video-seed-bench/experiments/remakes-20261023/remake-1/public-evidence/anchors/21.6.png",
+    "urls": []
+  },
+  {
+    "path": "anchors/21.6.masks.png",
+    "sha256": "33a85d7e8ad9c8b222770a87bfe87fe93a4893328785d99d41f4d567865f3483",
+    "bytes": 7265,
+    "local_path": "/Users/zhanyi/Documents/Codex/2026-09-30/ni-yo/code/video-seed-bench/experiments/remakes-20261023/remake-1/public-evidence/anchors/21.6.masks.png",
+    "urls": []
+  },
+  {
+    "path": "anchors/22.3.png",
+    "sha256": "c5dc94fb45bf182b8725d20cf898282bd8979ccfe6eade71d5a2d82eee40fb9c",
+    "bytes": 684593,
+    "local_path": "/Users/zhanyi/Documents/Codex/2026-09-30/ni-yo/code/video-seed-bench/experiments/remakes-20261023/remake-1/public-evidence/anchors/22.3.png",
+    "urls": []
+  },
+  {
+    "path": "anchors/22.3.masks.png",
+    "sha256": "772188ae508b61173b56a4375384f77e0d96ca9759060c09d3025ba33638ed6f",
+    "bytes": 7223,
+    "local_path": "/Users/zhanyi/Documents/Codex/2026-09-30/ni-yo/code/video-seed-bench/experiments/remakes-20261023/remake-1/public-evidence/anchors/22.3.masks.png",
+    "urls": []
+  },
+  {
+    "path": "anchors/23.2.png",
+    "sha256": "67072fe6f15c2f51bbd05a1f58c9c893a8c1cd5514868a58d40d520f2c50b4eb",
+    "bytes": 783675,
+    "local_path": "/Users/zhanyi/Documents/Codex/2026-09-30/ni-yo/code/video-seed-bench/experiments/remakes-20261023/remake-1/public-evidence/anchors/23.2.png",
+    "urls": []
+  },
+  {
+    "path": "anchors/23.2.masks.png",
+    "sha256": "da124e82fd9dd78f723d34b8297a794232c6540c41177ad505ed624081255fed",
+    "bytes": 6420,
+    "local_path": "/Users/zhanyi/Documents/Codex/2026-09-30/ni-yo/code/video-seed-bench/experiments/remakes-20261023/remake-1/public-evidence/anchors/23.2.masks.png",
+    "urls": []
+  },
+  {
+    "path": "anchors/26.4.png",
+    "sha256": "09b42d0b5b58003bc7f0ccee827598ce1d46e5e5b952ecc67c6cb44cf9d3561b",
+    "bytes": 700738,
+    "local_path": "/Users/zhanyi/Documents/Codex/2026-09-30/ni-yo/code/video-seed-bench/experiments/remakes-20261023/remake-1/public-evidence/anchors/26.4.png",
+    "urls": []
+  },
+  {
+    "path": "anchors/26.4.masks.png",
+    "sha256": "c9baa52cd8cd31c3d05870e68e38e855d6810e80f6e900cf3863858763d72548",
+    "bytes": 13233,
+    "local_path": "/Users/zhanyi/Documents/Codex/2026-09-30/ni-yo/code/video-seed-bench/experiments/remakes-20261023/remake-1/public-evidence/anchors/26.4.masks.png",
+    "urls": []
+  },
+  {
+    "path": "anchors/28.6.png",
+    "sha256": "7a0bebe54ecaa0a4e7317e59fe44a45004e0274ed8ad5fd6b322b45a9b8824a9",
+    "bytes": 395930,
+    "local_path": "/Users/zhanyi/Documents/Codex/2026-09-30/ni-yo/code/video-seed-bench/experiments/remakes-20261023/remake-1/public-evidence/anchors/28.6.png",
+    "urls": []
+  },
+  {
+    "path": "anchors/28.6.masks.png",
+    "sha256": "da7e2058b730a8f48757a1330749b69dcf2cdbb572c19b7993c98e717e56f57a",
+    "bytes": 9053,
+    "local_path": "/Users/zhanyi/Documents/Codex/2026-09-30/ni-yo/code/video-seed-bench/experiments/remakes-20261023/remake-1/public-evidence/anchors/28.6.masks.png",
+    "urls": []
+  }
+]

@@ -1,0 +1,282 @@
+[
+  {
+    "object_id": "terminal.command",
+    "reference_selector": {
+      "component_tag": "TLine",
+      "source_file_suffix": "Terminal.tsx",
+      "source_line": 112
+    },
+    "replica_selector": {
+      "object_id": "terminal.command"
+    }
+  },
+  {
+    "object_id": "terminal.options",
+    "reference_selector": {
+      "any_of": [
+        {
+          "tags": [
+            "div"
+          ],
+          "source_file_suffix": "Terminal.tsx",
+          "source_line": 201
+        },
+        {
+          "tags": [
+            "svg"
+          ],
+          "source_file_suffix": "Terminal.tsx",
+          "source_line": 194
+        }
+      ]
+    },
+    "replica_selector": {
+      "object_id": "terminal.options"
+    }
+  },
+  {
+    "object_id": "terminal.output",
+    "reference_selector": {
+      "component_tag": "PenWave",
+      "source_file_suffix": "Terminal.tsx",
+      "source_line": 261
+    },
+    "replica_selector": {
+      "object_id": "terminal.output"
+    }
+  },
+  {
+    "object_id": "clapper.first",
+    "reference_selector": {
+      "component_tag": "Clapper",
+      "source_file_suffix": "Set1.tsx",
+      "source_line": 31
+    },
+    "replica_selector": {
+      "object_id": "clapper.first"
+    }
+  },
+  {
+    "object_id": "gauge.first",
+    "reference_selector": {
+      "component_tag": "Gauge",
+      "source_file_suffix": "Set1.tsx",
+      "source_line": 65
+    },
+    "replica_selector": {
+      "object_id": "gauge.first"
+    }
+  },
+  {
+    "object_id": "actor.first",
+    "reference_selector": {
+      "component_tag": "Pip",
+      "source_file_suffix": "Set1.tsx",
+      "source_line": 72
+    },
+    "replica_selector": {
+      "object_id": "actor.first"
+    }
+  },
+  {
+    "object_id": "director.action",
+    "reference_selector": {
+      "component_tag": "Director",
+      "source_file_suffix": "Set1.tsx",
+      "source_line": 130
+    },
+    "replica_selector": {
+      "object_id": "director.action"
+    }
+  },
+  {
+    "object_id": "network.photos",
+    "reference_selector": {
+      "component_tag": "PhotoRing",
+      "source_file_suffix": "Set1.tsx",
+      "source_line": 211
+    },
+    "replica_selector": {
+      "object_id": "network.photos"
+    }
+  },
+  {
+    "object_id": "split.two",
+    "reference_selector": {
+      "any_of": [
+        {
+          "component_tag": "Panel",
+          "source_file_suffix": "Set1.tsx",
+          "source_line": 263
+        },
+        {
+          "component_tag": "Panel",
+          "source_file_suffix": "Set1.tsx",
+          "source_line": 268
+        }
+      ]
+    },
+    "replica_selector": {
+      "object_id": "split.two"
+    }
+  },
+  {
+    "object_id": "split.four",
+    "reference_selector": {
+      "any_of": [
+        {
+          "component_tag": "Panel",
+          "source_file_suffix": "Set1.tsx",
+          "source_line": 288
+        },
+        {
+          "component_tag": "Panel",
+          "source_file_suffix": "Set1.tsx",
+          "source_line": 291
+        },
+        {
+          "component_tag": "Panel",
+          "source_file_suffix": "Set1.tsx",
+          "source_line": 295
+        },
+        {
+          "component_tag": "Panel",
+          "source_file_suffix": "Set1.tsx",
+          "source_line": 299
+        }
+      ]
+    },
+    "replica_selector": {
+      "object_id": "split.four"
+    }
+  },
+  {
+    "object_id": "grid.nine",
+    "reference_selector": {
+      "source_file_suffix": "Set1.tsx",
+      "source_line": 344,
+      "component_tag": "Panel"
+    },
+    "replica_selector": {
+      "object_id": "grid.nine"
+    }
+  },
+  {
+    "object_id": "film.strip",
+    "reference_selector": {
+      "component_tag": "FilmStrip",
+      "source_file_suffix": "Set2.tsx",
+      "source_line": 64
+    },
+    "replica_selector": {
+      "object_id": "film.strip"
+    }
+  },
+  {
+    "object_id": "stunt.strip",
+    "reference_selector": {
+      "component_tag": "StuntStrip",
+      "source_file_suffix": "Set2.tsx",
+      "source_line": 194
+    },
+    "replica_selector": {
+      "object_id": "stunt.strip"
+    }
+  },
+  {
+    "object_id": "explosion.burst",
+    "reference_selector": {
+      "source_file_suffix": "Set2.tsx",
+      "source_line": 219
+    },
+    "replica_selector": {
+      "object_id": "explosion.burst"
+    }
+  },
+  {
+    "object_id": "smoke.clouds",
+    "reference_selector": {
+      "source_file_suffix": "Set2.tsx",
+      "source_line": 308
+    },
+    "replica_selector": {
+      "object_id": "smoke.clouds"
+    }
+  },
+  {
+    "object_id": "gauge.close",
+    "reference_selector": {
+      "component_tag": "Gauge",
+      "source_file_suffix": "Set3.tsx",
+      "source_line": 21
+    },
+    "replica_selector": {
+      "object_id": "gauge.close"
+    }
+  },
+  {
+    "object_id": "actor.happy",
+    "reference_selector": {
+      "component_tag": "Pip",
+      "source_file_suffix": "Set3.tsx",
+      "source_line": 74
+    },
+    "replica_selector": {
+      "object_id": "actor.happy"
+    }
+  },
+  {
+    "object_id": "director.return",
+    "reference_selector": {
+      "component_tag": "Pip",
+      "source_file_suffix": "Set3.tsx",
+      "source_line": 105
+    },
+    "replica_selector": {
+      "object_id": "director.return"
+    }
+  },
+  {
+    "object_id": "again.actor",
+    "reference_selector": {
+      "component_tag": "Pip",
+      "source_file_suffix": "Set3.tsx",
+      "source_line": 128
+    },
+    "replica_selector": {
+      "object_id": "again.actor"
+    }
+  },
+  {
+    "object_id": "finale.lineup",
+    "reference_selector": {
+      "component_tag": "Lineup",
+      "source_file_suffix": "Set3.tsx",
+      "source_line": 225
+    },
+    "replica_selector": {
+      "object_id": "finale.lineup"
+    }
+  },
+  {
+    "object_id": "finale.headline",
+    "reference_selector": {
+      "source_file_suffix": "Set3.tsx",
+      "source_line": 228
+    },
+    "replica_selector": {
+      "object_id": "finale.headline"
+    }
+  },
+  {
+    "object_id": "clapper.last",
+    "reference_selector": {
+      "component_tag": "Clapper",
+      "source_file_suffix": "Set3.tsx",
+      "source_line": 280
+    },
+    "replica_selector": {
+      "object_id": "clapper.last"
+    }
+  }
+]

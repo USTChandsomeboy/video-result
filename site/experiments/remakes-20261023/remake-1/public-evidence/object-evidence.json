@@ -1,0 +1,798 @@
+{
+  "schema_version": 1,
+  "protocol": "object-evidence-masks-v1",
+  "size": [
+    1080,
+    1080
+  ],
+  "fps": 30.0,
+  "anchor_budget": 20,
+  "min_object_pixels": 64,
+  "mask_channel": "red",
+  "background_id": 0,
+  "anchors": [
+    {
+      "time_seconds": 1.1333333333333333,
+      "frame": 34,
+      "visible_objects": [
+        "terminal.command"
+      ],
+      "pixel_counts": {
+        "terminal.command": 5301,
+        "terminal.options": 0,
+        "terminal.output": 0,
+        "clapper.first": 0,
+        "gauge.first": 0,
+        "actor.first": 0,
+        "director.action": 0,
+        "network.photos": 0,
+        "split.two": 0,
+        "split.four": 0,
+        "grid.nine": 0,
+        "film.strip": 0,
+        "stunt.strip": 0,
+        "explosion.burst": 0,
+        "smoke.clouds": 0,
+        "gauge.close": 0,
+        "actor.happy": 0,
+        "director.return": 0,
+        "again.actor": 0,
+        "finale.lineup": 0,
+        "finale.headline": 0,
+        "clapper.last": 0
+      },
+      "image": {
+        "path": "anchors/1.13333.png",
+        "sha256": "deab4f5b8fe8737f55796177c83faedaa5d3e81b07938b65c550db1d0045419a"
+      },
+      "mask": {
+        "path": "anchors/1.13333.masks.png",
+        "sha256": "4f41a3361b799da00c34abf33d239a0622774a23c5cd76ca8d4be835661bd8dd"
+      }
+    },
+    {
+      "time_seconds": 2.3,
+      "frame": 69,
+      "visible_objects": [
+        "terminal.options"
+      ],
+      "pixel_counts": {
+        "terminal.command": 0,
+        "terminal.options": 8691,
+        "terminal.output": 0,
+        "clapper.first": 0,
+        "gauge.first": 0,
+        "actor.first": 0,
+        "director.action": 0,
+        "network.photos": 0,
+        "split.two": 0,
+        "split.four": 0,
+        "grid.nine": 0,
+        "film.strip": 0,
+        "stunt.strip": 0,
+        "explosion.burst": 0,
+        "smoke.clouds": 0,
+        "gauge.close": 0,
+        "actor.happy": 0,
+        "director.return": 0,
+        "again.actor": 0,
+        "finale.lineup": 0,
+        "finale.headline": 0,
+        "clapper.last": 0
+      },
+      "image": {
+        "path": "anchors/2.3.png",
+        "sha256": "5226b6e4adae138c5427e72a47b301ead8c2119c748e64993f6e60087f59c753"
+      },
+      "mask": {
+        "path": "anchors/2.3.masks.png",
+        "sha256": "3e058037584a7c68ff5448e946805db8de248b7089ab01777ec08d51c9e9669b"
+      }
+    },
+    {
+      "time_seconds": 4.2,
+      "frame": 126,
+      "visible_objects": [
+        "terminal.output"
+      ],
+      "pixel_counts": {
+        "terminal.command": 0,
+        "terminal.options": 0,
+        "terminal.output": 4025,
+        "clapper.first": 0,
+        "gauge.first": 0,
+        "actor.first": 0,
+        "director.action": 0,
+        "network.photos": 0,
+        "split.two": 0,
+        "split.four": 0,
+        "grid.nine": 0,
+        "film.strip": 0,
+        "stunt.strip": 0,
+        "explosion.burst": 0,
+        "smoke.clouds": 0,
+        "gauge.close": 0,
+        "actor.happy": 0,
+        "director.return": 0,
+        "again.actor": 0,
+        "finale.lineup": 0,
+        "finale.headline": 0,
+        "clapper.last": 0
+      },
+      "image": {
+        "path": "anchors/4.2.png",
+        "sha256": "35ba4c8c6ff819f0e0c012085915273f0f71820ccd8abdb84d4ada77f79ae988"
+      },
+      "mask": {
+        "path": "anchors/4.2.masks.png",
+        "sha256": "6f9d287e1f5fe0efbbaac9165b3029a2799ae8c1340bc6dbdaa8c9102ab5908e"
+      }
+    },
+    {
+      "time_seconds": 5.633333333333334,
+      "frame": 169,
+      "visible_objects": [
+        "clapper.first"
+      ],
+      "pixel_counts": {
+        "terminal.command": 0,
+        "terminal.options": 0,
+        "terminal.output": 0,
+        "clapper.first": 502351,
+        "gauge.first": 0,
+        "actor.first": 0,
+        "director.action": 0,
+        "network.photos": 0,
+        "split.two": 0,
+        "split.four": 0,
+        "grid.nine": 0,
+        "film.strip": 0,
+        "stunt.strip": 0,
+        "explosion.burst": 0,
+        "smoke.clouds": 0,
+        "gauge.close": 0,
+        "actor.happy": 0,
+        "director.return": 0,
+        "again.actor": 0,
+        "finale.lineup": 0,
+        "finale.headline": 0,
+        "clapper.last": 0
+      },
+      "image": {
+        "path": "anchors/5.63333.png",
+        "sha256": "51ad6853d59991650758b5cb39678e06e51ac696b48ac34774e79922163d650f"
+      },
+      "mask": {
+        "path": "anchors/5.63333.masks.png",
+        "sha256": "4a75138b75189efd4491d5a7ec7ea6c639055838a40afb89b8754c6e6c3983d8"
+      }
+    },
+    {
+      "time_seconds": 7.1,
+      "frame": 213,
+      "visible_objects": [
+        "actor.first",
+        "gauge.first"
+      ],
+      "pixel_counts": {
+        "terminal.command": 0,
+        "terminal.options": 0,
+        "terminal.output": 0,
+        "clapper.first": 0,
+        "gauge.first": 236640,
+        "actor.first": 34286,
+        "director.action": 0,
+        "network.photos": 0,
+        "split.two": 0,
+        "split.four": 0,
+        "grid.nine": 0,
+        "film.strip": 0,
+        "stunt.strip": 0,
+        "explosion.burst": 0,
+        "smoke.clouds": 0,
+        "gauge.close": 0,
+        "actor.happy": 0,
+        "director.return": 0,
+        "again.actor": 0,
+        "finale.lineup": 0,
+        "finale.headline": 0,
+        "clapper.last": 0
+      },
+      "image": {
+        "path": "anchors/7.1.png",
+        "sha256": "add14d5f119dce0bd750e62ec30ca60c3c310ed9b8f71daf9a8a69ef3f2b97b4"
+      },
+      "mask": {
+        "path": "anchors/7.1.masks.png",
+        "sha256": "18aad6965d87b9f602793f1c6e7eb0db324e1161625bc3af5a490ae4c05a0157"
+      }
+    },
+    {
+      "time_seconds": 8.266666666666667,
+      "frame": 248,
+      "visible_objects": [
+        "director.action"
+      ],
+      "pixel_counts": {
+        "terminal.command": 0,
+        "terminal.options": 0,
+        "terminal.output": 0,
+        "clapper.first": 0,
+        "gauge.first": 0,
+        "actor.first": 0,
+        "director.action": 133885,
+        "network.photos": 0,
+        "split.two": 0,
+        "split.four": 0,
+        "grid.nine": 0,
+        "film.strip": 0,
+        "stunt.strip": 0,
+        "explosion.burst": 0,
+        "smoke.clouds": 0,
+        "gauge.close": 0,
+        "actor.happy": 0,
+        "director.return": 0,
+        "again.actor": 0,
+        "finale.lineup": 0,
+        "finale.headline": 0,
+        "clapper.last": 0
+      },
+      "image": {
+        "path": "anchors/8.26667.png",
+        "sha256": "248780a07ad7c8947bf9f6739361d071eeabd5ec8dcddb4828a706370ee9f40d"
+      },
+      "mask": {
+        "path": "anchors/8.26667.masks.png",
+        "sha256": "d0e6aa3d03dd9c946353dee6ba016700eae6db8db33f65b064bed6e711a24b06"
+      }
+    },
+    {
+      "time_seconds": 9.0,
+      "frame": 270,
+      "visible_objects": [
+        "network.photos"
+      ],
+      "pixel_counts": {
+        "terminal.command": 0,
+        "terminal.options": 0,
+        "terminal.output": 0,
+        "clapper.first": 0,
+        "gauge.first": 0,
+        "actor.first": 0,
+        "director.action": 0,
+        "network.photos": 9877,
+        "split.two": 0,
+        "split.four": 0,
+        "grid.nine": 0,
+        "film.strip": 0,
+        "stunt.strip": 0,
+        "explosion.burst": 0,
+        "smoke.clouds": 0,
+        "gauge.close": 0,
+        "actor.happy": 0,
+        "director.return": 0,
+        "again.actor": 0,
+        "finale.lineup": 0,
+        "finale.headline": 0,
+        "clapper.last": 0
+      },
+      "image": {
+        "path": "anchors/9.png",
+        "sha256": "c3cb0497ee2bbcc7bddd9457986701019a85a6d22b6bcba1fa9403f2b20e7d0a"
+      },
+      "mask": {
+        "path": "anchors/9.masks.png",
+        "sha256": "dcc5a8d724a394fcdbf295da24f8ad1fd8499af9e376fd51fe17c5f9579ceba5"
+      }
+    },
+    {
+      "time_seconds": 9.6,
+      "frame": 288,
+      "visible_objects": [
+        "split.two"
+      ],
+      "pixel_counts": {
+        "terminal.command": 0,
+        "terminal.options": 0,
+        "terminal.output": 0,
+        "clapper.first": 0,
+        "gauge.first": 0,
+        "actor.first": 0,
+        "director.action": 0,
+        "network.photos": 0,
+        "split.two": 1095446,
+        "split.four": 0,
+        "grid.nine": 0,
+        "film.strip": 0,
+        "stunt.strip": 0,
+        "explosion.burst": 0,
+        "smoke.clouds": 0,
+        "gauge.close": 0,
+        "actor.happy": 0,
+        "director.return": 0,
+        "again.actor": 0,
+        "finale.lineup": 0,
+        "finale.headline": 0,
+        "clapper.last": 0
+      },
+      "image": {
+        "path": "anchors/9.6.png",
+        "sha256": "9f79be031044f55f5a312f1dc23bbb2e3a65c4d35e5686933f7bef5e01a83501"
+      },
+      "mask": {
+        "path": "anchors/9.6.masks.png",
+        "sha256": "34b2a21dbeea005b97143946b14e3f0715698b7178c2f884a3b73f7953f0d67d"
+      }
+    },
+    {
+      "time_seconds": 10.266666666666667,
+      "frame": 308,
+      "visible_objects": [
+        "split.four"
+      ],
+      "pixel_counts": {
+        "terminal.command": 0,
+        "terminal.options": 0,
+        "terminal.output": 0,
+        "clapper.first": 0,
+        "gauge.first": 0,
+        "actor.first": 0,
+        "director.action": 0,
+        "network.photos": 0,
+        "split.two": 0,
+        "split.four": 1086950,
+        "grid.nine": 0,
+        "film.strip": 0,
+        "stunt.strip": 0,
+        "explosion.burst": 0,
+        "smoke.clouds": 0,
+        "gauge.close": 0,
+        "actor.happy": 0,
+        "director.return": 0,
+        "again.actor": 0,
+        "finale.lineup": 0,
+        "finale.headline": 0,
+        "clapper.last": 0
+      },
+      "image": {
+        "path": "anchors/10.2667.png",
+        "sha256": "54565e604eba9e6f28b99d5151e31686bb74a21d7c3495d7f723b112e70dbbd0"
+      },
+      "mask": {
+        "path": "anchors/10.2667.masks.png",
+        "sha256": "cda3d0725b678311ca7ff4e6e20116091ccfd2e109bdc825e4ce919a4d75dbbe"
+      }
+    },
+    {
+      "time_seconds": 11.666666666666666,
+      "frame": 350,
+      "visible_objects": [
+        "grid.nine"
+      ],
+      "pixel_counts": {
+        "terminal.command": 0,
+        "terminal.options": 0,
+        "terminal.output": 0,
+        "clapper.first": 0,
+        "gauge.first": 0,
+        "actor.first": 0,
+        "director.action": 0,
+        "network.photos": 0,
+        "split.two": 0,
+        "split.four": 0,
+        "grid.nine": 1084741,
+        "film.strip": 0,
+        "stunt.strip": 0,
+        "explosion.burst": 0,
+        "smoke.clouds": 0,
+        "gauge.close": 0,
+        "actor.happy": 0,
+        "director.return": 0,
+        "again.actor": 0,
+        "finale.lineup": 0,
+        "finale.headline": 0,
+        "clapper.last": 0
+      },
+      "image": {
+        "path": "anchors/11.6667.png",
+        "sha256": "4fc84f9c11a87b4da0e38913cbd73d9166692eb10786283164aea622d95da158"
+      },
+      "mask": {
+        "path": "anchors/11.6667.masks.png",
+        "sha256": "f44c43edbb368480c81a643891605ed72148d73a6b67c037be4ab6e77c34acb6"
+      }
+    },
+    {
+      "time_seconds": 13.8,
+      "frame": 414,
+      "visible_objects": [
+        "film.strip"
+      ],
+      "pixel_counts": {
+        "terminal.command": 0,
+        "terminal.options": 0,
+        "terminal.output": 0,
+        "clapper.first": 0,
+        "gauge.first": 0,
+        "actor.first": 0,
+        "director.action": 0,
+        "network.photos": 0,
+        "split.two": 0,
+        "split.four": 0,
+        "grid.nine": 0,
+        "film.strip": 236866,
+        "stunt.strip": 0,
+        "explosion.burst": 0,
+        "smoke.clouds": 0,
+        "gauge.close": 0,
+        "actor.happy": 0,
+        "director.return": 0,
+        "again.actor": 0,
+        "finale.lineup": 0,
+        "finale.headline": 0,
+        "clapper.last": 0
+      },
+      "image": {
+        "path": "anchors/13.8.png",
+        "sha256": "0c9c5a266806d41f44c50ae0df9e1a38ca14c1e676d71504e7c491d5f3a2e3e5"
+      },
+      "mask": {
+        "path": "anchors/13.8.masks.png",
+        "sha256": "0f7b421a5338f4f7db6c2a007f6243c00c5ac28e027da51fa3ec544443b0914c"
+      }
+    },
+    {
+      "time_seconds": 15.2,
+      "frame": 456,
+      "visible_objects": [
+        "stunt.strip"
+      ],
+      "pixel_counts": {
+        "terminal.command": 0,
+        "terminal.options": 0,
+        "terminal.output": 0,
+        "clapper.first": 0,
+        "gauge.first": 0,
+        "actor.first": 0,
+        "director.action": 0,
+        "network.photos": 0,
+        "split.two": 0,
+        "split.four": 0,
+        "grid.nine": 0,
+        "film.strip": 0,
+        "stunt.strip": 1166400,
+        "explosion.burst": 0,
+        "smoke.clouds": 0,
+        "gauge.close": 0,
+        "actor.happy": 0,
+        "director.return": 0,
+        "again.actor": 0,
+        "finale.lineup": 0,
+        "finale.headline": 0,
+        "clapper.last": 0
+      },
+      "image": {
+        "path": "anchors/15.2.png",
+        "sha256": "e3b77826c0ab474a556d4827df32cdb30504d777d82ae0eef2d0860b644afc8c"
+      },
+      "mask": {
+        "path": "anchors/15.2.masks.png",
+        "sha256": "c61c593c8a80fbb3e3ec5726713f5ad2a6df9494fdffb6d65fc70e8407beed97"
+      }
+    },
+    {
+      "time_seconds": 17.0,
+      "frame": 510,
+      "visible_objects": [
+        "explosion.burst"
+      ],
+      "pixel_counts": {
+        "terminal.command": 0,
+        "terminal.options": 0,
+        "terminal.output": 0,
+        "clapper.first": 0,
+        "gauge.first": 0,
+        "actor.first": 0,
+        "director.action": 0,
+        "network.photos": 0,
+        "split.two": 0,
+        "split.four": 0,
+        "grid.nine": 0,
+        "film.strip": 0,
+        "stunt.strip": 0,
+        "explosion.burst": 555658,
+        "smoke.clouds": 0,
+        "gauge.close": 0,
+        "actor.happy": 0,
+        "director.return": 0,
+        "again.actor": 0,
+        "finale.lineup": 0,
+        "finale.headline": 0,
+        "clapper.last": 0
+      },
+      "image": {
+        "path": "anchors/17.png",
+        "sha256": "6c4ddeef80e18d7dec37cfa45373d45fd1ab0fd45e047516c68e01452fbe3e8a"
+      },
+      "mask": {
+        "path": "anchors/17.masks.png",
+        "sha256": "96e36d6313d3dea8b94cd1d13e92613d05baadcc7f31e0710761f4410cfcd307"
+      }
+    },
+    {
+      "time_seconds": 19.0,
+      "frame": 570,
+      "visible_objects": [
+        "smoke.clouds"
+      ],
+      "pixel_counts": {
+        "terminal.command": 0,
+        "terminal.options": 0,
+        "terminal.output": 0,
+        "clapper.first": 0,
+        "gauge.first": 0,
+        "actor.first": 0,
+        "director.action": 0,
+        "network.photos": 0,
+        "split.two": 0,
+        "split.four": 0,
+        "grid.nine": 0,
+        "film.strip": 0,
+        "stunt.strip": 0,
+        "explosion.burst": 0,
+        "smoke.clouds": 986151,
+        "gauge.close": 0,
+        "actor.happy": 0,
+        "director.return": 0,
+        "again.actor": 0,
+        "finale.lineup": 0,
+        "finale.headline": 0,
+        "clapper.last": 0
+      },
+      "image": {
+        "path": "anchors/19.png",
+        "sha256": "f3cd530e6c30ef1da70a911d408a5f94d2ad4c92343c6660e8200e9e4e791187"
+      },
+      "mask": {
+        "path": "anchors/19.masks.png",
+        "sha256": "023f962ca28fd2be3cc3ba14c850d92a40a56b58efeb151fdb19b5226b1d8f5f"
+      }
+    },
+    {
+      "time_seconds": 20.6,
+      "frame": 618,
+      "visible_objects": [
+        "gauge.close"
+      ],
+      "pixel_counts": {
+        "terminal.command": 0,
+        "terminal.options": 0,
+        "terminal.output": 0,
+        "clapper.first": 0,
+        "gauge.first": 0,
+        "actor.first": 0,
+        "director.action": 0,
+        "network.photos": 0,
+        "split.two": 0,
+        "split.four": 0,
+        "grid.nine": 0,
+        "film.strip": 0,
+        "stunt.strip": 0,
+        "explosion.burst": 0,
+        "smoke.clouds": 0,
+        "gauge.close": 355141,
+        "actor.happy": 0,
+        "director.return": 0,
+        "again.actor": 0,
+        "finale.lineup": 0,
+        "finale.headline": 0,
+        "clapper.last": 0
+      },
+      "image": {
+        "path": "anchors/20.6.png",
+        "sha256": "20f16d67767705516b1f2817d558c6e7657bd56d66bd0ca42a6049d5b9e53b4f"
+      },
+      "mask": {
+        "path": "anchors/20.6.masks.png",
+        "sha256": "b74fc45ed9d313868be5531b492ddd0836beeb3fbfab5fc5d6f4f83a0f80cd3c"
+      }
+    },
+    {
+      "time_seconds": 21.6,
+      "frame": 648,
+      "visible_objects": [
+        "actor.happy"
+      ],
+      "pixel_counts": {
+        "terminal.command": 0,
+        "terminal.options": 0,
+        "terminal.output": 0,
+        "clapper.first": 0,
+        "gauge.first": 0,
+        "actor.first": 0,
+        "director.action": 0,
+        "network.photos": 0,
+        "split.two": 0,
+        "split.four": 0,
+        "grid.nine": 0,
+        "film.strip": 0,
+        "stunt.strip": 0,
+        "explosion.burst": 0,
+        "smoke.clouds": 0,
+        "gauge.close": 0,
+        "actor.happy": 77135,
+        "director.return": 0,
+        "again.actor": 0,
+        "finale.lineup": 0,
+        "finale.headline": 0,
+        "clapper.last": 0
+      },
+      "image": {
+        "path": "anchors/21.6.png",
+        "sha256": "825a1069e5be0481d0f3bc0a110484b56572ef95407d9e811b6206c111ece286"
+      },
+      "mask": {
+        "path": "anchors/21.6.masks.png",
+        "sha256": "33a85d7e8ad9c8b222770a87bfe87fe93a4893328785d99d41f4d567865f3483"
+      }
+    },
+    {
+      "time_seconds": 22.3,
+      "frame": 669,
+      "visible_objects": [
+        "director.return"
+      ],
+      "pixel_counts": {
+        "terminal.command": 0,
+        "terminal.options": 0,
+        "terminal.output": 0,
+        "clapper.first": 0,
+        "gauge.first": 0,
+        "actor.first": 0,
+        "director.action": 0,
+        "network.photos": 0,
+        "split.two": 0,
+        "split.four": 0,
+        "grid.nine": 0,
+        "film.strip": 0,
+        "stunt.strip": 0,
+        "explosion.burst": 0,
+        "smoke.clouds": 0,
+        "gauge.close": 0,
+        "actor.happy": 0,
+        "director.return": 38364,
+        "again.actor": 0,
+        "finale.lineup": 0,
+        "finale.headline": 0,
+        "clapper.last": 0
+      },
+      "image": {
+        "path": "anchors/22.3.png",
+        "sha256": "c5dc94fb45bf182b8725d20cf898282bd8979ccfe6eade71d5a2d82eee40fb9c"
+      },
+      "mask": {
+        "path": "anchors/22.3.masks.png",
+        "sha256": "772188ae508b61173b56a4375384f77e0d96ca9759060c09d3025ba33638ed6f"
+      }
+    },
+    {
+      "time_seconds": 23.2,
+      "frame": 696,
+      "visible_objects": [
+        "again.actor"
+      ],
+      "pixel_counts": {
+        "terminal.command": 0,
+        "terminal.options": 0,
+        "terminal.output": 0,
+        "clapper.first": 0,
+        "gauge.first": 0,
+        "actor.first": 0,
+        "director.action": 0,
+        "network.photos": 0,
+        "split.two": 0,
+        "split.four": 0,
+        "grid.nine": 0,
+        "film.strip": 0,
+        "stunt.strip": 0,
+        "explosion.burst": 0,
+        "smoke.clouds": 0,
+        "gauge.close": 0,
+        "actor.happy": 0,
+        "director.return": 0,
+        "again.actor": 20924,
+        "finale.lineup": 0,
+        "finale.headline": 0,
+        "clapper.last": 0
+      },
+      "image": {
+        "path": "anchors/23.2.png",
+        "sha256": "67072fe6f15c2f51bbd05a1f58c9c893a8c1cd5514868a58d40d520f2c50b4eb"
+      },
+      "mask": {
+        "path": "anchors/23.2.masks.png",
+        "sha256": "da124e82fd9dd78f723d34b8297a794232c6540c41177ad505ed624081255fed"
+      }
+    },
+    {
+      "time_seconds": 26.4,
+      "frame": 792,
+      "visible_objects": [
+        "finale.headline",
+        "finale.lineup"
+      ],
+      "pixel_counts": {
+        "terminal.command": 0,
+        "terminal.options": 0,
+        "terminal.output": 0,
+        "clapper.first": 0,
+        "gauge.first": 0,
+        "actor.first": 0,
+        "director.action": 0,
+        "network.photos": 0,
+        "split.two": 0,
+        "split.four": 0,
+        "grid.nine": 0,
+        "film.strip": 0,
+        "stunt.strip": 0,
+        "explosion.burst": 0,
+        "smoke.clouds": 0,
+        "gauge.close": 0,
+        "actor.happy": 0,
+        "director.return": 0,
+        "again.actor": 0,
+        "finale.lineup": 104672,
+        "finale.headline": 23065,
+        "clapper.last": 0
+      },
+      "image": {
+        "path": "anchors/26.4.png",
+        "sha256": "09b42d0b5b58003bc7f0ccee827598ce1d46e5e5b952ecc67c6cb44cf9d3561b"
+      },
+      "mask": {
+        "path": "anchors/26.4.masks.png",
+        "sha256": "c9baa52cd8cd31c3d05870e68e38e855d6810e80f6e900cf3863858763d72548"
+      }
+    },
+    {
+      "time_seconds": 28.6,
+      "frame": 858,
+      "visible_objects": [
+        "clapper.last"
+      ],
+      "pixel_counts": {
+        "terminal.command": 0,
+        "terminal.options": 0,
+        "terminal.output": 0,
+        "clapper.first": 0,
+        "gauge.first": 0,
+        "actor.first": 0,
+        "director.action": 0,
+        "network.photos": 0,
+        "split.two": 0,
+        "split.four": 0,
+        "grid.nine": 0,
+        "film.strip": 0,
+        "stunt.strip": 0,
+        "explosion.burst": 0,
+        "smoke.clouds": 0,
+        "gauge.close": 0,
+        "actor.happy": 0,
+        "director.return": 0,
+        "again.actor": 0,
+        "finale.lineup": 0,
+        "finale.headline": 0,
+        "clapper.last": 507134
+      },
+      "image": {
+        "path": "anchors/28.6.png",
+        "sha256": "7a0bebe54ecaa0a4e7317e59fe44a45004e0274ed8ad5fd6b322b45a9b8824a9"
+      },
+      "mask": {
+        "path": "anchors/28.6.masks.png",
+        "sha256": "da7e2058b730a8f48757a1330749b69dcf2cdbb572c19b7993c98e717e56f57a"
+      }
+    }
+  ],
+  "budget_exception": "20 distinct scene/identity states across a rapidly edited full-length clip; each anchor covers different visible objects."
+}

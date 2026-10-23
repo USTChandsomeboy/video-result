@@ -1,0 +1,220 @@
+[
+  {
+    "object_id": "intro.words",
+    "reference_selector": {
+      "component_tag": "Centered",
+      "source_file_suffix": "scenes.tsx",
+      "source_line": 37
+    },
+    "replica_selector": {
+      "object_id": "intro.words"
+    }
+  },
+  {
+    "object_id": "table.first",
+    "reference_selector": {
+      "component_tag": "Table",
+      "source_file_suffix": "scenes.tsx",
+      "source_line": 66
+    },
+    "replica_selector": {
+      "object_id": "table.first"
+    }
+  },
+  {
+    "object_id": "selection.budget",
+    "reference_selector": {
+      "component_tag": "Selection",
+      "source_file_suffix": "scenes.tsx",
+      "source_line": 67
+    },
+    "replica_selector": {
+      "object_id": "selection.budget"
+    }
+  },
+  {
+    "object_id": "same-sheet.text",
+    "reference_selector": {
+      "component_tag": "Centered",
+      "source_file_suffix": "scenes.tsx",
+      "source_line": 78,
+      "ancestor_component": {
+        "tag": "Card",
+        "props": {
+          "text": "Same sheet."
+        }
+      }
+    },
+    "replica_selector": {
+      "object_id": "same-sheet.text"
+    }
+  },
+  {
+    "object_id": "crowd.avatars",
+    "reference_selector": {
+      "source_file_suffix": "scenes.tsx",
+      "source_line": 97
+    },
+    "replica_selector": {
+      "object_id": "crowd.avatars"
+    }
+  },
+  {
+    "object_id": "crowd.title",
+    "reference_selector": {
+      "component_tag": "Centered",
+      "source_file_suffix": "scenes.tsx",
+      "source_line": 102
+    },
+    "replica_selector": {
+      "object_id": "crowd.title"
+    }
+  },
+  {
+    "object_id": "page.table",
+    "reference_selector": {
+      "component_tag": "Table",
+      "source_file_suffix": "scenes.tsx",
+      "source_line": 152
+    },
+    "replica_selector": {
+      "object_id": "page.table"
+    }
+  },
+  {
+    "object_id": "page.selection",
+    "reference_selector": {
+      "component_tag": "Selection",
+      "source_file_suffix": "scenes.tsx",
+      "source_line": 150
+    },
+    "replica_selector": {
+      "object_id": "page.selection"
+    }
+  },
+  {
+    "object_id": "fields.grid",
+    "reference_selector": {
+      "source_file_suffix": "scenes.tsx",
+      "source_line": 194
+    },
+    "replica_selector": {
+      "object_id": "fields.grid"
+    }
+  },
+  {
+    "object_id": "who.column",
+    "reference_selector": {
+      "source_file_suffix": "scenes.tsx",
+      "source_line": 234
+    },
+    "replica_selector": {
+      "object_id": "who.column"
+    }
+  },
+  {
+    "object_id": "who.title",
+    "reference_selector": {
+      "source_file_suffix": "scenes.tsx",
+      "source_line": 246
+    },
+    "replica_selector": {
+      "object_id": "who.title"
+    }
+  },
+  {
+    "object_id": "your-call.title",
+    "reference_selector": {
+      "source_file_suffix": "scenes.tsx",
+      "source_line": 273,
+      "component_tag": "Centered"
+    },
+    "replica_selector": {
+      "object_id": "your-call.title"
+    }
+  },
+  {
+    "object_id": "your-call.table",
+    "reference_selector": {
+      "component_tag": "Table",
+      "source_file_suffix": "scenes.tsx",
+      "source_line": 266
+    },
+    "replica_selector": {
+      "object_id": "your-call.table"
+    }
+  },
+  {
+    "object_id": "viewers.identity",
+    "reference_selector": {
+      "source_file_suffix": "scenes.tsx",
+      "source_line": 307
+    },
+    "replica_selector": {
+      "object_id": "viewers.identity"
+    }
+  },
+  {
+    "object_id": "viewers.table",
+    "reference_selector": {
+      "component_tag": "Table",
+      "source_file_suffix": "scenes.tsx",
+      "source_line": 320
+    },
+    "replica_selector": {
+      "object_id": "viewers.table"
+    }
+  },
+  {
+    "object_id": "lock-any.text",
+    "reference_selector": {
+      "component_tag": "Centered",
+      "source_file_suffix": "scenes.tsx",
+      "source_line": 78,
+      "ancestor_component": {
+        "tag": "Card",
+        "props": {
+          "text": "Lock any field."
+        }
+      }
+    },
+    "replica_selector": {
+      "object_id": "lock-any.text"
+    }
+  },
+  {
+    "object_id": "columns.carousel",
+    "reference_selector": {
+      "source_file_suffix": "scenes.tsx",
+      "source_line": 341,
+      "tags": [
+        "div"
+      ]
+    },
+    "replica_selector": {
+      "object_id": "columns.carousel"
+    }
+  },
+  {
+    "object_id": "end.title",
+    "reference_selector": {
+      "component_tag": "Centered",
+      "source_file_suffix": "scenes.tsx",
+      "source_line": 375
+    },
+    "replica_selector": {
+      "object_id": "end.title"
+    }
+  },
+  {
+    "object_id": "end.subtitle",
+    "reference_selector": {
+      "component_tag": "Centered",
+      "source_file_suffix": "scenes.tsx",
+      "source_line": 378
+    },
+    "replica_selector": {
+      "object_id": "end.subtitle"
+    }
+  }
+]
