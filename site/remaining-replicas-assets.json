@@ -3,28 +3,6 @@
   "release": "remaining-replicas-media-20261017",
   "files": [
     {
-      "sha256": "2f2971cc27e2b69c1a6c1308cd13959cbd070cff11274fe06a40d05fc5a6bf33",
-      "bytes": 21604668,
-      "duration": 76.0,
-      "width": 1920,
-      "height": 1080,
-      "fps": 30.0,
-      "url": "https://github.com/USTChandsomeboy/video-result/releases/download/remaining-replicas-media-20261017/2f2971cc27e2b69c1a6c1308cd13959cbd070cff11274fe06a40d05fc5a6bf33.mp4",
-      "name": "2f2971cc27e2b69c1a6c1308cd13959cbd070cff11274fe06a40d05fc5a6bf33.mp4",
-      "existing_release": false
-    },
-    {
-      "sha256": "4449330b22aed1fbcf54833f949a207850a5dab9f463a26384b644e5a4b605a9",
-      "bytes": 67746654,
-      "duration": 76.011,
-      "width": 1920,
-      "height": 1080,
-      "fps": 30.0,
-      "url": "https://github.com/USTChandsomeboy/video-result/releases/download/remaining-replicas-media-20261017/4449330b22aed1fbcf54833f949a207850a5dab9f463a26384b644e5a4b605a9.mp4",
-      "name": "4449330b22aed1fbcf54833f949a207850a5dab9f463a26384b644e5a4b605a9.mp4",
-      "existing_release": false
-    },
-    {
       "sha256": "e8ea8f6231d1e2d97ed917749254002d04886ea21d2ff6fbecffb057a63cc24e",
       "bytes": 5400567,
       "duration": 64.0,

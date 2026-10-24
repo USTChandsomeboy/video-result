@@ -89,14 +89,10 @@ def main(args):
             existing[item['sha256']] = item['url']
     files, local_sources, cases = {}, {}, []
     svg_root = work / 'svg-tutorial-standard-work/delivery'
-    qixiong_root = work / 'qixiong-standard-work/delivery'
     rome_root = work / 'rome-epic-standard-work/delivery'
     svg = json.loads((svg_root / 'results.json').read_text())['cases'][0]
-    qixiong = json.loads((qixiong_root / 'results.json').read_text())
     rome = json.loads((rome_root / 'results.json').read_text())['cases'][0]
     specs = [
-        ('qixiong', '七雄并立：战国地图叙事', '知识讲解', qixiong_root,
-         'media/reference.mp4', 'media/replica.mp4', qixiong, 'qixiong-harbor'),
         ('svg-tutorial', svg['title'], '操作指导', svg_root,
          'media/reference.mp4', 'media/replica.mp4', svg, 'svg-anim-tutorial-harbor'),
         ('rome-epic', rome['title'], '知识讲解', rome_root,
@@ -141,14 +137,10 @@ def main(args):
             c[role]['poster'] = f'data/remaining-replicas/{cid}/{role}.jpg'
         evidence = []
         scorefile = raw.get('score_file')
-        if cid == 'qixiong':
-            scorefile = 'evidence/scores.json'
         if scorefile and (root / scorefile).is_file():
             write_json(case_dest / 'scores.json', clean(json.loads((root / scorefile).read_text())))
             evidence.append({'label': '完整评分 JSON', 'url': f'data/remaining-replicas/{cid}/scores.json'})
         checksfile = raw.get('checks_file')
-        if cid == 'qixiong':
-            checksfile = 'evidence/checks.json'
         if checksfile and (root / checksfile).is_file():
             checks = clean(json.loads((root / checksfile).read_text()))
             packed = json.dumps(checks, ensure_ascii=False, separators=(',', ':')).encode()
