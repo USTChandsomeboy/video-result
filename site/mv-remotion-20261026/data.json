@@ -1,0 +1,37 @@
+[
+  {
+    "id": "mv-01-01-22",
+    "title": "01-22",
+    "slug": "01-22",
+    "reference": "https://huggingface.co/datasets/FrontierVideo/frontiervideo-media/resolve/main/sha256/b8/b8cc1dbf22ad33e81385bb47d0ed3c9af2eee031fbbd3d32cfe295c8ba46544e?download=true",
+    "replica": "https://huggingface.co/datasets/FrontierVideo/frontiervideo-media/resolve/main/sha256/67/6791972981359a33e580293365fa16334be807e956f103ceea1ffdd56ef68681?download=true"
+  },
+  {
+    "id": "mv-02-02-love-story",
+    "title": "Love Story",
+    "slug": "02-love-story",
+    "reference": "https://huggingface.co/datasets/FrontierVideo/frontiervideo-media/resolve/main/sha256/56/56417ea951090fba180a4d09fe31b9edf659c57bbca2b7645e42cc1a15808e13?download=true",
+    "replica": "https://huggingface.co/datasets/FrontierVideo/frontiervideo-media/resolve/main/sha256/a4/a4b02aa5843cb74e1a25ec0774092eafb7529a06b091f21eb2c644eea0ee3dfb?download=true"
+  },
+  {
+    "id": "mv-03-03-someone-like-you",
+    "title": "Someone Like You",
+    "slug": "03-someone-like-you",
+    "reference": "https://huggingface.co/datasets/FrontierVideo/frontiervideo-media/resolve/main/sha256/29/29a602b3d9890437d871188a057e6f2560fded89f03f9027df8f43327207e71e?download=true",
+    "replica": "https://huggingface.co/datasets/FrontierVideo/frontiervideo-media/resolve/main/sha256/69/6959b8f927b7fa6d3a4efc4675b8408247ec8dc17f9fbf7f5ec67f84c11cb0f1?download=true"
+  },
+  {
+    "id": "mv-04-04-viva-la-vida",
+    "title": "Viva La Vida",
+    "slug": "04-viva-la-vida",
+    "reference": "https://huggingface.co/datasets/FrontierVideo/frontiervideo-media/resolve/main/sha256/5b/5bdf52efb278c04c78a2e5641d606fbfe7359aace008dcfc1d90cc556f768843?download=true",
+    "replica": "https://huggingface.co/datasets/FrontierVideo/frontiervideo-media/resolve/main/sha256/e1/e1dadacf8e21d96a3788201be9b298297ef406965d502a1ea4ee56c068f19696?download=true"
+  },
+  {
+    "id": "mv-05-05-mr-brightside",
+    "title": "Mr. Brightside",
+    "slug": "05-mr-brightside",
+    "reference": "https://huggingface.co/datasets/FrontierVideo/frontiervideo-media/resolve/main/sha256/fc/fc2a0958ce86a959289e5649922b429c188efe8e27af028cc38197c23b7e562b?download=true",
+    "replica": "https://huggingface.co/datasets/FrontierVideo/frontiervideo-media/resolve/main/sha256/de/de928e1fb8aa02bb6370b60210ce99382f63f511fe30d6883d82bb6f557cad72?download=true"
+  }
+]
