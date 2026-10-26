@@ -1,0 +1,21 @@
+{
+  "repository": "USTChandsomeboy/video-result",
+  "release_tag": "aureole-media-20261027",
+  "media_dir": "media/aureole",
+  "files": [
+    {
+      "kind": "reference",
+      "name": "94d51587c0b188fbf03b10e65cae5257e457efaa0ff84bec7c158773e75772ca.mp4",
+      "sha256": "94d51587c0b188fbf03b10e65cae5257e457efaa0ff84bec7c158773e75772ca",
+      "bytes": 4801029,
+      "url": "https://github.com/USTChandsomeboy/video-result/releases/download/aureole-media-20261027/94d51587c0b188fbf03b10e65cae5257e457efaa0ff84bec7c158773e75772ca.mp4"
+    },
+    {
+      "kind": "replica",
+      "name": "4b4b76e024c91ba1d066ccdb5f159961a9b89fefd534a9eb94bffd823fd31ad8.mp4",
+      "sha256": "4b4b76e024c91ba1d066ccdb5f159961a9b89fefd534a9eb94bffd823fd31ad8",
+      "bytes": 3291037,
+      "url": "https://github.com/USTChandsomeboy/video-result/releases/download/aureole-media-20261027/4b4b76e024c91ba1d066ccdb5f159961a9b89fefd534a9eb94bffd823fd31ad8.mp4"
+    }
+  ]
+}
