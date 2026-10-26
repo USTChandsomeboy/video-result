@@ -1,0 +1,290 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Harbor 复刻案例</title>
+  <style>
+    :root {
+      color-scheme: dark;
+      --bg: #090c14;
+      --panel: rgba(19, 25, 39, .92);
+      --panel-2: #151d30;
+      --line: #2a3854;
+      --line-soft: rgba(150, 172, 213, .14);
+      --text: #f0f4ff;
+      --muted: #98a7c1;
+      --blue: #9dbbff;
+      --cyan: #63d6e9;
+      --green: #75d8aa;
+      --amber: #ffc979;
+      --red: #ff8b91;
+      font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background:
+        radial-gradient(900px 500px at 6% -8%, rgba(73, 114, 197, .2), transparent 65%),
+        radial-gradient(700px 480px at 100% 10%, rgba(49, 161, 176, .12), transparent 66%),
+        var(--bg);
+    }
+    a { color: var(--blue); }
+    button, input { font: inherit; color: inherit; }
+    code { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: .92em; color: #c9d6f2; overflow-wrap: anywhere; }
+    .shell { width: min(1480px, calc(100% - 32px)); margin: 0 auto; padding: 36px 0 70px; }
+    .back { font-size: 13px; text-decoration: none; }
+    .eyebrow { color: var(--cyan); letter-spacing: .15em; text-transform: uppercase; font-size: 12px; font-weight: 700; margin-top: 18px; }
+    h1 { margin: 10px 0 12px; font-size: clamp(28px, 4vw, 48px); line-height: 1.08; letter-spacing: -.03em; }
+    .lead { color: var(--muted); max-width: 860px; line-height: 1.75; margin: 0; font-size: 15px; }
+    .stats { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; margin: 26px 0 18px; }
+    .stat { border: 1px solid var(--line-soft); background: var(--panel); border-radius: 14px; padding: 14px 16px; }
+    .stat b { display: block; font-size: 26px; letter-spacing: -.03em; font-variant-numeric: tabular-nums; }
+    .stat span { color: var(--muted); font-size: 13px; line-height: 1.5; }
+    .notice { border: 1px solid rgba(255, 201, 121, .28); background: rgba(255, 201, 121, .07); border-radius: 14px; padding: 14px 16px; color: #ecdcc0; line-height: 1.7; font-size: 14px; margin-bottom: 26px; }
+    .notice b { color: var(--amber); }
+    .filters { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 14px; }
+    .chip { border: 1px solid var(--line); background: var(--panel-2); border-radius: 999px; padding: 7px 14px; font-size: 13px; cursor: pointer; }
+    .chip.active { border-color: var(--blue); background: rgba(157, 187, 255, .14); }
+    .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); gap: 10px; margin-bottom: 26px; }
+    .card { text-align: left; cursor: pointer; border: 1px solid var(--line-soft); border-radius: 14px; padding: 14px 15px; background: var(--panel); transition: .15s ease; position: relative; overflow: hidden; }
+    .card:hover, .card.active { border-color: rgba(157, 187, 255, .75); }
+    .card.active::before { content: ""; position: absolute; inset: 0 auto 0 0; width: 3px; background: var(--blue); }
+    .card .kind { color: var(--muted); font-size: 12px; }
+    .card h3 { margin: 6px 0 10px; font-size: 15px; line-height: 1.35; }
+    .card .row { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: 6px 8px; }
+    .card .row > span:last-child { display: flex; flex-wrap: wrap; gap: 4px; }
+    .card .num { font-size: 24px; font-weight: 750; letter-spacing: -.03em; font-variant-numeric: tabular-nums; }
+    .card .num.na { color: var(--muted); font-size: 18px; }
+    .tag { display: inline-block; border-radius: 999px; padding: 2px 9px; font-size: 12px; border: 1px solid var(--line); color: var(--muted); white-space: nowrap; }
+    .tag.ok { color: var(--green); border-color: rgba(117, 216, 170, .45); }
+    .tag.warn { color: var(--amber); border-color: rgba(255, 201, 121, .4); }
+    .tag.code { color: var(--cyan); border-color: rgba(99, 214, 233, .4); }
+    .card .task { margin-top: 8px; color: var(--muted); font-size: 12px; overflow-wrap: anywhere; }
+    .detail { border: 1px solid var(--line-soft); background: var(--panel); border-radius: 18px; padding: 20px; margin-bottom: 30px; }
+    .detail-head { display: flex; justify-content: space-between; gap: 16px; align-items: flex-start; flex-wrap: wrap; margin-bottom: 14px; }
+    .detail-head h2 { margin: 0 0 6px; font-size: 22px; }
+    .detail-head p { margin: 0; color: var(--muted); font-size: 14px; }
+    .players { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    .video-card { background: #05070c; border: 1px solid var(--line-soft); border-radius: 12px; overflow: hidden; }
+    .video-label { display: flex; justify-content: space-between; padding: 8px 12px; font-size: 13px; color: var(--muted); }
+    .video-label b { color: var(--text); }
+    video { display: block; width: 100%; aspect-ratio: 16 / 9; background: #000; object-fit: contain; }
+    .controls { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; margin: 12px 0 18px; }
+    .control-btn { border: 1px solid var(--line); background: var(--panel-2); border-radius: 10px; padding: 7px 13px; cursor: pointer; }
+    #seek { flex: 1; min-width: 160px; accent-color: var(--blue); }
+    #clock { color: var(--muted); font-size: 13px; font-variant-numeric: tabular-nums; }
+    .no-video { border: 1px dashed var(--line); border-radius: 12px; padding: 28px 18px; color: var(--muted); text-align: center; line-height: 1.7; margin-bottom: 18px; }
+    .facts { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    .fact-box { border: 1px solid var(--line-soft); background: rgba(10, 14, 24, .5); border-radius: 12px; padding: 14px 16px; }
+    .fact-box h3 { margin: 0 0 10px; font-size: 14px; color: var(--cyan); letter-spacing: .04em; }
+    dl { display: grid; grid-template-columns: 112px 1fr; gap: 7px 12px; margin: 0; font-size: 14px; line-height: 1.55; }
+    dt { color: var(--muted); }
+    dd { margin: 0; overflow-wrap: anywhere; }
+    .fact-box p { margin: 10px 0 0; color: var(--muted); font-size: 13px; line-height: 1.65; }
+    h2.section { font-size: 20px; margin: 34px 0 6px; }
+    .section-note { color: var(--muted); font-size: 14px; line-height: 1.7; margin: 0 0 12px; }
+    .table-wrap { overflow-x: auto; border: 1px solid var(--line-soft); border-radius: 14px; background: var(--panel); }
+    table { width: 100%; border-collapse: collapse; font-size: 13.5px; min-width: 860px; }
+    th, td { text-align: left; padding: 9px 12px; border-bottom: 1px solid var(--line-soft); vertical-align: top; line-height: 1.5; }
+    th { color: var(--muted); font-weight: 600; background: rgba(21, 29, 48, .8); position: sticky; top: 0; }
+    tr:last-child td { border-bottom: 0; }
+    td.num { text-align: right; font-variant-numeric: tabular-nums; white-space: nowrap; }
+    tr.unmatched td { color: var(--muted); }
+    .footer-note { margin-top: 26px; color: var(--muted); font-size: 13px; line-height: 1.7; }
+    @media (max-width: 900px) {
+      .stats { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .players, .facts { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 520px) {
+      .shell { width: calc(100% - 32px); padding-top: 22px; }
+      dl { grid-template-columns: 92px 1fr; }
+      .detail { padding: 14px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="shell">
+    <a class="back" href="index.html">← 全部视频复刻案例</a>
+    <div class="eyebrow">FrontierVideo · Harbor tasks</div>
+    <h1>有 Harbor 题目的视频复刻</h1>
+    <p class="lead">本站展示过的复刻中，凡是参考视频与 FrontierVideo 某道 Harbor 题的参考视频逐字节相同（SHA-256 一致）的，都汇总在这里。左右同步播放参考与复刻，右侧同时列出站点当时的评分和这道 Harbor 题目前的状态。</p>
+
+    <section class="stats" id="stats"></section>
+
+    <div class="notice"><b>站点分数和 Harbor 分数不是同一个分数。</b>站点上的分数大多是复刻发布时用当时的源码对象评分算出的。之后 Paper Girl 和 5 道 X-Reels 题改用了代码层 verifier（<code>footage-code-level-v1</code>：观察渲染出来的内容，与 GT 做轨迹匹配），旧分数不能直接换算。用当前 verifier 重新打过分的只有 Paper Girl 和 Aureole，下面单独标出。</div>
+
+    <div class="filters" id="filters"></div>
+    <section class="grid" id="grid" aria-label="案例"></section>
+
+    <section class="detail" id="detail"></section>
+
+    <h2 class="section">对应关系总表</h2>
+    <p class="section-note">按参考视频 SHA-256 比对：站点视频文件名即其 SHA-256，Harbor 题取 <code>asset-manifest.json</code> 中登记的 <code>reference.mp4</code>。题目版本与状态取自 FrontierVideo <code>main</code>（Ultracode、Field locks、FORM 与 Aureole 尚在 PR 中，取 PR 分支）。</p>
+    <div class="table-wrap"><table>
+      <thead><tr><th>站点案例</th><th>Harbor 题目</th><th>版本</th><th>状态</th><th>当前评分方式</th><th class="num">站点分数</th><th class="num">当前 verifier 分数</th></tr></thead>
+      <tbody id="map-body"></tbody>
+    </table></div>
+
+    <h2 class="section">站点上没有对应 Harbor 题的案例</h2>
+    <div class="table-wrap"><table>
+      <thead><tr><th>站点案例</th><th>情况</th></tr></thead>
+      <tbody>
+        <tr class="unmatched"><td><a href="experiments/lyric-mv-verifier/index.html">歌词 MV · 素材合成与 SVG 重绘</a></td><td>FrontierVideo 中没有这道题。</td></tr>
+        <tr class="unmatched"><td><a href="compare-round10.html">第 10 轮 · Higgsfield、Creativly</a></td><td>与 <code>reconstruct-footage-higgsfield</code>、<code>reconstruct-footage-creativly-brand-video</code> 来自同一上游项目，但参考视频不同（剪辑范围不同，哈希不一致），复刻也不是在 Harbor 题环境里做的，不算对应。</td></tr>
+        <tr class="unmatched"><td><a href="compare.html">历史对比（第 7–10 轮及第 12–20 轮单例）</a></td><td>均为早期探索，没有对应的 Harbor 题。</td></tr>
+      </tbody>
+    </table></div>
+
+    <div class="footer-note">FrontierVideo 是私有仓库，表中题目名不附链接。“当前 verifier 分数”指把站点展示的这份复刻交给该题现在的 verifier 打出的分数；“—”表示还没有重评，多数是因为复刻源码不在题目仓库里。</div>
+  </div>
+
+  <script>
+    const MEDIA = {"diffusion":{"reference":"media/object-contract-v3/b33c1fc77a8ec0eda23091cecd511c7dbf66aba6ccd84d5bae2460d184cf4ead.mp4","replica":"media/object-contract-v3/c33fc6df5611b623c9b6e2a935ee25b7eee4f927823aacb32fb60c76949a08ce.mp4"},"starry-night":{"reference":"media/object-contract-v3/f208f8ee71b594f087d9a4891ffcccc83365d516cb94c3bc089ae5df33e82cf4.mp4","replica":"media/object-contract-v3/a09464032a590d8172808abf3b72bb69d84320950a7b978a4dce5cd643161598.mp4"},"autumn-post":{"reference":"media/object-contract-v3/ee023aacc67f2018c95a3ca1979e74bdfaa4ebe685efb257cb1424a2578fe076.mp4","replica":"media/object-contract-v3/4d8ad44903032945dbebf861b9be868e92b29923379bff1d740ff35acb245f21.mp4"},"clawd-dressup":{"reference":"media/clawd-dressup/c1deb88777259c129a319b2d080d9f3468d1c23b12a20667677d1e2601e75e9f.mp4","replica":"media/clawd-dressup/5eac0c416cff14af442158bf9e5daec426852a30843e0bbf0dafd4aa814be21f.mp4"},"motion-lab":{"reference":"media/florence-motion-lab/21a015ba99b00ea948b99b19c3541c8373331e20475b21035af319359f7a0748.mp4","replica":"media/florence-motion-lab/79a8d5056168484359f39b1f142258e968480dfdb1739d6d367b51344694e2d5.mp4"},"xiaozhen-whale":{"reference":"media/xiaozhen-whale/977b9833c6f10196a835fe10c64aa91fb5b38c1be3bc6830ba07bc52b0abc58a.mp4","replica":"media/xiaozhen-whale/480c6dde2454610017fc8dabf63e02b93419b1da0d4af58920c32d195eb002ab.mp4"},"western-duel":{"reference":"media/western-duel/1ad65faab794a9cf101175de40d8e4a96edb7e203f8296a8d81b7b882ab9f54e.mp4","replica":"media/western-duel/f8e956099576d4e618304406d807efe6440435503dd5adf31c8791ca4d36ece3.mp4"},"paper-girl":{"reference":"media/paper-girl-standard/ce2031c185d485e4ba8a6b1e7532b542f9ecd925452aeb1655d18a31232d0e21.mp4","replica":"media/paper-girl-standard/8c3f3eb55131f82251949d352f1f91b975c7605905ad570cc4f11af055a01d1c.mp4"},"svg-tutorial":{"reference":"https://github.com/USTChandsomeboy/video-result/releases/download/remaining-replicas-media-20261017/e8ea8f6231d1e2d97ed917749254002d04886ea21d2ff6fbecffb057a63cc24e.mp4","replica":"https://github.com/USTChandsomeboy/video-result/releases/download/remaining-replicas-media-20261017/27744da05b46fa280a65afe7b5d0be26f5cac0df8344a26247a0395dec52ecd6.mp4","poster":"data/remaining-replicas/svg-tutorial/reference.jpg"},"rome-epic":{"reference":"https://github.com/USTChandsomeboy/video-result/releases/download/remaining-replicas-media-20261017/19585bb8ca0167119b8e82505ef271e216cc222dcf49a7b74dc78bcb3c0777de.mp4","replica":"https://github.com/USTChandsomeboy/video-result/releases/download/remaining-replicas-media-20261017/5d5d56051cdb76cf1d2b7d2ae0db6e593d6ac25bd94f93e177b484b3055a6be0.mp4","poster":"data/remaining-replicas/rome-epic/reference.jpg"},"remake-1":{"reference":"media/remakes-20261023/5e09731b7dc0436020217b74a4fd3a8066a24b81630ba7782d98913f6b29e7da.mp4","replica":"media/remakes-20261023/5f1eadfc27616f1b30349726319be5569341b8c9d4e127caff4fddf4c061a50c.mp4","poster":"experiments/remakes-20261023/remake-1/reference.jpg"},"remake-2":{"reference":"media/remakes-20261023/dbc671f2923217161a9706266fa533a37c26f363a073d387d7208a9001056329.mp4","replica":"media/remakes-20261023/e29f03e4464ac60e7beebf6fe6c11a4ef885af374edac8be6525f902cfe5f2f3.mp4","poster":"experiments/remakes-20261023/remake-2/reference.jpg"},"remake-3":{"reference":"media/remakes-20261023/16756cd8db26b8584c1222cf7ad1c9c76a6ed9531106db3ef98f057dbd3ca3fb.mp4","replica":"media/remakes-20261023/72b9c6bfd9198625e031bffa98732f50c708ed9b8022eef4aaff523960bd65ee.mp4","poster":"experiments/remakes-20261023/remake-3/reference.jpg"},"xreels-kinetic":{"reference":"media/x-reels-standard/5549f7c12cef29e23154e932b8fcedf4a2edb9760fe1b2942e0a0ddbebdbef5b.mp4","replica":"media/x-reels-standard/56ce4adfb85fa5459a1ebbb3bb8686089f26b885dc2b970c00867ef3bfb4fe01.mp4"},"xreels-linkpulse":{"reference":"media/x-reels-standard/9c52f6554469e7d9aa8d867c36d833b7efe0e018a614bc59c8b24cc033f04e9b.mp4","replica":"media/x-reels-standard/cfb6d8b6ca9ccfa558614344438b92d6725f4709e464ab329cfc07edf791dc53.mp4"},"xreels-showreel":{"reference":"media/x-reels-standard/1b8f75c71ad2896f186a40f54f052ed1a2c29c86d84f9cddaeab9c1bcb3da70a.mp4","replica":"media/x-reels-standard/95f462560c9ebec44eab61afb4ce78918dfb6b31492af271c121b2903c972afe.mp4"},"xreels-reel26":{"reference":"media/x-reels-standard/2043a7bdc4de2f728d624f68eaa06299eca496670e88e8d09e9ce31847c00cae.mp4","replica":"media/x-reels-standard/0bd978e2d0d4edc10eeba30ab002d673e2948dbfcbf50f4afc8a46ccc3a7d1b2.mp4"},"xreels-fullstop":{"reference":"media/x-reels-standard/2579402153cff6ededd05630386c02a2771be8a59ad42d8accae70690d1117a6.mp4","replica":"media/x-reels-standard/0c7757fe4ac3df7e9e3295d1b7cb9eec1348cf8ab635316a7491dfc538042baa.mp4"},"xreels-horizon":{"reference":"media/x-reels-standard/c62257b469b0d1c1cc6d177909eea5fa2b4ccd998f587b66c26bbc78885b72cf.mp4","replica":"media/x-reels-standard/f9101cd185419cbd9491c4221ea71d392efe27ce3bf2d53a6c0e7564872f6670.mp4"},"xreels-teamlaunch":{"reference":"media/x-reels-standard/13ae990731972e9223a9b151435fc93b45221661afa215a07ff898635fcf9e76.mp4","replica":"media/x-reels-standard/f55ecca0f7860ccc9a1b9afbd45fc64e464438fb8d7a57bc1cf1801ef8627c9b.mp4"},"xreels-sketchday":{"reference":"media/x-reels-standard/b72daa37de6f5f8b7eb93ba80e4512184fc70032051d4b5127364dcebaa2e8c8.mp4","replica":"media/x-reels-standard/8301ab0158466d57e2388c6a7e363ea0473c304c042a6e6528c577a15c40a5fa.mp4"}};
+    const CODE = 'footage-code-level-v1';
+    const CASES = [
+      { id: 'aureole', title: 'Aureole · 玻璃 UI 动效', kind: 'UI 动效', group: 'code',
+        site: { score: null, label: '站点尚未发布视频', link: null },
+        harbor: { task: 'reconstruct-visual-aureole', version: '0.2.0', status: 'verified', where: 'PR #76', scorer: CODE + '+backdrop', rescore: 24.4,
+          rescoreNote: 'verifier 镜像内观察；匹配 1835 / 2592 个对象。出现 53.6 · 位置 33.9 · 大小 61.2 · 透明度 34.6 · 运动 42.6 · 时间 2.9',
+          acceptance: 'Harbor 0.24.0 容器验收通过：oracle 奖励 1.0，nop 奖励 0' } },
+      { id: 'paper-girl', title: 'Paper Girl · 写信给太阳', kind: '剪纸动画', group: 'code',
+        site: { score: 37.5, label: '源码对象契约，1,193 项检查', link: 'experiments/paper-girl-standard/compare.html' },
+        harbor: { task: 'reconstruct-visual-paper-girl', version: '0.3.0', status: 'draft', scorer: CODE, rescore: 45.0,
+          rescoreNote: 'macOS 本机观察，尚未在 verifier 镜像内复核；匹配 1132 / 1170 个对象。出现 76.0 · 位置 24.7 · 大小 19.4 · 透明度 80.4 · 运动 46.3 · 时间 55.2',
+          acceptance: '当前版本未完成 Harbor 容器验收' } },
+      ...[['kinetic','Kinetic','艺术表达',56.6],['linkpulse','LinkPulse','宣传推广',41.7],['showreel','Showreel','记录回顾',33.7],['teamlaunch','TeamLaunch','宣传推广',24.7],['sketchday','SketchDay','叙事娱乐',25.0]].map(([id,title,kind,score]) => ({
+        id: 'xreels-' + id, title: 'X-Reels · ' + title, kind, group: 'code', media: 'xreels-' + id,
+        site: { score, label: '源码对象契约 v3', link: 'experiments/x-reels-standard/compare.html' },
+        harbor: { task: 'reconstruct-visual-xreels-' + id, version: '0.4.0', status: 'draft', scorer: CODE, rescore: null,
+          rescoreNote: '复刻源码不在题目仓库中，未用代码层 verifier 重评。',
+          acceptance: '当前版本未完成 Harbor 容器验收' } })),
+      ...[['reel26','Reel26','记录回顾'],['fullstop','FullStop','知识讲解'],['horizon','Horizon','艺术表达']].map(([id,title,kind]) => ({
+        id: 'xreels-' + id, title: 'X-Reels · ' + title, kind, group: 'source', media: 'xreels-' + id,
+        site: { score: null, label: '评分未完成（含 WebGL 内容）', link: 'experiments/x-reels-standard/compare.html' },
+        harbor: { task: 'reconstruct-visual-xreels-' + id, version: '0.3.1', status: 'draft', scorer: '源码对象评分（WebGL 标注协议见 PR #72）', rescore: null,
+          rescoreNote: 'verifier 校准未完成。',
+          acceptance: '当前版本未完成 Harbor 容器验收' } })),
+      ...[['diffusion','扩散与渗透：粒子运动','知识讲解',45.9,30],['starry-night','Starry Night：星夜画作揭示','艺术表达',41.7,24],['autumn-post','秋日邮局：水彩视觉短片','艺术表达',35.9,27]].map(([id,title,kind,score,n]) => ({
+        id, title, kind, group: 'source',
+        site: { score, label: `Object Contract v3，${n} 项检查`, link: 'index.html#' + id },
+        harbor: { task: 'reconstruct-visual-' + id, version: '0.5.6', status: 'validation-pending', scorer: '源码对象评分 visual-source-v2.1', rescore: null,
+          rescoreNote: '未用当前版本 verifier 重评。', acceptance: '当前版本未完成 Harbor 容器验收' } })),
+      { id: 'clawd-dressup', title: 'Clawd 换装', kind: '角色动画', group: 'source',
+        site: { score: 82.94, label: 'v1 规则；v2 探索性重评 54.37', link: 'experiments/clawd-dressup-harbor/index.html' },
+        harbor: { task: 'reconstruct-visual-clawd-dressup', version: '0.2.0', status: 'draft', scorer: '任务自带源码对象评分', rescore: null, rescoreNote: '未用当前版本 verifier 重评。', acceptance: '当前版本未完成 Harbor 容器验收' } },
+      { id: 'xiaozhen-whale', title: '小镇姑娘 · 鲸鱼娘 MV', kind: '音乐 MV', group: 'source',
+        site: { score: 63.73, label: '66 个对象、3,534 项检查', link: 'experiments/xiaozhen-whale-harbor/index.html' },
+        harbor: { task: 'reconstruct-visual-xiaozhen-whale', version: '1.1.0', status: 'draft', scorer: '任务自带源码对象评分', rescore: null, rescoreNote: '未用当前版本 verifier 重评。', acceptance: '当前版本未完成 Harbor 容器验收' } },
+      { id: 'motion-lab', title: 'Motion Lab · 3D 动效', kind: '3D 镜头', group: 'source',
+        site: { score: 43.09, label: '源码对象评分', link: 'experiments/florence-motion-lab-harbor/index.html' },
+        harbor: { task: 'reconstruct-camera3d-florence-motion-lab', version: '0.1.5', status: 'validation-pending', scorer: '任务自带源码评分', rescore: null, rescoreNote: '未用当前版本 verifier 重评。同一部片原先的 visual 版题目已弃用。', acceptance: '当前版本未完成 Harbor 容器验收' } },
+      { id: 'western-duel', title: 'SUNDOWN · 日落决斗', kind: '叙事短片', group: 'source',
+        site: { score: 21.76, label: '源码对象评分', link: 'experiments/western-duel-harbor/index.html' },
+        harbor: { task: 'reconstruct-visual-western-duel', version: '1.1.0', status: 'draft', scorer: '任务自带源码对象评分', rescore: null, rescoreNote: '未用当前版本 verifier 重评。', acceptance: '当前版本未完成 Harbor 容器验收' } },
+      { id: 'svg-tutorial', title: 'SVG 眨眼动画原理', kind: '操作指导', group: 'source',
+        site: { score: 58.65, label: '1,338 项检查', link: 'replicas.html' },
+        harbor: { task: 'reconstruct-visual-svg-tutorial', version: '1.1.0', status: 'draft', scorer: '任务自带源码对象评分', rescore: null, rescoreNote: '未用当前版本 verifier 重评。', acceptance: '当前版本未完成 Harbor 容器验收' } },
+      { id: 'rome-epic', title: 'Rome Epic：从罗马诞生到帝国黄昏', kind: '历史讲解', group: 'source',
+        site: { score: 53.33, label: '1,123 项检查（排除 79 项无法观测的）', link: 'replicas.html' },
+        harbor: { task: 'reconstruct-visual-rome-epic', version: '1.1.0', status: 'draft', scorer: '任务自带源码对象评分', rescore: null, rescoreNote: '未用当前版本 verifier 重评。', acceptance: '当前版本未完成 Harbor 容器验收' } },
+      ...[['remake-1','Ultracode · 插画宣传片','插画宣传',44.74,321],['remake-2','Field locks · 软件演示','软件演示',64.95,258],['remake-3','FORM · 动态字体短片','动态字体',50.40,307]].map(([id,title,kind,score,n]) => ({
+        id, title, kind, group: 'source',
+        site: { score, label: `源码评分，${n} 项检查`, link: 'experiments/remakes-20261023/compare.html#' + id },
+        harbor: { task: `reconstruct-visual-${id}-20261023`, version: '0.3.3', status: 'draft', where: 'PR #63', scorer: '任务自带源码对象评分', rescore: null, rescoreNote: '站点分数即该题 verifier 的评分结果，题目本身尚未通过容器验收。', acceptance: '当前版本未完成 Harbor 容器验收' } })),
+    ];
+
+    const $ = s => document.querySelector(s);
+    const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+    const fmt = v => v == null ? '—' : Number(v).toFixed(1);
+    const FILTERS = [['all', '全部'], ['code', '代码层 verifier'], ['source', '源码对象评分'], ['rescored', '已用当前 verifier 重评']];
+    const state = { filter: 'all', selected: 'paper-girl', ref: null, rep: null };
+    const statusTag = s => `<span class="tag ${s === 'verified' ? 'ok' : 'warn'}">${esc(s)}</span>`;
+    const visible = c => state.filter === 'all' || (state.filter === 'rescored' ? c.harbor.rescore != null : c.group === state.filter);
+
+    function renderStats() {
+      const withVideo = CASES.filter(c => MEDIA[c.media || c.id]).length;
+      const tasks = CASES.length;
+      const rescored = CASES.filter(c => c.harbor.rescore != null).length;
+      const verified = CASES.filter(c => c.harbor.status === 'verified').length;
+      $('#stats').innerHTML = [
+        [withVideo, '条站点复刻与 Harbor 题参考视频一致'],
+        [tasks, '道对应的 Harbor 题（含尚无站点视频的 Aureole）'],
+        [rescored, '条已用当前 verifier 重评'],
+        [verified, '道已通过 Harbor 容器验收'],
+      ].map(([n, t]) => `<div class="stat"><b>${n}</b><span>${t}</span></div>`).join('');
+    }
+    function renderFilters() {
+      $('#filters').innerHTML = FILTERS.map(([k, t]) => `<button class="chip${state.filter === k ? ' active' : ''}" data-f="${k}">${t}</button>`).join('');
+      $('#filters').querySelectorAll('[data-f]').forEach(b => b.onclick = () => { state.filter = b.dataset.f; renderFilters(); renderGrid(); });
+    }
+    function renderGrid() {
+      $('#grid').innerHTML = CASES.filter(visible).map(c => {
+        const score = c.harbor.rescore != null ? c.harbor.rescore : c.site.score;
+        const which = c.harbor.rescore != null ? '当前 verifier' : c.site.score != null ? '站点分数' : '';
+        return `<button class="card${state.selected === c.id ? ' active' : ''}" data-id="${c.id}"><div class="kind">${esc(c.kind)}</div><h3>${esc(c.title)}</h3><div class="row"><span class="num${score == null ? ' na' : ''}">${score == null ? '暂无总分' : fmt(score)}</span><span>${which ? `<span class="tag${c.harbor.rescore != null ? ' code' : ''}">${which}</span> ` : ''}${statusTag(c.harbor.status)}</span></div><div class="task">${esc(c.harbor.task)}</div></button>`;
+      }).join('');
+      $('#grid').querySelectorAll('[data-id]').forEach(b => b.onclick = () => select(b.dataset.id, true));
+    }
+    function renderMap() {
+      $('#map-body').innerHTML = CASES.map(c => `<tr><td>${c.site.link ? `<a href="${c.site.link}">${esc(c.title)}</a>` : esc(c.title)}</td><td><code>${esc(c.harbor.task)}</code>${c.harbor.where ? `<br><span class="tag">${esc(c.harbor.where)}</span>` : ''}</td><td>${esc(c.harbor.version)}</td><td>${statusTag(c.harbor.status)}</td><td>${esc(c.harbor.scorer)}</td><td class="num">${fmt(c.site.score)}</td><td class="num">${fmt(c.harbor.rescore)}</td></tr>`).join('');
+    }
+    function select(id, scroll) {
+      const c = CASES.find(x => x.id === id); if (!c) return;
+      state.ref?.pause(); state.rep?.pause();
+      state.selected = id;
+      try { history.replaceState(null, '', '#' + id); } catch {}
+      renderGrid(); renderDetail(c);
+      if (scroll) $('#detail').scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+    function renderDetail(c) {
+      const m = MEDIA[c.media || c.id];
+      const players = m ? `<div class="players"><article class="video-card"><div class="video-label"><b>参考视频</b><span>与 Harbor 题一致</span></div><video id="ref" controls playsinline muted preload="metadata" src="${esc(m.reference)}"${m.poster ? ` poster="${esc(m.poster)}"` : ''}></video></article><article class="video-card"><div class="video-label"><b>复刻</b><span>站点展示版本</span></div><video id="rep" controls playsinline muted preload="metadata" src="${esc(m.replica)}"></video></article></div>
+        <div class="controls"><button class="control-btn" id="play">同步播放</button><button class="control-btn" id="back">− 1 帧</button><button class="control-btn" id="fwd">+ 1 帧</button><input id="seek" type="range" min="0" max="1" step="0.001" value="0" aria-label="进度"><span id="clock">0.00 / 0.00 s</span></div>`
+        : `<div class="no-video">本站还没有发布这道题的参考视频和复刻视频。<br>评分与验收结果见下方。</div>`;
+      const h = c.harbor;
+      $('#detail').innerHTML = `<div class="detail-head"><div><h2>${esc(c.title)}</h2><p>${esc(c.kind)}${c.site.link ? ` · <a href="${c.site.link}">查看站点详情与评分证据 →</a>` : ''}</p></div>${statusTag(h.status)}</div>${players}
+        <div class="facts"><section class="fact-box"><h3>Harbor 题目</h3><dl><dt>题目</dt><dd><code>${esc(h.task)}</code>${h.where ? ` <span class="tag">${esc(h.where)}</span>` : ''}</dd><dt>版本</dt><dd>${esc(h.version)}</dd><dt>状态</dt><dd>${statusTag(h.status)}</dd><dt>评分方式</dt><dd>${esc(h.scorer)}</dd><dt>验收</dt><dd>${esc(h.acceptance)}</dd></dl></section>
+        <section class="fact-box"><h3>这份复刻的分数</h3><dl><dt>站点分数</dt><dd>${c.site.score == null ? '—' : `<b>${fmt(c.site.score)}</b>`} · ${esc(c.site.label)}</dd><dt>当前 verifier</dt><dd>${h.rescore == null ? '—' : `<b>${fmt(h.rescore)}</b>`}</dd></dl><p>${esc(h.rescoreNote)}</p></section></div>`;
+      if (m) bindPlayers();
+    }
+    function bindPlayers() {
+      const ref = $('#ref'), rep = $('#rep');
+      state.ref = ref; state.rep = rep;
+      let busy = false;
+      const dur = () => Number.isFinite(ref.duration) ? ref.duration : 0;
+      const show = () => { $('#seek').max = dur() || 1; $('#seek').value = ref.currentTime; $('#clock').textContent = `${ref.currentTime.toFixed(2)} / ${dur().toFixed(2)} s`; };
+      const follow = () => { const t = Math.min(ref.currentTime, Number.isFinite(rep.duration) ? rep.duration : ref.currentTime); if (Math.abs(rep.currentTime - t) > .08) rep.currentTime = t; };
+      const pause = () => { if (busy) return; busy = true; ref.pause(); rep.pause(); busy = false; $('#play').textContent = '同步播放'; };
+      const play = async () => {
+        if (busy) return; busy = true;
+        if (ref.currentTime >= dur() - .02) ref.currentTime = 0;
+        follow();
+        const r = await Promise.allSettled([ref.play(), rep.play()]);
+        busy = false;
+        if (r.some(x => x.status === 'rejected')) pause(); else $('#play').textContent = '同步暂停';
+      };
+      const seek = t => { pause(); ref.currentTime = Math.max(0, Math.min(dur(), t)); follow(); show(); };
+      ref.addEventListener('loadedmetadata', show);
+      ref.addEventListener('timeupdate', () => { if (state.ref !== ref) return; follow(); show(); });
+      ref.addEventListener('play', () => { if (!busy) play(); });
+      rep.addEventListener('play', () => { if (!busy) play(); });
+      ref.addEventListener('pause', pause);
+      rep.addEventListener('pause', () => { if (!rep.ended) pause(); });
+      rep.addEventListener('seeked', () => { if (!busy && Math.abs(ref.currentTime - rep.currentTime) > .08) { ref.currentTime = rep.currentTime; show(); } });
+      [ref, rep].forEach(v => v.addEventListener('error', () => { const e = document.createElement('div'); e.className = 'no-video'; e.textContent = '视频加载失败，请刷新页面重试。'; v.replaceWith(e); }));
+      $('#seek').oninput = () => seek(Number($('#seek').value));
+      $('#play').onclick = () => ref.paused ? play() : pause();
+      $('#back').onclick = () => seek(ref.currentTime - 1 / 30);
+      $('#fwd').onclick = () => seek(ref.currentTime + 1 / 30);
+    }
+
+    renderStats(); renderFilters(); renderMap();
+    const hash = location.hash.slice(1);
+    select(CASES.some(c => c.id === hash) ? hash : state.selected, false);
+  </script>
+</body>
+</html>

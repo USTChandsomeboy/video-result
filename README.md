@@ -29,6 +29,7 @@ http://127.0.0.1:8770/compare.html
 
 公开站点：<https://ustchandsomeboy.github.io/video-result/>。
 
+- `site/harbor.html`：所有参考视频与 FrontierVideo Harbor 题一致的复刻（21 条），并列站点分数、题目版本、状态与当前 verifier 分数。
 - `site/object-contract-v3.html`：三条视频复刻与六维评分。
 - `site/experiments/xiaozhen-whale-harbor/index.html`：小镇姑娘 · 鲸鱼娘 MV，34 秒，63.73 分；66 个对象、3,534 项检查全部有结果，原作 Harbor 对照 100 分。
 - `site/experiments/lyric-mv-verifier/index.html`：歌词 MV 素材合成 GT 与 SVG 独立重绘，50.3 分，658 项检查；原视频展示版已去除平台标识和导演、监制署名。
