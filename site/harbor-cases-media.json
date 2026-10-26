@@ -1,0 +1,189 @@
+{
+  "repository": "USTChandsomeboy/video-result",
+  "release_tag": "harbor-cases-media-20261027",
+  "media_dir": "media/harbor-cases",
+  "files": [
+    {
+      "kind": "reference",
+      "name": "cd72139c437ca025f6dde73cb8501fbe1c261eef8031d1c8a3e5cc1e1627a7d6.mp4",
+      "sha256": "cd72139c437ca025f6dde73cb8501fbe1c261eef8031d1c8a3e5cc1e1627a7d6",
+      "bytes": 31170587,
+      "url": "https://github.com/USTChandsomeboy/video-result/releases/download/harbor-cases-media-20261027/cd72139c437ca025f6dde73cb8501fbe1c261eef8031d1c8a3e5cc1e1627a7d6.mp4"
+    },
+    {
+      "kind": "replica",
+      "name": "9a3a0698b19dd9ddf26c84a0e9be040f9800737614198d431989a361dab67b70.mp4",
+      "sha256": "9a3a0698b19dd9ddf26c84a0e9be040f9800737614198d431989a361dab67b70",
+      "bytes": 24028748,
+      "url": "https://github.com/USTChandsomeboy/video-result/releases/download/harbor-cases-media-20261027/9a3a0698b19dd9ddf26c84a0e9be040f9800737614198d431989a361dab67b70.mp4"
+    },
+    {
+      "kind": "reference",
+      "name": "8c5ddec56f2117efd835d58a38c38b94a520322fb2464155a7d2d5c4e4671d86.mp4",
+      "sha256": "8c5ddec56f2117efd835d58a38c38b94a520322fb2464155a7d2d5c4e4671d86",
+      "bytes": 37436174,
+      "url": "https://github.com/USTChandsomeboy/video-result/releases/download/harbor-cases-media-20261027/8c5ddec56f2117efd835d58a38c38b94a520322fb2464155a7d2d5c4e4671d86.mp4"
+    },
+    {
+      "kind": "replica",
+      "name": "ab6e722e526837f4de3f3aebe93ee596f7cb09c10196b294398bc5f4e328255e.mp4",
+      "sha256": "ab6e722e526837f4de3f3aebe93ee596f7cb09c10196b294398bc5f4e328255e",
+      "bytes": 11654160,
+      "url": "https://github.com/USTChandsomeboy/video-result/releases/download/harbor-cases-media-20261027/ab6e722e526837f4de3f3aebe93ee596f7cb09c10196b294398bc5f4e328255e.mp4"
+    },
+    {
+      "kind": "reference",
+      "name": "f6be842890e2a4dec7dc82d967b5f29352e91422adacf31894693f9b1dba3b0f.mp4",
+      "sha256": "f6be842890e2a4dec7dc82d967b5f29352e91422adacf31894693f9b1dba3b0f",
+      "bytes": 17299103,
+      "url": "https://github.com/USTChandsomeboy/video-result/releases/download/harbor-cases-media-20261027/f6be842890e2a4dec7dc82d967b5f29352e91422adacf31894693f9b1dba3b0f.mp4"
+    },
+    {
+      "kind": "replica",
+      "name": "4f75582533349b6bdf9b0802fa9b0d536b3d511203339d062a8cc7f0f57ebf63.mp4",
+      "sha256": "4f75582533349b6bdf9b0802fa9b0d536b3d511203339d062a8cc7f0f57ebf63",
+      "bytes": 10102363,
+      "url": "https://github.com/USTChandsomeboy/video-result/releases/download/harbor-cases-media-20261027/4f75582533349b6bdf9b0802fa9b0d536b3d511203339d062a8cc7f0f57ebf63.mp4"
+    },
+    {
+      "kind": "reference",
+      "name": "e4dd92220807df62c86907e118fb0a1aae7768cda0bfa1acc6f1450e091aab3c.mp4",
+      "sha256": "e4dd92220807df62c86907e118fb0a1aae7768cda0bfa1acc6f1450e091aab3c",
+      "bytes": 36783990,
+      "url": "https://github.com/USTChandsomeboy/video-result/releases/download/harbor-cases-media-20261027/e4dd92220807df62c86907e118fb0a1aae7768cda0bfa1acc6f1450e091aab3c.mp4"
+    },
+    {
+      "kind": "replica",
+      "name": "4039df2d6efaf25459e822be07391b3e5c351e554e1a207f098a9b4dd9a78622.mp4",
+      "sha256": "4039df2d6efaf25459e822be07391b3e5c351e554e1a207f098a9b4dd9a78622",
+      "bytes": 15659842,
+      "url": "https://github.com/USTChandsomeboy/video-result/releases/download/harbor-cases-media-20261027/4039df2d6efaf25459e822be07391b3e5c351e554e1a207f098a9b4dd9a78622.mp4"
+    },
+    {
+      "kind": "reference",
+      "name": "4472c6c1d5081ed3ea9cac490c9a46ef943c482f68d13288c3acbe97e7488ab2.mp4",
+      "sha256": "4472c6c1d5081ed3ea9cac490c9a46ef943c482f68d13288c3acbe97e7488ab2",
+      "bytes": 74880552,
+      "url": "https://github.com/USTChandsomeboy/video-result/releases/download/harbor-cases-media-20261027/4472c6c1d5081ed3ea9cac490c9a46ef943c482f68d13288c3acbe97e7488ab2.mp4"
+    },
+    {
+      "kind": "replica",
+      "name": "c991b768f06ce2b18160f59d3efa52a0d796a4f8fbb90fd2dee71b2e1cc9651c.mp4",
+      "sha256": "c991b768f06ce2b18160f59d3efa52a0d796a4f8fbb90fd2dee71b2e1cc9651c",
+      "bytes": 1111946,
+      "url": "https://github.com/USTChandsomeboy/video-result/releases/download/harbor-cases-media-20261027/c991b768f06ce2b18160f59d3efa52a0d796a4f8fbb90fd2dee71b2e1cc9651c.mp4"
+    },
+    {
+      "kind": "replica",
+      "name": "e32d40d15263e0ccb821c4e9f05921d41247af5250f5eeaea277c3d0e2bb321a.mp4",
+      "sha256": "e32d40d15263e0ccb821c4e9f05921d41247af5250f5eeaea277c3d0e2bb321a",
+      "bytes": 1342575,
+      "url": "https://github.com/USTChandsomeboy/video-result/releases/download/harbor-cases-media-20261027/e32d40d15263e0ccb821c4e9f05921d41247af5250f5eeaea277c3d0e2bb321a.mp4"
+    },
+    {
+      "kind": "replica",
+      "name": "b89c97913ca1e96df2d526ec3826744725d1955255f74fbac0ae24ee8e347bad.mp4",
+      "sha256": "b89c97913ca1e96df2d526ec3826744725d1955255f74fbac0ae24ee8e347bad",
+      "bytes": 2174349,
+      "url": "https://github.com/USTChandsomeboy/video-result/releases/download/harbor-cases-media-20261027/b89c97913ca1e96df2d526ec3826744725d1955255f74fbac0ae24ee8e347bad.mp4"
+    },
+    {
+      "kind": "replica",
+      "name": "76901c07e8505d2249ba5ddda255a13c6fcaa4edaead02804e69b71a7b322938.mp4",
+      "sha256": "76901c07e8505d2249ba5ddda255a13c6fcaa4edaead02804e69b71a7b322938",
+      "bytes": 3456434,
+      "url": "https://github.com/USTChandsomeboy/video-result/releases/download/harbor-cases-media-20261027/76901c07e8505d2249ba5ddda255a13c6fcaa4edaead02804e69b71a7b322938.mp4"
+    },
+    {
+      "kind": "replica",
+      "name": "74997a326d311f2e1f25c4bc9ddd080cbee5a8944796f4dd3b35f8ba17c055b0.mp4",
+      "sha256": "74997a326d311f2e1f25c4bc9ddd080cbee5a8944796f4dd3b35f8ba17c055b0",
+      "bytes": 3947622,
+      "url": "https://github.com/USTChandsomeboy/video-result/releases/download/harbor-cases-media-20261027/74997a326d311f2e1f25c4bc9ddd080cbee5a8944796f4dd3b35f8ba17c055b0.mp4"
+    },
+    {
+      "kind": "replica",
+      "name": "1f8998be1d8c26d2d391c7925895e848a02e5ed9ad6ec7277e3c78d54db782eb.mp4",
+      "sha256": "1f8998be1d8c26d2d391c7925895e848a02e5ed9ad6ec7277e3c78d54db782eb",
+      "bytes": 961106,
+      "url": "https://github.com/USTChandsomeboy/video-result/releases/download/harbor-cases-media-20261027/1f8998be1d8c26d2d391c7925895e848a02e5ed9ad6ec7277e3c78d54db782eb.mp4"
+    },
+    {
+      "kind": "replica",
+      "name": "f35eb46da71e3dddf7b90842278ea92472019728851bae8c8471b7016cc26a82.mp4",
+      "sha256": "f35eb46da71e3dddf7b90842278ea92472019728851bae8c8471b7016cc26a82",
+      "bytes": 7498775,
+      "url": "https://github.com/USTChandsomeboy/video-result/releases/download/harbor-cases-media-20261027/f35eb46da71e3dddf7b90842278ea92472019728851bae8c8471b7016cc26a82.mp4"
+    },
+    {
+      "kind": "reference",
+      "name": "de4e7e1b8fc3dd2627044363f630ee5cb805e05b5d5f2448ef83a8ee35cc44b1.mp4",
+      "sha256": "de4e7e1b8fc3dd2627044363f630ee5cb805e05b5d5f2448ef83a8ee35cc44b1",
+      "bytes": 1076757,
+      "url": "https://github.com/USTChandsomeboy/video-result/releases/download/remaining-replicas-media-20261017/de4e7e1b8fc3dd2627044363f630ee5cb805e05b5d5f2448ef83a8ee35cc44b1.mp4"
+    },
+    {
+      "kind": "reference",
+      "name": "e936f7ddcd42e5729ca3dfe497d317aa82416eb30a6e9050e197161ecaa7d8da.mp4",
+      "sha256": "e936f7ddcd42e5729ca3dfe497d317aa82416eb30a6e9050e197161ecaa7d8da",
+      "bytes": 2074527,
+      "url": "https://github.com/USTChandsomeboy/video-result/releases/download/remaining-replicas-media-20261017/e936f7ddcd42e5729ca3dfe497d317aa82416eb30a6e9050e197161ecaa7d8da.mp4"
+    },
+    {
+      "kind": "reference",
+      "name": "85ecbd2fc6010ad777e0a6b2d6f56fd711029f6ed3b5ac2e65d54ab2f1659f9f.mp4",
+      "sha256": "85ecbd2fc6010ad777e0a6b2d6f56fd711029f6ed3b5ac2e65d54ab2f1659f9f",
+      "bytes": 3619326,
+      "url": "https://github.com/USTChandsomeboy/video-result/releases/download/remaining-replicas-media-20261017/85ecbd2fc6010ad777e0a6b2d6f56fd711029f6ed3b5ac2e65d54ab2f1659f9f.mp4"
+    },
+    {
+      "kind": "reference",
+      "name": "0503579490fd6e9ecdeafc2e6ae28009f4880f1fbc96eeae43d4826679bf8156.mp4",
+      "sha256": "0503579490fd6e9ecdeafc2e6ae28009f4880f1fbc96eeae43d4826679bf8156",
+      "bytes": 2353359,
+      "url": "https://github.com/USTChandsomeboy/video-result/releases/download/remaining-replicas-media-20261017/0503579490fd6e9ecdeafc2e6ae28009f4880f1fbc96eeae43d4826679bf8156.mp4"
+    },
+    {
+      "kind": "reference",
+      "name": "c7a825cd12cefad41d5c0a5cb132902c0bb4b8ee1c6a6bfc27e939bf4c886649.mp4",
+      "sha256": "c7a825cd12cefad41d5c0a5cb132902c0bb4b8ee1c6a6bfc27e939bf4c886649",
+      "bytes": 1092206,
+      "url": "https://github.com/USTChandsomeboy/video-result/releases/download/remaining-replicas-media-20261017/c7a825cd12cefad41d5c0a5cb132902c0bb4b8ee1c6a6bfc27e939bf4c886649.mp4"
+    },
+    {
+      "kind": "reference",
+      "name": "18021cdfbae8c9b79e5052ed5ca94236e51a6af99367b0145a6c0c592335bb14.mp4",
+      "sha256": "18021cdfbae8c9b79e5052ed5ca94236e51a6af99367b0145a6c0c592335bb14",
+      "bytes": 8438514,
+      "url": "https://github.com/USTChandsomeboy/video-result/releases/download/remaining-replicas-media-20261017/18021cdfbae8c9b79e5052ed5ca94236e51a6af99367b0145a6c0c592335bb14.mp4"
+    },
+    {
+      "kind": "reference",
+      "name": "0506bc821ea0f39fd6e48ca8a28ef6cf50b44a4291bea8af71d04ee3670e0086.mp4",
+      "sha256": "0506bc821ea0f39fd6e48ca8a28ef6cf50b44a4291bea8af71d04ee3670e0086",
+      "bytes": 183422,
+      "url": "https://github.com/USTChandsomeboy/video-result/releases/download/remaining-replicas-media-20261017/0506bc821ea0f39fd6e48ca8a28ef6cf50b44a4291bea8af71d04ee3670e0086.mp4"
+    },
+    {
+      "kind": "replica",
+      "name": "837864b5b0493ab4e99902c0364bf95c79ae303ffefe41d8819d6496129e1210.mp4",
+      "sha256": "837864b5b0493ab4e99902c0364bf95c79ae303ffefe41d8819d6496129e1210",
+      "bytes": 712436,
+      "url": "https://github.com/USTChandsomeboy/video-result/releases/download/remaining-replicas-media-20261017/837864b5b0493ab4e99902c0364bf95c79ae303ffefe41d8819d6496129e1210.mp4"
+    },
+    {
+      "kind": "reference",
+      "name": "75adc07219ab5af3292fcdd452a9842127dba97469d7828841cd85e8fd486555.mp4",
+      "sha256": "75adc07219ab5af3292fcdd452a9842127dba97469d7828841cd85e8fd486555",
+      "bytes": 10518932,
+      "url": "https://github.com/USTChandsomeboy/video-result/releases/download/remaining-replicas-media-20261017/75adc07219ab5af3292fcdd452a9842127dba97469d7828841cd85e8fd486555.mp4"
+    },
+    {
+      "kind": "replica",
+      "name": "e10fd0e2cc95d845a5394e48ee24e9bf8c426bcec193c02e8fb90e7eb623ad69.mp4",
+      "sha256": "e10fd0e2cc95d845a5394e48ee24e9bf8c426bcec193c02e8fb90e7eb623ad69",
+      "bytes": 6187585,
+      "url": "https://github.com/USTChandsomeboy/video-result/releases/download/remaining-replicas-media-20261017/e10fd0e2cc95d845a5394e48ee24e9bf8c426bcec193c02e8fb90e7eb623ad69.mp4"
+    }
+  ]
+}
